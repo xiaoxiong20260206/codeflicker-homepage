@@ -883,15 +883,15 @@
         
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-value green">1</div>
+                <div class="stat-value green">2</div>
                 <div class="stat-label">活跃项目</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value blue">0</div>
+                <div class="stat-value blue">1</div>
                 <div class="stat-label">代码提交</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value orange">1</div>
+                <div class="stat-value orange">2</div>
                 <div class="stat-label">对话任务</div>
             </div>
         </div>
@@ -906,11 +906,20 @@
 
                 <div class="conversation-item">
                     <div class="conversation-header">
-                        <span class="conversation-title">Daily Report Generation and Synchronization</span>
-                        <span class="conversation-time">2026-03-01 07:40</span>
+                        <span class="conversation-title">Daily Report System Backup and Optimization</span>
+                        <span class="conversation-time">2026-03-01 07:50</span>
                     </div>
-                    <div class="conversation-intent">重新生成2026-02-28日报并生成2026-03-01日报，最后同步到GitHub</div>
-                    <div class="conversation-summary">已使用generate_daily_report.py脚本重新生成2026-02-28日报，包含AI产品终极形态研究等8条新增记忆，保存为HTML和Markdown格式；2026-03-01日报生成中；待完成GitHub同步和提供部署链接。</div>
+                    <div class="conversation-intent">用户需要完善日报系统中记忆部分的统计显示，使其在卡片和趋势图中更清晰地展示记忆数据。</div>
+                    <div class="conversation-summary">执行了备份内容统计，显示知识库150个文件、记忆8779个文件、各类技能文件900+个、日报系统57个文件。修复了2026-02-27日报中的记忆统计问题，现在正确显示12条记忆（今日新增3条）。</div>
+                </div>
+
+                <div class="conversation-item">
+                    <div class="conversation-header">
+                        <span class="conversation-title">Docs-shuttle skill installation troubleshooting</span>
+                        <span class="conversation-time">2026-03-01 07:48</span>
+                    </div>
+                    <div class="conversation-intent">用户希望安装 docs-shuttle 技能，实现快手内网 Docs 文档与本地 Markdown 的双向同步功能</div>
+                    <div class="conversation-summary">尝试通过 SSH 和 HTTPS 两种方式克隆代码库均失败后，通过浏览器手动获取了 SKILL.md、skill.json 和 requirements.txt 等核心文件。目前仍需要解决代码库访问权限问题才能完成完整安装。</div>
                 </div>
 
             </div>
@@ -922,7 +931,7 @@
                     <div class="project-name">
                         📁 个人助理_V1
                     </div>
-                    <div class="project-meta">0 次提交 | 5 个文件修改</div>
+                    <div class="project-meta">0 次提交 | 20 个文件修改</div>
                 </div>
                 <div class="project-links">
 
@@ -933,8 +942,9 @@
             <div class="outcome-section">
                 <div class="section-label">✅ 结果：达成效果</div>
                 <ul class="outcome-list">
-                    <li>生成/更新网页 2 个</li>
-                    <li>完善文档 1 份</li>
+                    <li>生成/更新网页 6 个</li>
+                    <li>完善文档 5 份</li>
+                    <li>功能代码优化</li>
 
                 </ul>
             </div>
@@ -955,8 +965,23 @@
                     </a>
 
                     <a href="#" class="deliverable-item">
+                        <span class="deliverable-icon">🌐</span>
+                        <span class="deliverable-name">daily-2026-03-01.html</span>
+                    </a>
+
+                    <a href="#" class="deliverable-item">
                         <span class="deliverable-icon">📄</span>
                         <span class="deliverable-name">daily-2026-02-28.md</span>
+                    </a>
+
+                    <a href="#" class="deliverable-item">
+                        <span class="deliverable-icon">📄</span>
+                        <span class="deliverable-name">daily-2026-03-01.md</span>
+                    </a>
+
+                    <a href="#" class="deliverable-item">
+                        <span class="deliverable-icon">📄</span>
+                        <span class="deliverable-name">recap-daily-report-generation-and-synchronization.md</span>
                     </a>
 
                 </div>
@@ -966,9 +991,48 @@
             <div class="process-section">
                 <div class="section-label">📋 过程：做了什么</div>
                 <div class="process-content">
-                    <span class="process-tag">修改前端文件 2 个</span>
+                    <span class="process-tag">修改前端文件 6 个</span>
+                    <span class="process-tag">更新文档 5 个</span>
+                    <span class="process-tag">更新配置文件 4 个</span>
                     <span class="process-tag">更新配置文件 1 个</span>
-                    <span class="process-tag">更新文档 1 个</span>
+
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="project-card">
+            <div class="project-header">
+                <div class="project-info">
+                    <div class="project-name">
+                        📁 codeflicker-homepage
+                    </div>
+                    <div class="project-meta">1 次提交 | 9 个文件修改</div>
+                </div>
+                <div class="project-links">
+
+                    <a href="https://my-ai-research-lab.github.io/codeflicker-homepage" target="_blank" class="project-link">
+                        <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                        访问页面
+                    </a>
+
+                </div>
+            </div>
+            
+            <!-- 1. 结果：达成效果（放在最前面） -->
+            <div class="outcome-section">
+                <div class="section-label">✅ 结果：达成效果</div>
+                <ul class="outcome-list">
+                    <li>优化: Daily update: 2026-03-01</li>
+
+                </ul>
+            </div>
+
+            <!-- 3. 过程：做了什么 -->
+            <div class="process-section">
+                <div class="section-label">📋 过程：做了什么</div>
+                <div class="process-content">
+                    <span class="process-tag">Daily update: 2026-03-01</span>
 
                 </div>
             </div>
@@ -989,7 +1053,7 @@
         
         <div class="stats-grid">
             <div class="stat-card">
-                <div class="stat-value green">29</div>
+                <div class="stat-value green">28</div>
                 <div class="stat-label">技能总数</div>
                 <div class="stat-change neutral">0</div>
             </div>
@@ -1001,6 +1065,7 @@
             <div class="stat-card">
                 <div class="stat-value orange">19</div>
                 <div class="stat-label">记忆条目</div>
+                <div class="stat-change neutral">0</div>
             </div>
         </div>
         
@@ -1023,10 +1088,10 @@
                 <span class="tag">wechat-research</span>
                 <span class="tag">ui-ux-pro-max-skill</span>
                 <span class="tag">work-report-ppt</span>
-                <span class="tag">docs-shuttle</span>
                 <span class="tag">pixel-action-game</span>
                 <span class="tag">mcp-builder</span>
-                <span class="tag">+14 more</span>
+                <span class="tag">industry-research</span>
+                <span class="tag">+13 more</span>
             </div>
 
         </div>
@@ -1101,9 +1166,9 @@
         <!-- X轴日期 -->
         <g fill="#6E7781" font-size="10" text-anchor="middle">
             <text x="40.0" y="176">02-26</text>
-            <text x="135.4" y="176">02-26</text>
-            <text x="230.8" y="176">02-27</text>
-            <text x="326.2" y="176">02-28</text>
+            <text x="135.4" y="176">02-27</text>
+            <text x="230.8" y="176">02-28</text>
+            <text x="326.2" y="176">02-27</text>
             <text x="421.5" y="176">02-27</text>
             <text x="516.9" y="176">02-28</text>
             <text x="612.3" y="176">02-28</text>
@@ -1111,12 +1176,12 @@
         </g>
         
         <!-- 折线 -->
-        <path d="M 40.0 140.4 L 87.7 140.4 L 135.4 140.4 L 183.1 140.4 L 230.8 140.4 L 278.5 140.4 L 326.2 138.9 L 373.8 138.9 L 421.5 138.9 L 469.2 138.9 L 516.9 138.9 L 564.6 138.9 L 612.3 138.9 L 660.0 138.9" fill="none" stroke="url(#skillGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 40.0 140.4 L 87.7 140.4 L 135.4 140.4 L 183.1 138.9 L 230.8 138.9 L 278.5 138.9 L 326.2 138.9 L 373.8 138.9 L 421.5 138.9 L 469.2 138.9 L 516.9 138.9 L 564.6 138.9 L 612.3 139.6 L 660.0 139.6" fill="none" stroke="url(#skillGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M 40.0 50.9 L 87.7 50.9 L 135.4 50.9 L 183.1 50.9 L 230.8 50.9 L 278.5 50.9 L 326.2 50.9 L 373.8 50.9 L 421.5 50.9 L 469.2 50.9 L 516.9 50.9 L 564.6 50.9 L 612.3 50.9 L 660.0 50.9" fill="none" stroke="url(#knowledgeGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M 40.0 156.4 L 87.7 156.4 L 135.4 156.4 L 183.1 156.4 L 230.8 156.4 L 278.5 156.4 L 326.2 156.4 L 373.8 156.4 L 421.5 156.4 L 469.2 156.4 L 516.9 156.4 L 564.6 151.3 L 612.3 151.3 L 660.0 146.2" fill="none" stroke="url(#memoryGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M 40.0 156.4 L 87.7 156.4 L 135.4 156.4 L 183.1 156.4 L 230.8 156.4 L 278.5 156.4 L 326.2 156.4 L 373.8 156.4 L 421.5 151.3 L 469.2 151.3 L 516.9 146.2 L 564.6 146.2 L 612.3 146.2 L 660.0 146.2" fill="none" stroke="url(#memoryGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         
         <!-- 数据点 -->
-        <circle cx="660.0" cy="138.9" r="4" fill="#1A7F37"/>
+        <circle cx="660.0" cy="139.6" r="4" fill="#1A7F37"/>
         <circle cx="660.0" cy="50.9" r="4" fill="#0969DA"/>
         <circle cx="660.0" cy="146.2" r="4" fill="#BF8700"/>
 
@@ -1257,7 +1322,7 @@
         </article>
         
         <footer>
-            <p>报告生成时间: 2026-03-01 07:40:20</p>
+            <p>报告生成时间: 2026-03-01 07:55:16</p>
             <p>添棋 v5.0 · 清爽调研报告风格</p>
         </footer>
     </div>

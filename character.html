@@ -358,6 +358,11 @@
             transform: translateX(-50%);
         }
         
+        /* 末级分支（无子节点） */
+        .branch-leaf {
+            padding-top: 40px;
+        }
+        
         /* 分类节点 */
         .category-node {
             width: 70px;
@@ -1028,20 +1033,9 @@
                     source: '知识库目录扫描'
                 };
                 
-                // 根据文件数量生成叶子节点
-                const leafCount = Math.min(6, Math.ceil(cat.fileCount / 5));
-                let leaves = '';
-                for (let i = 0; i < leafCount; i++) {
-                    leaves += `
-                        <div class="leaf-node ${getLevelClass(cat.heatLevel)}" 
-                             style="border-color: var(--node-color); color: var(--node-color);">
-                            <span class="leaf-icon">📄</span>
-                        </div>
-                    `;
-                }
-                
+                // 知识库直接用分类节点作为末级节点，不再生成叶子节点
                 branches += `
-                    <div class="branch" style="color: ${cat.color || 'var(--purple)'};">
+                    <div class="branch branch-leaf" style="color: ${cat.color || 'var(--purple)'};">
                         <div class="category-node ${getLevelClass(cat.heatLevel)}" 
                              style="border-color: ${cat.color || 'var(--purple)'}; color: ${cat.color || 'var(--purple)'};"
                              onmouseenter="showTip(event, '${kid}', 'knowledge')" onmouseleave="hideTip()">
@@ -1049,9 +1043,6 @@
                             <span class="cat-name">${catName}</span>
                             <span class="cat-level" style="border-color: ${cat.color || 'var(--purple)'};">${cat.heatLevel}</span>
                             <span class="cat-count" style="border-color: ${cat.color || 'var(--purple)'};">${cat.fileCount}</span>
-                        </div>
-                        <div class="leaves" style="color: ${cat.color || 'var(--purple)'};">
-                            ${leaves}
                         </div>
                     </div>
                 `;

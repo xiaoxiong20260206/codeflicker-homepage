@@ -1,0 +1,106 @@
+{
+  "generatedAt": "2026-03-01T19:20:00.000Z",
+  "summary": {
+    "totalDays": 6,
+    "latestDate": "2026-03-01",
+    "earliestDate": "2026-02-24"
+  },
+  "trend": {
+    "dates": ["02-24", "02-25", "02-26", "02-27", "02-28", "03-01"],
+    "skills": [27, 27, 27, 29, 29, 33],
+    "knowledge": [35, 148, 150, 150, 150, 159],
+    "memory": [5, 5, 5, 12, 19, 19]
+  },
+  "reports": [
+    {
+      "date": "2026-03-01",
+      "dayOfWeek": "周六",
+      "activeProjects": 1,
+      "totalCommits": 1,
+      "conversationCount": 2,
+      "skillCount": 33,
+      "knowledgeCount": 159,
+      "memoryCount": 19,
+      "skillChange": 4,
+      "knowledgeChange": 9,
+      "memoryChange": 0,
+      "htmlUrl": "daily-2026-03-01.html",
+      "highlights": ["角色面板v5.0上线", "技能树可视化", "图表tooltip功能"]
+    },
+    {
+      "date": "2026-02-28",
+      "dayOfWeek": "周五",
+      "activeProjects": 1,
+      "totalCommits": 5,
+      "conversationCount": 5,
+      "skillCount": 29,
+      "knowledgeCount": 150,
+      "memoryCount": 19,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 7,
+      "htmlUrl": "daily-2026-02-28.html",
+      "highlights": ["AI产品终极形态调研", "记忆系统优化", "小无相功v6.0"]
+    },
+    {
+      "date": "2026-02-27",
+      "dayOfWeek": "周四",
+      "activeProjects": 1,
+      "totalCommits": 9,
+      "conversationCount": 6,
+      "skillCount": 29,
+      "knowledgeCount": 150,
+      "memoryCount": 12,
+      "skillChange": 2,
+      "knowledgeChange": 0,
+      "memoryChange": 7,
+      "htmlUrl": "daily-2026-02-27.html",
+      "highlights": ["飞书机器人上线", "IM集成实现", "工作汇报PPT技能"]
+    },
+    {
+      "date": "2026-02-26",
+      "dayOfWeek": "周三",
+      "activeProjects": 1,
+      "totalCommits": 2,
+      "conversationCount": 0,
+      "skillCount": 27,
+      "knowledgeCount": 150,
+      "memoryCount": 5,
+      "skillChange": 0,
+      "knowledgeChange": 2,
+      "memoryChange": 0,
+      "htmlUrl": "daily-2026-02-26.html",
+      "highlights": ["知识库整理", "文档归档"]
+    },
+    {
+      "date": "2026-02-25",
+      "dayOfWeek": "周二",
+      "activeProjects": 1,
+      "totalCommits": 6,
+      "conversationCount": 0,
+      "skillCount": 27,
+      "knowledgeCount": 148,
+      "memoryCount": 5,
+      "skillChange": 0,
+      "knowledgeChange": 113,
+      "memoryChange": 0,
+      "htmlUrl": "daily-2026-02-25.html",
+      "highlights": ["知识库大量导入", "日报系统建立"]
+    },
+    {
+      "date": "2026-02-24",
+      "dayOfWeek": "周一",
+      "activeProjects": 1,
+      "totalCommits": 7,
+      "conversationCount": 0,
+      "skillCount": 27,
+      "knowledgeCount": 35,
+      "memoryCount": 5,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 0,
+      "htmlUrl": "daily-2026-02-24.html",
+      "highlights": ["项目初始化", "基础框架搭建"]
+    }
+  ]
+}

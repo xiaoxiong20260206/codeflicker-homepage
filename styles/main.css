@@ -417,6 +417,8 @@ body {
     padding: 25px;
     flex: 1;
     animation: fadeIn 0.3s ease-out;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .content-section.active {
@@ -864,6 +866,7 @@ body {
     border: 1px solid #2a2b3e;
     border-radius: 12px;
     overflow: hidden;
+    max-width: 100%;
 }
 
 .tree-panel .panel-header {
@@ -873,6 +876,7 @@ body {
     padding: 15px 20px;
     background: rgba(0, 0, 0, 0.2);
     border-bottom: 1px solid #2a2b3e;
+    flex-wrap: wrap;
 }
 
 .tree-panel .panel-stats {
@@ -887,10 +891,11 @@ body {
 }
 
 .tree-container {
-    padding: 30px;
+    padding: 20px;
     overflow-x: auto;
     position: relative;
-    min-height: 250px;
+    min-height: 200px;
+    max-width: 100%;
 }
 
 .tree-graph {

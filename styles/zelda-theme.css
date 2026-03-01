@@ -712,19 +712,22 @@ body {
 
 /* ==================== 树形结构 ==================== */
 .tree-container {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     overflow-x: auto;
     position: relative;
-    min-height: 250px;
+    min-height: 200px;
+    max-width: 100%;
 }
 
 .tree-graph {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     position: relative;
-    min-width: max-content;
-    padding: var(--spacing-md) 40px;
+    min-width: 0;
+    padding: var(--spacing-md) var(--spacing-sm);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
 }
 
 .tree-root {
@@ -777,8 +780,10 @@ body {
 
 .branches {
     display: flex;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
     position: relative;
+    flex-wrap: wrap;
+    min-width: 0;
 }
 
 .branches::before {

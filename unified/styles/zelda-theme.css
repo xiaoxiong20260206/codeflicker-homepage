@@ -925,7 +925,8 @@ body {
 .tooltip {
     position: fixed;
     z-index: 9999;
-    width: 280px;
+    width: 300px;
+    max-width: 340px;
     background: linear-gradient(135deg, 
         rgba(30, 35, 30, 0.98) 0%, 
         rgba(40, 50, 45, 0.95) 100%
@@ -1010,6 +1011,8 @@ body {
     font-size: 11px;
     color: var(--text-muted);
     line-height: 1.5;
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .tip-source {

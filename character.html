@@ -1149,15 +1149,37 @@
             const stats = data.character.stats;
             const history = data.growthHistory;
             
+            // 通用tooltip样式配置
+            const tooltipConfig = {
+                enabled: true,
+                backgroundColor: 'rgba(26, 27, 46, 0.95)',
+                titleColor: '#ffffff',
+                bodyColor: '#8b8b9a',
+                borderColor: '#00ffff',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12,
+                titleFont: { size: 13, weight: 'bold', family: 'Orbitron' },
+                bodyFont: { size: 12, family: 'Noto Sans SC' },
+                displayColors: true,
+                boxPadding: 6,
+                caretSize: 8
+            };
+            
             new Chart(document.getElementById('radarChart'), {
                 type: 'radar',
                 data: {
                     labels: ['推理', '记忆', '执行', '学习', '洞察', '创造'],
                     datasets: [{
+                        label: '能力值',
                         data: [stats.reasoning, stats.memory, stats.execution, stats.learning, stats.insight, stats.creativity],
                         backgroundColor: 'rgba(0, 255, 255, 0.15)',
                         borderColor: '#00ffff',
                         pointBackgroundColor: '#00ffff',
+                        pointHoverBackgroundColor: '#ffffff',
+                        pointHoverBorderColor: '#00ffff',
+                        pointHoverRadius: 8,
+                        pointRadius: 5,
                         borderWidth: 2
                     }]
                 },
@@ -1172,7 +1194,20 @@
                             pointLabels: { color: '#8b8b9a', font: { size: 10 } }
                         }
                     },
-                    plugins: { legend: { display: false } }
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            ...tooltipConfig,
+                            callbacks: {
+                                title: function(context) {
+                                    return context[0].label;
+                                },
+                                label: function(context) {
+                                    return '能力值: ' + context.raw + ' / 100';
+                                }
+                            }
+                        }
+                    }
                 }
             });
             
@@ -1181,19 +1216,80 @@
                 data: {
                     labels: history.dates.length ? history.dates : ['02-15','02-20','02-25','03-01'],
                     datasets: [
-                        { label: 'Skills', data: history.skills.length ? history.skills : [25,30,33,33], borderColor: '#00ff88', backgroundColor: 'rgba(0,255,136,0.1)', fill: true, tension: 0.4 },
-                        { label: 'Knowledge', data: history.knowledge.length ? history.knowledge : [120,140,155,159], borderColor: '#bf7fff', backgroundColor: 'rgba(191,127,255,0.1)', fill: true, tension: 0.4 },
-                        { label: 'Memory', data: history.memories.length ? history.memories : [5,10,15,19], borderColor: '#ff9500', backgroundColor: 'rgba(255,149,0,0.1)', fill: true, tension: 0.4 }
+                        { 
+                            label: 'Skills', 
+                            data: history.skills.length ? history.skills : [25,30,33,33], 
+                            borderColor: '#00ff88', 
+                            backgroundColor: 'rgba(0,255,136,0.1)', 
+                            fill: true, 
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#00ff88',
+                            pointHoverBorderWidth: 3
+                        },
+                        { 
+                            label: 'Knowledge', 
+                            data: history.knowledge.length ? history.knowledge : [120,140,155,159], 
+                            borderColor: '#bf7fff', 
+                            backgroundColor: 'rgba(191,127,255,0.1)', 
+                            fill: true, 
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#bf7fff',
+                            pointHoverBorderWidth: 3
+                        },
+                        { 
+                            label: 'Memory', 
+                            data: history.memories.length ? history.memories : [5,10,15,19], 
+                            borderColor: '#ff9500', 
+                            backgroundColor: 'rgba(255,149,0,0.1)', 
+                            fill: true, 
+                            tension: 0.4,
+                            pointRadius: 4,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#ff9500',
+                            pointHoverBorderWidth: 3
+                        }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
                     scales: {
                         x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#5a5a6e', font: { size: 9 } } },
                         y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#5a5a6e', font: { size: 9 } } }
                     },
-                    plugins: { legend: { position: 'top', labels: { color: '#8b8b9a', usePointStyle: true, font: { size: 9 } } } }
+                    plugins: { 
+                        legend: { position: 'top', labels: { color: '#8b8b9a', usePointStyle: true, font: { size: 9 } } },
+                        tooltip: {
+                            ...tooltipConfig,
+                            callbacks: {
+                                title: function(context) {
+                                    return '📅 ' + context[0].label;
+                                },
+                                label: function(context) {
+                                    const label = context.dataset.label;
+                                    const value = context.raw;
+                                    const icon = label === 'Skills' ? '⚡' : label === 'Knowledge' ? '📚' : '🧠';
+                                    return icon + ' ' + label + ': ' + value;
+                                },
+                                footer: function(context) {
+                                    let total = 0;
+                                    context.forEach(item => { total += item.raw; });
+                                    return '────────────\n📊 总计: ' + total;
+                                }
+                            }
+                        }
+                    }
                 }
             });
         }

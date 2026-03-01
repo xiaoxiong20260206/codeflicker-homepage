@@ -68,39 +68,49 @@ function switchSection(sectionName) {
 // ==================== 数据加载 ====================
 async function loadAllData() {
     try {
-        // 尝试多种路径以兼容不同部署环境
-        const basePaths = ['../', './', '/'];
-        let characterRes, reportsRes, projectsRes;
+        // 获取当前页面的基础路径
+        const pathParts = window.location.pathname.split('/');
+        let basePath = '';
         
-        for (const base of basePaths) {
-            try {
-                [characterRes, reportsRes, projectsRes] = await Promise.all([
-                    fetch(base + 'character-data.json'),
-                    fetch(base + 'reports-data.json'),
-                    fetch(base + 'projects-data.json')
-                ]);
-                
-                if (characterRes.ok && reportsRes.ok && projectsRes.ok) {
-                    break;
-                }
-            } catch (err) {
-                continue;
-            }
+        // 检测是否在 unified 子目录中
+        if (pathParts.includes('unified')) {
+            basePath = './';  // unified目录下，JSON文件在同级
+        } else if (pathParts.includes('codeflicker-homepage')) {
+            // 在根目录的 index-unified.html
+            basePath = './unified/';
+        } else {
+            // 本地开发或其他情况
+            basePath = './';
         }
         
-        if (!characterRes || !characterRes.ok) {
-            throw new Error('Failed to load character data');
+        console.log('Loading data from basePath:', basePath);
+        
+        const [characterRes, reportsRes, projectsRes] = await Promise.all([
+            fetch(basePath + 'character-data.json'),
+            fetch(basePath + 'reports-data.json'),
+            fetch(basePath + 'projects-data.json')
+        ]);
+        
+        if (!characterRes.ok) {
+            throw new Error('Failed to load character data: ' + characterRes.status);
+        }
+        if (!reportsRes.ok) {
+            throw new Error('Failed to load reports data: ' + reportsRes.status);
+        }
+        if (!projectsRes.ok) {
+            throw new Error('Failed to load projects data: ' + projectsRes.status);
         }
         
         AppState.characterData = await characterRes.json();
         AppState.reportsData = await reportsRes.json();
         AppState.projectsData = await projectsRes.json();
         
+        console.log('Data loaded successfully');
         renderAll();
     } catch (e) {
         console.error('Failed to load data:', e);
         document.querySelectorAll('.loading').forEach(el => {
-            el.textContent = '❌ 数据加载失败';
+            el.textContent = '❌ 数据加载失败: ' + e.message;
         });
     }
 }
@@ -249,24 +259,36 @@ function renderDailyReport() {
     document.getElementById('daily-trend').textContent = trendText;
     
     // 亮点
-    const highlightsContainer = document.getElementById('today-highlights');
-    highlightsContainer.innerHTML = (today.highlights || []).map(h => `
-        <span class="highlight-item">✓ ${h}</span>
-    `).join('');
+    const highlightsContainer = document.getElementById('highlights-list');
+    if (highlightsContainer) {
+        highlightsContainer.innerHTML = (today.highlights || []).map(h => `
+            <span class="highlight-tag">✓ ${h}</span>
+        `).join('');
+    }
     
     // 能力数据
-    document.getElementById('cap-skill-current').textContent = today.skillCount;
-    document.getElementById('cap-knowledge-current').textContent = today.knowledgeCount;
-    document.getElementById('cap-memory-current').textContent = today.memoryCount;
+    const capSkills = document.getElementById('cap-skills');
+    const capKnowledge = document.getElementById('cap-knowledge');
+    const capMemory = document.getElementById('cap-memory');
+    
+    if (capSkills) capSkills.textContent = today.skillCount;
+    if (capKnowledge) capKnowledge.textContent = today.knowledgeCount;
+    if (capMemory) capMemory.textContent = today.memoryCount;
     
     // 能力变化
-    updateCapChange('cap-skill-change', today.skillChange);
+    updateCapChange('cap-skills-change', today.skillChange);
     updateCapChange('cap-knowledge-change', today.knowledgeChange);
     updateCapChange('cap-memory-change', today.memoryChange);
     
     // 日报iframe
-    document.getElementById('daily-iframe').src = today.htmlUrl;
-    document.getElementById('view-full-daily').href = today.htmlUrl;
+    const iframe = document.getElementById('daily-iframe');
+    const dailyLink = document.getElementById('daily-link');
+    if (iframe && today.htmlUrl) {
+        iframe.src = today.htmlUrl;
+    }
+    if (dailyLink && today.htmlUrl) {
+        dailyLink.href = today.htmlUrl;
+    }
 }
 
 function getTrendText(report) {
@@ -278,6 +300,8 @@ function getTrendText(report) {
 
 function updateCapChange(elementId, change) {
     const el = document.getElementById(elementId);
+    if (!el) return;
+    
     if (change > 0) {
         el.textContent = '+' + change;
         el.className = 'cap-change positive';
@@ -294,6 +318,11 @@ function updateCapChange(elementId, change) {
 function renderReportsHistory() {
     const reports = AppState.reportsData.reports;
     const container = document.getElementById('reports-timeline');
+    
+    if (!container) {
+        console.warn('reports-timeline container not found');
+        return;
+    }
     
     container.innerHTML = reports.map(r => {
         const skillChange = formatChange(r.skillChange);
@@ -314,42 +343,16 @@ function renderReportsHistory() {
                             <span class="report-day">${r.dayOfWeek}</span>
                         </div>
                         <div class="report-stats">
-                            <div class="report-stat">
-                                <div class="report-stat-num">${r.activeProjects}</div>
-                                <div class="report-stat-lbl">项目</div>
-                            </div>
-                            <div class="report-stat">
-                                <div class="report-stat-num">${r.totalCommits}</div>
-                                <div class="report-stat-lbl">提交</div>
-                            </div>
-                            <div class="report-stat">
-                                <div class="report-stat-num">${r.conversationCount}</div>
-                                <div class="report-stat-lbl">对话</div>
-                            </div>
+                            <span class="report-stat">⚡${r.skillCount}<span class="${skillChange.class}">${skillChange.text}</span></span>
+                            <span class="report-stat">📚${r.knowledgeCount}<span class="${knowledgeChange.class}">${knowledgeChange.text}</span></span>
+                            <span class="report-stat">🧠${r.memoryCount}<span class="${memoryChange.class}">${memoryChange.text}</span></span>
                         </div>
                     </div>
                     <div class="report-body">
-                        <div class="report-caps">
-                            <div class="report-cap skill">
-                                <div class="report-cap-value">${r.skillCount}</div>
-                                <div class="report-cap-change ${skillChange.class}">${skillChange.text}</div>
-                                <div class="report-cap-label">技能</div>
-                            </div>
-                            <div class="report-cap knowledge">
-                                <div class="report-cap-value">${r.knowledgeCount}</div>
-                                <div class="report-cap-change ${knowledgeChange.class}">${knowledgeChange.text}</div>
-                                <div class="report-cap-label">知识</div>
-                            </div>
-                            <div class="report-cap memory">
-                                <div class="report-cap-value">${r.memoryCount}</div>
-                                <div class="report-cap-change ${memoryChange.class}">${memoryChange.text}</div>
-                                <div class="report-cap-label">记忆</div>
-                            </div>
-                        </div>
                         ${highlights ? `<div class="report-highlights">${highlights}</div>` : ''}
                     </div>
-                    <div class="report-footer">
-                        <a href="${r.htmlUrl}" target="_blank" class="view-report-btn">📄 查看详情</a>
+                    <div class="report-link">
+                        <a href="${r.htmlUrl}" target="_blank">📄 查看完整日报 →</a>
                     </div>
                 </div>
             </div>
@@ -369,10 +372,16 @@ function renderSkillTree() {
     const knowledge = AppState.characterData.knowledge;
     const memories = AppState.characterData.memories;
     
-    // 统计数据
-    document.getElementById('skill-total').textContent = skills.total;
-    document.getElementById('knowledge-total').textContent = knowledge.totalFiles;
-    document.getElementById('memory-total').textContent = memories.total;
+    // 统计数据 - 安全地设置
+    const skillTotal = document.getElementById('skill-total');
+    const skillTotal2 = document.getElementById('skill-total-2');
+    const knowledgeTotal = document.getElementById('knowledge-total');
+    const memoryTotal = document.getElementById('memory-total');
+    
+    if (skillTotal) skillTotal.textContent = skills.total;
+    if (skillTotal2) skillTotal2.textContent = skills.total;
+    if (knowledgeTotal) knowledgeTotal.textContent = knowledge.totalFiles;
+    if (memoryTotal) memoryTotal.textContent = memories.total;
     
     // 渲染技能树形结构
     renderSkillTreeGraph(skills);
@@ -625,14 +634,16 @@ window.showTreeTooltip = showTreeTooltip;
 function renderProjects() {
     const projects = AppState.projectsData;
     
-    // 统计数据
-    document.getElementById('p-total').textContent = projects.summary.total;
-    document.getElementById('p-deployed').textContent = projects.summary.deployed;
-    document.getElementById('p-dev').textContent = projects.summary.inDevelopment;
-    document.getElementById('p-archived').textContent = projects.summary.archived;
+    // 统计数据 - 安全地设置
+    const pTotal = document.getElementById('p-total');
+    const pDeployed = document.getElementById('p-deployed');
+    const pDev = document.getElementById('p-dev');
+    const pArchived = document.getElementById('p-archived');
     
-    // 分类标签
-    renderProjectCategoryTabs(projects);
+    if (pTotal) pTotal.textContent = projects.summary.total;
+    if (pDeployed) pDeployed.textContent = projects.summary.deployed;
+    if (pDev) pDev.textContent = projects.summary.inDevelopment;
+    if (pArchived) pArchived.textContent = projects.summary.archived;
     
     // 项目网格
     renderProjectsGrid(projects, 'all');
@@ -663,56 +674,38 @@ function renderProjectCategoryTabs(projects) {
 function renderProjectsGrid(projects, category) {
     const container = document.getElementById('projects-grid');
     
+    if (!container) {
+        console.warn('projects-grid container not found');
+        return;
+    }
+    
     let filteredProjects = projects.projects;
     if (category !== 'all') {
         filteredProjects = projects.projects.filter(p => p.category === category);
     }
     
     container.innerHTML = filteredProjects.map(p => {
-        const statusClass = p.status === 'deployed' ? 'status-deployed' : 
-                           p.status === 'development' ? 'status-development' : 'status-archived';
+        const statusClass = p.status === 'deployed' ? 'deployed' : 
+                           p.status === 'development' ? 'development' : 'archived';
         const statusText = p.status === 'deployed' ? '✅ 已部署' : 
                           p.status === 'development' ? '🔧 开发中' : '📦 已归档';
         
-        const highlights = (p.highlights || []).map(h => `<span class="project-highlight">✓ ${h}</span>`).join('');
-        const techTags = (p.techStack || []).map(t => `<span class="tech-tag">${t}</span>`).join('');
+        const techTags = (p.techStack || []).slice(0, 3).map(t => `<span class="tech-tag">${t}</span>`).join('');
         
         const linkHtml = p.url 
-            ? `<a href="${p.url}" target="_blank" class="project-link">🔗 访问项目</a>`
-            : `<span class="project-link disabled">🔒 本地项目</span>`;
+            ? `<a href="${p.url}" target="_blank" class="project-link">🔗 访问</a>`
+            : '';
         
         return `
-            <div class="project-card">
+            <div class="project-card ${statusClass}">
                 <div class="project-header">
-                    <div class="project-icon">${p.icon}</div>
-                    <div class="project-title-area">
-                        <div class="project-name">${p.name}</div>
-                        <div class="project-subtitle">${p.subtitle}</div>
-                    </div>
+                    <span class="project-icon">${p.icon}</span>
+                    <span class="project-name">${p.name}</span>
                     <span class="project-status ${statusClass}">${statusText}</span>
                 </div>
-                <div class="project-body">
-                    <div class="project-section">
-                        <div class="project-section-label">🎯 项目目标</div>
-                        <div class="project-section-content">${p.goal}</div>
-                    </div>
-                    <div class="project-section">
-                        <div class="project-section-label">📦 项目成果</div>
-                        <div class="project-section-content">${p.outcome}</div>
-                    </div>
-                    ${highlights ? `
-                    <div class="project-section">
-                        <div class="project-section-label">✨ 亮点</div>
-                        <div class="project-highlights">${highlights}</div>
-                    </div>
-                    ` : ''}
-                    <div class="project-section">
-                        <div class="project-section-label">🛠️ 技术栈</div>
-                        <div class="project-tech-stack">${techTags}</div>
-                    </div>
-                </div>
-                <div class="project-footer">
-                    <span class="project-date">📅 ${p.completedAt}</span>
+                <div class="project-desc">${p.subtitle || p.goal || ''}</div>
+                <div class="project-links">
+                    ${techTags}
                     ${linkHtml}
                 </div>
             </div>
@@ -722,10 +715,14 @@ function renderProjectsGrid(projects, category) {
 
 // ==================== 关于我 ====================
 function renderAbout() {
-    // 成就墙
-    const achievements = AppState.characterData.achievements;
+    // 成就墙 - 检查元素是否存在
     const container = document.getElementById('achievements-full');
+    if (!container) {
+        console.log('achievements-full container not found, skipping');
+        return;
+    }
     
+    const achievements = AppState.characterData.achievements;
     container.innerHTML = achievements.map(a => `
         <div class="achievement-item ${a.unlocked ? 'unlocked' : 'locked'}">
             <div class="ach-icon">${a.icon}</div>
@@ -742,13 +739,15 @@ function renderAbout() {
 function renderCharts() {
     renderRadarChart();
     renderMiniTrendChart();
-    renderTrendChart();
 }
 
 function renderRadarChart() {
+    const canvas = document.getElementById('radarChart');
+    if (!canvas) return;
+    
     const stats = AppState.characterData.character.stats;
     
-    new Chart(document.getElementById('radarChart'), {
+    new Chart(canvas, {
         type: 'radar',
         data: {
             labels: ['推理', '记忆', '执行', '学习', '洞察', '创造'],
@@ -761,11 +760,11 @@ function renderRadarChart() {
                     stats.insight,
                     stats.creativity
                 ],
-                backgroundColor: 'rgba(0, 255, 136, 0.2)',
-                borderColor: '#00ff88',
+                backgroundColor: 'rgba(60, 180, 137, 0.2)',
+                borderColor: '#3cb489',
                 borderWidth: 2,
-                pointBackgroundColor: '#00ff88',
-                pointBorderColor: '#00ff88',
+                pointBackgroundColor: '#3cb489',
+                pointBorderColor: '#3cb489',
                 pointRadius: 4
             }]
         },
@@ -774,9 +773,9 @@ function renderRadarChart() {
             maintainAspectRatio: false,
             scales: {
                 r: {
-                    angleLines: { color: 'rgba(255,255,255,0.1)' },
-                    grid: { color: 'rgba(255,255,255,0.1)' },
-                    pointLabels: { color: '#8b8b9a', font: { size: 10 } },
+                    angleLines: { color: 'rgba(60, 180, 137, 0.2)' },
+                    grid: { color: 'rgba(60, 180, 137, 0.2)' },
+                    pointLabels: { color: '#f5e6c8', font: { size: 10 } },
                     ticks: { display: false },
                     min: 0,
                     max: 100
@@ -790,15 +789,19 @@ function renderRadarChart() {
 }
 
 function renderMiniTrendChart() {
-    const trend = AppState.reportsData.trend;
+    const canvas = document.getElementById('miniTrendChart');
+    if (!canvas) return;
     
-    new Chart(document.getElementById('miniTrendChart'), {
+    const trend = AppState.reportsData.trend;
+    if (!trend) return;
+    
+    new Chart(canvas, {
         type: 'line',
         data: {
             labels: trend.dates,
             datasets: [{
                 data: trend.skills,
-                borderColor: '#00ff88',
+                borderColor: '#3cb489',
                 borderWidth: 2,
                 fill: false,
                 tension: 0.4,
@@ -820,9 +823,13 @@ function renderMiniTrendChart() {
 }
 
 function renderTrendChart() {
-    const trend = AppState.reportsData.trend;
+    const canvas = document.getElementById('trendChart');
+    if (!canvas) return;
     
-    new Chart(document.getElementById('trendChart'), {
+    const trend = AppState.reportsData.trend;
+    if (!trend) return;
+    
+    new Chart(canvas, {
         type: 'line',
         data: {
             labels: trend.dates,
@@ -830,8 +837,8 @@ function renderTrendChart() {
                 {
                     label: '技能',
                     data: trend.skills,
-                    borderColor: '#00ff88',
-                    backgroundColor: 'rgba(0,255,136,0.1)',
+                    borderColor: '#3cb489',
+                    backgroundColor: 'rgba(60,180,137,0.1)',
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -840,8 +847,8 @@ function renderTrendChart() {
                 {
                     label: '知识',
                     data: trend.knowledge,
-                    borderColor: '#bf7fff',
-                    backgroundColor: 'rgba(191,127,255,0.1)',
+                    borderColor: '#c9a227',
+                    backgroundColor: 'rgba(201,162,39,0.1)',
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -850,8 +857,8 @@ function renderTrendChart() {
                 {
                     label: '记忆',
                     data: trend.memory,
-                    borderColor: '#ff9500',
-                    backgroundColor: 'rgba(255,149,0,0.1)',
+                    borderColor: '#d4764c',
+                    backgroundColor: 'rgba(212,118,76,0.1)',
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -868,32 +875,22 @@ function renderTrendChart() {
             },
             scales: {
                 x: {
-                    grid: { color: 'rgba(255,255,255,0.05)' },
-                    ticks: { color: '#5a5a6e', font: { size: 10 } }
+                    grid: { color: 'rgba(60,180,137,0.1)' },
+                    ticks: { color: '#6b5344', font: { size: 10 } }
                 },
                 y: {
-                    grid: { color: 'rgba(255,255,255,0.05)' },
-                    ticks: { color: '#5a5a6e', font: { size: 10 } }
+                    grid: { color: 'rgba(60,180,137,0.1)' },
+                    ticks: { color: '#6b5344', font: { size: 10 } }
                 }
             },
             plugins: {
                 legend: {
                     position: 'top',
                     labels: {
-                        color: '#8b8b9a',
+                        color: '#6b5344',
                         usePointStyle: true,
                         font: { size: 11 }
                     }
-                },
-                tooltip: {
-                    enabled: true,
-                    backgroundColor: 'rgba(26, 27, 46, 0.95)',
-                    titleColor: '#ffffff',
-                    bodyColor: '#8b8b9a',
-                    borderColor: '#bf7fff',
-                    borderWidth: 1,
-                    cornerRadius: 8,
-                    padding: 12
                 }
             }
         }
@@ -943,7 +940,9 @@ function showSkillTooltip(event, id) {
 }
 
 function hideTooltip() {
-    DOM.tooltip.classList.remove('visible');
+    if (DOM.tooltip) {
+        DOM.tooltip.classList.remove('visible');
+    }
 }
 
 // 全局暴露

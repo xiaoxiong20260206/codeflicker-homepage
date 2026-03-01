@@ -808,6 +808,191 @@
         
         .footer-link:hover { color: var(--gold); }
         
+        /* ==================== Tooltip ==================== */
+        .tooltip {
+            position: fixed;
+            z-index: 9999;
+            max-width: 320px;
+            background: linear-gradient(135deg, #1a1b2e 0%, #252740 100%);
+            border: 1px solid;
+            border-radius: 8px;
+            padding: 0;
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.2s, transform 0.2s;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .tooltip.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tooltip.skill { border-color: var(--green); }
+        .tooltip.knowledge { border-color: var(--purple); }
+        .tooltip.memory { border-color: var(--orange); }
+        
+        .tooltip-header {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .tooltip-icon {
+            width: 40px; height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        
+        .tooltip.skill .tooltip-header { background: rgba(0, 255, 136, 0.1); }
+        .tooltip.skill .tooltip-icon { background: rgba(0, 255, 136, 0.2); }
+        .tooltip.knowledge .tooltip-header { background: rgba(191, 127, 255, 0.1); }
+        .tooltip.knowledge .tooltip-icon { background: rgba(191, 127, 255, 0.2); }
+        .tooltip.memory .tooltip-header { background: rgba(255, 149, 0, 0.1); }
+        .tooltip.memory .tooltip-icon { background: rgba(255, 149, 0, 0.2); }
+        
+        .tooltip-title {
+            flex: 1;
+        }
+        
+        .tooltip-name {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        
+        .tooltip-type {
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+        
+        .tooltip-level {
+            text-align: right;
+        }
+        
+        .tooltip-level-num {
+            font-family: 'Orbitron', monospace;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .tooltip.skill .tooltip-level-num { color: var(--green); }
+        .tooltip.knowledge .tooltip-level-num { color: var(--purple); }
+        .tooltip.memory .tooltip-level-num { color: var(--orange); }
+        
+        .tooltip-level-max {
+            font-size: 11px;
+            color: var(--text-dark);
+        }
+        
+        .tooltip-body {
+            padding: 12px 16px;
+        }
+        
+        .tooltip-section {
+            margin-bottom: 12px;
+        }
+        
+        .tooltip-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .tooltip-section-title {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+        
+        .tooltip-desc {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+        
+        .tooltip-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .tooltip-stat {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 8px 10px;
+            border-radius: 4px;
+        }
+        
+        .tooltip-stat-label {
+            font-size: 10px;
+            color: var(--text-dark);
+            margin-bottom: 2px;
+        }
+        
+        .tooltip-stat-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        
+        .tooltip-progress {
+            margin-top: 8px;
+        }
+        
+        .tooltip-progress-bar {
+            height: 6px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+        
+        .tooltip-progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.3s;
+        }
+        
+        .tooltip.skill .tooltip-progress-fill { background: var(--green); }
+        .tooltip.knowledge .tooltip-progress-fill { background: var(--purple); }
+        .tooltip.memory .tooltip-progress-fill { background: var(--orange); }
+        
+        .tooltip-progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text-dark);
+        }
+        
+        .tooltip-upgrade {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 4px;
+            padding: 10px;
+        }
+        
+        .tooltip-upgrade-title {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 6px;
+        }
+        
+        .tooltip-upgrade-text {
+            font-size: 11px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+        
         /* 加载 */
         .loading {
             display: flex;
@@ -1045,6 +1230,9 @@
             document.getElementById('skill-total').textContent = skills.total;
             document.getElementById('skill-cats').textContent = Object.keys(skills.categories).length;
             
+            // 存储技能数据用于tooltip
+            let skillIndex = 0;
+            
             let html = '';
             for (const [name, cat] of Object.entries(skills.categories)) {
                 const avgLv = Math.round(cat.avgLevel);
@@ -1072,8 +1260,13 @@
                         </div>
                         <div class="skill-list">
                             <div class="skill-grid">
-                                ${cat.skills.map(s => `
-                                    <div class="skill-item">
+                                ${cat.skills.map(s => {
+                                    const sid = 'skill-' + (skillIndex++);
+                                    window.skillDataMap[sid] = { ...s, icon: '⚡', catName: name, catIcon: cat.icon };
+                                    return `
+                                    <div class="skill-item" data-skill-id="${sid}"
+                                         onmouseenter="showTooltip(event, window.skillDataMap['${sid}'], 'skill')"
+                                         onmouseleave="hideTooltip()">
                                         <div class="skill-icon-small" style="border-color: ${color};">⚡</div>
                                         <div class="skill-content">
                                             <div class="skill-name">${s.name}</div>
@@ -1086,7 +1279,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                `).join('')}
+                                `}).join('')}
                             </div>
                         </div>
                     </div>
@@ -1099,14 +1292,24 @@
             const k = data.knowledge;
             document.getElementById('knowledge-total').textContent = k.totalFiles;
             
+            let kidx = 0;
             let html = '';
             for (const [name, cat] of Object.entries(k.categories)) {
                 const progress = (cat.heatLevel / 5) * 100;
                 const color = cat.color || '#bf7fff';
+                const kid = 'knowledge-' + (kidx++);
+                window.knowledgeDataMap[kid] = { 
+                    ...cat, 
+                    name: name,
+                    level: cat.heatLevel,
+                    description: `${name}领域的知识文档集合，包含${cat.fileCount}篇文档。`
+                };
                 
                 html += `
                     <div class="skill-category" data-cat="${name}">
-                        <div class="category-header" onclick="toggle(this)">
+                        <div class="category-header" onclick="toggle(this)"
+                             onmouseenter="showTooltip(event, window.knowledgeDataMap['${kid}'], 'knowledge')"
+                             onmouseleave="hideTooltip()">
                             <div class="category-icon" style="border-color: ${color}; color: ${color};">${cat.icon}</div>
                             <div class="category-info">
                                 <div class="category-name">${name}</div>
@@ -1166,6 +1369,7 @@
                 grouped[cat].items.push(mem);
             }
             
+            let midx = 0;
             let html = '';
             for (const [catKey, cat] of Object.entries(grouped)) {
                 const avgImp = Math.round(cat.items.reduce((s, x) => s + x.importance, 0) / cat.items.length);
@@ -1193,8 +1397,18 @@
                         </div>
                         <div class="skill-list">
                             <div class="skill-grid">
-                                ${cat.items.map(mem => `
-                                    <div class="skill-item">
+                                ${cat.items.map(mem => {
+                                    const mid = 'memory-' + (midx++);
+                                    window.memoryDataMap[mid] = {
+                                        ...mem,
+                                        name: mem.title,
+                                        level: mem.importance,
+                                        description: `${cat.label}类型的记忆。` + (mem.keywords && mem.keywords.length ? `关键词：${mem.keywords.join('、')}` : '')
+                                    };
+                                    return `
+                                    <div class="skill-item" data-memory-id="${mid}"
+                                         onmouseenter="showTooltip(event, window.memoryDataMap['${mid}'], 'memory')"
+                                         onmouseleave="hideTooltip()">
                                         <div class="skill-icon-small">${mem.icon}</div>
                                         <div class="skill-content">
                                             <div class="skill-name">${mem.title}</div>
@@ -1211,7 +1425,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                `).join('')}
+                                `}).join('')}
                             </div>
                         </div>
                     </div>
@@ -1297,6 +1511,153 @@
                 }
             });
         }
+        
+        // ==================== Tooltip System ====================
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.innerHTML = `
+            <div class="tooltip-header">
+                <div class="tooltip-icon"></div>
+                <div class="tooltip-title">
+                    <div class="tooltip-name"></div>
+                    <div class="tooltip-type"></div>
+                </div>
+                <div class="tooltip-level">
+                    <div class="tooltip-level-num"></div>
+                    <div class="tooltip-level-max">/5</div>
+                </div>
+            </div>
+            <div class="tooltip-body">
+                <div class="tooltip-section tooltip-desc-section">
+                    <div class="tooltip-section-title">描述</div>
+                    <div class="tooltip-desc"></div>
+                </div>
+                <div class="tooltip-section tooltip-stats-section">
+                    <div class="tooltip-section-title">当前状态</div>
+                    <div class="tooltip-stats"></div>
+                    <div class="tooltip-progress">
+                        <div class="tooltip-progress-bar"><div class="tooltip-progress-fill"></div></div>
+                        <div class="tooltip-progress-text"><span class="progress-current"></span><span class="progress-next"></span></div>
+                    </div>
+                </div>
+                <div class="tooltip-section tooltip-upgrade-section">
+                    <div class="tooltip-upgrade">
+                        <div class="tooltip-upgrade-title">⬆️ 升级指南</div>
+                        <div class="tooltip-upgrade-text"></div>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(tooltip);
+        
+        function getSkillUpgradeGuide(level, exp, type) {
+            if (type === 'skill') {
+                if (level >= 5) return '已达到最高等级！继续使用可以积累更多经验。';
+                if (level === 4) return '完善技能文档，增加使用案例，即可升至满级。';
+                if (level === 3) return '提高使用频率，丰富 SKILL.md 文档内容。';
+                if (level === 2) return '创建详细的 SKILL.md 文件，添加更多支持文件。';
+                return '开始使用此技能，创建基础文档即可升级。';
+            } else if (type === 'knowledge') {
+                if (level >= 5) return '此领域知识已非常丰富！持续更新保持活跃度。';
+                if (level === 4) return '增加更多文档，保持每周更新可达满级。';
+                if (level === 3) return '扩展文档数量至20+，定期更新内容。';
+                return '增加此领域的文档数量，提高更新频率。';
+            } else {
+                if (level >= 5) return '核心记忆！此记忆对工作非常重要。';
+                if (level === 4) return '重要记忆。增加关键词可提高检索效率。';
+                if (level === 3) return '添加更多关键词，丰富记忆内容。';
+                return '扩展记忆内容，添加关键词标签。';
+            }
+        }
+        
+        function showTooltip(e, itemData, type) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            
+            tooltip.className = 'tooltip ' + type;
+            tooltip.querySelector('.tooltip-icon').textContent = itemData.icon || (type === 'skill' ? '⚡' : type === 'knowledge' ? '📚' : '🧠');
+            tooltip.querySelector('.tooltip-name').textContent = itemData.name || itemData.title;
+            tooltip.querySelector('.tooltip-type').textContent = 
+                type === 'skill' ? '技能' : type === 'knowledge' ? '知识库' : '记忆';
+            tooltip.querySelector('.tooltip-level-num').textContent = 'Lv.' + (itemData.level || itemData.heatLevel || itemData.importance || 1);
+            
+            // 描述
+            const desc = itemData.description || itemData.desc || '暂无详细描述';
+            tooltip.querySelector('.tooltip-desc').textContent = desc;
+            
+            // 状态统计
+            const statsEl = tooltip.querySelector('.tooltip-stats');
+            const level = itemData.level || itemData.heatLevel || itemData.importance || 1;
+            const exp = itemData.exp || (level * 20);
+            
+            if (type === 'skill') {
+                statsEl.innerHTML = `
+                    <div class="tooltip-stat">
+                        <div class="tooltip-stat-label">当前等级</div>
+                        <div class="tooltip-stat-value" style="color: ${getLevelColor(level)};">Lv.${level}</div>
+                    </div>
+                    <div class="tooltip-stat">
+                        <div class="tooltip-stat-label">经验值</div>
+                        <div class="tooltip-stat-value">${exp}%</div>
+                    </div>
+                `;
+            } else if (type === 'knowledge') {
+                statsEl.innerHTML = `
+                    <div class="tooltip-stat">
+                        <div class="tooltip-stat-label">热度等级</div>
+                        <div class="tooltip-stat-value" style="color: var(--purple);">Lv.${level}</div>
+                    </div>
+                    <div class="tooltip-stat">
+                        <div class="tooltip-stat-label">文档数</div>
+                        <div class="tooltip-stat-value">${itemData.fileCount || '-'}</div>
+                    </div>
+                `;
+            } else {
+                statsEl.innerHTML = `
+                    <div class="tooltip-stat">
+                        <div class="tooltip-stat-label">重要性</div>
+                        <div class="tooltip-stat-value" style="color: var(--orange);">Lv.${level}</div>
+                    </div>
+                    <div class="tooltip-stat">
+                        <div class="tooltip-stat-label">关键词</div>
+                        <div class="tooltip-stat-value">${(itemData.keywords || []).length}</div>
+                    </div>
+                `;
+            }
+            
+            // 进度条
+            tooltip.querySelector('.tooltip-progress-fill').style.width = (level / 5 * 100) + '%';
+            tooltip.querySelector('.progress-current').textContent = `当前: Lv.${level}`;
+            tooltip.querySelector('.progress-next').textContent = level >= 5 ? '已满级' : `下一级: Lv.${level + 1}`;
+            
+            // 升级指南
+            tooltip.querySelector('.tooltip-upgrade-text').textContent = getSkillUpgradeGuide(level, exp, type);
+            
+            // 定位
+            let left = rect.right + 15;
+            let top = rect.top;
+            
+            // 边界检测
+            if (left + 320 > window.innerWidth) {
+                left = rect.left - 320 - 15;
+            }
+            if (top + tooltip.offsetHeight > window.innerHeight) {
+                top = window.innerHeight - tooltip.offsetHeight - 20;
+            }
+            if (top < 20) top = 20;
+            
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+            tooltip.classList.add('visible');
+        }
+        
+        function hideTooltip() {
+            tooltip.classList.remove('visible');
+        }
+        
+        // 存储数据用于tooltip
+        window.skillDataMap = {};
+        window.knowledgeDataMap = {};
+        window.memoryDataMap = {};
         
         document.addEventListener('DOMContentLoaded', loadData);
     </script>

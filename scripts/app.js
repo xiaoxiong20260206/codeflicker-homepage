@@ -691,54 +691,28 @@ function renderKnowledgeTreeGraph(knowledge) {
         const dirKey = dir.key || dir.name;
         const chineseName = knowledgeNameMap[dirKey] || dirKey;
         const sourceDesc = knowledgeSourceMap[dirKey] || `${chineseName}相关文档`;
-        const dirId = 'knowledge-dir-' + idx;
+        const dirId = 'knowledge-dir-' + idx++;
+        
+        // 根据文件数量计算等级：1-10为Lv1, 11-30为Lv2, 31-60为Lv3, 61-100为Lv4, 100+为Lv5
+        const level = dir.count <= 10 ? 1 : dir.count <= 30 ? 2 : dir.count <= 60 ? 3 : dir.count <= 100 ? 4 : 5;
         
         AppState.dataMap[dirId] = { 
             name: chineseName, 
             icon: '📁', 
-            level: Math.min(5, Math.ceil(dir.count / 30)), // 根据文件数量计算等级
+            level: level,
             description: `${chineseName}知识库，共收录${dir.count}个文档${dir.sizeKB ? `，总计${dir.sizeKB}KB` : ''}`,
             source: sourceDesc
         };
         
-        let leaves = '';
-        const fileCount = Math.min(dir.count, 8);
-        // 知识树叶子节点显示简短标签
-        const leafLabels = ['文档', '笔记', '报告', '分析', '总结', '记录', '思考', '草稿'];
-        for (let i = 0; i < fileCount; i++) {
-            const fid = 'knowledge-file-' + (idx++);
-            const leafLabel = leafLabels[i % leafLabels.length];
-            AppState.dataMap[fid] = { 
-                name: `${chineseName} #${i+1}`, 
-                icon: '📄', 
-                level: 3, 
-                description: `${chineseName}目录下的文档`,
-                source: `来源：${sourceDesc}`
-            };
-            leaves += `
-                <div class="leaf-node lv3" 
-                     style="border-color: var(--node-color); color: var(--node-color);"
-                     onmouseenter="showTreeTooltip(event, '${fid}', 'knowledge')" onmouseleave="hideTooltip()">
-                    <span class="leaf-name">${leafLabel}</span>
-                </div>
-            `;
-        }
-        
-        if (dir.count > 8) {
-            leaves += `<div class="leaf-more">+${dir.count - 8}</div>`;
-        }
-        
+        // 知识树直接展示分类节点作为末级节点，不再展开叶子节点
         branches += `
             <div class="branch" style="color: var(--zelda-gold);">
-                <div class="category-node lv3" 
-                     style="border-color: var(--zelda-gold); color: var(--zelda-gold);"
+                <div class="leaf-node lv${level}" 
+                     style="border-color: var(--node-color); color: var(--node-color);"
                      onmouseenter="showTreeTooltip(event, '${dirId}', 'knowledge')" onmouseleave="hideTooltip()">
-                    <span class="cat-icon">📁</span>
-                    <span class="cat-name">${chineseName}</span>
-                    <span class="cat-count" style="border-color: var(--zelda-gold);">${dir.count}</span>
-                </div>
-                <div class="leaves" style="color: var(--zelda-gold);">
-                    ${leaves}
+                    <span class="leaf-icon">📁</span>
+                    <span class="leaf-name">${chineseName}</span>
+                    <span class="leaf-level" style="border-color: var(--node-color);">${dir.count}</span>
                 </div>
             </div>
         `;

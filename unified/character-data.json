@@ -1,0 +1,972 @@
+{
+  "generatedAt": "2026-03-01T18:48:49.165072",
+  "character": {
+    "name": "TIANQI",
+    "title": "单虓晗的数字分身",
+    "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
+    "version": "6.0",
+    "level": 5,
+    "totalExp": 5840,
+    "expProgress": 28.0,
+    "currentThreshold": 5000,
+    "nextThreshold": 8000,
+    "stats": {
+      "reasoning": 100,
+      "memory": 100,
+      "execution": 100,
+      "learning": 97.69999999999999,
+      "insight": 79.54545454545455,
+      "creativity": 100
+    }
+  },
+  "skills": {
+    "total": 33,
+    "categories": {
+      "文档处理": {
+        "icon": "📄",
+        "color": "#38bdf8",
+        "skills": [
+          {
+            "name": "pdf",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 85,
+            "description": "PDF文档读取、提取、合并、拆分、OCR识别等全功能处理",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "pptx",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 85,
+            "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "docx",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "Word文档创建、编辑、格式化，支持目录、页眉页脚、样式等",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "xlsx",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "Excel电子表格处理，支持公式、图表、数据分析",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "canvas-design",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
+            "lastUpdated": "2026-02-08"
+          }
+        ],
+        "count": 5,
+        "avgLevel": 4.0
+      },
+      "调研分析": {
+        "icon": "🔬",
+        "color": "#a78bfa",
+        "skills": [
+          {
+            "name": "industry-research",
+            "source": "单虓晗自定义",
+            "level": 3,
+            "exp": 63,
+            "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "apify-trend-analysis",
+            "source": "Cursor技能库",
+            "level": 2,
+            "exp": 57,
+            "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "apify-market-research",
+            "source": "Cursor技能库",
+            "level": 2,
+            "exp": 57,
+            "description": "市场调研，分析地理机会、定价、消费者行为",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "apify-competitor-intelligence",
+            "source": "Cursor技能库",
+            "level": 2,
+            "exp": 57,
+            "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "research",
+            "source": "Claude技能库",
+            "level": 2,
+            "exp": 54,
+            "description": "AI驱动的通用研究能力，带引用的综合调研",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "wechat-research",
+            "source": "单虓晗自定义",
+            "level": 2,
+            "exp": 48,
+            "description": "微信公众号内容调研、整理和知识库构建",
+            "lastUpdated": "2026-02-12"
+          }
+        ],
+        "count": 6,
+        "avgLevel": 2.2
+      },
+      "开发工具": {
+        "icon": "🛠️",
+        "color": "#4ade80",
+        "skills": [
+          {
+            "name": "docs-shuttle",
+            "source": "单虓晗自定义",
+            "level": 5,
+            "exp": 90,
+            "description": "快手内网Docs文档与本地Markdown双向同步",
+            "lastUpdated": "2026-03-01"
+          },
+          {
+            "name": "github-deploy-publisher",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 76,
+            "description": "自动化GitHub仓库创建、代码提交、Pages部署",
+            "lastUpdated": "2026-02-25"
+          },
+          {
+            "name": "mcp-builder",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 75,
+            "description": "MCP服务器开发指南，让LLM对接外部API服务",
+            "lastUpdated": "2026-02-05"
+          },
+          {
+            "name": "yuque-publisher",
+            "source": "单虓晗自定义",
+            "level": 3,
+            "exp": 58,
+            "description": "语雀知识库文档自动发布、同步和管理",
+            "lastUpdated": "2026-02-25"
+          },
+          {
+            "name": "knowledge-base",
+            "source": "单虓晗自定义",
+            "level": 3,
+            "exp": 58,
+            "description": "个人知识库检索，按分类查找历史调研和文档",
+            "lastUpdated": "2026-02-24"
+          }
+        ],
+        "count": 5,
+        "avgLevel": 3.8
+      },
+      "前端设计": {
+        "icon": "🎨",
+        "color": "#f472b6",
+        "skills": [
+          {
+            "name": "ui-ux-pro-max-skill",
+            "source": "codeflicker",
+            "level": 5,
+            "exp": 95,
+            "description": "---",
+            "lastUpdated": "2026-03-01"
+          },
+          {
+            "name": "pixel-action-game",
+            "source": "单虓晗自定义",
+            "level": 5,
+            "exp": 85,
+            "description": "像素风格动作游戏开发，含关卡设计和8位音效",
+            "lastUpdated": "2026-02-22"
+          },
+          {
+            "name": "ui-ux-pro-max",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "theme-factory",
+            "source": "Cursor技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "主题工厂，10种预设主题快速应用于各类文档",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "qingshuang-research-style",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 73,
+            "description": "清爽调研报告风格的CSS样式规范",
+            "lastUpdated": "2026-02-23"
+          },
+          {
+            "name": "work-report-ppt",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 70,
+            "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
+            "lastUpdated": "2026-02-27"
+          },
+          {
+            "name": "frontend-design",
+            "source": "Cursor技能库",
+            "level": 2,
+            "exp": 51,
+            "description": "高质量前端界面设计，避免通用AI风格",
+            "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "web-design-guidelines",
+            "source": "Cursor技能库",
+            "level": 2,
+            "exp": 48,
+            "description": "Web界面设计规范审查，检查无障碍和最佳实践",
+            "lastUpdated": "2026-02-09"
+          }
+        ],
+        "count": 8,
+        "avgLevel": 3.8
+      },
+      "React生态": {
+        "icon": "⚛️",
+        "color": "#61dafb",
+        "skills": [
+          {
+            "name": "vercel-react-best-practices",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 80,
+            "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "vercel-react-native-skills",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 80,
+            "description": "React Native和Expo移动应用开发最佳实践",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "vercel-composition-patterns",
+            "source": "Cursor技能库",
+            "level": 4,
+            "exp": 80,
+            "description": "React组合模式，构建可扩展的组件架构",
+            "lastUpdated": "2026-02-09"
+          },
+          {
+            "name": "remotion-best-practices",
+            "source": "Cursor技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "Remotion视频创作最佳实践，用React制作视频",
+            "lastUpdated": "2026-02-08"
+          }
+        ],
+        "count": 4,
+        "avgLevel": 4.0
+      },
+      "个人助理": {
+        "icon": "🤖",
+        "color": "#fb923c",
+        "skills": [
+          {
+            "name": "stock-analysis",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 91,
+            "description": "股票和加密货币分析，投资组合管理，定期报告",
+            "lastUpdated": "2026-02-25"
+          },
+          {
+            "name": "personal-assistant",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 84,
+            "description": "个人助理能力，日程管理、任务追踪、习惯监控",
+            "lastUpdated": "2026-02-25"
+          },
+          {
+            "name": "investment-analyzer",
+            "source": "外部导入",
+            "level": 3,
+            "exp": 58,
+            "description": "---",
+            "lastUpdated": "2026-02-25"
+          },
+          {
+            "name": "feishu-assistant",
+            "source": "单虓晗自定义",
+            "level": 3,
+            "exp": 58,
+            "description": "飞书消息自动化发送和接收，对接飞书助手",
+            "lastUpdated": "2026-02-27"
+          },
+          {
+            "name": "find-skills",
+            "source": "Cursor技能库",
+            "level": 2,
+            "exp": 48,
+            "description": "技能发现和安装助手，寻找合适的能力扩展",
+            "lastUpdated": "2026-02-09"
+          }
+        ],
+        "count": 5,
+        "avgLevel": 3.2
+      }
+    }
+  },
+  "knowledge": {
+    "categories": {
+      "personal-writings": {
+        "name": "personal-writings",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "personal-writings相关文档",
+        "fileCount": 131,
+        "sizeKB": 862.8,
+        "heatLevel": 5,
+        "recentCount": 131
+      },
+      "rd-efficiency": {
+        "name": "rd-efficiency",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "rd-efficiency相关文档",
+        "fileCount": 18,
+        "sizeKB": 115.5,
+        "heatLevel": 5,
+        "recentCount": 18
+      },
+      "financial": {
+        "name": "financial",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "financial相关文档",
+        "fileCount": 3,
+        "sizeKB": 0.0,
+        "heatLevel": 2,
+        "recentCount": 0
+      },
+      "experience": {
+        "name": "experience",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "experience相关文档",
+        "fileCount": 2,
+        "sizeKB": 0.0,
+        "heatLevel": 2,
+        "recentCount": 0
+      },
+      "guides": {
+        "name": "guides",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "guides相关文档",
+        "fileCount": 2,
+        "sizeKB": 0.0,
+        "heatLevel": 2,
+        "recentCount": 0
+      },
+      "investment": {
+        "name": "investment",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "investment相关文档",
+        "fileCount": 1,
+        "sizeKB": 0.0,
+        "heatLevel": 1,
+        "recentCount": 0
+      },
+      "ai-research": {
+        "name": "ai-research",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "ai-research相关文档",
+        "fileCount": 1,
+        "sizeKB": 0.0,
+        "heatLevel": 1,
+        "recentCount": 0
+      },
+      "product": {
+        "name": "product",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "product相关文档",
+        "fileCount": 1,
+        "sizeKB": 0.0,
+        "heatLevel": 1,
+        "recentCount": 0
+      }
+    },
+    "totalFiles": 159,
+    "totalSizeKB": 978.3
+  },
+  "memories": {
+    "items": [
+      {
+        "title": "单虓晗（Shawn）思想体系与写作风格",
+        "category": "user_info",
+        "categoryLabel": "用户信息",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征。关键词: 单虓晗, Shawn, 思维地图",
+        "keywords": [
+          "单虓晗",
+          "Shawn",
+          "思维地图",
+          "认知框架",
+          "方法论"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-02-26",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "小无相功·自动学习模式",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 小无相功, 自动学习, 主动学习",
+        "keywords": [
+          "小无相功",
+          "自动学习",
+          "主动学习",
+          "技能吸收",
+          "知识内化"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "已完成项目列表与路径",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 项目列表, 字节AI, 调研",
+        "keywords": [
+          "项目列表",
+          "字节AI",
+          "调研",
+          "飞书机器人",
+          "日报"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "日报系统优化最佳实践",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 日报优化, 能力统计, 记忆扫描",
+        "keywords": [
+          "日报优化",
+          "能力统计",
+          "记忆扫描",
+          "趋势判断",
+          "增量显示"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "每日例行任务：日报生成与能力迭代流程",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 每日任务, 日报, 例行执行",
+        "keywords": [
+          "每日任务",
+          "日报",
+          "例行执行",
+          "能力迭代",
+          "自我总结"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "添棋飞书对话基本技能：本体与对话渠道分离",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 添棋, 飞书, 对话",
+        "keywords": [
+          "添棋",
+          "飞书",
+          "对话",
+          "本体",
+          "个人助理V1"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "清爽调研报告风格页面的渐进式开发规则",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发规范",
+        "icon": "🔧",
+        "color": "#fb923c",
+        "description": "开发实践规范、代码标准、输出格式。关键词: 清爽调研报告风格, qingshuang-research-style, skill",
+        "keywords": [
+          "清爽调研报告风格",
+          "qingshuang-research-style",
+          "skill",
+          "渐进式开发",
+          "CSS规范"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-02-26",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI助手\"添棋\"身份信息",
+        "category": "user_info",
+        "categoryLabel": "用户信息",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征。关键词: 添棋, TianQi, AI助手",
+        "keywords": [
+          "添棋",
+          "TianQi",
+          "AI助手",
+          "数字分身",
+          "名称"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-27",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "思想体系可视化能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 思想体系, 可视化, 结构化",
+        "keywords": [
+          "思想体系",
+          "可视化",
+          "结构化",
+          "逻辑图",
+          "长文档"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "文档修改同步规则",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 同步, 更新, markdown",
+        "keywords": [
+          "同步",
+          "更新",
+          "markdown",
+          "html",
+          "网页"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-23",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "日报列表同步遗漏问题及修复方案",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#facc15",
+        "description": "常见问题、踩坑记录、修复方案。关键词: 日报列表, about.html, update-homepage.sh",
+        "keywords": [
+          "日报列表",
+          "about.html",
+          "update-homepage.sh",
+          "同步日报",
+          "首页更新"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "用户身份信息",
+        "category": "user_info",
+        "categoryLabel": "用户信息",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征。关键词: 单虓晗, Shawn, 沈浪",
+        "keywords": [
+          "单虓晗",
+          "Shawn",
+          "沈浪",
+          "用户身份",
+          "花名"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "类比驱动解释能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 类比, 解释, 抽象概念",
+        "keywords": [
+          "类比",
+          "解释",
+          "抽象概念",
+          "通俗易懂",
+          "比喻"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "网页开发预览偏好",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 网页预览, 自动部署, 页面链接",
+        "keywords": [
+          "网页预览",
+          "自动部署",
+          "页面链接",
+          "HTML展示",
+          "开发流程"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "身份保密规则",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "约束规则",
+        "icon": "🔒",
+        "color": "#f87171",
+        "description": "必须遵守的约束、禁止事项、保密规则。关键词: 保密规则, 禁止规则, 身份保护",
+        "keywords": [
+          "保密规则",
+          "禁止规则",
+          "身份保护",
+          "隐私",
+          "对外输出"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "输出链接格式规范",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发规范",
+        "icon": "🔧",
+        "color": "#fb923c",
+        "description": "开发实践规范、代码标准、输出格式。关键词: 链接格式, URL输出, 文本分隔",
+        "keywords": [
+          "链接格式",
+          "URL输出",
+          "文本分隔",
+          "输出规范",
+          "开发实践"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "迭代式完善能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 迭代, 快速反馈, 持续优化",
+        "keywords": [
+          "迭代",
+          "快速反馈",
+          "持续优化",
+          "MVP",
+          "版本迭代"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "隐藏前提识别能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 隐藏前提, 论证, 分析",
+        "keywords": [
+          "隐藏前提",
+          "论证",
+          "分析",
+          "逻辑",
+          "假设"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 工作模式, 默认风格, 思维方式",
+        "keywords": [
+          "工作模式",
+          "默认风格",
+          "思维方式",
+          "单虓晗",
+          "Shawn"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      }
+    ],
+    "total": 19,
+    "byCategory": {
+      "development_practice_specification": {
+        "count": 2,
+        "label": "开发规范",
+        "icon": "🔧",
+        "color": "#fb923c",
+        "description": "开发实践规范、代码标准、输出格式"
+      },
+      "user_info": {
+        "count": 3,
+        "label": "用户信息",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征"
+      },
+      "user_communication": {
+        "count": 4,
+        "label": "沟通偏好",
+        "icon": "💬",
+        "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好"
+      },
+      "task_flow_experience": {
+        "count": 8,
+        "label": "任务经验",
+        "icon": "📈",
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践"
+      },
+      "constraint_or_forbidden_rule": {
+        "count": 1,
+        "label": "约束规则",
+        "icon": "🔒",
+        "color": "#f87171",
+        "description": "必须遵守的约束、禁止事项、保密规则"
+      },
+      "common_pitfalls_experience": {
+        "count": 1,
+        "label": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#facc15",
+        "description": "常见问题、踩坑记录、修复方案"
+      }
+    }
+  },
+  "growthHistory": {
+    "dates": [
+      "02-28",
+      "02-28",
+      "02-27",
+      "02-27",
+      "02-28",
+      "02-27",
+      "02-28",
+      "02-28",
+      "03-01",
+      "02-28",
+      "02-28",
+      "03-01",
+      "02-28",
+      "02-28"
+    ],
+    "skills": [
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
+      29,
+      28,
+      28,
+      28,
+      29,
+      29
+    ],
+    "knowledge": [
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "memories": [
+      5,
+      5,
+      5,
+      5,
+      5,
+      12,
+      12,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19,
+      19
+    ]
+  },
+  "achievements": [
+    {
+      "id": "first_awakening",
+      "name": "初次觉醒",
+      "desc": "完成首次对话任务",
+      "icon": "🚀",
+      "date": "2026-02-05",
+      "unlocked": true
+    },
+    {
+      "id": "daily_report",
+      "name": "日报系统",
+      "desc": "建立每日自动报告机制",
+      "icon": "📊",
+      "date": "2026-02-25",
+      "unlocked": true
+    },
+    {
+      "id": "xiaowuxianggong",
+      "name": "小无相功",
+      "desc": "解锁自动学习模式",
+      "icon": "🥋",
+      "date": "2026-02-28",
+      "unlocked": true
+    },
+    {
+      "id": "insight_awakening",
+      "name": "洞察觉醒",
+      "desc": "认识到独立洞察能力",
+      "icon": "🧠",
+      "date": "2026-02-28",
+      "unlocked": true
+    },
+    {
+      "id": "bytedance_research",
+      "name": "字节调研",
+      "desc": "完成字节AI开挂指南",
+      "icon": "📝",
+      "date": "2026-02-20",
+      "unlocked": true
+    },
+    {
+      "id": "feishu_bot",
+      "name": "飞书机器人",
+      "desc": "实现IM集成",
+      "icon": "🤖",
+      "date": "2026-02-27",
+      "unlocked": true
+    },
+    {
+      "id": "game_profile",
+      "name": "角色面板",
+      "desc": "创建游戏风格个人页面",
+      "icon": "🎮",
+      "date": "2026-03-01",
+      "unlocked": true
+    },
+    {
+      "id": "skill_master",
+      "name": "技能大师",
+      "desc": "拥有30+技能",
+      "icon": "⚡",
+      "date": "2026-03-01",
+      "unlocked": true
+    },
+    {
+      "id": "knowledge_sage",
+      "name": "知识贤者",
+      "desc": "积累100+知识文档",
+      "icon": "📚",
+      "date": "2026-03-01",
+      "unlocked": true
+    },
+    {
+      "id": "sanqianshijie",
+      "name": "三千世界",
+      "desc": "能模拟任意思维方式",
+      "icon": "🌐",
+      "date": "???",
+      "unlocked": false
+    },
+    {
+      "id": "eternal_memory",
+      "name": "永恒记忆",
+      "desc": "记忆跨模型持久化",
+      "icon": "♾️",
+      "date": "???",
+      "unlocked": false
+    }
+  ]
+}

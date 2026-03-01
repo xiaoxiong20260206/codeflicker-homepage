@@ -841,6 +841,32 @@ function renderAchievements(achievements) {
 }
 
 // ==================== Tooltip ====================
+
+// 升级建议配置
+const upgradeAdvice = {
+    skill: {
+        1: '多练习使用该技能，在实际项目中积累经验',
+        2: '尝试更复杂的使用场景，探索高级功能',
+        3: '结合其他技能组合使用，提升综合能力',
+        4: '沉淀经验总结，形成自己的最佳实践',
+        5: '已达满级！可将经验分享给他人'
+    },
+    knowledge: {
+        1: '继续积累该领域的文档和笔记（目标30篇）',
+        2: '深入学习，产出更多原创内容（目标60篇）',
+        3: '系统整理知识体系，形成专题（目标100篇）',
+        4: '成为该领域专家，持续产出高质量内容',
+        5: '已达满级！知识储备丰富'
+    },
+    memory: {
+        1: '多与AI对话，让助手更了解你的偏好',
+        2: '明确表达个人规范和约束，强化记忆',
+        3: '持续优化工作流程，积累任务经验',
+        4: '形成稳定的协作模式和默契',
+        5: '已达满级！AI已深度了解你'
+    }
+};
+
 function showTreeTooltip(event, id, type) {
     const data = AppState.dataMap[id];
     if (!data) return;
@@ -862,6 +888,8 @@ function showTreeTooltip(event, id, type) {
     const descEl = tooltip.querySelector('.tip-desc');
     const sourceEl = tooltip.querySelector('.tip-source');
     const sourceSection = tooltip.querySelector('.tip-source-section');
+    const upgradeEl = tooltip.querySelector('.tip-upgrade');
+    const upgradeSection = tooltip.querySelector('.tip-upgrade-section');
     
     iconEl.textContent = data.catIcon || data.icon || '⚡';
     nameEl.textContent = data.name;
@@ -879,11 +907,19 @@ function showTreeTooltip(event, id, type) {
         sourceSection.style.display = 'none';
     }
     
+    // 显示升级建议
+    const lv = data.level || 1;
+    if (upgradeEl && upgradeSection) {
+        const advice = upgradeAdvice[type]?.[lv] || '继续探索和积累';
+        upgradeEl.textContent = advice;
+        upgradeEl.style.whiteSpace = 'normal';
+        upgradeSection.style.display = 'block';
+    }
+    
     // 显示进度条
     tooltip.querySelector('.tip-progress').style.display = 'block';
     tooltip.querySelector('.tip-progress-text').style.display = 'flex';
     
-    const lv = data.level || 1;
     tooltip.querySelector('.tip-progress-fill').style.width = (lv / 5 * 100) + '%';
     tooltip.querySelector('.tip-progress-fill').style.background = typeColors[type];
     tooltip.querySelector('.prog-cur').textContent = '当前: Lv.' + lv;

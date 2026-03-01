@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-01T15:13:33.408647",
+  "generatedAt": "2026-03-01T18:48:49.165072",
   "character": {
     "name": "TIANQI",
     "title": "单虓晗的数字分身",
@@ -28,42 +28,42 @@
         "skills": [
           {
             "name": "pdf",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 85,
-            "description": "---",
+            "description": "PDF文档读取、提取、合并、拆分、OCR识别等全功能处理",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "pptx",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 85,
-            "description": "---",
+            "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "docx",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "Word文档创建、编辑、格式化，支持目录、页眉页脚、样式等",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "xlsx",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "Excel电子表格处理，支持公式、图表、数据分析",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "canvas-design",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
             "lastUpdated": "2026-02-08"
           }
         ],
@@ -76,50 +76,50 @@
         "skills": [
           {
             "name": "industry-research",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 63,
-            "description": "---",
+            "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "apify-trend-analysis",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 2,
             "exp": 57,
-            "description": "---",
+            "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "apify-market-research",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 2,
             "exp": 57,
-            "description": "---",
+            "description": "市场调研，分析地理机会、定价、消费者行为",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "apify-competitor-intelligence",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 2,
             "exp": 57,
-            "description": "---",
+            "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "research",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 2,
             "exp": 54,
-            "description": "---",
+            "description": "AI驱动的通用研究能力，带引用的综合调研",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "wechat-research",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 2,
             "exp": 48,
-            "description": "---",
+            "description": "微信公众号内容调研、整理和知识库构建",
             "lastUpdated": "2026-02-12"
           }
         ],
@@ -132,42 +132,42 @@
         "skills": [
           {
             "name": "docs-shuttle",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 5,
             "exp": 90,
-            "description": "---",
+            "description": "快手内网Docs文档与本地Markdown双向同步",
             "lastUpdated": "2026-03-01"
           },
           {
             "name": "github-deploy-publisher",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 76,
-            "description": "---",
+            "description": "自动化GitHub仓库创建、代码提交、Pages部署",
             "lastUpdated": "2026-02-25"
           },
           {
             "name": "mcp-builder",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "MCP服务器开发指南，让LLM对接外部API服务",
             "lastUpdated": "2026-02-05"
           },
           {
             "name": "yuque-publisher",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
-            "description": "---",
+            "description": "语雀知识库文档自动发布、同步和管理",
             "lastUpdated": "2026-02-25"
           },
           {
             "name": "knowledge-base",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
-            "description": "---",
+            "description": "个人知识库检索，按分类查找历史调研和文档",
             "lastUpdated": "2026-02-24"
           }
         ],
@@ -188,58 +188,58 @@
           },
           {
             "name": "pixel-action-game",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 5,
             "exp": 85,
-            "description": "---",
+            "description": "像素风格动作游戏开发，含关卡设计和8位音效",
             "lastUpdated": "2026-02-22"
           },
           {
             "name": "ui-ux-pro-max",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "theme-factory",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "主题工厂，10种预设主题快速应用于各类文档",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "qingshuang-research-style",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 73,
-            "description": "---",
+            "description": "清爽调研报告风格的CSS样式规范",
             "lastUpdated": "2026-02-23"
           },
           {
             "name": "work-report-ppt",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 70,
-            "description": "---",
+            "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
             "lastUpdated": "2026-02-27"
           },
           {
             "name": "frontend-design",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 2,
             "exp": 51,
-            "description": "---",
+            "description": "高质量前端界面设计，避免通用AI风格",
             "lastUpdated": "2026-02-08"
           },
           {
             "name": "web-design-guidelines",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 2,
             "exp": 48,
-            "description": "---",
+            "description": "Web界面设计规范审查，检查无障碍和最佳实践",
             "lastUpdated": "2026-02-09"
           }
         ],
@@ -252,34 +252,34 @@
         "skills": [
           {
             "name": "vercel-react-best-practices",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 80,
-            "description": "---",
+            "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "vercel-react-native-skills",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 80,
-            "description": "---",
+            "description": "React Native和Expo移动应用开发最佳实践",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "vercel-composition-patterns",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 4,
             "exp": 80,
-            "description": "---",
+            "description": "React组合模式，构建可扩展的组件架构",
             "lastUpdated": "2026-02-09"
           },
           {
             "name": "remotion-best-practices",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 4,
             "exp": 75,
-            "description": "---",
+            "description": "Remotion视频创作最佳实践，用React制作视频",
             "lastUpdated": "2026-02-08"
           }
         ],
@@ -292,23 +292,23 @@
         "skills": [
           {
             "name": "stock-analysis",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 91,
-            "description": "---",
+            "description": "股票和加密货币分析，投资组合管理，定期报告",
             "lastUpdated": "2026-02-25"
           },
           {
             "name": "personal-assistant",
-            "source": "agents",
+            "source": "Claude技能库",
             "level": 4,
             "exp": 84,
-            "description": "---",
+            "description": "个人助理能力，日程管理、任务追踪、习惯监控",
             "lastUpdated": "2026-02-25"
           },
           {
             "name": "investment-analyzer",
-            "source": "agents",
+            "source": "外部导入",
             "level": 3,
             "exp": 58,
             "description": "---",
@@ -316,18 +316,18 @@
           },
           {
             "name": "feishu-assistant",
-            "source": "codeflicker",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
-            "description": "当用户说\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\"、\"检查飞书\"时使用此技能。",
+            "description": "飞书消息自动化发送和接收，对接飞书助手",
             "lastUpdated": "2026-02-27"
           },
           {
             "name": "find-skills",
-            "source": "agents",
+            "source": "Cursor技能库",
             "level": 2,
             "exp": 48,
-            "description": "---",
+            "description": "技能发现和安装助手，寻找合适的能力扩展",
             "lastUpdated": "2026-02-09"
           }
         ],
@@ -342,6 +342,7 @@
         "name": "personal-writings",
         "icon": "📁",
         "color": "#64748b",
+        "description": "personal-writings相关文档",
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
@@ -351,6 +352,7 @@
         "name": "rd-efficiency",
         "icon": "📁",
         "color": "#64748b",
+        "description": "rd-efficiency相关文档",
         "fileCount": 18,
         "sizeKB": 115.5,
         "heatLevel": 5,
@@ -360,6 +362,7 @@
         "name": "financial",
         "icon": "📁",
         "color": "#64748b",
+        "description": "financial相关文档",
         "fileCount": 3,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -369,6 +372,7 @@
         "name": "experience",
         "icon": "📁",
         "color": "#64748b",
+        "description": "experience相关文档",
         "fileCount": 2,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -378,6 +382,7 @@
         "name": "guides",
         "icon": "📁",
         "color": "#64748b",
+        "description": "guides相关文档",
         "fileCount": 2,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -387,6 +392,7 @@
         "name": "investment",
         "icon": "📁",
         "color": "#64748b",
+        "description": "investment相关文档",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,
@@ -396,6 +402,7 @@
         "name": "ai-research",
         "icon": "📁",
         "color": "#64748b",
+        "description": "ai-research相关文档",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,
@@ -405,6 +412,7 @@
         "name": "product",
         "icon": "📁",
         "color": "#64748b",
+        "description": "product相关文档",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,
@@ -422,6 +430,7 @@
         "categoryLabel": "用户信息",
         "icon": "👤",
         "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征。关键词: 单虓晗, Shawn, 思维地图",
         "keywords": [
           "单虓晗",
           "Shawn",
@@ -430,7 +439,8 @@
           "方法论"
         ],
         "importance": 5,
-        "updatedAt": "2026-02-26"
+        "updatedAt": "2026-02-26",
+        "source": "用户显式记录"
       },
       {
         "title": "小无相功·自动学习模式",
@@ -438,6 +448,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 小无相功, 自动学习, 主动学习",
         "keywords": [
           "小无相功",
           "自动学习",
@@ -446,7 +457,8 @@
           "知识内化"
         ],
         "importance": 5,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "已完成项目列表与路径",
@@ -454,6 +466,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 项目列表, 字节AI, 调研",
         "keywords": [
           "项目列表",
           "字节AI",
@@ -462,7 +475,8 @@
           "日报"
         ],
         "importance": 5,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "日报系统优化最佳实践",
@@ -470,6 +484,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 日报优化, 能力统计, 记忆扫描",
         "keywords": [
           "日报优化",
           "能力统计",
@@ -478,7 +493,8 @@
           "增量显示"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-01"
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
       },
       {
         "title": "每日例行任务：日报生成与能力迭代流程",
@@ -486,6 +502,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 每日任务, 日报, 例行执行",
         "keywords": [
           "每日任务",
           "日报",
@@ -494,7 +511,8 @@
           "自我总结"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-01"
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
       },
       {
         "title": "添棋飞书对话基本技能：本体与对话渠道分离",
@@ -502,6 +520,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 添棋, 飞书, 对话",
         "keywords": [
           "添棋",
           "飞书",
@@ -510,7 +529,8 @@
           "个人助理V1"
         ],
         "importance": 5,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "清爽调研报告风格页面的渐进式开发规则",
@@ -518,6 +538,7 @@
         "categoryLabel": "开发规范",
         "icon": "🔧",
         "color": "#fb923c",
+        "description": "开发实践规范、代码标准、输出格式。关键词: 清爽调研报告风格, qingshuang-research-style, skill",
         "keywords": [
           "清爽调研报告风格",
           "qingshuang-research-style",
@@ -526,7 +547,8 @@
           "CSS规范"
         ],
         "importance": 5,
-        "updatedAt": "2026-02-26"
+        "updatedAt": "2026-02-26",
+        "source": "用户显式记录"
       },
       {
         "title": "AI助手\"添棋\"身份信息",
@@ -534,6 +556,7 @@
         "categoryLabel": "用户信息",
         "icon": "👤",
         "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征。关键词: 添棋, TianQi, AI助手",
         "keywords": [
           "添棋",
           "TianQi",
@@ -542,7 +565,8 @@
           "名称"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-27"
+        "updatedAt": "2026-02-27",
+        "source": "用户显式记录"
       },
       {
         "title": "思想体系可视化能力",
@@ -550,6 +574,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 思想体系, 可视化, 结构化",
         "keywords": [
           "思想体系",
           "可视化",
@@ -558,7 +583,8 @@
           "长文档"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "文档修改同步规则",
@@ -566,6 +592,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 同步, 更新, markdown",
         "keywords": [
           "同步",
           "更新",
@@ -574,7 +601,8 @@
           "网页"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-23"
+        "updatedAt": "2026-02-23",
+        "source": "用户显式记录"
       },
       {
         "title": "日报列表同步遗漏问题及修复方案",
@@ -582,6 +610,7 @@
         "categoryLabel": "踩坑经验",
         "icon": "⚠️",
         "color": "#facc15",
+        "description": "常见问题、踩坑记录、修复方案。关键词: 日报列表, about.html, update-homepage.sh",
         "keywords": [
           "日报列表",
           "about.html",
@@ -590,7 +619,8 @@
           "首页更新"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "用户身份信息",
@@ -598,6 +628,7 @@
         "categoryLabel": "用户信息",
         "icon": "👤",
         "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征。关键词: 单虓晗, Shawn, 沈浪",
         "keywords": [
           "单虓晗",
           "Shawn",
@@ -606,7 +637,8 @@
           "花名"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-01"
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
       },
       {
         "title": "类比驱动解释能力",
@@ -614,6 +646,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 类比, 解释, 抽象概念",
         "keywords": [
           "类比",
           "解释",
@@ -622,7 +655,8 @@
           "比喻"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "网页开发预览偏好",
@@ -630,6 +664,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 网页预览, 自动部署, 页面链接",
         "keywords": [
           "网页预览",
           "自动部署",
@@ -638,7 +673,8 @@
           "开发流程"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-01"
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
       },
       {
         "title": "身份保密规则",
@@ -646,6 +682,7 @@
         "categoryLabel": "约束规则",
         "icon": "🔒",
         "color": "#f87171",
+        "description": "必须遵守的约束、禁止事项、保密规则。关键词: 保密规则, 禁止规则, 身份保护",
         "keywords": [
           "保密规则",
           "禁止规则",
@@ -654,7 +691,8 @@
           "对外输出"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-01"
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
       },
       {
         "title": "输出链接格式规范",
@@ -662,6 +700,7 @@
         "categoryLabel": "开发规范",
         "icon": "🔧",
         "color": "#fb923c",
+        "description": "开发实践规范、代码标准、输出格式。关键词: 链接格式, URL输出, 文本分隔",
         "keywords": [
           "链接格式",
           "URL输出",
@@ -670,7 +709,8 @@
           "开发实践"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-01"
+        "updatedAt": "2026-03-01",
+        "source": "用户显式记录"
       },
       {
         "title": "迭代式完善能力",
@@ -678,6 +718,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 迭代, 快速反馈, 持续优化",
         "keywords": [
           "迭代",
           "快速反馈",
@@ -686,7 +727,8 @@
           "版本迭代"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "隐藏前提识别能力",
@@ -694,6 +736,7 @@
         "categoryLabel": "任务经验",
         "icon": "📈",
         "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践。关键词: 隐藏前提, 论证, 分析",
         "keywords": [
           "隐藏前提",
           "论证",
@@ -702,7 +745,8 @@
           "假设"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       },
       {
         "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
@@ -710,6 +754,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 工作模式, 默认风格, 思维方式",
         "keywords": [
           "工作模式",
           "默认风格",
@@ -718,7 +763,8 @@
           "Shawn"
         ],
         "importance": 4,
-        "updatedAt": "2026-02-28"
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       }
     ],
     "total": 19,
@@ -727,37 +773,43 @@
         "count": 2,
         "label": "开发规范",
         "icon": "🔧",
-        "color": "#fb923c"
+        "color": "#fb923c",
+        "description": "开发实践规范、代码标准、输出格式"
       },
       "user_info": {
         "count": 3,
         "label": "用户信息",
         "icon": "👤",
-        "color": "#38bdf8"
+        "color": "#38bdf8",
+        "description": "用户基本信息、身份背景、个人特征"
       },
       "user_communication": {
         "count": 4,
         "label": "沟通偏好",
         "icon": "💬",
-        "color": "#a78bfa"
+        "color": "#a78bfa",
+        "description": "沟通风格、工作模式、交互偏好"
       },
       "task_flow_experience": {
         "count": 8,
         "label": "任务经验",
         "icon": "📈",
-        "color": "#4ade80"
+        "color": "#4ade80",
+        "description": "任务处理流程、工作经验、最佳实践"
       },
       "constraint_or_forbidden_rule": {
         "count": 1,
         "label": "约束规则",
         "icon": "🔒",
-        "color": "#f87171"
+        "color": "#f87171",
+        "description": "必须遵守的约束、禁止事项、保密规则"
       },
       "common_pitfalls_experience": {
         "count": 1,
         "label": "踩坑经验",
         "icon": "⚠️",
-        "color": "#facc15"
+        "color": "#facc15",
+        "description": "常见问题、踩坑记录、修复方案"
       }
     }
   },

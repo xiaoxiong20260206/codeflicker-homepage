@@ -888,6 +888,16 @@ body {
 }
 
 .leaf-node .leaf-icon { font-size: 18px; }
+.leaf-node .leaf-name {
+    font-size: 10px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+    max-width: 44px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .leaf-node .leaf-level {
     position: absolute;
     bottom: -6px;

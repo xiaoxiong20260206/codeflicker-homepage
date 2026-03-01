@@ -518,6 +518,51 @@ function renderSkillTreeGraph(skills) {
     const container = document.getElementById('skill-tree');
     if (!container) return;
     
+    // 技能名称到简短中文名的映射
+    const skillNameMap = {
+        // 文档处理
+        'pdf': 'PDF',
+        'pptx': 'PPT',
+        'docx': 'Word',
+        'xlsx': 'Excel',
+        'canvas-design': '画布',
+        // 调研分析
+        'industry-research': '行研',
+        'apify-trend-analysis': '趋势',
+        'apify-market-research': '市场',
+        'apify-competitor-intelligence': '竞情',
+        'research': '调研',
+        'wechat-research': '公众号',
+        // 开发工具
+        'docs-shuttle': '文档',
+        'github-deploy-publisher': 'GitHub',
+        'mcp-builder': 'MCP',
+        'yuque-publisher': '语雀',
+        'knowledge-base': '知识库',
+        // 前端设计
+        'ui-ux-pro-max-skill': 'UI/UX',
+        'pixel-action-game': '像素',
+        'ui-ux-pro-max': 'UI专家',
+        'theme-factory': '主题',
+        'qingshuang-research-style': '清爽',
+        'work-report-ppt': '汇报',
+        'frontend-design': '前端',
+        'web-design-guidelines': '规范',
+        'zelda-style': '塞尔达',
+        // React生态
+        'vercel-react-best-practices': 'React',
+        'vercel-react-native-skills': 'RN',
+        'vercel-composition-patterns': '组合',
+        'remotion-best-practices': '视频',
+        // 个人助理
+        'stock-analysis': '股票',
+        'personal-assistant': '助理',
+        'investment-analyzer': '投资',
+        'feishu-assistant': '飞书',
+        'find-skills': '技能',
+        'skill-manager': '管理'
+    };
+    
     let idx = 0;
     let branches = '';
     
@@ -535,12 +580,13 @@ function renderSkillTreeGraph(skills) {
         let leaves = '';
         for (const s of cat.skills) {
             const sid = 'skill-' + (idx++);
+            const shortName = skillNameMap[s.name] || s.name.substring(0, 4);
             AppState.dataMap[sid] = { ...s, icon: '⚡', catIcon: cat.icon };
             leaves += `
                 <div class="leaf-node ${getLevelClass(s.level)}" 
                      style="border-color: var(--node-color); color: var(--node-color);"
                      onmouseenter="showTreeTooltip(event, '${sid}', 'skill')" onmouseleave="hideTooltip()">
-                    <span class="leaf-icon">⚡</span>
+                    <span class="leaf-name">${shortName}</span>
                     <span class="leaf-level" style="border-color: var(--node-color);">${s.level}</span>
                 </div>
             `;
@@ -645,8 +691,11 @@ function renderKnowledgeTreeGraph(knowledge) {
         
         let leaves = '';
         const fileCount = Math.min(dir.count, 8);
+        // 知识树叶子节点显示简短标签
+        const leafLabels = ['文档', '笔记', '报告', '分析', '总结', '记录', '思考', '草稿'];
         for (let i = 0; i < fileCount; i++) {
             const fid = 'knowledge-file-' + (idx++);
+            const leafLabel = leafLabels[i % leafLabels.length];
             AppState.dataMap[fid] = { 
                 name: `${chineseName} #${i+1}`, 
                 icon: '📄', 
@@ -658,7 +707,7 @@ function renderKnowledgeTreeGraph(knowledge) {
                 <div class="leaf-node lv3" 
                      style="border-color: var(--node-color); color: var(--node-color);"
                      onmouseenter="showTreeTooltip(event, '${fid}', 'knowledge')" onmouseleave="hideTooltip()">
-                    <span class="leaf-icon">📄</span>
+                    <span class="leaf-name">${leafLabel}</span>
                 </div>
             `;
         }
@@ -726,8 +775,21 @@ function renderMemoryTreeGraph(memories) {
         
         let leaves = '';
         const memCount = Math.min(catCount, 6);
+        // 记忆树叶子节点显示简短标签
+        const memoryLabels = {
+            'development_practice_specification': ['规范', '标准', '实践', '流程', '模板', '指南'],
+            'user_info': ['身份', '背景', '特征', '信息', '资料', '档案'],
+            'user_communication': ['偏好', '风格', '习惯', '模式', '方式', '特点'],
+            'task_flow_experience': ['流程', '方法', '经验', '策略', '技巧', '实践'],
+            'constraint_or_forbidden_rule': ['约束', '禁止', '规则', '限制', '边界', '条例'],
+            'common_pitfalls_experience': ['踩坑', '教训', '修复', '问题', '解决', '案例']
+        };
+        const defaultLabels = ['条目', '记录', '内容', '项目', '事项', '信息'];
+        const labels = memoryLabels[catKey] || defaultLabels;
+        
         for (let i = 0; i < memCount; i++) {
             const mid = 'memory-' + (idx++);
+            const memLabel = labels[i % labels.length];
             AppState.dataMap[mid] = { 
                 name: catName + ' #' + (i+1), 
                 icon: '💭', 
@@ -739,7 +801,7 @@ function renderMemoryTreeGraph(memories) {
                 <div class="leaf-node lv3" 
                      style="border-color: var(--node-color); color: var(--node-color);"
                      onmouseenter="showTreeTooltip(event, '${mid}', 'memory')" onmouseleave="hideTooltip()">
-                    <span class="leaf-icon">💭</span>
+                    <span class="leaf-name">${memLabel}</span>
                 </div>
             `;
         }

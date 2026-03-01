@@ -15,11 +15,11 @@
             min-height: 100vh;
         }
         
-        /* 侧边栏 */
+        /* 侧边栏 - 希卡石板风格 */
         .sidebar {
             width: 300px;
-            background: rgba(30, 35, 30, 0.95);
-            border-right: 2px solid var(--zonai-green-dark);
+            background: rgba(30, 35, 40, 0.95);
+            border-right: 2px solid var(--sheikah-blue);
             padding: var(--spacing-md);
             position: fixed;
             top: 0;
@@ -27,17 +27,18 @@
             height: 100vh;
             overflow-y: auto;
             z-index: 100;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
         }
         
         .sidebar::-webkit-scrollbar { width: 4px; }
         .sidebar::-webkit-scrollbar-track { background: var(--zelda-dark); }
-        .sidebar::-webkit-scrollbar-thumb { background: var(--zonai-green); border-radius: 2px; }
+        .sidebar::-webkit-scrollbar-thumb { background: var(--sheikah-blue); border-radius: 2px; }
         
         /* 头像区 */
         .avatar-section {
             text-align: center;
             padding: var(--spacing-lg) 0;
-            border-bottom: 1px solid var(--zonai-green-dark);
+            border-bottom: 1px solid var(--sheikah-blue-dark);
             margin-bottom: var(--spacing-md);
         }
         
@@ -51,15 +52,20 @@
         .avatar-glow {
             position: absolute;
             inset: -10px;
-            background: radial-gradient(circle, rgba(60, 180, 137, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
             border-radius: 50%;
-            animation: zonai-pulse 3s ease-in-out infinite;
+            animation: sheikah-pulse 2.5s ease-in-out infinite;
+        }
+        
+        @keyframes sheikah-pulse {
+            0%, 100% { box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(0, 212, 255, 0.7); }
         }
         
         .avatar-ring {
             position: absolute;
             inset: 0;
-            border: 3px solid var(--zonai-green);
+            border: 3px solid var(--sheikah-blue);
             border-radius: 50%;
             animation: spiral-rotate 10s linear infinite;
         }
@@ -69,12 +75,12 @@
             position: absolute;
             width: 8px;
             height: 8px;
-            background: var(--zonai-green-light);
+            background: var(--sheikah-blue-light);
             border-radius: 50%;
             top: -4px;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 0 10px var(--zonai-green-light);
+            box-shadow: 0 0 10px var(--sheikah-blue-light);
         }
         
         .avatar-inner {
@@ -107,9 +113,10 @@
         .character-name {
             font-family: var(--font-title);
             font-size: 28px;
-            color: var(--zonai-green-light);
+            color: var(--sheikah-blue-light);
             letter-spacing: 3px;
             margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
         }
         
         .character-title {
@@ -141,9 +148,9 @@
         }
         
         .tag-green {
-            background: rgba(60, 180, 137, 0.2);
-            color: var(--zonai-green-light);
-            border: 1px solid var(--zonai-green);
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--sheikah-blue-light);
+            border: 1px solid var(--sheikah-blue);
         }
         
         /* 统计面板 */
@@ -155,8 +162,8 @@
         }
         
         .stat-item {
-            background: rgba(60, 180, 137, 0.05);
-            border: 1px solid var(--zonai-green-dark);
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid var(--sheikah-blue-dark);
             border-radius: var(--radius-md);
             padding: var(--spacing-sm);
             display: flex;
@@ -167,9 +174,10 @@
         }
         
         .stat-item:hover {
-            background: rgba(60, 180, 137, 0.1);
-            border-color: var(--zonai-green);
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--sheikah-blue);
             transform: translateY(-2px);
+            box-shadow: var(--sheikah-glow);
         }
         
         .stat-icon { font-size: 20px; }
@@ -178,7 +186,7 @@
             font-family: var(--font-mono);
             font-size: 20px;
             font-weight: 700;
-            color: var(--zonai-green-light);
+            color: var(--sheikah-blue-light);
         }
         
         .stat-label {
@@ -190,8 +198,8 @@
         
         /* 雷达图面板 */
         .radar-panel, .trend-mini-panel {
-            background: rgba(30, 35, 30, 0.5);
-            border: 1px solid var(--zonai-green-dark);
+            background: rgba(30, 35, 40, 0.5);
+            border: 1px solid var(--sheikah-blue-dark);
             border-radius: var(--radius-md);
             padding: var(--spacing-sm);
             margin-bottom: var(--spacing-md);

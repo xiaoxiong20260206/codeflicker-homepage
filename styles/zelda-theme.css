@@ -910,16 +910,28 @@ body {
     font-weight: 600;
 }
 
-/* 等级颜色 */
-.lv1 { --node-color: #64748b; }
-.lv2 { --node-color: #5fd4a9; }
-.lv3 { --node-color: #4ecdc4; }
-.lv4 { --node-color: #c9a227; }
-.lv5 { --node-color: #ffd700; }
+/* 等级颜色 - 塞尔达风格统一色系 */
+.lv1 { --node-color: #8b7364; }  /* 普通 - 棕色 */
+.lv2 { --node-color: #5d8a4a; }  /* 优秀 - 自然绿 */
+.lv3 { --node-color: #3cb489; }  /* 稀有 - 左纳乌绿 */
+.lv4 { --node-color: #c9a227; }  /* 史诗 - 金色 */
+.lv5 { --node-color: #ffd700; }  /* 传说 - 亮金 */
 
+/* 树形分支颜色 */
 .skill-tree .branch { color: var(--zonai-green); }
 .knowledge-tree .branch { color: var(--zelda-gold); }
 .memory-tree .branch { color: var(--zelda-orange); }
+
+/* 溢出标记样式优化 */
+.leaf-more {
+    background: rgba(60, 180, 137, 0.2);
+    color: var(--zonai-green-light);
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid var(--zonai-green-dark);
+}
 
 /* ==================== Tooltip ==================== */
 .tooltip {

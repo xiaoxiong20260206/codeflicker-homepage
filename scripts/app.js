@@ -72,20 +72,8 @@ function switchSection(sectionName) {
 // ==================== 数据加载 ====================
 async function loadAllData() {
     try {
-        // 获取当前页面的基础路径
-        const pathParts = window.location.pathname.split('/');
-        let basePath = '';
-        
-        // 检测是否在 unified 子目录中
-        if (pathParts.includes('unified')) {
-            basePath = './';  // unified目录下，JSON文件在同级
-        } else if (pathParts.includes('codeflicker-homepage')) {
-            // 在根目录的 index-unified.html
-            basePath = './unified/';
-        } else {
-            // 本地开发或其他情况
-            basePath = './';
-        }
+        // JSON文件始终在index.html同级目录
+        const basePath = './';
         
         console.log('Loading data from basePath:', basePath);
         

@@ -463,7 +463,7 @@
             color: var(--zonai-green-light);
         }
         
-        /* 能力变化 */
+        /* 能力变化 - 横向卡片布局，与概览卡片风格统一 */
         .capability-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -472,31 +472,49 @@
         }
         
         .cap-card {
-            background: rgba(30, 35, 30, 0.9);
-            border: 1px solid var(--zonai-green-dark);
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
             border-radius: var(--radius-md);
             padding: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
         }
         
-        .cap-icon { font-size: 32px; }
+        .cap-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(107, 83, 68, 0.2);
+            border-color: var(--zelda-gold);
+        }
         
-        .cap-info { flex: 1; }
+        .cap-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto var(--spacing-sm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(93, 138, 74, 0.2);
+        }
+        
+        .cap-info { text-align: center; }
         
         .cap-name {
             font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            margin-bottom: 4px;
         }
         
         .cap-value {
             font-family: var(--font-mono);
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            color: var(--zonai-green-light);
+            color: var(--zelda-brown);
         }
         
         .cap-change {
@@ -505,6 +523,8 @@
             font-weight: 600;
             padding: 4px 8px;
             border-radius: var(--radius-sm);
+            display: inline-block;
+            margin-top: 4px;
         }
         
         .cap-change.positive {
@@ -514,7 +534,7 @@
         
         .cap-change.neutral {
             background: rgba(100, 116, 139, 0.2);
-            color: #94a3b8;
+            color: #6b5344;
         }
         
         /* 日报iframe */
@@ -656,10 +676,26 @@
             display: flex;
             gap: var(--spacing-md);
             font-size: 12px;
+            color: var(--zelda-brown);
         }
         
-        .report-stat .up { color: #5d8a4a; }
-        .report-stat .down { color: #c94c4c; }
+        .report-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .report-stat .up { 
+            color: #5d8a4a; 
+            font-weight: 600;
+        }
+        .report-stat .down { 
+            color: #c94c4c; 
+            font-weight: 600;
+        }
+        .report-stat .none { 
+            color: #64748b; 
+        }
         
         /* ==================== 我的作品Section样式 ==================== */
         .works-intro {
@@ -758,16 +794,25 @@
             font-size: 10px;
             padding: 3px 10px;
             border-radius: 10px;
+            font-weight: 600;
         }
         
         .work-status.deployed {
             background: rgba(60, 180, 137, 0.2);
             color: var(--zonai-green);
+            border: 1px solid var(--zonai-green);
         }
         
         .work-status.development {
             background: rgba(201, 162, 39, 0.2);
             color: var(--zelda-gold);
+            border: 1px solid var(--zelda-gold);
+        }
+        
+        .work-status.archived {
+            background: rgba(100, 116, 139, 0.2);
+            color: #64748b;
+            border: 1px solid #64748b;
         }
         
         .work-desc {
@@ -828,6 +873,14 @@
             border: 2px solid var(--zelda-brown);
             border-radius: var(--radius-md);
             padding: var(--spacing-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .intro-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(107, 83, 68, 0.2);
+            border-color: var(--zelda-gold);
+        }
         }
         
         .intro-card-title {

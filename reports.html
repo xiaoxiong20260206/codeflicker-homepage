@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添棋 - 工作日报</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0a0b14;
+            --bg-panel: #12131f;
+            --bg-card: #1a1b2e;
+            --text-white: #ffffff;
+            --text-light: #e4e4e7;
+            --text-gray: #8b8b9a;
+            --text-dark: #5a5a6e;
+            --green: #00ff88;
+            --purple: #bf7fff;
+            --cyan: #00ffff;
+            --orange: #ff9500;
+            --gold: #ffd700;
+            --blue: #38bdf8;
+            --glow-green: 0 0 20px rgba(0, 255, 136, 0.3);
+            --glow-purple: 0 0 20px rgba(191, 127, 255, 0.3);
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        .bg-effects {
+            position: fixed;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 50% -20%, rgba(191, 127, 255, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 100% 50%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 0% 80%, rgba(255, 149, 0, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .page-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--purple), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        
+        .page-subtitle {
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid #2a2b3e;
+            border-radius: 8px;
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            border-color: var(--purple);
+            color: var(--purple);
+            box-shadow: var(--glow-purple);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, rgba(191,127,255,0.15), rgba(0,255,255,0.1));
+            border-color: var(--purple);
+            color: var(--purple);
+        }
+        
+        /* Trend Chart */
+        .trend-panel {
+            background: var(--bg-panel);
+            border: 1px solid #2a2b3e;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .panel-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2a2b3e;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .chart-wrap {
+            height: 200px;
+        }
+        
+        /* Reports Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--purple), var(--green), var(--orange));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -24px;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: var(--purple);
+            border: 2px solid var(--bg-dark);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--purple);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot { background: var(--green); box-shadow: 0 0 10px var(--green); }
+        .timeline-item:nth-child(3n) .timeline-dot { background: var(--orange); box-shadow: 0 0 10px var(--orange); }
+        
+        .report-card {
+            background: var(--bg-panel);
+            border: 1px solid #2a2b3e;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+        
+        .report-card:hover {
+            border-color: var(--purple);
+            box-shadow: var(--glow-purple);
+            transform: translateX(5px);
+        }
+        
+        .report-header {
+            padding: 20px;
+            border-bottom: 1px solid #2a2b3e;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .report-date-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .report-date {
+            font-family: 'Orbitron', monospace;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+        
+        .report-day {
+            padding: 4px 10px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            font-size: 11px;
+            color: var(--text-gray);
+        }
+        
+        .report-stats {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .report-stat {
+            text-align: center;
+        }
+        
+        .stat-num {
+            font-family: 'Orbitron', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+        
+        .stat-lbl {
+            font-size: 10px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+        
+        .report-body {
+            padding: 20px;
+        }
+        
+        .capability-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .cap-item {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px;
+            background: var(--bg-card);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .cap-icon { font-size: 20px; margin-bottom: 5px; }
+        
+        .cap-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .cap-item.skill .cap-value { color: var(--green); }
+        .cap-item.knowledge .cap-value { color: var(--purple); }
+        .cap-item.memory .cap-value { color: var(--orange); }
+        
+        .cap-change {
+            font-size: 11px;
+            margin-top: 3px;
+        }
+        
+        .change-up { color: var(--green); }
+        .change-down { color: #f87171; }
+        .change-none { color: var(--text-dark); }
+        
+        .cap-label {
+            font-size: 10px;
+            color: var(--text-dark);
+            text-transform: uppercase;
+        }
+        
+        .highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .highlight-tag {
+            padding: 4px 10px;
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            border-radius: 6px;
+            font-size: 11px;
+            color: var(--cyan);
+        }
+        
+        .report-footer {
+            padding: 15px 20px;
+            background: var(--bg-card);
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .view-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, var(--purple), var(--cyan));
+            border-radius: 6px;
+            color: var(--bg-dark);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .view-btn:hover {
+            transform: scale(1.05);
+            box-shadow: var(--glow-purple);
+        }
+        
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-dark);
+            font-size: 12px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .footer-link {
+            color: var(--cyan);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-link:hover { color: var(--gold); }
+        
+        .loading {
+            text-align: center;
+            padding: 60px;
+            color: var(--text-dark);
+        }
+        
+        @media (max-width: 600px) {
+            .report-header { flex-direction: column; align-items: flex-start; }
+            .report-stats { width: 100%; justify-content: space-between; }
+            .capability-row { flex-direction: column; }
+            .cap-item { min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-effects"></div>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="page-header">
+            <h1 class="page-title">📋 DAILY REPORTS</h1>
+            <p class="page-subtitle">添棋的工作日报 · 每日进展与能力成长记录</p>
+        </header>
+        
+        <!-- Navigation -->
+        <nav class="nav-bar">
+            <a href="index.html" class="nav-link">📊 最新日报</a>
+            <a href="character.html" class="nav-link">🎮 角色</a>
+            <a href="projects.html" class="nav-link">📁 项目</a>
+            <a href="reports.html" class="nav-link active">📋 历史日报</a>
+            <a href="about.html" class="nav-link">📖 关于</a>
+        </nav>
+        
+        <!-- Trend Chart -->
+        <div class="trend-panel">
+            <div class="panel-title">📈 能力成长趋势（近7天）</div>
+            <div class="chart-wrap">
+                <canvas id="trendChart"></canvas>
+            </div>
+        </div>
+        
+        <!-- Reports Timeline -->
+        <div class="timeline" id="timeline">
+            <div class="loading">加载中...</div>
+        </div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">📊 Reports</a>
+                <a href="character.html" class="footer-link">🎮 Character</a>
+                <a href="projects.html" class="footer-link">📁 Projects</a>
+                <a href="about.html" class="footer-link">📖 About</a>
+            </div>
+            <p>TIANQI · Daily Reports Archive</p>
+        </footer>
+    </div>
+    
+    <script>
+        let reportsData = null;
+        
+        async function loadData() {
+            try {
+                const res = await fetch('reports-data.json');
+                reportsData = await res.json();
+                renderTrendChart();
+                renderTimeline();
+            } catch (e) {
+                console.error('Load error:', e);
+                document.getElementById('timeline').innerHTML = '<div class="loading">❌ 数据加载失败</div>';
+            }
+        }
+        
+        function renderTrendChart() {
+            const trend = reportsData.trend;
+            
+            const tooltipConfig = {
+                enabled: true,
+                backgroundColor: 'rgba(26, 27, 46, 0.95)',
+                titleColor: '#ffffff',
+                bodyColor: '#8b8b9a',
+                borderColor: '#bf7fff',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12,
+                titleFont: { size: 13, weight: 'bold', family: 'Orbitron' },
+                bodyFont: { size: 12, family: 'Noto Sans SC' },
+                displayColors: true,
+                boxPadding: 6,
+                callbacks: {
+                    title: function(context) {
+                        return '📅 ' + context[0].label;
+                    },
+                    label: function(context) {
+                        const label = context.dataset.label;
+                        const value = context.raw;
+                        const icon = label === '技能' ? '⚡' : label === '知识' ? '📚' : '🧠';
+                        return icon + ' ' + label + ': ' + value;
+                    }
+                }
+            };
+            
+            new Chart(document.getElementById('trendChart'), {
+                type: 'line',
+                data: {
+                    labels: trend.dates,
+                    datasets: [
+                        { 
+                            label: '技能', 
+                            data: trend.skills, 
+                            borderColor: '#00ff88', 
+                            backgroundColor: 'rgba(0,255,136,0.1)', 
+                            fill: true, 
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#00ff88',
+                            pointHoverBorderWidth: 3
+                        },
+                        { 
+                            label: '知识', 
+                            data: trend.knowledge, 
+                            borderColor: '#bf7fff', 
+                            backgroundColor: 'rgba(191,127,255,0.1)', 
+                            fill: true, 
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#bf7fff',
+                            pointHoverBorderWidth: 3
+                        },
+                        { 
+                            label: '记忆', 
+                            data: trend.memory, 
+                            borderColor: '#ff9500', 
+                            backgroundColor: 'rgba(255,149,0,0.1)', 
+                            fill: true, 
+                            tension: 0.4,
+                            pointRadius: 5,
+                            pointHoverRadius: 8,
+                            pointHoverBackgroundColor: '#ffffff',
+                            pointHoverBorderColor: '#ff9500',
+                            pointHoverBorderWidth: 3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#5a5a6e', font: { size: 10 } } },
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#5a5a6e', font: { size: 10 } } }
+                    },
+                    plugins: { 
+                        legend: { position: 'top', labels: { color: '#8b8b9a', usePointStyle: true, font: { size: 11 } } },
+                        tooltip: tooltipConfig
+                    }
+                }
+            });
+        }
+        
+        function renderTimeline() {
+            const reports = reportsData.reports;
+            
+            const html = reports.map(r => {
+                const skillChange = r.skillChange > 0 ? `<span class="change-up">+${r.skillChange}</span>` : r.skillChange < 0 ? `<span class="change-down">${r.skillChange}</span>` : `<span class="change-none">-</span>`;
+                const knowledgeChange = r.knowledgeChange > 0 ? `<span class="change-up">+${r.knowledgeChange}</span>` : r.knowledgeChange < 0 ? `<span class="change-down">${r.knowledgeChange}</span>` : `<span class="change-none">-</span>`;
+                const memoryChange = r.memoryChange > 0 ? `<span class="change-up">+${r.memoryChange}</span>` : r.memoryChange < 0 ? `<span class="change-down">${r.memoryChange}</span>` : `<span class="change-none">-</span>`;
+                
+                const highlights = (r.highlights || []).map(h => `<span class="highlight-tag">✓ ${h}</span>`).join('');
+                
+                return `
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="report-card">
+                            <div class="report-header">
+                                <div class="report-date-area">
+                                    <span class="report-date">${r.date}</span>
+                                    <span class="report-day">${r.dayOfWeek}</span>
+                                </div>
+                                <div class="report-stats">
+                                    <div class="report-stat">
+                                        <div class="stat-num">${r.activeProjects}</div>
+                                        <div class="stat-lbl">活跃项目</div>
+                                    </div>
+                                    <div class="report-stat">
+                                        <div class="stat-num">${r.totalCommits}</div>
+                                        <div class="stat-lbl">代码提交</div>
+                                    </div>
+                                    <div class="report-stat">
+                                        <div class="stat-num">${r.conversationCount}</div>
+                                        <div class="stat-lbl">对话任务</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="report-body">
+                                <div class="capability-row">
+                                    <div class="cap-item skill">
+                                        <div class="cap-icon">⚡</div>
+                                        <div class="cap-value">${r.skillCount}</div>
+                                        <div class="cap-change">${skillChange}</div>
+                                        <div class="cap-label">技能</div>
+                                    </div>
+                                    <div class="cap-item knowledge">
+                                        <div class="cap-icon">📚</div>
+                                        <div class="cap-value">${r.knowledgeCount}</div>
+                                        <div class="cap-change">${knowledgeChange}</div>
+                                        <div class="cap-label">知识</div>
+                                    </div>
+                                    <div class="cap-item memory">
+                                        <div class="cap-icon">🧠</div>
+                                        <div class="cap-value">${r.memoryCount}</div>
+                                        <div class="cap-change">${memoryChange}</div>
+                                        <div class="cap-label">记忆</div>
+                                    </div>
+                                </div>
+                                ${highlights ? `<div class="highlights">${highlights}</div>` : ''}
+                            </div>
+                            <div class="report-footer">
+                                <a href="${r.htmlUrl}" class="view-btn">📄 查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('timeline').innerHTML = html;
+        }
+        
+        loadData();
+    </script>
+</body>
+</html>

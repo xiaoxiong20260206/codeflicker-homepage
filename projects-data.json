@@ -1,0 +1,189 @@
+{
+  "generatedAt": "2026-03-01T19:15:00.000Z",
+  "summary": {
+    "total": 8,
+    "deployed": 5,
+    "inDevelopment": 2,
+    "archived": 1
+  },
+  "categories": {
+    "research": {
+      "name": "调研类",
+      "icon": "🔬",
+      "color": "#a78bfa",
+      "count": 4
+    },
+    "tools": {
+      "name": "工具类",
+      "icon": "🛠️",
+      "color": "#4ade80",
+      "count": 3
+    },
+    "homepage": {
+      "name": "主页类",
+      "icon": "🏠",
+      "color": "#38bdf8",
+      "count": 1
+    }
+  },
+  "projects": [
+    {
+      "id": "bytedance-ai-guide",
+      "name": "字节AI调研",
+      "subtitle": "字节AI开挂指南",
+      "category": "research",
+      "icon": "📝",
+      "goal": "系统梳理字节跳动AI能力布局，为内部研发效能提升提供参考",
+      "outcome": "完成6个章节的深度调研报告，涵盖AI发展简史、字节AI布局、Agent基础设施、安全实践、金融洞察等",
+      "deliverables": ["调研报告", "在线展示页", "知识沉淀"],
+      "status": "deployed",
+      "completedAt": "2026-02-20",
+      "techStack": ["HTML", "CSS", "JavaScript", "GitHub Pages"],
+      "url": "https://xiaoxiong20260206.github.io/bytedance-ai-guide/",
+      "path": "/Users/shenlang/Documents/Codeflicker/字节AI调研/",
+      "highlights": [
+        "5000+ 字深度分析",
+        "覆盖 Agent 全栈架构",
+        "金融场景实践洞察"
+      ]
+    },
+    {
+      "id": "ai-product-ultimate",
+      "name": "AI产品终极形态",
+      "subtitle": "AI产品演进终局思考",
+      "category": "research",
+      "icon": "🧠",
+      "goal": "探索AI产品的终极形态，论证从工具到员工的演进路径",
+      "outcome": "完成4章节的论证报告，含场景区分、风险分析、技术路径、反面论证",
+      "deliverables": ["调研报告", "分篇HTML", "Vercel部署"],
+      "status": "deployed",
+      "completedAt": "2026-03-01",
+      "techStack": ["HTML", "CSS", "JavaScript", "Vercel"],
+      "url": "https://ai-ultimate-form.vercel.app/",
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/knowledge/AI产品终极形态思考/",
+      "highlights": [
+        "完整逻辑论证",
+        "to C/to B 场景区分",
+        "红队分析"
+      ]
+    },
+    {
+      "id": "ai-engineer-analysis",
+      "name": "AI工程师分析",
+      "subtitle": "AI工程师能力模型研究",
+      "category": "research",
+      "icon": "👨‍💻",
+      "goal": "分析AI工程师的能力要求和发展路径",
+      "outcome": "产出AI工程师能力模型分析文档",
+      "deliverables": ["分析文档", "能力模型"],
+      "status": "archived",
+      "completedAt": "2026-02-15",
+      "techStack": ["Markdown", "研究分析"],
+      "url": null,
+      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_AIStudio/1-ai-engineer-analysis/",
+      "highlights": [
+        "能力模型梳理",
+        "发展路径分析"
+      ]
+    },
+    {
+      "id": "ai-financial-analysis",
+      "name": "AI金融分析",
+      "subtitle": "AI赋能金融场景研究",
+      "category": "research",
+      "icon": "💰",
+      "goal": "研究AI在金融领域的应用场景和投资价值",
+      "outcome": "完成金融AI应用分析，投资策略建议",
+      "deliverables": ["分析报告", "投资建议"],
+      "status": "deployed",
+      "completedAt": "2026-02-18",
+      "techStack": ["研究分析", "数据分析"],
+      "url": null,
+      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_Financial/",
+      "highlights": [
+        "金融AI场景分析",
+        "投资策略建议"
+      ]
+    },
+    {
+      "id": "feishu-bot",
+      "name": "飞书机器人「添棋」",
+      "subtitle": "IM集成与消息自动化",
+      "category": "tools",
+      "icon": "🤖",
+      "goal": "实现飞书消息与CodeFlicker的双向集成",
+      "outcome": "完成飞书Webhook接收、消息解析、自动触发CodeFlicker处理的完整流程",
+      "deliverables": ["Python服务", "Webhook接口", "消息处理模块"],
+      "status": "deployed",
+      "completedAt": "2026-02-27",
+      "techStack": ["Python", "FastAPI", "飞书API", "Webhook"],
+      "url": null,
+      "path": "~/Documents/Codeflicker/个人助理_V1/feishu-ai-bot/",
+      "highlights": [
+        "双向消息同步",
+        "自动触发处理",
+        "群消息支持"
+      ]
+    },
+    {
+      "id": "daily-report-system",
+      "name": "日报自动生成系统",
+      "subtitle": "每日工作日报自动化",
+      "category": "tools",
+      "icon": "📊",
+      "goal": "建立每日自动生成工作日报并同步到GitHub的机制",
+      "outcome": "v6.0日报系统，含小无相功自我反思、能力趋势图、清爽报告风格",
+      "deliverables": ["Python脚本", "HTML日报", "Markdown日报", "GitHub同步"],
+      "status": "deployed",
+      "completedAt": "2026-02-28",
+      "techStack": ["Python", "HTML", "CSS", "Launchd", "Git"],
+      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/",
+      "path": "~/Documents/Codeflicker/个人助理_V1/scripts/generate_daily_report.py",
+      "highlights": [
+        "每日6:00自动生成",
+        "小无相功自我反思",
+        "能力趋势可视化"
+      ]
+    },
+    {
+      "id": "github-sync",
+      "name": "GitHub同步系统",
+      "subtitle": "多仓库自动同步",
+      "category": "tools",
+      "icon": "🔄",
+      "goal": "实现本地项目与多个GitHub仓库的自动同步",
+      "outcome": "完成同步脚本，支持个人仓库和组织仓库双推",
+      "deliverables": ["Shell脚本", "Launchd配置"],
+      "status": "deployed",
+      "completedAt": "2026-02-25",
+      "techStack": ["Shell", "Git", "Launchd"],
+      "url": null,
+      "path": "~/Documents/Codeflicker/个人助理_V1/scripts/sync-to-github.sh",
+      "highlights": [
+        "双仓库同步",
+        "自动化调度",
+        "错误重试"
+      ]
+    },
+    {
+      "id": "character-panel",
+      "name": "角色能力面板",
+      "subtitle": "游戏风格个人主页",
+      "category": "homepage",
+      "icon": "🎮",
+      "goal": "创建游戏风格的角色能力展示页面",
+      "outcome": "v5.0角色面板，含技能树、知识树、记忆树、成就系统、能力雷达图",
+      "deliverables": ["HTML页面", "数据生成脚本", "Chart.js可视化"],
+      "status": "deployed",
+      "completedAt": "2026-03-01",
+      "techStack": ["HTML", "CSS", "JavaScript", "Chart.js"],
+      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/character.html",
+      "path": "/Users/shenlang/Documents/Codeflicker/codeflicker-homepage/character.html",
+      "highlights": [
+        "技能树可视化",
+        "Tooltip悬浮提示",
+        "图表数据展示"
+      ]
+    }
+  ]
+}

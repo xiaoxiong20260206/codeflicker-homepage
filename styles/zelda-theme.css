@@ -1,19 +1,35 @@
 /**
- * 塞尔达传说·王国之泪风格主题
- * The Legend of Zelda: Tears of the Kingdom Style Theme
- * Version: 2.0.0
+ * 塞尔达传说·旷野之息风格主题
+ * The Legend of Zelda: Breath of the Wild Style Theme
+ * Version: 3.0.0
  * 
  * 用于 codeflicker-homepage 项目的统一视觉风格
+ * 核心特征：希卡蓝科技 + 水彩天空 + 自然美学
  */
 
 /* ==================== CSS变量 ==================== */
 :root {
-    /* 左纳乌(Zonai)文明配色 - 王国之泪核心 */
-    --zonai-green: #3cb489;
-    --zonai-green-light: #5fd4a9;
-    --zonai-green-dark: #2a8a69;
+    /* ==================== 希卡(Sheikah)科技配色 - 旷野之息核心 ==================== */
+    
+    /* 希卡蓝 - 完成状态、激活状态、科技发光 */
+    --sheikah-blue: #00d4ff;
+    --sheikah-blue-light: #66e5ff;
+    --sheikah-blue-dark: #00a8cc;
+    --sheikah-glow: 0 0 20px rgba(0, 212, 255, 0.5);
+    --sheikah-glow-intense: 0 0 40px rgba(0, 212, 255, 0.7);
+    
+    /* 希卡橙 - 未完成状态、待激活 */
+    --sheikah-orange: #ff8c42;
+    --sheikah-orange-light: #ffaa66;
+    --sheikah-orange-dark: #cc6a2a;
+    --sheikah-orange-glow: 0 0 20px rgba(255, 140, 66, 0.5);
+    
+    /* 左纳乌绿 - 兼容旧代码 */
+    --zonai-green: #00d4ff;
+    --zonai-green-light: #66e5ff;
+    --zonai-green-dark: #00a8cc;
     --zonai-teal: #4ecdc4;
-    --zonai-glow: 0 0 25px rgba(60, 180, 137, 0.6);
+    --zonai-glow: 0 0 25px rgba(0, 212, 255, 0.6);
     
     /* 金色系 */
     --zelda-gold: #c9a227;
@@ -21,10 +37,10 @@
     --zelda-gold-dark: #8b6914;
     --gold-glow: 0 0 20px rgba(201, 162, 39, 0.5);
     
-    /* 天空金黄 */
-    --sky-gold: #f5d76e;
-    --sky-sunset: #e8b86d;
-    --sky-dawn: #ffeaa7;
+    /* 天空蓝 - 旷野之息特色 */
+    --sky-blue: #87ceeb;
+    --sky-light: #b8e2f2;
+    --sky-sunset: #f5d7b5;
     
     /* 暖色调 */
     --zelda-cream: #f5e6c8;
@@ -85,31 +101,31 @@ body {
 
 /* ==================== 背景效果 ==================== */
 
-/* 王国之泪金黄天空背景 */
+/* 旷野之息水彩天空背景 */
 .zelda-bg {
     position: fixed;
     inset: 0;
     background: 
-        radial-gradient(ellipse 120% 60% at 50% 120%, rgba(255,255,255,0.6) 0%, transparent 50%),
+        /* 云海效果 */
+        radial-gradient(ellipse 120% 60% at 50% 120%, rgba(255,255,255,0.8) 0%, transparent 50%),
+        /* 日落渐变 - 柔和自然的吉卜力风格 */
         linear-gradient(180deg, 
-            #6bb3d9 0%,
-            #7ec8e3 10%,
-            #a8d8ea 20%,
-            #ffeaa7 40%,
-            #f5d76e 55%,
-            #e8b86d 70%,
-            #d4a574 85%,
+            #87ceeb 0%,      /* 清澈天空蓝 */
+            #b8d4e3 20%,
+            #f5e6c8 40%,     /* 羊皮纸暖色 */
+            #e8c9a0 60%,
+            #d4a574 80%,     /* 柔和日落橙 */
             #c9927a 100%
         );
     z-index: -3;
 }
 
-/* 左纳乌图案背景 */
+/* 希卡图案背景 */
 .zonai-pattern-bg {
     position: fixed;
     inset: 0;
     z-index: -2;
-    opacity: 0.06;
+    opacity: 0.04;
     pointer-events: none;
 }
 
@@ -197,37 +213,45 @@ body {
     max-width: 900px;
 }
 
-/* ==================== 左纳乌面板 ==================== */
+/* ==================== 希卡面板 ==================== */
 .zonai-panel {
     background: linear-gradient(135deg, 
-        rgba(30, 35, 30, 0.95) 0%,
-        rgba(40, 50, 45, 0.92) 50%,
-        rgba(30, 35, 30, 0.95) 100%
+        rgba(30, 35, 40, 0.95) 0%,
+        rgba(40, 45, 55, 0.92) 50%,
+        rgba(30, 35, 40, 0.95) 100%
     );
-    border: 2px solid var(--zonai-green);
+    border: 2px solid var(--sheikah-blue);
     border-radius: var(--radius-sm);
     padding: var(--spacing-lg);
     position: relative;
     box-shadow: 
-        var(--zonai-glow),
-        inset 0 0 40px rgba(60, 180, 137, 0.08);
+        var(--sheikah-glow),
+        inset 0 0 40px rgba(0, 212, 255, 0.08);
     color: var(--text-light);
 }
 
-/* 左纳乌螺旋角落装饰 */
+/* 希卡角落装饰 */
 .zonai-panel::before,
 .zonai-panel::after {
     content: '';
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--zonai-green);
-    border-radius: 50%;
-    opacity: 0.8;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--sheikah-blue);
 }
 
-.zonai-panel::before { top: -15px; left: -15px; }
-.zonai-panel::after { bottom: -15px; right: -15px; }
+.zonai-panel::before { 
+    top: 8px; 
+    left: 8px; 
+    border-right: none;
+    border-bottom: none;
+}
+.zonai-panel::after { 
+    bottom: 8px; 
+    right: 8px;
+    border-left: none;
+    border-top: none;
+}
 
 /* 无装饰版本 */
 .zonai-panel.no-decor::before,
@@ -910,27 +934,27 @@ body {
     font-weight: 600;
 }
 
-/* 等级颜色 - 塞尔达风格统一色系 */
-.lv1 { --node-color: #8b7364; }  /* 普通 - 棕色 */
-.lv2 { --node-color: #5d8a4a; }  /* 优秀 - 自然绿 */
-.lv3 { --node-color: #3cb489; }  /* 稀有 - 左纳乌绿 */
-.lv4 { --node-color: #c9a227; }  /* 史诗 - 金色 */
-.lv5 { --node-color: #ffd700; }  /* 传说 - 亮金 */
+/* 等级颜色 - 旷野之息风格：希卡橙(未完成)到希卡蓝(完成) */
+.lv1 { --node-color: #ff8c42; }  /* 待激活 - 希卡橙 */
+.lv2 { --node-color: #ffaa66; }  /* 进行中 - 浅希卡橙 */
+.lv3 { --node-color: #4ecdc4; }  /* 成长中 - 青色 */
+.lv4 { --node-color: #00d4ff; }  /* 熟练 - 希卡蓝 */
+.lv5 { --node-color: #66e5ff; }  /* 精通 - 亮希卡蓝 */
 
 /* 树形分支颜色 */
-.skill-tree .branch { color: var(--zonai-green); }
+.skill-tree .branch { color: var(--sheikah-blue); }
 .knowledge-tree .branch { color: var(--zelda-gold); }
-.memory-tree .branch { color: var(--zelda-orange); }
+.memory-tree .branch { color: var(--sheikah-orange); }
 
 /* 溢出标记样式优化 */
 .leaf-more {
-    background: rgba(60, 180, 137, 0.2);
-    color: var(--zonai-green-light);
+    background: rgba(0, 212, 255, 0.2);
+    color: var(--sheikah-blue-light);
     padding: 4px 8px;
     border-radius: var(--radius-sm);
     font-size: 11px;
     font-weight: 600;
-    border: 1px solid var(--zonai-green-dark);
+    border: 1px solid var(--sheikah-blue-dark);
 }
 
 /* ==================== Tooltip ==================== */
@@ -940,10 +964,10 @@ body {
     width: 300px;
     max-width: 340px;
     background: linear-gradient(135deg, 
-        rgba(30, 35, 30, 0.98) 0%, 
-        rgba(40, 50, 45, 0.95) 100%
+        rgba(30, 35, 40, 0.98) 0%, 
+        rgba(40, 45, 55, 0.95) 100%
     );
-    border: 2px solid var(--zonai-green);
+    border: 2px solid var(--sheikah-blue);
     border-radius: var(--radius-md);
     pointer-events: none;
     opacity: 0;
@@ -961,17 +985,17 @@ body {
 
 .tip-header {
     padding: 12px;
-    border-bottom: 1px solid var(--zonai-green-dark);
+    border-bottom: 1px solid var(--sheikah-blue-dark);
     display: flex;
     align-items: center;
     gap: 10px;
-    background: rgba(60, 180, 137, 0.1);
+    background: rgba(0, 212, 255, 0.1);
 }
 
 .tip-icon {
     width: 36px;
     height: 36px;
-    background: rgba(60, 180, 137, 0.2);
+    background: rgba(0, 212, 255, 0.2);
     border-radius: var(--radius-md);
     display: flex;
     align-items: center;
@@ -998,7 +1022,7 @@ body {
     font-family: var(--font-mono);
     font-size: 18px;
     font-weight: 700;
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
 }
 
 .tip-lv-max {

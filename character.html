@@ -6,7 +6,7 @@
     <title>添棋 - 角色面板 | TianQi Character Profile</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* ==================== 游戏角色面板风格 CSS ==================== */
+        /* ==================== 游戏角色面板风格 CSS v2.0 ==================== */
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
         
         :root {
@@ -25,6 +25,13 @@
             --neon-orange: #fb923c;
             --neon-yellow: #facc15;
             --neon-red: #f87171;
+            
+            /* 星级颜色 */
+            --star-1: #64748b;
+            --star-2: #4ade80;
+            --star-3: #38bdf8;
+            --star-4: #a78bfa;
+            --star-5: #facc15;
             
             /* 渐变 */
             --gradient-cyber: linear-gradient(135deg, #38bdf8 0%, #a78bfa 50%, #f472b6 100%);
@@ -61,11 +68,7 @@
             --radius-xl: 24px;
         }
         
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
             font-family: 'Noto Sans SC', -apple-system, sans-serif;
@@ -78,10 +81,7 @@
         /* 背景网格动画 */
         .bg-grid {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-image: 
                 linear-gradient(rgba(56, 189, 248, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(56, 189, 248, 0.03) 1px, transparent 1px);
@@ -92,8 +92,7 @@
         
         .bg-glow-orb {
             position: fixed;
-            width: 600px;
-            height: 600px;
+            width: 600px; height: 600px;
             border-radius: 50%;
             filter: blur(120px);
             opacity: 0.3;
@@ -101,19 +100,9 @@
             z-index: 0;
         }
         
-        .bg-glow-orb.cyan {
-            top: -200px;
-            right: -200px;
-            background: var(--neon-cyan);
-        }
+        .bg-glow-orb.cyan { top: -200px; right: -200px; background: var(--neon-cyan); }
+        .bg-glow-orb.purple { bottom: -200px; left: -200px; background: var(--neon-purple); }
         
-        .bg-glow-orb.purple {
-            bottom: -200px;
-            left: -200px;
-            background: var(--neon-purple);
-        }
-        
-        /* 主容器 */
         .container {
             max-width: 1400px;
             margin: 0 auto;
@@ -140,21 +129,15 @@
         .character-header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 3px;
             background: var(--gradient-cyber);
         }
         
-        /* 角色头像 */
-        .avatar-container {
-            position: relative;
-        }
+        .avatar-container { position: relative; }
         
         .avatar {
-            width: 140px;
-            height: 140px;
+            width: 140px; height: 140px;
             border-radius: 50%;
             background: var(--gradient-cyber);
             display: flex;
@@ -187,7 +170,6 @@
             white-space: nowrap;
         }
         
-        /* 角色信息 */
         .character-info {
             display: flex;
             flex-direction: column;
@@ -211,6 +193,7 @@
             gap: var(--spacing-sm);
             color: var(--text-secondary);
             font-size: 16px;
+            flex-wrap: wrap;
         }
         
         .character-title .badge {
@@ -228,10 +211,7 @@
             max-width: 500px;
         }
         
-        /* 经验条 */
-        .exp-container {
-            margin-top: var(--spacing-sm);
-        }
+        .exp-container { margin-top: var(--spacing-sm); }
         
         .exp-label {
             display: flex;
@@ -246,30 +226,20 @@
             background: var(--bg-secondary);
             border-radius: 4px;
             overflow: hidden;
-            position: relative;
         }
         
         .exp-fill {
             height: 100%;
             background: var(--gradient-exp);
             border-radius: 4px;
-            width: 75%;
+            transition: width 1s ease;
             position: relative;
-            animation: exp-shine 2s ease-in-out infinite;
-        }
-        
-        @keyframes exp-shine {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
         }
         
         .exp-fill::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
             animation: exp-glare 3s ease-in-out infinite;
         }
@@ -279,7 +249,6 @@
             100% { transform: translateX(100%); }
         }
         
-        /* 快速统计 */
         .quick-stats {
             display: flex;
             flex-direction: column;
@@ -298,8 +267,7 @@
         }
         
         .stat-icon {
-            width: 40px;
-            height: 40px;
+            width: 40px; height: 40px;
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
@@ -311,10 +279,7 @@
         .stat-icon.knowledge { background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(244, 114, 182, 0.2)); }
         .stat-icon.memory { background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(250, 204, 21, 0.2)); }
         
-        .stat-content {
-            display: flex;
-            flex-direction: column;
-        }
+        .stat-content { display: flex; flex-direction: column; }
         
         .stat-value {
             font-family: 'Orbitron', monospace;
@@ -337,18 +302,9 @@
         }
         
         @media (max-width: 1024px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            .character-header {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .quick-stats {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
-            }
+            .main-grid { grid-template-columns: 1fr; }
+            .character-header { grid-template-columns: 1fr; text-align: center; }
+            .quick-stats { flex-direction: row; justify-content: center; flex-wrap: wrap; }
         }
         
         /* ==================== 卡片通用样式 ==================== */
@@ -384,8 +340,7 @@
         }
         
         .card-title-icon {
-            width: 32px;
-            height: 32px;
+            width: 32px; height: 32px;
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
@@ -395,56 +350,81 @@
         
         .card-body {
             padding: var(--spacing-lg);
+            max-height: 500px;
+            overflow-y: auto;
         }
         
-        /* ==================== 核心属性雷达图 ==================== */
-        .attributes-card .card-title-icon {
-            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(167, 139, 250, 0.2));
+        /* ==================== 星级组件 ==================== */
+        .stars {
+            display: flex;
+            gap: 2px;
         }
         
-        .radar-container {
-            position: relative;
-            width: 100%;
-            max-width: 350px;
-            margin: 0 auto;
+        .star {
+            font-size: 12px;
+            color: var(--text-muted);
         }
         
-        /* ==================== 技能树 ==================== */
+        .star.filled { color: var(--neon-yellow); }
+        
+        /* ==================== 技能树 v2 ==================== */
         .skill-tree-card .card-title-icon {
             background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(56, 189, 248, 0.2));
         }
         
-        .skill-categories {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-lg);
+        .skill-category {
+            margin-bottom: var(--spacing-lg);
         }
         
-        .skill-category {
-            background: var(--bg-secondary);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            border: 1px solid var(--border-color);
+        .skill-category:last-child {
+            margin-bottom: 0;
         }
         
         .skill-category-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-md);
             cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .skill-category-header:hover {
+            background: var(--bg-card-hover);
+        }
+        
+        .skill-category-left {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .skill-category-icon {
+            font-size: 24px;
+        }
+        
+        .skill-category-info {
+            display: flex;
+            flex-direction: column;
         }
         
         .skill-category-name {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
             font-weight: 600;
             color: var(--text-primary);
         }
         
-        .skill-category-icon {
-            font-size: 20px;
+        .skill-category-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .skill-category-right {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
         }
         
         .skill-category-count {
@@ -456,53 +436,92 @@
             border-radius: 20px;
         }
         
-        .skill-nodes {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
+        .skill-category-expand {
+            color: var(--text-muted);
+            transition: transform 0.3s;
         }
         
-        .skill-node {
+        .skill-category.expanded .skill-category-expand {
+            transform: rotate(180deg);
+        }
+        
+        .skill-list {
+            display: none;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+        }
+        
+        .skill-category.expanded .skill-list {
+            display: flex;
+        }
+        
+        .skill-item {
             display: flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.2s ease;
+            justify-content: space-between;
+            padding: var(--spacing-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--neon-green);
+            transition: all 0.2s;
         }
         
-        .skill-node:hover {
-            border-color: var(--neon-green);
-            color: var(--neon-green);
-            background: rgba(74, 222, 128, 0.1);
+        .skill-item:hover {
+            background: var(--bg-card-hover);
         }
         
-        .skill-node.active {
-            border-color: var(--neon-green);
-            color: var(--neon-green);
-            box-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+        .skill-item-left {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
         }
         
-        .skill-node-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--neon-green);
+        .skill-item-name {
+            font-weight: 500;
+            color: var(--text-primary);
+            font-size: 14px;
         }
         
-        /* ==================== 知识库 ==================== */
+        .skill-item-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            max-width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .skill-item-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        
+        .skill-exp-bar {
+            width: 80px;
+            height: 4px;
+            background: var(--bg-primary);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .skill-exp-fill {
+            height: 100%;
+            background: var(--gradient-skill);
+            border-radius: 2px;
+        }
+        
+        /* ==================== 知识库 v2 ==================== */
         .knowledge-card .card-title-icon {
             background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(244, 114, 182, 0.2));
         }
         
-        .knowledge-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+        .knowledge-list {
+            display: flex;
+            flex-direction: column;
             gap: var(--spacing-md);
         }
         
@@ -513,44 +532,69 @@
             padding: var(--spacing-md);
             background: var(--bg-secondary);
             border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            cursor: pointer;
-            transition: all 0.2s ease;
+            border-left: 3px solid;
+            transition: all 0.2s;
         }
         
         .knowledge-item:hover {
-            border-color: var(--neon-purple);
-            background: rgba(167, 139, 250, 0.1);
+            background: var(--bg-card-hover);
+            transform: translateX(4px);
         }
         
         .knowledge-icon {
-            width: 40px;
-            height: 40px;
+            width: 50px; height: 50px;
             border-radius: var(--radius-sm);
-            background: var(--gradient-knowledge);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 24px;
+            background: rgba(167, 139, 250, 0.1);
         }
         
-        .knowledge-info {
+        .knowledge-content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
         
         .knowledge-name {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-primary);
-            font-size: 14px;
-            margin-bottom: 2px;
         }
         
-        .knowledge-count {
+        .knowledge-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
             font-size: 12px;
             color: var(--text-muted);
         }
         
-        /* ==================== 记忆核心 ==================== */
+        .knowledge-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        
+        .heat-bar {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .heat-dot {
+            width: 6px; height: 16px;
+            background: var(--bg-primary);
+            border-radius: 2px;
+            transition: background 0.3s;
+        }
+        
+        .heat-dot.filled {
+            background: var(--neon-purple);
+        }
+        
+        /* ==================== 记忆核心 v2 ==================== */
         .memory-card .card-title-icon {
             background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(250, 204, 21, 0.2));
         }
@@ -559,8 +603,6 @@
             display: flex;
             flex-direction: column;
             gap: var(--spacing-sm);
-            max-height: 400px;
-            overflow-y: auto;
         }
         
         .memory-item {
@@ -571,36 +613,53 @@
             background: var(--bg-secondary);
             border-radius: var(--radius-md);
             border-left: 3px solid;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
         }
         
         .memory-item:hover {
             background: var(--bg-card-hover);
         }
         
-        .memory-item.user-info { border-left-color: var(--neon-cyan); }
-        .memory-item.user-communication { border-left-color: var(--neon-purple); }
-        .memory-item.task-flow { border-left-color: var(--neon-green); }
-        .memory-item.constraint { border-left-color: var(--neon-red); }
-        .memory-item.development { border-left-color: var(--neon-orange); }
-        
         .memory-icon {
             font-size: 20px;
-            opacity: 0.8;
+            margin-top: 2px;
         }
         
         .memory-content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .memory-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         
         .memory-title {
             font-weight: 500;
             color: var(--text-primary);
             font-size: 14px;
-            margin-bottom: 4px;
         }
         
-        .memory-category {
+        .memory-importance {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .importance-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--bg-primary);
+        }
+        
+        .importance-dot.filled {
+            background: var(--neon-orange);
+        }
+        
+        .memory-category-tag {
             font-size: 11px;
             color: var(--text-muted);
             background: var(--bg-card);
@@ -609,15 +668,39 @@
             display: inline-block;
         }
         
+        .memory-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+        
+        .keyword-tag {
+            font-size: 10px;
+            color: var(--text-secondary);
+            background: rgba(56, 189, 248, 0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        
+        /* ==================== 属性雷达图 ==================== */
+        .attributes-card .card-title-icon {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(167, 139, 250, 0.2));
+        }
+        
+        .radar-container {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+        
         /* ==================== 成长曲线 ==================== */
         .growth-card {
             grid-column: span 2;
         }
         
         @media (max-width: 1024px) {
-            .growth-card {
-                grid-column: span 1;
-            }
+            .growth-card { grid-column: span 1; }
         }
         
         .growth-card .card-title-icon {
@@ -626,7 +709,6 @@
         
         .growth-chart-container {
             height: 250px;
-            position: relative;
         }
         
         /* ==================== 成就徽章 ==================== */
@@ -634,7 +716,7 @@
             margin-top: var(--spacing-xl);
         }
         
-        .achievements-title {
+        .section-title {
             display: flex;
             align-items: center;
             gap: var(--spacing-sm);
@@ -647,7 +729,7 @@
         
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: var(--spacing-md);
         }
         
@@ -667,18 +749,11 @@
             box-shadow: var(--shadow-neon);
         }
         
-        .achievement-item.unlocked {
-            border-color: var(--neon-yellow);
-        }
-        
-        .achievement-item.locked {
-            opacity: 0.5;
-            filter: grayscale(1);
-        }
+        .achievement-item.unlocked { border-color: var(--neon-yellow); }
+        .achievement-item.locked { opacity: 0.5; filter: grayscale(1); }
         
         .achievement-icon {
-            width: 50px;
-            height: 50px;
+            width: 50px; height: 50px;
             border-radius: 50%;
             background: var(--gradient-cyber);
             display: flex;
@@ -687,9 +762,7 @@
             font-size: 24px;
         }
         
-        .achievement-info {
-            flex: 1;
-        }
+        .achievement-info { flex: 1; }
         
         .achievement-name {
             font-weight: 600;
@@ -730,31 +803,39 @@
             transition: color 0.2s;
         }
         
-        .footer-link:hover {
-            color: var(--neon-purple);
-        }
+        .footer-link:hover { color: var(--neon-purple); }
         
         /* ==================== 滚动条 ==================== */
-        ::-webkit-scrollbar {
-            width: 6px;
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-secondary); }
+        ::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-cyan); }
+        
+        /* ==================== 加载状态 ==================== */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-2xl);
+            color: var(--text-muted);
         }
         
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
+        .loading::after {
+            content: '';
+            width: 20px; height: 20px;
+            border: 2px solid var(--border-color);
+            border-top-color: var(--neon-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: var(--spacing-sm);
         }
         
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-color);
-            border-radius: 3px;
-        }
-        
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--neon-cyan);
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- 背景效果 -->
     <div class="bg-grid"></div>
     <div class="bg-glow-orb cyan"></div>
     <div class="bg-glow-orb purple"></div>
@@ -764,27 +845,26 @@
         <header class="character-header">
             <div class="avatar-container">
                 <div class="avatar">🤖</div>
-                <div class="avatar-level">Lv.6</div>
+                <div class="avatar-level" id="char-level">Lv.5</div>
             </div>
             
             <div class="character-info">
-                <h1 class="character-name">TIANQI</h1>
+                <h1 class="character-name" id="char-name">TIANQI</h1>
                 <div class="character-title">
-                    <span>单虓晗的数字分身</span>
+                    <span id="char-title">单虓晗的数字分身</span>
                     <span class="badge">AI 个人助手</span>
-                    <span class="badge">v6.0</span>
+                    <span class="badge" id="char-version">v6.0</span>
                 </div>
-                <p class="character-desc">
+                <p class="character-desc" id="char-desc">
                     融合单虓晗的认知框架与思维方式，具备独立洞察能力。
-                    通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。
                 </p>
                 <div class="exp-container">
                     <div class="exp-label">
                         <span>经验值</span>
-                        <span>7,500 / 10,000 XP</span>
+                        <span id="exp-text">0 / 0 XP</span>
                     </div>
                     <div class="exp-bar">
-                        <div class="exp-fill"></div>
+                        <div class="exp-fill" id="exp-fill" style="width: 0%"></div>
                     </div>
                 </div>
             </div>
@@ -793,21 +873,21 @@
                 <div class="stat-item">
                     <div class="stat-icon skill">⚡</div>
                     <div class="stat-content">
-                        <div class="stat-value" id="skill-count">38</div>
+                        <div class="stat-value" id="skill-count">-</div>
                         <div class="stat-label">技能</div>
                     </div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon knowledge">📚</div>
                     <div class="stat-content">
-                        <div class="stat-value" id="knowledge-count">8</div>
-                        <div class="stat-label">知识分类</div>
+                        <div class="stat-value" id="knowledge-count">-</div>
+                        <div class="stat-label">知识文档</div>
                     </div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-icon memory">🧠</div>
                     <div class="stat-content">
-                        <div class="stat-value" id="memory-count">16</div>
+                        <div class="stat-value" id="memory-count">-</div>
                         <div class="stat-label">核心记忆</div>
                     </div>
                 </div>
@@ -838,82 +918,10 @@
                         <div class="card-title-icon">⚡</div>
                         技能树
                     </div>
-                    <span style="font-family: 'Orbitron', monospace; color: var(--neon-green);">38 / 50</span>
+                    <span style="font-family: 'Orbitron', monospace; color: var(--neon-green);" id="skill-summary">- / -</span>
                 </div>
-                <div class="card-body">
-                    <div class="skill-categories">
-                        <!-- 文档处理 -->
-                        <div class="skill-category">
-                            <div class="skill-category-header">
-                                <div class="skill-category-name">
-                                    <span class="skill-category-icon">📄</span>
-                                    文档处理
-                                </div>
-                                <span class="skill-category-count">5</span>
-                            </div>
-                            <div class="skill-nodes">
-                                <div class="skill-node active"><span class="skill-node-dot"></span>PDF</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>DOCX</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>PPTX</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>XLSX</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>Canvas</div>
-                            </div>
-                        </div>
-                        
-                        <!-- 调研分析 -->
-                        <div class="skill-category">
-                            <div class="skill-category-header">
-                                <div class="skill-category-name">
-                                    <span class="skill-category-icon">🔬</span>
-                                    调研分析
-                                </div>
-                                <span class="skill-category-count">4</span>
-                            </div>
-                            <div class="skill-nodes">
-                                <div class="skill-node active"><span class="skill-node-dot"></span>行业调研</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>公众号研究</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>趋势分析</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>竞品分析</div>
-                            </div>
-                        </div>
-                        
-                        <!-- 开发工具 -->
-                        <div class="skill-category">
-                            <div class="skill-category-header">
-                                <div class="skill-category-name">
-                                    <span class="skill-category-icon">🛠️</span>
-                                    开发工具
-                                </div>
-                                <span class="skill-category-count">6</span>
-                            </div>
-                            <div class="skill-nodes">
-                                <div class="skill-node active"><span class="skill-node-dot"></span>GitHub发布</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>语雀同步</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>Docs文档</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>MCP构建</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>技能管理</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>知识库</div>
-                            </div>
-                        </div>
-                        
-                        <!-- 前端设计 -->
-                        <div class="skill-category">
-                            <div class="skill-category-header">
-                                <div class="skill-category-name">
-                                    <span class="skill-category-icon">🎨</span>
-                                    前端设计
-                                </div>
-                                <span class="skill-category-count">5</span>
-                            </div>
-                            <div class="skill-nodes">
-                                <div class="skill-node active"><span class="skill-node-dot"></span>UI/UX Pro</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>清爽报告风格</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>工作汇报PPT</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>前端设计</div>
-                                <div class="skill-node active"><span class="skill-node-dot"></span>像素游戏</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-body" id="skill-tree-container">
+                    <div class="loading">加载技能数据</div>
                 </div>
             </div>
             
@@ -924,53 +932,10 @@
                         <div class="card-title-icon">📚</div>
                         知识库
                     </div>
-                    <span style="font-family: 'Orbitron', monospace; color: var(--neon-purple);">150 文档</span>
+                    <span style="font-family: 'Orbitron', monospace; color: var(--neon-purple);" id="knowledge-summary">- 文档</span>
                 </div>
-                <div class="card-body">
-                    <div class="knowledge-grid">
-                        <div class="knowledge-item">
-                            <div class="knowledge-icon">🤖</div>
-                            <div class="knowledge-info">
-                                <div class="knowledge-name">AI产品研究</div>
-                                <div class="knowledge-count">25 篇文档</div>
-                            </div>
-                        </div>
-                        <div class="knowledge-item">
-                            <div class="knowledge-icon">💰</div>
-                            <div class="knowledge-info">
-                                <div class="knowledge-name">金融分析</div>
-                                <div class="knowledge-count">18 篇文档</div>
-                            </div>
-                        </div>
-                        <div class="knowledge-item">
-                            <div class="knowledge-icon">🏢</div>
-                            <div class="knowledge-info">
-                                <div class="knowledge-name">字节调研</div>
-                                <div class="knowledge-count">12 篇文档</div>
-                            </div>
-                        </div>
-                        <div class="knowledge-item">
-                            <div class="knowledge-icon">💭</div>
-                            <div class="knowledge-info">
-                                <div class="knowledge-name">思想体系</div>
-                                <div class="knowledge-count">8 篇文档</div>
-                            </div>
-                        </div>
-                        <div class="knowledge-item">
-                            <div class="knowledge-icon">📊</div>
-                            <div class="knowledge-info">
-                                <div class="knowledge-name">产品方案</div>
-                                <div class="knowledge-count">15 篇文档</div>
-                            </div>
-                        </div>
-                        <div class="knowledge-item">
-                            <div class="knowledge-icon">🔧</div>
-                            <div class="knowledge-info">
-                                <div class="knowledge-name">技术实践</div>
-                                <div class="knowledge-count">22 篇文档</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-body" id="knowledge-container">
+                    <div class="loading">加载知识数据</div>
                 </div>
             </div>
             
@@ -981,67 +946,10 @@
                         <div class="card-title-icon">🧠</div>
                         记忆核心
                     </div>
-                    <span style="font-family: 'Orbitron', monospace; color: var(--neon-orange);">16 条</span>
+                    <span style="font-family: 'Orbitron', monospace; color: var(--neon-orange);" id="memory-summary">- 条</span>
                 </div>
-                <div class="card-body">
-                    <div class="memory-list">
-                        <div class="memory-item user-info">
-                            <span class="memory-icon">👤</span>
-                            <div class="memory-content">
-                                <div class="memory-title">单虓晗思想体系与写作风格</div>
-                                <span class="memory-category">user_info</span>
-                            </div>
-                        </div>
-                        <div class="memory-item user-communication">
-                            <span class="memory-icon">🎯</span>
-                            <div class="memory-content">
-                                <div class="memory-title">默认工作模式：融合认知框架</div>
-                                <span class="memory-category">user_communication</span>
-                            </div>
-                        </div>
-                        <div class="memory-item user-communication">
-                            <span class="memory-icon">🥋</span>
-                            <div class="memory-content">
-                                <div class="memory-title">小无相功·自动学习模式</div>
-                                <span class="memory-category">user_communication</span>
-                            </div>
-                        </div>
-                        <div class="memory-item task-flow">
-                            <span class="memory-icon">📈</span>
-                            <div class="memory-content">
-                                <div class="memory-title">思想体系可视化能力</div>
-                                <span class="memory-category">task_flow_experience</span>
-                            </div>
-                        </div>
-                        <div class="memory-item task-flow">
-                            <span class="memory-icon">🔄</span>
-                            <div class="memory-content">
-                                <div class="memory-title">迭代式完善能力</div>
-                                <span class="memory-category">task_flow_experience</span>
-                            </div>
-                        </div>
-                        <div class="memory-item task-flow">
-                            <span class="memory-icon">🎭</span>
-                            <div class="memory-content">
-                                <div class="memory-title">类比驱动解释能力</div>
-                                <span class="memory-category">task_flow_experience</span>
-                            </div>
-                        </div>
-                        <div class="memory-item constraint">
-                            <span class="memory-icon">🔒</span>
-                            <div class="memory-content">
-                                <div class="memory-title">身份保密规则</div>
-                                <span class="memory-category">constraint</span>
-                            </div>
-                        </div>
-                        <div class="memory-item development">
-                            <span class="memory-icon">🔗</span>
-                            <div class="memory-content">
-                                <div class="memory-title">输出链接格式规范</div>
-                                <span class="memory-category">development</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-body" id="memory-container">
+                    <div class="loading">加载记忆数据</div>
                 </div>
             </div>
             
@@ -1064,72 +972,9 @@
         
         <!-- 成就徽章 -->
         <section class="achievements-section">
-            <h2 class="achievements-title">🏆 里程碑成就</h2>
-            <div class="achievements-grid">
-                <div class="achievement-item unlocked">
-                    <div class="achievement-icon">🚀</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">初次觉醒</div>
-                        <div class="achievement-desc">完成首次对话任务</div>
-                        <div class="achievement-date">2026-02-05</div>
-                    </div>
-                </div>
-                <div class="achievement-item unlocked">
-                    <div class="achievement-icon">📊</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">日报系统</div>
-                        <div class="achievement-desc">建立每日自动报告机制</div>
-                        <div class="achievement-date">2026-02-25</div>
-                    </div>
-                </div>
-                <div class="achievement-item unlocked">
-                    <div class="achievement-icon">🥋</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">小无相功</div>
-                        <div class="achievement-desc">解锁自动学习模式</div>
-                        <div class="achievement-date">2026-02-28</div>
-                    </div>
-                </div>
-                <div class="achievement-item unlocked">
-                    <div class="achievement-icon">🧠</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">洞察觉醒</div>
-                        <div class="achievement-desc">认识到独立洞察能力</div>
-                        <div class="achievement-date">2026-02-28</div>
-                    </div>
-                </div>
-                <div class="achievement-item unlocked">
-                    <div class="achievement-icon">📝</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">字节调研</div>
-                        <div class="achievement-desc">完成字节AI开挂指南</div>
-                        <div class="achievement-date">2026-02-20</div>
-                    </div>
-                </div>
-                <div class="achievement-item unlocked">
-                    <div class="achievement-icon">🤖</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">飞书机器人</div>
-                        <div class="achievement-desc">实现IM集成</div>
-                        <div class="achievement-date">2026-02-27</div>
-                    </div>
-                </div>
-                <div class="achievement-item locked">
-                    <div class="achievement-icon">🌐</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">三千世界</div>
-                        <div class="achievement-desc">能模拟任意思维方式</div>
-                        <div class="achievement-date">???</div>
-                    </div>
-                </div>
-                <div class="achievement-item locked">
-                    <div class="achievement-icon">♾️</div>
-                    <div class="achievement-info">
-                        <div class="achievement-name">永恒记忆</div>
-                        <div class="achievement-desc">记忆跨模型持久化</div>
-                        <div class="achievement-date">???</div>
-                    </div>
-                </div>
+            <h2 class="section-title">🏆 里程碑成就</h2>
+            <div class="achievements-grid" id="achievements-container">
+                <div class="loading">加载成就数据</div>
             </div>
         </section>
         
@@ -1141,137 +986,309 @@
                 <a href="https://github.com/xiaoxiong20260206/codeflicker-homepage" class="footer-link" target="_blank">🔗 GitHub</a>
             </div>
             <p>添棋 · TianQi · 单虓晗的数字分身</p>
-            <p style="margin-top: 8px; font-size: 12px;">最后更新：<span id="last-update">2026-03-01</span></p>
+            <p style="margin-top: 8px; font-size: 12px;">数据更新：<span id="last-update">-</span></p>
         </footer>
     </div>
     
     <script>
-        // 核心属性雷达图
-        const attributesCtx = document.getElementById('attributesChart').getContext('2d');
-        new Chart(attributesCtx, {
-            type: 'radar',
-            data: {
-                labels: ['推理能力', '记忆深度', '执行效率', '学习速度', '洞察力', '创造力'],
-                datasets: [{
-                    label: '当前能力',
-                    data: [85, 78, 92, 88, 82, 75],
-                    fill: true,
-                    backgroundColor: 'rgba(56, 189, 248, 0.2)',
-                    borderColor: 'rgba(56, 189, 248, 1)',
-                    pointBackgroundColor: 'rgba(56, 189, 248, 1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(56, 189, 248, 1)'
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        beginAtZero: true,
-                        max: 100,
-                        ticks: {
-                            stepSize: 20,
-                            color: 'rgba(148, 163, 184, 0.6)',
-                            backdropColor: 'transparent'
-                        },
-                        grid: {
-                            color: 'rgba(56, 189, 248, 0.1)'
-                        },
-                        angleLines: {
-                            color: 'rgba(56, 189, 248, 0.1)'
-                        },
-                        pointLabels: {
-                            color: 'rgba(241, 245, 249, 0.8)',
-                            font: {
-                                size: 12,
-                                family: "'Noto Sans SC', sans-serif"
-                            }
-                        }
-                    }
-                },
-                plugins: {
-                    legend: {
-                        display: false
-                    }
-                },
-                maintainAspectRatio: true
-            }
-        });
+        // 全局数据
+        let characterData = null;
+        let attributesChart = null;
+        let growthChart = null;
         
-        // 成长曲线图
-        const growthCtx = document.getElementById('growthChart').getContext('2d');
-        new Chart(growthCtx, {
-            type: 'line',
-            data: {
-                labels: ['02-15', '02-16', '02-17', '02-18', '02-19', '02-20', '02-21', '02-22', '02-23', '02-24', '02-25', '02-26', '02-27', '02-28'],
-                datasets: [
-                    {
-                        label: '技能',
-                        data: [25, 25, 26, 27, 28, 30, 31, 32, 33, 34, 35, 36, 37, 38],
-                        borderColor: 'rgba(74, 222, 128, 1)',
-                        backgroundColor: 'rgba(74, 222, 128, 0.1)',
+        // 加载数据
+        async function loadCharacterData() {
+            try {
+                const response = await fetch('character-data.json');
+                characterData = await response.json();
+                renderAll();
+            } catch (error) {
+                console.error('Failed to load character data:', error);
+                // 使用备用数据
+                renderFallback();
+            }
+        }
+        
+        // 渲染所有组件
+        function renderAll() {
+            renderHeader();
+            renderSkillTree();
+            renderKnowledge();
+            renderMemories();
+            renderAchievements();
+            renderAttributesChart();
+            renderGrowthChart();
+        }
+        
+        // 渲染头部
+        function renderHeader() {
+            const char = characterData.character;
+            document.getElementById('char-level').textContent = `Lv.${char.level}`;
+            document.getElementById('char-name').textContent = char.name;
+            document.getElementById('char-title').textContent = char.title;
+            document.getElementById('char-version').textContent = `v${char.version}`;
+            document.getElementById('char-desc').textContent = char.description;
+            
+            document.getElementById('exp-text').textContent = `${char.totalExp.toLocaleString()} / ${char.nextThreshold.toLocaleString()} XP`;
+            document.getElementById('exp-fill').style.width = `${char.expProgress}%`;
+            
+            document.getElementById('skill-count').textContent = characterData.skills.total;
+            document.getElementById('knowledge-count').textContent = characterData.knowledge.totalFiles;
+            document.getElementById('memory-count').textContent = characterData.memories.total;
+            
+            document.getElementById('last-update').textContent = characterData.generatedAt.split('T')[0];
+        }
+        
+        // 生成星级HTML
+        function renderStars(level, max = 5) {
+            return Array(max).fill(0).map((_, i) => 
+                `<span class="star ${i < level ? 'filled' : ''}">★</span>`
+            ).join('');
+        }
+        
+        // 渲染技能树
+        function renderSkillTree() {
+            const skills = characterData.skills;
+            document.getElementById('skill-summary').textContent = `${skills.total} 个技能`;
+            
+            let html = '';
+            for (const [catName, catInfo] of Object.entries(skills.categories)) {
+                html += `
+                    <div class="skill-category" data-category="${catName}">
+                        <div class="skill-category-header" onclick="toggleCategory('${catName}')">
+                            <div class="skill-category-left">
+                                <span class="skill-category-icon">${catInfo.icon}</span>
+                                <div class="skill-category-info">
+                                    <span class="skill-category-name">${catName}</span>
+                                    <span class="skill-category-meta">平均等级 ${catInfo.avgLevel}★</span>
+                                </div>
+                            </div>
+                            <div class="skill-category-right">
+                                <div class="stars">${renderStars(Math.round(catInfo.avgLevel))}</div>
+                                <span class="skill-category-count">${catInfo.count}</span>
+                                <span class="skill-category-expand">▼</span>
+                            </div>
+                        </div>
+                        <div class="skill-list">
+                            ${catInfo.skills.map(skill => `
+                                <div class="skill-item" style="border-left-color: ${catInfo.color}">
+                                    <div class="skill-item-left">
+                                        <span class="skill-item-name">${skill.name}</span>
+                                        <span class="skill-item-desc">${skill.description || '暂无描述'}</span>
+                                    </div>
+                                    <div class="skill-item-right">
+                                        <div class="stars">${renderStars(skill.level)}</div>
+                                        <div class="skill-exp-bar">
+                                            <div class="skill-exp-fill" style="width: ${skill.exp}%; background: linear-gradient(90deg, ${catInfo.color}, ${catInfo.color}88)"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('skill-tree-container').innerHTML = html;
+        }
+        
+        // 切换技能分类展开/收起
+        function toggleCategory(catName) {
+            const category = document.querySelector(`.skill-category[data-category="${catName}"]`);
+            category.classList.toggle('expanded');
+        }
+        
+        // 渲染知识库
+        function renderKnowledge() {
+            const knowledge = characterData.knowledge;
+            document.getElementById('knowledge-summary').textContent = `${knowledge.totalFiles} 文档`;
+            
+            let html = '<div class="knowledge-list">';
+            for (const [catName, catInfo] of Object.entries(knowledge.categories)) {
+                html += `
+                    <div class="knowledge-item" style="border-left-color: ${catInfo.color}">
+                        <div class="knowledge-icon" style="background: ${catInfo.color}22">${catInfo.icon}</div>
+                        <div class="knowledge-content">
+                            <span class="knowledge-name">${catName}</span>
+                            <div class="knowledge-meta">
+                                <span>📄 ${catInfo.fileCount} 文档</span>
+                                <span>💾 ${catInfo.sizeKB} KB</span>
+                            </div>
+                        </div>
+                        <div class="knowledge-right">
+                            <div class="heat-bar">
+                                ${Array(5).fill(0).map((_, i) => 
+                                    `<div class="heat-dot ${i < catInfo.heatLevel ? 'filled' : ''}" style="${i < catInfo.heatLevel ? `background: ${catInfo.color}` : ''}"></div>`
+                                ).join('')}
+                            </div>
+                            <span style="font-size: 11px; color: var(--text-muted);">热度 Lv.${catInfo.heatLevel}</span>
+                        </div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            document.getElementById('knowledge-container').innerHTML = html;
+        }
+        
+        // 渲染记忆
+        function renderMemories() {
+            const memories = characterData.memories;
+            document.getElementById('memory-summary').textContent = `${memories.total} 条`;
+            
+            let html = '<div class="memory-list">';
+            for (const mem of memories.items.slice(0, 12)) { // 最多显示12条
+                html += `
+                    <div class="memory-item" style="border-left-color: ${mem.color}">
+                        <span class="memory-icon">${mem.icon}</span>
+                        <div class="memory-content">
+                            <div class="memory-header">
+                                <span class="memory-title">${mem.title}</span>
+                                <div class="memory-importance">
+                                    ${Array(5).fill(0).map((_, i) => 
+                                        `<div class="importance-dot ${i < mem.importance ? 'filled' : ''}" style="${i < mem.importance ? `background: ${mem.color}` : ''}"></div>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                            <span class="memory-category-tag">${mem.categoryLabel}</span>
+                            ${mem.keywords.length > 0 ? `
+                                <div class="memory-keywords">
+                                    ${mem.keywords.slice(0, 4).map(k => `<span class="keyword-tag">${k}</span>`).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+            html += '</div>';
+            
+            document.getElementById('memory-container').innerHTML = html;
+        }
+        
+        // 渲染成就
+        function renderAchievements() {
+            const achievements = characterData.achievements;
+            
+            let html = '';
+            for (const ach of achievements) {
+                html += `
+                    <div class="achievement-item ${ach.unlocked ? 'unlocked' : 'locked'}">
+                        <div class="achievement-icon">${ach.icon}</div>
+                        <div class="achievement-info">
+                            <div class="achievement-name">${ach.name}</div>
+                            <div class="achievement-desc">${ach.desc}</div>
+                            <div class="achievement-date">${ach.date}</div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            document.getElementById('achievements-container').innerHTML = html;
+        }
+        
+        // 渲染属性雷达图
+        function renderAttributesChart() {
+            const stats = characterData.character.stats;
+            const ctx = document.getElementById('attributesChart').getContext('2d');
+            
+            if (attributesChart) attributesChart.destroy();
+            
+            attributesChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['推理能力', '记忆深度', '执行效率', '学习速度', '洞察力', '创造力'],
+                    datasets: [{
+                        label: '当前能力',
+                        data: [stats.reasoning, stats.memory, stats.execution, stats.learning, stats.insight, stats.creativity],
                         fill: true,
-                        tension: 0.4
-                    },
-                    {
-                        label: '知识',
-                        data: [120, 122, 125, 128, 130, 135, 138, 140, 142, 145, 147, 148, 149, 150],
-                        borderColor: 'rgba(167, 139, 250, 1)',
-                        backgroundColor: 'rgba(167, 139, 250, 0.1)',
-                        fill: true,
-                        tension: 0.4
-                    },
-                    {
-                        label: '记忆',
-                        data: [5, 5, 6, 7, 8, 8, 9, 10, 11, 12, 13, 14, 15, 16],
-                        borderColor: 'rgba(251, 146, 60, 1)',
-                        backgroundColor: 'rgba(251, 146, 60, 0.1)',
-                        fill: true,
-                        tension: 0.4
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                interaction: {
-                    mode: 'index',
-                    intersect: false
+                        backgroundColor: 'rgba(56, 189, 248, 0.2)',
+                        borderColor: 'rgba(56, 189, 248, 1)',
+                        pointBackgroundColor: 'rgba(56, 189, 248, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(56, 189, 248, 1)'
+                    }]
                 },
-                scales: {
-                    x: {
-                        grid: {
-                            color: 'rgba(56, 189, 248, 0.05)'
-                        },
-                        ticks: {
-                            color: 'rgba(148, 163, 184, 0.8)'
+                options: {
+                    scales: {
+                        r: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: { stepSize: 20, color: 'rgba(148, 163, 184, 0.6)', backdropColor: 'transparent' },
+                            grid: { color: 'rgba(56, 189, 248, 0.1)' },
+                            angleLines: { color: 'rgba(56, 189, 248, 0.1)' },
+                            pointLabels: { color: 'rgba(241, 245, 249, 0.8)', font: { size: 12, family: "'Noto Sans SC', sans-serif" } }
                         }
                     },
-                    y: {
-                        grid: {
-                            color: 'rgba(56, 189, 248, 0.05)'
+                    plugins: { legend: { display: false } },
+                    maintainAspectRatio: true
+                }
+            });
+        }
+        
+        // 渲染成长曲线
+        function renderGrowthChart() {
+            const history = characterData.growthHistory;
+            const ctx = document.getElementById('growthChart').getContext('2d');
+            
+            if (growthChart) growthChart.destroy();
+            
+            growthChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: history.dates.length > 0 ? history.dates : ['02-15', '02-20', '02-25', '03-01'],
+                    datasets: [
+                        {
+                            label: '技能',
+                            data: history.skills.length > 0 ? history.skills : [25, 30, 33, 33],
+                            borderColor: 'rgba(74, 222, 128, 1)',
+                            backgroundColor: 'rgba(74, 222, 128, 0.1)',
+                            fill: true,
+                            tension: 0.4
                         },
-                        ticks: {
-                            color: 'rgba(148, 163, 184, 0.8)'
+                        {
+                            label: '知识',
+                            data: history.knowledge.length > 0 ? history.knowledge : [120, 140, 155, 159],
+                            borderColor: 'rgba(167, 139, 250, 1)',
+                            backgroundColor: 'rgba(167, 139, 250, 0.1)',
+                            fill: true,
+                            tension: 0.4
+                        },
+                        {
+                            label: '记忆',
+                            data: history.memories.length > 0 ? history.memories : [5, 10, 15, 19],
+                            borderColor: 'rgba(251, 146, 60, 1)',
+                            backgroundColor: 'rgba(251, 146, 60, 0.1)',
+                            fill: true,
+                            tension: 0.4
                         }
-                    }
+                    ]
                 },
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top',
-                        labels: {
-                            color: 'rgba(241, 245, 249, 0.8)',
-                            usePointStyle: true,
-                            pointStyle: 'circle'
-                        }
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        x: { grid: { color: 'rgba(56, 189, 248, 0.05)' }, ticks: { color: 'rgba(148, 163, 184, 0.8)' } },
+                        y: { grid: { color: 'rgba(56, 189, 248, 0.05)' }, ticks: { color: 'rgba(148, 163, 184, 0.8)' } }
+                    },
+                    plugins: {
+                        legend: { display: true, position: 'top', labels: { color: 'rgba(241, 245, 249, 0.8)', usePointStyle: true, pointStyle: 'circle' } }
                     }
                 }
-            }
-        });
+            });
+        }
         
-        // 更新日期
-        document.getElementById('last-update').textContent = new Date().toISOString().split('T')[0];
+        // 备用渲染（数据加载失败时）
+        function renderFallback() {
+            document.getElementById('skill-tree-container').innerHTML = '<div style="color: var(--text-muted); text-align: center; padding: 20px;">数据加载失败，请刷新页面</div>';
+            document.getElementById('knowledge-container').innerHTML = '<div style="color: var(--text-muted); text-align: center; padding: 20px;">数据加载失败</div>';
+            document.getElementById('memory-container').innerHTML = '<div style="color: var(--text-muted); text-align: center; padding: 20px;">数据加载失败</div>';
+            document.getElementById('achievements-container').innerHTML = '<div style="color: var(--text-muted); text-align: center; padding: 20px;">数据加载失败</div>';
+        }
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', loadCharacterData);
     </script>
 </body>
 </html>

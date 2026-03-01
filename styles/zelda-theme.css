@@ -47,7 +47,7 @@
     --zelda-parchment: #e8dcc4;
     --zelda-brown: #6b5344;
     --zelda-dark: #2a2520;
-    --zelda-dark-panel: rgba(30, 35, 30, 0.95);
+    --zelda-dark-panel: rgba(30, 35, 40, 0.95);
     
     /* 功能色 */
     --zelda-green: #5d8a4a;
@@ -190,9 +190,9 @@ body {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: var(--zonai-green-light);
+    background: var(--sheikah-blue-light);
     border-radius: 50%;
-    box-shadow: 0 0 10px var(--zonai-green-light);
+    box-shadow: 0 0 10px var(--sheikah-blue-light);
     animation: sparkle 4s ease-in-out infinite;
 }
 
@@ -295,7 +295,7 @@ body {
 .zelda-title.light {
     color: var(--text-light);
     text-shadow: 
-        0 0 30px var(--zonai-glow),
+        0 0 30px var(--sheikah-glow),
         2px 2px 0 rgba(0,0,0,0.3);
 }
 
@@ -353,7 +353,7 @@ body {
 .shrine-spiral {
     position: absolute;
     inset: 0;
-    border: 3px solid var(--zonai-green);
+    border: 3px solid var(--sheikah-blue);
     border-radius: 50%;
     animation: spiral-rotate 8s linear infinite;
 }
@@ -381,9 +381,9 @@ body {
 .shrine-core {
     position: absolute;
     inset: 40%;
-    background: radial-gradient(circle, var(--zonai-green-light) 0%, var(--zonai-green) 100%);
+    background: radial-gradient(circle, var(--sheikah-blue-light) 0%, var(--sheikah-blue) 100%);
     border-radius: 50%;
-    box-shadow: var(--zonai-glow);
+    box-shadow: var(--sheikah-glow);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -404,30 +404,30 @@ body {
     font-family: var(--font-title);
     font-size: 14px;
     letter-spacing: 1px;
-    border: 2px solid var(--zonai-green);
+    border: 2px solid var(--sheikah-blue);
     border-radius: var(--radius-sm);
-    background: rgba(60, 180, 137, 0.1);
-    color: var(--zonai-green-light);
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--sheikah-blue-light);
     cursor: pointer;
     transition: all var(--transition-normal);
     text-decoration: none;
 }
 
 .zonai-btn:hover {
-    background: rgba(60, 180, 137, 0.2);
-    box-shadow: var(--zonai-glow);
+    background: rgba(0, 212, 255, 0.2);
+    box-shadow: var(--sheikah-glow);
     transform: translateY(-2px);
 }
 
 .zonai-btn.primary {
-    background: linear-gradient(135deg, var(--zonai-green-dark), var(--zonai-green));
+    background: linear-gradient(135deg, var(--sheikah-blue-dark), var(--sheikah-blue));
     color: white;
     border: none;
-    box-shadow: 0 4px 20px rgba(60, 180, 137, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
 }
 
 .zonai-btn.primary:hover {
-    box-shadow: 0 6px 30px rgba(60, 180, 137, 0.6);
+    box-shadow: 0 6px 30px rgba(0, 212, 255, 0.6);
 }
 
 .zonai-btn.gold {
@@ -446,17 +446,17 @@ body {
     height: 70px;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, 
-        var(--zonai-green-light) 0%,
-        var(--zonai-green) 50%,
-        var(--zonai-green-dark) 100%
+        var(--sheikah-blue-light) 0%,
+        var(--sheikah-blue) 50%,
+        var(--sheikah-blue-dark) 100%
     );
-    border: 3px solid var(--zonai-green-light);
+    border: 3px solid var(--sheikah-blue-light);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 32px;
     box-shadow: 
-        var(--zonai-glow),
+        var(--sheikah-glow),
         inset 0 -5px 15px rgba(0, 0, 0, 0.2),
         inset 0 5px 15px rgba(255, 255, 255, 0.1);
     animation: ability-pulse 2s ease-in-out infinite;
@@ -464,11 +464,11 @@ body {
 
 @keyframes ability-pulse {
     0%, 100% { 
-        box-shadow: 0 0 15px rgba(60, 180, 137, 0.4),
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.4),
                     inset 0 -5px 15px rgba(0, 0, 0, 0.2);
     }
     50% { 
-        box-shadow: 0 0 35px rgba(60, 180, 137, 0.7),
+        box-shadow: 0 0 35px rgba(0, 212, 255, 0.7),
                     inset 0 -5px 15px rgba(0, 0, 0, 0.2);
     }
 }
@@ -536,8 +536,8 @@ body {
 }
 
 .inventory-slot.zonai { 
-    border-color: var(--zonai-green); 
-    box-shadow: 0 0 15px rgba(60, 180, 137, 0.4); 
+    border-color: var(--sheikah-blue); 
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); 
 }
 
 .inventory-slot.legendary { 
@@ -547,8 +547,8 @@ body {
 
 /* ==================== 任务日志 ==================== */
 .quest-log {
-    background: rgba(30, 35, 30, 0.95);
-    border: 2px solid var(--zonai-green-dark);
+    background: rgba(30, 35, 40, 0.95);
+    border: 2px solid var(--sheikah-blue-dark);
     border-radius: var(--radius-sm);
     padding: var(--spacing-md);
     color: var(--text-light);
@@ -560,7 +560,7 @@ body {
     color: var(--zelda-gold-light);
     margin-bottom: var(--spacing-md);
     padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--zonai-green-dark);
+    border-bottom: 1px solid var(--sheikah-blue-dark);
 }
 
 .quest-objectives {
@@ -578,22 +578,22 @@ body {
     content: '◇';
     position: absolute;
     left: 0;
-    color: var(--zonai-green-dark);
+    color: var(--sheikah-blue-dark);
 }
 
 .quest-objectives li.completed {
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
 }
 
 .quest-objectives li.completed::before {
     content: '◆';
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
 }
 
 /* ==================== 统计卡片 ==================== */
 .stat-card {
-    background: rgba(30, 35, 30, 0.9);
-    border: 2px solid var(--zonai-green-dark);
+    background: rgba(30, 35, 40, 0.9);
+    border: 2px solid var(--sheikah-blue-dark);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     text-align: center;
@@ -601,8 +601,8 @@ body {
 }
 
 .stat-card:hover {
-    border-color: var(--zonai-green);
-    box-shadow: var(--zonai-glow);
+    border-color: var(--sheikah-blue);
+    box-shadow: var(--sheikah-glow);
     transform: translateY(-3px);
 }
 
@@ -615,7 +615,7 @@ body {
     font-family: var(--font-mono);
     font-size: 32px;
     font-weight: 700;
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
 }
 
 .stat-label {
@@ -629,8 +629,8 @@ body {
 .zelda-nav {
     position: sticky;
     top: 0;
-    background: rgba(30, 35, 30, 0.95);
-    border-bottom: 2px solid var(--zonai-green-dark);
+    background: rgba(30, 35, 40, 0.95);
+    border-bottom: 2px solid var(--sheikah-blue-dark);
     padding: 0 var(--spacing-md);
     z-index: 1000;
     backdrop-filter: blur(10px);
@@ -648,7 +648,7 @@ body {
 .zelda-nav-brand {
     font-family: var(--font-title);
     font-size: 20px;
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -673,21 +673,21 @@ body {
 }
 
 .zelda-nav-link:hover {
-    color: var(--zonai-green-light);
-    background: rgba(60, 180, 137, 0.1);
+    color: var(--sheikah-blue-light);
+    background: rgba(0, 212, 255, 0.1);
 }
 
 .zelda-nav-link.active {
-    color: var(--zonai-green-light);
-    background: rgba(60, 180, 137, 0.15);
-    border: 1px solid var(--zonai-green);
+    color: var(--sheikah-blue-light);
+    background: rgba(0, 212, 255, 0.15);
+    border: 1px solid var(--sheikah-blue);
 }
 
 /* ==================== 侧边栏 ==================== */
 .zelda-sidebar {
     width: 300px;
-    background: rgba(30, 35, 30, 0.95);
-    border-right: 2px solid var(--zonai-green-dark);
+    background: rgba(30, 35, 40, 0.95);
+    border-right: 2px solid var(--sheikah-blue-dark);
     padding: var(--spacing-md);
     position: fixed;
     top: 0;
@@ -706,7 +706,7 @@ body {
 }
 
 .zelda-sidebar::-webkit-scrollbar-thumb {
-    background: var(--zonai-green);
+    background: var(--sheikah-blue);
     border-radius: 2px;
 }
 
@@ -740,8 +740,8 @@ body {
 .root-node {
     width: 80px;
     height: 80px;
-    background: rgba(30, 35, 30, 0.9);
-    border: 3px solid var(--zonai-green);
+    background: rgba(30, 35, 40, 0.9);
+    border: 3px solid var(--sheikah-blue);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -755,7 +755,7 @@ body {
 
 .root-node:hover {
     transform: scale(1.1);
-    box-shadow: var(--zonai-glow);
+    box-shadow: var(--sheikah-glow);
 }
 
 .root-node .node-icon { font-size: 28px; }
@@ -763,19 +763,19 @@ body {
     position: absolute;
     bottom: -8px;
     background: var(--zelda-dark);
-    border: 2px solid var(--zonai-green);
+    border: 2px solid var(--sheikah-blue);
     border-radius: 10px;
     padding: 1px 8px;
     font-family: var(--font-mono);
     font-size: 10px;
     font-weight: 700;
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
 }
 
 .root-line {
     width: 3px;
     height: 40px;
-    background: linear-gradient(180deg, var(--zonai-green) 0%, rgba(60, 180, 137, 0.3) 100%);
+    background: linear-gradient(180deg, var(--sheikah-blue) 0%, rgba(0, 212, 255, 0.3) 100%);
 }
 
 .branches {
@@ -793,7 +793,7 @@ body {
     left: 30px;
     right: 30px;
     height: 3px;
-    background: linear-gradient(90deg, transparent, var(--zonai-green-dark), transparent);
+    background: linear-gradient(90deg, transparent, var(--sheikah-blue-dark), transparent);
 }
 
 .branch {
@@ -811,14 +811,14 @@ body {
     left: 50%;
     width: 3px;
     height: 40px;
-    background: linear-gradient(180deg, var(--zonai-green-dark) 0%, currentColor 100%);
+    background: linear-gradient(180deg, var(--sheikah-blue-dark) 0%, currentColor 100%);
     transform: translateX(-50%);
 }
 
 .category-node {
     width: 70px;
     height: 70px;
-    background: rgba(30, 35, 30, 0.9);
+    background: rgba(30, 35, 40, 0.9);
     border: 2px solid;
     border-radius: var(--radius-lg);
     display: flex;
@@ -896,9 +896,9 @@ body {
 }
 
 .leaf-node {
-    width: 50px;
-    height: 50px;
-    background: rgba(30, 35, 30, 0.9);
+    width: 54px;
+    height: 54px;
+    background: rgba(30, 35, 40, 0.9);
     border: 2px solid;
     border-radius: var(--radius-md);
     display: flex;
@@ -916,13 +916,13 @@ body {
     z-index: 10;
 }
 
-.leaf-node .leaf-icon { font-size: 18px; }
+.leaf-node .leaf-icon { font-size: 20px; }
 .leaf-node .leaf-name {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 600;
     text-align: center;
     line-height: 1.2;
-    max-width: 44px;
+    max-width: 48px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -966,8 +966,8 @@ body {
 .tooltip {
     position: fixed;
     z-index: 9999;
-    width: 300px;
-    max-width: 340px;
+    width: 320px;
+    max-width: 360px;
     background: linear-gradient(135deg, 
         rgba(30, 35, 40, 0.98) 0%, 
         rgba(40, 45, 55, 0.95) 100%
@@ -979,7 +979,7 @@ body {
     transform: translateY(10px);
     transition: all 0.2s;
     box-shadow: 
-        var(--zonai-glow),
+        var(--sheikah-glow),
         0 10px 40px rgba(0, 0, 0, 0.6);
 }
 
@@ -989,11 +989,11 @@ body {
 }
 
 .tip-header {
-    padding: 12px;
+    padding: 14px;
     border-bottom: 1px solid var(--sheikah-blue-dark);
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     background: rgba(0, 212, 255, 0.1);
 }
 
@@ -1011,13 +1011,13 @@ body {
 .tip-title { flex: 1; }
 
 .tip-name {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-light);
 }
 
 .tip-type {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
 }
 
@@ -1025,40 +1025,40 @@ body {
 
 .tip-lv-num {
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--sheikah-blue-light);
 }
 
 .tip-lv-max {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-muted);
 }
 
-.tip-body { padding: 12px; }
+.tip-body { padding: 14px; }
 
-.tip-section { margin-bottom: 10px; }
+.tip-section { margin-bottom: 12px; }
 .tip-section:last-child { margin-bottom: 0; }
 
 .tip-section-title {
-    font-size: 9px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--text-muted);
-    margin-bottom: 4px;
+    color: var(--sheikah-blue-light);
+    margin-bottom: 6px;
 }
 
 .tip-desc {
-    font-size: 11px;
-    color: var(--text-muted);
-    line-height: 1.5;
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.6;
     max-height: 200px;
     overflow-y: auto;
 }
 
 .tip-source {
     font-size: 11px;
-    color: var(--zonai-green-light);
+    color: var(--sheikah-blue-light);
     font-weight: 500;
 }
 
@@ -1072,14 +1072,14 @@ body {
 
 .tip-progress-fill {
     height: 100%;
-    background: var(--zonai-green);
+    background: var(--sheikah-blue);
     border-radius: 3px;
 }
 
 .tip-progress-text {
     display: flex;
     justify-content: space-between;
-    font-size: 9px;
+    font-size: 10px;
     color: var(--text-muted);
 }
 
@@ -1096,8 +1096,8 @@ body {
     content: '';
     width: 20px;
     height: 20px;
-    border: 2px solid var(--zonai-green-dark);
-    border-top-color: var(--zonai-green-light);
+    border: 2px solid var(--sheikah-blue-dark);
+    border-top-color: var(--sheikah-blue-light);
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-left: 10px;
@@ -1110,12 +1110,12 @@ body {
 /* ==================== 脉冲发光 ==================== */
 @keyframes zonai-pulse {
     0%, 100% { 
-        box-shadow: 0 0 15px rgba(60, 180, 137, 0.3);
-        border-color: var(--zonai-green);
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        border-color: var(--sheikah-blue);
     }
     50% { 
-        box-shadow: 0 0 35px rgba(60, 180, 137, 0.6);
-        border-color: var(--zonai-green-light);
+        box-shadow: 0 0 35px rgba(0, 212, 255, 0.6);
+        border-color: var(--sheikah-blue-light);
     }
 }
 

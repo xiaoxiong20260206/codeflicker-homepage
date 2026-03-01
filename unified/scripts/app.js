@@ -580,6 +580,30 @@ function renderKnowledgeTreeGraph(knowledge) {
     const container = document.getElementById('knowledge-tree');
     if (!container) return;
     
+    // 知识目录中文名称映射
+    const knowledgeNameMap = {
+        'personal-writings': '个人文章',
+        'rd-efficiency': '研发效能',
+        'financial': '金融投资',
+        'experience': '经验总结',
+        'guides': '使用指南',
+        'investment': '投资理财',
+        'ai-research': 'AI研究',
+        'product': '产品思考'
+    };
+    
+    // 知识目录来源描述映射
+    const knowledgeSourceMap = {
+        'personal-writings': '来自单虓晗的个人原创文章、思考记录、写作作品，涵盖人生哲学、认知框架、方法论等内容',
+        'rd-efficiency': '研发效能领域的调研报告、技术分析、最佳实践，源自工作中的技术积累',
+        'financial': '金融投资相关的分析报告、数据研究、决策框架',
+        'experience': '项目实践中的经验沉淀、踩坑记录、解决方案',
+        'guides': '工具使用指南、操作手册、配置说明',
+        'investment': '投资策略、市场分析、理财规划相关内容',
+        'ai-research': 'AI技术调研、行业分析、产品形态探索',
+        'product': '产品设计思考、用户体验研究、功能规划'
+    };
+    
     // 获取知识目录 - 支持两种数据格式
     let directories = [];
     if (knowledge.directories && Array.isArray(knowledge.directories)) {
@@ -587,10 +611,13 @@ function renderKnowledgeTreeGraph(knowledge) {
     } else if (knowledge.categories) {
         // 新格式：categories 是对象
         directories = Object.entries(knowledge.categories).map(([key, cat]) => ({
+            key: key,
             name: cat.name || key,
             count: cat.fileCount || 0,
             icon: cat.icon || '📁',
-            color: cat.color
+            color: cat.color,
+            sizeKB: cat.sizeKB || 0,
+            description: cat.description
         }));
     }
     
@@ -603,13 +630,17 @@ function renderKnowledgeTreeGraph(knowledge) {
     let branches = '';
     
     for (const dir of directories) {
+        const dirKey = dir.key || dir.name;
+        const chineseName = knowledgeNameMap[dirKey] || dirKey;
+        const sourceDesc = knowledgeSourceMap[dirKey] || `${chineseName}相关文档`;
         const dirId = 'knowledge-dir-' + idx;
+        
         AppState.dataMap[dirId] = { 
-            name: dir.name, 
+            name: chineseName, 
             icon: '📁', 
-            level: 3, 
-            description: `知识目录，包含${dir.count}个文件`,
-            source: '知识库'
+            level: Math.min(5, Math.ceil(dir.count / 30)), // 根据文件数量计算等级
+            description: `${chineseName}知识库，共收录${dir.count}个文档${dir.sizeKB ? `，总计${dir.sizeKB}KB` : ''}`,
+            source: sourceDesc
         };
         
         let leaves = '';
@@ -617,11 +648,11 @@ function renderKnowledgeTreeGraph(knowledge) {
         for (let i = 0; i < fileCount; i++) {
             const fid = 'knowledge-file-' + (idx++);
             AppState.dataMap[fid] = { 
-                name: dir.name + ' 文件 ' + (i+1), 
+                name: `${chineseName} #${i+1}`, 
                 icon: '📄', 
                 level: 3, 
-                description: `${dir.name}目录下的文件`,
-                source: dir.name
+                description: `${chineseName}目录下的文档`,
+                source: `来源：${sourceDesc}`
             };
             leaves += `
                 <div class="leaf-node lv3" 
@@ -642,7 +673,7 @@ function renderKnowledgeTreeGraph(knowledge) {
                      style="border-color: var(--zelda-gold); color: var(--zelda-gold);"
                      onmouseenter="showTreeTooltip(event, '${dirId}', 'knowledge')" onmouseleave="hideTooltip()">
                     <span class="cat-icon">📁</span>
-                    <span class="cat-name">${dir.name}</span>
+                    <span class="cat-name">${chineseName}</span>
                     <span class="cat-count" style="border-color: var(--zelda-gold);">${dir.count}</span>
                 </div>
                 <div class="leaves" style="color: var(--zelda-gold);">

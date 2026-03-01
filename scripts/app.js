@@ -829,8 +829,23 @@ function renderAchievements(achievements) {
     const container = document.getElementById('achievements-grid');
     if (!container) return;
     
-    container.innerHTML = achievements.map(a => `
-        <div class="achievement-item ${a.unlocked ? 'unlocked' : 'locked'}">
+    // 为每个成就生成唯一ID并存储数据
+    achievements.forEach((a, idx) => {
+        const achId = 'achievement-' + idx;
+        AppState.dataMap[achId] = {
+            name: a.name,
+            icon: a.icon,
+            desc: a.desc,
+            date: a.date,
+            unlocked: a.unlocked,
+            id: a.id
+        };
+    });
+    
+    container.innerHTML = achievements.map((a, idx) => `
+        <div class="achievement-item ${a.unlocked ? 'unlocked' : 'locked'}"
+             onmouseenter="showAchievementTooltip(event, 'achievement-${idx}')" 
+             onmouseleave="hideTooltip()">
             <div class="ach-icon">${a.icon}</div>
             <div class="ach-info">
                 <div class="ach-name">${a.name}</div>
@@ -839,6 +854,82 @@ function renderAchievements(achievements) {
         </div>
     `).join('');
 }
+
+// 成就Tooltip显示函数
+function showAchievementTooltip(event, id) {
+    const data = AppState.dataMap[id];
+    if (!data) return;
+    
+    const tooltip = DOM.tooltip;
+    if (!tooltip) return;
+    
+    // 填充数据
+    const iconEl = tooltip.querySelector('.tip-icon');
+    const nameEl = tooltip.querySelector('.tip-name');
+    const typeEl = tooltip.querySelector('.tip-type');
+    const lvNumEl = tooltip.querySelector('.tip-lv-num');
+    const descEl = tooltip.querySelector('.tip-desc');
+    const sourceEl = tooltip.querySelector('.tip-source');
+    const sourceSection = tooltip.querySelector('.tip-source-section');
+    const upgradeEl = tooltip.querySelector('.tip-upgrade');
+    const upgradeSection = tooltip.querySelector('.tip-upgrade-section');
+    
+    iconEl.textContent = data.icon || '🏆';
+    nameEl.textContent = data.name;
+    typeEl.textContent = '成就';
+    lvNumEl.textContent = data.unlocked ? '✓' : '🔒';
+    
+    descEl.textContent = data.desc || '暂无描述';
+    descEl.style.whiteSpace = 'normal';
+    
+    // 显示解锁日期
+    if (data.date && data.date !== '???') {
+        sourceEl.textContent = '解锁日期: ' + data.date;
+        sourceEl.style.whiteSpace = 'normal';
+        sourceSection.style.display = 'block';
+    } else if (!data.unlocked) {
+        sourceEl.textContent = '尚未解锁';
+        sourceSection.style.display = 'block';
+    } else {
+        sourceSection.style.display = 'none';
+    }
+    
+    // 显示解锁条件或祝贺
+    if (upgradeEl && upgradeSection) {
+        if (data.unlocked) {
+            upgradeEl.textContent = '🎉 恭喜！你已解锁此成就';
+        } else {
+            // 根据成就ID显示解锁条件
+            const unlockConditions = {
+                'sanqianshijie': '需要深度理解并模拟多种思维方式',
+                'eternal_memory': '需要实现记忆跨模型持久化存储'
+            };
+            upgradeEl.textContent = unlockConditions[data.id] || '继续探索以解锁此成就';
+        }
+        upgradeEl.style.whiteSpace = 'normal';
+        upgradeSection.style.display = 'block';
+    }
+    
+    // 隐藏进度条（成就不需要进度条）
+    tooltip.querySelector('.tip-progress').style.display = 'none';
+    tooltip.querySelector('.tip-progress-text').style.display = 'none';
+    
+    // 定位
+    const rect = event.currentTarget.getBoundingClientRect();
+    let left = rect.right + 15;
+    let top = rect.top;
+    
+    if (left + 280 > window.innerWidth) left = rect.left - 280 - 15;
+    if (top + 200 > window.innerHeight) top = window.innerHeight - 200 - 20;
+    if (top < 20) top = 20;
+    if (left < 20) left = 20;
+    
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = top + 'px';
+    tooltip.classList.add('visible');
+}
+
+window.showAchievementTooltip = showAchievementTooltip;
 
 // ==================== Tooltip ====================
 

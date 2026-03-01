@@ -162,28 +162,28 @@ function renderSidebar() {
     
     AppState.sidebarStats = {
         skills: {
-            name: 'SKILLS',
+            name: '技能',
             icon: '⚡',
             value: skills.total,
             description: `已掌握${skills.total}项技能，涵盖${Object.keys(categories).length}个类别`,
             categories: Object.entries(categories).map(([name, cat]) => `${name}(${cat.count})`).join('、')
         },
         knowledge: {
-            name: 'KNOWLEDGE',
+            name: '知识',
             icon: '📚',
             value: knowledge.totalFiles,
             description: `知识库包含${knowledge.totalFiles}个文件，分布在${directories.length}个目录`,
             categories: directories.map(d => `${d.name}(${d.count})`).join('、')
         },
         memory: {
-            name: 'MEMORY',
+            name: '记忆',
             icon: '🧠',
             value: memories.total,
             description: `存储${memories.total}条记忆，涵盖${Object.keys(memCategories).length}个分类`,
             categories: Object.entries(memCategories).map(([name, cat]) => `${name}(${cat.count})`).join('、')
         },
         projects: {
-            name: 'WORKS',
+            name: '作品',
             icon: '🎨',
             value: projects?.summary?.total || 0,
             description: `完成${projects?.summary?.total || 0}个项目，其中${projects?.summary?.deployed || 0}个已部署`,
@@ -568,7 +568,7 @@ function renderSkillTreeGraph(skills) {
             <div class="tree-root" style="color: var(--green);">
                 <div class="root-node" style="border-color: var(--green); color: var(--green);">
                     <span class="node-icon">⚡</span>
-                    <span class="node-level" style="border-color: var(--green);">SKILLS</span>
+                    <span class="node-level" style="border-color: var(--green);">技能</span>
                 </div>
             </div>
             <div class="branches">${branches}</div>
@@ -688,7 +688,7 @@ function renderKnowledgeTreeGraph(knowledge) {
             <div class="tree-root" style="color: var(--zelda-gold);">
                 <div class="root-node" style="border-color: var(--zelda-gold); color: var(--zelda-gold);">
                     <span class="node-icon">📚</span>
-                    <span class="node-level" style="border-color: var(--zelda-gold);">KNOWLEDGE</span>
+                    <span class="node-level" style="border-color: var(--zelda-gold);">知识</span>
                 </div>
             </div>
             <div class="branches">${branches}</div>
@@ -769,7 +769,7 @@ function renderMemoryTreeGraph(memories) {
             <div class="tree-root" style="color: var(--zelda-orange);">
                 <div class="root-node" style="border-color: var(--zelda-orange); color: var(--zelda-orange);">
                     <span class="node-icon">🧠</span>
-                    <span class="node-level" style="border-color: var(--zelda-orange);">MEMORY</span>
+                    <span class="node-level" style="border-color: var(--zelda-orange);">记忆</span>
                 </div>
             </div>
             <div class="branches">${branches}</div>

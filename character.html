@@ -552,6 +552,7 @@
             margin-bottom: 4px;
         }
         .tip-desc { font-size: 11px; color: var(--text-gray); line-height: 1.5; }
+        .tip-source { font-size: 11px; color: var(--cyan); font-weight: 500; }
         
         .tip-progress {
             height: 6px;
@@ -831,11 +832,15 @@
         </div>
         <div class="tip-body">
             <div class="tip-section">
-                <div class="tip-section-title">描述</div>
+                <div class="tip-section-title">📝 描述</div>
                 <div class="tip-desc"></div>
             </div>
+            <div class="tip-section tip-source-section">
+                <div class="tip-section-title">📍 来源</div>
+                <div class="tip-source"></div>
+            </div>
             <div class="tip-section">
-                <div class="tip-section-title">进度</div>
+                <div class="tip-section-title">📊 进度</div>
                 <div class="tip-progress"><div class="tip-progress-fill"></div></div>
                 <div class="tip-progress-text"><span class="prog-cur"></span><span class="prog-next"></span></div>
             </div>
@@ -885,6 +890,16 @@
             tooltip.querySelector('.tip-type').textContent = type === 'skill' ? '技能' : type === 'knowledge' ? '知识库' : '记忆';
             tooltip.querySelector('.tip-lv-num').textContent = 'Lv.' + (d.level || 1);
             tooltip.querySelector('.tip-desc').textContent = d.description || '暂无描述';
+            
+            // 显示来源
+            const sourceEl = tooltip.querySelector('.tip-source');
+            const sourceSectionEl = tooltip.querySelector('.tip-source-section');
+            if (d.source) {
+                sourceEl.textContent = d.source;
+                sourceSectionEl.style.display = 'block';
+            } else {
+                sourceSectionEl.style.display = 'none';
+            }
             
             const lv = d.level || 1;
             tooltip.querySelector('.tip-progress-fill').style.width = (lv / 5 * 100) + '%';
@@ -1009,7 +1024,8 @@
                     name: catName, 
                     icon: cat.icon, 
                     level: cat.heatLevel,
-                    description: `${catName}领域，共${cat.fileCount}篇文档，${cat.sizeKB}KB。`
+                    description: cat.description || `${catName}领域，共${cat.fileCount}篇文档，${cat.sizeKB}KB。`,
+                    source: '知识库目录扫描'
                 };
                 
                 // 根据文件数量生成叶子节点
@@ -1080,7 +1096,8 @@
                         name: mem.title,
                         icon: mem.icon,
                         level: mem.importance,
-                        description: (mem.keywords && mem.keywords.length) ? `关键词: ${mem.keywords.join('、')}` : '核心记忆'
+                        description: mem.description || ((mem.keywords && mem.keywords.length) ? `关键词: ${mem.keywords.join('、')}` : '核心记忆'),
+                        source: mem.source || '用户显式记录'
                     };
                     leaves += `
                         <div class="leaf-node ${getLevelClass(mem.importance)}" 

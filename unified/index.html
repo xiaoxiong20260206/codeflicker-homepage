@@ -248,7 +248,7 @@
             min-height: 100vh;
         }
         
-        /* 顶部导航 */
+        /* 顶部导航 - 3个Tab */
         .top-nav {
             display: flex;
             gap: var(--spacing-sm);
@@ -265,13 +265,13 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            padding: 12px;
+            padding: 14px;
             background: transparent;
             border: 1px solid transparent;
             border-radius: var(--radius-sm);
             color: var(--text-muted);
             font-family: var(--font-body);
-            font-size: 13px;
+            font-size: 14px;
             cursor: pointer;
             transition: all var(--transition-normal);
         }
@@ -287,7 +287,7 @@
             color: var(--zonai-green-light);
         }
         
-        .nav-icon { font-size: 18px; }
+        .nav-icon { font-size: 20px; }
         
         /* Section */
         .content-section {
@@ -328,10 +328,46 @@
             letter-spacing: 2px;
         }
         
-        .section-date {
+        /* ==================== 日报Section样式 ==================== */
+        
+        /* 日期选择器 */
+        .date-selector {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+        
+        .date-btn {
+            padding: 8px 16px;
+            background: rgba(60, 180, 137, 0.1);
+            border: 1px solid var(--zonai-green-dark);
+            border-radius: var(--radius-sm);
+            color: var(--zonai-green-light);
             font-family: var(--font-mono);
-            font-size: 14px;
-            color: var(--zelda-gold);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .date-btn:hover {
+            background: rgba(60, 180, 137, 0.2);
+            border-color: var(--zonai-green);
+        }
+        
+        .date-btn.active {
+            background: var(--zonai-green);
+            color: white;
+        }
+        
+        .date-select {
+            padding: 8px 12px;
+            background: rgba(30, 35, 30, 0.9);
+            border: 1px solid var(--zonai-green-dark);
+            border-radius: var(--radius-sm);
+            color: var(--zonai-green-light);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            cursor: pointer;
         }
         
         /* 今日概览卡片 */
@@ -486,6 +522,7 @@
             border: 2px solid var(--zonai-green-dark);
             border-radius: var(--radius-md);
             overflow: hidden;
+            margin-bottom: var(--spacing-lg);
         }
         
         .iframe-header {
@@ -511,9 +548,401 @@
         
         .daily-iframe {
             width: 100%;
-            height: 600px;
+            height: 500px;
             border: none;
             background: var(--zelda-cream);
+        }
+        
+        /* 历史日报时间线 */
+        .history-section {
+            margin-top: var(--spacing-lg);
+        }
+        
+        .history-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .timeline-container {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--zonai-green) 0%, var(--zonai-green-dark) 100%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-md);
+            cursor: pointer;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -26px;
+            top: 15px;
+            width: 12px;
+            height: 12px;
+            background: var(--zonai-green);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--zonai-green);
+            transition: all var(--transition-fast);
+        }
+        
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.3);
+        }
+        
+        .timeline-item.active .timeline-dot {
+            background: var(--zelda-gold);
+            box-shadow: 0 0 15px var(--zelda-gold);
+        }
+        
+        .report-card {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .timeline-item:hover .report-card {
+            border-color: var(--zelda-gold);
+            box-shadow: 0 5px 20px rgba(107, 83, 68, 0.2);
+        }
+        
+        .timeline-item.active .report-card {
+            border-color: var(--zelda-gold);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .report-date {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+        }
+        
+        .report-day {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            margin-left: var(--spacing-sm);
+        }
+        
+        .report-stats {
+            display: flex;
+            gap: var(--spacing-md);
+            font-size: 12px;
+        }
+        
+        .report-stat .up { color: #5d8a4a; }
+        .report-stat .down { color: #c94c4c; }
+        
+        /* ==================== 我的作品Section样式 ==================== */
+        .works-intro {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .works-intro-text {
+            font-size: 14px;
+            color: var(--zelda-brown);
+            line-height: 1.8;
+        }
+        
+        .works-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-md);
+        }
+        
+        .works-stat {
+            text-align: center;
+        }
+        
+        .works-stat-value {
+            font-family: var(--font-mono);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--zonai-green);
+        }
+        
+        .works-stat-label {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .work-card {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            transition: all var(--transition-normal);
+        }
+        
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(107, 83, 68, 0.2);
+            border-color: var(--zelda-gold);
+        }
+        
+        .work-card.deployed {
+            border-color: var(--zonai-green);
+        }
+        
+        .work-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .work-icon { font-size: 32px; }
+        
+        .work-info { flex: 1; }
+        
+        .work-name {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-brown);
+        }
+        
+        .work-subtitle {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .work-status {
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+        
+        .work-status.deployed {
+            background: rgba(60, 180, 137, 0.2);
+            color: var(--zonai-green);
+        }
+        
+        .work-status.development {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold);
+        }
+        
+        .work-desc {
+            font-size: 13px;
+            color: var(--zelda-brown);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .work-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .work-tech {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(107, 83, 68, 0.1);
+            border-radius: 8px;
+            color: var(--zelda-brown);
+        }
+        
+        .work-link {
+            font-size: 12px;
+            color: var(--zelda-gold-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .work-link:hover {
+            color: var(--zelda-gold);
+        }
+        
+        /* ==================== 我的能力Section样式 ==================== */
+        
+        /* 角色介绍区 */
+        .ability-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .intro-card {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+        }
+        
+        .intro-card-title {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .intro-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .intro-table th, .intro-table td {
+            padding: 10px;
+            text-align: left;
+            font-size: 13px;
+            border-bottom: 1px solid rgba(107, 83, 68, 0.2);
+        }
+        
+        .intro-table th {
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            font-weight: 400;
+            width: 100px;
+        }
+        
+        .intro-table td {
+            color: var(--zelda-brown);
+        }
+        
+        /* 属性雷达图 */
+        .radar-section {
+            background: rgba(30, 35, 30, 0.95);
+            border: 2px solid var(--zonai-green);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .radar-section-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zonai-green-light);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+        }
+        
+        .radar-container {
+            height: 300px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        /* 成长趋势 */
+        .trend-section {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .trend-section-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .trend-chart-container {
+            height: 250px;
+        }
+        
+        /* 能力总览 */
+        .ability-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .ability-stat-card {
+            background: rgba(30, 35, 30, 0.9);
+            border: 2px solid var(--zonai-green-dark);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .ability-stat-card:hover {
+            border-color: var(--zonai-green);
+            box-shadow: var(--zonai-glow);
+        }
+        
+        .ability-stat-icon { font-size: 28px; margin-bottom: var(--spacing-sm); }
+        
+        .ability-stat-value {
+            font-family: var(--font-mono);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--zonai-green-light);
+        }
+        
+        .ability-stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
         
         /* 树形面板 */
@@ -554,231 +983,8 @@
             color: var(--zonai-green-light);
         }
         
-        /* 历史日报时间线 */
-        .timeline-container {
-            position: relative;
-            padding-left: 30px;
-        }
-        
-        .timeline-container::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--zonai-green) 0%, var(--zonai-green-dark) 100%);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: -26px;
-            top: 20px;
-            width: 12px;
-            height: 12px;
-            background: var(--zonai-green);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--zonai-green);
-        }
-        
-        .report-card {
-            background: linear-gradient(135deg, 
-                rgba(232, 220, 196, 0.95) 0%,
-                rgba(245, 230, 200, 0.9) 100%
-            );
-            border: 2px solid var(--zelda-brown);
-            border-radius: var(--radius-md);
-            overflow: hidden;
-        }
-        
-        .report-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: var(--spacing-md);
-            border-bottom: 1px solid rgba(107, 83, 68, 0.2);
-        }
-        
-        .report-date {
-            font-family: var(--font-mono);
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--zelda-brown);
-        }
-        
-        .report-day {
-            font-size: 12px;
-            color: var(--zelda-brown);
-            opacity: 0.7;
-            margin-left: var(--spacing-sm);
-        }
-        
-        .report-stats {
-            display: flex;
-            gap: var(--spacing-md);
-        }
-        
-        .report-stat {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 12px;
-        }
-        
-        .report-stat .positive { color: #5d8a4a; }
-        .report-stat .negative { color: #c94c4c; }
-        
-        .report-body {
-            padding: var(--spacing-md);
-        }
-        
-        .report-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--spacing-xs);
-        }
-        
-        .report-highlight-tag {
-            font-size: 11px;
-            padding: 4px 10px;
-            background: rgba(93, 138, 74, 0.1);
-            border-radius: 12px;
-            color: var(--zelda-green);
-        }
-        
-        .report-link {
-            display: block;
-            margin-top: var(--spacing-md);
-            text-align: right;
-        }
-        
-        .report-link a {
-            color: var(--zelda-gold-dark);
-            text-decoration: none;
-            font-size: 12px;
-        }
-        
-        /* 项目网格 */
-        .project-stats {
-            display: flex;
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .project-stat {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-        
-        .project-stat-value {
-            font-family: var(--font-mono);
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--zonai-green-light);
-        }
-        
-        .project-stat-label {
-            font-size: 11px;
-            color: var(--zelda-brown);
-            opacity: 0.7;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: var(--spacing-md);
-        }
-        
-        .project-card {
-            background: linear-gradient(135deg, 
-                rgba(232, 220, 196, 0.95) 0%,
-                rgba(245, 230, 200, 0.9) 100%
-            );
-            border: 2px solid var(--zelda-brown);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            transition: all var(--transition-normal);
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(107, 83, 68, 0.2);
-            border-color: var(--zelda-gold);
-        }
-        
-        .project-card.deployed {
-            border-color: var(--zonai-green);
-        }
-        
-        .project-header {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .project-icon { font-size: 28px; }
-        
-        .project-name {
-            font-family: var(--font-title);
-            font-size: 16px;
-            color: var(--zelda-brown);
-        }
-        
-        .project-status {
-            font-size: 10px;
-            padding: 2px 8px;
-            border-radius: 10px;
-            margin-left: auto;
-        }
-        
-        .project-status.deployed {
-            background: rgba(60, 180, 137, 0.2);
-            color: var(--zonai-green);
-        }
-        
-        .project-status.development {
-            background: rgba(201, 162, 39, 0.2);
-            color: var(--zelda-gold);
-        }
-        
-        .project-desc {
-            font-size: 12px;
-            color: var(--zelda-brown);
-            opacity: 0.8;
-            margin-bottom: var(--spacing-sm);
-            line-height: 1.5;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: var(--spacing-sm);
-        }
-        
-        .project-link {
-            font-size: 11px;
-            color: var(--zelda-gold-dark);
-            text-decoration: none;
-        }
-        
-        .project-link:hover {
-            color: var(--zelda-gold);
-        }
-        
-        /* 关于页面 */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-        }
-        
-        .about-card {
+        /* 成就墙 */
+        .achievements-section {
             background: linear-gradient(135deg, 
                 rgba(232, 220, 196, 0.95) 0%,
                 rgba(245, 230, 200, 0.9) 100%
@@ -788,7 +994,7 @@
             padding: var(--spacing-lg);
         }
         
-        .about-card-title {
+        .achievements-title {
             font-family: var(--font-title);
             font-size: 18px;
             color: var(--zelda-brown);
@@ -798,27 +1004,46 @@
             gap: var(--spacing-sm);
         }
         
-        .about-table {
-            width: 100%;
-            border-collapse: collapse;
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: var(--spacing-sm);
         }
         
-        .about-table th, .about-table td {
-            padding: 8px;
-            text-align: left;
-            font-size: 13px;
-            border-bottom: 1px solid rgba(107, 83, 68, 0.2);
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--zelda-gold-dark);
+            border-radius: var(--radius-sm);
         }
         
-        .about-table th {
+        .achievement-item.unlocked {
+            background: rgba(201, 162, 39, 0.2);
+            border-color: var(--zelda-gold);
+        }
+        
+        .achievement-item.locked {
+            opacity: 0.5;
+            filter: grayscale(0.5);
+        }
+        
+        .ach-icon { font-size: 24px; }
+        
+        .ach-info { flex: 1; }
+        
+        .ach-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+        }
+        
+        .ach-desc {
+            font-size: 10px;
             color: var(--zelda-brown);
             opacity: 0.7;
-            font-weight: 400;
-            width: 120px;
-        }
-        
-        .about-table td {
-            color: var(--zelda-brown);
         }
         
         /* 响应式 */
@@ -827,13 +1052,15 @@
             .main-content { margin-left: 0; }
             .daily-overview { grid-template-columns: repeat(2, 1fr); }
             .capability-cards { grid-template-columns: 1fr; }
-            .about-grid { grid-template-columns: 1fr; }
+            .ability-intro { grid-template-columns: 1fr; }
+            .ability-stats { grid-template-columns: repeat(2, 1fr); }
         }
         
         @media (max-width: 600px) {
             .top-nav { flex-wrap: wrap; }
             .nav-text { display: none; }
             .daily-overview { grid-template-columns: 1fr 1fr; }
+            .works-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -886,10 +1113,10 @@
                     </div>
                 </div>
                 <div class="stat-item" onmouseenter="showStatTooltip(event, 'projects')" onmouseleave="hideTooltip()">
-                    <div class="stat-icon">📁</div>
+                    <div class="stat-icon">🎨</div>
                     <div class="stat-info">
                         <div class="stat-value" id="stat-projects">-</div>
-                        <div class="stat-label">PROJECTS</div>
+                        <div class="stat-label">WORKS</div>
                     </div>
                 </div>
             </div>
@@ -909,7 +1136,7 @@
             </div>
             
             <div class="achievements-mini">
-                <div class="panel-title">🏆 RECENT ACHIEVEMENTS</div>
+                <div class="panel-title">🏆 ACHIEVEMENTS</div>
                 <div class="ach-list" id="achievements-mini"></div>
             </div>
             
@@ -921,39 +1148,37 @@
         
         <!-- ===================== 主内容区 ===================== -->
         <main class="main-content">
+            <!-- 导航栏 - 3个Tab -->
             <nav class="top-nav">
                 <button class="nav-tab active" data-section="daily">
                     <span class="nav-icon">📊</span>
-                    <span class="nav-text">今日日报</span>
+                    <span class="nav-text">日报</span>
                 </button>
-                <button class="nav-tab" data-section="reports">
-                    <span class="nav-icon">📋</span>
-                    <span class="nav-text">历史日报</span>
+                <button class="nav-tab" data-section="works">
+                    <span class="nav-icon">🎨</span>
+                    <span class="nav-text">我的作品</span>
                 </button>
-                <button class="nav-tab" data-section="skills">
+                <button class="nav-tab" data-section="abilities">
                     <span class="nav-icon">⚡</span>
-                    <span class="nav-text">技能树</span>
-                </button>
-                <button class="nav-tab" data-section="projects">
-                    <span class="nav-icon">📁</span>
-                    <span class="nav-text">项目作品</span>
-                </button>
-                <button class="nav-tab" data-section="about">
-                    <span class="nav-icon">📖</span>
-                    <span class="nav-text">关于我</span>
+                    <span class="nav-text">我的能力</span>
                 </button>
             </nav>
             
-            <!-- Section: 今日日报 -->
+            <!-- ==================== Section 1: 日报 ==================== -->
             <section id="section-daily" class="content-section active">
                 <div class="section-header">
                     <div class="section-title-wrap">
                         <span class="section-icon">📊</span>
-                        <h2 class="section-title">TODAY'S REPORT</h2>
+                        <h2 class="section-title">日报</h2>
                     </div>
-                    <div class="section-date" id="today-date">-</div>
+                    <div class="date-selector">
+                        <select class="date-select" id="report-date-select">
+                            <!-- 动态填充 -->
+                        </select>
+                    </div>
                 </div>
                 
+                <!-- 当日概览 -->
                 <div class="daily-overview">
                     <div class="overview-card">
                         <div class="ov-icon green">✓</div>
@@ -977,11 +1202,13 @@
                     </div>
                 </div>
                 
+                <!-- 今日亮点 -->
                 <div class="highlights-panel">
-                    <div class="highlights-title">✨ TODAY'S HIGHLIGHTS</div>
+                    <div class="highlights-title">✨ 今日亮点</div>
                     <div class="highlights-list" id="highlights-list"></div>
                 </div>
                 
+                <!-- 能力变化 -->
                 <div class="capability-cards">
                     <div class="cap-card">
                         <div class="cap-icon">⚡</div>
@@ -1009,53 +1236,141 @@
                     </div>
                 </div>
                 
+                <!-- 详细日报 -->
                 <div class="daily-iframe-container">
                     <div class="iframe-header">
-                        <span class="iframe-title">📄 DETAILED REPORT</span>
+                        <span class="iframe-title">📄 详细日报</span>
                         <a href="" class="iframe-link" id="daily-link" target="_blank">在新窗口打开 →</a>
                     </div>
                     <iframe id="daily-iframe" class="daily-iframe" src=""></iframe>
                 </div>
-            </section>
-            
-            <!-- Section: 历史日报 -->
-            <section id="section-reports" class="content-section">
-                <div class="section-header">
-                    <div class="section-title-wrap">
-                        <span class="section-icon">📋</span>
-                        <h2 class="section-title">REPORTS HISTORY</h2>
-                    </div>
+                
+                <!-- 历史日报 -->
+                <div class="history-section">
+                    <div class="history-title">📋 历史日报</div>
+                    <div class="timeline-container" id="reports-timeline"></div>
                 </div>
-                <div class="timeline-container" id="reports-timeline"></div>
             </section>
             
-            <!-- Section: 技能树 -->
-            <section id="section-skills" class="content-section">
+            <!-- ==================== Section 2: 我的作品 ==================== -->
+            <section id="section-works" class="content-section">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <span class="section-icon">⚡</span>
-                        <h2 class="section-title">SKILL TREE</h2>
-                    </div>
-                    <div class="section-stats">
-                        Total: <span id="skill-total">-</span> skills
+                        <span class="section-icon">🎨</span>
+                        <h2 class="section-title">我的作品</h2>
                     </div>
                 </div>
                 
+                <div class="works-intro">
+                    <div class="works-intro-text">
+                        这里展示了添棋协助完成的核心项目作品，包括调研报告、自动化工具、数据面板等。<br>
+                        每个作品都是与用户协作的成果，体现了AI助理的实际产出能力。
+                    </div>
+                    <div class="works-stats">
+                        <div class="works-stat">
+                            <div class="works-stat-value" id="works-total">-</div>
+                            <div class="works-stat-label">作品总数</div>
+                        </div>
+                        <div class="works-stat">
+                            <div class="works-stat-value" id="works-deployed">-</div>
+                            <div class="works-stat-label">已上线</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="works-grid" id="works-grid"></div>
+            </section>
+            
+            <!-- ==================== Section 3: 我的能力 ==================== -->
+            <section id="section-abilities" class="content-section">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">⚡</span>
+                        <h2 class="section-title">我的能力</h2>
+                    </div>
+                </div>
+                
+                <!-- 角色介绍 -->
+                <div class="ability-intro">
+                    <div class="intro-card">
+                        <div class="intro-card-title">🤖 角色档案</div>
+                        <table class="intro-table">
+                            <tr><th>名称</th><td>添棋 (TIANQI)</td></tr>
+                            <tr><th>类型</th><td>AI 个人助理</td></tr>
+                            <tr><th>特质</th><td>小无相功 · 洞察觉醒</td></tr>
+                            <tr><th>定位</th><td>单虓晗的数字分身</td></tr>
+                            <tr><th>等级</th><td id="ability-level">LV.5</td></tr>
+                        </table>
+                    </div>
+                    <div class="intro-card">
+                        <div class="intro-card-title">⚙️ 技术基座</div>
+                        <table class="intro-table">
+                            <tr><th>基础框架</th><td>CodeFlicker + Claude</td></tr>
+                            <tr><th>代码托管</th><td>GitHub</td></tr>
+                            <tr><th>页面部署</th><td>GitHub Pages</td></tr>
+                            <tr><th>当前版本</th><td>v7.0 (王国之泪)</td></tr>
+                            <tr><th>技能系统</th><td>Skill Framework</td></tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- 能力总览 -->
+                <div class="ability-stats">
+                    <div class="ability-stat-card">
+                        <div class="ability-stat-icon">⚡</div>
+                        <div class="ability-stat-value" id="ability-skills">-</div>
+                        <div class="ability-stat-label">技能</div>
+                    </div>
+                    <div class="ability-stat-card">
+                        <div class="ability-stat-icon">📚</div>
+                        <div class="ability-stat-value" id="ability-knowledge">-</div>
+                        <div class="ability-stat-label">知识</div>
+                    </div>
+                    <div class="ability-stat-card">
+                        <div class="ability-stat-icon">🧠</div>
+                        <div class="ability-stat-value" id="ability-memory">-</div>
+                        <div class="ability-stat-label">记忆</div>
+                    </div>
+                    <div class="ability-stat-card">
+                        <div class="ability-stat-icon">🏆</div>
+                        <div class="ability-stat-value" id="ability-achievements">-</div>
+                        <div class="ability-stat-label">成就</div>
+                    </div>
+                </div>
+                
+                <!-- 属性雷达图 -->
+                <div class="radar-section">
+                    <div class="radar-section-title">📊 核心属性</div>
+                    <div class="radar-container">
+                        <canvas id="abilityRadarChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 成长趋势 -->
+                <div class="trend-section">
+                    <div class="trend-section-title">📈 能力成长趋势 (近7天)</div>
+                    <div class="trend-chart-container">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                </div>
+                
+                <!-- 技能树 -->
                 <div class="tree-panel">
                     <div class="panel-header">
                         <span class="panel-icon" style="color: var(--zonai-green);">⚡</span>
-                        <span class="panel-title-text">SKILL TREE</span>
-                        <span class="panel-stats">Total: <span id="skill-total-2">-</span> skills</span>
+                        <span class="panel-title-text">技能树 SKILL TREE</span>
+                        <span class="panel-stats">Total: <span id="skill-total">-</span> skills</span>
                     </div>
                     <div class="tree-container skill-tree" id="skill-tree">
                         <div class="loading">加载中...</div>
                     </div>
                 </div>
                 
+                <!-- 知识库 -->
                 <div class="tree-panel">
                     <div class="panel-header">
                         <span class="panel-icon" style="color: var(--zelda-gold);">📚</span>
-                        <span class="panel-title-text">KNOWLEDGE TREE</span>
+                        <span class="panel-title-text">知识库 KNOWLEDGE BASE</span>
                         <span class="panel-stats">Total: <span id="knowledge-total">-</span> files</span>
                     </div>
                     <div class="tree-container knowledge-tree" id="knowledge-tree">
@@ -1063,73 +1378,22 @@
                     </div>
                 </div>
                 
+                <!-- 记忆库 -->
                 <div class="tree-panel">
                     <div class="panel-header">
                         <span class="panel-icon" style="color: var(--zelda-orange);">🧠</span>
-                        <span class="panel-title-text">MEMORY TREE</span>
+                        <span class="panel-title-text">记忆库 MEMORY BANK</span>
                         <span class="panel-stats">Total: <span id="memory-total">-</span> memories</span>
                     </div>
                     <div class="tree-container memory-tree" id="memory-tree">
                         <div class="loading">加载中...</div>
                     </div>
                 </div>
-            </section>
-            
-            <!-- Section: 项目作品 -->
-            <section id="section-projects" class="content-section">
-                <div class="section-header">
-                    <div class="section-title-wrap">
-                        <span class="section-icon">📁</span>
-                        <h2 class="section-title">PROJECT GALLERY</h2>
-                    </div>
-                </div>
                 
-                <div class="project-stats">
-                    <div class="project-stat">
-                        <span class="project-stat-value" id="p-total">-</span>
-                        <span class="project-stat-label">总项目</span>
-                    </div>
-                    <div class="project-stat">
-                        <span class="project-stat-value" id="p-deployed">-</span>
-                        <span class="project-stat-label">已部署</span>
-                    </div>
-                    <div class="project-stat">
-                        <span class="project-stat-value" id="p-dev">-</span>
-                        <span class="project-stat-label">开发中</span>
-                    </div>
-                </div>
-                
-                <div class="projects-grid" id="projects-grid"></div>
-            </section>
-            
-            <!-- Section: 关于我 -->
-            <section id="section-about" class="content-section">
-                <div class="section-header">
-                    <div class="section-title-wrap">
-                        <span class="section-icon">📖</span>
-                        <h2 class="section-title">ABOUT TIANQI</h2>
-                    </div>
-                </div>
-                
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="about-card-title">🤖 角色定位</div>
-                        <table class="about-table">
-                            <tr><th>名称</th><td>添棋 (TIANQI)</td></tr>
-                            <tr><th>类型</th><td>AI 个人助理</td></tr>
-                            <tr><th>特质</th><td>小无相功 · 洞察觉醒</td></tr>
-                            <tr><th>定位</th><td>单虓晗的数字分身</td></tr>
-                        </table>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-title">⚙️ 技术栈</div>
-                        <table class="about-table">
-                            <tr><th>基础框架</th><td>CodeFlicker + Claude</td></tr>
-                            <tr><th>代码托管</th><td>GitHub</td></tr>
-                            <tr><th>页面部署</th><td>GitHub Pages</td></tr>
-                            <tr><th>当前版本</th><td>v7.0 (王国之泪)</td></tr>
-                        </table>
-                    </div>
+                <!-- 成就墙 -->
+                <div class="achievements-section">
+                    <div class="achievements-title">🏆 成就墙</div>
+                    <div class="achievements-grid" id="achievements-grid"></div>
                 </div>
             </section>
         </main>
@@ -1188,7 +1452,6 @@
             g.setAttribute('stroke', 'url(#zonai-grad)');
             g.setAttribute('stroke-width', '2');
             
-            // 创建螺旋同心圆组
             const positions = [
                 { x: 150, y: 150 }, { x: 500, y: 100 }, { x: 850, y: 150 },
                 { x: 100, y: 500 }, { x: 500, y: 500 }, { x: 900, y: 500 },
@@ -1207,7 +1470,6 @@
                 g.appendChild(group);
             });
             
-            // 波浪线
             for (let y = 50; y < 1000; y += 200) {
                 const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
                 let d = `M0,${y}`;
@@ -1240,7 +1502,6 @@
                 container.appendChild(particle);
             }
             
-            // 光点粒子
             for (let i = 0; i < 20; i++) {
                 const light = document.createElement('div');
                 light.className = 'light-particle';
@@ -1254,6 +1515,6 @@
         createZonaiPattern();
         createParticles();
     </script>
-    <script src="scripts/app.js"></script>
+    <script src="scripts/app-v2.js"></script>
 </body>
 </html>

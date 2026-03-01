@@ -429,7 +429,17 @@ function renderWorksGrid(projects) {
         return 0;
     });
     
-    container.innerHTML = sortedProjects.map(p => {
+    // 将项目数据存入dataMap供tooltip使用
+    sortedProjects.forEach((p, idx) => {
+        const projectId = 'project-' + idx;
+        AppState.dataMap[projectId] = {
+            ...p,
+            type: 'project'
+        };
+    });
+    
+    container.innerHTML = sortedProjects.map((p, idx) => {
+        const projectId = 'project-' + idx;
         const statusClass = p.status === 'deployed' ? 'deployed' : 
                            p.status === 'development' ? 'development' : 'archived';
         const statusText = p.status === 'deployed' ? '✅ 已上线' : 
@@ -442,7 +452,9 @@ function renderWorksGrid(projects) {
             : '';
         
         return `
-            <div class="work-card ${statusClass}">
+            <div class="work-card ${statusClass}" 
+                 onmouseenter="showProjectTooltip(event, '${projectId}')" 
+                 onmouseleave="hideTooltip()">
                 <div class="work-header">
                     <span class="work-icon">${p.icon}</span>
                     <div class="work-info">
@@ -958,6 +970,101 @@ function showStatTooltip(event, type) {
 }
 
 window.showStatTooltip = showStatTooltip;
+
+// 作品详情Tooltip
+function showProjectTooltip(event, id) {
+    const data = AppState.dataMap[id];
+    if (!data || !DOM.tooltip) return;
+    
+    const tooltip = DOM.tooltip;
+    
+    // 构建详细内容
+    const deliverables = (data.deliverables || []).join('、') || '暂无';
+    const techStack = (data.techStack || []).join('、') || '暂无';
+    const highlights = (data.highlights || []).map(h => '• ' + h).join('\n') || '暂无';
+    
+    // 项目用到的技能映射
+    const projectSkillsMap = {
+        'bytedance-ai-guide': ['industry-research', 'github-deploy-publisher', 'qingshuang-research-style'],
+        'ai-product-ultimate': ['industry-research', 'research', 'frontend-design'],
+        'ai-engineer-analysis': ['research', 'industry-research'],
+        'ai-financial-analysis': ['stock-analysis', 'research'],
+        'feishu-bot': ['mcp-builder', 'feishu-assistant'],
+        'daily-report-system': ['github-deploy-publisher', 'qingshuang-research-style', 'personal-assistant'],
+        'github-sync': ['github-deploy-publisher'],
+        'character-panel': ['ui-ux-pro-max', 'frontend-design', 'zelda-style', 'github-deploy-publisher']
+    };
+    
+    const skillNameMap = {
+        'industry-research': '行业调研',
+        'github-deploy-publisher': 'GitHub部署',
+        'qingshuang-research-style': '清爽报告风格',
+        'research': '通用调研',
+        'frontend-design': '前端设计',
+        'stock-analysis': '股票分析',
+        'mcp-builder': 'MCP开发',
+        'feishu-assistant': '飞书助手',
+        'personal-assistant': '个人助理',
+        'ui-ux-pro-max': 'UI/UX专家',
+        'zelda-style': '塞尔达风格'
+    };
+    
+    const usedSkills = (projectSkillsMap[data.id] || [])
+        .map(s => skillNameMap[s] || s)
+        .join('、') || '暂无';
+    
+    // 填充数据
+    tooltip.querySelector('.tip-icon').textContent = data.icon || '📦';
+    tooltip.querySelector('.tip-name').textContent = data.name;
+    tooltip.querySelector('.tip-type').textContent = '作品';
+    tooltip.querySelector('.tip-lv-num').textContent = data.status === 'deployed' ? '已上线' : 
+                                                       data.status === 'development' ? '开发中' : '已归档';
+    tooltip.querySelector('.tip-lv-max').textContent = '';
+    
+    // 构建详细描述
+    const fullDesc = `🎯 项目目标\n${data.goal || '暂无'}\n\n📦 交付物\n${deliverables}\n\n✨ 亮点\n${highlights}\n\n⚡ 使用技能\n${usedSkills}`;
+    
+    const descEl = tooltip.querySelector('.tip-desc');
+    descEl.textContent = fullDesc;
+    descEl.style.whiteSpace = 'pre-wrap';
+    
+    // 来源显示技术栈
+    const sourceSection = tooltip.querySelector('.tip-source-section');
+    const sourceEl = tooltip.querySelector('.tip-source');
+    sourceEl.textContent = '技术栈: ' + techStack;
+    sourceEl.style.whiteSpace = 'normal';
+    sourceSection.style.display = 'block';
+    
+    // 隐藏进度条
+    tooltip.querySelector('.tip-progress').style.display = 'none';
+    tooltip.querySelector('.tip-progress-text').style.display = 'none';
+    
+    // 定位 - 作品卡片较大，tooltip显示在右侧或下方
+    const rect = event.currentTarget.getBoundingClientRect();
+    let left = rect.right + 15;
+    let top = rect.top;
+    
+    // 如果右侧空间不够，显示在左侧
+    if (left + 300 > window.innerWidth) {
+        left = rect.left - 300 - 15;
+    }
+    // 如果左侧也不够，显示在下方居中
+    if (left < 20) {
+        left = Math.max(20, rect.left + rect.width / 2 - 150);
+        top = rect.bottom + 10;
+    }
+    // 确保不超出底部
+    if (top + 350 > window.innerHeight) {
+        top = window.innerHeight - 350 - 20;
+    }
+    if (top < 20) top = 20;
+    
+    tooltip.style.left = left + 'px';
+    tooltip.style.top = top + 'px';
+    tooltip.classList.add('visible');
+}
+
+window.showProjectTooltip = showProjectTooltip;
 
 function hideTooltip() {
     if (DOM.tooltip) {

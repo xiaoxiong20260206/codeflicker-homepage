@@ -7,6 +7,8 @@
     <!-- Favicon - 林克风格图标 -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
+    <!-- 预加载头像图片 -->
+    <link rel="preload" href="link-avatar-small.png" as="image">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="styles/zelda-theme.css">
@@ -55,7 +57,7 @@
         .avatar-glow {
             position: absolute;
             inset: -10px;
-            background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.25) 0%, transparent 60%);
             border-radius: 50%;
             animation: sheikah-pulse 2.5s ease-in-out infinite;
         }
@@ -1608,7 +1610,7 @@
                 <div class="avatar-frame">
                     <div class="avatar-glow"></div>
                     <div class="avatar-ring"></div>
-                    <div class="avatar-inner"><img src="林克头像01.png" alt="添棋"></div>
+                    <div class="avatar-inner"><img src="link-avatar-small.png" alt="添棋" loading="eager"></div>
                     <div class="level-badge" id="hero-level">LV.5</div>
                 </div>
                 <h1 class="character-name">TIANQI</h1>
@@ -1837,7 +1839,7 @@
                     <div class="about-hero">
                         <div class="about-avatar">
                             <div class="about-avatar-glow"></div>
-                            <div class="about-avatar-inner"><img src="林克头像01.png" alt="添棋"></div>
+                            <div class="about-avatar-inner"><img src="link-avatar-small.png" alt="添棋" loading="eager"></div>
                             <div class="about-level">LV.5</div>
                         </div>
                         <div class="about-intro">

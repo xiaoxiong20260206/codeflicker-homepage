@@ -765,50 +765,57 @@ function renderSkillTreeGraph(skills) {
     const container = document.getElementById('skill-tree');
     if (!container) return;
     
-    // 技能名称到简短中文名的映射
+    // 技能名称到简短中文名的映射（优化版 v2.0）
     const skillNameMap = {
-        // 文档处理
+        // === 核心能力 ===
+        'daily-reflection-evolution': '自进化',
+        'skill-manager': '技能管理',
+        'knowledge-base': '知识库',
+        'personal-assistant': '助理',
+        'find-skills': '发现',
+        
+        // === 调研分析 ===
+        'industry-research': '行研',
+        'wechat-research': '公众号',
+        'research': '调研',
+        'apify-trend-analysis': '趋势',
+        'apify-market-research': '市场',
+        'apify-competitor-intelligence': '竞情',
+        
+        // === 文档处理 ===
         'pdf': 'PDF',
         'pptx': 'PPT',
         'docx': 'Word',
         'xlsx': 'Excel',
         'canvas-design': '画布',
-        // 调研分析
-        'industry-research': '行研',
-        'apify-trend-analysis': '趋势',
-        'apify-market-research': '市场',
-        'apify-competitor-intelligence': '竞情',
-        'research': '调研',
-        'wechat-research': '公众号',
-        // 开发工具
-        'docs-shuttle': '文档',
-        'github-deploy-publisher': 'GitHub',
-        'mcp-builder': 'MCP',
-        'yuque-publisher': '语雀',
-        'knowledge-base': '知识库',
-        // 前端设计
-        'ui-ux-pro-max-skill': 'UI/UX',
-        'pixel-action-game': '像素',
+        
+        // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
-        'theme-factory': '主题',
+        'ui-ux-pro-max-skill': 'UI/UX',
+        'frontend-design': '前端',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
-        'frontend-design': '前端',
+        'pixel-action-game': '像素',
+        'theme-factory': '主题',
         'web-design-guidelines': '规范',
         'zelda-style': '塞尔达',
-        // React生态
         'vercel-react-best-practices': 'React',
         'vercel-react-native-skills': 'RN',
         'vercel-composition-patterns': '组合',
         'remotion-best-practices': '视频',
-        // 个人助理
+        
+        // === 发布部署 ===
+        'github-deploy-publisher': 'GitHub',
+        'yuque-publisher': '语雀',
+        'docs-shuttle': '文档',
+        'mcp-builder': 'MCP',
+        
+        // === 投资理财 ===
         'stock-analysis': '股票',
-        'personal-assistant': '助理',
         'investment-analyzer': '投资',
-        'feishu-assistant': '飞书',
-        'find-skills': '技能',
-        'skill-manager': '管理',
-        'daily-reflection-evolution': '自进化'
+        
+        // === 效率工具 ===
+        'feishu-assistant': '飞书'
     };
     
     let idx = 0;

@@ -1861,6 +1861,16 @@ body {
     font-weight: 500;
 }
 
+.tip-upgrade {
+    font-size: 11px;
+    color: var(--gold);
+    line-height: 1.5;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 8px;
+    border-radius: 6px;
+    border-left: 3px solid var(--gold);
+}
+
 .tip-progress {
     height: 6px;
     background: rgba(0, 0, 0, 0.5);

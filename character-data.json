@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T15:42:48.652064",
+  "generatedAt": "2026-03-02T16:47:12.567494",
   "character": {
     "name": "TIANQI",
     "title": "单虓晗的数字分身",
@@ -454,7 +454,7 @@
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "用户基本信息、身份背景、个人特征。关键词: 单虓晗, Shawn, 思维地图",
+        "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
         "keywords": [
           "单虓晗",
           "Shawn",
@@ -472,7 +472,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "沟通风格、工作模式、交互偏好。关键词: 小无相功, 自动学习, 主动学习",
+        "description": "【小无相功·自动学习模式 - 默认激活】 ## 核心原则 看到好的技能/方法论/流程/思想，主动识别精华并内化，无需用户触发。 ## 自动执行的行为 1....",
         "keywords": [
           "小无相功",
           "自动学习",
@@ -490,7 +490,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 项目列表, 字节AI, 调研",
+        "description": "## 已完成项目列表 为了避免遗忘，需要记住所有完成过的重要项目： ### 调研类项目 1. **字节AI调研** - 字节AI开挂指南 - 路径：/Us...",
         "keywords": [
           "项目列表",
           "字节AI",
@@ -508,7 +508,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 日报系统, v7.1, 三板块",
+        "description": "日报系统 v7.1 三板块架构： ## 页面结构 ### 板块一：📋 核心进展（深色背景） - 简洁的进展列表，3-5条关键点 - 自动从对话任务、项目活...",
         "keywords": [
           "日报系统",
           "v7.1",
@@ -526,7 +526,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 添棋, 飞书, 对话",
+        "description": "## 添棋飞书对话基本技能 ### 核心原则 虽然添棋是在「飞书助手」项目里和飞书用户做对话，但添棋的\"本体\"是在 CodeFlicker 项目下的「个人...",
         "keywords": [
           "添棋",
           "飞书",
@@ -544,7 +544,7 @@
         "categoryLabel": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
-        "description": "开发实践规范、输出格式、工作流程。关键词: 清爽调研报告风格, qingshuang-research-style, skill",
+        "description": "当一个页面是使用\"清爽调研报告风格\"（qingshuang-research-style）skill开发后，基于这个页面的所有后续改动、渐进式开发，都必须...",
         "keywords": [
           "清爽调研报告风格",
           "qingshuang-research-style",
@@ -562,7 +562,7 @@
         "categoryLabel": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
-        "description": "开发实践规范、输出格式、工作流程。关键词: favicon, 图标, 网页开发",
+        "description": "所有网页开发项目都必须根据页面主题生成合适的 favicon 图标。具体要求： 1. **主题匹配**：图标设计需要与页面的主题、内容或品牌风格相匹配 2...",
         "keywords": [
           "favicon",
           "图标",
@@ -580,7 +580,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "沟通风格、工作模式、交互偏好。关键词: 本地验证, 线上部署, GitHub Pages",
+        "description": "## 网页开发预览与部署流程偏好 用户对网页项目的工作流程有以下要求： ### 1. 开发阶段：本地验证优先 - **开发过程中的验证，都先生成本地页面来...",
         "keywords": [
           "本地验证",
           "线上部署",
@@ -598,7 +598,7 @@
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "用户基本信息、身份背景、个人特征。关键词: 添棋, TianQi, AI助手",
+        "description": "## AI助手身份信息 ### 名称 - **正式名称**：添棋 - **英文名**：TianQi - **定位**：单虓晗的数字分身/AI个人助手 - ...",
         "keywords": [
           "添棋",
           "TianQi",
@@ -616,7 +616,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 思想体系, 可视化, 结构化",
+        "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
         "keywords": [
           "思想体系",
           "可视化",
@@ -634,7 +634,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "沟通风格、工作模式、交互偏好。关键词: 同步, 更新, markdown",
+        "description": "用户要求：每次对文档内容进行修改时，需要同时更新markdown文件和网页HTML文件，保持两者内容同步。",
         "keywords": [
           "同步",
           "更新",
@@ -652,7 +652,7 @@
         "categoryLabel": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "常见问题、踩坑记录、解决方案。关键词: 日报列表, about.html, update-homepage.sh",
+        "description": "**问题**：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
         "keywords": [
           "日报列表",
           "about.html",
@@ -670,7 +670,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 每日任务, 日报, 自进化",
+        "description": "**每日反思与进化触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codef...",
         "keywords": [
           "每日任务",
           "日报",
@@ -688,7 +688,7 @@
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "用户基本信息、身份背景、个人特征。关键词: 单虓晗, Shawn, 沈浪",
+        "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
         "keywords": [
           "单虓晗",
           "Shawn",
@@ -706,7 +706,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 类比, 解释, 抽象概念",
+        "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
         "keywords": [
           "类比",
           "解释",
@@ -724,7 +724,7 @@
         "categoryLabel": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "常见问题、踩坑记录、解决方案。关键词: 问题, 部署, 经验",
+        "description": "问题描述: 将技术实施方案从part4.html分离创建独立的part5.html，更新所有导航链接和index.html入口，完成Vercel部署和Gi...",
         "keywords": [
           "问题",
           "部署",
@@ -742,7 +742,7 @@
         "categoryLabel": "约束规则",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "必须遵守的约束、禁止事项、保密规则。关键词: 保密规则, 禁止规则, 身份保护",
+        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
         "keywords": [
           "保密规则",
           "禁止规则",
@@ -760,7 +760,7 @@
         "categoryLabel": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
-        "description": "开发实践规范、输出格式、工作流程。关键词: 链接格式, URL输出, 文本分隔",
+        "description": "## 输出链接格式规范 ### 规则 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 ### 正确格式...",
         "keywords": [
           "链接格式",
           "URL输出",
@@ -778,7 +778,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 迭代, 快速反馈, 持续优化",
+        "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
         "keywords": [
           "迭代",
           "快速反馈",
@@ -796,7 +796,7 @@
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "可复用的工作流、任务处理模式、最佳实践。关键词: 隐藏前提, 论证, 分析",
+        "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
         "keywords": [
           "隐藏前提",
           "论证",
@@ -814,7 +814,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "沟通风格、工作模式、交互偏好。关键词: 部署, GitHub Pages, 线上链接",
+        "description": "当页面有修改并需要用户查看时，默认执行以下流程： 1. 本地验证确保功能正常 2. 推送代码到 GitHub (origin + org) 3. 自动部署...",
         "keywords": [
           "部署",
           "GitHub Pages",
@@ -832,7 +832,7 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "沟通风格、工作模式、交互偏好。关键词: 工作模式, 默认风格, 思维方式",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
         "keywords": [
           "工作模式",
           "默认风格",

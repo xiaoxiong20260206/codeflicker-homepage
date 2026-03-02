@@ -77,10 +77,11 @@ async function loadAllData() {
         
         console.log('Loading data from basePath:', basePath);
         
-        const [characterRes, reportsRes, projectsRes] = await Promise.all([
+        const [characterRes, reportsRes, projectsRes, milestonesRes] = await Promise.all([
             fetch(basePath + 'character-data.json'),
             fetch(basePath + 'reports-data.json'),
-            fetch(basePath + 'projects-data.json')
+            fetch(basePath + 'projects-data.json'),
+            fetch(basePath + 'milestones-data.json').catch(() => null)  // 可选加载
         ]);
         
         if (!characterRes.ok) {
@@ -97,6 +98,11 @@ async function loadAllData() {
         AppState.reportsData = await reportsRes.json();
         AppState.projectsData = await projectsRes.json();
         
+        // 里程碑数据可选
+        if (milestonesRes && milestonesRes.ok) {
+            AppState.milestonesData = await milestonesRes.json();
+        }
+        
         console.log('Data loaded successfully');
         renderAll();
     } catch (e) {
@@ -112,6 +118,7 @@ function renderAll() {
     renderDailySection();      // 新的日报Section（合并今日+历史）
     renderWorksSection();      // 我的作品Section
     renderAbilitiesSection();  // 我的能力Section（合并技能树+关于我）
+    renderMilestones();        // 里程碑时间线
     renderCharts();
 }
 
@@ -716,22 +723,44 @@ function renderWorksGrid(projects) {
             ? `<a href="${p.url}" target="_blank" class="work-link">🔗 访问作品</a>`
             : '';
         
+        // 截图预览
+        let screenshotHtml = '';
+        if (p.screenshot) {
+            screenshotHtml = `
+                <div class="work-screenshot">
+                    <img src="${p.screenshot}" alt="${p.name} 预览" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'work-screenshot-placeholder\\'><span class=\\'icon\\'>${p.icon}</span><span>暂无预览</span></div>'">
+                </div>
+            `;
+        } else {
+            screenshotHtml = `
+                <div class="work-screenshot">
+                    <div class="work-screenshot-placeholder">
+                        <span class="icon">${p.icon}</span>
+                        <span>暂无预览</span>
+                    </div>
+                </div>
+            `;
+        }
+        
         return `
             <div class="work-card ${statusClass}" 
                  onmouseenter="showProjectTooltip(event, '${projectId}')" 
                  onmouseleave="hideTooltip()">
-                <div class="work-header">
-                    <span class="work-icon">${p.icon}</span>
-                    <div class="work-info">
-                        <div class="work-name">${p.name}</div>
-                        <div class="work-subtitle">${p.subtitle || ''}</div>
+                ${screenshotHtml}
+                <div class="work-body">
+                    <div class="work-header">
+                        <span class="work-icon">${p.icon}</span>
+                        <div class="work-info">
+                            <div class="work-name">${p.name}</div>
+                            <div class="work-subtitle">${p.subtitle || ''}</div>
+                        </div>
+                        <span class="work-status ${statusClass}">${statusText}</span>
                     </div>
-                    <span class="work-status ${statusClass}">${statusText}</span>
-                </div>
-                <div class="work-desc">${p.goal || ''}</div>
-                <div class="work-footer">
-                    <div class="work-tech">${techTags}</div>
-                    ${linkHtml}
+                    <div class="work-desc">${p.goal || ''}</div>
+                    <div class="work-footer">
+                        <div class="work-tech">${techTags}</div>
+                        ${linkHtml}
+                    </div>
                 </div>
             </div>
         `;
@@ -1133,7 +1162,15 @@ function renderMemoryTreeGraph(memories) {
 
 function renderAchievements(achievements) {
     const container = document.getElementById('achievements-grid');
+    const statsEl = document.getElementById('achievements-stats');
     if (!container) return;
+    
+    // 统计
+    const unlocked = achievements.filter(a => a.unlocked).length;
+    const total = achievements.length;
+    if (statsEl) {
+        statsEl.textContent = `已解锁 ${unlocked}/${total}`;
+    }
     
     // 为每个成就生成唯一ID并存储数据
     achievements.forEach((a, idx) => {
@@ -1144,22 +1181,96 @@ function renderAchievements(achievements) {
             desc: a.desc,
             date: a.date,
             unlocked: a.unlocked,
-            id: a.id
+            id: a.id,
+            rarity: a.rarity || 'common',
+            progress: a.progress || 0,
+            progressText: a.progressText || ''
         };
     });
     
-    container.innerHTML = achievements.map((a, idx) => `
-        <div class="achievement-item ${a.unlocked ? 'unlocked' : 'locked'}"
-             onmouseenter="showAchievementTooltip(event, 'achievement-${idx}')" 
-             onmouseleave="hideTooltip()">
-            <div class="ach-icon">${a.icon}</div>
-            <div class="ach-info">
-                <div class="ach-name">${a.name}</div>
-                <div class="ach-desc">${a.desc}</div>
+    // 稀有度标签映射
+    const rarityLabels = {
+        'common': '普通',
+        'rare': '稀有',
+        'epic': '史诗',
+        'legendary': '传说'
+    };
+    
+    container.innerHTML = achievements.map((a, idx) => {
+        const rarity = a.rarity || 'common';
+        const rarityLabel = rarityLabels[rarity] || '普通';
+        const progress = a.progress || 0;
+        const progressText = a.progressText || '';
+        
+        // 进度条HTML（仅对未解锁的显示）
+        let progressHtml = '';
+        if (!a.unlocked && progress > 0 && progress < 100) {
+            progressHtml = `
+                <div class="ach-progress">
+                    <div class="ach-progress-bar">
+                        <div class="ach-progress-fill ${rarity}" style="width: ${progress}%"></div>
+                    </div>
+                    ${progressText ? `<div class="ach-progress-text">${progressText}</div>` : ''}
+                </div>
+            `;
+        }
+        
+        return `
+            <div class="achievement-item ${a.unlocked ? 'unlocked' : 'locked'} rarity-${rarity}"
+                 onclick="showAchievementModal('achievement-${idx}')">
+                <div class="ach-icon">${a.icon}</div>
+                <div class="ach-info">
+                    <div class="ach-header">
+                        <div class="ach-name">${escapeHtml(a.name)}</div>
+                        <span class="ach-rarity-badge ${rarity}">${rarityLabel}</span>
+                    </div>
+                    <div class="ach-desc">${escapeHtml(a.desc)}</div>
+                    <div class="ach-date">${a.unlocked ? '🗓️ ' + a.date : '🔒 未解锁'}</div>
+                    ${progressHtml}
+                </div>
             </div>
-        </div>
-    `).join('');
+        `;
+    }).join('');
 }
+
+// 成就详情弹窗
+function showAchievementModal(id) {
+    const data = AppState.dataMap[id];
+    if (!data) return;
+    
+    const modal = document.getElementById('achievement-modal');
+    const iconEl = document.getElementById('modal-icon');
+    const nameEl = document.getElementById('modal-name');
+    const rarityEl = document.getElementById('modal-rarity');
+    const descEl = document.getElementById('modal-desc');
+    const dateEl = document.getElementById('modal-date');
+    
+    if (!modal) return;
+    
+    iconEl.textContent = data.icon || '🏆';
+    nameEl.textContent = data.name;
+    
+    const rarityLabels = { 'common': '普通', 'rare': '稀有', 'epic': '史诗', 'legendary': '传说' };
+    rarityEl.textContent = rarityLabels[data.rarity] || '普通';
+    rarityEl.className = 'ach-rarity-badge ' + (data.rarity || 'common');
+    
+    descEl.textContent = data.desc || '暂无描述';
+    dateEl.textContent = data.unlocked ? '解锁于 ' + data.date : '尚未解锁';
+    
+    modal.classList.add('active');
+}
+
+function closeAchievementModal(event) {
+    if (event && event.target !== event.currentTarget) return;
+    const modal = document.getElementById('achievement-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
+}
+
+// 暴露到全局
+window.showAchievementModal = showAchievementModal;
+window.closeAchievementModal = closeAchievementModal;
 
 // 成就Tooltip显示函数
 function showAchievementTooltip(event, id) {
@@ -1808,3 +1919,187 @@ function renderTrendChart() {
         }
     });
 }
+
+// ==================== 里程碑渲染 ====================
+function renderMilestones() {
+    const container = document.getElementById('milestone-timeline');
+    if (!container) return;
+    
+    const milestones = AppState.milestonesData?.milestones || [];
+    
+    if (milestones.length === 0) {
+        container.innerHTML = '<div class="timeline-empty">暂无里程碑数据</div>';
+        return;
+    }
+    
+    // 只显示前8个里程碑
+    const displayMilestones = milestones.slice(0, 8);
+    
+    container.innerHTML = displayMilestones.map(m => {
+        const typeClass = m.type || 'feature';
+        return `
+            <div class="timeline-item ${typeClass}" ${m.url ? `onclick="window.open('${m.url}', '_blank')" style="cursor:pointer"` : ''}>
+                <div class="timeline-date">${m.date}</div>
+                <div class="timeline-content">
+                    <div class="timeline-event">${m.icon || '✨'} ${escapeHtml(m.title)}</div>
+                    ${m.description && m.description !== m.title ? `<div class="timeline-desc">${escapeHtml(m.description.substring(0, 50))}${m.description.length > 50 ? '...' : ''}</div>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+// ==================== 能力雷达图对比 ====================
+let compareRadarChartInstance = null;
+
+function initCompareSelectors() {
+    const select1 = document.getElementById('compare-date-1');
+    const select2 = document.getElementById('compare-date-2');
+    
+    if (!select1 || !select2) return;
+    
+    // 获取可用日期
+    const snapshots = AppState.reportsData?.capabilitySnapshots || {};
+    const dates = Object.keys(snapshots).sort().reverse(); // 最新日期在前
+    
+    if (dates.length < 2) {
+        // 数据不足，禁用对比
+        const toggle = document.getElementById('compare-mode-toggle');
+        if (toggle) toggle.disabled = true;
+        return;
+    }
+    
+    // 填充选择器
+    dates.forEach((date, idx) => {
+        const option1 = new Option(date, date);
+        const option2 = new Option(date, date);
+        select1.add(option1);
+        select2.add(option2);
+    });
+    
+    // 默认选择最新和次新
+    select1.value = dates[0];
+    select2.value = dates.length > 1 ? dates[1] : dates[0];
+}
+
+function toggleCompareMode() {
+    const toggle = document.getElementById('compare-mode-toggle');
+    const selectors = document.getElementById('compare-selectors');
+    const radarContainer = document.getElementById('compare-radar-container');
+    
+    if (!toggle || !selectors || !radarContainer) return;
+    
+    if (toggle.checked) {
+        selectors.style.display = 'flex';
+        radarContainer.style.display = 'block';
+        initCompareSelectors();
+        updateCompareChart();
+    } else {
+        selectors.style.display = 'none';
+        radarContainer.style.display = 'none';
+        if (compareRadarChartInstance) {
+            compareRadarChartInstance.destroy();
+            compareRadarChartInstance = null;
+        }
+    }
+}
+
+function updateCompareChart() {
+    const select1 = document.getElementById('compare-date-1');
+    const select2 = document.getElementById('compare-date-2');
+    const canvas = document.getElementById('compareRadarChart');
+    
+    if (!select1 || !select2 || !canvas) return;
+    
+    const date1 = select1.value;
+    const date2 = select2.value;
+    
+    const snapshots = AppState.reportsData?.capabilitySnapshots || {};
+    const data1 = snapshots[date1];
+    const data2 = snapshots[date2];
+    
+    if (!data1 || !data2) return;
+    
+    // 销毁旧图表
+    if (compareRadarChartInstance) {
+        compareRadarChartInstance.destroy();
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    const labels = ['推理能力', '记忆深度', '执行效率', '学习速度', '洞察力', '创造力'];
+    const keys = ['reasoning', 'memory', 'execution', 'learning', 'insight', 'creativity'];
+    
+    compareRadarChartInstance = new Chart(ctx, {
+        type: 'radar',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    label: date1,
+                    data: keys.map(k => data1[k] || 0),
+                    backgroundColor: 'rgba(0, 212, 255, 0.2)',
+                    borderColor: '#00d4ff',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#00d4ff',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#00d4ff'
+                },
+                {
+                    label: date2,
+                    data: keys.map(k => data2[k] || 0),
+                    backgroundColor: 'rgba(255, 215, 0, 0.2)',
+                    borderColor: '#ffd700',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#ffd700',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#ffd700'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                r: {
+                    angleLines: { color: 'rgba(0, 212, 255, 0.2)' },
+                    grid: { color: 'rgba(0, 212, 255, 0.2)' },
+                    pointLabels: { 
+                        color: '#e8dcc4', 
+                        font: { size: 11 }
+                    },
+                    ticks: {
+                        color: '#6e7781',
+                        backdropColor: 'transparent',
+                        stepSize: 20
+                    },
+                    suggestedMin: 0,
+                    suggestedMax: 100
+                }
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        color: '#e8dcc4',
+                        usePointStyle: true,
+                        font: { size: 12 }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(30, 35, 40, 0.95)',
+                    titleColor: '#00d4ff',
+                    bodyColor: '#e8dcc4',
+                    borderColor: '#00d4ff',
+                    borderWidth: 1
+                }
+            }
+        }
+    });
+}
+
+// 暴露到全局
+window.toggleCompareMode = toggleCompareMode;
+window.updateCompareChart = updateCompareChart;

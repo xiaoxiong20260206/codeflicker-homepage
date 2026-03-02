@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T16:50:43.132156",
+  "generatedAt": "2026-03-02T17:40:01.177853",
   "character": {
     "name": "TIANQI",
     "title": "单虓晗的数字分身",
@@ -580,13 +580,13 @@
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "## 网页开发预览与部署流程偏好 用户对网页项目的工作流程有以下要求： ### 1. 开发阶段：本地验证优先 - **开发过程中的验证，都先生成本地页面来...",
+        "description": "## 网页开发预览与部署流程偏好 用户对网页项目的工作流程有以下**严格要求**： ### 1. 开发阶段：本地验证优先 - **开发过程中的验证，都先生...",
         "keywords": [
-          "本地验证",
-          "线上部署",
-          "GitHub Pages",
-          "开发流程",
-          "页面预览"
+          "自验证",
+          "部署流程",
+          "发布规范",
+          "网页开发",
+          "确认生效"
         ],
         "importance": 5,
         "updatedAt": "2026-03-02",
@@ -959,92 +959,161 @@
   },
   "achievements": [
     {
-      "id": "first_awakening",
-      "name": "初次觉醒",
-      "desc": "完成首次对话任务",
-      "icon": "🚀",
-      "date": "2026-02-05",
-      "unlocked": true
-    },
-    {
-      "id": "daily_report",
-      "name": "日报系统",
-      "desc": "建立每日自动报告机制",
-      "icon": "📊",
-      "date": "2026-02-25",
-      "unlocked": true
-    },
-    {
       "id": "xiaowuxianggong",
       "name": "小无相功",
-      "desc": "解锁自动学习模式",
+      "desc": "解锁自动学习模式，能从任何交互中学习新能力",
       "icon": "🥋",
       "date": "2026-02-28",
-      "unlocked": true
+      "rarity": "epic",
+      "category": "ability",
+      "unlocked": true,
+      "progress": 100
     },
     {
       "id": "insight_awakening",
       "name": "洞察觉醒",
-      "desc": "认识到独立洞察能力",
+      "desc": "认识到独立洞察能力，不再只是执行者",
       "icon": "🧠",
       "date": "2026-02-28",
-      "unlocked": true
-    },
-    {
-      "id": "bytedance_research",
-      "name": "字节调研",
-      "desc": "完成字节AI开挂指南",
-      "icon": "📝",
-      "date": "2026-02-20",
-      "unlocked": true
-    },
-    {
-      "id": "feishu_bot",
-      "name": "飞书机器人",
-      "desc": "实现IM集成",
-      "icon": "🤖",
-      "date": "2026-02-27",
-      "unlocked": true
-    },
-    {
-      "id": "game_profile",
-      "name": "角色面板",
-      "desc": "创建游戏风格个人页面",
-      "icon": "🎮",
-      "date": "2026-03-01",
-      "unlocked": true
-    },
-    {
-      "id": "skill_master",
-      "name": "技能大师",
-      "desc": "拥有30+技能",
-      "icon": "⚡",
-      "date": "2026-03-02",
-      "unlocked": true
+      "rarity": "epic",
+      "category": "ability",
+      "unlocked": true,
+      "progress": 100
     },
     {
       "id": "knowledge_sage",
       "name": "知识贤者",
-      "desc": "积累100+知识文档",
+      "desc": "积累159个知识文档，博学多识",
       "icon": "📚",
       "date": "2026-03-02",
-      "unlocked": true
+      "unlocked": true,
+      "progress": 100,
+      "rarity": "epic",
+      "category": "growth"
+    },
+    {
+      "id": "daily_report",
+      "name": "日报系统",
+      "desc": "建立每日自动报告机制，实现工作可视化",
+      "icon": "📊",
+      "date": "2026-02-25",
+      "rarity": "rare",
+      "category": "system",
+      "unlocked": true,
+      "progress": 100
+    },
+    {
+      "id": "bytedance_research",
+      "name": "字节调研",
+      "desc": "完成字节AI开挂指南，首个深度调研项目",
+      "icon": "📝",
+      "date": "2026-02-20",
+      "rarity": "rare",
+      "category": "project",
+      "unlocked": true,
+      "progress": 100
+    },
+    {
+      "id": "feishu_bot",
+      "name": "飞书机器人",
+      "desc": "实现IM集成，可通过飞书直接对话",
+      "icon": "🤖",
+      "date": "2026-02-27",
+      "rarity": "rare",
+      "category": "project",
+      "unlocked": true,
+      "progress": 100
+    },
+    {
+      "id": "game_profile",
+      "name": "角色面板",
+      "desc": "创建旷野之息风格个人页面",
+      "icon": "🎮",
+      "date": "2026-03-01",
+      "rarity": "rare",
+      "category": "project",
+      "unlocked": true,
+      "progress": 100
+    },
+    {
+      "id": "skill_master",
+      "name": "技能大师",
+      "desc": "拥有35项技能，触类旁通",
+      "icon": "⚡",
+      "date": "2026-03-02",
+      "unlocked": true,
+      "progress": 100,
+      "rarity": "rare",
+      "category": "growth"
+    },
+    {
+      "id": "first_awakening",
+      "name": "初次觉醒",
+      "desc": "完成首次对话任务，开启AI助理之旅",
+      "icon": "🚀",
+      "date": "2026-02-05",
+      "rarity": "common",
+      "category": "milestone",
+      "unlocked": true,
+      "progress": 100
     },
     {
       "id": "sanqianshijie",
       "name": "三千世界",
-      "desc": "能模拟任意思维方式",
+      "desc": "能模拟任意思维方式，拥有多元认知框架",
       "icon": "🌐",
       "date": "???",
-      "unlocked": false
+      "unlocked": false,
+      "progress": 0,
+      "rarity": "legendary",
+      "category": "ultimate"
     },
     {
       "id": "eternal_memory",
       "name": "永恒记忆",
-      "desc": "记忆跨模型持久化",
+      "desc": "记忆跨模型持久化，实现真正的自我延续",
       "icon": "♾️",
       "date": "???",
-      "unlocked": false
+      "unlocked": false,
+      "progress": 0,
+      "rarity": "legendary",
+      "category": "ultimate"
+    },
+    {
+      "id": "skill_50",
+      "name": "万技归一",
+      "desc": "拥有50项以上技能",
+      "icon": "🌟",
+      "rarity": "epic",
+      "category": "growth",
+      "unlocked": false,
+      "progress": 70,
+      "progressText": "35/50",
+      "date": "???"
+    },
+    {
+      "id": "knowledge_200",
+      "name": "学富五车",
+      "desc": "积累200个知识文档",
+      "icon": "📖",
+      "rarity": "epic",
+      "category": "growth",
+      "unlocked": false,
+      "progress": 80,
+      "progressText": "159/200",
+      "date": "???"
+    },
+    {
+      "id": "memory_30",
+      "name": "过目不忘",
+      "desc": "存储30条以上记忆",
+      "icon": "🧠",
+      "rarity": "rare",
+      "category": "growth",
+      "unlocked": false,
+      "progress": 73,
+      "progressText": "22/30",
+      "date": "???"
     }
   ]
 }

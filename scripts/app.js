@@ -558,7 +558,37 @@ function renderDailyTrendChart() {
                         usePointStyle: true,
                         padding: 15
                     }
+                },
+                tooltip: {
+                    enabled: true,
+                    mode: 'index',
+                    intersect: false,
+                    backgroundColor: 'rgba(30, 35, 40, 0.95)',
+                    titleColor: '#00d4ff',
+                    titleFont: { size: 13, weight: 'bold' },
+                    bodyColor: '#e8dcc4',
+                    bodyFont: { size: 12 },
+                    borderColor: '#00d4ff',
+                    borderWidth: 1,
+                    padding: 12,
+                    cornerRadius: 8,
+                    displayColors: true,
+                    callbacks: {
+                        title: function(context) {
+                            return '📅 ' + context[0].label;
+                        },
+                        label: function(context) {
+                            const label = context.dataset.label || '';
+                            const value = context.parsed.y;
+                            const icons = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
+                            return ' ' + (icons[label] || '') + ' ' + label + ': ' + value;
+                        }
+                    }
                 }
+            },
+            interaction: {
+                mode: 'index',
+                intersect: false
             },
             scales: {
                 x: {
@@ -1724,6 +1754,32 @@ function renderTrendChart() {
                         color: '#6b5344',
                         usePointStyle: true,
                         font: { size: 11 }
+                    }
+                },
+                tooltip: {
+                    enabled: true,
+                    mode: 'index',
+                    intersect: false,
+                    backgroundColor: 'rgba(30, 35, 40, 0.95)',
+                    titleColor: '#00d4ff',
+                    titleFont: { size: 13, weight: 'bold' },
+                    bodyColor: '#e8dcc4',
+                    bodyFont: { size: 12 },
+                    borderColor: '#00d4ff',
+                    borderWidth: 1,
+                    padding: 12,
+                    cornerRadius: 8,
+                    displayColors: true,
+                    callbacks: {
+                        title: function(context) {
+                            return '📅 ' + context[0].label;
+                        },
+                        label: function(context) {
+                            const label = context.dataset.label || '';
+                            const value = context.parsed.y;
+                            const icons = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
+                            return ' ' + (icons[label] || '') + ' ' + label + ': ' + value;
+                        }
                     }
                 }
             }

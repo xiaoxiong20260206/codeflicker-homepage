@@ -82,18 +82,19 @@
         .avatar-inner {
             position: absolute;
             inset: -5px;
-            background: transparent;
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            border: 2px solid rgba(0, 212, 255, 0.4);
         }
         
         .avatar-inner img {
-            width: 110%;
-            height: 110%;
-            object-fit: cover;
+            width: 95%;
+            height: 95%;
+            object-fit: contain;
             border-radius: 50%;
         }
         
@@ -986,7 +987,7 @@
             );
             border: 2px solid var(--zelda-brown);
             border-radius: var(--radius-md);
-            padding: var(--spacing-lg);
+            overflow: hidden;
             transition: all var(--transition-normal);
         }
         
@@ -998,6 +999,48 @@
         
         .work-card.deployed {
             border-color: var(--sheikah-blue);
+        }
+        
+        /* 作品截图预览 */
+        .work-screenshot {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #1e2328 0%, #2d3748 100%);
+        }
+        
+        .work-screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.3s ease;
+        }
+        
+        .work-card:hover .work-screenshot img {
+            transform: scale(1.05);
+        }
+        
+        .work-screenshot-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #6e7781;
+            font-size: 12px;
+        }
+        
+        .work-screenshot-placeholder .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+            opacity: 0.5;
+        }
+        
+        .work-body {
+            padding: var(--spacing-lg);
         }
         
         .work-header {
@@ -1102,11 +1145,73 @@
             margin-bottom: var(--spacing-lg);
         }
         
+        .trend-section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
         .trend-section-title {
             font-family: var(--font-title);
             font-size: 18px;
             color: var(--zelda-brown);
-            margin-bottom: var(--spacing-md);
+        }
+        
+        .trend-compare-controls {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+        
+        .compare-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        
+        .compare-toggle input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--sheikah-blue);
+        }
+        
+        .toggle-label {
+            font-size: 12px;
+            color: var(--zelda-brown);
+        }
+        
+        .compare-selectors {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .compare-selectors select {
+            padding: 4px 8px;
+            border: 1px solid var(--zelda-brown);
+            border-radius: var(--radius-sm);
+            background: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            color: var(--zelda-brown);
+        }
+        
+        .compare-selectors span {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .compare-radar-container {
+            height: 300px;
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: rgba(30, 35, 40, 0.95);
+            border: 2px solid var(--sheikah-blue);
+            border-radius: var(--radius-md);
         }
         
         .trend-chart-container {
@@ -1151,7 +1256,7 @@
             color: var(--sheikah-blue-light);
         }
         
-        /* 成就墙 */
+        /* 成就墙 v2.0 - 稀有度分级和进度条 */
         .achievements-section {
             background: linear-gradient(135deg, 
                 rgba(232, 220, 196, 0.95) 0%,
@@ -1172,20 +1277,36 @@
             gap: var(--spacing-sm);
         }
         
+        .achievements-stats {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            margin-left: auto;
+        }
+        
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: var(--spacing-sm);
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
         }
         
         .achievement-item {
             display: flex;
             align-items: center;
             gap: var(--spacing-sm);
-            padding: var(--spacing-sm);
+            padding: var(--spacing-md);
             background: rgba(201, 162, 39, 0.1);
-            border: 1px solid var(--zelda-gold-dark);
-            border-radius: var(--radius-sm);
+            border: 2px solid var(--zelda-gold-dark);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(201, 162, 39, 0.3);
         }
         
         .achievement-item.unlocked {
@@ -1194,24 +1315,184 @@
         }
         
         .achievement-item.locked {
-            opacity: 0.5;
-            filter: grayscale(0.5);
+            opacity: 0.6;
+            filter: grayscale(0.3);
         }
         
-        .ach-icon { font-size: 24px; }
+        /* 稀有度边框颜色 */
+        .achievement-item.rarity-common { border-color: #6e7781; }
+        .achievement-item.rarity-rare { border-color: #00d4ff; }
+        .achievement-item.rarity-epic { border-color: #a78bfa; }
+        .achievement-item.rarity-legendary { 
+            border-color: #ffd700; 
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
         
-        .ach-info { flex: 1; }
+        .achievement-item.rarity-legendary.unlocked {
+            animation: legendaryGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes legendaryGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .ach-icon { 
+            font-size: 32px; 
+            flex-shrink: 0;
+        }
+        
+        .ach-info { flex: 1; min-width: 0; }
+        
+        .ach-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
         
         .ach-name {
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--zelda-brown);
         }
         
+        .ach-rarity-badge {
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .ach-rarity-badge.common { background: #6e7781; color: white; }
+        .ach-rarity-badge.rare { background: #00d4ff; color: #1e2328; }
+        .ach-rarity-badge.epic { background: #a78bfa; color: white; }
+        .ach-rarity-badge.legendary { background: linear-gradient(135deg, #ffd700, #ffaa00); color: #1e2328; }
+        
         .ach-desc {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        .ach-date {
+            font-size: 10px;
+            color: var(--zelda-brown);
+            opacity: 0.5;
+            margin-top: 4px;
+        }
+        
+        /* 进度条 */
+        .ach-progress {
+            margin-top: 8px;
+        }
+        
+        .ach-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(107, 83, 68, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .ach-progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        
+        .ach-progress-fill.common { background: #6e7781; }
+        .ach-progress-fill.rare { background: linear-gradient(90deg, #00d4ff, #66e5ff); }
+        .ach-progress-fill.epic { background: linear-gradient(90deg, #a78bfa, #c4b5fd); }
+        .ach-progress-fill.legendary { background: linear-gradient(90deg, #ffd700, #ffaa00); }
+        
+        .ach-progress-text {
             font-size: 10px;
             color: var(--zelda-brown);
             opacity: 0.7;
+            text-align: right;
+            margin-top: 2px;
+        }
+        
+        /* 成就详情弹窗 */
+        .achievement-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .achievement-modal-content {
+            background: linear-gradient(135deg, #1e2328 0%, #2d3748 100%);
+            border: 3px solid var(--sheikah-blue);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-modal.active .achievement-modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-icon {
+            font-size: 64px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .modal-name {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: var(--sheikah-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .modal-desc {
+            font-size: 14px;
+            color: #8cb4c0;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .modal-date {
+            font-size: 12px;
+            color: #6e7781;
+        }
+        
+        .modal-close {
+            margin-top: var(--spacing-lg);
+            padding: 10px 30px;
+            background: var(--sheikah-blue);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: #1e2328;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--sheikah-blue-light);
+            transform: scale(1.05);
         }
         
         /* ==================== 关于我模块样式 ==================== */
@@ -1248,8 +1529,8 @@
         .about-avatar-inner {
             position: absolute;
             inset: -5px;
-            background: transparent;
-            border: none;
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
+            border: 2px solid rgba(0, 212, 255, 0.4);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1258,9 +1539,9 @@
         }
         
         .about-avatar-inner img {
-            width: 110%;
-            height: 110%;
-            object-fit: cover;
+            width: 95%;
+            height: 95%;
+            object-fit: contain;
             border-radius: 50%;
         }
         
@@ -1974,53 +2255,36 @@
                     </div>
                 </div>
                 
-                <!-- 近期成就时间线 -->
+                <!-- 近期成就时间线 - 自动从 milestones-data.json 加载 -->
                 <div class="timeline-section">
                     <div class="timeline-title">📈 近期里程碑</div>
                     <div class="timeline-list" id="milestone-timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2026-03-01</div>
-                            <div class="timeline-content">
-                                <div class="timeline-event">🎨 首页视觉全面升级</div>
-                                <div class="timeline-desc">迁移至旷野之息风格，希卡蓝主题</div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2026-02-28</div>
-                            <div class="timeline-content">
-                                <div class="timeline-event">🤖 飞书机器人上线</div>
-                                <div class="timeline-desc">支持IM消息自动处理和回复</div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2026-02-25</div>
-                            <div class="timeline-content">
-                                <div class="timeline-event">📊 日报系统自动化</div>
-                                <div class="timeline-desc">每日自动生成工作日报并同步首页</div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2026-02-22</div>
-                            <div class="timeline-content">
-                                <div class="timeline-event">🔬 AI产品终极形态调研</div>
-                                <div class="timeline-desc">完成5章深度研究报告</div>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date">2026-02-08</div>
-                            <div class="timeline-content">
-                                <div class="timeline-event">⚡ 技能系统初始化</div>
-                                <div class="timeline-desc">接入Claude/Cursor技能库，获得30+初始技能</div>
-                            </div>
-                        </div>
+                        <div class="loading">加载中...</div>
                     </div>
                 </div>
                 
-                <!-- 成长趋势 -->
+                <!-- 成长趋势 v2.0 - 支持日期对比 -->
                 <div class="trend-section">
-                    <div class="trend-section-title">📈 能力成长趋势 (近7天)</div>
+                    <div class="trend-section-header">
+                        <div class="trend-section-title">📈 能力成长趋势</div>
+                        <div class="trend-compare-controls">
+                            <label class="compare-toggle">
+                                <input type="checkbox" id="compare-mode-toggle" onchange="toggleCompareMode()">
+                                <span class="toggle-label">对比模式</span>
+                            </label>
+                            <div class="compare-selectors" id="compare-selectors" style="display: none;">
+                                <select id="compare-date-1" onchange="updateCompareChart()"></select>
+                                <span>vs</span>
+                                <select id="compare-date-2" onchange="updateCompareChart()"></select>
+                            </div>
+                        </div>
+                    </div>
                     <div class="trend-chart-container">
                         <canvas id="trendChart"></canvas>
+                    </div>
+                    <!-- 对比雷达图容器 -->
+                    <div class="compare-radar-container" id="compare-radar-container" style="display: none;">
+                        <canvas id="compareRadarChart"></canvas>
                     </div>
                 </div>
                 
@@ -2062,11 +2326,26 @@
                 
                 <!-- 成就墙 -->
                 <div class="achievements-section">
-                    <div class="achievements-title">🏆 成就墙</div>
+                    <div class="achievements-title">
+                        🏆 成就墙
+                        <span class="achievements-stats" id="achievements-stats"></span>
+                    </div>
                     <div class="achievements-grid" id="achievements-grid"></div>
                 </div>
             </section>
         </main>
+    </div>
+    
+    <!-- 成就详情弹窗 -->
+    <div class="achievement-modal" id="achievement-modal" onclick="closeAchievementModal(event)">
+        <div class="achievement-modal-content" onclick="event.stopPropagation()">
+            <div class="modal-icon" id="modal-icon"></div>
+            <div class="modal-name" id="modal-name"></div>
+            <div class="ach-rarity-badge" id="modal-rarity"></div>
+            <div class="modal-desc" id="modal-desc"></div>
+            <div class="modal-date" id="modal-date"></div>
+            <button class="modal-close" onclick="closeAchievementModal()">关闭</button>
+        </div>
     </div>
     
     <!-- Tooltip -->

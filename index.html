@@ -579,7 +579,7 @@
             color: var(--zelda-brown);
         }
         
-        /* 板块一：核心进展 */
+        /* 板块一：核心进展 v7.4 - 分类显示 */
         .core-progress-block {
             border-color: var(--sheikah-blue);
             background: linear-gradient(135deg, 
@@ -599,28 +599,89 @@
         .core-progress-list {
             display: flex;
             flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        /* 核心进展分类 */
+        .progress-category {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+        
+        .progress-category-header {
+            display: flex;
+            align-items: center;
             gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .progress-category-icon {
+            font-size: 18px;
+        }
+        
+        .progress-category-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+            letter-spacing: 1px;
+        }
+        
+        .progress-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
         }
         
         .progress-item {
             display: flex;
             align-items: flex-start;
             gap: var(--spacing-sm);
-            padding: var(--spacing-sm) var(--spacing-md);
-            background: rgba(0, 212, 255, 0.08);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: rgba(0, 212, 255, 0.05);
             border-radius: var(--radius-sm);
-            border-left: 3px solid var(--sheikah-blue);
+            border-left: 2px solid var(--sheikah-blue-dark);
+            transition: all var(--transition-fast);
         }
         
-        .progress-icon {
-            font-size: 16px;
+        .progress-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-left-color: var(--sheikah-blue);
+        }
+        
+        .progress-number {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sheikah-blue);
+            min-width: 20px;
             flex-shrink: 0;
         }
         
-        .progress-text {
+        .progress-content {
+            flex: 1;
+        }
+        
+        .progress-main {
             font-size: 14px;
             color: var(--text-light);
             line-height: 1.5;
+            margin-bottom: 2px;
+        }
+        
+        .progress-detail {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        
+        /* 核心进展数据空 */
+        .progress-empty {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: var(--text-muted);
         }
         
         /* 板块二：交付情况 */
@@ -1050,43 +1111,6 @@
             height: 250px;
         }
         
-        /* 能力总览 */
-        .ability-stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: var(--spacing-md);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .ability-stat-card {
-            background: rgba(30, 35, 40, 0.9);
-            border: 2px solid var(--sheikah-blue-dark);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            text-align: center;
-            transition: all var(--transition-normal);
-        }
-        
-        .ability-stat-card:hover {
-            border-color: var(--sheikah-blue);
-            box-shadow: var(--zonai-glow);
-        }
-        
-        .ability-stat-icon { font-size: 28px; margin-bottom: var(--spacing-sm); }
-        
-        .ability-stat-value {
-            font-family: var(--font-mono);
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--sheikah-blue-light);
-        }
-        
-        .ability-stat-label {
-            font-size: 11px;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-        
         /* 树形面板 */
         .tree-panel {
             background: rgba(30, 35, 40, 0.95);
@@ -1433,96 +1457,6 @@
             opacity: 0.8;
         }
         
-        /* ==================== 代表作品样式 ==================== */
-        .featured-works {
-            margin-bottom: var(--spacing-xl);
-        }
-        
-        .featured-title {
-            font-family: var(--font-title);
-            font-size: 18px;
-            color: var(--sheikah-blue-light);
-            margin-bottom: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-        
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: var(--spacing-md);
-        }
-        
-        .featured-card {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--spacing-md);
-            padding: var(--spacing-md);
-            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
-            border: 2px solid var(--sheikah-blue-dark);
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            transition: all var(--transition-normal);
-        }
-        
-        .featured-card:hover {
-            border-color: var(--sheikah-blue);
-            box-shadow: var(--sheikah-glow);
-            transform: translateY(-3px);
-        }
-        
-        .featured-icon {
-            font-size: 32px;
-            flex-shrink: 0;
-        }
-        
-        .featured-content {
-            flex: 1;
-            min-width: 0;
-        }
-        
-        .featured-name {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--sheikah-blue-light);
-            margin-bottom: 6px;
-        }
-        
-        .featured-desc {
-            font-size: 12px;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 8px;
-        }
-        
-        .featured-tags {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-        
-        .ftag {
-            padding: 2px 8px;
-            background: rgba(0, 212, 255, 0.15);
-            border: 1px solid var(--sheikah-blue-dark);
-            border-radius: 10px;
-            font-size: 10px;
-            color: var(--sheikah-blue-light);
-        }
-        
-        .featured-arrow {
-            color: var(--sheikah-blue);
-            font-size: 20px;
-            opacity: 0.5;
-            transition: all var(--transition-normal);
-        }
-        
-        .featured-card:hover .featured-arrow {
-            opacity: 1;
-            transform: translateX(5px);
-        }
-        
         /* ==================== 系统配置模块样式 ==================== */
         .config-section {
             margin-bottom: var(--spacing-xl);
@@ -1632,20 +1566,15 @@
             transform: translateX(3px);
         }
         
-        @media (max-width: 1024px) {
-            .config-grid { grid-template-columns: 1fr; }
-        }
-        
         /* 响应式 */
         @media (max-width: 1024px) {
             .sidebar { display: none; }
             .main-content { margin-left: 0; }
             .daily-overview { grid-template-columns: repeat(2, 1fr); }
             .capability-cards { grid-template-columns: 1fr; }
-            .ability-stats { grid-template-columns: repeat(2, 1fr); }
             .about-hero { flex-direction: column; align-items: center; text-align: center; }
             .about-highlights { grid-template-columns: repeat(2, 1fr); }
-            .featured-grid { grid-template-columns: 1fr; }
+            .config-grid { grid-template-columns: 1fr; }
         }
         
         @media (max-width: 600px) {

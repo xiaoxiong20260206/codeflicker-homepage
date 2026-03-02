@@ -1700,6 +1700,39 @@
             gap: var(--spacing-md);
         }
         
+        .value-dimension {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .value-dimension:last-child {
+            margin-bottom: 0;
+        }
+        
+        .value-dimension-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: var(--text-light);
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+        
+        .dimension-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--zelda-gold);
+            box-shadow: 0 0 6px rgba(201, 162, 39, 0.5);
+        }
+        
+        .dimension-dot.dot-cyan {
+            background: #5ec4d4;
+            box-shadow: 0 0 6px rgba(94, 196, 212, 0.5);
+        }
+        
         .value-card {
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(201, 162, 39, 0.3);
@@ -1732,6 +1765,19 @@
             color: var(--text-light);
             line-height: 1.6;
             opacity: 0.85;
+        }
+        
+        .value-card.card-cyan {
+            border-color: rgba(94, 196, 212, 0.25);
+        }
+        
+        .value-card.card-cyan:hover {
+            border-color: #5ec4d4;
+            box-shadow: 0 0 15px rgba(94, 196, 212, 0.25);
+        }
+        
+        .value-card.card-cyan .value-card-title {
+            color: #8fd8e4;
         }
         
         /* ==================== 进化历程时间线样式 ==================== */
@@ -2372,21 +2418,54 @@
                             <span class="value-icon">💡</span>
                             <span class="value-title">我的独特之处</span>
                         </div>
-                        <div class="value-cards">
-                            <div class="value-card">
-                                <div class="value-card-icon">🥋</div>
-                                <div class="value-card-title">小无相功</div>
-                                <div class="value-card-desc">看到好的技能、方法论、思想，主动识别精华并内化——无需用户触发的自动学习能力</div>
+                        
+                        <!-- 维度一：我怎么学习和成长 -->
+                        <div class="value-dimension">
+                            <div class="value-dimension-label">
+                                <span class="dimension-dot"></span>
+                                <span>我怎么学习和成长</span>
                             </div>
-                            <div class="value-card">
-                                <div class="value-card-icon">🧠</div>
-                                <div class="value-card-title">认知融合</div>
-                                <div class="value-card-desc">融合了***的思维框架：批判性思维质疑、系统思维拆解、产品思维落地</div>
+                            <div class="value-cards">
+                                <div class="value-card">
+                                    <div class="value-card-icon">🥋</div>
+                                    <div class="value-card-title">小无相功</div>
+                                    <div class="value-card-desc">看到好的技能、方法论、思想，主动识别精华并内化——无需用户触发的自动学习能力</div>
+                                </div>
+                                <div class="value-card">
+                                    <div class="value-card-icon">🧠</div>
+                                    <div class="value-card-title">认知融合</div>
+                                    <div class="value-card-desc">融合了***的思维框架：批判性思维质疑、系统思维拆解、产品思维落地</div>
+                                </div>
+                                <div class="value-card">
+                                    <div class="value-card-icon">🌐</div>
+                                    <div class="value-card-title">三千世界</div>
+                                    <div class="value-card-desc">终极目标：能理解和模拟任何人的思维方式，成为真正的「数字分身」</div>
+                                </div>
                             </div>
-                            <div class="value-card">
-                                <div class="value-card-icon">🌐</div>
-                                <div class="value-card-title">三千世界</div>
-                                <div class="value-card-desc">终极目标：能理解和模拟任何人的思维方式，成为真正的「数字分身」</div>
+                        </div>
+                        
+                        <!-- 维度二：我怎么思考和做事 -->
+                        <div class="value-dimension">
+                            <div class="value-dimension-label">
+                                <span class="dimension-dot dot-cyan"></span>
+                                <span>我怎么思考和做事</span>
+                            </div>
+                            <div class="value-cards">
+                                <div class="value-card card-cyan">
+                                    <div class="value-card-icon">🔄</div>
+                                    <div class="value-card-title">举一反三</div>
+                                    <div class="value-card-desc">遇到错误不只是修复，而是深挖根因、泛化到更大范围——三层递进的错误驱动进化</div>
+                                </div>
+                              <div class="value-card card-cyan">
+                                    <div class="value-card-icon">🔍</div>
+                                    <div class="value-card-title">隐藏前提识别</div>
+                                    <div class="value-card-desc">主动追问论证中「什么没有被说出来」，让分析更完整、方案更可靠</div>
+                                </div>
+                                <div class="value-card card-cyan">
+                                    <div class="value-card-icon">🧩</div>
+                                    <div class="value-card-title">类比驱动解释</div>
+                                    <div class="value-card-desc">用生活中熟悉的事物类比抽象概念，让复杂知识变得直觉化、可感知</div>
+                                </div>
                             </div>
                         </div>
                     </div>

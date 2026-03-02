@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-03-02T19:17:23.473280",
+  "generatedAt": "2026-03-02T20:07:33.877810",
   "character": {
     "name": "TIANQI",
-    "title": "某专家的数字分身",
-    "description": "融合某专家的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
+    "title": "单虓晗的数字分身",
+    "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 5,
     "totalExp": 6190,
@@ -68,7 +68,7 @@
         "skills": [
           {
             "name": "industry-research",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 63,
             "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
@@ -108,7 +108,7 @@
           },
           {
             "name": "wechat-research",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 2,
             "exp": 48,
             "description": "微信公众号内容调研、整理和知识库构建",
@@ -172,7 +172,7 @@
         "skills": [
           {
             "name": "ui-ux-pro-max-skill",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计专业版，高级组件和交互模式",
@@ -204,7 +204,7 @@
           },
           {
             "name": "zelda-style",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 79,
             "description": "塞尔达·旷野之息风格页面设计规范",
@@ -220,7 +220,7 @@
           },
           {
             "name": "pixel-action-game",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 75,
             "description": "像素风格动作游戏开发，含关卡设计和8位音效",
@@ -244,7 +244,7 @@
           },
           {
             "name": "qingshuang-research-style",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 73,
             "description": "清爽调研报告风格的CSS样式规范",
@@ -252,7 +252,7 @@
           },
           {
             "name": "work-report-ppt",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 70,
             "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
@@ -284,7 +284,7 @@
         "skills": [
           {
             "name": "docs-shuttle",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 5,
             "exp": 90,
             "description": "快手内网Docs文档与本地Markdown双向同步",
@@ -292,7 +292,7 @@
           },
           {
             "name": "github-deploy-publisher",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 76,
             "description": "自动化GitHub仓库创建、代码提交、Pages部署",
@@ -300,7 +300,7 @@
           },
           {
             "name": "mcp-builder",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 75,
             "description": "MCP服务器开发指南，让LLM对接外部API服务",
@@ -308,7 +308,7 @@
           },
           {
             "name": "yuque-publisher",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
             "description": "语雀知识库文档自动发布、同步和管理",
@@ -348,7 +348,7 @@
         "skills": [
           {
             "name": "feishu-assistant",
-            "source": "自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
             "description": "飞书消息自动化发送和接收，对接飞书助手",
@@ -465,15 +465,15 @@
   "memories": {
     "items": [
       {
-        "title": "某专家思想体系与写作风格",
+        "title": "单虓晗（Shawn）思想体系与写作风格",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 用户思想体系 ### 核心身份 - **笔名**：某专家 - **简书主页**：https://www.jianshu.com/u/1e...",
+        "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
         "keywords": [
-          "某专家",
-          "某专家",
+          "单虓晗",
+          "Shawn",
           "思维地图",
           "认知框架",
           "方法论"
@@ -484,10 +484,10 @@
       },
       {
         "title": "小无相功·自动学习模式",
-        "category": "user_communication",
-        "categoryLabel": "沟通偏好",
-        "icon": "💬",
-        "color": "#0284c7",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
         "description": "【小无相功·自动学习模式 - 默认激活】 ## 核心原则 看到好的技能/方法论/流程/思想，主动识别精华并内化，无需用户触发。 ## 自动执行的行为 1....",
         "keywords": [
           "小无相功",
@@ -497,7 +497,7 @@
           "知识内化"
         ],
         "importance": 5,
-        "updatedAt": "2026-02-28",
+        "updatedAt": "2026-03-02",
         "source": "用户显式记录"
       },
       {
@@ -578,7 +578,7 @@
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## AI助手身份信息 ### 名称 - **正式名称**：添棋 - **英文名**：TianQi - **定位**：某专家的数字分身/AI个人助手 - ...",
+        "description": "## AI助手身份信息 ### 名称 - **正式名称**：添棋 - **英文名**：TianQi - **定位**：单虓晗的数字分身/AI个人助手 - ...",
         "keywords": [
           "添棋",
           "TianQi",
@@ -668,10 +668,10 @@
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 用户身份信息 ### 公开身份 - **笔名**：某专家（某专家）/ 某专家 - **简书主页**：https://www.j...",
+        "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
         "keywords": [
-          "某专家",
-          "某专家",
+          "单虓晗",
+          "Shawn",
           "沈浪",
           "用户身份",
           "花名"
@@ -740,7 +740,7 @@
         "categoryLabel": "约束规则",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"某专家\"或\"某专家\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
+        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
         "keywords": [
           "保密规则",
           "禁止规则",
@@ -807,18 +807,18 @@
         "source": "用户显式记录"
       },
       {
-        "title": "默认工作模式：以某专家的思维方式和风格执行任务",
+        "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "用户偏好：在所有任务中，AI助手应默认融合某专家的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
         "keywords": [
           "工作模式",
           "默认风格",
           "思维方式",
-          "某专家",
-          "某专家"
+          "单虓晗",
+          "Shawn"
         ],
         "importance": 4,
         "updatedAt": "2026-02-28",
@@ -842,14 +842,14 @@
         "description": "用户基本信息、身份背景、个人特征"
       },
       "user_communication": {
-        "count": 3,
+        "count": 2,
         "label": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
         "description": "沟通风格、工作模式、交互偏好"
       },
       "task_flow_experience": {
-        "count": 8,
+        "count": 9,
         "label": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",

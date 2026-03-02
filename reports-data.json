@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-02T13:21:00.000000",
+  "generatedAt": "2026-03-02T15:42:49.138436",
   "summary": {
-    "totalDays": 7,
-    "latestDate": "2026-03-02",
+    "totalDays": 6,
+    "latestDate": "2026-03-01",
     "earliestDate": "2026-02-24"
   },
   "trend": {
@@ -12,35 +12,31 @@
       "02-26",
       "02-27",
       "02-28",
-      "03-01",
-      "03-02"
+      "03-01"
     ],
     "skills": [
       30,
-      31,
-      31,
-      32,
-      33,
-      34,
-      35
+      30,
+      30,
+      30,
+      30,
+      30
     ],
     "knowledge": [
-      145,
-      148,
       150,
-      152,
-      155,
-      157,
-      159
+      150,
+      150,
+      150,
+      150,
+      150
     ],
     "memory": [
-      15,
-      16,
-      17,
-      18,
       19,
-      20,
-      21
+      19,
+      19,
+      19,
+      19,
+      20
     ]
   },
   "reports": [
@@ -50,170 +46,16 @@
       "activeProjects": 2,
       "totalCommits": 32,
       "conversationCount": 3,
-      "coreProgress": [
-        "💬 完成 3 个任务: 将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署, 实现通过飞书IM软件直接与AI助理交互的自动化流程...",
-        "📁 项目成果: 修复: 能力页面横向溢出问题 issue",
-        "⚡ 新增能力: 清爽调研报告风格、塞尔辽UI风格，提升UI/设计输出质量",
-        "🧠 新增记忆: 网页开发预览与部署流程偏好等3条，优化沟通方式"
-      ],
-      "deliveries": [
-        {
-          "title": "AI Product Ultimate Form Technical Implementation",
-          "type": "conversation",
-          "goal": "将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署",
-          "deliverables": [],
-          "process": [
-            "将技术实施方案从part4.html分离创建独立的part5.html，更新所有导航链接和index.html入口，完成Vercel部署和GitHub推送。最终形成包含5个部分的完整结构：问题诊断、关..."
-          ],
-          "tags": [
-            "ai-product",
-            "technical-implementation",
-            "vercel-deployment",
-            "git-versioning",
-            "html-restructuring"
-          ]
-        },
-        {
-          "title": "Feishu AI Bot Integration with CodeFlicker",
-          "type": "conversation",
-          "goal": "实现通过飞书IM软件直接与AI助理交互的自动化流程",
-          "deliverables": [],
-          "process": [],
-          "tags": [
-            "feishu",
-            "automation",
-            "python",
-            "applescript",
-            "bot"
-          ]
-        },
-        {
-          "title": "GitHub Pages URL Verification and Correction",
-          "type": "conversation",
-          "goal": "验证并纠正字节AI指南的错误GitHub Pages URL，确保文档可访问性",
-          "deliverables": [],
-          "process": [
-            "识别出原URL https://my-ai-research-lab.github.io/bytedance-ai-research 404错误，确认正确部署地址为 https://xiaoxiong..."
-          ],
-          "tags": [
-            "github-pages",
-            "url-fix",
-            "feishu-bot",
-            "deployment-check",
-            "documentation"
-          ]
-        },
-        {
-          "title": "codeflicker-homepage",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "在线页面",
-              "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
-            }
-          ],
-          "process": [
-            "修复: 能力页面横向溢出问题 issue",
-            "修复: remove obsolete path detection logic for",
-            "新增: add tooltip for achievement items in ach"
-          ],
-          "commitCount": 32,
-          "fileChangeCount": 2,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
-        },
-        {
-          "title": "个人助理_V1",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "test-section-overview.html",
-              "type": "page",
-              "url": null
-            },
-            {
-              "name": "test-favicon.html",
-              "type": "page",
-              "url": null
-            },
-            {
-              "name": "daily-2026-02-28.html",
-              "type": "page",
-              "url": null
-            }
-          ],
-          "process": [
-            "网页更新 12 个",
-            "文档完善 11 份",
-            "功能代码优化"
-          ],
-          "commitCount": 0,
-          "fileChangeCount": 45,
-          "deployUrl": null
-        }
-      ],
-      "capabilityGrowth": {
-        "skillCount": 31,
-        "knowledgeCount": 150,
-        "memoryCount": 21,
-        "skillChange": 0,
-        "knowledgeChange": 0,
-        "memoryChange": 3,
-        "newSkills": [
-          {
-            "name": "qingshuang-research-style",
-            "description": "清爽调研报告风格的**纯样式规范**。当用户提到\"清爽调研报告风格\"时使用此技能。本技能**仅提供CSS样式和视觉设计规"
-          },
-          {
-            "name": "zelda-style",
-            "description": "\"This skill should be used when the user asks to create a '塞"
-          },
-          {
-            "name": "docs-shuttle",
-            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
-          }
-        ],
-        "updatedSkills": [],
-        "newKnowledge": [],
-        "updatedKnowledge": [],
-        "newMemory": [
-          {
-            "title": "网页开发预览与部署流程偏好",
-            "category": "user_communication"
-          },
-          {
-            "title": "身份保密规则",
-            "category": "constraint_or_forbidden_rule"
-          },
-          {
-            "title": "日报系统 v7.1 三板块架构与最佳实践",
-            "category": "task_flow_experience"
-          }
-        ],
-        "updatedMemory": [
-          {
-            "title": "输出链接格式规范",
-            "category": "development_practice_specification"
-          },
-          {
-            "title": "用户身份信息",
-            "category": "user_info"
-          }
-        ],
-        "trend": "growing"
-      },
-      "skillCount": 31,
+      "skillCount": 30,
       "knowledgeCount": 150,
-      "memoryCount": 21,
+      "memoryCount": 20,
       "skillChange": 0,
       "knowledgeChange": 0,
-      "memoryChange": 3,
+      "memoryChange": 0,
       "highlights": [
-        "💬 完成 3 个任务: 将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署, 实现通过飞书IM软件直接与AI助理交互的自动化流程...",
-        "📁 项目成果: 修复: 能力页面横向溢出问题 issue",
-        "⚡ 新增能力: 清爽调研报告风格、塞尔辽UI风格，提升UI/设计输出质量"
+        "对话任务摘要",
+        "🧠 技能库（Skills）",
+        "📚 知识库（Knowledge Base）"
       ]
     },
     {

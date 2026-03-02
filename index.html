@@ -68,27 +68,18 @@
         .avatar-ring {
             position: absolute;
             inset: 0;
-            border: 3px solid var(--sheikah-blue);
+            border: none;
             border-radius: 50%;
             animation: spiral-rotate 10s linear infinite;
         }
         
         .avatar-ring::before {
-            content: '';
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: var(--sheikah-blue-light);
-            border-radius: 50%;
-            top: -4px;
-            left: 50%;
-            transform: translateX(-50%);
-            box-shadow: 0 0 10px var(--sheikah-blue-light);
+            display: none;
         }
         
         .avatar-inner {
             position: absolute;
-            inset: 4px;
+            inset: -5px;
             background: transparent;
             border-radius: 50%;
             display: flex;
@@ -98,8 +89,8 @@
         }
         
         .avatar-inner img {
-            width: 100%;
-            height: 100%;
+            width: 110%;
+            height: 110%;
             object-fit: cover;
             border-radius: 50%;
         }
@@ -1254,9 +1245,9 @@
         
         .about-avatar-inner {
             position: absolute;
-            inset: 0;
+            inset: -5px;
             background: transparent;
-            border: 3px solid var(--sheikah-blue);
+            border: none;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1265,8 +1256,8 @@
         }
         
         .about-avatar-inner img {
-            width: 100%;
-            height: 100%;
+            width: 110%;
+            height: 110%;
             object-fit: cover;
             border-radius: 50%;
         }

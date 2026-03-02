@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T19:09:33.843667",
+  "generatedAt": "2026-03-02T19:17:23.473280",
   "character": {
     "name": "TIANQI",
     "title": "单虓晗的数字分身",
@@ -700,17 +700,17 @@
       },
       {
         "title": "网页开发工作流偏好",
-        "category": "user_communication",
-        "categoryLabel": "沟通偏好",
-        "icon": "💬",
-        "color": "#0284c7",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发实践",
+        "icon": "🛠️",
+        "color": "#a78bfa",
         "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
         "keywords": [
           "网页开发",
           "部署",
-          "web-dev-workflow",
           "发布流程",
-          "自验证"
+          "自验证",
+          "GitHub Pages"
         ],
         "importance": 4,
         "updatedAt": "2026-03-02",
@@ -828,7 +828,7 @@
     "total": 20,
     "byCategory": {
       "development_practice_specification": {
-        "count": 2,
+        "count": 3,
         "label": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
@@ -842,7 +842,7 @@
         "description": "用户基本信息、身份背景、个人特征"
       },
       "user_communication": {
-        "count": 4,
+        "count": 3,
         "label": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
@@ -873,12 +873,12 @@
   },
   "growthHistory": {
     "dates": [
-      "02-27",
       "02-28",
       "03-01",
       "03-01",
       "03-01",
       "03-02",
+      "03-01",
       "03-01",
       "03-01",
       "03-01",
@@ -898,10 +898,10 @@
       30,
       30,
       30,
-      30,
       31,
       31,
       31,
+      32,
       32
     ],
     "knowledge": [
@@ -923,7 +923,6 @@
     "memories": [
       19,
       19,
-      19,
       20,
       20,
       20,
@@ -934,6 +933,7 @@
       21,
       21,
       21,
+      20,
       20
     ]
   },

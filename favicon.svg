@@ -1,37 +1,86 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- 背景 - 希卡石板深色 -->
-  <circle cx="32" cy="32" r="30" fill="#1a1d23"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- 希卡蓝渐变 -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a2530"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </radialGradient>
+    <!-- 金发渐变 -->
+    <linearGradient id="hairGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c547"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a68523"/>
+    </linearGradient>
+    <!-- 帽子绿渐变 -->
+    <linearGradient id="hatGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b9c5a"/>
+      <stop offset="100%" stop-color="#4a7340"/>
+    </linearGradient>
+    <!-- 肤色渐变 -->
+    <linearGradient id="skinTone" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fce4c8"/>
+      <stop offset="100%" stop-color="#e8c9a8"/>
+    </linearGradient>
+  </defs>
   
-  <!-- 外圈光晕 - 希卡蓝 -->
-  <circle cx="32" cy="32" r="28" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+  <!-- 背景圆 -->
+  <circle cx="50" cy="50" r="48" fill="url(#bgGlow)"/>
   
-  <!-- 林克帽子 - 经典绿色 -->
-  <path d="M20 24 Q32 8 44 24 L44 28 Q32 20 20 28 Z" fill="#5d8a4a"/>
-  <path d="M44 24 L52 32 L48 36 L44 28 Z" fill="#4a7340"/>
+  <!-- 希卡符文外圈 -->
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="50" cy="50" r="43" fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.2" stroke-dasharray="4 6"/>
   
-  <!-- 林克头发 - 金色 -->
-  <ellipse cx="32" cy="30" rx="12" ry="8" fill="#c9a227"/>
-  <path d="M22 28 Q20 24 24 22 Q28 26 26 30 Z" fill="#c9a227"/>
-  <path d="M42 28 Q44 24 40 22 Q36 26 38 30 Z" fill="#c9a227"/>
+  <!-- 林克帽子 -->
+  <path d="M28 38 Q50 15 72 38 L72 44 Q50 32 28 44 Z" fill="url(#hatGreen)"/>
+  <path d="M72 38 L85 48 L80 55 L72 44 Z" fill="#4a7340"/>
+  <ellipse cx="83" cy="52" rx="3" ry="4" fill="#3d6035"/>
   
-  <!-- 林克脸部 - 肤色 -->
-  <ellipse cx="32" cy="38" rx="10" ry="10" fill="#f5d4b3"/>
+  <!-- 头发 -->
+  <ellipse cx="50" cy="44" rx="20" ry="12" fill="url(#hairGold)"/>
+  <path d="M32 40 Q28 35 34 30 Q40 38 36 44 Z" fill="url(#hairGold)"/>
+  <path d="M68 40 Q72 35 66 30 Q60 38 64 44 Z" fill="url(#hairGold)"/>
+  <path d="M42 36 Q40 30 46 28 Q48 34 44 40 Z" fill="#e8c547" opacity="0.7"/>
   
-  <!-- 眼睛 - 蓝色（塞尔达特征） -->
-  <ellipse cx="28" cy="36" rx="2.5" ry="3" fill="#4a90d9"/>
-  <ellipse cx="36" cy="36" rx="2.5" ry="3" fill="#4a90d9"/>
-  <circle cx="28" cy="35" r="1" fill="#fff"/>
-  <circle cx="36" cy="35" r="1" fill="#fff"/>
+  <!-- 脸部 -->
+  <ellipse cx="50" cy="58" rx="18" ry="18" fill="url(#skinTone)"/>
   
-  <!-- 耳朵 - 海利亚人尖耳 -->
-  <path d="M18 36 Q14 32 16 26 Q18 30 22 34 Z" fill="#f5d4b3"/>
-  <path d="M46 36 Q50 32 48 26 Q46 30 42 34 Z" fill="#f5d4b3"/>
+  <!-- 尖耳朵 - 海利亚人 -->
+  <path d="M28 54 Q20 48 22 38 Q26 46 32 52 Z" fill="url(#skinTone)"/>
+  <path d="M72 54 Q80 48 78 38 Q74 46 68 52 Z" fill="url(#skinTone)"/>
   
-  <!-- 蓝色耳环（旷野之息标志） -->
-  <circle cx="17" cy="38" r="2" fill="#00d4ff"/>
-  <circle cx="47" cy="38" r="2" fill="#00d4ff"/>
+  <!-- 耳环 - 希卡蓝 -->
+  <circle cx="24" cy="56" r="3" fill="#00d4ff">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="76" cy="56" r="3" fill="#00d4ff">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
   
-  <!-- 希卡符号装饰 -->
-  <circle cx="32" cy="52" r="3" fill="#00d4ff" opacity="0.8"/>
-  <path d="M32 49 L34 52 L32 55 L30 52 Z" fill="#00d4ff" opacity="0.6"/>
+  <!-- 眼睛 -->
+  <ellipse cx="42" cy="54" rx="5" ry="6" fill="#fff"/>
+  <ellipse cx="58" cy="54" rx="5" ry="6" fill="#fff"/>
+  <ellipse cx="42" cy="55" rx="4" ry="5" fill="#4a90d9"/>
+  <ellipse cx="58" cy="55" rx="4" ry="5" fill="#4a90d9"/>
+  <ellipse cx="42" cy="56" rx="2.5" ry="3" fill="#1a3a5c"/>
+  <ellipse cx="58" cy="56" rx="2.5" ry="3" fill="#1a3a5c"/>
+  <circle cx="40" cy="53" r="1.5" fill="#fff"/>
+  <circle cx="56" cy="53" r="1.5" fill="#fff"/>
+  
+  <!-- 眉毛 -->
+  <path d="M36 47 Q42 44 48 47" fill="none" stroke="#8b6914" stroke-width="2" stroke-linecap="round"/>
+  <path d="M52 47 Q58 44 64 47" fill="none" stroke="#8b6914" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 鼻子 -->
+  <path d="M50 58 L50 64 Q48 66 50 66 Q52 66 50 64" fill="none" stroke="#d4a574" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- 嘴巴 - 自信微笑 -->
+  <path d="M44 70 Q50 74 56 70" fill="none" stroke="#c48b6a" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 希卡符号装饰 - 底部 -->
+  <g opacity="0.6">
+    <circle cx="50" cy="88" r="4" fill="#00d4ff">
+      <animate attributeName="r" values="3.5;4.5;3.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M50 82 L53 88 L50 94 L47 88 Z" fill="none" stroke="#00d4ff" stroke-width="1"/>
+  </g>
 </svg>

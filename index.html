@@ -88,14 +88,20 @@
         
         .avatar-inner {
             position: absolute;
-            inset: 8px;
-            background: linear-gradient(135deg, var(--zelda-dark) 0%, rgba(40, 45, 55, 1) 100%);
+            inset: 4px;
+            background: transparent;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 40px;
-            border: 2px solid var(--sheikah-blue-dark);
+            overflow: hidden;
+        }
+        
+        .avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
         }
         
         .level-badge {
@@ -1603,7 +1609,7 @@
                 <div class="avatar-frame">
                     <div class="avatar-glow"></div>
                     <div class="avatar-ring"></div>
-                    <div class="avatar-inner"><img src="favicon.svg" alt="添棋" style="width: 60px; height: 60px;"></div>
+                    <div class="avatar-inner"><img src="favicon.svg" alt="添棋"></div>
                     <div class="level-badge" id="hero-level">LV.5</div>
                 </div>
                 <h1 class="character-name">TIANQI</h1>

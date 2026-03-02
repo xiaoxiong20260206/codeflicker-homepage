@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-02T11:57:28.405816",
+  "generatedAt": "2026-03-02T12:12:12.539411",
   "summary": {
-    "totalDays": 6,
-    "latestDate": "2026-03-01",
+    "totalDays": 7,
+    "latestDate": "2026-03-02",
     "earliestDate": "2026-02-24"
   },
   "trend": {
@@ -12,9 +12,11 @@
       "02-26",
       "02-27",
       "02-28",
-      "03-01"
+      "03-01",
+      "03-02"
     ],
     "skills": [
+      30,
       30,
       30,
       30,
@@ -28,6 +30,7 @@
       150,
       150,
       150,
+      150,
       150
     ],
     "memory": [
@@ -36,10 +39,167 @@
       19,
       19,
       19,
+      20,
       20
     ]
   },
   "reports": [
+    {
+      "date": "2026-03-02",
+      "dayOfWeek": "周一",
+      "activeProjects": 2,
+      "totalCommits": 14,
+      "conversationCount": 3,
+      "coreProgress": [
+        "✅ Daily Report System Enhancement Implementation",
+        "✅ Adding Upgrade Instructions to Skill Tree Nodes",
+        "✅ Web Development Favicon and Deployment Workflow Pr...",
+        "📁 项目活动: codeflicker-homepage, 个人助理_V1 (14次提交, 40个文件变更)",
+        "🧠 新增 1 条记忆"
+      ],
+      "deliveries": [
+        {
+          "title": "Daily Report System Enhancement Implementation",
+          "type": "conversation",
+          "goal": "实现日报系统的功能增强和界面重构，包括数据生成逻辑更新和前端三板块布局改造",
+          "deliverables": [],
+          "process": [
+            "已完成`generate_daily_report.py`的核心进展生成函数改造，正在进行`index.html`的三板块布局重构。待完成任务包括`app.js`的三板块渲染实现、趋势图功能以及最终的..."
+          ],
+          "tags": [
+            "daily-report",
+            "frontend-refactor",
+            "data-generation",
+            "deployment"
+          ]
+        },
+        {
+          "title": "Adding Upgrade Instructions to Skill Tree Nodes",
+          "type": "conversation",
+          "goal": "完成用户任务",
+          "deliverables": [],
+          "process": [
+            "更新了app.js中的upgradeAdvice配置，为技能、知识、记忆三类节点添加了具体可操作的升级建议，包括使用频率要求、复杂度提升方法和反馈机制。修改后的建议直接显示在tooltip中，使用em..."
+          ],
+          "tags": [
+            "skill-tree",
+            "tooltip",
+            "user-experience",
+            "leveling-system"
+          ]
+        },
+        {
+          "title": "Web Development Favicon and Deployment Workflow Preferences",
+          "type": "conversation",
+          "goal": "用户希望建立两个网页开发习惯：1) 默认生成主题相关的favicon图标；2) 优化开发流程，先本地验证再部署到GitHub，最终提供本地和线上双链接",
+          "deliverables": [],
+          "process": [
+            "1. 确认并记录了favicon生成规范（Memory ID:490f4a7bf139a8e4），包括主题匹配、多格式支持和正确配置。2. 更新了开发流程记忆（Memory ID:69e84b5776..."
+          ],
+          "tags": [
+            "favicon",
+            "deployment",
+            "GitHub Pages",
+            "workflow",
+            "local testing"
+          ]
+        },
+        {
+          "title": "codeflicker-homepage",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+            }
+          ],
+          "process": [
+            "新增: feat: improve upgrade advice with specif",
+            "优化: refactor: integrate daily report into ho",
+            "新增: feat: add level display to memory tree c"
+          ],
+          "commitCount": 14,
+          "fileChangeCount": 6,
+          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "index.html",
+              "type": "page",
+              "url": null
+            },
+            {
+              "name": "daily-2026-02-28.html",
+              "type": "page",
+              "url": null
+            },
+            {
+              "name": "daily-2026-02-24.html",
+              "type": "page",
+              "url": null
+            }
+          ],
+          "process": [
+            "生成/更新网页 9 个",
+            "完善文档 9 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 34,
+          "deployUrl": null
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 30,
+        "knowledgeCount": 150,
+        "memoryCount": 20,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 1,
+        "newSkills": [],
+        "updatedSkills": [],
+        "newKnowledge": [],
+        "updatedKnowledge": [],
+        "newMemory": [
+          {
+            "title": "网页开发图标(Favicon)规范",
+            "category": "development_practice_specification"
+          }
+        ],
+        "updatedMemory": [
+          {
+            "title": "网页开发预览与部署流程偏好",
+            "category": "user_communication"
+          },
+          {
+            "title": "每日例行任务：日报生成与能力迭代流程",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "日报系统 v7.0 架构与最佳实践",
+            "category": "task_flow_experience"
+          }
+        ],
+        "trend": "growing"
+      },
+      "skillCount": 30,
+      "knowledgeCount": 150,
+      "memoryCount": 20,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 1,
+      "highlights": [
+        "✅ Daily Report System Enhancement Implementation",
+        "✅ Adding Upgrade Instructions to Skill Tree Nodes",
+        "✅ Web Development Favicon and Deployment Workflow Pr..."
+      ]
+    },
     {
       "date": "2026-03-01",
       "dayOfWeek": "周日",

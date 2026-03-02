@@ -1593,12 +1593,13 @@
     </style>
 </head>
 <body>
-    <!-- 背景效果 -->
-    <div class="zelda-bg"></div>
-    <div class="zonai-pattern-bg" id="zonaiPattern"></div>
-    <div class="watercolor-overlay"></div>
+    <!-- 背景效果 - 旷野之息水彩天空 -->
+    <div class="bg-effects"></div>
     <div class="particles" id="particles"></div>
     <div class="scanlines"></div>
+    
+    <!-- 移动端侧边栏遮罩 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
     
     <div class="app-container">
         <!-- ===================== 左侧边栏 ===================== -->
@@ -1676,8 +1677,20 @@
         
         <!-- ===================== 主内容区 ===================== -->
         <main class="main-content">
-            <!-- 导航栏 - 3个Tab -->
+            <!-- 导航栏 - 3个Tab + 移动端菜单 -->
             <nav class="top-nav">
+                <!-- 移动端汉堡菜单按钮 -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleSidebar()">
+                    ☰
+                </button>
+                
+                <!-- 三角力装饰 -->
+                <div class="triforce-decoration">
+                    <div class="triforce"></div>
+                    <div class="triforce"></div>
+                    <div class="triforce"></div>
+                </div>
+                
                 <button class="nav-tab active" data-section="daily">
                     <span class="nav-icon">📊</span>
                     <span class="nav-text">我的日报</span>
@@ -2089,89 +2102,46 @@
     </div>
     
     <script>
-        // 创建左纳乌图案
-        function createZonaiPattern() {
-            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            svg.setAttribute('viewBox', '0 0 1000 1000');
-            svg.style.width = '100%';
-            svg.style.height = '100%';
-            
-            const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-            const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
-            gradient.setAttribute('id', 'zonai-grad');
-            gradient.innerHTML = `
-                <stop offset="0%" style="stop-color:#3cb489"/>
-                <stop offset="100%" style="stop-color:#2a8a69"/>
-            `;
-            defs.appendChild(gradient);
-            svg.appendChild(defs);
-            
-            const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-            g.setAttribute('fill', 'none');
-            g.setAttribute('stroke', 'url(#zonai-grad)');
-            g.setAttribute('stroke-width', '2');
-            
-            const positions = [
-                { x: 150, y: 150 }, { x: 500, y: 100 }, { x: 850, y: 150 },
-                { x: 100, y: 500 }, { x: 500, y: 500 }, { x: 900, y: 500 },
-                { x: 150, y: 850 }, { x: 500, y: 900 }, { x: 850, y: 850 }
-            ];
-            
-            positions.forEach(pos => {
-                const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-                [60, 45, 30, 15].forEach(r => {
-                    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-                    circle.setAttribute('cx', pos.x);
-                    circle.setAttribute('cy', pos.y);
-                    circle.setAttribute('r', r);
-                    group.appendChild(circle);
-                });
-                g.appendChild(group);
-            });
-            
-            for (let y = 50; y < 1000; y += 200) {
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                let d = `M0,${y}`;
-                for (let x = 0; x <= 1000; x += 50) {
-                    const cy = y + Math.sin(x / 50) * 15;
-                    d += ` Q${x + 25},${cy + (x % 100 === 0 ? 15 : -15)} ${x + 50},${cy}`;
-                }
-                path.setAttribute('d', d);
-                path.setAttribute('stroke-width', '1');
-                path.setAttribute('opacity', '0.3');
-                g.appendChild(path);
-            }
-            
-            svg.appendChild(g);
-            document.getElementById('zonaiPattern').appendChild(svg);
-        }
-        
-        // 创建粒子
+        // 创建飘落粒子 - 旷野之息风格落叶 + 希卡蓝光点
         function createParticles() {
             const container = document.getElementById('particles');
-            const particles = ['🍃', '🍂', '✨', '💫', '🌿'];
+            // 落叶粒子 - 自然美学
+            const leaves = ['🍃', '🍂', '🌿', '🍁'];
             
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < 12; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+                particle.textContent = leaves[Math.floor(Math.random() * leaves.length)];
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (12 + Math.random() * 10) + 's';
-                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 12) + 's';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.fontSize = (14 + Math.random() * 8) + 'px';
                 container.appendChild(particle);
             }
             
-            for (let i = 0; i < 20; i++) {
+            // 希卡蓝光点粒子 - 科技感
+            for (let i = 0; i < 25; i++) {
                 const light = document.createElement('div');
                 light.className = 'light-particle';
                 light.style.left = Math.random() * 100 + '%';
                 light.style.top = Math.random() * 100 + '%';
                 light.style.animationDelay = Math.random() * 4 + 's';
+                light.style.animationDuration = (3 + Math.random() * 3) + 's';
                 container.appendChild(light);
             }
         }
         
-        createZonaiPattern();
+        // 移动端侧边栏切换
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+        
+        // 点击遮罩关闭侧边栏
+        document.getElementById('sidebarOverlay')?.addEventListener('click', toggleSidebar);
+        
         createParticles();
     </script>
     <script src="scripts/app.js"></script>

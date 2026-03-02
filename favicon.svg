@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <defs>
-    <!-- 背景渐变 -->
-    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#1a2530"/>
+    <!-- 希卡石板背景渐变 -->
+    <radialGradient id="sheikahBg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1e2328"/>
       <stop offset="100%" stop-color="#0d1117"/>
+    </radialGradient>
+    <!-- 希卡蓝光晕 -->
+    <radialGradient id="sheikahGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#00d4ff" stop-opacity="0"/>
     </radialGradient>
     <!-- 金发渐变 -->
     <linearGradient id="hairGold" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -21,49 +26,72 @@
       <stop offset="0%" stop-color="#ffe8d0"/>
       <stop offset="100%" stop-color="#f0d0b0"/>
     </linearGradient>
+    <!-- 希卡之眼发光效果 -->
+    <filter id="sheikahBlur">
+      <feGaussianBlur stdDeviation="1.5"/>
+    </filter>
   </defs>
   
-  <!-- 背景圆 -->
-  <circle cx="50" cy="50" r="50" fill="url(#bgGlow)"/>
+  <!-- 背景圆 - 希卡石板风格 -->
+  <circle cx="50" cy="50" r="50" fill="url(#sheikahBg)"/>
   
-  <!-- 林克帽子 - 更大 -->
+  <!-- 希卡蓝边框 -->
+  <circle cx="50" cy="50" r="48" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.8">
+    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- 内圈装饰 -->
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+  
+  <!-- 背景光晕 -->
+  <circle cx="50" cy="50" r="45" fill="url(#sheikahGlow)"/>
+  
+  <!-- 林克帽子 -->
   <path d="M22 32 Q50 5 78 32 L78 40 Q50 25 22 40 Z" fill="url(#hatGreen)"/>
   <path d="M78 32 L95 45 L88 55 L78 40 Z" fill="#4a8040"/>
   <ellipse cx="92" cy="50" rx="4" ry="5" fill="#3d6830"/>
   
-  <!-- 头发 - 更大更丰富 -->
+  <!-- 头发 -->
   <ellipse cx="50" cy="38" rx="26" ry="14" fill="url(#hairGold)"/>
   <path d="M26 34 Q20 26 30 20 Q38 32 32 40 Z" fill="url(#hairGold)"/>
   <path d="M74 34 Q80 26 70 20 Q62 32 68 40 Z" fill="url(#hairGold)"/>
   <path d="M38 30 Q35 22 44 18 Q48 28 42 36 Z" fill="#f0d264" opacity="0.8"/>
   <path d="M58 28 Q55 20 64 16 Q68 26 62 34 Z" fill="#f0d264" opacity="0.7"/>
   
-  <!-- 脸部 - 更大 -->
+  <!-- 脸部 -->
   <ellipse cx="50" cy="58" rx="24" ry="24" fill="url(#skinTone)"/>
   
-  <!-- 尖耳朵 - 海利亚人 -->
+  <!-- 尖耳朵 - 海利亚人特征 -->
   <path d="M22 52 Q10 42 14 28 Q20 42 28 50 Z" fill="url(#skinTone)"/>
   <path d="M78 52 Q90 42 86 28 Q80 42 72 50 Z" fill="url(#skinTone)"/>
   
-  <!-- 耳环 - 希卡蓝 -->
-  <circle cx="18" cy="56" r="4" fill="#00d4ff">
+  <!-- 耳环 - 希卡蓝发光 -->
+  <circle cx="18" cy="56" r="4" fill="#00d4ff" filter="url(#sheikahBlur)">
+    <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
   </circle>
-  <circle cx="82" cy="56" r="4" fill="#00d4ff">
+  <circle cx="82" cy="56" r="4" fill="#00d4ff" filter="url(#sheikahBlur)">
+    <animate attributeName="r" values="4;5;4" dur="2s" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
   </circle>
+  <!-- 耳环内核 -->
+  <circle cx="18" cy="56" r="2" fill="#66e5ff"/>
+  <circle cx="82" cy="56" r="2" fill="#66e5ff"/>
   
-  <!-- 眼睛 - 更大更生动 -->
+  <!-- 眼睛 - 希卡蓝光芒 -->
   <ellipse cx="38" cy="52" rx="7" ry="9" fill="#fff"/>
   <ellipse cx="62" cy="52" rx="7" ry="9" fill="#fff"/>
-  <ellipse cx="38" cy="54" rx="5.5" ry="7" fill="#5a9fd4"/>
-  <ellipse cx="62" cy="54" rx="5.5" ry="7" fill="#5a9fd4"/>
+  <!-- 虹膜 - 使用希卡蓝 -->
+  <ellipse cx="38" cy="54" rx="5.5" ry="7" fill="#00a8cc"/>
+  <ellipse cx="62" cy="54" rx="5.5" ry="7" fill="#00a8cc"/>
+  <!-- 瞳孔 -->
   <ellipse cx="38" cy="55" rx="3.5" ry="4.5" fill="#1a4a70"/>
   <ellipse cx="62" cy="55" rx="3.5" ry="4.5" fill="#1a4a70"/>
+  <!-- 眼睛高光 -->
   <circle cx="35" cy="51" r="2.5" fill="#fff"/>
   <circle cx="59" cy="51" r="2.5" fill="#fff"/>
-  <circle cx="40" cy="56" r="1" fill="#fff" opacity="0.6"/>
-  <circle cx="64" cy="56" r="1" fill="#fff" opacity="0.6"/>
+  <circle cx="40" cy="56" r="1" fill="#66e5ff" opacity="0.8"/>
+  <circle cx="64" cy="56" r="1" fill="#66e5ff" opacity="0.8"/>
   
   <!-- 眉毛 -->
   <path d="M28 42 Q38 38 48 43" fill="none" stroke="#9a7520" stroke-width="2.5" stroke-linecap="round"/>
@@ -75,4 +103,9 @@
   
   <!-- 嘴巴 - 自信微笑 -->
   <path d="M40 76 Q50 82 60 76" fill="none" stroke="#d09070" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- 底部希卡蓝装饰线 -->
+  <path d="M20 90 Q50 95 80 90" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.5">
+    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="4s" repeatCount="indefinite"/>
+  </path>
 </svg>

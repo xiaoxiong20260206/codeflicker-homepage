@@ -1430,22 +1430,77 @@ function hideTooltip() {
 
 window.hideTooltip = hideTooltip;
 
-// ==================== 图表渲染 ====================
+// ==================== 图表渲染 - 修复隶藏状态渲染问题 ====================
+let chartInstances = {
+    radarChart: null,
+    miniTrendChart: null,
+    abilityRadarChart: null,
+    trendChart: null
+};
+
 function renderCharts() {
+    // 侧边栏图表始终可见，直接渲染
     renderRadarChart();
     renderMiniTrendChart();
-    renderAbilityRadarChart();
-    renderTrendChart();
+    
+    // 能力Section的图表需要等待section可见后再渲染
+    // 使用IntersectionObserver或延迟初始化
+    setupDeferredCharts();
+}
+
+// 延迟初始化：等待section可见后再渲染图表
+function setupDeferredCharts() {
+    const abilitiesSection = document.getElementById('section-abilities');
+    if (!abilitiesSection) return;
+    
+    // 使用IntersectionObserver监听能力Section的可见性
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Section可见时渲染图表
+                setTimeout(() => {
+                    renderAbilityRadarChart();
+                    renderTrendChart();
+                }, 100);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    observer.observe(abilitiesSection);
+    
+    // 备用方案：监听Tab切换事件
+    DOM.navTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            if (tab.dataset.section === 'abilities') {
+                setTimeout(() => {
+                    renderAbilityRadarChart();
+                    renderTrendChart();
+                }, 150);
+            }
+        });
+    });
 }
 
 function renderRadarChart() {
     const canvas = document.getElementById('radarChart');
     if (!canvas) return;
     
+    // 检查canvas是否有有效尺寸
+    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
+        console.log('radarChart: canvas not visible yet, skipping');
+        return;
+    }
+    
     const stats = AppState.characterData?.character?.stats;
     if (!stats) return;
     
-    new Chart(canvas, {
+    // 销毁旧实例
+    if (chartInstances.radarChart) {
+        chartInstances.radarChart.destroy();
+    }
+    
+    chartInstances.radarChart = new Chart(canvas, {
         type: 'radar',
         data: {
             labels: ['推理', '记忆', '执行', '学习', '洞察', '创造'],
@@ -1458,11 +1513,11 @@ function renderRadarChart() {
                     stats.insight,
                     stats.creativity
                 ],
-                backgroundColor: 'rgba(60, 180, 137, 0.2)',
-                borderColor: '#3cb489',
+                backgroundColor: 'rgba(0, 212, 255, 0.2)',
+                borderColor: '#00d4ff',
                 borderWidth: 2,
-                pointBackgroundColor: '#3cb489',
-                pointBorderColor: '#3cb489',
+                pointBackgroundColor: '#00d4ff',
+                pointBorderColor: '#00d4ff',
                 pointRadius: 4
             }]
         },
@@ -1471,8 +1526,8 @@ function renderRadarChart() {
             maintainAspectRatio: false,
             scales: {
                 r: {
-                    angleLines: { color: 'rgba(60, 180, 137, 0.2)' },
-                    grid: { color: 'rgba(60, 180, 137, 0.2)' },
+                    angleLines: { color: 'rgba(0, 212, 255, 0.2)' },
+                    grid: { color: 'rgba(0, 212, 255, 0.2)' },
                     pointLabels: { color: '#f5e6c8', font: { size: 10 } },
                     ticks: { display: false },
                     min: 0,
@@ -1490,16 +1545,27 @@ function renderMiniTrendChart() {
     const canvas = document.getElementById('miniTrendChart');
     if (!canvas) return;
     
-    const trend = AppState.reportsData.trend;
+    // 检查canvas是否有有效尺寸
+    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
+        console.log('miniTrendChart: canvas not visible yet, skipping');
+        return;
+    }
+    
+    const trend = AppState.reportsData?.trend;
     if (!trend) return;
     
-    new Chart(canvas, {
+    // 销毁旧实例
+    if (chartInstances.miniTrendChart) {
+        chartInstances.miniTrendChart.destroy();
+    }
+    
+    chartInstances.miniTrendChart = new Chart(canvas, {
         type: 'line',
         data: {
             labels: trend.dates,
             datasets: [{
                 data: trend.skills,
-                borderColor: '#3cb489',
+                borderColor: '#00d4ff',
                 borderWidth: 2,
                 fill: false,
                 tension: 0.4,
@@ -1524,10 +1590,21 @@ function renderAbilityRadarChart() {
     const canvas = document.getElementById('abilityRadarChart');
     if (!canvas) return;
     
+    // 检查canvas是否有有效尺寸
+    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
+        console.log('abilityRadarChart: canvas not visible yet, will retry on section switch');
+        return;
+    }
+    
     const stats = AppState.characterData?.character?.stats;
     if (!stats) return;
     
-    new Chart(canvas, {
+    // 销毁旧实例
+    if (chartInstances.abilityRadarChart) {
+        chartInstances.abilityRadarChart.destroy();
+    }
+    
+    chartInstances.abilityRadarChart = new Chart(canvas, {
         type: 'radar',
         data: {
             labels: ['推理', '记忆', '执行', '学习', '洞察', '创造'],
@@ -1540,10 +1617,10 @@ function renderAbilityRadarChart() {
                     stats.insight,
                     stats.creativity
                 ],
-                backgroundColor: 'rgba(60, 180, 137, 0.3)',
-                borderColor: '#3cb489',
+                backgroundColor: 'rgba(0, 212, 255, 0.3)',
+                borderColor: '#00d4ff',
                 borderWidth: 2,
-                pointBackgroundColor: '#3cb489',
+                pointBackgroundColor: '#00d4ff',
                 pointBorderColor: '#fff',
                 pointRadius: 5
             }]
@@ -1553,8 +1630,8 @@ function renderAbilityRadarChart() {
             maintainAspectRatio: false,
             scales: {
                 r: {
-                    angleLines: { color: 'rgba(60, 180, 137, 0.3)' },
-                    grid: { color: 'rgba(60, 180, 137, 0.2)' },
+                    angleLines: { color: 'rgba(0, 212, 255, 0.3)' },
+                    grid: { color: 'rgba(0, 212, 255, 0.2)' },
                     pointLabels: { color: '#f5e6c8', font: { size: 12, weight: 'bold' } },
                     ticks: { display: false },
                     min: 0,
@@ -1572,10 +1649,21 @@ function renderTrendChart() {
     const canvas = document.getElementById('trendChart');
     if (!canvas) return;
     
-    const trend = AppState.reportsData.trend;
+    // 检查canvas是否有有效尺寸
+    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
+        console.log('trendChart: canvas not visible yet, will retry on section switch');
+        return;
+    }
+    
+    const trend = AppState.reportsData?.trend;
     if (!trend) return;
     
-    new Chart(canvas, {
+    // 销毁旧实例
+    if (chartInstances.trendChart) {
+        chartInstances.trendChart.destroy();
+    }
+    
+    chartInstances.trendChart = new Chart(canvas, {
         type: 'line',
         data: {
             labels: trend.dates,
@@ -1583,8 +1671,8 @@ function renderTrendChart() {
                 {
                     label: '技能',
                     data: trend.skills,
-                    borderColor: '#3cb489',
-                    backgroundColor: 'rgba(60,180,137,0.1)',
+                    borderColor: '#00d4ff',
+                    backgroundColor: 'rgba(0, 212, 255, 0.1)',
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -1594,7 +1682,7 @@ function renderTrendChart() {
                     label: '知识',
                     data: trend.knowledge,
                     borderColor: '#c9a227',
-                    backgroundColor: 'rgba(201,162,39,0.1)',
+                    backgroundColor: 'rgba(201, 162, 39, 0.1)',
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -1603,8 +1691,8 @@ function renderTrendChart() {
                 {
                     label: '记忆',
                     data: trend.memory,
-                    borderColor: '#d4764c',
-                    backgroundColor: 'rgba(212,118,76,0.1)',
+                    borderColor: '#ff8c42',
+                    backgroundColor: 'rgba(255, 140, 66, 0.1)',
                     fill: true,
                     tension: 0.4,
                     pointRadius: 5,
@@ -1621,11 +1709,11 @@ function renderTrendChart() {
             },
             scales: {
                 x: {
-                    grid: { color: 'rgba(60,180,137,0.1)' },
+                    grid: { color: 'rgba(0, 212, 255, 0.1)' },
                     ticks: { color: '#6b5344', font: { size: 10 } }
                 },
                 y: {
-                    grid: { color: 'rgba(60,180,137,0.1)' },
+                    grid: { color: 'rgba(0, 212, 255, 0.1)' },
                     ticks: { color: '#6b5344', font: { size: 10 } }
                 }
             },

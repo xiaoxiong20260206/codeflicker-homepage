@@ -1,11 +1,12 @@
 /**
- * 添棋统一单页面 - 主应用脚本 v2.0
+ * 添棋统一单页面 - 主应用脚本 v2.1
  * TIANQI Unified Single Page Application
  * 
  * 新版Tab结构：
- * 1. 日报（合并今日+历史）
+ * 1. 了解我（自我介绍、价值主张、进化历程、成就墙）
  * 2. 我的作品
- * 3. 我的能力（合并技能树+关于我）
+ * 3. 我的能力（技能树、记忆库、知识库、成长趋势）
+ * 4. 我的日报
  */
 
 // ==================== 全局状态 ====================
@@ -13,7 +14,7 @@ const AppState = {
     characterData: null,
     reportsData: null,
     projectsData: null,
-    currentSection: 'daily',
+    currentSection: 'about',  // 默认显示"了解我"Tab
     currentReportIndex: 0, // 当前选中的日报索引
     dataMap: {},
     sidebarStats: {}
@@ -115,11 +116,41 @@ async function loadAllData() {
 
 function renderAll() {
     renderSidebar();
-    renderDailySection();      // 新的日报Section（合并今日+历史）
-    renderWorksSection();      // 我的作品Section
-    renderAbilitiesSection();  // 我的能力Section（合并技能树+关于我）
-    renderMilestones();        // 里程碑时间线
+    renderAboutSection();       // 了解我Section（自我介绍、进化、成就）
+    renderDailySection();       // 我的日报Section
+    renderWorksSection();       // 我的作品Section
+    renderAbilitiesSection();   // 我的能力Section（技能树+记忆+知识+趋势）
+    renderMilestones();         // 里程碑时间线
     renderCharts();
+}
+
+// ==================== 了解我Section ====================
+function renderAboutSection() {
+    const char = AppState.characterData?.character;
+    const skills = AppState.characterData?.skills;
+    const knowledge = AppState.characterData?.knowledge;
+    const projects = AppState.projectsData;
+    const reports = AppState.reportsData?.reports || [];
+    
+    if (!char || !skills || !knowledge) return;
+    
+    // 更新"了解我"页面的统计数字
+    const aboutSkills = document.getElementById('about-skills-2');
+    const aboutKnowledge = document.getElementById('about-knowledge-2');
+    const aboutWorks = document.getElementById('about-works-2');
+    const aboutDays = document.getElementById('about-days-2');
+    
+    if (aboutSkills) aboutSkills.textContent = skills.total;
+    if (aboutKnowledge) aboutKnowledge.textContent = knowledge.totalFiles;
+    if (aboutWorks && projects?.summary) aboutWorks.textContent = projects.summary.total;
+    
+    // 计算运行天数
+    if (aboutDays && reports.length > 0) {
+        const firstDate = new Date('2026-02-01'); // 添棋诞生日
+        const today = new Date();
+        const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
+        aboutDays.textContent = days > 0 ? days + '+' : '30+';
+    }
 }
 
 // ==================== 侧边栏渲染 ====================
@@ -1127,7 +1158,7 @@ function renderKnowledgeTreeGraph(knowledge) {
     
     // 知识目录来源描述映射
     const knowledgeSourceMap = {
-        'personal-writings': '来自单虓晗的个人原创文章、思考记录、写作作品，涵盖人生哲学、认知框架、方法论等内容',
+        'personal-writings': '个人原创文章、思考记录、写作作品，涵盖人生哲学、认知框架、方法论等内容',
         'rd-efficiency': '研发效能领域的调研报告、技术分析、最佳实践，源自工作中的技术积累',
         'financial': '金融投资相关的分析报告、数据研究、决策框架',
         'experience': '项目实践中的经验沉淀、踩坑记录、解决方案',
@@ -1334,16 +1365,21 @@ function renderMemoryTreeGraph(memories) {
 }
 
 function renderAchievements(achievements) {
-    const container = document.getElementById('achievements-grid');
-    const statsEl = document.getElementById('achievements-stats');
-    if (!container) return;
+    // 同时渲染到两个成就墙位置
+    const container1 = document.getElementById('achievements-grid');
+    const container2 = document.getElementById('achievements-grid-2');
+    const statsEl1 = document.getElementById('achievements-stats');
+    const statsEl2 = document.getElementById('achievements-stats-2');
+    
+    if (!container1 && !container2) return;
     
     // 统计
     const unlocked = achievements.filter(a => a.unlocked).length;
     const total = achievements.length;
-    if (statsEl) {
-        statsEl.textContent = `已解锁 ${unlocked}/${total}`;
-    }
+    const statsText = `已解锁 ${unlocked}/${total}`;
+    
+    if (statsEl1) statsEl1.textContent = statsText;
+    if (statsEl2) statsEl2.textContent = statsText;
     
     // 为每个成就生成唯一ID并存储数据
     achievements.forEach((a, idx) => {
@@ -1369,7 +1405,7 @@ function renderAchievements(achievements) {
         'legendary': '传说'
     };
     
-    container.innerHTML = achievements.map((a, idx) => {
+    const html = achievements.map((a, idx) => {
         const rarity = a.rarity || 'common';
         const rarityLabel = rarityLabels[rarity] || '普通';
         const progress = a.progress || 0;
@@ -1404,6 +1440,10 @@ function renderAchievements(achievements) {
             </div>
         `;
     }).join('');
+    
+    // 同时渲染到两个容器
+    if (container1) container1.innerHTML = html;
+    if (container2) container2.innerHTML = html;
 }
 
 // 成就详情弹窗

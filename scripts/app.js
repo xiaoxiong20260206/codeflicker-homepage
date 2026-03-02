@@ -1,6 +1,6 @@
 /**
- * 添棋统一单页面 - 主应用脚本 v2.1
- * TIANQI Unified Single Page Application
+ * 林克统一单页面 - 主应用脚本 v2.1
+ * LINK Unified Single Page Application
  * 
  * 新版Tab结构：
  * 1. 了解我（自我介绍、价值主张、进化历程、成就墙）
@@ -146,7 +146,7 @@ function renderAboutSection() {
     
     // 计算运行天数
     if (aboutDays && reports.length > 0) {
-        const firstDate = new Date('2026-02-01'); // 添棋诞生日
+        const firstDate = new Date('2026-02-01'); // 林克诞生日
         const today = new Date();
         const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
         aboutDays.textContent = days > 0 ? days + '+' : '30+';
@@ -1366,19 +1366,21 @@ function renderMemoryTreeGraph(memories) {
 
 function renderAchievements(achievements) {
     // 同时渲染到两个成就墙位置
-    const container1 = document.getElementById('achievements-grid');
+    // achievements-grid: 我的能力Section (已移除)
+    // achievements-grid-2: 了解我Section
     const container2 = document.getElementById('achievements-grid-2');
-    const statsEl1 = document.getElementById('achievements-stats');
     const statsEl2 = document.getElementById('achievements-stats-2');
     
-    if (!container1 && !container2) return;
+    if (!container2) {
+        console.warn('Achievements container not found');
+        return;
+    }
     
     // 统计
     const unlocked = achievements.filter(a => a.unlocked).length;
     const total = achievements.length;
     const statsText = `已解锁 ${unlocked}/${total}`;
     
-    if (statsEl1) statsEl1.textContent = statsText;
     if (statsEl2) statsEl2.textContent = statsText;
     
     // 为每个成就生成唯一ID并存储数据
@@ -1441,8 +1443,7 @@ function renderAchievements(achievements) {
         `;
     }).join('');
     
-    // 同时渲染到两个容器
-    if (container1) container1.innerHTML = html;
+    // 渲染到成就墙容器
     if (container2) container2.innerHTML = html;
 }
 

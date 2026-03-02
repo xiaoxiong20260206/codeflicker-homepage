@@ -71,8 +71,8 @@
     {
       "id": "commit-7e0f1a5",
       "date": "2026-03-02",
-      "title": "添加林克风格favicon，修改标题为了解添棋",
-      "description": "添加林克风格favicon，修改标题为了解添棋",
+      "title": "添加林克风格favicon，修改标题为了解林克",
+      "description": "添加林克风格favicon，修改标题为了解林克",
       "type": "feature",
       "source": "git",
       "repo": "codeflicker-homepage",
@@ -249,7 +249,7 @@
     {
       "id": "project-feishu-bot",
       "date": "2026-02-27",
-      "title": "🚀 飞书机器人「添棋」 上线",
+      "title": "🚀 飞书机器人「林克」 上线",
       "description": "完成飞书Webhook接收、消息解析、自动触发CodeFlicker处理的完整流程",
       "type": "epic",
       "source": "project",

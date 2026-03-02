@@ -203,7 +203,7 @@ function renderMiniAchievements() {
     `).join('');
 }
 
-// ==================== 日报Section（合并今日+历史） ====================
+// ==================== 日报Section v7.1 ====================
 function renderDailySection() {
     const reports = AppState.reportsData?.reports || [];
     if (reports.length === 0) {
@@ -216,9 +216,6 @@ function renderDailySection() {
     
     // 渲染当前选中的日报
     renderSelectedReport(0);
-    
-    // 渲染历史日报时间线
-    renderReportsTimeline();
 }
 
 function initDateSelector() {
@@ -559,61 +556,13 @@ function updateCapChange(elementId, change) {
     }
 }
 
-function renderReportsTimeline() {
-    const reports = AppState.reportsData?.reports || [];
-    const container = document.getElementById('reports-timeline');
-    
-    if (!container) {
-        console.warn('reports-timeline container not found');
-        return;
-    }
-    
-    if (reports.length === 0) {
-        container.innerHTML = '<div class="no-data">暂无日报数据</div>';
-        return;
-    }
-    
-    container.innerHTML = reports.map((r, idx) => {
-        const skillChange = formatChange(r.skillChange);
-        const knowledgeChange = formatChange(r.knowledgeChange);
-        const memoryChange = formatChange(r.memoryChange);
-        const isActive = idx === AppState.currentReportIndex;
-        
-        return `
-            <div class="timeline-item ${isActive ? 'active' : ''}" data-index="${idx}" onclick="selectReport(${idx})">
-                <div class="timeline-dot"></div>
-                <div class="report-card">
-                    <div class="report-header">
-                        <div>
-                            <span class="report-date">${r.date}</span>
-                            <span class="report-day">${r.dayOfWeek}</span>
-                        </div>
-                        <div class="report-stats">
-                            <span class="report-stat">⚡${r.skillCount}<span class="${skillChange.class}">${skillChange.text}</span></span>
-                            <span class="report-stat">📚${r.knowledgeCount}<span class="${knowledgeChange.class}">${knowledgeChange.text}</span></span>
-                            <span class="report-stat">🧠${r.memoryCount}<span class="${memoryChange.class}">${memoryChange.text}</span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join('');
-}
-
 function selectReport(idx) {
     AppState.currentReportIndex = idx;
     renderSelectedReport(idx);
-    updateTimelineActive(idx);
     
     // 更新下拉选择器
     const selector = document.getElementById('report-date-select');
     if (selector) selector.value = idx;
-}
-
-function updateTimelineActive(idx) {
-    document.querySelectorAll('.timeline-item').forEach((item, i) => {
-        item.classList.toggle('active', i === idx);
-    });
 }
 
 // 暴露到全局

@@ -900,11 +900,12 @@ body {
 
 .tree-graph {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     position: relative;
-    min-width: max-content;
-    padding: 20px 40px;
+    width: fit-content;
+    min-width: 100%;
+    padding: 20px 20px;
 }
 
 /* 根节点 */

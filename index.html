@@ -1443,82 +1443,6 @@
             transform: translateX(5px);
         }
         
-        /* ==================== 技能云图样式 ==================== */
-        .skill-cloud-section {
-            margin-bottom: var(--spacing-xl);
-            padding: var(--spacing-lg);
-            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
-            border: 2px solid var(--sheikah-blue-dark);
-            border-radius: var(--radius-md);
-        }
-        
-        .skill-cloud-title {
-            font-family: var(--font-title);
-            font-size: 18px;
-            color: var(--sheikah-blue-light);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .skill-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .cloud-tag {
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all var(--transition-normal);
-            text-decoration: none;
-        }
-        
-        .cloud-tag:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px currentColor;
-        }
-        
-        .cloud-tag.lv5 {
-            font-size: 18px;
-            font-weight: 700;
-            background: rgba(102, 229, 255, 0.25);
-            color: var(--sheikah-blue-light);
-            border: 2px solid var(--sheikah-blue);
-        }
-        
-        .cloud-tag.lv4 {
-            font-size: 15px;
-            font-weight: 600;
-            background: rgba(0, 212, 255, 0.2);
-            color: var(--sheikah-blue);
-            border: 1px solid var(--sheikah-blue-dark);
-        }
-        
-        .cloud-tag.lv3 {
-            font-size: 13px;
-            background: rgba(78, 205, 196, 0.2);
-            color: #4ecdc4;
-            border: 1px solid rgba(78, 205, 196, 0.5);
-        }
-        
-        .cloud-tag.lv2 {
-            font-size: 12px;
-            background: rgba(255, 170, 102, 0.15);
-            color: #ffaa66;
-            border: 1px solid rgba(255, 170, 102, 0.4);
-        }
-        
-        .cloud-tag.lv1 {
-            font-size: 11px;
-            background: rgba(255, 140, 66, 0.1);
-            color: #ff8c42;
-            border: 1px solid rgba(255, 140, 66, 0.3);
-        }
-        
         /* ==================== 系统配置模块样式 ==================== */
         .config-section {
             margin-bottom: var(--spacing-xl);
@@ -2166,14 +2090,6 @@
                     <div class="trend-section-title">📈 能力成长趋势 (近7天)</div>
                     <div class="trend-chart-container">
                         <canvas id="trendChart"></canvas>
-                    </div>
-                </div>
-                
-                <!-- 技能云图 -->
-                <div class="skill-cloud-section">
-                    <div class="skill-cloud-title">☁️ 技能云图</div>
-                    <div class="skill-cloud" id="skill-cloud">
-                        <!-- 动态生成技能标签 -->
                     </div>
                 </div>
                 

@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-02T17:37:18.412653",
+  "generatedAt": "2026-03-03T06:31:19.692385",
   "stats": {
-    "total": 36,
+    "total": 41,
     "epic": 12,
-    "feature": 19,
-    "fix": 5,
+    "feature": 23,
+    "fix": 6,
     "refactor": 0
   },
   "milestones": [
@@ -31,6 +31,42 @@
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
+    },
+    {
+      "id": "commit-ff752e4",
+      "date": "2026-03-02",
+      "title": "feat: 重构Tab结构 - 新增'了解我'Tab，调整内容布局",
+      "description": "feat: 重构Tab结构 - 新增'了解我'Tab，调整内容布局",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-ac31dfe",
+      "date": "2026-03-02",
+      "title": "feat: 新增【关于我】核心价值主张、进化历程时间线、如何使用我三大板块",
+      "description": "feat: 新增【关于我】核心价值主张、进化历程时间线、如何使用我三大板块",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-6cd3a50",
+      "date": "2026-03-02",
+      "title": "更新透明背景头像，添加旷野之息蓝色背景",
+      "description": "更新透明背景头像，添加旷野之息蓝色背景",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
     },
     {
       "id": "commit-4b23bbb",
@@ -71,8 +107,8 @@
     {
       "id": "commit-7e0f1a5",
       "date": "2026-03-02",
-      "title": "添加林克风格favicon，修改标题为了解林克",
-      "description": "添加林克风格favicon，修改标题为了解林克",
+      "title": "添加林克风格favicon，修改标题为了解添棋",
+      "description": "添加林克风格favicon，修改标题为了解添棋",
       "type": "feature",
       "source": "git",
       "repo": "codeflicker-homepage",
@@ -103,6 +139,29 @@
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
+    },
+    {
+      "id": "delivery-2026-03-02-codeflicke",
+      "date": "2026-03-02",
+      "title": "📁 codeflicker-homepage: 51次提交",
+      "description": "codeflicker-homepage 项目开发，51次提交，16个文件变更",
+      "type": "feature",
+      "source": "report",
+      "icon": "📁",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-ad4be4a",
+      "date": "2026-03-02",
+      "title": "fix: 修复进化历程和多处深色背景区域文字对比度问题",
+      "description": "fix: 修复进化历程和多处深色背景区域文字对比度问题",
+      "type": "fix",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🔧",
+      "color": "#4ade80",
+      "priority": 3
     },
     {
       "id": "commit-82d84a7",

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-03T06:25:25.161877",
+  "generatedAt": "2026-03-03T06:31:40.795354",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 5,
-    "totalExp": 6240,
-    "expProgress": 41.3,
+    "totalExp": 6290,
+    "expProgress": 43.0,
     "currentThreshold": 5000,
     "nextThreshold": 8000,
     "stats": {
@@ -176,7 +176,7 @@
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计专业版，高级组件和交互模式",
-            "lastUpdated": "2026-03-02"
+            "lastUpdated": "2026-03-03"
           },
           {
             "name": "vercel-react-best-practices",
@@ -573,6 +573,42 @@
         "source": "用户显式记录"
       },
       {
+        "title": "系统性全局替换流程",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "## 系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： ### 必检文件类型 1. **代码文件**：.j...",
+        "keywords": [
+          "全局替换",
+          "更名",
+          "隐私保护",
+          "系统性替换",
+          "命名规范"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "踩坑经验: SVG viewBox 内容裁切问题",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## SVG viewBox 内容裁切问题 在设计复杂SVG图形时，经常遇到底部或边缘内容被裁切的问题。 ### 问题原因 - viewBox 高度/宽度...",
+        "keywords": [
+          "SVG",
+          "viewBox",
+          "裁切",
+          "布局",
+          "尺寸计算"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
         "title": "AI助手\"林克\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
@@ -663,6 +699,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "深色背景文字对比度规范",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发实践",
+        "icon": "🛠️",
+        "color": "#a78bfa",
+        "description": "## 深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 ### 常见问题 - 深色背景上使用中等色调文...",
+        "keywords": [
+          "文字对比度",
+          "深色背景",
+          "颜色可访问性",
+          "WCAG",
+          "CSS"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
         "title": "用户身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
@@ -711,24 +765,6 @@
           "发布流程",
           "自验证",
           "GitHub Pages"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "踩坑经验: AI Product Ultimate Form Technical Implementation",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "问题描述: 将技术实施方案从part4.html分离创建独立的part5.html，更新所有导航链接和index.html入口，完成Vercel部署和Gi...",
-        "keywords": [
-          "问题",
-          "部署",
-          "经验",
-          "HTML",
-          "Git"
         ],
         "importance": 4,
         "updatedAt": "2026-03-02",
@@ -823,27 +859,12 @@
         "importance": 4,
         "updatedAt": "2026-02-28",
         "source": "用户显式记录"
-      },
-      {
-        "title": "流程经验: Memory Optimization and Skill Migration for Web Development",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "发现可复用模式: Memory Optimization and Skill Migration for Web Development",
-        "keywords": [
-          "经验",
-          "流程"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
       }
     ],
-    "total": 21,
+    "total": 22,
     "byCategory": {
       "development_practice_specification": {
-        "count": 3,
+        "count": 4,
         "label": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
@@ -890,7 +911,6 @@
     "dates": [
       "03-01",
       "03-01",
-      "03-01",
       "03-02",
       "03-01",
       "03-01",
@@ -901,6 +921,7 @@
       "03-01",
       "03-01",
       "03-01",
+      "03-02",
       "03-02"
     ],
     "skills": [
@@ -911,10 +932,10 @@
       30,
       30,
       30,
-      30,
       31,
       31,
       31,
+      32,
       32,
       32,
       32
@@ -936,7 +957,6 @@
       150
     ],
     "memories": [
-      19,
       20,
       20,
       20,
@@ -949,7 +969,8 @@
       21,
       20,
       20,
-      21
+      21,
+      22
     ]
   },
   "achievements": [
@@ -1106,8 +1127,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 70,
-      "progressText": "21/30",
+      "progress": 73,
+      "progressText": "22/30",
       "date": "???"
     }
   ]

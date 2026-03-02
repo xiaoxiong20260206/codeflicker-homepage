@@ -545,41 +545,266 @@
             color: #6b5344;
         }
         
-        /* 日报iframe */
-        .daily-iframe-container {
-            background: rgba(30, 35, 40, 0.95);
-            border: 2px solid var(--sheikah-blue-dark);
+        /* 日报详情容器 - 塞尔达风格 */
+        .daily-details-container {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
             border-radius: var(--radius-md);
-            overflow: hidden;
+            padding: var(--spacing-lg);
             margin-bottom: var(--spacing-lg);
         }
         
-        .iframe-header {
+        .daily-details-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .daily-details-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .details-section-title {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-brown);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--zelda-brown);
+        }
+        
+        .section-icon-small {
+            font-size: 18px;
+        }
+        
+        .sub-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-sm);
+            border-left: 3px solid var(--sheikah-blue);
+        }
+        
+        /* 对话任务卡片 */
+        .conversations-container, .projects-container, .capability-changes {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .conversation-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--zelda-brown);
+            border-radius: var(--radius-sm);
             padding: var(--spacing-md);
-            border-bottom: 1px solid var(--sheikah-blue-dark);
+            margin-bottom: var(--spacing-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .conversation-card:hover {
+            border-color: var(--sheikah-blue);
+            box-shadow: 0 2px 8px rgba(0, 212, 255, 0.15);
+        }
+        
+        .conversation-title {
+            font-weight: 600;
+            color: var(--zelda-brown);
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .conversation-intent {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.8;
+            margin-bottom: 4px;
+        }
+        
+        .conversation-summary {
+            font-size: 13px;
+            color: var(--zelda-brown);
+            line-height: 1.5;
+        }
+        
+        .conversation-time {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.6;
+            margin-top: 6px;
+        }
+        
+        .conversation-tags {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        
+        .conversation-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            color: var(--sheikah-blue);
+        }
+        
+        /* 项目卡片 */
+        .project-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--zelda-brown);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-card.has-deploy {
+            border-color: var(--sheikah-blue);
+        }
+        
+        .project-header-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: var(--spacing-sm);
         }
         
-        .iframe-title {
-            font-family: var(--font-title);
-            color: var(--sheikah-blue-light);
+        .project-name-title {
+            font-weight: 600;
+            color: var(--zelda-brown);
             font-size: 14px;
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
         
-        .iframe-link {
-            color: var(--zelda-gold);
+        .project-stats {
+            display: flex;
+            gap: var(--spacing-md);
+            font-size: 12px;
+            color: var(--zelda-brown);
+        }
+        
+        .project-stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .project-deploy-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: var(--sheikah-blue);
+            color: white;
             text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 11px;
+            font-weight: 500;
+        }
+        
+        .project-deploy-link:hover {
+            background: var(--sheikah-blue-light);
+        }
+        
+        .project-outcomes {
+            margin-top: var(--spacing-sm);
+        }
+        
+        .outcome-item {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            padding: 2px 0;
+            padding-left: 14px;
+            position: relative;
+        }
+        
+        .outcome-item::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #5d8a4a;
+            font-weight: bold;
+        }
+        
+        .project-commits-toggle {
+            font-size: 11px;
+            color: var(--sheikah-blue);
+            cursor: pointer;
+            margin-top: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .project-commits-list {
+            display: none;
+            margin-top: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: var(--radius-sm);
+        }
+        
+        .project-commits-list.expanded {
+            display: block;
+        }
+        
+        .commit-item {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            padding: 4px 0;
+            display: flex;
+            gap: var(--spacing-sm);
+        }
+        
+        .commit-hash {
+            font-family: var(--font-mono);
+            color: var(--sheikah-blue);
+            background: rgba(0, 212, 255, 0.1);
+            padding: 1px 4px;
+            border-radius: 3px;
+        }
+        
+        .commit-message {
+            flex: 1;
+        }
+        
+        /* 能力变化 */
+        .changes-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .change-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
             font-size: 12px;
         }
         
-        .daily-iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            background: var(--zelda-cream);
+        .change-tag.new {
+            background: rgba(93, 138, 74, 0.15);
+            color: #5d8a4a;
+            border: 1px solid rgba(93, 138, 74, 0.3);
+        }
+        
+        .change-tag.updated {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--sheikah-blue);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .no-changes {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.6;
+            font-style: italic;
         }
         
         /* 历史日报时间线 */

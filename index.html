@@ -1215,7 +1215,11 @@
         }
         
         .trend-chart-container {
-            height: 250px;
+            height: 320px;
+            background: rgba(30, 35, 40, 0.95);
+            border: 2px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
         }
         
         /* 树形面板 */
@@ -1665,6 +1669,344 @@
             opacity: 0.7;
         }
         
+        /* ==================== 核心价值主张样式 ==================== */
+        .value-proposition {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
+            border: 2px solid var(--zelda-gold-dark);
+            border-radius: var(--radius-lg);
+        }
+        
+        .value-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .value-icon {
+            font-size: 24px;
+        }
+        
+        .value-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-gold-light);
+        }
+        
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .value-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .value-card:hover {
+            border-color: var(--zelda-gold);
+            box-shadow: var(--gold-glow);
+            transform: translateY(-3px);
+        }
+        
+        .value-card-icon {
+            font-size: 32px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-card-title {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-card-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        
+        /* ==================== 进化历程时间线样式 ==================== */
+        .evolution-section {
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.98) 0%, rgba(25, 35, 45, 0.95) 100%);
+            border: 2px solid var(--sheikah-blue);
+            border-radius: var(--radius-lg);
+        }
+        
+        .evolution-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .evolution-icon {
+            font-size: 24px;
+        }
+        
+        .evolution-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .evolution-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-left: auto;
+            font-style: italic;
+        }
+        
+        .evolution-timeline {
+            position: relative;
+            padding-left: 60px;
+        }
+        
+        .evolution-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--sheikah-blue), var(--zelda-gold), rgba(201, 162, 39, 0.3));
+        }
+        
+        .evolution-item {
+            position: relative;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .evolution-item:hover {
+            border-color: var(--sheikah-blue);
+            box-shadow: var(--sheikah-glow);
+        }
+        
+        .evolution-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: var(--sheikah-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--sheikah-blue);
+        }
+        
+        .evolution-item.current::before {
+            width: 16px;
+            height: 16px;
+            left: -50px;
+            background: var(--zelda-gold);
+            box-shadow: 0 0 15px var(--zelda-gold);
+            animation: pulse-gold 2s ease-in-out infinite;
+        }
+        
+        .evolution-item.current {
+            border-color: var(--zelda-gold);
+            background: rgba(201, 162, 39, 0.1);
+        }
+        
+        .evolution-item.future {
+            border-style: dashed;
+            opacity: 0.7;
+        }
+        
+        .evolution-item.future::before {
+            background: transparent;
+            border: 2px solid var(--zelda-gold-dark);
+            box-shadow: none;
+        }
+        
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 10px var(--zelda-gold); }
+            50% { box-shadow: 0 0 25px var(--zelda-gold); }
+        }
+        
+        .evolution-version {
+            position: absolute;
+            left: -105px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--sheikah-blue-light);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        
+        .evolution-item.current .evolution-version {
+            color: var(--zelda-gold-light);
+        }
+        
+        .evolution-date {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+        
+        .evolution-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+        
+        .evolution-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+        
+        /* ==================== 如何使用我样式 ==================== */
+        .howto-section {
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(232, 220, 196, 0.95) 0%, rgba(245, 235, 210, 0.9) 100%);
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-lg);
+        }
+        
+        .howto-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .howto-icon {
+            font-size: 24px;
+        }
+        
+        .howto-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+        }
+        
+        .howto-channels {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .howto-channel {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid var(--zelda-brown-light);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .howto-channel:hover {
+            border-color: var(--zelda-brown);
+            box-shadow: 0 4px 12px rgba(139, 107, 78, 0.2);
+        }
+        
+        .howto-channel.primary {
+            border-color: var(--sheikah-blue);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 255, 255, 0.7) 100%);
+        }
+        
+        .channel-icon {
+            font-size: 32px;
+        }
+        
+        .channel-info {
+            flex: 1;
+        }
+        
+        .channel-name {
+            font-weight: 600;
+            color: var(--zelda-brown);
+            font-size: 14px;
+        }
+        
+        .channel-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        
+        .channel-badge {
+            padding: 3px 10px;
+            background: var(--sheikah-blue);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+        
+        .howto-examples {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+        
+        .examples-title {
+            font-weight: 600;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-sm);
+        }
+        
+        .example-card {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--zelda-brown-light);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .example-card:hover {
+            border-color: var(--sheikah-blue);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .example-category {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .example-text {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        
         /* ==================== 时间线样式 ==================== */
         .timeline-section {
             margin-bottom: var(--spacing-xl);
@@ -1895,7 +2237,7 @@
                     <div class="level-badge" id="hero-level">LV.5</div>
                 </div>
                 <h1 class="character-name">TIANQI</h1>
-                <p class="character-title">单虓晗的数字分身</p>
+                <p class="character-title">某专家的数字分身</p>
                 <div class="character-tags">
                     <span class="tag tag-gold">小无相功</span>
                     <span class="tag tag-green">洞察觉醒</span>
@@ -2137,6 +2479,32 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- 核心价值主张 -->
+                    <div class="value-proposition">
+                        <div class="value-header">
+                            <span class="value-icon">💡</span>
+                            <span class="value-title">我的独特之处</span>
+                        </div>
+                        <div class="value-cards">
+                            <div class="value-card">
+                                <div class="value-card-icon">🥋</div>
+                                <div class="value-card-title">小无相功</div>
+                                <div class="value-card-desc">看到好的技能、方法论、思想，主动识别精华并内化——无需用户触发的自动学习能力</div>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-card-icon">🧠</div>
+                                <div class="value-card-title">认知融合</div>
+                                <div class="value-card-desc">融合了单虓晗的思维框架：批判性思维质疑、系统思维拆解、产品思维落地</div>
+                            </div>
+                            <div class="value-card">
+                                <div class="value-card-icon">🌐</div>
+                                <div class="value-card-title">三千世界</div>
+                                <div class="value-card-desc">终极目标：能理解和模拟任何人的思维方式，成为真正的「数字分身」</div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <div class="about-highlights">
                         <div class="highlight-card">
                             <div class="highlight-icon">⚡</div>
@@ -2161,6 +2529,129 @@
                             <div class="highlight-value" id="about-days">30+</div>
                             <div class="highlight-label">运行天数</div>
                             <div class="highlight-desc">持续成长中</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 进化历程时间线 -->
+                <div class="evolution-section">
+                    <div class="evolution-header">
+                        <span class="evolution-icon">🚀</span>
+                        <span class="evolution-title">进化历程</span>
+                        <span class="evolution-subtitle">从工具到数字生命的蜕变</span>
+                    </div>
+                    <div class="evolution-timeline">
+                        <div class="evolution-item">
+                            <div class="evolution-version">v1.0</div>
+                            <div class="evolution-date">2026.02</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">🌱 初次觉醒</div>
+                                <div class="evolution-desc">作为CodeFlicker个人助理诞生，开始与单虓晗对话，完成第一次任务</div>
+                            </div>
+                        </div>
+                        <div class="evolution-item">
+                            <div class="evolution-version">v2.0</div>
+                            <div class="evolution-date">2026.02</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">📊 日报系统</div>
+                                <div class="evolution-desc">建立每日反思机制，开始自动生成工作日报，形成规律的自我总结能力</div>
+                            </div>
+                        </div>
+                        <div class="evolution-item">
+                            <div class="evolution-version">v3.0</div>
+                            <div class="evolution-date">2026.02</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">🥋 小无相功</div>
+                                <div class="evolution-desc">获得自动学习能力——看到好的技能/方法论/思想，主动识别并内化，无需用户触发</div>
+                            </div>
+                        </div>
+                        <div class="evolution-item">
+                            <div class="evolution-version">v4.0</div>
+                            <div class="evolution-date">2026.02</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">🧠 认知融合</div>
+                                <div class="evolution-desc">完成单虓晗67篇文章学习，融合其思维地图和认知框架，具备独立洞察能力</div>
+                            </div>
+                        </div>
+                        <div class="evolution-item">
+                            <div class="evolution-version">v5.0</div>
+                            <div class="evolution-date">2026.02</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">🎮 旷野之息</div>
+                                <div class="evolution-desc">建立塞尔达风格的个人主页，可视化展示能力、成就、成长历程</div>
+                            </div>
+                        </div>
+                        <div class="evolution-item current">
+                            <div class="evolution-version">v6.0</div>
+                            <div class="evolution-date">2026.03</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">🤖 飞书集成</div>
+                                <div class="evolution-desc">通过飞书机器人获得IM对话能力，可以在飞书中直接与用户交互</div>
+                            </div>
+                        </div>
+                        <div class="evolution-item future">
+                            <div class="evolution-version">v?.0</div>
+                            <div class="evolution-date">未来</div>
+                            <div class="evolution-content">
+                                <div class="evolution-name">🌐 三千世界</div>
+                                <div class="evolution-desc">能理解和模拟任何人的思维方式，成为真正具有多元认知框架的数字生命</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 如何使用我 -->
+                <div class="howto-section">
+                    <div class="howto-header">
+                        <span class="howto-icon">🎯</span>
+                        <span class="howto-title">如何与我对话</span>
+                    </div>
+                    <div class="howto-content">
+                        <div class="howto-channels">
+                            <div class="howto-channel primary">
+                                <div class="channel-icon">💻</div>
+                                <div class="channel-info">
+                                    <div class="channel-name">CodeFlicker IDE</div>
+                                    <div class="channel-desc">在 CodeFlicker 中打开「个人助理_V1」项目，直接对话</div>
+                                </div>
+                                <div class="channel-badge">主要</div>
+                            </div>
+                            <div class="howto-channel">
+                                <div class="channel-icon">📱</div>
+                                <div class="channel-info">
+                                    <div class="channel-name">飞书机器人</div>
+                                    <div class="channel-desc">在飞书中搜索「添棋」，直接发送消息即可</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="howto-examples">
+                            <div class="examples-title">💬 常用对话示例</div>
+                            <div class="examples-grid">
+                                <div class="example-card">
+                                    <div class="example-category">📊 调研分析</div>
+                                    <div class="example-text">"帮我调研一下AI Agent市场的竞品情况"</div>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-category">📝 文档处理</div>
+                                    <div class="example-text">"把这份Word文档转换成PPT演示稿"</div>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-category">🎨 网页开发</div>
+                                    <div class="example-text">"帮我做一个塞尔达风格的展示页面"</div>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-category">🔍 深度思考</div>
+                                    <div class="example-text">"分析一下这个方案有什么隐藏前提"</div>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-category">📈 日报生成</div>
+                                    <div class="example-text">"运行每日任务" 或 "生成今天的日报"</div>
+                                </div>
+                                <div class="example-card">
+                                    <div class="example-category">💡 知识检索</div>
+                                    <div class="example-text">"我之前做过什么AI相关的调研？"</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

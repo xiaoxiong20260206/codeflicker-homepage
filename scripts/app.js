@@ -1999,40 +1999,83 @@ function renderTrendChart() {
         chartInstances.trendChart.destroy();
     }
     
+    // v2.0 归一化处理：让不同量级的指标可以在同一图表中比较成长趋势
+    // 将起始值设为基准100，显示相对变化百分比
+    const normalizeData = (data) => {
+        if (!data || data.length === 0) return [];
+        const baseValue = data[0] || 1;
+        return data.map(v => Math.round((v / baseValue) * 100));
+    };
+    
+    const skillsNorm = normalizeData(trend.skills);
+    const knowledgeNorm = normalizeData(trend.knowledge);
+    const memoryNorm = normalizeData(trend.memory);
+    
+    // 计算实际变化值（用于图例显示）
+    const getChange = (data) => {
+        if (!data || data.length < 2) return 0;
+        return data[data.length - 1] - data[0];
+    };
+    
+    const skillChange = getChange(trend.skills);
+    const knowledgeChange = getChange(trend.knowledge);
+    const memoryChange = getChange(trend.memory);
+    
+    // 计算Y轴范围，让变化更明显
+    const allNormData = [...skillsNorm, ...knowledgeNorm, ...memoryNorm];
+    const minNorm = Math.min(...allNormData);
+    const maxNorm = Math.max(...allNormData);
+    const yPadding = Math.max(5, Math.ceil((maxNorm - minNorm) * 0.3));
+    
     chartInstances.trendChart = new Chart(canvas, {
         type: 'line',
         data: {
             labels: trend.dates,
             datasets: [
                 {
-                    label: '技能',
-                    data: trend.skills,
+                    label: `技能 (${skillChange >= 0 ? '+' : ''}${skillChange})`,
+                    data: skillsNorm,
                     borderColor: '#00d4ff',
-                    backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                    backgroundColor: 'rgba(0, 212, 255, 0.15)',
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 5,
-                    pointHoverRadius: 8
+                    pointRadius: 6,
+                    pointHoverRadius: 10,
+                    pointBackgroundColor: '#00d4ff',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    borderWidth: 3,
+                    originalData: trend.skills
                 },
                 {
-                    label: '知识',
-                    data: trend.knowledge,
+                    label: `知识 (${knowledgeChange >= 0 ? '+' : ''}${knowledgeChange})`,
+                    data: knowledgeNorm,
                     borderColor: '#c9a227',
-                    backgroundColor: 'rgba(201, 162, 39, 0.1)',
+                    backgroundColor: 'rgba(201, 162, 39, 0.15)',
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 5,
-                    pointHoverRadius: 8
+                    pointRadius: 6,
+                    pointHoverRadius: 10,
+                    pointBackgroundColor: '#c9a227',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    borderWidth: 3,
+                    originalData: trend.knowledge
                 },
                 {
-                    label: '记忆',
-                    data: trend.memory,
-                    borderColor: '#ff8c42',
-                    backgroundColor: 'rgba(255, 140, 66, 0.1)',
+                    label: `记忆 (${memoryChange >= 0 ? '+' : ''}${memoryChange})`,
+                    data: memoryNorm,
+                    borderColor: '#9b59b6',
+                    backgroundColor: 'rgba(155, 89, 182, 0.15)',
                     fill: true,
                     tension: 0.4,
-                    pointRadius: 5,
-                    pointHoverRadius: 8
+                    pointRadius: 6,
+                    pointHoverRadius: 10,
+                    pointBackgroundColor: '#9b59b6',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    borderWidth: 3,
+                    originalData: trend.memory
                 }
             ]
         },
@@ -2046,20 +2089,31 @@ function renderTrendChart() {
             scales: {
                 x: {
                     grid: { color: 'rgba(0, 212, 255, 0.1)' },
-                    ticks: { color: '#6b5344', font: { size: 10 } }
+                    ticks: { color: '#8cb4c0', font: { size: 11, weight: '500' } }
                 },
                 y: {
                     grid: { color: 'rgba(0, 212, 255, 0.1)' },
-                    ticks: { color: '#6b5344', font: { size: 10 } }
+                    ticks: { 
+                        color: '#8cb4c0', 
+                        font: { size: 10 },
+                        callback: function(value) {
+                            // 显示为相对增长率
+                            if (value === 100) return '基准';
+                            return (value > 100 ? '+' : '') + (value - 100) + '%';
+                        }
+                    },
+                    min: Math.max(95, minNorm - yPadding),
+                    max: maxNorm + yPadding
                 }
             },
             plugins: {
                 legend: {
                     position: 'top',
                     labels: {
-                        color: '#6b5344',
+                        color: '#8cb4c0',
                         usePointStyle: true,
-                        font: { size: 11 }
+                        font: { size: 12, weight: '500' },
+                        padding: 20
                     }
                 },
                 tooltip: {
@@ -2068,23 +2122,28 @@ function renderTrendChart() {
                     intersect: false,
                     backgroundColor: 'rgba(30, 35, 40, 0.95)',
                     titleColor: '#00d4ff',
-                    titleFont: { size: 13, weight: 'bold' },
+                    titleFont: { size: 14, weight: 'bold' },
                     bodyColor: '#e8dcc4',
-                    bodyFont: { size: 12 },
+                    bodyFont: { size: 13 },
                     borderColor: '#00d4ff',
                     borderWidth: 1,
-                    padding: 12,
-                    cornerRadius: 8,
+                    padding: 14,
+                    cornerRadius: 10,
                     displayColors: true,
                     callbacks: {
                         title: function(context) {
                             return '📅 ' + context[0].label;
                         },
                         label: function(context) {
-                            const label = context.dataset.label || '';
-                            const value = context.parsed.y;
+                            const labelParts = context.dataset.label.split(' ');
+                            const label = labelParts[0];
+                            const normValue = context.parsed.y;
+                            const originalData = context.dataset.originalData;
+                            const actualValue = originalData ? originalData[context.dataIndex] : normValue;
                             const icons = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
-                            return ' ' + (icons[label] || '') + ' ' + label + ': ' + value;
+                            const growthPercent = normValue - 100;
+                            const growthStr = growthPercent > 0 ? `+${growthPercent}%` : (growthPercent < 0 ? `${growthPercent}%` : '—');
+                            return ` ${icons[label] || ''} ${label}: ${actualValue} (${growthStr})`;
                         }
                     }
                 }

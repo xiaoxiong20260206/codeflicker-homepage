@@ -1749,13 +1749,53 @@
                     </div>
                 </div>
                 
-                <!-- 详细日报 -->
-                <div class="daily-iframe-container">
-                    <div class="iframe-header">
-                        <span class="iframe-title">📄 详细日报</span>
-                        <a href="" class="iframe-link" id="daily-link" target="_blank">在新窗口打开 →</a>
+                <!-- 详细日报 - 塞尔达风格内联展示 -->
+                <div class="daily-details-container" id="daily-details">
+                    <!-- 服务交付维度 -->
+                    <div class="daily-details-section">
+                        <div class="details-section-title">
+                            <span class="section-icon-small">🚀</span>
+                            <span>服务交付</span>
+                        </div>
+                        
+                        <!-- 对话任务摘要 -->
+                        <div class="conversations-container" id="conversations-list">
+                            <div class="sub-section-title">💬 对话任务</div>
+                            <div class="conversations-list" id="conversations-content"></div>
+                        </div>
+                        
+                        <!-- 项目活动 -->
+                        <div class="projects-container" id="projects-list">
+                            <div class="sub-section-title">📁 项目活动</div>
+                            <div class="projects-content" id="projects-content"></div>
+                        </div>
                     </div>
-                    <iframe id="daily-iframe" class="daily-iframe" src=""></iframe>
+                    
+                    <!-- 能力成长维度 -->
+                    <div class="daily-details-section">
+                        <div class="details-section-title">
+                            <span class="section-icon-small">🧠</span>
+                            <span>能力成长</span>
+                        </div>
+                        
+                        <!-- 技能变化 -->
+                        <div class="capability-changes" id="skill-changes-section">
+                            <div class="sub-section-title">⚡ 技能变化</div>
+                            <div class="changes-content" id="skill-changes-content"></div>
+                        </div>
+                        
+                        <!-- 知识变化 -->
+                        <div class="capability-changes" id="knowledge-changes-section">
+                            <div class="sub-section-title">📚 知识变化</div>
+                            <div class="changes-content" id="knowledge-changes-content"></div>
+                        </div>
+                        
+                        <!-- 记忆变化 -->
+                        <div class="capability-changes" id="memory-changes-section">
+                            <div class="sub-section-title">🧠 记忆变化</div>
+                            <div class="changes-content" id="memory-changes-content"></div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- 历史日报 -->

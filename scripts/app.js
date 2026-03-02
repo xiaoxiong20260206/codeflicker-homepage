@@ -731,18 +731,28 @@ function renderMemoryTreeGraph(memories) {
         return;
     }
     
+    // 计算记忆分类等级的函数（基于记忆数量）
+    function getMemoryLevel(count) {
+        if (count >= 10) return 5;
+        if (count >= 6) return 4;
+        if (count >= 4) return 3;
+        if (count >= 2) return 2;
+        return 1;
+    }
+    
     let idx = 0;
     let branches = '';
     
     for (const [catKey, cat] of Object.entries(categoriesObj)) {
         const catName = cat.label || cat.name || catKey;
         const catCount = cat.count || 0;
+        const catLevel = getMemoryLevel(catCount);
         const catId = 'memory-cat-' + idx;
         
         AppState.dataMap[catId] = { 
             name: catName, 
             icon: '🧠', 
-            level: 3, 
+            level: catLevel, 
             description: cat.description || `${catName}类记忆，共${catCount}条`,
             source: '记忆库'
         };
@@ -767,12 +777,12 @@ function renderMemoryTreeGraph(memories) {
             AppState.dataMap[mid] = { 
                 name: catName + ' #' + (i+1), 
                 icon: '💭', 
-                level: 3, 
+                level: catLevel, 
                 description: `${catName}类别下的记忆条目`,
                 source: catName
             };
             leaves += `
-                <div class="leaf-node lv3" 
+                <div class="leaf-node ${getLevelClass(catLevel)}" 
                      style="border-color: var(--node-color); color: var(--node-color);"
                      onmouseenter="showTreeTooltip(event, '${mid}', 'memory')" onmouseleave="hideTooltip()">
                     <span class="leaf-name">${memLabel}</span>
@@ -786,11 +796,12 @@ function renderMemoryTreeGraph(memories) {
         
         branches += `
             <div class="branch" style="color: var(--zelda-orange);">
-                <div class="category-node lv3" 
+                <div class="category-node ${getLevelClass(catLevel)}" 
                      style="border-color: var(--zelda-orange); color: var(--zelda-orange);"
                      onmouseenter="showTreeTooltip(event, '${catId}', 'memory')" onmouseleave="hideTooltip()">
                     <span class="cat-icon">${cat.icon || '📁'}</span>
                     <span class="cat-name">${catName}</span>
+                    <span class="cat-level" style="border-color: var(--zelda-orange);">${catLevel}</span>
                     <span class="cat-count" style="border-color: var(--zelda-orange);">${catCount}</span>
                 </div>
                 <div class="leaves" style="color: var(--zelda-orange);">

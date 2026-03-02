@@ -177,8 +177,8 @@
       "status": "deployed",
       "completedAt": "2026-03-01",
       "techStack": ["HTML", "CSS", "JavaScript", "Chart.js"],
-      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/character.html",
-      "path": "/Users/shenlang/Documents/Codeflicker/codeflicker-homepage/character.html",
+      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/",
+      "path": "/Users/shenlang/Documents/Codeflicker/codeflicker-homepage/index.html",
       "highlights": [
         "技能树可视化",
         "Tooltip悬浮提示",

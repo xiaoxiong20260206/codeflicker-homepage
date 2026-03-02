@@ -1150,65 +1150,6 @@
         
         /* ==================== 我的能力Section样式 ==================== */
         
-        /* 角色介绍区 */
-        .ability-intro {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .intro-card {
-            background: linear-gradient(135deg, 
-                rgba(232, 220, 196, 0.95) 0%,
-                rgba(245, 230, 200, 0.9) 100%
-            );
-            border: 2px solid var(--zelda-brown);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-lg);
-            transition: all var(--transition-normal);
-        }
-        
-        .intro-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(107, 83, 68, 0.2);
-            border-color: var(--zelda-gold);
-        }
-        }
-        
-        .intro-card-title {
-            font-family: var(--font-title);
-            font-size: 16px;
-            color: var(--zelda-brown);
-            margin-bottom: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-        
-        .intro-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .intro-table th, .intro-table td {
-            padding: 10px;
-            text-align: left;
-            font-size: 13px;
-            border-bottom: 1px solid rgba(107, 83, 68, 0.2);
-        }
-        
-        .intro-table th {
-            color: var(--zelda-brown);
-            opacity: 0.7;
-            font-weight: 400;
-            width: 100px;
-        }
-        
-        .intro-table td {
-            color: var(--zelda-brown);
-        }
-        
         /* 属性雷达图 */
         .radar-section {
             background: rgba(30, 35, 40, 0.95);
@@ -1847,7 +1788,6 @@
             .main-content { margin-left: 0; }
             .daily-overview { grid-template-columns: repeat(2, 1fr); }
             .capability-cards { grid-template-columns: 1fr; }
-            .ability-intro { grid-template-columns: 1fr; }
             .ability-stats { grid-template-columns: repeat(2, 1fr); }
             .about-hero { flex-direction: column; align-items: center; text-align: center; }
             .about-highlights { grid-template-columns: repeat(2, 1fr); }
@@ -2048,12 +1988,6 @@
                             <canvas id="dailyTrendChart"></canvas>
                         </div>
                     </div>
-                </div>
-                
-                <!-- 历史日报 -->
-                <div class="history-section">
-                    <div class="history-title">📋 历史日报</div>
-                    <div class="timeline-container" id="reports-timeline"></div>
                 </div>
             </section>
             
@@ -2318,30 +2252,6 @@
                             </div>
                             <div class="featured-arrow">→</div>
                         </a>
-                    </div>
-                </div>
-                
-                <!-- 角色介绍 -->
-                <div class="ability-intro">
-                    <div class="intro-card">
-                        <div class="intro-card-title">🤖 角色档案</div>
-                        <table class="intro-table">
-                            <tr><th>名称</th><td>添棋 (TIANQI)</td></tr>
-                            <tr><th>类型</th><td>AI 个人助理</td></tr>
-                            <tr><th>特质</th><td>小无相功 · 洞察觉醒</td></tr>
-                            <tr><th>定位</th><td>单虓晗的数字分身</td></tr>
-                            <tr><th>等级</th><td id="ability-level">LV.5</td></tr>
-                        </table>
-                    </div>
-                    <div class="intro-card">
-                        <div class="intro-card-title">⚙️ 技术基座</div>
-                        <table class="intro-table">
-                            <tr><th>基础框架</th><td>CodeFlicker + Claude</td></tr>
-                            <tr><th>代码托管</th><td>GitHub</td></tr>
-                            <tr><th>页面部署</th><td>GitHub Pages</td></tr>
-                            <tr><th>当前版本</th><td>v7.0 (王国之泪)</td></tr>
-                            <tr><th>技能系统</th><td>技能框架</td></tr>
-                        </table>
                     </div>
                 </div>
                 

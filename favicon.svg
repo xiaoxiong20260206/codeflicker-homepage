@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 背景 - 希卡石板深色 -->
+  <circle cx="32" cy="32" r="30" fill="#1a1d23"/>
+  
+  <!-- 外圈光晕 - 希卡蓝 -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#00d4ff" stroke-width="2" opacity="0.6"/>
+  
+  <!-- 林克帽子 - 经典绿色 -->
+  <path d="M20 24 Q32 8 44 24 L44 28 Q32 20 20 28 Z" fill="#5d8a4a"/>
+  <path d="M44 24 L52 32 L48 36 L44 28 Z" fill="#4a7340"/>
+  
+  <!-- 林克头发 - 金色 -->
+  <ellipse cx="32" cy="30" rx="12" ry="8" fill="#c9a227"/>
+  <path d="M22 28 Q20 24 24 22 Q28 26 26 30 Z" fill="#c9a227"/>
+  <path d="M42 28 Q44 24 40 22 Q36 26 38 30 Z" fill="#c9a227"/>
+  
+  <!-- 林克脸部 - 肤色 -->
+  <ellipse cx="32" cy="38" rx="10" ry="10" fill="#f5d4b3"/>
+  
+  <!-- 眼睛 - 蓝色（塞尔达特征） -->
+  <ellipse cx="28" cy="36" rx="2.5" ry="3" fill="#4a90d9"/>
+  <ellipse cx="36" cy="36" rx="2.5" ry="3" fill="#4a90d9"/>
+  <circle cx="28" cy="35" r="1" fill="#fff"/>
+  <circle cx="36" cy="35" r="1" fill="#fff"/>
+  
+  <!-- 耳朵 - 海利亚人尖耳 -->
+  <path d="M18 36 Q14 32 16 26 Q18 30 22 34 Z" fill="#f5d4b3"/>
+  <path d="M46 36 Q50 32 48 26 Q46 30 42 34 Z" fill="#f5d4b3"/>
+  
+  <!-- 蓝色耳环（旷野之息标志） -->
+  <circle cx="17" cy="38" r="2" fill="#00d4ff"/>
+  <circle cx="47" cy="38" r="2" fill="#00d4ff"/>
+  
+  <!-- 希卡符号装饰 -->
+  <circle cx="32" cy="52" r="3" fill="#00d4ff" opacity="0.8"/>
+  <path d="M32 49 L34 52 L32 55 L30 52 Z" fill="#00d4ff" opacity="0.6"/>
+</svg>

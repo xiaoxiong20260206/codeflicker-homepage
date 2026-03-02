@@ -2316,9 +2316,9 @@
                     <div class="triforce"></div>
                 </div>
                 
-                <button class="nav-tab active" data-section="daily">
-                    <span class="nav-icon">📊</span>
-                    <span class="nav-text">我的日报</span>
+                <button class="nav-tab active" data-section="about">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">了解我</span>
                 </button>
                 <button class="nav-tab" data-section="works">
                     <span class="nav-icon">🎨</span>
@@ -2328,132 +2328,18 @@
                     <span class="nav-icon">⚡</span>
                     <span class="nav-text">我的能力</span>
                 </button>
+                <button class="nav-tab" data-section="daily">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">我的日报</span>
+                </button>
             </nav>
             
-            <!-- ==================== Section 1: 日报 v7.1 ==================== -->
-            <section id="section-daily" class="content-section active">
+            <!-- ==================== Section 1: 了解我 ==================== -->
+            <section id="section-about" class="content-section active">
                 <div class="section-header">
                     <div class="section-title-wrap">
-                        <span class="section-icon">📊</span>
-                        <h2 class="section-title">日报</h2>
-                    </div>
-                    <div class="date-selector">
-                        <select class="date-select" id="report-date-select">
-                            <!-- 动态填充 -->
-                        </select>
-                    </div>
-                </div>
-                
-                <!-- 板块一：核心进展 -->
-                <div class="daily-section-block core-progress-block">
-                    <div class="block-header">
-                        <span class="block-icon">📋</span>
-                        <span class="block-title">核心进展</span>
-                    </div>
-                    <div class="core-progress-list" id="core-progress-list">
-                        <!-- 动态填充 -->
-                    </div>
-                </div>
-                
-                <!-- 板块二：交付情况 -->
-                <div class="daily-section-block deliveries-block">
-                    <div class="block-header">
-                        <span class="block-icon">🚀</span>
-                        <span class="block-title">交付情况</span>
-                    </div>
-                    <div class="deliveries-list" id="deliveries-list">
-                        <!-- 动态填充 -->
-                    </div>
-                </div>
-                
-                <!-- 板块三：能力提升 -->
-                <div class="daily-section-block capability-block">
-                    <div class="block-header">
-                        <span class="block-icon">📈</span>
-                        <span class="block-title">能力提升</span>
-                    </div>
-                    
-                    <!-- 能力概览卡片 -->
-                    <div class="capability-overview">
-                        <div class="cap-card-v2">
-                            <div class="cap-icon-v2">⚡</div>
-                            <div class="cap-info-v2">
-                                <div class="cap-label-v2">技能</div>
-                                <div class="cap-value-v2" id="cap-skills-v2">-</div>
-                            </div>
-                            <div class="cap-change-v2" id="cap-skills-change-v2">-</div>
-                        </div>
-                        <div class="cap-card-v2">
-                            <div class="cap-icon-v2">📚</div>
-                            <div class="cap-info-v2">
-                                <div class="cap-label-v2">知识</div>
-                                <div class="cap-value-v2" id="cap-knowledge-v2">-</div>
-                            </div>
-                            <div class="cap-change-v2" id="cap-knowledge-change-v2">-</div>
-                        </div>
-                        <div class="cap-card-v2">
-                            <div class="cap-icon-v2">🧠</div>
-                            <div class="cap-info-v2">
-                                <div class="cap-label-v2">记忆</div>
-                                <div class="cap-value-v2" id="cap-memory-v2">-</div>
-                            </div>
-                            <div class="cap-change-v2" id="cap-memory-change-v2">-</div>
-                        </div>
-                    </div>
-                    
-                    <!-- 新增内容标签 -->
-                    <div class="capability-changes-v2">
-                        <div class="changes-section" id="new-items-section">
-                            <div class="changes-title">🌟 今日新增</div>
-                            <div class="changes-tags" id="new-items-tags"></div>
-                        </div>
-                    </div>
-                    
-                    <!-- 趋势图 -->
-                    <div class="trend-chart-section">
-                        <div class="trend-title">📊 成长趋势</div>
-                        <div class="trend-chart-container">
-                            <canvas id="dailyTrendChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- ==================== Section 2: 我的作品 ==================== -->
-            <section id="section-works" class="content-section">
-                <div class="section-header">
-                    <div class="section-title-wrap">
-                        <span class="section-icon">🎨</span>
-                        <h2 class="section-title">我的作品</h2>
-                    </div>
-                </div>
-                
-                <div class="works-intro">
-                    <div class="works-intro-text">
-                        这里展示了添棋协助完成的核心项目作品，包括调研报告、自动化工具、数据面板等。<br>
-                        每个作品都是与用户协作的成果，体现了AI助理的实际产出能力。
-                    </div>
-                    <div class="works-stats">
-                        <div class="works-stat">
-                            <div class="works-stat-value" id="works-total">-</div>
-                            <div class="works-stat-label">作品总数</div>
-                        </div>
-                        <div class="works-stat">
-                            <div class="works-stat-value" id="works-deployed">-</div>
-                            <div class="works-stat-label">已上线</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="works-grid" id="works-grid"></div>
-            </section>
-            
-            <!-- ==================== Section 3: 我的能力 ==================== -->
-            <section id="section-abilities" class="content-section">
-                <div class="section-header">
-                    <div class="section-title-wrap">
-                        <span class="section-icon">⚡</span>
-                        <h2 class="section-title">我的能力</h2>
+                        <span class="section-icon">👤</span>
+                        <h2 class="section-title">了解我</h2>
                     </div>
                 </div>
                 
@@ -2508,25 +2394,25 @@
                     <div class="about-highlights">
                         <div class="highlight-card">
                             <div class="highlight-icon">⚡</div>
-                            <div class="highlight-value" id="about-skills">34</div>
+                            <div class="highlight-value" id="about-skills-2">34</div>
                             <div class="highlight-label">技能</div>
                             <div class="highlight-desc">7大类专业技能</div>
                         </div>
                         <div class="highlight-card">
                             <div class="highlight-icon">📚</div>
-                            <div class="highlight-value" id="about-knowledge">159</div>
+                            <div class="highlight-value" id="about-knowledge-2">159</div>
                             <div class="highlight-label">知识</div>
                             <div class="highlight-desc">持续积累中</div>
                         </div>
                         <div class="highlight-card">
                             <div class="highlight-icon">🎨</div>
-                            <div class="highlight-value" id="about-works">8</div>
+                            <div class="highlight-value" id="about-works-2">8</div>
                             <div class="highlight-label">作品</div>
                             <div class="highlight-desc">已上线项目</div>
                         </div>
                         <div class="highlight-card">
                             <div class="highlight-icon">📅</div>
-                            <div class="highlight-value" id="about-days">30+</div>
+                            <div class="highlight-value" id="about-days-2">30+</div>
                             <div class="highlight-label">运行天数</div>
                             <div class="highlight-desc">持续成长中</div>
                         </div>
@@ -2656,100 +2542,86 @@
                     </div>
                 </div>
                 
-                <!-- 系统配置与资源链接 -->
-                <div class="config-section">
-                    <div class="config-title">🔗 系统配置与资源</div>
-                    <div class="config-grid">
-                        <div class="config-group">
-                            <div class="config-group-title">📦 代码仓库</div>
-                            <div class="config-items">
-                                <a href="https://github.com/xiaoxiong20260206/personal-assistant" target="_blank" class="config-item">
-                                    <span class="config-icon">📁</span>
-                                    <div class="config-info">
-                                        <span class="config-name">个人助理主仓库</span>
-                                        <span class="config-desc">日报生成、知识库、脚本等核心代码</span>
-                                    </div>
-                                    <span class="config-arrow">→</span>
-                                </a>
-                                <a href="https://github.com/xiaoxiong20260206/codeflicker-homepage" target="_blank" class="config-item">
-                                    <span class="config-icon">🏠</span>
-                                    <div class="config-info">
-                                        <span class="config-name">首页源码仓库</span>
-                                        <span class="config-desc">塞尔达风格主页的源代码</span>
-                                    </div>
-                                    <span class="config-arrow">→</span>
-                                </a>
-                                <a href="https://github.com/my-ai-research-lab/codeflicker-homepage" target="_blank" class="config-item">
-                                    <span class="config-icon">🌐</span>
-                                    <div class="config-info">
-                                        <span class="config-name">首页部署仓库</span>
-                                        <span class="config-desc">GitHub Pages 自动部署</span>
-                                    </div>
-                                    <span class="config-arrow">→</span>
-                                </a>
-                            </div>
+                <!-- 成就墙 -->
+                <div class="achievements-section">
+                    <div class="achievements-title">
+                        🏆 成就墙
+                        <span class="achievements-stats" id="achievements-stats-2"></span>
+                    </div>
+                    <div class="achievements-grid" id="achievements-grid-2"></div>
+                </div>
+            </section>
+            
+            <!-- ==================== Section 2: 我的作品 ==================== -->
+            <section id="section-works" class="content-section">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">🎨</span>
+                        <h2 class="section-title">我的作品</h2>
+                    </div>
+                </div>
+                
+                <div class="works-intro">
+                    <div class="works-intro-text">
+                        这里展示了添棋协助完成的核心项目作品，包括调研报告、自动化工具、数据面板等。<br>
+                        每个作品都是与用户协作的成果，体现了AI助理的实际产出能力。
+                    </div>
+                    <div class="works-stats">
+                        <div class="works-stat">
+                            <div class="works-stat-value" id="works-total">-</div>
+                            <div class="works-stat-label">作品总数</div>
                         </div>
-                        <div class="config-group">
-                            <div class="config-group-title">📝 文档系统</div>
-                            <div class="config-items">
-                                <a href="https://www.yuque.com/danxiaohan/enbxmh" target="_blank" class="config-item">
-                                    <span class="config-icon">📚</span>
-                                    <div class="config-info">
-                                        <span class="config-name">语雀知识库</span>
-                                        <span class="config-desc">AI使用相关文档发布平台</span>
-                                    </div>
-                                    <span class="config-arrow">→</span>
-                                </a>
-                                <div class="config-item static">
-                                    <span class="config-icon">📋</span>
-                                    <div class="config-info">
-                                        <span class="config-name">快手内网Docs</span>
-                                        <span class="config-desc">内网文档系统（需VPN）</span>
-                                    </div>
-                                </div>
-                                <div class="config-item static">
-                                    <span class="config-icon">📂</span>
-                                    <div class="config-info">
-                                        <span class="config-name">本地知识库</span>
-                                        <span class="config-desc">个人调研报告与方案沉淀</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="config-group">
-                            <div class="config-group-title">⚙️ 技术配置</div>
-                            <div class="config-items">
-                                <div class="config-item static">
-                                    <span class="config-icon">🤖</span>
-                                    <div class="config-info">
-                                        <span class="config-name">基础框架</span>
-                                        <span class="config-desc">CodeFlicker + Claude 3.5</span>
-                                    </div>
-                                </div>
-                                <div class="config-item static">
-                                    <span class="config-icon">📅</span>
-                                    <div class="config-info">
-                                        <span class="config-name">日报自动化</span>
-                                        <span class="config-desc">每日 06:00 自动生成并同步</span>
-                                    </div>
-                                </div>
-                                <div class="config-item static">
-                                    <span class="config-icon">🎨</span>
-                                    <div class="config-info">
-                                        <span class="config-name">当前版本</span>
-                                        <span class="config-desc">v5.0 (旷野之息风格)</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="works-stat">
+                            <div class="works-stat-value" id="works-deployed">-</div>
+                            <div class="works-stat-label">已上线</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 近期成就时间线 - 自动从 milestones-data.json 加载 -->
-                <div class="timeline-section">
-                    <div class="timeline-title">📈 近期里程碑</div>
-                    <div class="timeline-list" id="milestone-timeline">
+                <div class="works-grid" id="works-grid"></div>
+            </section>
+            
+            <!-- ==================== Section 3: 我的能力 ==================== -->
+            <section id="section-abilities" class="content-section">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">⚡</span>
+                        <h2 class="section-title">我的能力</h2>
+                    </div>
+                </div>
+                
+                <!-- 技能树 -->
+                <div class="tree-panel">
+                    <div class="panel-header">
+                        <span class="panel-icon" style="color: var(--sheikah-blue);">⚡</span>
+                        <span class="panel-title-text">技能树</span>
+                        <span class="panel-stats">共 <span id="skill-total">-</span> 项</span>
+                    </div>
+                    <div class="tree-container skill-tree" id="skill-tree">
+                        <div class="loading">加载中...</div>
+                    </div>
+                </div>
+                
+                <!-- 记忆库 -->
+                <div class="tree-panel">
+                    <div class="panel-header">
+                        <span class="panel-icon" style="color: var(--zelda-orange);">🧠</span>
+                        <span class="panel-title-text">记忆库</span>
+                        <span class="panel-stats">共 <span id="memory-total">-</span> 项</span>
+                    </div>
+                    <div class="tree-container memory-tree" id="memory-tree">
+                        <div class="loading">加载中...</div>
+                    </div>
+                </div>
+                
+                <!-- 知识库 -->
+                <div class="tree-panel">
+                    <div class="panel-header">
+                        <span class="panel-icon" style="color: var(--zelda-gold);">📚</span>
+                        <span class="panel-title-text">知识库</span>
+                        <span class="panel-stats">共 <span id="knowledge-total">-</span> 项</span>
+                    </div>
+                    <div class="tree-container knowledge-tree" id="knowledge-tree">
                         <div class="loading">加载中...</div>
                     </div>
                 </div>
@@ -2778,50 +2650,94 @@
                         <canvas id="compareRadarChart"></canvas>
                     </div>
                 </div>
-                
-                <!-- 技能树 -->
-                <div class="tree-panel">
-                    <div class="panel-header">
-                        <span class="panel-icon" style="color: var(--sheikah-blue);">⚡</span>
-                        <span class="panel-title-text">技能树</span>
-                        <span class="panel-stats">共 <span id="skill-total">-</span> 项</span>
+            </section>
+            
+            <!-- ==================== Section 4: 我的日报 ==================== -->
+            <section id="section-daily" class="content-section">
+                <div class="section-header">
+                    <div class="section-title-wrap">
+                        <span class="section-icon">📊</span>
+                        <h2 class="section-title">我的日报</h2>
                     </div>
-                    <div class="tree-container skill-tree" id="skill-tree">
-                        <div class="loading">加载中...</div>
-                    </div>
-                </div>
-                
-                <!-- 知识库 -->
-                <div class="tree-panel">
-                    <div class="panel-header">
-                        <span class="panel-icon" style="color: var(--zelda-gold);">📚</span>
-                        <span class="panel-title-text">知识库</span>
-                        <span class="panel-stats">共 <span id="knowledge-total">-</span> 项</span>
-                    </div>
-                    <div class="tree-container knowledge-tree" id="knowledge-tree">
-                        <div class="loading">加载中...</div>
+                    <div class="date-selector">
+                        <select class="date-select" id="report-date-select">
+                            <!-- 动态填充 -->
+                        </select>
                     </div>
                 </div>
                 
-                <!-- 记忆库 -->
-                <div class="tree-panel">
-                    <div class="panel-header">
-                        <span class="panel-icon" style="color: var(--zelda-orange);">🧠</span>
-                        <span class="panel-title-text">记忆库</span>
-                        <span class="panel-stats">共 <span id="memory-total">-</span> 项</span>
+                <!-- 板块一：核心进展 -->
+                <div class="daily-section-block core-progress-block">
+                    <div class="block-header">
+                        <span class="block-icon">📋</span>
+                        <span class="block-title">核心进展</span>
                     </div>
-                    <div class="tree-container memory-tree" id="memory-tree">
-                        <div class="loading">加载中...</div>
+                    <div class="core-progress-list" id="core-progress-list">
+                        <!-- 动态填充 -->
                     </div>
                 </div>
                 
-                <!-- 成就墙 -->
-                <div class="achievements-section">
-                    <div class="achievements-title">
-                        🏆 成就墙
-                        <span class="achievements-stats" id="achievements-stats"></span>
+                <!-- 板块二：交付情况 -->
+                <div class="daily-section-block deliveries-block">
+                    <div class="block-header">
+                        <span class="block-icon">🚀</span>
+                        <span class="block-title">交付情况</span>
                     </div>
-                    <div class="achievements-grid" id="achievements-grid"></div>
+                    <div class="deliveries-list" id="deliveries-list">
+                        <!-- 动态填充 -->
+                    </div>
+                </div>
+                
+                <!-- 板块三：能力提升 -->
+                <div class="daily-section-block capability-block">
+                    <div class="block-header">
+                        <span class="block-icon">📈</span>
+                        <span class="block-title">能力提升</span>
+                    </div>
+                    
+                    <!-- 能力概览卡片 -->
+                    <div class="capability-overview">
+                        <div class="cap-card-v2">
+                            <div class="cap-icon-v2">⚡</div>
+                            <div class="cap-info-v2">
+                                <div class="cap-label-v2">技能</div>
+                                <div class="cap-value-v2" id="cap-skills-v2">-</div>
+                            </div>
+                            <div class="cap-change-v2" id="cap-skills-change-v2">-</div>
+                        </div>
+                        <div class="cap-card-v2">
+                            <div class="cap-icon-v2">📚</div>
+                            <div class="cap-info-v2">
+                                <div class="cap-label-v2">知识</div>
+                                <div class="cap-value-v2" id="cap-knowledge-v2">-</div>
+                            </div>
+                            <div class="cap-change-v2" id="cap-knowledge-change-v2">-</div>
+                        </div>
+                        <div class="cap-card-v2">
+                            <div class="cap-icon-v2">🧠</div>
+                            <div class="cap-info-v2">
+                                <div class="cap-label-v2">记忆</div>
+                                <div class="cap-value-v2" id="cap-memory-v2">-</div>
+                            </div>
+                            <div class="cap-change-v2" id="cap-memory-change-v2">-</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 新增内容标签 -->
+                    <div class="capability-changes-v2">
+                        <div class="changes-section" id="new-items-section">
+                            <div class="changes-title">🌟 今日新增</div>
+                            <div class="changes-tags" id="new-items-tags"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- 趋势图 -->
+                    <div class="trend-chart-section">
+                        <div class="trend-title">📊 成长趋势</div>
+                        <div class="trend-chart-container">
+                            <canvas id="dailyTrendChart"></canvas>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

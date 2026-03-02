@@ -1011,6 +1011,19 @@ function renderMemoryTreeGraph(memories) {
     // 获取记忆分类 - 支持两种数据格式
     let categoriesObj = memories.categories || memories.byCategory || {};
     
+    // 获取记忆项目列表，用于显示每条记忆的具体描述
+    const memoryItems = memories.items || [];
+    
+    // 按分类组织记忆项目
+    const memoryItemsByCategory = {};
+    memoryItems.forEach(item => {
+        const cat = item.category;
+        if (!memoryItemsByCategory[cat]) {
+            memoryItemsByCategory[cat] = [];
+        }
+        memoryItemsByCategory[cat].push(item);
+    });
+    
     if (Object.keys(categoriesObj).length === 0) {
         container.innerHTML = '<div class="no-data">暂无记忆数据</div>';
         return;
@@ -1056,14 +1069,23 @@ function renderMemoryTreeGraph(memories) {
         const defaultLabels = ['条目', '记录', '内容', '项目', '事项', '信息'];
         const labels = memoryLabels[catKey] || defaultLabels;
         
+        // 获取该分类下的实际记忆项目
+        const catMemoryItems = memoryItemsByCategory[catKey] || [];
+        
         for (let i = 0; i < memCount; i++) {
             const mid = 'memory-' + (idx++);
             const memLabel = labels[i % labels.length];
+            
+            // 如果有实际的记忆项目数据，使用它的真实信息
+            const actualMemory = catMemoryItems[i];
+            const memName = actualMemory ? actualMemory.title : (catName + ' #' + (i+1));
+            const memDesc = actualMemory ? actualMemory.description : `${catName}类别下的记忆条目`;
+            
             AppState.dataMap[mid] = { 
-                name: catName + ' #' + (i+1), 
+                name: memName, 
                 icon: '💭', 
-                level: catLevel, 
-                description: `${catName}类别下的记忆条目`,
+                level: actualMemory ? (actualMemory.importance || catLevel) : catLevel, 
+                description: memDesc,
                 source: catName
             };
             leaves += `

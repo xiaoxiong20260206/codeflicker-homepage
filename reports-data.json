@@ -1,5 +1,6 @@
 {
-  "generatedAt": "2026-03-02T15:42:49.138436",
+  "generatedAt": "2026-03-02T16:52:59.866096",
+  "version": "2.0",
   "summary": {
     "totalDays": 6,
     "latestDate": "2026-03-01",
@@ -20,7 +21,7 @@
       30,
       30,
       30,
-      30
+      31
     ],
     "knowledge": [
       150,
@@ -36,8 +37,76 @@
       19,
       19,
       19,
-      20
+      21
     ]
+  },
+  "capabilitySnapshots": {
+    "2026-03-01": {
+      "reasoning": 85,
+      "memory": 80,
+      "execution": 90,
+      "learning": 88,
+      "insight": 82,
+      "creativity": 78,
+      "skillCount": 31,
+      "knowledgeCount": 150,
+      "memoryCount": 21
+    },
+    "2026-02-28": {
+      "reasoning": 85,
+      "memory": 80,
+      "execution": 90,
+      "learning": 88,
+      "insight": 82,
+      "creativity": 78,
+      "skillCount": 30,
+      "knowledgeCount": 150,
+      "memoryCount": 19
+    },
+    "2026-02-27": {
+      "reasoning": 85,
+      "memory": 80,
+      "execution": 90,
+      "learning": 88,
+      "insight": 82,
+      "creativity": 78,
+      "skillCount": 30,
+      "knowledgeCount": 150,
+      "memoryCount": 19
+    },
+    "2026-02-26": {
+      "reasoning": 85,
+      "memory": 80,
+      "execution": 90,
+      "learning": 88,
+      "insight": 82,
+      "creativity": 78,
+      "skillCount": 30,
+      "knowledgeCount": 150,
+      "memoryCount": 19
+    },
+    "2026-02-25": {
+      "reasoning": 85,
+      "memory": 80,
+      "execution": 90,
+      "learning": 88,
+      "insight": 82,
+      "creativity": 78,
+      "skillCount": 30,
+      "knowledgeCount": 150,
+      "memoryCount": 19
+    },
+    "2026-02-24": {
+      "reasoning": 85,
+      "memory": 80,
+      "execution": 90,
+      "learning": 88,
+      "insight": 82,
+      "creativity": 78,
+      "skillCount": 30,
+      "knowledgeCount": 150,
+      "memoryCount": 19
+    }
   },
   "reports": [
     {
@@ -46,16 +115,130 @@
       "activeProjects": 2,
       "totalCommits": 32,
       "conversationCount": 3,
-      "skillCount": 30,
+      "skillCount": 31,
       "knowledgeCount": 150,
-      "memoryCount": 20,
-      "skillChange": 0,
+      "memoryCount": 21,
+      "skillChange": 1,
       "knowledgeChange": 0,
-      "memoryChange": 0,
+      "memoryChange": 2,
+      "coreProgress": [
+        "💬 将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署",
+        "💬 实现通过飞书IM软件直接与AI助理交互的自动化流程",
+        "💬 验证并纠正字节AI指南的错误GitHub Pages URL，确保文档可访问性",
+        "📁 codeflicker-homepage: 32次提交, 3个文件变更"
+      ],
+      "deliveries": [
+        {
+          "type": "conversation",
+          "title": "AI Product Ultimate Form Technical Implementation",
+          "goal": "将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署",
+          "deliverables": [],
+          "process": [
+            "将技术实施方案从part4.html分离创建独立的part5.html，更新所有导航链接和index.html入口，完成Vercel部署和GitHub推送。最终形成包含5个部分的完整结构：问题诊断、关..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Feishu AI Bot Integration with CodeFlicker",
+          "goal": "实现通过飞书IM软件直接与AI助理交互的自动化流程",
+          "deliverables": []
+        },
+        {
+          "type": "conversation",
+          "title": "GitHub Pages URL Verification and Correction",
+          "goal": "验证并纠正字节AI指南的错误GitHub Pages URL，确保文档可访问性",
+          "deliverables": [],
+          "process": [
+            "识别出原URL https://my-ai-research-lab.github.io/bytedance-ai-research 404错误，确认正确部署地址为 https://xiaoxiong..."
+          ]
+        },
+        {
+          "type": "project",
+          "title": "个人助理_V1",
+          "commitCount": 0,
+          "fileChangeCount": 47,
+          "goal": "项目开发: 个人助理_V1",
+          "deliverables": [
+            {
+              "name": "🌐\ntest-section-overview.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\ntest-favicon.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\ndaily-2026-02-28.html",
+              "url": "#"
+            },
+            {
+              "name": "daily-2026-02-28.md",
+              "url": "#"
+            },
+            {
+              "name": "SKILL.md",
+              "url": "#"
+            },
+            {
+              "name": "components.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "codeflicker-homepage",
+          "commitCount": 32,
+          "fileChangeCount": 3,
+          "goal": "项目开发: codeflicker-homepage",
+          "deliverables": []
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 31,
+        "knowledgeCount": 150,
+        "memoryCount": 21,
+        "skillChange": 1,
+        "knowledgeChange": 0,
+        "memoryChange": 2,
+        "newSkills": [
+          {
+            "name": "✨ qingshuang-research-style"
+          },
+          {
+            "name": "✨ zelda-style"
+          },
+          {
+            "name": "✨ docs-shuttle"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "personal-writings\n\n\n\n131"
+          },
+          {
+            "name": "rd-efficiency\n\n\n\n18"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "🆕\n新增: 网页开发预览偏好"
+          },
+          {
+            "title": "🆕\n新增: 身份保密规则"
+          },
+          {
+            "title": "🆕\n新增: 日报系统优化最佳实践"
+          },
+          {
+            "title": "🔄\n更新: 输出链接格式规范"
+          }
+        ]
+      },
       "highlights": [
-        "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
+        "将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署",
+        "实现通过飞书IM软件直接与AI助理交互的自动化流程",
+        "验证并纠正字节AI指南的错误GitHub Pages URL，确保文档可访问性"
       ]
     },
     {
@@ -70,10 +253,122 @@
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 0,
+      "coreProgress": [
+        "💬 用户想要收集整理Anthropic公司Barry Zhang的所有演讲和思想内容，并制作成详细的HTML文档",
+        "📁 codeflicker-homepage: 5次提交, 0个文件变更"
+      ],
+      "deliveries": [
+        {
+          "type": "conversation",
+          "title": "Barry Zhang Anthropic Thought System Documentation",
+          "goal": "用户想要收集整理Anthropic公司Barry Zhang的所有演讲和思想内容，并制作成详细的HTML文档",
+          "deliverables": [],
+          "process": [
+            "创建了详细HTML文档总结Barry Zhang的思想体系(v2.0)，新增了直接引用、Skills范式解析、工作流模式、ACI设计原则等内容，并通过本地服务器提供访问。文档包含技术定义、实践案例和影..."
+          ]
+        },
+        {
+          "type": "project",
+          "title": "个人助理_V1",
+          "commitCount": 0,
+          "fileChangeCount": 38,
+          "goal": "项目开发: 个人助理_V1",
+          "deliverables": [
+            {
+              "name": "🌐\ndaily-2026-02-27.html",
+              "url": "#"
+            },
+            {
+              "name": "daily-2026-02-27.md",
+              "url": "#"
+            },
+            {
+              "name": "SKILL.md",
+              "url": "#"
+            },
+            {
+              "name": "recap-barry-zhang-anthropic-thought-system-documentation.md",
+              "url": "#"
+            },
+            {
+              "name": "AI产品终极形态_CTO汇报.md",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nAI产品终极形态_CTO汇报.html",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "codeflicker-homepage",
+          "commitCount": 5,
+          "fileChangeCount": 0,
+          "goal": "项目开发: codeflicker-homepage",
+          "deliverables": []
+        },
+        {
+          "type": "project",
+          "title": "飞书助手",
+          "commitCount": 0,
+          "fileChangeCount": 1,
+          "goal": "项目开发: 飞书助手",
+          "deliverables": [
+            {
+              "name": "README.md",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 30,
+        "knowledgeCount": 150,
+        "memoryCount": 19,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 0,
+        "newSkills": [
+          {
+            "name": "✨ feishu-assistant"
+          },
+          {
+            "name": "✨ feishu-assistant"
+          },
+          {
+            "name": "qingshuang-research-style"
+          },
+          {
+            "name": "feishu-assistant"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "personal-writings\n\n\n\n131"
+          },
+          {
+            "name": "rd-efficiency\n\n\n\n18"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "🆕\n新增: 思想体系可视化能力"
+          },
+          {
+            "title": "🆕\n新增: 类比驱动解释能力"
+          },
+          {
+            "title": "🆕\n新增: 隐藏前提识别能力"
+          },
+          {
+            "title": "🆕\n新增: 迭代式完善能力"
+          }
+        ]
+      },
       "highlights": [
-        "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
+        "用户想要收集整理Anthropic公司Barry Zhang的所有演讲和思想内容...",
+        "codeflicker-homepage: 5次提交, 0个文件变更"
       ]
     },
     {
@@ -88,10 +383,181 @@
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 0,
+      "coreProgress": [
+        "💬 用户要求全面检查研发效能知识库的内容结构和文档状态",
+        "💬 提炼深度画像分析项目内容并优化页面样式，准备发布到简书",
+        "💬 帮助优化晋升评审材料，使其能清晰展示AI提效的价值和能力给非技术背景的评委",
+        "📁 codeflicker-homepage: 9次提交, 0个文件变更"
+      ],
+      "deliveries": [
+        {
+          "type": "conversation",
+          "title": "R&D Efficiency Knowledge Base Inspection Report",
+          "goal": "用户要求全面检查研发效能知识库的内容结构和文档状态",
+          "deliverables": [],
+          "process": [
+            "分析了知识库目录结构和README文件，统计了所有Markdown文档的大小并排序。知识库主要包含效能度量体系、AI+研发效能、智能编码工具、DevOps与平台工程、行业实践案例五大主题，其中测量系统..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Deep Profile Analysis and Content Refinement",
+          "goal": "提炼深度画像分析项目内容并优化页面样式，准备发布到简书",
+          "deliverables": [],
+          "process": [
+            "修复了`.col-list li`的flex布局导致的文字断行问题，改为`position: relative`方案。基于`deep-profile-shanxiaohan/index.html`内容..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "AI Efficiency Promotion Material Refinement",
+          "goal": "帮助优化晋升评审材料，使其能清晰展示AI提效的价值和能力给非技术背景的评委",
+          "deliverables": [],
+          "process": [
+            "对职级晋升评审材料进行了全面检查，标注了23处需要补充的内容（6项高优先级），包括项目架构图、AI研发成熟度模型框架等关键要素。最终生成了带标注的完整版MD文档并上传至公司文档系统。"
+          ]
+        },
+        {
+          "type": "project",
+          "title": "个人助理_V1",
+          "commitCount": 0,
+          "fileChangeCount": 80,
+          "goal": "项目开发: 个人助理_V1",
+          "deliverables": [
+            {
+              "name": "FIX-CRON-PERMISSION.md",
+              "url": "#"
+            },
+            {
+              "name": "职级晋升评审材料-王娟-完整版.md",
+              "url": "#"
+            },
+            {
+              "name": "README.md",
+              "url": "#"
+            },
+            {
+              "name": "晋升提纲优化建议-王娟-V2.md",
+              "url": "#"
+            },
+            {
+              "name": "AI赋能研发效能_示例.pptx",
+              "url": "#"
+            },
+            {
+              "name": "INSTALL.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "CF0222",
+          "commitCount": 0,
+          "fileChangeCount": 10,
+          "goal": "项目开发: CF0222",
+          "deliverables": [
+            {
+              "name": "🌐\nsection-7-ai-view.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nindex.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsection-6-work.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsection-5-personal.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsection-1-identity.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsection-appendix-articles.html",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "codeflicker-homepage",
+          "commitCount": 9,
+          "fileChangeCount": 0,
+          "goal": "项目开发: codeflicker-homepage",
+          "deliverables": []
+        },
+        {
+          "type": "project",
+          "title": "Knowledge",
+          "commitCount": 0,
+          "fileChangeCount": 3,
+          "goal": "项目开发: Knowledge",
+          "deliverables": [
+            {
+              "name": "README.md",
+              "url": "#"
+            },
+            {
+              "name": "03-devex-framework.md",
+              "url": "#"
+            },
+            {
+              "name": "04-ai-quality-efficiency-manifesto.md",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 30,
+        "knowledgeCount": 150,
+        "memoryCount": 19,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 0,
+        "newSkills": [
+          {
+            "name": "✨ work-report-ppt"
+          },
+          {
+            "name": "✨ work-report-ppt"
+          },
+          {
+            "name": "qingshuang-research-style"
+          },
+          {
+            "name": "feishu-assistant"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "personal-writings\n\n\n\n131"
+          },
+          {
+            "name": "rd-efficiency\n\n\n\n18"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "🆕\n新增: 用户身份信息"
+          },
+          {
+            "title": "🆕\n新增: 小无相功·自动学习模式"
+          },
+          {
+            "title": "🆕\n新增: AI助手\"添棋\"身份信息"
+          }
+        ]
+      },
       "highlights": [
-        "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
+        "用户要求全面检查研发效能知识库的内容结构和文档状态",
+        "提炼深度画像分析项目内容并优化页面样式，准备发布到简书",
+        "帮助优化晋升评审材料，使其能清晰展示AI提效的价值和能力给非技术背景的评委"
       ]
     },
     {
@@ -106,10 +572,173 @@
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 0,
+      "coreProgress": [
+        "💬 用户希望获得CodeFlicker和Cursor的全面对比分析，用于向企业客户推广销售CodeFlicker。",
+        "💬 用户想要建立一个自动化的日报系统，能够准确统计所有项目的活动情况，包括Git提交和文件修改记录",
+        "💬 优化页面风格为清爽调研报告风格并删除冗余的横向Tab导航组件",
+        "📁 字节AI调研: 2次提交, 7个文件变更"
+      ],
+      "deliveries": [
+        {
+          "type": "conversation",
+          "title": "CodeFlicker vs Cursor Enterprise AI IDE Comparison",
+          "goal": "用户希望获得CodeFlicker和Cursor的全面对比分析，用于向企业客户推广销售CodeFlicker。",
+          "deliverables": [],
+          "process": [
+            "完成了详细的竞品分析报告，重点对比了数据安全(私有化部署)、合规性(等保三级)、本土化服务、定制能力和定价模式等企业关注维度。报告包含核心结论速览、客户画像和销售话术模板，定位CodeFlicker为..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Daily Report System Enhancement and Debugging",
+          "goal": "用户想要建立一个自动化的日报系统，能够准确统计所有项目的活动情况，包括Git提交和文件修改记录",
+          "deliverables": [],
+          "process": [
+            "修复了日报系统仅追踪Git提交导致的统计遗漏问题，实现了Git提交追踪和文件修改时间的双重统计机制。当前系统已能正确统计4个活跃项目(Knowledge、个人助理_V1、CF_0206_TK、字节AI..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "AI Research Guide UI Optimization",
+          "goal": "优化页面风格为清爽调研报告风格并删除冗余的横向Tab导航组件",
+          "deliverables": [],
+          "process": [
+            "从5个子页面中删除了横向Tab导航组件及相关代码共450行，进行了CSS压缩优化，并通过GitHub Pages部署了更新后的页面。保留了左侧悬浮导航作为主要导航方式。"
+          ]
+        },
+        {
+          "type": "project",
+          "title": "个人助理_V1",
+          "commitCount": 0,
+          "fileChangeCount": 49,
+          "goal": "项目开发: 个人助理_V1",
+          "deliverables": [
+            {
+              "name": "晋升提纲优化建议-王娟.md",
+              "url": "#"
+            },
+            {
+              "name": "article-index.md",
+              "url": "#"
+            },
+            {
+              "name": "bigdata-ai-1-learning-map.md",
+              "url": "#"
+            },
+            {
+              "name": "bigdata-ai-2-knowledge-graph.md",
+              "url": "#"
+            },
+            {
+              "name": "core-concepts-of-growth.md",
+              "url": "#"
+            },
+            {
+              "name": "product-thinking-02-product-marketing-channel.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "Knowledge",
+          "commitCount": 0,
+          "fileChangeCount": 39,
+          "goal": "项目开发: Knowledge",
+          "deliverables": [
+            {
+              "name": "article-index.md",
+              "url": "#"
+            },
+            {
+              "name": "bigdata-ai-1-learning-map.md",
+              "url": "#"
+            },
+            {
+              "name": "bigdata-ai-2-knowledge-graph.md",
+              "url": "#"
+            },
+            {
+              "name": "core-concepts-of-growth.md",
+              "url": "#"
+            },
+            {
+              "name": "product-thinking-02-product-marketing-channel.md",
+              "url": "#"
+            },
+            {
+              "name": "three-dimensional-world-02-correlation.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "字节AI调研",
+          "commitCount": 2,
+          "fileChangeCount": 7,
+          "goal": "项目开发: 字节AI调研",
+          "deliverables": []
+        },
+        {
+          "type": "project",
+          "title": "CF0222",
+          "commitCount": 0,
+          "fileChangeCount": 2,
+          "goal": "项目开发: CF0222",
+          "deliverables": [
+            {
+              "name": "🌐\ndeep-profile-danxiaohan.html",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 30,
+        "knowledgeCount": 150,
+        "memoryCount": 19,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 0,
+        "newSkills": [
+          {
+            "name": "qingshuang-research-style"
+          },
+          {
+            "name": "feishu-assistant"
+          },
+          {
+            "name": "yuque-publisher"
+          },
+          {
+            "name": "xlsx"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "personal-writings\n\n\n\n131"
+          },
+          {
+            "name": "rd-efficiency\n\n\n\n18"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "🆕\n新增: 默认工作模式：以单虓晗的思维方式和风格执行任务"
+          },
+          {
+            "title": "🆕\n新增: 清爽调研报告风格页面的渐进式开发规则"
+          },
+          {
+            "title": "🔄\n更新: 单虓晗（Shawn）思想体系与写作风格"
+          }
+        ]
+      },
       "highlights": [
-        "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
+        "用户希望获得CodeFlicker和Cursor的全面对比分析，用于向企业客户推...",
+        "用户想要建立一个自动化的日报系统，能够准确统计所有项目的活动情况，包括Git提交...",
+        "优化页面风格为清爽调研报告风格并删除冗余的横向Tab导航组件"
       ]
     },
     {
@@ -124,10 +753,224 @@
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 0,
+      "coreProgress": [
+        "💬 ByteDance AI Research Content Restructuring",
+        "💬 将Aime的技术框架描述重构为更易懂的产品语言描述",
+        "💬 完善字节跳动Aime多智能体框架的技术文档，包括产品定位、架构设计、应用场景和性能优化等内容",
+        "💬 实现简书平台文章的自动读取和发表功能",
+        "💬 修复AI Coding分析报告中移动端四卡片Tips弹窗的样式问题并优化遮罩层关闭逻辑",
+        "💬 修复移动端调研报告Tooltip显示问题并更新样式规范",
+        "💬 为清爽调研报告风格提炼并标准化导航组件的设计与实现要求",
+        "💬 了解并成功使用docs-shuttle技能实现本地Markdown与快手内网Docs文档系统的双向同步",
+        "📁 字节AI调研: 6次提交, 0个文件变更"
+      ],
+      "deliveries": [
+        {
+          "type": "conversation",
+          "title": "ByteDance AI Research Content Restructuring",
+          "goal": "",
+          "deliverables": []
+        },
+        {
+          "type": "conversation",
+          "title": "Refactoring AI product description language",
+          "goal": "将Aime的技术框架描述重构为更易懂的产品语言描述",
+          "deliverables": []
+        },
+        {
+          "type": "conversation",
+          "title": "ByteDance AI Multi-Agent Framework Documentation",
+          "goal": "完善字节跳动Aime多智能体框架的技术文档，包括产品定位、架构设计、应用场景和性能优化等内容",
+          "deliverables": [],
+          "process": [
+            "更新了pages/bytedance-ai.html文件，详细记录了Aime框架的产品定位（解决三大痛点）、四大核心组件（Dynamic Planner/Actor Factory/Dynamic A..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Automated Content Management on JianShu Platform",
+          "goal": "实现简书平台文章的自动读取和发表功能",
+          "deliverables": [],
+          "process": [
+            "尝试通过API集成实现简书文章抓取和发布，遇到404和服务器繁忙错误，排除了《研发效能提升秘籍》的整理需求，最终因未知错误中断操作。"
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Mobile UI Fix for Tips Popup in AI Coding Analysis",
+          "goal": "修复AI Coding分析报告中移动端四卡片Tips弹窗的样式问题并优化遮罩层关闭逻辑",
+          "deliverables": [],
+          "process": [
+            "通过添加CSS !important规则修复了移动端Tips弹窗的背景色和文字颜色问题，优化了遮罩层关闭逻辑，并将修改部署到生产环境。关键修改包括加强stat-card组件的移动端样式和调整事件监听方..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Mobile Tooltip Fix and Style Guide Update",
+          "goal": "修复移动端调研报告Tooltip显示问题并更新样式规范",
+          "deliverables": [],
+          "process": [
+            "修复了移动端调研报告中Tooltip只显示1个的问题，重构了Tooltip系统章节，新增移动端点击触发+居中弹窗方案。更新了`qingshuang-research-style`技能至v1.6.0，包..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Research Style Navigation Component Requirements",
+          "goal": "为清爽调研报告风格提炼并标准化导航组件的设计与实现要求",
+          "deliverables": [],
+          "process": [
+            "分析了两个示例页面的导航特征，在SKILL.md中新增了Tab导航的7项强制要求和14项设计要素，包括位置、样式、响应式等实现细节，并标记为v1.5.0版本更新。"
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Docs-Shuttle Skill Installation and Usage Guide",
+          "goal": "了解并成功使用docs-shuttle技能实现本地Markdown与快手内网Docs文档系统的双向同步",
+          "deliverables": [],
+          "process": [
+            "完成了docs-shuttle技能的安装和配置说明，重点解释了Cookie设置流程和双向同步功能（上传MD到Docs/从Docs拉取文档）。提供了触发词列表和使用场景示例，确认技能已成功安装在`~/...."
+          ]
+        },
+        {
+          "type": "project",
+          "title": "个人助理_V1",
+          "commitCount": 0,
+          "fileChangeCount": 153,
+          "goal": "项目开发: 个人助理_V1",
+          "deliverables": [
+            {
+              "name": "【更新】职级晋升评审-答辩模板.pptx",
+              "url": "#"
+            },
+            {
+              "name": "BACKUP-GUIDE.md",
+              "url": "#"
+            },
+            {
+              "name": "TODO.md",
+              "url": "#"
+            },
+            {
+              "name": "README.md",
+              "url": "#"
+            },
+            {
+              "name": "App-Plan.md",
+              "url": "#"
+            },
+            {
+              "name": "SKILL.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "Knowledge",
+          "commitCount": 0,
+          "fileChangeCount": 108,
+          "goal": "项目开发: Knowledge",
+          "deliverables": [
+            {
+              "name": "README.md",
+              "url": "#"
+            },
+            {
+              "name": "04-bytedance-rd-efficiency.md",
+              "url": "#"
+            },
+            {
+              "name": "02-prompt-ci-practices.md",
+              "url": "#"
+            },
+            {
+              "name": "03-annual-review-outlook.md",
+              "url": "#"
+            },
+            {
+              "name": "01-ai-devops-trends.md",
+              "url": "#"
+            },
+            {
+              "name": "02-ppt-collection.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "CF_0206_TK",
+          "commitCount": 0,
+          "fileChangeCount": 7,
+          "goal": "项目开发: CF_0206_TK",
+          "deliverables": [
+            {
+              "name": "🌐\nindex.html",
+              "url": "#"
+            },
+            {
+              "name": "start.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "字节AI调研",
+          "commitCount": 6,
+          "fileChangeCount": 0,
+          "goal": "项目开发: 字节AI调研",
+          "deliverables": []
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 30,
+        "knowledgeCount": 150,
+        "memoryCount": 19,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 0,
+        "newSkills": [
+          {
+            "name": "✨ yuque-publisher"
+          },
+          {
+            "name": "✨ github-deploy-publisher"
+          },
+          {
+            "name": "✨ stock-analysis"
+          },
+          {
+            "name": "✨ personal-assistant"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "personal-writings\n\n\n\n131"
+          },
+          {
+            "name": "rd-efficiency\n\n\n\n18"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "🆕\n新增: 单虓晗（Shawn）思想体系与写作风格"
+          },
+          {
+            "title": "🆕\n新增: 单虓晗（Shawn）思想体系与写作风格"
+          },
+          {
+            "title": "💡\n每日例行任务：日报生成与能力迭代流程"
+          },
+          {
+            "title": "💡\n日报系统优化最佳实践"
+          }
+        ]
+      },
       "highlights": [
-        "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
+        "ByteDance AI Research Content Restructur...",
+        "将Aime的技术框架描述重构为更易懂的产品语言描述",
+        "完善字节跳动Aime多智能体框架的技术文档，包括产品定位、架构设计、应用场景和性..."
       ]
     },
     {
@@ -142,10 +985,194 @@
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 0,
+      "coreProgress": [
+        "💬 将金融从业者工作场景细化为私募量化公司专用场景，并更新部署相关页面",
+        "💬 创建一个美观的首页来展示并导航四个AI与金融相关的调研报告页面",
+        "💬 优化并完善金融产品架构文档，包括更新五层架构设计、补充市场部客户经理角色，以及同步更新相关图表和说明",
+        "💬 用户需要创建一个美观的首页来可视化展示并导航到4个AI金融调研报告页面",
+        "💬 将字节跳动AI能力调研的HTML内容整理成结构化的Markdown文档",
+        "📁 字节AI调研: 7次提交, 1个文件变更"
+      ],
+      "deliveries": [
+        {
+          "type": "conversation",
+          "title": "Financial Website Refinement for Hedge Fund Scenar",
+          "goal": "将金融从业者工作场景细化为私募量化公司专用场景，并更新部署相关页面",
+          "deliverables": [],
+          "process": [
+            "修改了 index.html、产品架构.html 和 network-graph.js 文件，将通用金融场景更新为私募量化公司专用场景，包括更新页面标题、架构图描述和用户角色数据。最终通过 Git 提..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "AI Financial Research Landing Page Design",
+          "goal": "创建一个美观的首页来展示并导航四个AI与金融相关的调研报告页面",
+          "deliverables": [],
+          "process": [
+            "创建了包含四个调研报告链接的导航首页，使用frontend-design技能实现了深色金融主题+金色点缀的视觉设计，添加了动态网格、卡片悬停3D效果等交互元素，并部署到GitHub Pages。最后优..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "Financial Product Architecture Refinement and Docu",
+          "goal": "优化并完善金融产品架构文档，包括更新五层架构设计、补充市场部客户经理角色，以及同步更新相关图表和说明",
+          "deliverables": []
+        },
+        {
+          "type": "conversation",
+          "title": "AI Financial Research Portal Development",
+          "goal": "用户需要创建一个美观的首页来可视化展示并导航到4个AI金融调研报告页面",
+          "deliverables": [],
+          "process": [
+            "开发了包含4个调研报告链接的可视化导航首页，使用frontend-design技能优化了字体、配色和动效，部署在GitHub Pages。添加了自定义favicon.svg（深色背景+金色AI图标+金..."
+          ]
+        },
+        {
+          "type": "conversation",
+          "title": "ByteDance AI Overview Documentation Development",
+          "goal": "将字节跳动AI能力调研的HTML内容整理成结构化的Markdown文档",
+          "deliverables": [],
+          "process": [
+            "从HTML文件中提取调研数据并整合到`会话记录-字节AI开挂指南开发.md`中，文档从699行扩展到1082行。补充了AI行业发展历程、海外/国内AI势力分析、字节AI布局等8个核心章节的技术细节和行..."
+          ]
+        },
+        {
+          "type": "project",
+          "title": "个人助理_V1",
+          "commitCount": 0,
+          "fileChangeCount": 27,
+          "goal": "项目开发: 个人助理_V1",
+          "deliverables": [
+            {
+              "name": "职级晋升评审-王娟.pptx",
+              "url": "#"
+            },
+            {
+              "name": "SKILL.md",
+              "url": "#"
+            },
+            {
+              "name": "recap-bytedance-ai-overview-documentation-development.md",
+              "url": "#"
+            },
+            {
+              "name": "调研字节内部Agent应用（Aime等）.md",
+              "url": "#"
+            },
+            {
+              "name": "分析agent-infra.html章节结构.md",
+              "url": "#"
+            },
+            {
+              "name": "审核security-practice.html内容.md",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "CF_0206_TK",
+          "commitCount": 0,
+          "fileChangeCount": 11,
+          "goal": "项目开发: CF_0206_TK",
+          "deliverables": [
+            {
+              "name": "🌐\nsection-deep-insight.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsummary-formatted.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\ndeep-insight-formatted.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsection-summary.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\npast-formatted.html",
+              "url": "#"
+            },
+            {
+              "name": "🌐\nsection-future.html",
+              "url": "#"
+            }
+          ]
+        },
+        {
+          "type": "project",
+          "title": "字节AI调研",
+          "commitCount": 7,
+          "fileChangeCount": 1,
+          "goal": "项目开发: 字节AI调研",
+          "deliverables": []
+        },
+        {
+          "type": "project",
+          "title": "CF0222",
+          "commitCount": 0,
+          "fileChangeCount": 2,
+          "goal": "项目开发: CF0222",
+          "deliverables": [
+            {
+              "name": "🌐\nai-superindividual-plan.html",
+              "url": "#"
+            },
+            {
+              "name": "ai-superindividual-plan.md",
+              "url": "#"
+            }
+          ]
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 30,
+        "knowledgeCount": 150,
+        "memoryCount": 19,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 0,
+        "newSkills": [
+          {
+            "name": "✨ knowledge-base"
+          },
+          {
+            "name": "✨ industry-research"
+          },
+          {
+            "name": "qingshuang-research-style"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "personal-writings\n\n\n\n131"
+          },
+          {
+            "name": "rd-efficiency\n\n\n\n18"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "💡\n每日例行任务：日报生成与能力迭代流程"
+          },
+          {
+            "title": "💡\n日报系统优化最佳实践"
+          },
+          {
+            "title": "💡\n输出链接格式规范"
+          },
+          {
+            "title": "💡\n身份保密规则"
+          }
+        ]
+      },
       "highlights": [
-        "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
+        "将金融从业者工作场景细化为私募量化公司专用场景，并更新部署相关页面",
+        "创建一个美观的首页来展示并导航四个AI与金融相关的调研报告页面",
+        "优化并完善金融产品架构文档，包括更新五层架构设计、补充市场部客户经理角色，以及同..."
       ]
     }
   ]

@@ -255,48 +255,98 @@ function renderSelectedReport(index) {
     renderDailyTrendChart();
 }
 
-// ========== v7.1: 板块一 - 核心进展 ==========
+// ========== v7.4: 板块一 - 核心进展 (分类显示) ==========
 function renderCoreProgress(progress) {
     const container = document.getElementById('core-progress-list');
     if (!container) return;
     
     if (!progress || progress.length === 0) {
-        container.innerHTML = '<div class="progress-item"><span class="progress-icon">—</span><span class="progress-text">今日无进展记录</span></div>';
+        container.innerHTML = '<div class="progress-empty">— 今日无进展记录</div>';
         return;
     }
     
-    container.innerHTML = progress.map(item => {
-        // 提取图标和文本
-        let icon = '✅';
-        let text = item;
-        
-        if (item.startsWith('✅')) {
-            icon = '✅';
-            text = item.substring(2).trim();
-        } else if (item.startsWith('📁')) {
-            icon = '📁';
-            text = item.substring(2).trim();
-        } else if (item.startsWith('⚡')) {
-            icon = '⚡';
-            text = item.substring(1).trim();
-        } else if (item.startsWith('📚')) {
-            icon = '📚';
-            text = item.substring(2).trim();
-        } else if (item.startsWith('🧠')) {
-            icon = '🧠';
-            text = item.substring(2).trim();
-        } else if (item.startsWith('—')) {
-            icon = '—';
-            text = item.substring(1).trim();
+    // 分类整理进展项
+    const deliveryItems = [];  // 交付情况
+    const capabilityItems = []; // 能力提升
+    
+    progress.forEach(item => {
+        if (item.startsWith('💬') || item.startsWith('📁')) {
+            deliveryItems.push(item);
+        } else if (item.startsWith('⚡') || item.startsWith('🧠') || item.startsWith('📚')) {
+            capabilityItems.push(item);
+        } else {
+            deliveryItems.push(item);
         }
-        
-        return `
-            <div class="progress-item">
-                <span class="progress-icon">${icon}</span>
-                <span class="progress-text">${escapeHtml(text)}</span>
+    });
+    
+    let html = '';
+    
+    // 渲染交付情况分类
+    if (deliveryItems.length > 0) {
+        html += `
+            <div class="progress-category">
+                <div class="progress-category-header">
+                    <span class="progress-category-icon">🚀</span>
+                    <span class="progress-category-title">交付情况</span>
+                </div>
+                <div class="progress-items">
+                    ${deliveryItems.map((item, idx) => renderProgressItem(item, idx + 1)).join('')}
+                </div>
             </div>
         `;
-    }).join('');
+    }
+    
+    // 渲染能力提升分类
+    if (capabilityItems.length > 0) {
+        html += `
+            <div class="progress-category">
+                <div class="progress-category-header">
+                    <span class="progress-category-icon">📈</span>
+                    <span class="progress-category-title">能力提升</span>
+                </div>
+                <div class="progress-items">
+                    ${capabilityItems.map((item, idx) => renderProgressItem(item, idx + 1)).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = html || '<div class="progress-empty">— 今日无进展记录</div>';
+}
+
+function renderProgressItem(item, index) {
+    // 提取图标和文本
+    let text = item;
+    
+    // 移除前缀图标
+    const prefixes = ['💬 ', '📁 ', '⚡ ', '🧠 ', '📚 ', '✅ ', '— '];
+    for (const prefix of prefixes) {
+        if (text.startsWith(prefix)) {
+            text = text.substring(prefix.length);
+            break;
+        }
+    }
+    
+    // 分离主要内容和详细说明
+    let mainText = text;
+    let detailText = '';
+    
+    // 检查是否有“，”分隔的利好说明
+    const benefitMatch = text.match(/^(.+?)，(.+)$/);
+    if (benefitMatch) {
+        mainText = benefitMatch[1];
+        detailText = benefitMatch[2];
+    }
+    
+    return `
+        <div class="progress-item">
+            <span class="progress-number">${index}.</span>
+            <div class="progress-content">
+                <div class="progress-main">${escapeHtml(mainText)}</div>
+                ${detailText ? `<div class="progress-detail">→ ${escapeHtml(detailText)}</div>` : ''}
+            </div>
+        </div>
+    `;
 }
 
 // ========== v7.1: 板块二 - 交付情况 ==========
@@ -757,7 +807,8 @@ function renderSkillTreeGraph(skills) {
         'investment-analyzer': '投资',
         'feishu-assistant': '飞书',
         'find-skills': '技能',
-        'skill-manager': '管理'
+        'skill-manager': '管理',
+        'daily-reflection-evolution': '自进化'
     };
     
     let idx = 0;
@@ -1303,7 +1354,8 @@ function showProjectTooltip(event, id) {
         'feishu-assistant': '飞书助手',
         'personal-assistant': '个人助理',
         'ui-ux-pro-max': 'UI/UX专家',
-        'zelda-style': '塞尔达风格'
+        'zelda-style': '塞尔达风格',
+        'daily-reflection-evolution': '自进化'
     };
     
     const usedSkills = (projectSkillsMap[data.id] || [])

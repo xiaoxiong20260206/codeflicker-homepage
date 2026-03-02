@@ -244,167 +244,288 @@ function renderSelectedReport(index) {
     
     const report = reports[index];
     
-    // 概览数据
-    const dailyProjects = document.getElementById('daily-projects');
-    const dailyCommits = document.getElementById('daily-commits');
-    const dailyConversations = document.getElementById('daily-conversations');
-    const dailyTrend = document.getElementById('daily-trend');
+    // ========== v7.1: 三板块渲染 ==========
+    // 板块一：核心进展
+    renderCoreProgress(report.coreProgress || report.highlights || []);
     
-    if (dailyProjects) dailyProjects.textContent = report.activeProjects;
-    if (dailyCommits) dailyCommits.textContent = report.totalCommits;
-    if (dailyConversations) dailyConversations.textContent = report.conversationCount;
-    if (dailyTrend) dailyTrend.textContent = getTrendText(report);
+    // 板块二：交付情况
+    renderDeliveries(report.deliveries || []);
     
-    // 亮点
-    const highlightsContainer = document.getElementById('highlights-list');
-    if (highlightsContainer) {
-        highlightsContainer.innerHTML = (report.highlights || []).map(h => `
-            <span class="highlight-tag">✓ ${h}</span>
-        `).join('');
-    }
+    // 板块三：能力提升
+    renderCapabilityGrowth(report.capabilityGrowth || report);
     
-    // 能力数据
-    const capSkills = document.getElementById('cap-skills');
-    const capKnowledge = document.getElementById('cap-knowledge');
-    const capMemory = document.getElementById('cap-memory');
-    
-    if (capSkills) capSkills.textContent = report.skillCount;
-    if (capKnowledge) capKnowledge.textContent = report.knowledgeCount;
-    if (capMemory) capMemory.textContent = report.memoryCount;
-    
-    // 能力变化
-    updateCapChange('cap-skills-change', report.skillChange);
-    updateCapChange('cap-knowledge-change', report.knowledgeChange);
-    updateCapChange('cap-memory-change', report.memoryChange);
-    
-    // ========== v7.0: 渲染日报详细内容（替代iframe） ==========
-    renderReportDetails(report);
+    // 渲染趋势图
+    renderDailyTrendChart();
 }
 
-// ========== v7.0: 日报详情渲染 ==========
-function renderReportDetails(report) {
-    const details = report.details || {};
-    
-    // 渲染对话任务
-    renderConversations(details.conversations || []);
-    
-    // 渲染项目活动
-    renderProjects(details.projects || []);
-    
-    // 渲染能力变化
-    renderCapabilityChanges('skill-changes-content', details.skillChanges || {});
-    renderCapabilityChanges('knowledge-changes-content', details.knowledgeChanges || {});
-    renderCapabilityChanges('memory-changes-content', details.memoryChanges || {});
-}
-
-function renderConversations(conversations) {
-    const container = document.getElementById('conversations-content');
+// ========== v7.1: 板块一 - 核心进展 ==========
+function renderCoreProgress(progress) {
+    const container = document.getElementById('core-progress-list');
     if (!container) return;
     
-    if (conversations.length === 0) {
-        container.innerHTML = '<div class="no-changes">今日无对话任务记录</div>';
+    if (!progress || progress.length === 0) {
+        container.innerHTML = '<div class="progress-item"><span class="progress-icon">—</span><span class="progress-text">今日无进展记录</span></div>';
         return;
     }
     
-    container.innerHTML = conversations.map(conv => `
-        <div class="conversation-card">
-            <div class="conversation-title">💬 ${escapeHtml(conv.title || '未命名对话')}</div>
-            ${conv.intent ? `<div class="conversation-intent">🎯 ${escapeHtml(conv.intent)}</div>` : ''}
-            ${conv.summary ? `<div class="conversation-summary">${escapeHtml(conv.summary)}</div>` : ''}
-            ${conv.time ? `<div class="conversation-time">🕒 ${conv.time}</div>` : ''}
-            ${conv.tags && conv.tags.length > 0 ? `
-                <div class="conversation-tags">
-                    ${conv.tags.map(tag => `<span class="conversation-tag">${escapeHtml(tag)}</span>`).join('')}
-                </div>
-            ` : ''}
-        </div>
-    `).join('');
-}
-
-function renderProjects(projects) {
-    const container = document.getElementById('projects-content');
-    if (!container) return;
-    
-    if (projects.length === 0) {
-        container.innerHTML = '<div class="no-changes">今日无项目活动</div>';
-        return;
-    }
-    
-    container.innerHTML = projects.map((proj, idx) => {
-        const hasDeployUrl = !!proj.deployUrl;
-        const outcomes = [...(proj.features || []), ...(proj.improvements || []), ...(proj.fixes || [])].slice(0, 5);
-        const commits = proj.commits || [];
+    container.innerHTML = progress.map(item => {
+        // 提取图标和文本
+        let icon = '✅';
+        let text = item;
+        
+        if (item.startsWith('✅')) {
+            icon = '✅';
+            text = item.substring(2).trim();
+        } else if (item.startsWith('📁')) {
+            icon = '📁';
+            text = item.substring(2).trim();
+        } else if (item.startsWith('⚡')) {
+            icon = '⚡';
+            text = item.substring(1).trim();
+        } else if (item.startsWith('📚')) {
+            icon = '📚';
+            text = item.substring(2).trim();
+        } else if (item.startsWith('🧠')) {
+            icon = '🧠';
+            text = item.substring(2).trim();
+        } else if (item.startsWith('—')) {
+            icon = '—';
+            text = item.substring(1).trim();
+        }
         
         return `
-            <div class="project-card ${hasDeployUrl ? 'has-deploy' : ''}">
-                <div class="project-header-row">
-                    <div class="project-name-title">
-                        <span>📁</span>
-                        <span>${escapeHtml(proj.name)}</span>
-                    </div>
-                    <div class="project-stats">
-                        ${proj.commitCount > 0 ? `<span class="project-stat">⚡ ${proj.commitCount} 提交</span>` : ''}
-                        ${proj.fileChangeCount > 0 ? `<span class="project-stat">📝 ${proj.fileChangeCount} 文件</span>` : ''}
-                        ${hasDeployUrl ? `<a href="${proj.deployUrl}" target="_blank" class="project-deploy-link">🔗 访问</a>` : ''}
-                    </div>
-                </div>
-                ${outcomes.length > 0 ? `
-                    <div class="project-outcomes">
-                        ${outcomes.map(o => `<div class="outcome-item">${escapeHtml(o)}</div>`).join('')}
-                    </div>
-                ` : ''}
-                ${commits.length > 0 ? `
-                    <div class="project-commits-toggle" onclick="toggleProjectCommits(${idx})">
-                        📜 查看提交记录 (${commits.length})
-                    </div>
-                    <div class="project-commits-list" id="project-commits-${idx}">
-                        ${commits.map(c => `
-                            <div class="commit-item">
-                                <span class="commit-hash">${c.hash || ''}</span>
-                                <span class="commit-message">${escapeHtml(c.message || '')}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-                ` : ''}
+            <div class="progress-item">
+                <span class="progress-icon">${icon}</span>
+                <span class="progress-text">${escapeHtml(text)}</span>
             </div>
         `;
     }).join('');
 }
 
-function toggleProjectCommits(idx) {
-    const el = document.getElementById(`project-commits-${idx}`);
-    if (el) {
-        el.classList.toggle('expanded');
-    }
-}
-
-window.toggleProjectCommits = toggleProjectCommits;
-
-function renderCapabilityChanges(containerId, changes) {
-    const container = document.getElementById(containerId);
+// ========== v7.1: 板块二 - 交付情况 ==========
+function renderDeliveries(deliveries) {
+    const container = document.getElementById('deliveries-list');
     if (!container) return;
     
-    const newItems = changes.new || [];
-    const updatedItems = changes.updated || [];
-    
-    if (newItems.length === 0 && updatedItems.length === 0) {
-        container.innerHTML = '<div class="no-changes">无变化</div>';
+    if (!deliveries || deliveries.length === 0) {
+        container.innerHTML = '<div class="delivery-card"><div class="delivery-title">— 今日无交付记录</div></div>';
         return;
     }
     
-    let html = '';
+    container.innerHTML = deliveries.map(d => {
+        const type = d.type || 'conversation';
+        const typeIcon = type === 'project' ? '📁' : '💬';
+        const typeLabel = type === 'project' ? '项目' : '任务';
+        
+        // 交付物渲染
+        let deliverablesHtml = '';
+        if (d.deliverables && d.deliverables.length > 0) {
+            deliverablesHtml = `
+                <div class="delivery-deliverables">
+                    ${d.deliverables.map(item => {
+                        if (item.url) {
+                            return `<span class="deliverable-item has-link"><a href="${item.url}" target="_blank">📦 ${escapeHtml(item.name)}</a></span>`;
+                        }
+                        return `<span class="deliverable-item">📦 ${escapeHtml(item.name)}</span>`;
+                    }).join('')}
+                </div>
+            `;
+        }
+        
+        // 执行过程渲染
+        let processHtml = '';
+        if (d.process && d.process.length > 0) {
+            processHtml = `
+                <div class="delivery-process">
+                    ${d.process.map(step => `<div class="process-step">${escapeHtml(step)}</div>`).join('')}
+                </div>
+            `;
+        }
+        
+        // 项目统计
+        let statsHtml = '';
+        if (type === 'project') {
+            const stats = [];
+            if (d.commitCount) stats.push(`${d.commitCount}次提交`);
+            if (d.fileChangeCount) stats.push(`${d.fileChangeCount}个文件`);
+            if (d.deployUrl) stats.push(`<a href="${d.deployUrl}" target="_blank" class="project-deploy-link">🔗 访问</a>`);
+            if (stats.length > 0) {
+                statsHtml = `<div style="margin-top: 8px; font-size: 12px; color: var(--zelda-brown);">${stats.join(' · ')}</div>`;
+            }
+        }
+        
+        return `
+            <div class="delivery-card ${type}">
+                <div class="delivery-header">
+                    <div class="delivery-title">
+                        ${typeIcon} ${escapeHtml(d.title)}
+                    </div>
+                    <span class="delivery-type-badge ${type}">${typeLabel}</span>
+                </div>
+                ${d.goal ? `
+                    <div class="delivery-goal">
+                        <span class="delivery-goal-icon">🎯</span>
+                        <span class="delivery-goal-text">${escapeHtml(d.goal)}</span>
+                    </div>
+                ` : ''}
+                ${deliverablesHtml}
+                ${processHtml}
+                ${statsHtml}
+            </div>
+        `;
+    }).join('');
+}
+
+// ========== v7.1: 板块三 - 能力提升 ==========
+function renderCapabilityGrowth(capData) {
+    // 能力概览卡片
+    const skillsEl = document.getElementById('cap-skills-v2');
+    const knowledgeEl = document.getElementById('cap-knowledge-v2');
+    const memoryEl = document.getElementById('cap-memory-v2');
     
-    newItems.forEach(item => {
-        const name = item.name || item.title || '未命名';
-        html += `<span class="change-tag new">🌟 新增: ${escapeHtml(name)}</span>`;
+    if (skillsEl) skillsEl.textContent = capData.skillCount || capData.skillsTotal || '-';
+    if (knowledgeEl) knowledgeEl.textContent = capData.knowledgeCount || capData.knowledgeTotal || '-';
+    if (memoryEl) memoryEl.textContent = capData.memoryCount || capData.memoryTotal || '-';
+    
+    // 能力变化
+    updateCapChangeV2('cap-skills-change-v2', capData.skillChange);
+    updateCapChangeV2('cap-knowledge-change-v2', capData.knowledgeChange);
+    updateCapChangeV2('cap-memory-change-v2', capData.memoryChange);
+    
+    // 新增内容标签
+    renderNewItemsTags(capData);
+}
+
+function updateCapChangeV2(elementId, change) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    
+    if (change > 0) {
+        el.textContent = '+' + change;
+        el.className = 'cap-change-v2 positive';
+    } else {
+        el.textContent = '-';
+        el.className = 'cap-change-v2 neutral';
+    }
+}
+
+function renderNewItemsTags(capData) {
+    const container = document.getElementById('new-items-tags');
+    if (!container) return;
+    
+    let tags = [];
+    
+    // 新增技能
+    const newSkills = capData.newSkills || [];
+    newSkills.forEach(s => {
+        tags.push(`<span class="new-item-tag skill">⚡ ${escapeHtml(s.name)}</span>`);
     });
     
-    updatedItems.forEach(item => {
-        const name = item.name || item.title || '未命名';
-        html += `<span class="change-tag updated">🔄 更新: ${escapeHtml(name)}</span>`;
+    // 新增知识
+    const newKnowledge = capData.newKnowledge || [];
+    newKnowledge.slice(0, 3).forEach(k => {
+        const name = typeof k === 'string' ? k : (k.name || k.title || '未命名');
+        tags.push(`<span class="new-item-tag knowledge">📚 ${escapeHtml(name)}</span>`);
     });
     
-    container.innerHTML = html;
+    // 新增记忆
+    const newMemory = capData.newMemory || [];
+    newMemory.slice(0, 3).forEach(m => {
+        const title = typeof m === 'string' ? m : (m.title || '未命名');
+        tags.push(`<span class="new-item-tag memory">🧠 ${escapeHtml(title)}</span>`);
+    });
+    
+    if (tags.length === 0) {
+        container.innerHTML = '<span style="font-size: 12px; color: var(--zelda-brown); opacity: 0.6;">今日无新增内容</span>';
+    } else {
+        container.innerHTML = tags.join('');
+    }
+}
+
+// ========== v7.1: 趋势图 ==========
+let dailyTrendChartInstance = null;
+
+function renderDailyTrendChart() {
+    const canvas = document.getElementById('dailyTrendChart');
+    if (!canvas) return;
+    
+    const trend = AppState.reportsData?.trend;
+    if (!trend || !trend.dates || trend.dates.length === 0) {
+        return;
+    }
+    
+    // 销毁旧实例
+    if (dailyTrendChartInstance) {
+        dailyTrendChartInstance.destroy();
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    dailyTrendChartInstance = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: trend.dates,
+            datasets: [
+                {
+                    label: '技能',
+                    data: trend.skills,
+                    borderColor: '#00d4ff',
+                    backgroundColor: 'rgba(0, 212, 255, 0.1)',
+                    tension: 0.3,
+                    fill: false,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#00d4ff'
+                },
+                {
+                    label: '知识',
+                    data: trend.knowledge,
+                    borderColor: '#c9a227',
+                    backgroundColor: 'rgba(201, 162, 39, 0.1)',
+                    tension: 0.3,
+                    fill: false,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#c9a227'
+                },
+                {
+                    label: '记忆',
+                    data: trend.memory,
+                    borderColor: '#9b59b6',
+                    backgroundColor: 'rgba(155, 89, 182, 0.1)',
+                    tension: 0.3,
+                    fill: false,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#9b59b6'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        color: '#8cb4c0',
+                        font: { size: 11 },
+                        usePointStyle: true,
+                        padding: 15
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    grid: { color: 'rgba(140, 180, 192, 0.1)' },
+                    ticks: { color: '#8cb4c0', font: { size: 10 } }
+                },
+                y: {
+                    grid: { color: 'rgba(140, 180, 192, 0.1)' },
+                    ticks: { color: '#8cb4c0', font: { size: 10 } },
+                    beginAtZero: false
+                }
+            }
+        }
+    });
 }
 
 // HTML转义工具函数

@@ -545,8 +545,10 @@
             color: #6b5344;
         }
         
-        /* 日报详情容器 - 塞尔达风格 */
-        .daily-details-container {
+        /* ========== 日报三板块布局 v7.1 ========== */
+        
+        /* 板块通用样式 */
+        .daily-section-block {
             background: linear-gradient(135deg, 
                 rgba(232, 220, 196, 0.95) 0%,
                 rgba(245, 230, 200, 0.9) 100%
@@ -554,21 +556,10 @@
             border: 2px solid var(--zelda-brown);
             border-radius: var(--radius-md);
             padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
         }
         
-        .daily-details-section {
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .daily-details-section:last-child {
-            margin-bottom: 0;
-        }
-        
-        .details-section-title {
-            font-family: var(--font-title);
-            font-size: 16px;
-            color: var(--zelda-brown);
+        .block-header {
             display: flex;
             align-items: center;
             gap: var(--spacing-sm);
@@ -577,234 +568,303 @@
             border-bottom: 2px solid var(--zelda-brown);
         }
         
-        .section-icon-small {
-            font-size: 18px;
+        .block-icon {
+            font-size: 20px;
         }
         
-        .sub-section-title {
-            font-size: 14px;
+        .block-title {
+            font-family: var(--font-title);
+            font-size: 18px;
             font-weight: 600;
             color: var(--zelda-brown);
-            margin-bottom: var(--spacing-sm);
-            padding-left: var(--spacing-sm);
+        }
+        
+        /* 板块一：核心进展 */
+        .core-progress-block {
+            border-color: var(--sheikah-blue);
+            background: linear-gradient(135deg, 
+                rgba(30, 35, 40, 0.95) 0%,
+                rgba(40, 45, 55, 0.9) 100%
+            );
+        }
+        
+        .core-progress-block .block-header {
+            border-bottom-color: var(--sheikah-blue);
+        }
+        
+        .core-progress-block .block-title {
+            color: var(--sheikah-blue-light);
+        }
+        
+        .core-progress-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .progress-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(0, 212, 255, 0.08);
+            border-radius: var(--radius-sm);
             border-left: 3px solid var(--sheikah-blue);
         }
         
-        /* 对话任务卡片 */
-        .conversations-container, .projects-container, .capability-changes {
-            margin-bottom: var(--spacing-md);
+        .progress-icon {
+            font-size: 16px;
+            flex-shrink: 0;
         }
         
-        .conversation-card {
+        .progress-text {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        /* 板块二：交付情况 */
+        .deliveries-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .delivery-card {
             background: rgba(255, 255, 255, 0.6);
             border: 1px solid var(--zelda-brown);
             border-radius: var(--radius-sm);
             padding: var(--spacing-md);
-            margin-bottom: var(--spacing-sm);
             transition: all var(--transition-fast);
         }
         
-        .conversation-card:hover {
+        .delivery-card:hover {
             border-color: var(--sheikah-blue);
             box-shadow: 0 2px 8px rgba(0, 212, 255, 0.15);
         }
         
-        .conversation-title {
-            font-weight: 600;
-            color: var(--zelda-brown);
-            font-size: 14px;
-            margin-bottom: 4px;
+        .delivery-card.conversation {
+            border-left: 4px solid var(--zelda-gold);
         }
         
-        .conversation-intent {
-            font-size: 12px;
-            color: var(--zelda-brown);
-            opacity: 0.8;
-            margin-bottom: 4px;
+        .delivery-card.project {
+            border-left: 4px solid var(--sheikah-blue);
         }
         
-        .conversation-summary {
-            font-size: 13px;
-            color: var(--zelda-brown);
-            line-height: 1.5;
-        }
-        
-        .conversation-time {
-            font-size: 11px;
-            color: var(--zelda-brown);
-            opacity: 0.6;
-            margin-top: 6px;
-        }
-        
-        .conversation-tags {
-            display: flex;
-            gap: 4px;
-            flex-wrap: wrap;
-            margin-top: 6px;
-        }
-        
-        .conversation-tag {
-            font-size: 10px;
-            padding: 2px 8px;
-            background: rgba(0, 212, 255, 0.15);
-            border-radius: 10px;
-            color: var(--sheikah-blue);
-        }
-        
-        /* 项目卡片 */
-        .project-card {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid var(--zelda-brown);
-            border-radius: var(--radius-sm);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        .project-card.has-deploy {
-            border-color: var(--sheikah-blue);
-        }
-        
-        .project-header-row {
+        .delivery-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             margin-bottom: var(--spacing-sm);
         }
         
-        .project-name-title {
+        .delivery-title {
             font-weight: 600;
+            font-size: 15px;
             color: var(--zelda-brown);
-            font-size: 14px;
             display: flex;
             align-items: center;
             gap: 6px;
         }
         
-        .project-stats {
+        .delivery-type-badge {
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        
+        .delivery-type-badge.conversation {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold-dark);
+        }
+        
+        .delivery-type-badge.project {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--sheikah-blue);
+        }
+        
+        .delivery-goal {
             display: flex;
-            gap: var(--spacing-md);
-            font-size: 12px;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .delivery-goal-icon {
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .delivery-goal-text {
+            font-size: 13px;
             color: var(--zelda-brown);
+            opacity: 0.9;
         }
         
-        .project-stat {
-            display: flex;
-            align-items: center;
-            gap: 4px;
+        .delivery-deliverables {
+            margin-bottom: var(--spacing-sm);
         }
         
-        .project-deploy-link {
+        .deliverable-item {
             display: inline-flex;
             align-items: center;
             gap: 4px;
             padding: 4px 10px;
-            background: var(--sheikah-blue);
-            color: white;
-            text-decoration: none;
+            background: rgba(93, 138, 74, 0.15);
             border-radius: var(--radius-sm);
-            font-size: 11px;
-            font-weight: 500;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-size: 12px;
+            color: #5d8a4a;
         }
         
-        .project-deploy-link:hover {
-            background: var(--sheikah-blue-light);
+        .deliverable-item a {
+            color: inherit;
+            text-decoration: none;
         }
         
-        .project-outcomes {
-            margin-top: var(--spacing-sm);
+        .deliverable-item a:hover {
+            text-decoration: underline;
         }
         
-        .outcome-item {
+        .deliverable-item.has-link {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--sheikah-blue);
+            cursor: pointer;
+        }
+        
+        .delivery-process {
+            padding-left: var(--spacing-md);
+            border-left: 2px solid rgba(107, 83, 68, 0.2);
+        }
+        
+        .process-step {
             font-size: 12px;
             color: var(--zelda-brown);
+            opacity: 0.8;
             padding: 2px 0;
-            padding-left: 14px;
             position: relative;
         }
         
-        .outcome-item::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #5d8a4a;
-            font-weight: bold;
+        .process-step::before {
+            content: '→';
+            margin-right: 6px;
+            color: var(--sheikah-blue);
         }
         
-        .project-commits-toggle {
-            font-size: 11px;
-            color: var(--sheikah-blue);
-            cursor: pointer;
-            margin-top: var(--spacing-sm);
+        /* 板块三：能力提升 */
+        .capability-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .cap-card-v2 {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--zelda-brown);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
             display: flex;
             align-items: center;
-            gap: 4px;
-        }
-        
-        .project-commits-list {
-            display: none;
-            margin-top: var(--spacing-sm);
-            padding: var(--spacing-sm);
-            background: rgba(0, 0, 0, 0.03);
-            border-radius: var(--radius-sm);
-        }
-        
-        .project-commits-list.expanded {
-            display: block;
-        }
-        
-        .commit-item {
-            font-size: 11px;
-            color: var(--zelda-brown);
-            padding: 4px 0;
-            display: flex;
             gap: var(--spacing-sm);
         }
         
-        .commit-hash {
-            font-family: var(--font-mono);
-            color: var(--sheikah-blue);
-            background: rgba(0, 212, 255, 0.1);
-            padding: 1px 4px;
-            border-radius: 3px;
+        .cap-icon-v2 {
+            font-size: 28px;
         }
         
-        .commit-message {
+        .cap-info-v2 {
             flex: 1;
         }
         
-        /* 能力变化 */
-        .changes-content {
+        .cap-label-v2 {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .cap-value-v2 {
+            font-family: var(--font-mono);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+        }
+        
+        .cap-change-v2 {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .cap-change-v2.positive {
+            background: rgba(93, 138, 74, 0.2);
+            color: #5d8a4a;
+        }
+        
+        .cap-change-v2.neutral {
+            background: rgba(100, 116, 139, 0.1);
+            color: #6b5344;
+        }
+        
+        /* 新增内容标签 */
+        .capability-changes-v2 {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .changes-section {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .changes-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .changes-tags {
             display: flex;
             flex-wrap: wrap;
             gap: var(--spacing-sm);
         }
         
-        .change-tag {
+        .new-item-tag {
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            padding: 4px 10px;
-            border-radius: var(--radius-sm);
-            font-size: 12px;
-        }
-        
-        .change-tag.new {
+            padding: 4px 12px;
             background: rgba(93, 138, 74, 0.15);
-            color: #5d8a4a;
             border: 1px solid rgba(93, 138, 74, 0.3);
-        }
-        
-        .change-tag.updated {
-            background: rgba(0, 212, 255, 0.1);
-            color: var(--sheikah-blue);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-        }
-        
-        .no-changes {
+            border-radius: 15px;
             font-size: 12px;
-            color: var(--zelda-brown);
-            opacity: 0.6;
-            font-style: italic;
+            color: #5d8a4a;
+        }
+        
+        .new-item-tag.skill { border-color: var(--sheikah-blue); color: var(--sheikah-blue); background: rgba(0, 212, 255, 0.1); }
+        .new-item-tag.knowledge { border-color: var(--zelda-gold); color: var(--zelda-gold-dark); background: rgba(201, 162, 39, 0.1); }
+        .new-item-tag.memory { border-color: #9b59b6; color: #9b59b6; background: rgba(155, 89, 182, 0.1); }
+        
+        /* 趋势图 */
+        .trend-chart-section {
+            background: rgba(30, 35, 40, 0.95);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
+        }
+        
+        .trend-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .trend-chart-container {
+            height: 200px;
         }
         
         /* 历史日报时间线 */
@@ -1902,7 +1962,7 @@
                 </button>
             </nav>
             
-            <!-- ==================== Section 1: 日报 ==================== -->
+            <!-- ==================== Section 1: 日报 v7.1 ==================== -->
             <section id="section-daily" class="content-section active">
                 <div class="section-header">
                     <div class="section-title-wrap">
@@ -1916,109 +1976,76 @@
                     </div>
                 </div>
                 
-                <!-- 当日概览 -->
-                <div class="daily-overview">
-                    <div class="overview-card">
-                        <div class="ov-icon green">✓</div>
-                        <div class="ov-value" id="daily-projects">-</div>
-                        <div class="ov-label">活跃项目</div>
+                <!-- 板块一：核心进展 -->
+                <div class="daily-section-block core-progress-block">
+                    <div class="block-header">
+                        <span class="block-icon">📋</span>
+                        <span class="block-title">核心进展</span>
                     </div>
-                    <div class="overview-card">
-                        <div class="ov-icon blue">⟳</div>
-                        <div class="ov-value" id="daily-commits">-</div>
-                        <div class="ov-label">代码提交</div>
-                    </div>
-                    <div class="overview-card">
-                        <div class="ov-icon orange">💬</div>
-                        <div class="ov-value" id="daily-conversations">-</div>
-                        <div class="ov-label">对话任务</div>
-                    </div>
-                    <div class="overview-card">
-                        <div class="ov-icon purple">📈</div>
-                        <div class="ov-value" id="daily-trend">-</div>
-                        <div class="ov-label">成长趋势</div>
+                    <div class="core-progress-list" id="core-progress-list">
+                        <!-- 动态填充 -->
                     </div>
                 </div>
                 
-                <!-- 今日亮点 -->
-                <div class="highlights-panel">
-                    <div class="highlights-title">✨ 今日亮点</div>
-                    <div class="highlights-list" id="highlights-list"></div>
-                </div>
-                
-                <!-- 能力变化 -->
-                <div class="capability-cards">
-                    <div class="cap-card">
-                        <div class="cap-icon">⚡</div>
-                        <div class="cap-info">
-                            <div class="cap-name">技能</div>
-                            <div class="cap-value" id="cap-skills">-</div>
-                        </div>
-                        <div class="cap-change positive" id="cap-skills-change">-</div>
+                <!-- 板块二：交付情况 -->
+                <div class="daily-section-block deliveries-block">
+                    <div class="block-header">
+                        <span class="block-icon">🚀</span>
+                        <span class="block-title">交付情况</span>
                     </div>
-                    <div class="cap-card">
-                        <div class="cap-icon">📚</div>
-                        <div class="cap-info">
-                            <div class="cap-name">知识</div>
-                            <div class="cap-value" id="cap-knowledge">-</div>
-                        </div>
-                        <div class="cap-change positive" id="cap-knowledge-change">-</div>
-                    </div>
-                    <div class="cap-card">
-                        <div class="cap-icon">🧠</div>
-                        <div class="cap-info">
-                            <div class="cap-name">记忆</div>
-                            <div class="cap-value" id="cap-memory">-</div>
-                        </div>
-                        <div class="cap-change neutral" id="cap-memory-change">-</div>
+                    <div class="deliveries-list" id="deliveries-list">
+                        <!-- 动态填充 -->
                     </div>
                 </div>
                 
-                <!-- 详细日报 - 塞尔达风格内联展示 -->
-                <div class="daily-details-container" id="daily-details">
-                    <!-- 服务交付维度 -->
-                    <div class="daily-details-section">
-                        <div class="details-section-title">
-                            <span class="section-icon-small">🚀</span>
-                            <span>服务交付</span>
+                <!-- 板块三：能力提升 -->
+                <div class="daily-section-block capability-block">
+                    <div class="block-header">
+                        <span class="block-icon">📈</span>
+                        <span class="block-title">能力提升</span>
+                    </div>
+                    
+                    <!-- 能力概览卡片 -->
+                    <div class="capability-overview">
+                        <div class="cap-card-v2">
+                            <div class="cap-icon-v2">⚡</div>
+                            <div class="cap-info-v2">
+                                <div class="cap-label-v2">技能</div>
+                                <div class="cap-value-v2" id="cap-skills-v2">-</div>
+                            </div>
+                            <div class="cap-change-v2" id="cap-skills-change-v2">-</div>
                         </div>
-                        
-                        <!-- 对话任务摘要 -->
-                        <div class="conversations-container" id="conversations-list">
-                            <div class="sub-section-title">💬 对话任务</div>
-                            <div class="conversations-list" id="conversations-content"></div>
+                        <div class="cap-card-v2">
+                            <div class="cap-icon-v2">📚</div>
+                            <div class="cap-info-v2">
+                                <div class="cap-label-v2">知识</div>
+                                <div class="cap-value-v2" id="cap-knowledge-v2">-</div>
+                            </div>
+                            <div class="cap-change-v2" id="cap-knowledge-change-v2">-</div>
                         </div>
-                        
-                        <!-- 项目活动 -->
-                        <div class="projects-container" id="projects-list">
-                            <div class="sub-section-title">📁 项目活动</div>
-                            <div class="projects-content" id="projects-content"></div>
+                        <div class="cap-card-v2">
+                            <div class="cap-icon-v2">🧠</div>
+                            <div class="cap-info-v2">
+                                <div class="cap-label-v2">记忆</div>
+                                <div class="cap-value-v2" id="cap-memory-v2">-</div>
+                            </div>
+                            <div class="cap-change-v2" id="cap-memory-change-v2">-</div>
                         </div>
                     </div>
                     
-                    <!-- 能力成长维度 -->
-                    <div class="daily-details-section">
-                        <div class="details-section-title">
-                            <span class="section-icon-small">🧠</span>
-                            <span>能力成长</span>
+                    <!-- 新增内容标签 -->
+                    <div class="capability-changes-v2">
+                        <div class="changes-section" id="new-items-section">
+                            <div class="changes-title">🌟 今日新增</div>
+                            <div class="changes-tags" id="new-items-tags"></div>
                         </div>
-                        
-                        <!-- 技能变化 -->
-                        <div class="capability-changes" id="skill-changes-section">
-                            <div class="sub-section-title">⚡ 技能变化</div>
-                            <div class="changes-content" id="skill-changes-content"></div>
-                        </div>
-                        
-                        <!-- 知识变化 -->
-                        <div class="capability-changes" id="knowledge-changes-section">
-                            <div class="sub-section-title">📚 知识变化</div>
-                            <div class="changes-content" id="knowledge-changes-content"></div>
-                        </div>
-                        
-                        <!-- 记忆变化 -->
-                        <div class="capability-changes" id="memory-changes-section">
-                            <div class="sub-section-title">🧠 记忆变化</div>
-                            <div class="changes-content" id="memory-changes-content"></div>
+                    </div>
+                    
+                    <!-- 趋势图 -->
+                    <div class="trend-chart-section">
+                        <div class="trend-title">📊 成长趋势</div>
+                        <div class="trend-chart-container">
+                            <canvas id="dailyTrendChart"></canvas>
                         </div>
                     </div>
                 </div>

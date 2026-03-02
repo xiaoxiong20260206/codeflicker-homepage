@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-03T06:31:40.795354",
+  "generatedAt": "2026-03-03T07:10:44.897334",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 5,
-    "totalExp": 6290,
-    "expProgress": 43.0,
+    "totalExp": 6490,
+    "expProgress": 49.7,
     "currentThreshold": 5000,
     "nextThreshold": 8000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 97.69999999999999,
-      "insight": 80.0,
+      "insight": 79.86486486486487,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 36,
+    "total": 37,
     "categories": {
       "核心能力": {
         "icon": "⭐",
@@ -369,10 +369,18 @@
             "exp": 70,
             "description": "---",
             "lastUpdated": "2026-03-02"
+          },
+          {
+            "name": "learn-from-mistakes",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 64,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
           }
         ],
-        "count": 1,
-        "avgLevel": 4.0
+        "count": 2,
+        "avgLevel": 3.5
       }
     }
   },
@@ -464,6 +472,24 @@
   },
   "memories": {
     "items": [
+      {
+        "title": "pptxgenjs阴影溢出问题及解决方案",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 问题描述 使用pptxgenjs生成PPT时，如果在多个元素上应用shadow属性，会导致blurRad和dist值指数级增长，最终产生科学计数法的...",
+        "keywords": [
+          "pptxgenjs",
+          "shadow",
+          "blurRad",
+          "overflow",
+          "PowerPoint"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
       {
         "title": "单虓晗（Shawn）思想体系与写作风格",
         "category": "user_info",
@@ -771,6 +797,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "踩坑经验: 脚本参数格式（不要用--date）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 脚本参数格式踩坑 ### 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
+        "keywords": [
+          "脚本参数",
+          "sys.argv",
+          "日期格式",
+          "generate_daily_report",
+          "命令行参数"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
         "title": "身份保密规则",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "约束规则",
@@ -861,7 +905,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 22,
+    "total": 24,
     "byCategory": {
       "development_practice_specification": {
         "count": 4,
@@ -899,7 +943,7 @@
         "description": "必须遵守的约束、禁止事项、保密规则"
       },
       "common_pitfalls_experience": {
-        "count": 2,
+        "count": 4,
         "label": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -910,7 +954,6 @@
   "growthHistory": {
     "dates": [
       "03-01",
-      "03-01",
       "03-02",
       "03-01",
       "03-01",
@@ -921,6 +964,7 @@
       "03-01",
       "03-01",
       "03-01",
+      "03-02",
       "03-02",
       "03-02"
     ],
@@ -931,10 +975,10 @@
       30,
       30,
       30,
-      30,
       31,
       31,
       31,
+      32,
       32,
       32,
       32,
@@ -962,7 +1006,6 @@
       20,
       20,
       20,
-      20,
       21,
       21,
       21,
@@ -970,6 +1013,7 @@
       20,
       20,
       21,
+      22,
       22
     ]
   },
@@ -1054,7 +1098,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有36项技能，触类旁通",
+      "desc": "拥有37项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-03",
       "unlocked": true,
@@ -1103,8 +1147,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 72,
-      "progressText": "36/50",
+      "progress": 74,
+      "progressText": "37/50",
       "date": "???"
     },
     {
@@ -1127,8 +1171,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 73,
-      "progressText": "22/30",
+      "progress": 80,
+      "progressText": "24/30",
       "date": "???"
     }
   ]

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-02T14:02:08.035979",
+  "generatedAt": "2026-03-02T15:42:48.652064",
   "character": {
     "name": "TIANQI",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 5,
-    "totalExp": 6140,
-    "expProgress": 38.0,
+    "totalExp": 6190,
+    "expProgress": 39.7,
     "currentThreshold": 5000,
     "nextThreshold": 8000,
     "stats": {
@@ -809,6 +809,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "页面修改后自动部署并发送链接的工作偏好",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#0284c7",
+        "description": "沟通风格、工作模式、交互偏好。关键词: 部署, GitHub Pages, 线上链接",
+        "keywords": [
+          "部署",
+          "GitHub Pages",
+          "线上链接",
+          "自动部署",
+          "页面变化"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
         "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "沟通偏好",
@@ -827,7 +845,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 21,
+    "total": 22,
     "byCategory": {
       "development_practice_specification": {
         "count": 3,
@@ -844,7 +862,7 @@
         "description": "用户基本信息、身份背景、个人特征"
       },
       "user_communication": {
-        "count": 4,
+        "count": 5,
         "label": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",

@@ -528,7 +528,7 @@ function renderNewItemsTags(capData) {
     }
 }
 
-// ========== v7.1: 趋势图 ==========
+// ========== v7.5: 趋势图（归一化显示，让成长更明显）==========
 let dailyTrendChartInstance = null;
 
 function renderDailyTrendChart() {
@@ -547,40 +547,69 @@ function renderDailyTrendChart() {
     
     const ctx = canvas.getContext('2d');
     
+    // 归一化数据：将每个指标的起始值设为100，显示相对增长百分比
+    // 这样不同量级的指标可以在同一个图表中比较成长趋势
+    const normalizeData = (data) => {
+        if (!data || data.length === 0) return [];
+        const baseValue = data[0] || 1; // 避免除以0
+        return data.map(v => Math.round((v / baseValue) * 100));
+    };
+    
+    const skillsNorm = normalizeData(trend.skills);
+    const knowledgeNorm = normalizeData(trend.knowledge);
+    const memoryNorm = normalizeData(trend.memory);
+    
+    // 计算实际变化值（用于tooltip显示）
+    const getChange = (data) => {
+        if (!data || data.length < 2) return 0;
+        return data[data.length - 1] - data[0];
+    };
+    
+    const skillChange = getChange(trend.skills);
+    const knowledgeChange = getChange(trend.knowledge);
+    const memoryChange = getChange(trend.memory);
+    
     dailyTrendChartInstance = new Chart(ctx, {
         type: 'line',
         data: {
             labels: trend.dates,
             datasets: [
                 {
-                    label: '技能',
-                    data: trend.skills,
+                    label: `技能 (${skillChange >= 0 ? '+' : ''}${skillChange})`,
+                    data: skillsNorm,
                     borderColor: '#00d4ff',
                     backgroundColor: 'rgba(0, 212, 255, 0.1)',
                     tension: 0.3,
-                    fill: false,
-                    pointRadius: 3,
-                    pointBackgroundColor: '#00d4ff'
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#00d4ff',
+                    borderWidth: 2,
+                    // 存储原始数据用于tooltip
+                    originalData: trend.skills
                 },
                 {
-                    label: '知识',
-                    data: trend.knowledge,
+                    label: `知识 (${knowledgeChange >= 0 ? '+' : ''}${knowledgeChange})`,
+                    data: knowledgeNorm,
                     borderColor: '#c9a227',
                     backgroundColor: 'rgba(201, 162, 39, 0.1)',
                     tension: 0.3,
-                    fill: false,
-                    pointRadius: 3,
-                    pointBackgroundColor: '#c9a227'
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#c9a227',
+                    borderWidth: 2,
+                    originalData: trend.knowledge
                 },
                 {
-                    label: '记忆',
-                    data: trend.memory,
+                    label: `记忆 (${memoryChange >= 0 ? '+' : ''}${memoryChange})`,
+                    data: memoryNorm,
                     borderColor: '#9b59b6',
                     backgroundColor: 'rgba(155, 89, 182, 0.1)',
                     tension: 0.3,
-                    fill: false,
-                    pointRadius: 3,
-                    pointBackgroundColor: '#9b59b6'
+                    fill: true,
+                    pointRadius: 4,
+                    pointBackgroundColor: '#9b59b6',
+                    borderWidth: 2,
+                    originalData: trend.memory
                 }
             ]
         },
@@ -617,10 +646,16 @@ function renderDailyTrendChart() {
                             return '📅 ' + context[0].label;
                         },
                         label: function(context) {
-                            const label = context.dataset.label || '';
-                            const value = context.parsed.y;
+                            const labelParts = context.dataset.label.split(' ');
+                            const label = labelParts[0]; // 只取"技能"、"知识"、"记忆"
+                            const normValue = context.parsed.y;
+                            // 获取原始值
+                            const originalData = context.dataset.originalData;
+                            const actualValue = originalData ? originalData[context.dataIndex] : normValue;
                             const icons = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
-                            return ' ' + (icons[label] || '') + ' ' + label + ': ' + value;
+                            const growthPercent = normValue - 100;
+                            const growthStr = growthPercent > 0 ? `+${growthPercent}%` : (growthPercent < 0 ? `${growthPercent}%` : '—');
+                            return ` ${icons[label] || ''} ${label}: ${actualValue} (${growthStr})`;
                         }
                     }
                 }
@@ -636,8 +671,18 @@ function renderDailyTrendChart() {
                 },
                 y: {
                     grid: { color: 'rgba(140, 180, 192, 0.1)' },
-                    ticks: { color: '#8cb4c0', font: { size: 10 } },
-                    beginAtZero: false
+                    ticks: { 
+                        color: '#8cb4c0', 
+                        font: { size: 10 },
+                        callback: function(value) {
+                            // 显示为相对增长率
+                            if (value === 100) return '基准';
+                            return (value > 100 ? '+' : '') + (value - 100) + '%';
+                        }
+                    },
+                    // 动态计算Y轴范围，让变化更明显
+                    suggestedMin: 95,
+                    suggestedMax: Math.max(...skillsNorm, ...knowledgeNorm, ...memoryNorm) + 5
                 }
             }
         }
@@ -911,16 +956,20 @@ function renderSkillTreeGraph(skills) {
     
     let idx = 0;
     let branches = '';
+    let branchIdx = 0;
     
     for (const [catName, cat] of Object.entries(skills.categories)) {
         const avgLv = Math.round(cat.avgLevel || 3);
         const catId = 'skill-cat-' + idx;
+        const branchId = 'skill-branch-' + branchIdx;
+        
         AppState.dataMap[catId] = { 
             name: catName, 
             icon: cat.icon, 
             level: avgLv, 
             description: `${catName}类技能，共${cat.count}个。平均等级Lv.${avgLv}`,
-            source: '技能分类'
+            source: '技能分类',
+            branchId: branchId
         };
         
         let leaves = '';
@@ -931,7 +980,9 @@ function renderSkillTreeGraph(skills) {
             leaves += `
                 <div class="leaf-node ${getLevelClass(s.level)}" 
                      style="border-color: var(--node-color); color: var(--node-color);"
-                     onmouseenter="showTreeTooltip(event, '${sid}', 'skill')" onmouseleave="hideTooltip()">
+                     onmouseenter="showTreeTooltip(event, '${sid}', 'skill')" 
+                     onmouseleave="hideTooltip()"
+                     onclick="showSkillDetailPanel('${sid}')">
                     <span class="leaf-name">${shortName}</span>
                     <span class="leaf-level" style="border-color: var(--node-color);">${s.level}</span>
                 </div>
@@ -939,23 +990,30 @@ function renderSkillTreeGraph(skills) {
         }
         
         branches += `
-            <div class="branch" style="color: ${cat.color || 'var(--green)'};">
+            <div class="branch" id="${branchId}" style="color: ${cat.color || 'var(--green)'};">
                 <div class="category-node ${getLevelClass(avgLv)}" 
                      style="border-color: ${cat.color || 'var(--green)'}; color: ${cat.color || 'var(--green)'};"
+                     onclick="toggleBranch('${branchId}')"
                      onmouseenter="showTreeTooltip(event, '${catId}', 'skill')" onmouseleave="hideTooltip()">
                     <span class="cat-icon">${cat.icon}</span>
                     <span class="cat-name">${catName}</span>
                     <span class="cat-level" style="border-color: ${cat.color || 'var(--green)'};">${avgLv}</span>
                     <span class="cat-count" style="border-color: ${cat.color || 'var(--green)'};">${cat.count}</span>
+                    <span class="toggle-indicator">▼</span>
                 </div>
                 <div class="leaves" style="color: ${cat.color || 'var(--green)'};">
                     ${leaves}
                 </div>
             </div>
         `;
+        branchIdx++;
     }
     
     container.innerHTML = `
+        <div class="tree-controls">
+            <button class="tree-btn" onclick="expandAllBranches('skill-tree')">全部展开</button>
+            <button class="tree-btn" onclick="collapseAllBranches('skill-tree')">全部折叠</button>
+        </div>
         <div class="tree-graph">
             <div class="tree-root" style="color: var(--green);">
                 <div class="root-node" style="border-color: var(--green); color: var(--green);">
@@ -967,6 +1025,89 @@ function renderSkillTreeGraph(skills) {
         </div>
     `;
 }
+
+// 分支展开/折叠
+function toggleBranch(branchId) {
+    const branch = document.getElementById(branchId);
+    if (branch) {
+        branch.classList.toggle('collapsed');
+    }
+}
+
+function expandAllBranches(treeId) {
+    const tree = document.getElementById(treeId);
+    if (tree) {
+        tree.querySelectorAll('.branch.collapsed').forEach(b => b.classList.remove('collapsed'));
+    }
+}
+
+function collapseAllBranches(treeId) {
+    const tree = document.getElementById(treeId);
+    if (tree) {
+        tree.querySelectorAll('.branch').forEach(b => b.classList.add('collapsed'));
+    }
+}
+
+// 暴露到全局
+window.toggleBranch = toggleBranch;
+window.expandAllBranches = expandAllBranches;
+window.collapseAllBranches = collapseAllBranches;
+
+// 技能详情面板
+function showSkillDetailPanel(skillId) {
+    const data = AppState.dataMap[skillId];
+    if (!data) return;
+    
+    // 创建或复用详情面板
+    let panel = document.getElementById('skill-detail-panel');
+    if (!panel) {
+        panel = document.createElement('div');
+        panel.id = 'skill-detail-panel';
+        panel.className = 'skill-detail-panel';
+        document.body.appendChild(panel);
+    }
+    
+    const levelClass = getLevelClass(data.level);
+    
+    panel.innerHTML = `
+        <div class="skill-panel-header">
+            <span class="skill-panel-icon">${data.catIcon || '⚡'}</span>
+            <span class="skill-panel-name">${escapeHtml(data.name)}</span>
+            <span class="skill-panel-level ${levelClass}">Lv.${data.level}</span>
+            <button class="skill-panel-close" onclick="closeSkillDetailPanel()">✕</button>
+        </div>
+        <div class="skill-panel-body">
+            <div class="skill-panel-row">
+                <span class="skill-panel-label">描述</span>
+                <span class="skill-panel-value">${escapeHtml(data.description || '暂无描述')}</span>
+            </div>
+            <div class="skill-panel-row">
+                <span class="skill-panel-label">来源</span>
+                <span class="skill-panel-value">${escapeHtml(data.source || '未知')}</span>
+            </div>
+            <div class="skill-panel-row">
+                <span class="skill-panel-label">使用频率</span>
+                <span class="skill-panel-value">${data.useCount ? data.useCount + ' 次' : '暂无数据'}</span>
+            </div>
+            <div class="skill-panel-row">
+                <span class="skill-panel-label">最近使用</span>
+                <span class="skill-panel-value">${data.lastUsed || '暂无数据'}</span>
+            </div>
+        </div>
+    `;
+    
+    panel.classList.add('active');
+}
+
+function closeSkillDetailPanel() {
+    const panel = document.getElementById('skill-detail-panel');
+    if (panel) {
+        panel.classList.remove('active');
+    }
+}
+
+window.showSkillDetailPanel = showSkillDetailPanel;
+window.closeSkillDetailPanel = closeSkillDetailPanel;
 
 function renderKnowledgeTreeGraph(knowledge) {
     const container = document.getElementById('knowledge-tree');

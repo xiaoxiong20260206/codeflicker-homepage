@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T17:40:01.177853",
+  "generatedAt": "2026-03-02T19:09:33.843667",
   "character": {
     "name": "TIANQI",
     "title": "单虓晗的数字分身",
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 97.69999999999999,
-      "insight": 79.85714285714286,
+      "insight": 80.0,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 35,
+    "total": 36,
     "categories": {
       "核心能力": {
         "icon": "⭐",
@@ -357,6 +357,22 @@
         ],
         "count": 1,
         "avgLevel": 3.0
+      },
+      "其他技能": {
+        "icon": "📦",
+        "color": "#64748b",
+        "skills": [
+          {
+            "name": "web-dev-workflow",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 70,
+            "description": "---",
+            "lastUpdated": "2026-03-02"
+          }
+        ],
+        "count": 1,
+        "avgLevel": 4.0
       }
     }
   },
@@ -557,42 +573,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "网页开发图标(Favicon)规范",
-        "category": "development_practice_specification",
-        "categoryLabel": "开发实践",
-        "icon": "🛠️",
-        "color": "#a78bfa",
-        "description": "所有网页开发项目都必须根据页面主题生成合适的 favicon 图标。具体要求： 1. **主题匹配**：图标设计需要与页面的主题、内容或品牌风格相匹配 2...",
-        "keywords": [
-          "favicon",
-          "图标",
-          "网页开发",
-          "icon",
-          "页面图标"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "网页开发预览与部署流程偏好",
-        "category": "user_communication",
-        "categoryLabel": "沟通偏好",
-        "icon": "💬",
-        "color": "#0284c7",
-        "description": "## 网页开发预览与部署流程偏好 用户对网页项目的工作流程有以下**严格要求**： ### 1. 开发阶段：本地验证优先 - **开发过程中的验证，都先生...",
-        "keywords": [
-          "自验证",
-          "部署流程",
-          "发布规范",
-          "网页开发",
-          "确认生效"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
         "title": "AI助手\"添棋\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
@@ -719,6 +699,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "网页开发工作流偏好",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#0284c7",
+        "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
+        "keywords": [
+          "网页开发",
+          "部署",
+          "web-dev-workflow",
+          "发布流程",
+          "自验证"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
         "title": "踩坑经验: AI Product Ultimate Form Technical Implementation",
         "category": "common_pitfalls_experience",
         "categoryLabel": "踩坑经验",
@@ -809,24 +807,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "页面修改后自动部署并发送链接的工作偏好",
-        "category": "user_communication",
-        "categoryLabel": "沟通偏好",
-        "icon": "💬",
-        "color": "#0284c7",
-        "description": "当页面有修改并需要用户查看时，默认执行以下流程： 1. 本地验证确保功能正常 2. 推送代码到 GitHub (origin + org) 3. 自动部署...",
-        "keywords": [
-          "部署",
-          "GitHub Pages",
-          "线上链接",
-          "自动部署",
-          "页面变化"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
         "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "沟通偏好",
@@ -845,10 +825,10 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 22,
+    "total": 20,
     "byCategory": {
       "development_practice_specification": {
-        "count": 3,
+        "count": 2,
         "label": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
@@ -862,7 +842,7 @@
         "description": "用户基本信息、身份背景、个人特征"
       },
       "user_communication": {
-        "count": 5,
+        "count": 4,
         "label": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
@@ -893,13 +873,13 @@
   },
   "growthHistory": {
     "dates": [
-      "02-26",
       "02-27",
       "02-28",
       "03-01",
       "03-01",
       "03-01",
       "03-02",
+      "03-01",
       "03-01",
       "03-01",
       "03-01",
@@ -919,10 +899,10 @@
       30,
       30,
       30,
-      30,
       31,
       31,
-      31
+      31,
+      32
     ],
     "knowledge": [
       150,
@@ -944,7 +924,6 @@
       19,
       19,
       19,
-      19,
       20,
       20,
       20,
@@ -954,7 +933,8 @@
       21,
       21,
       21,
-      21
+      21,
+      20
     ]
   },
   "achievements": [
@@ -1038,7 +1018,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有35项技能，触类旁通",
+      "desc": "拥有36项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-02",
       "unlocked": true,
@@ -1087,8 +1067,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 70,
-      "progressText": "35/50",
+      "progress": 72,
+      "progressText": "36/50",
       "date": "???"
     },
     {
@@ -1111,8 +1091,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 73,
-      "progressText": "22/30",
+      "progress": 67,
+      "progressText": "20/30",
       "date": "???"
     }
   ]

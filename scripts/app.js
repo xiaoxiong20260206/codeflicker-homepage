@@ -504,39 +504,6 @@ function renderAbilitiesSection() {
     
     // 渲染成就墙
     renderAchievements(achievements);
-    
-    // 渲染技能云图
-    renderSkillCloud(skills);
-}
-
-// 渲染技能云图
-function renderSkillCloud(skills) {
-    const container = document.getElementById('skill-cloud');
-    if (!container || !skills?.categories) return;
-    
-    // 收集所有技能
-    const allSkills = [];
-    Object.entries(skills.categories).forEach(([catName, cat]) => {
-        if (cat.skills) {
-            cat.skills.forEach(skill => {
-                allSkills.push({
-                    name: skill.name,
-                    level: skill.level,
-                    description: skill.description,
-                    category: catName
-                });
-            });
-        }
-    });
-    
-    // 按等级排序（高等级在前）
-    allSkills.sort((a, b) => b.level - a.level);
-    
-    // 生成标签
-    container.innerHTML = allSkills.map(skill => {
-        const lvClass = 'lv' + Math.min(skill.level, 5);
-        return `<span class="cloud-tag ${lvClass}" title="${skill.description}">${skill.name}</span>`;
-    }).join('');
 }
 
 function getLevelClass(level) {

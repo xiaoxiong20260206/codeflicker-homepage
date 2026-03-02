@@ -249,8 +249,8 @@ function renderSelectedReport(index) {
     const report = reports[index];
     
     // ========== v7.1: 三板块渲染 ==========
-    // 板块一：核心进展
-    renderCoreProgress(report.coreProgress || report.highlights || []);
+    // 板块一：核心进展（传入capabilityGrowth以便补充能力提升）
+    renderCoreProgress(report.coreProgress || report.highlights || [], report.capabilityGrowth || report);
     
     // 板块二：交付情况
     renderDeliveries(report.deliveries || []);
@@ -262,29 +262,61 @@ function renderSelectedReport(index) {
     renderDailyTrendChart();
 }
 
-// ========== v7.4: 板块一 - 核心进展 (分类显示) ==========
-function renderCoreProgress(progress) {
+// ========== v7.5: 板块一 - 核心进展 (分类显示 + 从capabilityGrowth补充能力提升) ==========
+function renderCoreProgress(progress, capabilityGrowth) {
     const container = document.getElementById('core-progress-list');
     if (!container) return;
-    
-    if (!progress || progress.length === 0) {
-        container.innerHTML = '<div class="progress-empty">— 今日无进展记录</div>';
-        return;
-    }
     
     // 分类整理进展项
     const deliveryItems = [];  // 交付情况
     const capabilityItems = []; // 能力提升
     
-    progress.forEach(item => {
-        if (item.startsWith('💬') || item.startsWith('📁')) {
-            deliveryItems.push(item);
-        } else if (item.startsWith('⚡') || item.startsWith('🧠') || item.startsWith('📚')) {
-            capabilityItems.push(item);
-        } else {
-            deliveryItems.push(item);
+    // 从 coreProgress 数组中分类
+    if (progress && progress.length > 0) {
+        progress.forEach(item => {
+            if (item.startsWith('💬') || item.startsWith('📁')) {
+                deliveryItems.push(item);
+            } else if (item.startsWith('⚡') || item.startsWith('🧠') || item.startsWith('📚')) {
+                capabilityItems.push(item);
+            } else {
+                deliveryItems.push(item);
+            }
+        });
+    }
+    
+    // 如果能力提升为空，从 capabilityGrowth 数据中补充
+    if (capabilityItems.length === 0 && capabilityGrowth) {
+        const skillChange = capabilityGrowth.skillChange || 0;
+        const memoryChange = capabilityGrowth.memoryChange || 0;
+        const knowledgeChange = capabilityGrowth.knowledgeChange || 0;
+        
+        // 技能变化
+        if (skillChange > 0) {
+            const newSkills = capabilityGrowth.newSkills || [];
+            if (newSkills.length > 0) {
+                const skillNames = newSkills.slice(0, 2).map(s => (s.name || s).replace('✨ ', '')).join('、');
+                capabilityItems.push(`⚡ 新增 ${skillChange} 个技能: ${skillNames}${newSkills.length > 2 ? '...' : ''}`);
+            } else {
+                capabilityItems.push(`⚡ 技能库扩展 +${skillChange}`);
+            }
         }
-    });
+        
+        // 记忆变化
+        if (memoryChange > 0) {
+            const newMemory = capabilityGrowth.newMemory || [];
+            if (newMemory.length > 0) {
+                const memTitles = newMemory.slice(0, 2).map(m => (m.title || m).replace(/^🆕\n?新增: |^🔄\n?更新: /g, '')).join('、');
+                capabilityItems.push(`🧠 新增 ${memoryChange} 条记忆: ${memTitles}${newMemory.length > 2 ? '...' : ''}`);
+            } else {
+                capabilityItems.push(`🧠 记忆库强化 +${memoryChange}`);
+            }
+        }
+        
+        // 知识变化
+        if (knowledgeChange > 0) {
+            capabilityItems.push(`📚 知识库扩展 +${knowledgeChange} 篇文档`);
+        }
+    }
     
     let html = '';
     

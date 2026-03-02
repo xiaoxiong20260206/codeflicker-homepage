@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-02T11:47:02.645652",
+  "generatedAt": "2026-03-02T11:57:28.405816",
   "summary": {
     "totalDays": 6,
     "latestDate": "2026-03-01",
@@ -51,12 +51,252 @@
       "memoryCount": 20,
       "skillChange": 0,
       "knowledgeChange": 0,
-      "memoryChange": 0,
+      "memoryChange": 3,
       "highlights": [
         "对话任务摘要",
-        "🧠 技能库（Skills）",
-        "📚 知识库（Knowledge Base）"
-      ]
+        "🧠 技能库更新",
+        "💾 记忆库更新",
+        "🚀 2个活跃项目",
+        "📝 32次代码提交"
+      ],
+      "details": {
+        "projects": [
+          {
+            "name": "个人助理_V1",
+            "commitCount": 0,
+            "fileChangeCount": 46,
+            "deployUrl": null,
+            "commits": [],
+            "features": [],
+            "improvements": [
+              "修改前端文件 12 个",
+              "修改代码文件 11 个",
+              "更新文档 11 个"
+            ],
+            "fixes": [],
+            "outcome": [
+              "生成/更新网页 12 个",
+              "完善文档 11 份",
+              "功能代码优化"
+            ],
+            "deliverables": [
+              {
+                "name": "test-section-overview.html",
+                "path": "test-section-overview.html",
+                "type": "page",
+                "icon": "🌐"
+              },
+              {
+                "name": "test-favicon.html",
+                "path": "test-favicon.html",
+                "type": "page",
+                "icon": "🌐"
+              },
+              {
+                "name": "daily-2026-02-28.html",
+                "path": "github-backup/daily-report/web/daily-2026-02-28.html",
+                "type": "page",
+                "icon": "🌐"
+              },
+              {
+                "name": "daily-2026-02-28.md",
+                "path": "github-backup/daily-report/reports/daily-2026-02-28.md",
+                "type": "document",
+                "icon": "📄"
+              },
+              {
+                "name": "SKILL.md",
+                "path": "github-backup/skills-codeflicker/qingshuang-research-style/SKILL.md",
+                "type": "document",
+                "icon": "📄"
+              },
+              {
+                "name": "components.md",
+                "path": "github-backup/skills-codeflicker/zelda-style/references/components.md",
+                "type": "document",
+                "icon": "📄"
+              }
+            ]
+          },
+          {
+            "name": "codeflicker-homepage",
+            "commitCount": 32,
+            "fileChangeCount": 3,
+            "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage",
+            "commits": [
+              {
+                "hash": "f4b30a50",
+                "message": "fix: resolve abilities page horizontal overflow issue",
+                "author": "shenlang",
+                "date": "2026-03-01 23:54:27 +0800"
+              },
+              {
+                "hash": "ed71555f",
+                "message": "style: migrate from TOTK to BOTW visual style",
+                "author": "shenlang",
+                "date": "2026-03-01 23:38:07 +0800"
+              },
+              {
+                "hash": "087b2851",
+                "message": "fix: remove obsolete path detection logic for data loading",
+                "author": "shenlang",
+                "date": "2026-03-01 23:20:45 +0800"
+              },
+              {
+                "hash": "a31195eb",
+                "message": "feat: add tooltip for achievement items in achievement wall",
+                "author": "shenlang",
+                "date": "2026-03-01 23:18:37 +0800"
+              },
+              {
+                "hash": "304c97fc",
+                "message": "feat: add upgrade advice to tree tooltips",
+                "author": "shenlang",
+                "date": "2026-03-01 23:15:18 +0800"
+              },
+              {
+                "hash": "4ca2006f",
+                "message": "refactor: simplify knowledge tree to show only category nodes",
+                "author": "shenlang",
+                "date": "2026-03-01 23:11:30 +0800"
+              },
+              {
+                "hash": "a366c41f",
+                "message": "style: comprehensive visual polish for Zelda TOTK style",
+                "author": "shenlang",
+                "date": "2026-03-01 23:08:35 +0800"
+              },
+              {
+                "hash": "4d9bf3f5",
+                "message": "refactor: clean up project structure and remove obsolete files",
+                "author": "shenlang",
+                "date": "2026-03-01 22:43:37 +0800"
+              }
+            ],
+            "features": [
+              "feat: add tooltip for achievement items in achievement wall",
+              "feat: add upgrade advice to tree tooltips",
+              "feat: add detailed tooltip for project cards on hover",
+              "feat: display short names on leaf nodes instead of icons",
+              "feat: display Chinese names for knowledge tree with detailed source descriptions"
+            ],
+            "improvements": [
+              "refactor: simplify knowledge tree to show only category nodes",
+              "refactor: clean up project structure and remove obsolete files",
+              "refactor: restructure to 3-Tab layout (日报/我的作品/我的能力)",
+              "Daily update: 2026-03-01",
+              "Daily update: 2026-03-01"
+            ],
+            "fixes": [
+              "fix: resolve abilities page horizontal overflow issue",
+              "fix: remove obsolete path detection logic for data loading",
+              "fix: resolve data loading and DOM errors for unified page"
+            ],
+            "outcome": [
+              "修复: fix: resolve abilities page horizontal o",
+              "修复: fix: remove obsolete path detection logi",
+              "新增: feat: add tooltip for achievement items ",
+              "新增: feat: add upgrade advice to tree tooltip",
+              "优化: refactor: simplify knowledge tree to sho"
+            ],
+            "deliverables": []
+          }
+        ],
+        "conversations": [
+          {
+            "title": "AI Product Ultimate Form Technical Implementation",
+            "intent": "将AI产品终极形态思考报告中的技术实施方案独立为第五章并完成部署",
+            "summary": "将技术实施方案从part4.html分离创建独立的part5.html，更新所有导航链接和index.html入口，完成Vercel部署和GitHub推送。最终形成包含5个部分的完整结构：问题诊断、关键抉择、验证分析、AI分身实证和技术实施方案。",
+            "time": "2026-03-01 23:31",
+            "tags": [
+              "ai-product",
+              "technical-implementation",
+              "vercel-deployment",
+              "git-versioning",
+              "html-restructuring"
+            ]
+          },
+          {
+            "title": "Feishu AI Bot Integration with CodeFlicker",
+            "intent": "实现通过飞书IM软件直接与AI助理交互的自动化流程",
+            "summary": "",
+            "time": "2026-03-01 19:31",
+            "tags": [
+              "feishu",
+              "automation",
+              "python",
+              "applescript",
+              "bot"
+            ]
+          },
+          {
+            "title": "GitHub Pages URL Verification and Correction",
+            "intent": "验证并纠正字节AI指南的错误GitHub Pages URL，确保文档可访问性",
+            "summary": "识别出原URL https://my-ai-research-lab.github.io/bytedance-ai-research 404错误，确认正确部署地址为 https://xiaoxiong20260206.github.io/bytedance-ai-guide/home.html。通过feishu-bot同时发送私聊和群通知，验证了仓库存在性、Pages部署状态和内容可访问性。",
+            "time": "2026-03-01 16:05",
+            "tags": [
+              "github-pages",
+              "url-fix",
+              "feishu-bot",
+              "deployment-check",
+              "documentation"
+            ]
+          }
+        ],
+        "skillChanges": {
+          "new": [
+            {
+              "name": "qingshuang-research-style",
+              "description": "清爽调研报告风格的**纯样式规范**。当用户提到\"清爽调研报告风格\"时使用此技能。本技能**仅提供CSS样式和视觉设计规"
+            },
+            {
+              "name": "zelda-style",
+              "description": "\"This skill should be used when the user asks to create a '塞"
+            },
+            {
+              "name": "docs-shuttle",
+              "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+            }
+          ],
+          "updated": []
+        },
+        "knowledgeChanges": {
+          "new": [],
+          "updated": []
+        },
+        "memoryChanges": {
+          "new": [
+            {
+              "title": "网页开发预览与部署流程偏好",
+              "category": "user_communication"
+            },
+            {
+              "title": "身份保密规则",
+              "category": "constraint_or_forbidden_rule"
+            },
+            {
+              "title": "日报系统优化最佳实践",
+              "category": "task_flow_experience"
+            }
+          ],
+          "updated": [
+            {
+              "title": "输出链接格式规范",
+              "category": "development_practice_specification"
+            },
+            {
+              "title": "用户身份信息",
+              "category": "user_info"
+            }
+          ]
+        },
+        "skillsTotal": 30,
+        "knowledgeTotal": 150,
+        "knowledgeSizeKb": 987.4,
+        "knowledgeCategories": 3,
+        "memoryTotal": 20,
+        "trend": "growing"
+      }
     },
     {
       "date": "2026-02-28",

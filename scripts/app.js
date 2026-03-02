@@ -277,15 +277,142 @@ function renderSelectedReport(index) {
     updateCapChange('cap-knowledge-change', report.knowledgeChange);
     updateCapChange('cap-memory-change', report.memoryChange);
     
-    // 日报iframe
-    const iframe = document.getElementById('daily-iframe');
-    const dailyLink = document.getElementById('daily-link');
-    if (iframe && report.htmlUrl) {
-        iframe.src = report.htmlUrl;
+    // ========== v7.0: 渲染日报详细内容（替代iframe） ==========
+    renderReportDetails(report);
+}
+
+// ========== v7.0: 日报详情渲染 ==========
+function renderReportDetails(report) {
+    const details = report.details || {};
+    
+    // 渲染对话任务
+    renderConversations(details.conversations || []);
+    
+    // 渲染项目活动
+    renderProjects(details.projects || []);
+    
+    // 渲染能力变化
+    renderCapabilityChanges('skill-changes-content', details.skillChanges || {});
+    renderCapabilityChanges('knowledge-changes-content', details.knowledgeChanges || {});
+    renderCapabilityChanges('memory-changes-content', details.memoryChanges || {});
+}
+
+function renderConversations(conversations) {
+    const container = document.getElementById('conversations-content');
+    if (!container) return;
+    
+    if (conversations.length === 0) {
+        container.innerHTML = '<div class="no-changes">今日无对话任务记录</div>';
+        return;
     }
-    if (dailyLink && report.htmlUrl) {
-        dailyLink.href = report.htmlUrl;
+    
+    container.innerHTML = conversations.map(conv => `
+        <div class="conversation-card">
+            <div class="conversation-title">💬 ${escapeHtml(conv.title || '未命名对话')}</div>
+            ${conv.intent ? `<div class="conversation-intent">🎯 ${escapeHtml(conv.intent)}</div>` : ''}
+            ${conv.summary ? `<div class="conversation-summary">${escapeHtml(conv.summary)}</div>` : ''}
+            ${conv.time ? `<div class="conversation-time">🕒 ${conv.time}</div>` : ''}
+            ${conv.tags && conv.tags.length > 0 ? `
+                <div class="conversation-tags">
+                    ${conv.tags.map(tag => `<span class="conversation-tag">${escapeHtml(tag)}</span>`).join('')}
+                </div>
+            ` : ''}
+        </div>
+    `).join('');
+}
+
+function renderProjects(projects) {
+    const container = document.getElementById('projects-content');
+    if (!container) return;
+    
+    if (projects.length === 0) {
+        container.innerHTML = '<div class="no-changes">今日无项目活动</div>';
+        return;
     }
+    
+    container.innerHTML = projects.map((proj, idx) => {
+        const hasDeployUrl = !!proj.deployUrl;
+        const outcomes = [...(proj.features || []), ...(proj.improvements || []), ...(proj.fixes || [])].slice(0, 5);
+        const commits = proj.commits || [];
+        
+        return `
+            <div class="project-card ${hasDeployUrl ? 'has-deploy' : ''}">
+                <div class="project-header-row">
+                    <div class="project-name-title">
+                        <span>📁</span>
+                        <span>${escapeHtml(proj.name)}</span>
+                    </div>
+                    <div class="project-stats">
+                        ${proj.commitCount > 0 ? `<span class="project-stat">⚡ ${proj.commitCount} 提交</span>` : ''}
+                        ${proj.fileChangeCount > 0 ? `<span class="project-stat">📝 ${proj.fileChangeCount} 文件</span>` : ''}
+                        ${hasDeployUrl ? `<a href="${proj.deployUrl}" target="_blank" class="project-deploy-link">🔗 访问</a>` : ''}
+                    </div>
+                </div>
+                ${outcomes.length > 0 ? `
+                    <div class="project-outcomes">
+                        ${outcomes.map(o => `<div class="outcome-item">${escapeHtml(o)}</div>`).join('')}
+                    </div>
+                ` : ''}
+                ${commits.length > 0 ? `
+                    <div class="project-commits-toggle" onclick="toggleProjectCommits(${idx})">
+                        📜 查看提交记录 (${commits.length})
+                    </div>
+                    <div class="project-commits-list" id="project-commits-${idx}">
+                        ${commits.map(c => `
+                            <div class="commit-item">
+                                <span class="commit-hash">${c.hash || ''}</span>
+                                <span class="commit-message">${escapeHtml(c.message || '')}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                ` : ''}
+            </div>
+        `;
+    }).join('');
+}
+
+function toggleProjectCommits(idx) {
+    const el = document.getElementById(`project-commits-${idx}`);
+    if (el) {
+        el.classList.toggle('expanded');
+    }
+}
+
+window.toggleProjectCommits = toggleProjectCommits;
+
+function renderCapabilityChanges(containerId, changes) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    const newItems = changes.new || [];
+    const updatedItems = changes.updated || [];
+    
+    if (newItems.length === 0 && updatedItems.length === 0) {
+        container.innerHTML = '<div class="no-changes">无变化</div>';
+        return;
+    }
+    
+    let html = '';
+    
+    newItems.forEach(item => {
+        const name = item.name || item.title || '未命名';
+        html += `<span class="change-tag new">🌟 新增: ${escapeHtml(name)}</span>`;
+    });
+    
+    updatedItems.forEach(item => {
+        const name = item.name || item.title || '未命名';
+        html += `<span class="change-tag updated">🔄 更新: ${escapeHtml(name)}</span>`;
+    });
+    
+    container.innerHTML = html;
+}
+
+// HTML转义工具函数
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 function getTrendText(report) {

@@ -1053,6 +1053,10 @@ function renderSkillTreeGraph(skills) {
         'knowledge-base': '知识库',
         'personal-assistant': '助理',
         'find-skills': '发现',
+        'meta-execution': '元执行',
+        'learn-from-mistakes': '举一反三',
+        'web-dev-workflow': '网页流程',
+        'promotion-coaching': '晋升辅导',
         
         // === 调研分析 ===
         'industry-research': '行研',
@@ -1061,6 +1065,7 @@ function renderSkillTreeGraph(skills) {
         'apify-trend-analysis': '趋势',
         'apify-market-research': '市场',
         'apify-competitor-intelligence': '竞情',
+        'daily-ai-report': 'AI日报',
         
         // === 文档处理 ===
         'pdf': 'PDF',
@@ -1068,6 +1073,7 @@ function renderSkillTreeGraph(skills) {
         'docx': 'Word',
         'xlsx': 'Excel',
         'canvas-design': '画布',
+        'keynote': 'Keynote',
         
         // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
@@ -1087,15 +1093,18 @@ function renderSkillTreeGraph(skills) {
         // === 发布部署 ===
         'github-deploy-publisher': 'GitHub',
         'yuque-publisher': '语雀',
-        'docs-shuttle': '文档',
+        'ks-kim-docs-shuttle': 'KIM文档',
         'mcp-builder': 'MCP',
         
         // === 投资理财 ===
         'stock-analysis': '股票',
         'investment-analyzer': '投资',
+        'investment-tracker': '基金',
         
         // === 效率工具 ===
-        'feishu-assistant': '飞书'
+        'feishu-assistant': '飞书',
+        'ai-column-writer': '专栏',
+        'night-task-runner': '夜间任务'
     };
     
     let idx = 0;
@@ -1266,7 +1275,20 @@ function renderKnowledgeTreeGraph(knowledge) {
         'guides': '使用指南',
         'investment': '投资理财',
         'ai-research': 'AI研究',
-        'product': '产品思考'
+        'product': '产品思考',
+        'mcp-research': 'MCP研究'
+    };
+    
+    // 知识目录图标映射
+    const knowledgeIconMap = {
+        'personal-writings': '✍️',
+        'rd-efficiency': '⚡',
+        'financial': '💰',
+        'experience': '💡',
+        'guides': '📖',
+        'ai-research': '🤖',
+        'product': '📊',
+        'mcp-research': '🔌'
     };
     
     // 知识目录来源描述映射
@@ -1311,13 +1333,14 @@ function renderKnowledgeTreeGraph(knowledge) {
         const chineseName = knowledgeNameMap[dirKey] || dirKey;
         const sourceDesc = knowledgeSourceMap[dirKey] || `${chineseName}相关文档`;
         const dirId = 'knowledge-dir-' + idx++;
+        const dirIcon = knowledgeIconMap[dirKey] || dir.icon || '📁';
         
         // 根据文件数量计算等级：1-10为Lv1, 11-30为Lv2, 31-60为Lv3, 61-100为Lv4, 100+为Lv5
         const level = dir.count <= 10 ? 1 : dir.count <= 30 ? 2 : dir.count <= 60 ? 3 : dir.count <= 100 ? 4 : 5;
         
         AppState.dataMap[dirId] = { 
             name: chineseName, 
-            icon: '📁', 
+            icon: dirIcon, 
             level: level,
             description: `${chineseName}知识库，共收录${dir.count}个文档${dir.sizeKB ? `，总计${dir.sizeKB}KB` : ''}`,
             source: sourceDesc
@@ -1329,7 +1352,7 @@ function renderKnowledgeTreeGraph(knowledge) {
                 <div class="leaf-node lv${level}" 
                      style="border-color: var(--node-color); color: var(--node-color);"
                      onmouseenter="showTreeTooltip(event, '${dirId}', 'knowledge')" onmouseleave="hideTooltip()">
-                    <span class="leaf-icon">📁</span>
+                    <span class="leaf-icon">${dirIcon}</span>
                     <span class="leaf-name">${chineseName}</span>
                     <span class="leaf-level" style="border-color: var(--node-color);">${dir.count}</span>
                 </div>

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-03T08:01:14.396312",
+  "generatedAt": "2026-03-03T09:02:15.253473",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 5,
-    "totalExp": 6490,
-    "expProgress": 49.7,
+    "totalExp": 6590,
+    "expProgress": 53.0,
     "currentThreshold": 5000,
     "nextThreshold": 8000,
     "stats": {
@@ -15,15 +15,15 @@
       "memory": 100,
       "execution": 100,
       "learning": 97.69999999999999,
-      "insight": 79.86486486486487,
+      "insight": 80.0,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 37,
+    "total": 38,
     "categories": {
-      "核心能力": {
-        "icon": "⭐",
+      "学习成长": {
+        "icon": "🥋",
         "color": "#fbbf24",
         "skills": [
           {
@@ -61,6 +61,38 @@
         ],
         "count": 4,
         "avgLevel": 3.5
+      },
+      "思考做事": {
+        "icon": "🔄",
+        "color": "#5ec4d4",
+        "skills": [
+          {
+            "name": "web-dev-workflow",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 70,
+            "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
+            "lastUpdated": "2026-03-02"
+          },
+          {
+            "name": "promotion-coaching",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 70,
+            "description": "晋升辅导全流程：材料整理→PPT生成→答辩攻略→模拟QA",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "learn-from-mistakes",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 64,
+            "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
+            "lastUpdated": "2026-03-03"
+          }
+        ],
+        "count": 3,
+        "avgLevel": 3.7
       },
       "调研分析": {
         "icon": "🔬",
@@ -357,30 +389,6 @@
         ],
         "count": 1,
         "avgLevel": 3.0
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "skills": [
-          {
-            "name": "web-dev-workflow",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 70,
-            "description": "---",
-            "lastUpdated": "2026-03-02"
-          },
-          {
-            "name": "learn-from-mistakes",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 64,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          }
-        ],
-        "count": 2,
-        "avgLevel": 3.5
       }
     }
   },
@@ -1098,7 +1106,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有37项技能，触类旁通",
+      "desc": "拥有38项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-03",
       "unlocked": true,
@@ -1147,8 +1155,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 74,
-      "progressText": "37/50",
+      "progress": 76,
+      "progressText": "38/50",
       "date": "???"
     },
     {

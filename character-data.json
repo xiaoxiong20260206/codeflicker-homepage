@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-04T06:00:27.690565",
+  "generatedAt": "2026-03-04T06:49:34.445050",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
-    "level": 6,
-    "totalExp": 8050,
-    "expProgress": 1.2,
-    "currentThreshold": 8000,
-    "nextThreshold": 12000,
+    "level": 5,
+    "totalExp": 7900,
+    "expProgress": 96.7,
+    "currentThreshold": 5000,
+    "nextThreshold": 8000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
@@ -70,7 +70,7 @@
             "name": "web-dev-workflow",
             "source": "林克核心能力",
             "level": 4,
-            "exp": 70,
+            "exp": 73,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
             "lastUpdated": "2026-03-02"
           },
@@ -406,7 +406,7 @@
             "name": "ai-column-writer",
             "source": "codeflicker",
             "level": 4,
-            "exp": 73,
+            "exp": 76,
             "description": "---",
             "lastUpdated": "2026-03-03"
           },
@@ -475,7 +475,7 @@
         "icon": "📁",
         "color": "#64748b",
         "description": "financial相关文档",
-        "fileCount": 3,
+        "fileCount": 4,
         "sizeKB": 0.0,
         "heatLevel": 2,
         "recentCount": 0
@@ -500,25 +500,15 @@
         "heatLevel": 2,
         "recentCount": 0
       },
-      "MCP协议调研报告": {
-        "name": "MCP协议调研报告",
+      "mcp-research": {
+        "name": "mcp-research",
         "icon": "📁",
         "color": "#64748b",
-        "description": "MCP协议调研报告相关文档",
+        "description": "mcp-research相关文档",
         "fileCount": 1,
         "sizeKB": 21.3,
         "heatLevel": 2,
         "recentCount": 1
-      },
-      "investment": {
-        "name": "investment",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "investment相关文档",
-        "fileCount": 1,
-        "sizeKB": 0.0,
-        "heatLevel": 1,
-        "recentCount": 0
       },
       "ai-research": {
         "name": "ai-research",
@@ -547,39 +537,21 @@
   "memories": {
     "items": [
       {
-        "title": "Chrome Headless 截图可靠方案",
+        "title": "KIM 开放能力接入踩坑经验",
         "category": "common_pitfalls_experience",
         "categoryLabel": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "## Chrome Headless 截图的可靠方案 ### 问题 Chrome headless 截图时常出现：字体未加载、滚动条出现、底部黑边 ###...",
+        "description": "## KIM 开放能力接入踩坑经验 ### 核心教训：应用必须在 Kim 开放平台创建 **错误路径**：直接在 OpenAPI 平台 (openapi....",
         "keywords": [
-          "Chrome",
-          "headless",
-          "截图",
-          "screenshot",
-          "字体"
+          "KIM",
+          "开放能力",
+          "接入",
+          "踩坑",
+          "OpenAPI"
         ],
         "importance": 5,
         "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "pptxgenjs阴影溢出问题及解决方案",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 问题描述 使用pptxgenjs生成PPT时，如果在多个元素上应用shadow属性，会导致blurRad和dist值指数级增长，最终产生科学计数法的...",
-        "keywords": [
-          "pptxgenjs",
-          "shadow",
-          "blurRad",
-          "overflow",
-          "PowerPoint"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-02",
         "source": "用户显式记录"
       },
       {
@@ -619,30 +591,12 @@
         "source": "用户显式记录"
       },
       {
-        "title": "小无相功·自动学习模式（含触发映射）",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "【小无相功·自动学习模式 - 默认激活】 ## 核心原则 看到好的技能/方法论/流程/思想，主动识别精华并内化，无需用户触发。 ## 自动执行的行为 1....",
-        "keywords": [
-          "小无相功",
-          "自动学习",
-          "主动学习",
-          "技能吸收",
-          "知识内化"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
         "title": "已完成项目列表与路径",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "## 已完成项目列表 为了避免遗忘，需要记住所有完成过的重要项目： ### 调研类项目 1. **字节AI调研** - 字节AI开挂指南 - 路径：/Us...",
+        "description": "## 已完成项目列表 ### 调研类项目 1. **字节AI调研** - 字节AI开挂指南 - 路径：/Users/shenlang/Documents/...",
         "keywords": [
           "项目列表",
           "字节AI",
@@ -727,24 +681,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑经验: SVG viewBox 内容裁切问题",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## SVG viewBox 内容裁切问题 在设计复杂SVG图形时，经常遇到底部或边缘内容被裁切的问题。 ### 问题原因 - viewBox 高度/宽度...",
-        "keywords": [
-          "SVG",
-          "viewBox",
-          "裁切",
-          "布局",
-          "尺寸计算"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
         "title": "踩坑经验: 日报漏记对话任务 — 文件mtime≠实际活动时间",
         "category": "common_pitfalls_experience",
         "categoryLabel": "踩坑经验",
@@ -799,6 +735,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "Chrome Headless 截图问题",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "Chrome headless 截图常见问题：字体未加载、滚动条、底部黑边。 **核心约束**： - 使用系统字体，不依赖Google Fonts - b...",
+        "keywords": [
+          "Chrome",
+          "headless",
+          "截图",
+          "配图",
+          "screenshot"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
         "title": "Keynote视觉设计系统增强经验",
         "category": "development_practice_specification",
         "categoryLabel": "开发实践",
@@ -835,6 +789,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "pptxgenjs阴影溢出问题",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 **核心约束**： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
+        "keywords": [
+          "pptxgenjs",
+          "shadow",
+          "阴影",
+          "溢出",
+          "PPT"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
@@ -847,6 +819,24 @@
           "写作",
           "PPT",
           "设计"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "小无相功·自动学习模式",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "## 小无相功·自动学习模式 **定位**：林克的核心元技能，用于持续自我进化。 **核心行为**：看到好的技能/方法论/流程/思想，主动识别并内化，无需...",
+        "keywords": [
+          "小无相功",
+          "自动学习",
+          "触发词映射",
+          "三千世界",
+          "自进化"
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
@@ -1141,6 +1131,23 @@
         "source": "用户显式记录"
       },
       {
+        "title": "SVG viewBox 内容裁切问题",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "SVG viewBox 设置不当会导致底部/边缘内容被裁切。 **核心约束**： - viewBox高度 = 最大元素y坐标 + 边距(20-40px) ...",
+        "keywords": [
+          "SVG",
+          "viewBox",
+          "裁切",
+          "网页开发"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
         "title": "文档修改同步规则",
         "category": "user_communication",
         "categoryLabel": "沟通偏好",
@@ -1156,52 +1163,6 @@
         ],
         "importance": 3,
         "updatedAt": "2026-02-23",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "流程经验: Creating a KIM Bot for Group Message Push",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "发现可复用模式: 已访问KIM开放平台并尝试创建应用，但需要用户扫码登录后才能继续完成应用创建、配置消息号能力和提交审批流程。",
-        "keywords": [
-          "配置",
-          "经验",
-          "流程"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "流程经验: Daily Reflection and Skill System Update",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "发现可复用模式: Daily Reflection and Skill System Update | 关键词: 经验, 流程",
-        "keywords": [
-          "经验",
-          "流程"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "流程经验: Keynote Presentation Design System Enhancement",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "发现可复用模式: 完成了3种风格(V4)Keynote文件的生成，更新了design-system.md中的视觉结构规范V2，重写了SKILL.md中的P...",
-        "keywords": [
-          "经验",
-          "流程"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -1251,24 +1212,9 @@
         "importance": 3,
         "updatedAt": "2026-03-03",
         "source": "用户显式记录"
-      },
-      {
-        "title": "踩坑经验: Keynote Presentation Design System Enhancement",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "问题描述: 完成了3种风格(V4)Keynote文件的生成，更新了design-system.md中的视觉结构规范V2，重写了SKILL.md中的Pitf...",
-        "keywords": [
-          "问题",
-          "经验"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
       }
     ],
-    "total": 41,
+    "total": 38,
     "byCategory": {
       "development_practice_specification": {
         "count": 5,
@@ -1292,7 +1238,7 @@
         "description": "沟通风格、工作模式、交互偏好"
       },
       "task_flow_experience": {
-        "count": 17,
+        "count": 14,
         "label": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
@@ -1326,8 +1272,6 @@
       "03-01",
       "03-01",
       "03-01",
-      "03-01",
-      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -1336,12 +1280,12 @@
       "03-02",
       "03-02",
       "03-02",
+      "03-03",
+      "03-03",
       "03-03"
     ],
     "skills": [
       31,
-      31,
-      31,
       32,
       32,
       32,
@@ -1352,6 +1296,8 @@
       39,
       39,
       39,
+      40,
+      40,
       40
     ],
     "knowledge": [
@@ -1372,8 +1318,6 @@
     ],
     "memories": [
       21,
-      21,
-      21,
       20,
       20,
       21,
@@ -1384,7 +1328,9 @@
       25,
       25,
       25,
-      41
+      41,
+      37,
+      38
     ]
   },
   "achievements": [
@@ -1485,7 +1431,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "41/30",
+      "progressText": "38/30",
       "date": "2026-03-04"
     },
     {

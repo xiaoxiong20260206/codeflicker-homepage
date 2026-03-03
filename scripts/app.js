@@ -107,9 +107,13 @@ async function ensureSectionRendered(sectionName) {
             AppState.renderedSections.add('works');
             break;
         case 'abilities':
+            await ensureReportsData(); // 图表需要reports数据，先加载
             renderAbilitiesSection();
-            await ensureReportsData(); // 图表需要reports数据
-            renderCharts();
+            // 延迟渲染图表，确保canvas已在DOM中可见
+            setTimeout(() => {
+                renderAbilityRadarChart();
+                renderTrendChart();
+            }, 100);
             AppState.renderedSections.add('abilities');
             break;
     }
@@ -222,6 +226,7 @@ function renderAboutSection() {
     const skills = AppState.characterData?.skills;
     const knowledge = AppState.characterData?.knowledge;
     const projects = AppState.projectsData;
+    const achievements = AppState.characterData?.achievements || [];
     
     if (!char || !skills || !knowledge) return;
     
@@ -242,6 +247,9 @@ function renderAboutSection() {
         const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
         aboutDays.textContent = days > 0 ? days + '+' : '30+';
     }
+    
+    // 渲染成就墙（在了解我Section中）
+    renderAchievements(achievements);
 }
 
 // ==================== 侧边栏渲染 ====================
@@ -2070,14 +2078,13 @@ function renderAbilityRadarChart() {
     const canvas = document.getElementById('abilityRadarChart');
     if (!canvas) return;
     
-    // 检查canvas是否有有效尺寸
-    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
-        console.log('abilityRadarChart: canvas not visible yet, will retry on section switch');
-        return;
-    }
+    // 移除可见性检查，信任ensureSectionRendered的setTimeout时序
     
     const stats = AppState.characterData?.character?.stats;
-    if (!stats) return;
+    if (!stats) {
+        console.log('abilityRadarChart: no stats data available');
+        return;
+    }
     
     // 销毁旧实例
     if (chartInstances.abilityRadarChart) {
@@ -2133,14 +2140,14 @@ function renderTrendChart() {
     const canvas = document.getElementById('trendChart');
     if (!canvas) return;
     
-    // 检查canvas是否有有效尺寸
-    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
-        console.log('trendChart: canvas not visible yet, will retry on section switch');
-        return;
-    }
+    // 强制跳过可见性检查，因为tab切换时canvas可能还未完全可见
+    // 由ensureSectionRendered的setTimeout保证时序
     
     const trend = AppState.reportsData?.trend;
-    if (!trend) return;
+    if (!trend) {
+        console.log('trendChart: no trend data available');
+        return;
+    }
     
     // 销毁旧实例
     if (chartInstances.trendChart) {

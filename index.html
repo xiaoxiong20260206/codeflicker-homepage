@@ -163,6 +163,201 @@
             border: 1px solid var(--sheikah-blue);
         }
         
+        /* ==================== 等级进度面板 ==================== */
+        .level-progress-panel {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .level-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .level-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .level-current {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--zelda-gold-light);
+            text-shadow: 0 0 10px rgba(201, 162, 39, 0.5);
+        }
+        
+        .level-arrow {
+            color: var(--sheikah-blue);
+            font-size: 14px;
+        }
+        
+        .level-next {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        
+        .level-percent {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .exp-bar-container {
+            position: relative;
+            height: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 6px;
+            border: 1px solid var(--sheikah-blue-dark);
+        }
+        
+        .exp-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, 
+                var(--sheikah-blue-dark) 0%, 
+                var(--sheikah-blue) 50%, 
+                var(--sheikah-blue-light) 100%
+            );
+            border-radius: 5px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            position: relative;
+        }
+        
+        .exp-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%
+            );
+            animation: exp-shimmer 2s infinite;
+        }
+        
+        @keyframes exp-shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .exp-bar-fill.almost-full {
+            background: linear-gradient(90deg, 
+                var(--zelda-gold-dark) 0%, 
+                var(--zelda-gold) 50%, 
+                var(--zelda-gold-light) 100%
+            );
+            box-shadow: 0 0 15px rgba(201, 162, 39, 0.7);
+            animation: gold-pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes gold-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(201, 162, 39, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.9); }
+        }
+        
+        .exp-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+        
+        .exp-current {
+            font-family: var(--font-mono);
+        }
+        
+        .exp-needed {
+            font-family: var(--font-mono);
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        /* 升级指南 */
+        .upgrade-guide {
+            margin-top: var(--spacing-sm);
+            border-top: 1px solid var(--sheikah-blue-dark);
+            padding-top: var(--spacing-sm);
+        }
+        
+        .upgrade-guide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 6px 0;
+            transition: color var(--transition-fast);
+        }
+        
+        .upgrade-guide-header:hover {
+            color: var(--sheikah-blue-light);
+        }
+        
+        .upgrade-guide-title {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .upgrade-guide-toggle {
+            font-size: 10px;
+            color: var(--sheikah-blue);
+            transition: transform var(--transition-fast);
+        }
+        
+        .upgrade-guide-toggle.expanded {
+            transform: rotate(180deg);
+        }
+        
+        .upgrade-guide-content {
+            display: none;
+            padding-top: var(--spacing-sm);
+        }
+        
+        .upgrade-guide-content.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .upgrade-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 0;
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.8);
+        }
+        
+        .upgrade-item-icon {
+            font-size: 12px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .upgrade-item-text {
+            flex: 1;
+        }
+        
+        .upgrade-item-exp {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--zelda-gold);
+            font-weight: 600;
+        }
+        
         /* 统计面板 */
         .stats-panel {
             display: grid;
@@ -2294,6 +2489,62 @@
                 <div class="character-tags">
                     <span class="tag tag-gold">小无相功</span>
                     <span class="tag tag-green">洞察觉醒</span>
+                </div>
+            </div>
+            
+            <!-- 等级进度面板 -->
+            <div class="level-progress-panel">
+                <div class="level-header">
+                    <div class="level-info">
+                        <span class="level-current" id="level-current">LV.5</span>
+                        <span class="level-arrow">→</span>
+                        <span class="level-next" id="level-next">LV.6</span>
+                    </div>
+                    <span class="level-percent" id="level-percent">96.7%</span>
+                </div>
+                <div class="exp-bar-container">
+                    <div class="exp-bar-fill" id="exp-bar-fill" style="width: 96.7%"></div>
+                </div>
+                <div class="exp-text">
+                    <span class="exp-current" id="exp-current">7900 EXP</span>
+                    <span class="exp-needed" id="exp-needed">还需 100 EXP</span>
+                </div>
+                
+                <div class="upgrade-guide">
+                    <div class="upgrade-guide-header" onclick="toggleUpgradeGuide()">
+                        <span class="upgrade-guide-title">
+                            <span>📈</span>
+                            <span>如何升级</span>
+                        </span>
+                        <span class="upgrade-guide-toggle" id="upgrade-toggle">▼</span>
+                    </div>
+                    <div class="upgrade-guide-content" id="upgrade-guide-content">
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">💬</span>
+                            <span class="upgrade-item-text">完成对话任务</span>
+                            <span class="upgrade-item-exp">+50</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">📁</span>
+                            <span class="upgrade-item-text">完成项目交付</span>
+                            <span class="upgrade-item-exp">+200</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">⚡</span>
+                            <span class="upgrade-item-text">习得新技能</span>
+                            <span class="upgrade-item-exp">+100</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">🧠</span>
+                            <span class="upgrade-item-text">新增记忆</span>
+                            <span class="upgrade-item-exp">+30</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">📚</span>
+                            <span class="upgrade-item-text">新增知识文档</span>
+                            <span class="upgrade-item-exp">+20</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             

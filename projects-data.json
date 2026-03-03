@@ -1,10 +1,12 @@
 {
-  "generatedAt": "2026-03-02T16:57:48.883040",
+  "generatedAt": "2026-03-04T07:55:25.639235",
   "summary": {
-    "total": 8,
-    "deployed": 5,
-    "inDevelopment": 2,
-    "archived": 1
+    "total": 26,
+    "deployed": 7,
+    "inDevelopment": 0,
+    "archived": 1,
+    "featured": 2,
+    "excellent": 3
   },
   "categories": {
     "research": {
@@ -20,10 +22,16 @@
       "count": 3
     },
     "homepage": {
-      "name": "主页类",
-      "icon": "🏠",
-      "color": "#38bdf8",
+      "name": "其他",
+      "icon": "📦",
+      "color": "#64748b",
       "count": 1
+    },
+    "docs": {
+      "name": "文档类",
+      "icon": "📄",
+      "color": "#fbbf24",
+      "count": 18
     }
   },
   "projects": [
@@ -55,7 +63,20 @@
         "覆盖 Agent 全栈架构",
         "金融场景实践洞察"
       ],
-      "screenshot": "screenshots/bytedance-ai-guide.png"
+      "screenshot": "screenshots/bytedance-ai-guide.png",
+      "metrics": {
+        "fileCount": 263
+      },
+      "quality": {
+        "score": 80,
+        "level": "featured",
+        "tags": [
+          "🏆 精选",
+          "已部署",
+          "大型项目",
+          "调研报告"
+        ]
+      }
     },
     {
       "id": "ai-product-ultimate",
@@ -85,57 +106,20 @@
         "to C/to B 场景区分",
         "红队分析"
       ],
-      "screenshot": "screenshots/ai-product-ultimate.png"
-    },
-    {
-      "id": "ai-engineer-analysis",
-      "name": "AI工程师分析",
-      "subtitle": "AI工程师能力模型研究",
-      "category": "research",
-      "icon": "👨‍💻",
-      "goal": "分析AI工程师的能力要求和发展路径",
-      "outcome": "产出AI工程师能力模型分析文档",
-      "deliverables": [
-        "分析文档",
-        "能力模型"
-      ],
-      "status": "archived",
-      "completedAt": "2026-02-15",
-      "techStack": [
-        "Markdown",
-        "研究分析"
-      ],
-      "url": null,
-      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_AIStudio/1-ai-engineer-analysis/",
-      "highlights": [
-        "能力模型梳理",
-        "发展路径分析"
-      ]
-    },
-    {
-      "id": "ai-financial-analysis",
-      "name": "AI金融分析",
-      "subtitle": "AI赋能金融场景研究",
-      "category": "research",
-      "icon": "💰",
-      "goal": "研究AI在金融领域的应用场景和投资价值",
-      "outcome": "完成金融AI应用分析，投资策略建议",
-      "deliverables": [
-        "分析报告",
-        "投资建议"
-      ],
-      "status": "deployed",
-      "completedAt": "2026-02-18",
-      "techStack": [
-        "研究分析",
-        "数据分析"
-      ],
-      "url": null,
-      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_Financial/",
-      "highlights": [
-        "金融AI场景分析",
-        "投资策略建议"
-      ]
+      "screenshot": "screenshots/ai-product-ultimate.png",
+      "metrics": {
+        "fileCount": 106
+      },
+      "quality": {
+        "score": 80,
+        "level": "featured",
+        "tags": [
+          "🏆 精选",
+          "已部署",
+          "大型项目",
+          "调研报告"
+        ]
+      }
     },
     {
       "id": "feishu-bot",
@@ -164,7 +148,19 @@
         "双向消息同步",
         "自动触发处理",
         "群消息支持"
-      ]
+      ],
+      "metrics": {
+        "fileCount": 30
+      },
+      "quality": {
+        "score": 65,
+        "level": "excellent",
+        "tags": [
+          "✨ 优秀",
+          "大型项目",
+          "自动化工具"
+        ]
+      }
     },
     {
       "id": "daily-report-system",
@@ -196,34 +192,20 @@
         "小无相功自我反思",
         "能力趋势可视化"
       ],
-      "screenshot": "screenshots/daily-report-system.png"
-    },
-    {
-      "id": "github-sync",
-      "name": "GitHub同步系统",
-      "subtitle": "多仓库自动同步",
-      "category": "tools",
-      "icon": "🔄",
-      "goal": "实现本地项目与多个GitHub仓库的自动同步",
-      "outcome": "完成同步脚本，支持个人仓库和组织仓库双推",
-      "deliverables": [
-        "Shell脚本",
-        "Launchd配置"
-      ],
-      "status": "deployed",
-      "completedAt": "2026-02-25",
-      "techStack": [
-        "Shell",
-        "Git",
-        "Launchd"
-      ],
-      "url": null,
-      "path": "~/Documents/Codeflicker/个人助理_V1/scripts/sync-to-github.sh",
-      "highlights": [
-        "双仓库同步",
-        "自动化调度",
-        "错误重试"
-      ]
+      "screenshot": "screenshots/daily-report-system.png",
+      "metrics": {
+        "fileCount": 1
+      },
+      "quality": {
+        "score": 65,
+        "level": "excellent",
+        "tags": [
+          "✨ 优秀",
+          "已部署",
+          "数据可视化",
+          "自动化工具"
+        ]
+      }
     },
     {
       "id": "character-panel",
@@ -253,7 +235,552 @@
         "Tooltip悬浮提示",
         "图表数据展示"
       ],
-      "screenshot": "screenshots/character-panel.png"
+      "screenshot": "screenshots/character-panel.png",
+      "metrics": {
+        "fileCount": 1
+      },
+      "quality": {
+        "score": 65,
+        "level": "excellent",
+        "tags": [
+          "✨ 优秀",
+          "已部署",
+          "数据可视化"
+        ]
+      }
+    },
+    {
+      "id": "ai-financial-analysis",
+      "name": "AI金融分析",
+      "subtitle": "AI赋能金融场景研究",
+      "category": "research",
+      "icon": "💰",
+      "goal": "研究AI在金融领域的应用场景和投资价值",
+      "outcome": "完成金融AI应用分析，投资策略建议",
+      "deliverables": [
+        "分析报告",
+        "投资建议"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-02-18",
+      "techStack": [
+        "研究分析",
+        "数据分析"
+      ],
+      "url": null,
+      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_Financial/",
+      "highlights": [
+        "金融AI场景分析",
+        "投资策略建议"
+      ],
+      "metrics": {
+        "fileCount": 143
+      },
+      "quality": {
+        "score": 58,
+        "level": "good",
+        "tags": [
+          "大型项目",
+          "调研报告"
+        ]
+      }
+    },
+    {
+      "id": "github-sync",
+      "name": "GitHub同步系统",
+      "subtitle": "多仓库自动同步",
+      "category": "tools",
+      "icon": "🔄",
+      "goal": "实现本地项目与多个GitHub仓库的自动同步",
+      "outcome": "完成同步脚本，支持个人仓库和组织仓库双推",
+      "deliverables": [
+        "Shell脚本",
+        "Launchd配置"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-02-25",
+      "techStack": [
+        "Shell",
+        "Git",
+        "Launchd"
+      ],
+      "url": null,
+      "path": "~/Documents/Codeflicker/个人助理_V1/scripts/sync-to-github.sh",
+      "highlights": [
+        "双仓库同步",
+        "自动化调度",
+        "错误重试"
+      ],
+      "metrics": {
+        "fileCount": 1
+      },
+      "quality": {
+        "score": 43,
+        "level": "good",
+        "tags": [
+          "自动化工具"
+        ]
+      }
+    },
+    {
+      "id": "knowledge-life-philosophy",
+      "name": "Life Philosophy",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/life-philosophy",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 24
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 40,
+        "level": "good",
+        "tags": [
+          "大型项目"
+        ]
+      }
+    },
+    {
+      "id": "knowledge-methodology",
+      "name": "Methodology",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/methodology",
+      "status": "completed",
+      "createdAt": "2026-02-26",
+      "metrics": {
+        "fileCount": 26
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 40,
+        "level": "good",
+        "tags": [
+          "大型项目"
+        ]
+      }
+    },
+    {
+      "id": "knowledge-my-story",
+      "name": "My Story",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/my-story",
+      "status": "completed",
+      "createdAt": "2026-02-26",
+      "metrics": {
+        "fileCount": 30
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 40,
+        "level": "good",
+        "tags": [
+          "大型项目"
+        ]
+      }
+    },
+    {
+      "id": "knowledge-essays",
+      "name": "Essays",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/essays",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 14
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 35,
+        "level": "basic",
+        "tags": [
+          "大型项目"
+        ]
+      }
+    },
+    {
+      "id": "knowledge-self-cultivation",
+      "name": "Self Cultivation",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/self-cultivation",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 11
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 35,
+        "level": "basic",
+        "tags": [
+          "大型项目"
+        ]
+      }
+    },
+    {
+      "id": "ai-engineer-analysis",
+      "name": "AI工程师分析",
+      "subtitle": "AI工程师能力模型研究",
+      "category": "research",
+      "icon": "👨‍💻",
+      "goal": "分析AI工程师的能力要求和发展路径",
+      "outcome": "产出AI工程师能力模型分析文档",
+      "deliverables": [
+        "分析文档",
+        "能力模型"
+      ],
+      "status": "archived",
+      "completedAt": "2026-02-15",
+      "techStack": [
+        "Markdown",
+        "研究分析"
+      ],
+      "url": null,
+      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_AIStudio/1-ai-engineer-analysis/",
+      "highlights": [
+        "能力模型梳理",
+        "发展路径分析"
+      ],
+      "metrics": {
+        "fileCount": 11
+      },
+      "quality": {
+        "score": 33,
+        "level": "basic",
+        "tags": [
+          "大型项目",
+          "调研报告"
+        ]
+      }
+    },
+    {
+      "id": "knowledge-thinking-map",
+      "name": "Thinking Map",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/thinking-map",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 5
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 30,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-personal-growth",
+      "name": "Personal Growth",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/personal-growth",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 6
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 30,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-ai-devops",
+      "name": "Ai Devops",
+      "subtitle": "知识库 - rd-efficiency",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/ai-devops",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 4
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "rd-efficiency"
+      },
+      "quality": {
+        "score": 25,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-case-studies",
+      "name": "Case Studies",
+      "subtitle": "知识库 - rd-efficiency",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/case-studies",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 3
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "rd-efficiency"
+      },
+      "quality": {
+        "score": 25,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-family",
+      "name": "Family",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/family",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 4
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 25,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-measurement-system",
+      "name": "Measurement System",
+      "subtitle": "知识库 - rd-efficiency",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/measurement-system",
+      "status": "completed",
+      "createdAt": "2026-02-27",
+      "metrics": {
+        "fileCount": 4
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "rd-efficiency"
+      },
+      "quality": {
+        "score": 25,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-ai-coding-tools",
+      "name": "Ai Coding Tools",
+      "subtitle": "知识库 - rd-efficiency",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/ai-coding-tools",
+      "status": "completed",
+      "createdAt": "2026-02-27",
+      "metrics": {
+        "fileCount": 4
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "rd-efficiency"
+      },
+      "quality": {
+        "score": 25,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-devops-platform",
+      "name": "Devops Platform",
+      "subtitle": "知识库 - rd-efficiency",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/devops-platform",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 2
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "rd-efficiency"
+      },
+      "quality": {
+        "score": 20,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-devops",
+      "name": "Devops",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/devops",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 2
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 20,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-system-world",
+      "name": "System World",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/system-world",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 1
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 20,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-product-thinking",
+      "name": "Product Thinking",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/product-thinking",
+      "status": "completed",
+      "createdAt": "2026-02-25",
+      "metrics": {
+        "fileCount": 1
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 20,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-professional",
+      "name": "Professional",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/professional",
+      "status": "completed",
+      "createdAt": "2026-02-26",
+      "metrics": {
+        "fileCount": 2
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 20,
+        "level": "basic",
+        "tags": []
+      }
+    },
+    {
+      "id": "knowledge-about",
+      "name": "About",
+      "subtitle": "知识库 - personal-writings",
+      "category": "docs",
+      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/about",
+      "status": "completed",
+      "createdAt": "2026-02-26",
+      "metrics": {
+        "fileCount": 2
+      },
+      "techStack": [],
+      "highlights": [],
+      "source": {
+        "type": "knowledge",
+        "directory": "personal-writings"
+      },
+      "quality": {
+        "score": 20,
+        "level": "basic",
+        "tags": []
+      }
     }
   ]
 }

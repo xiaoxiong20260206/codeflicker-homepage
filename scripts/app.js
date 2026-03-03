@@ -279,6 +279,9 @@ function renderSidebar() {
     const heroLevel = document.getElementById('hero-level');
     if (heroLevel) heroLevel.textContent = 'LV.' + char.level;
     
+    // 渲染等级进度面板
+    renderLevelProgress(char);
+    
     // 核心数据
     const statSkills = document.getElementById('stat-skills');
     const statKnowledge = document.getElementById('stat-knowledge');
@@ -336,6 +339,69 @@ function renderSidebar() {
     // 迷你成就
     renderMiniAchievements();
 }
+
+// ==================== 等级进度面板渲染 ====================
+function renderLevelProgress(char) {
+    if (!char) return;
+    
+    const level = char.level || 1;
+    const totalExp = char.totalExp || 0;
+    const expProgress = char.expProgress || 0;
+    const currentThreshold = char.currentThreshold || 0;
+    const nextThreshold = char.nextThreshold || 1000;
+    
+    // 更新等级显示
+    const levelCurrent = document.getElementById('level-current');
+    const levelNext = document.getElementById('level-next');
+    const levelPercent = document.getElementById('level-percent');
+    
+    if (levelCurrent) levelCurrent.textContent = 'LV.' + level;
+    if (levelNext) levelNext.textContent = 'LV.' + (level + 1);
+    if (levelPercent) levelPercent.textContent = expProgress.toFixed(1) + '%';
+    
+    // 更新经验条
+    const expBarFill = document.getElementById('exp-bar-fill');
+    if (expBarFill) {
+        expBarFill.style.width = expProgress + '%';
+        // 超过90%时添加金色脉冲效果
+        if (expProgress >= 90) {
+            expBarFill.classList.add('almost-full');
+        } else {
+            expBarFill.classList.remove('almost-full');
+        }
+    }
+    
+    // 更新经验文字
+    const expCurrent = document.getElementById('exp-current');
+    const expNeeded = document.getElementById('exp-needed');
+    
+    if (expCurrent) expCurrent.textContent = totalExp + ' EXP';
+    
+    const needed = nextThreshold - totalExp;
+    if (expNeeded) {
+        if (needed <= 0) {
+            expNeeded.textContent = '即将升级!';
+            expNeeded.style.color = 'var(--zelda-gold)';
+        } else {
+            expNeeded.textContent = '还需 ' + needed + ' EXP';
+            expNeeded.style.color = '';
+        }
+    }
+}
+
+// ==================== 升级指南折叠控制 ====================
+function toggleUpgradeGuide() {
+    const content = document.getElementById('upgrade-guide-content');
+    const toggle = document.getElementById('upgrade-toggle');
+    
+    if (content && toggle) {
+        content.classList.toggle('show');
+        toggle.classList.toggle('expanded');
+    }
+}
+
+// 暴露到全局
+window.toggleUpgradeGuide = toggleUpgradeGuide;
 
 function renderMiniAchievements() {
     const achievements = AppState.characterData?.achievements || [];
@@ -894,9 +960,11 @@ function renderWorksSection() {
     // 统计数据
     const worksTotal = document.getElementById('works-total');
     const worksDeployed = document.getElementById('works-deployed');
+    const worksFeatured = document.getElementById('works-featured');
     
     if (worksTotal) worksTotal.textContent = projects.summary.total;
     if (worksDeployed) worksDeployed.textContent = projects.summary.deployed;
+    if (worksFeatured) worksFeatured.textContent = projects.summary.featured || 0;
     
     // 作品网格
     renderWorksGrid(projects);
@@ -915,8 +983,14 @@ function renderWorksGrid(projects) {
         return;
     }
     
-    // 优先展示已部署的项目
+    // 按质量分数排序（精选优先），然后按部署状态
     const sortedProjects = [...projects.projects].sort((a, b) => {
+        // 优先按质量分数排序
+        const scoreA = a.quality?.score || 0;
+        const scoreB = b.quality?.score || 0;
+        if (scoreA !== scoreB) return scoreB - scoreA;
+        
+        // 然后按部署状态
         if (a.status === 'deployed' && b.status !== 'deployed') return -1;
         if (a.status !== 'deployed' && b.status === 'deployed') return 1;
         return 0;
@@ -931,7 +1005,10 @@ function renderWorksGrid(projects) {
         };
     });
     
-    container.innerHTML = sortedProjects.map((p, idx) => {
+    // 只展示前12个作品（精选优先）
+    const displayProjects = sortedProjects.slice(0, 12);
+    
+    container.innerHTML = displayProjects.map((p, idx) => {
         const projectId = 'project-' + idx;
         const statusClass = p.status === 'deployed' ? 'deployed' : 
                            p.status === 'development' ? 'development' : 'archived';
@@ -943,6 +1020,24 @@ function renderWorksGrid(projects) {
         const linkHtml = p.url 
             ? `<a href="${p.url}" target="_blank" class="work-link">🔗 访问作品</a>`
             : '';
+        
+        // 质量标签
+        const quality = p.quality || {};
+        const qualityLevel = quality.level || 'basic';
+        const qualityScore = quality.score || 0;
+        const qualityTags = quality.tags || [];
+        
+        // 精选标记
+        let qualityBadgeHtml = '';
+        if (qualityLevel === 'featured') {
+            qualityBadgeHtml = '<span class="quality-badge featured">🏆 精选</span>';
+        } else if (qualityLevel === 'excellent') {
+            qualityBadgeHtml = '<span class="quality-badge excellent">✨ 优秀</span>';
+        }
+        
+        // 特征标签（最多显示3个）
+        const featureTags = qualityTags.filter(t => !t.includes('精选') && !t.includes('优秀')).slice(0, 3);
+        const featureTagsHtml = featureTags.map(t => `<span class="feature-tag">${t}</span>`).join('');
         
         // 截图预览
         let screenshotHtml = '';

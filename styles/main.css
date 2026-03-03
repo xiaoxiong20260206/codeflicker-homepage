@@ -392,10 +392,22 @@ body {
 
 .radar-wrap {
     height: 150px;
+    position: relative; /* 确保chart.js能正确计算尺寸 */
+}
+
+.radar-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 .trend-mini-wrap {
     height: 80px;
+    position: relative;
+}
+
+.trend-mini-wrap canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* 成就迷你 */

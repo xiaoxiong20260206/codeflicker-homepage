@@ -154,6 +154,10 @@ function updateSidebarWithReports() {
         const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
         aboutDays.textContent = days > 0 ? days + '+' : '30+';
     }
+    // 渲染侧边栏迷你趋势图（依赖reportsData）
+    loadChartJS().then(() => {
+        renderMiniTrendChart();
+    });
 }
 
 // ==================== 数据加载（分阶段） ====================
@@ -202,6 +206,12 @@ function renderInitial() {
     renderSidebar();
     renderAboutSection();       // 了解我Section（首屏默认可见）
     AppState.renderedSections.add('about');
+    
+    // 渲染侧边栏雷达图（依赖characterData，已加载）
+    loadChartJS().then(() => {
+        renderRadarChart();
+    });
+    
     console.log('Initial render complete (sidebar + about)');
 }
 
@@ -1965,18 +1975,20 @@ function setupDeferredCharts() {
 }
 
 function renderRadarChart() {
-    if (!window.Chart) return; // Chart.js未加载则跳过
+    if (!window.Chart) {
+        console.log('radarChart: Chart.js not loaded yet');
+        return;
+    }
     const canvas = document.getElementById('radarChart');
     if (!canvas) return;
     
-    // 检查canvas是否有有效尺寸
-    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
-        console.log('radarChart: canvas not visible yet, skipping');
-        return;
-    }
+    // 侧边栏始终可见，不需要可见性检查
     
     const stats = AppState.characterData?.character?.stats;
-    if (!stats) return;
+    if (!stats) {
+        console.log('radarChart: no stats data available');
+        return;
+    }
     
     // 销毁旧实例
     if (chartInstances.radarChart) {
@@ -2025,18 +2037,20 @@ function renderRadarChart() {
 }
 
 function renderMiniTrendChart() {
-    if (!window.Chart) return; // Chart.js未加载则跳过
+    if (!window.Chart) {
+        console.log('miniTrendChart: Chart.js not loaded yet');
+        return;
+    }
     const canvas = document.getElementById('miniTrendChart');
     if (!canvas) return;
     
-    // 检查canvas是否有有效尺寸
-    if (canvas.offsetWidth === 0 || canvas.offsetHeight === 0) {
-        console.log('miniTrendChart: canvas not visible yet, skipping');
-        return;
-    }
+    // 侧边栏始终可见，不需要可见性检查
     
     const trend = AppState.reportsData?.trend;
-    if (!trend) return;
+    if (!trend) {
+        console.log('miniTrendChart: no trend data available yet');
+        return;
+    }
     
     // 销毁旧实例
     if (chartInstances.miniTrendChart) {

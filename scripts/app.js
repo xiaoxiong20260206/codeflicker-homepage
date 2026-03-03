@@ -14,11 +14,29 @@ const AppState = {
     characterData: null,
     reportsData: null,
     projectsData: null,
+    milestonesData: null,
     currentSection: 'about',  // 默认显示"了解我"Tab
     currentReportIndex: 0, // 当前选中的日报索引
     dataMap: {},
-    sidebarStats: {}
+    sidebarStats: {},
+    renderedSections: new Set(), // 已渲染的Section（懒渲染跟踪）
+    loadingPromises: {}          // 数据加载Promise缓存
 };
+
+// ==================== Chart.js 按需加载 ====================
+let _chartJSPromise = null;
+function loadChartJS() {
+    if (window.Chart) return Promise.resolve(window.Chart);
+    if (_chartJSPromise) return _chartJSPromise;
+    _chartJSPromise = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/chart.js';
+        script.onload = () => resolve(window.Chart);
+        script.onerror = () => reject(new Error('Failed to load Chart.js'));
+        document.head.appendChild(script);
+    });
+    return _chartJSPromise;
+}
 
 // 暴露到全局以便调试和inline事件处理
 window.AppState = AppState;
@@ -34,7 +52,7 @@ const DOM = {
 document.addEventListener('DOMContentLoaded', () => {
     initDOM();
     initNavigation();
-    loadAllData();
+    loadInitialData();
 });
 
 function initDOM() {
@@ -68,60 +86,134 @@ function switchSection(sectionName) {
     });
     
     AppState.currentSection = sectionName;
+    
+    // 懒渲染：首次切换到某个tab时触发渲染
+    ensureSectionRendered(sectionName);
 }
 
-// ==================== 数据加载 ====================
-async function loadAllData() {
+// 懒渲染：确保Section已加载数据并渲染
+async function ensureSectionRendered(sectionName) {
+    if (AppState.renderedSections.has(sectionName)) return;
+    
+    switch (sectionName) {
+        case 'daily':
+            await ensureReportsData();
+            renderDailySection();
+            AppState.renderedSections.add('daily');
+            break;
+        case 'works':
+            // projectsData 已在初始加载中获取
+            renderWorksSection();
+            AppState.renderedSections.add('works');
+            break;
+        case 'abilities':
+            renderAbilitiesSection();
+            await ensureReportsData(); // 图表需要reports数据
+            renderCharts();
+            AppState.renderedSections.add('abilities');
+            break;
+    }
+}
+
+// 按需加载reports数据
+function ensureReportsData() {
+    if (AppState.reportsData) return Promise.resolve();
+    if (AppState.loadingPromises.reports) return AppState.loadingPromises.reports;
+    
+    AppState.loadingPromises.reports = fetch('./reports-data.json')
+        .then(res => {
+            if (!res.ok) throw new Error('Failed to load reports data');
+            return res.json();
+        })
+        .then(data => {
+            AppState.reportsData = data;
+            // 更新侧边栏中依赖reports的部分
+            updateSidebarWithReports();
+        })
+        .catch(e => console.error('Failed to load reports:', e));
+    
+    return AppState.loadingPromises.reports;
+}
+
+// reports数据加载后更新侧边栏
+function updateSidebarWithReports() {
+    const reports = AppState.reportsData?.reports || [];
+    const lastUpdate = document.getElementById('last-update');
+    if (lastUpdate && reports.length > 0) {
+        lastUpdate.textContent = reports[0].date;
+    }
+    // 更新"了解我"的运行天数
+    const aboutDays = document.getElementById('about-days-2');
+    if (aboutDays && reports.length > 0) {
+        const firstDate = new Date('2026-02-01');
+        const today = new Date();
+        const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
+        aboutDays.textContent = days > 0 ? days + '+' : '30+';
+    }
+}
+
+// ==================== 数据加载（分阶段） ====================
+// Phase 1: 只加载首屏必需的数据（character + projects）
+async function loadInitialData() {
     try {
-        // JSON文件始终在index.html同级目录
-        const basePath = './';
-        
-        console.log('Loading data from basePath:', basePath);
-        
-        const [characterRes, reportsRes, projectsRes, milestonesRes] = await Promise.all([
-            fetch(basePath + 'character-data.json'),
-            fetch(basePath + 'reports-data.json'),
-            fetch(basePath + 'projects-data.json'),
-            fetch(basePath + 'milestones-data.json').catch(() => null)  // 可选加载
+        const [characterRes, projectsRes] = await Promise.all([
+            fetch('./character-data.json'),
+            fetch('./projects-data.json')
         ]);
         
-        if (!characterRes.ok) {
-            throw new Error('Failed to load character data: ' + characterRes.status);
-        }
-        if (!reportsRes.ok) {
-            throw new Error('Failed to load reports data: ' + reportsRes.status);
-        }
-        if (!projectsRes.ok) {
-            throw new Error('Failed to load projects data: ' + projectsRes.status);
-        }
+        if (!characterRes.ok) throw new Error('Failed to load character data: ' + characterRes.status);
+        if (!projectsRes.ok) throw new Error('Failed to load projects data: ' + projectsRes.status);
         
         AppState.characterData = await characterRes.json();
-        AppState.reportsData = await reportsRes.json();
         AppState.projectsData = await projectsRes.json();
         
-        // 里程碑数据可选
-        if (milestonesRes && milestonesRes.ok) {
-            AppState.milestonesData = await milestonesRes.json();
-        }
+        console.log('Initial data loaded (character + projects)');
+        renderInitial();
         
-        console.log('Data loaded successfully');
-        renderAll();
+        // Phase 2: 后台预加载其他数据（不阻塞首屏）
+        requestIdleCallback ? requestIdleCallback(preloadDeferredData) : setTimeout(preloadDeferredData, 2000);
     } catch (e) {
-        console.error('Failed to load data:', e);
+        console.error('Failed to load initial data:', e);
         document.querySelectorAll('.loading').forEach(el => {
             el.textContent = '❌ 数据加载失败: ' + e.message;
         });
     }
 }
 
+// Phase 2: 后台预加载非首屏数据
+function preloadDeferredData() {
+    // 预加载reports数据（日报tab和一些图表需要）
+    ensureReportsData();
+    // 预加载milestones数据
+    fetch('./milestones-data.json').then(res => {
+        if (res.ok) return res.json();
+    }).then(data => {
+        if (data) AppState.milestonesData = data;
+        renderMilestones();
+    }).catch(() => {});
+}
+
+// 首屏渲染：只渲染当前可见的内容
+function renderInitial() {
+    renderSidebar();
+    renderAboutSection();       // 了解我Section（首屏默认可见）
+    AppState.renderedSections.add('about');
+    console.log('Initial render complete (sidebar + about)');
+}
+
+// 保留完整渲染函数用于兼容
 function renderAll() {
     renderSidebar();
-    renderAboutSection();       // 了解我Section（自我介绍、进化、成就）
-    renderDailySection();       // 我的日报Section
-    renderWorksSection();       // 我的作品Section
-    renderAbilitiesSection();   // 我的能力Section（技能树+记忆+知识+趋势）
-    renderMilestones();         // 里程碑时间线
+    renderAboutSection();
+    renderDailySection();
+    renderWorksSection();
+    renderAbilitiesSection();
+    renderMilestones();
     renderCharts();
+    AppState.renderedSections.add('about');
+    AppState.renderedSections.add('daily');
+    AppState.renderedSections.add('works');
+    AppState.renderedSections.add('abilities');
 }
 
 // ==================== 了解我Section ====================
@@ -130,7 +222,6 @@ function renderAboutSection() {
     const skills = AppState.characterData?.skills;
     const knowledge = AppState.characterData?.knowledge;
     const projects = AppState.projectsData;
-    const reports = AppState.reportsData?.reports || [];
     
     if (!char || !skills || !knowledge) return;
     
@@ -144,8 +235,8 @@ function renderAboutSection() {
     if (aboutKnowledge) aboutKnowledge.textContent = knowledge.totalFiles;
     if (aboutWorks && projects?.summary) aboutWorks.textContent = projects.summary.total;
     
-    // 计算运行天数
-    if (aboutDays && reports.length > 0) {
+    // 计算运行天数（不依赖reports数据）
+    if (aboutDays) {
         const firstDate = new Date('2026-02-01'); // 林克诞生日
         const today = new Date();
         const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
@@ -217,11 +308,11 @@ function renderSidebar() {
         }
     };
     
-    // 更新时间
+    // 更新时间（reports可能还未加载，显示默认值）
     const lastUpdate = document.getElementById('last-update');
     const reports = AppState.reportsData?.reports || [];
-    if (lastUpdate && reports.length > 0) {
-        lastUpdate.textContent = reports[0].date;
+    if (lastUpdate) {
+        lastUpdate.textContent = reports.length > 0 ? reports[0].date : '加载中...';
     }
     
     // 迷你成就
@@ -563,6 +654,10 @@ function renderNewItemsTags(capData) {
 let dailyTrendChartInstance = null;
 
 function renderDailyTrendChart() {
+    if (!window.Chart) {
+        loadChartJS().then(() => renderDailyTrendChart());
+        return;
+    }
     const canvas = document.getElementById('dailyTrendChart');
     if (!canvas) return;
     
@@ -1816,13 +1911,15 @@ let chartInstances = {
 };
 
 function renderCharts() {
-    // 侧边栏图表始终可见，直接渲染
-    renderRadarChart();
-    renderMiniTrendChart();
-    
-    // 能力Section的图表需要等待section可见后再渲染
-    // 使用IntersectionObserver或延迟初始化
-    setupDeferredCharts();
+    // 图表需要Chart.js，使用动态加载
+    loadChartJS().then(() => {
+        // 侧边栏图表始终可见，直接渲染
+        renderRadarChart();
+        renderMiniTrendChart();
+        
+        // 能力Section的图表需要等待section可见后再渲染
+        setupDeferredCharts();
+    }).catch(e => console.error('Failed to load Chart.js:', e));
 }
 
 // 延迟初始化：等待section可见后再渲染图表
@@ -1860,6 +1957,7 @@ function setupDeferredCharts() {
 }
 
 function renderRadarChart() {
+    if (!window.Chart) return; // Chart.js未加载则跳过
     const canvas = document.getElementById('radarChart');
     if (!canvas) return;
     
@@ -1919,6 +2017,7 @@ function renderRadarChart() {
 }
 
 function renderMiniTrendChart() {
+    if (!window.Chart) return; // Chart.js未加载则跳过
     const canvas = document.getElementById('miniTrendChart');
     if (!canvas) return;
     
@@ -1964,6 +2063,10 @@ function renderMiniTrendChart() {
 }
 
 function renderAbilityRadarChart() {
+    if (!window.Chart) {
+        loadChartJS().then(() => renderAbilityRadarChart());
+        return;
+    }
     const canvas = document.getElementById('abilityRadarChart');
     if (!canvas) return;
     
@@ -2023,6 +2126,10 @@ function renderAbilityRadarChart() {
 }
 
 function renderTrendChart() {
+    if (!window.Chart) {
+        loadChartJS().then(() => renderTrendChart());
+        return;
+    }
     const canvas = document.getElementById('trendChart');
     if (!canvas) return;
     
@@ -2278,6 +2385,10 @@ function toggleCompareMode() {
 }
 
 function updateCompareChart() {
+    if (!window.Chart) {
+        loadChartJS().then(() => updateCompareChart());
+        return;
+    }
     const select1 = document.getElementById('compare-date-1');
     const select2 = document.getElementById('compare-date-2');
     const canvas = document.getElementById('compareRadarChart');

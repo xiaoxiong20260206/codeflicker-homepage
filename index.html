@@ -4,13 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>了解林克</title>
-    <!-- Favicon - 林克风格图标 -->
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
+    <!-- 资源提示：预连接外部域名，减少 DNS/TLS 延迟 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <!-- 预加载头像图片 -->
     <link rel="preload" href="link-avatar-small.png" as="image">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts 异步加载：避免阻塞首次渲染 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Chart.js 延迟加载：首屏不需要图表 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 已改为按需动态加载 -->
     <link rel="stylesheet" href="styles/zelda-theme.css">
     <link rel="stylesheet" href="styles/main.css">
     <style>
@@ -2870,12 +2877,21 @@
     
     <script>
         // 创建飘落粒子 - 旷野之息风格落叶 + 希卡蓝光点
+        // 性能优化：减少粒子数量，尊重用户动画偏好设置
         function createParticles() {
+            // 检查用户是否偏好减少动画
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                console.log('Reduced motion preferred, skipping particle creation');
+                return;
+            }
+            
             const container = document.getElementById('particles');
-            // 落叶粒子 - 自然美学
+            if (!container) return;
+            
+            // 落叶粒子 - 自然美学（从12个减少到8个）
             const leaves = ['🍃', '🍂', '🌿', '🍁'];
             
-            for (let i = 0; i < 12; i++) {
+            for (let i = 0; i < 8; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.textContent = leaves[Math.floor(Math.random() * leaves.length)];
@@ -2886,8 +2902,8 @@
                 container.appendChild(particle);
             }
             
-            // 希卡蓝光点粒子 - 科技感
-            for (let i = 0; i < 25; i++) {
+            // 希卡蓝光点粒子 - 科技感（从25个减少到15个）
+            for (let i = 0; i < 15; i++) {
                 const light = document.createElement('div');
                 light.className = 'light-particle';
                 light.style.left = Math.random() * 100 + '%';

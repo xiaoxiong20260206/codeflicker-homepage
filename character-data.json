@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T06:49:34.445050",
+  "generatedAt": "2026-03-04T06:55:39.867204",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
@@ -89,15 +89,31 @@
             "exp": 64,
             "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
             "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "meta-execution",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 58,
+            "description": "元执行技能：启动前检查→交付前自审→出错后复盘",
+            "lastUpdated": "2026-03-03"
           }
         ],
-        "count": 3,
-        "avgLevel": 3.7
+        "count": 4,
+        "avgLevel": 3.5
       },
       "调研分析": {
         "icon": "🔬",
         "color": "#a78bfa",
         "skills": [
+          {
+            "name": "daily-ai-report",
+            "source": "单虓晗自定义",
+            "level": 3,
+            "exp": 69,
+            "description": "AI行业每日报告，综合多渠道信息源自动生成",
+            "lastUpdated": "2026-03-03"
+          },
           {
             "name": "industry-research",
             "source": "单虓晗自定义",
@@ -147,8 +163,8 @@
             "lastUpdated": "2026-02-12"
           }
         ],
-        "count": 6,
-        "avgLevel": 2.2
+        "count": 7,
+        "avgLevel": 2.3
       },
       "文档处理": {
         "icon": "📄",
@@ -169,6 +185,14 @@
             "exp": 85,
             "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
             "lastUpdated": "2026-02-08"
+          },
+          {
+            "name": "keynote",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 79,
+            "description": "Apple Keynote演示文稿创建、JXA自动化、样式分析",
+            "lastUpdated": "2026-03-03"
           },
           {
             "name": "docx",
@@ -195,7 +219,7 @@
             "lastUpdated": "2026-02-08"
           }
         ],
-        "count": 5,
+        "count": 6,
         "avgLevel": 4.0
       },
       "前端开发": {
@@ -315,6 +339,14 @@
         "color": "#4ade80",
         "skills": [
           {
+            "name": "ks-kim-docs-shuttle",
+            "source": "单虓晗自定义",
+            "level": 5,
+            "exp": 90,
+            "description": "快手KIM Docs文档与本地Markdown双向同步",
+            "lastUpdated": "2026-03-01"
+          },
+          {
             "name": "github-deploy-publisher",
             "source": "单虓晗自定义",
             "level": 4,
@@ -339,8 +371,8 @@
             "lastUpdated": "2026-02-25"
           }
         ],
-        "count": 3,
-        "avgLevel": 3.7
+        "count": 4,
+        "avgLevel": 4.0
       },
       "投资理财": {
         "icon": "💰",
@@ -355,6 +387,14 @@
             "lastUpdated": "2026-02-25"
           },
           {
+            "name": "investment-tracker",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 73,
+            "description": "基金持仓追踪、定投策略、收益分析",
+            "lastUpdated": "2026-03-03"
+          },
+          {
             "name": "investment-analyzer",
             "source": "Claude技能库",
             "level": 3,
@@ -363,13 +403,29 @@
             "lastUpdated": "2026-02-25"
           }
         ],
-        "count": 2,
-        "avgLevel": 3.5
+        "count": 3,
+        "avgLevel": 3.7
       },
       "效率工具": {
         "icon": "⚡",
         "color": "#64748b",
         "skills": [
+          {
+            "name": "ai-column-writer",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 76,
+            "description": "养了个AI专栏写作全流程，从策划到发布",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "night-task-runner",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 70,
+            "description": "夜间长任务执行，断点恢复，交付报告生成",
+            "lastUpdated": "2026-03-03"
+          },
           {
             "name": "feishu-assistant",
             "source": "单虓晗自定义",
@@ -379,72 +435,8 @@
             "lastUpdated": "2026-02-27"
           }
         ],
-        "count": 1,
-        "avgLevel": 3.0
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "skills": [
-          {
-            "name": "ks-kim-docs-shuttle",
-            "source": "codeflicker",
-            "level": 5,
-            "exp": 90,
-            "description": "---",
-            "lastUpdated": "2026-03-01"
-          },
-          {
-            "name": "keynote",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 79,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "ai-column-writer",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 76,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "investment-tracker",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 73,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "night-task-runner",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 70,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "daily-ai-report",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 69,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "meta-execution",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 58,
-            "description": "> **核心理念**：把事情一次做对，而不是反复返工。",
-            "lastUpdated": "2026-03-03"
-          }
-        ],
-        "count": 7,
-        "avgLevel": 3.9
+        "count": 3,
+        "avgLevel": 3.7
       }
     }
   },
@@ -452,9 +444,9 @@
     "categories": {
       "personal-writings": {
         "name": "personal-writings",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "personal-writings相关文档",
+        "icon": "✍️",
+        "color": "#f472b6",
+        "description": "个人写作、思想文章、专栏内容",
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
@@ -462,9 +454,9 @@
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "rd-efficiency相关文档",
+        "icon": "⚡",
+        "color": "#4ade80",
+        "description": "研发效能、开发工具、提效实践",
         "fileCount": 18,
         "sizeKB": 115.5,
         "heatLevel": 5,
@@ -472,9 +464,9 @@
       },
       "financial": {
         "name": "financial",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "financial相关文档",
+        "icon": "💰",
+        "color": "#fb923c",
+        "description": "投资理财、股票分析、基金追踪",
         "fileCount": 4,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -482,9 +474,9 @@
       },
       "experience": {
         "name": "experience",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "experience相关文档",
+        "icon": "💡",
+        "color": "#facc15",
+        "description": "经验总结、踩坑记录、最佳实践",
         "fileCount": 2,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -492,9 +484,9 @@
       },
       "guides": {
         "name": "guides",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "guides相关文档",
+        "icon": "📖",
+        "color": "#5ec4d4",
+        "description": "操作指南、使用教程、入门文档",
         "fileCount": 2,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -502,9 +494,9 @@
       },
       "mcp-research": {
         "name": "mcp-research",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "mcp-research相关文档",
+        "icon": "🔌",
+        "color": "#a78bfa",
+        "description": "MCP协议研究、模型上下文协议",
         "fileCount": 1,
         "sizeKB": 21.3,
         "heatLevel": 2,
@@ -512,9 +504,9 @@
       },
       "ai-research": {
         "name": "ai-research",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "ai-research相关文档",
+        "icon": "🤖",
+        "color": "#38bdf8",
+        "description": "AI产品研究、Agent架构、行业趋势",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,
@@ -522,9 +514,9 @@
       },
       "product": {
         "name": "product",
-        "icon": "📁",
+        "icon": "📊",
         "color": "#64748b",
-        "description": "product相关文档",
+        "description": "产品设计、PRD文档、功能规划",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,

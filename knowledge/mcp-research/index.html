@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP 协议调研报告 | Model Context Protocol</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔌</text></svg>">
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #555;
+            --accent: #4361ee;
+            --accent-light: #eef0ff;
+            --border: #e8e8e8;
+            --tag-bg: #f0f4ff;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+            color: white;
+            padding: 60px 24px 50px;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.2em; font-weight: 800; margin-bottom: 12px; }
+        .hero .subtitle { font-size: 1.1em; opacity: 0.9; max-width: 600px; margin: 0 auto 20px; }
+        .hero .meta { font-size: 0.85em; opacity: 0.7; }
+        .hero .meta span { margin: 0 8px; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin: -30px 20px 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--accent);
+            position: relative;
+            z-index: 1;
+        }
+        .summary-card p { color: var(--text-secondary); font-size: 1.05em; }
+
+        .section { margin-bottom: 36px; }
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon { font-size: 1.2em; }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+        }
+        .card h3 { font-size: 1.1em; margin-bottom: 10px; color: var(--accent); }
+
+        /* Timeline */
+        .timeline { position: relative; padding-left: 30px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), #a5b4fc);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 22px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .date {
+            font-size: 0.8em;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .timeline-item .event { font-size: 0.95em; }
+
+        /* Architecture */
+        .arch-diagram {
+            background: #f8f9ff;
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.85em;
+            line-height: 1.8;
+            overflow-x: auto;
+            border: 1px solid #dde;
+        }
+        .arch-diagram pre { white-space: pre; }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin: 3px 4px 3px 0;
+            font-weight: 500;
+        }
+        .tag.green { background: #ecfdf5; color: #059669; }
+        .tag.orange { background: #fff7ed; color: #d97706; }
+        .tag.red { background: #fef2f2; color: #dc2626; }
+
+        /* Table */
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); font-size: 0.9em; }
+        th { background: var(--accent-light); font-weight: 600; color: var(--accent); }
+        tr:hover { background: #fafbff; }
+
+        /* Grid */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .stat-card .number { font-size: 2em; font-weight: 800; color: var(--accent); }
+        .stat-card .label { font-size: 0.85em; color: var(--text-secondary); margin-top: 4px; }
+
+        .case-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 18px;
+            border: 1px solid var(--border);
+        }
+        .case-card .company { font-weight: 700; font-size: 1em; margin-bottom: 6px; }
+        .case-card .desc { font-size: 0.85em; color: var(--text-secondary); }
+
+        /* Compare */
+        .compare-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .compare-row:last-child { border: none; }
+        .compare-name { font-weight: 600; min-width: 140px; }
+        .compare-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: var(--accent);
+            transition: width 0.5s;
+        }
+        .compare-label { font-size: 0.8em; color: var(--text-secondary); min-width: 100px; }
+
+        .insight-list { list-style: none; }
+        .insight-list li {
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            background: var(--accent-light);
+            border-radius: 8px;
+            font-size: 0.95em;
+            position: relative;
+            padding-left: 36px;
+        }
+        .insight-list li::before {
+            content: '→';
+            position: absolute;
+            left: 14px;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            font-size: 0.8em;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+        .footer a { color: var(--accent); text-decoration: none; }
+
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.6em; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+            .compare-row { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>MCP 协议调研报告</h1>
+    <p class="subtitle">Model Context Protocol — AI 界的 USB-C，连接大模型与万物的开放标准</p>
+    <div class="meta">
+        <span>📅 2026-03-03</span>
+        <span>|</span>
+        <span>📊 综合调研</span>
+        <span>|</span>
+        <span>🔗 4 个信息源</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="summary-card">
+        <p><strong>一句话总结：</strong>MCP（Model Context Protocol）是 Anthropic 发起的 AI 应用连接外部系统的开放标准协议，2025 年底捐赠给 Linux 基金会，已成为 Agentic AI 基础设施的核心标准，被 Claude、ChatGPT、VS Code、Cursor 等主流平台全面支持。</p>
+    </div>
+
+    <!-- 关键数据 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">📊</span> 关键数据</h2>
+        <div class="grid-3">
+            <div class="stat-card">
+                <div class="number">10,000+</div>
+                <div class="label">已发布 MCP Server</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">8</div>
+                <div class="label">AAIF 白金会员</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">6+</div>
+                <div class="label">主流 AI 平台支持</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 发展时间线 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">📅</span> 发展时间线</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="date">2024 年 11 月</div>
+                <div class="event"><strong>MCP 开源发布</strong> — Anthropic 发布 Model Context Protocol，定位为 AI 应用连接数据源和工具的开放标准</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2025 年 3 月</div>
+                <div class="event"><strong>Streamable HTTP</strong> — 引入可流式 HTTP 传输，替代 SSE，支持 AWS Lambda 等无服务器部署，实现远程 MCP</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2025 年 6 月</div>
+                <div class="event"><strong>重大规范更新</strong> — 发布 Elicitation（服务器请求用户输入）、Tool Output Schemas（工具输出类型定义）、OAuth 2.1 授权规范</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2025 年 8 月</div>
+                <div class="event"><strong>Visual Studio GA</strong> — MCP 支持在 Visual Studio 中正式 GA，Microsoft 全面拥抱 MCP</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2025 年 12 月</div>
+                <div class="event"><strong>Linux Foundation AAIF 成立</strong> — Anthropic 将 MCP 捐赠给 Linux 基金会 Agentic AI Foundation，确立行业标准地位</div>
+            </div>
+            <div class="timeline-item">
+                <div class="date">2026 年 4 月（计划）</div>
+                <div class="event"><strong>MCP Dev Summit NYC</strong> — 第一届大规模 MCP 开发者峰会，4 月 2-3 日纽约举办</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 核心架构 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">🏗️</span> 核心架构</h2>
+        <div class="card">
+            <div class="arch-diagram">
+<pre>
+┌─────────────────────────────────────────────────┐
+│                  MCP Host                       │
+│           (Claude / VS Code / IDE)              │
+│                                                 │
+│  ┌─────────────┐  ┌─────────────┐              │
+│  │  MCP Client  │  │  MCP Client  │  ...        │
+│  └──────┬───────┘  └──────┬───────┘             │
+└─────────┼──────────────────┼────────────────────┘
+          │ JSON-RPC 2.0    │ JSON-RPC 2.0
+          │                  │
+   ┌──────┴───────┐  ┌──────┴───────┐
+   │  MCP Server  │  │  MCP Server  │
+   │  (本地/远程)  │  │  (本地/远程)  │
+   │              │  │              │
+   │ 🔧 Tools     │  │ 📦 Resources │
+   │ 📄 Resources │  │ 💬 Prompts   │
+   │ 💬 Prompts   │  │ 🔧 Tools     │
+   └──────────────┘  └──────────────┘
+</pre>
+            </div>
+        </div>
+
+        <div class="grid-2" style="margin-top: 16px;">
+            <div class="card">
+                <h3>核心原语</h3>
+                <table>
+                    <tr><th>原语</th><th>说明</th></tr>
+                    <tr><td><span class="tag">🔧 Tools</span></td><td>可执行函数（API 调用、数据库查询）</td></tr>
+                    <tr><td><span class="tag">📦 Resources</span></td><td>数据源（文件、数据库记录）</td></tr>
+                    <tr><td><span class="tag">💬 Prompts</span></td><td>交互模板（系统提示、工作流）</td></tr>
+                </table>
+            </div>
+            <div class="card">
+                <h3>传输层</h3>
+                <table>
+                    <tr><th>方式</th><th>场景</th></tr>
+                    <tr><td><span class="tag green">Stdio</span></td><td>本地进程通信（标准输入输出）</td></tr>
+                    <tr><td><span class="tag green">Streamable HTTP</span></td><td>远程通信（支持云部署）</td></tr>
+                </table>
+                <p style="font-size: 0.85em; color: var(--text-secondary); margin-top: 10px;">协议基于 JSON-RPC 2.0，支持能力协商和动态发现</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AAIF 白金会员 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">🏢</span> AAIF 白金会员</h2>
+        <div class="card">
+            <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">AWS</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">Anthropic</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">Block</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">Bloomberg</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">Cloudflare</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">Google</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">Microsoft</span>
+                <span class="tag" style="font-size: 0.95em; padding: 8px 18px;">OpenAI</span>
+            </div>
+            <p style="text-align: center; font-size: 0.85em; color: var(--text-secondary); margin-top: 12px;">
+                + 50 余家金银会员企业 | 2025 年 12 月 Linux Foundation 正式成立 Agentic AI Foundation
+            </p>
+        </div>
+    </div>
+
+    <!-- 企业落地案例 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">🏭</span> 企业落地案例</h2>
+        <div class="grid-2">
+            <div class="case-card">
+                <div class="company">💳 PayPal</div>
+                <div class="desc">Agent Commerce — 代理式电商体验，AI 代理直接完成购物流程</div>
+            </div>
+            <div class="case-card">
+                <div class="company">📈 Bloomberg</div>
+                <div class="desc">为 10,000 名工程师提供统一的标准化工具集成平台</div>
+            </div>
+            <div class="case-card">
+                <div class="company">🟦 Block (goose)</div>
+                <div class="desc">内部 AI Agent 连接 60+ MCP Server，覆盖 Git / Snowflake / Jira</div>
+            </div>
+            <div class="case-card">
+                <div class="company">☁️ Cloudflare</div>
+                <div class="desc">支持远程 MCP Server 托管，一键部署到 Cloudflare Workers</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 竞争格局 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">⚔️</span> 协议竞争格局</h2>
+        <div class="card">
+            <table>
+                <tr><th>协议</th><th>发起方</th><th>定位</th><th>势头</th></tr>
+                <tr>
+                    <td><strong>MCP</strong></td>
+                    <td>Anthropic → Linux Foundation</td>
+                    <td>AI ↔ 工具/数据 连接标准</td>
+                    <td><span class="tag green">最强</span></td>
+                </tr>
+                <tr>
+                    <td><strong>A2A</strong></td>
+                    <td>Google</td>
+                    <td>Agent ↔ Agent 通信</td>
+                    <td><span class="tag orange">增长中</span></td>
+                </tr>
+                <tr>
+                    <td><strong>ACP</strong></td>
+                    <td>Cisco / IBM</td>
+                    <td>Agent 协作框架</td>
+                    <td><span class="tag">早期</span></td>
+                </tr>
+                <tr>
+                    <td><strong>AGENTS.md</strong></td>
+                    <td>OpenAI → Linux Foundation</td>
+                    <td>Agent 行为规范</td>
+                    <td><span class="tag green">广泛采用</span></td>
+                </tr>
+            </table>
+            <p style="font-size: 0.85em; color: var(--text-secondary); margin-top: 12px;">
+                <strong>关键洞察：</strong>MCP 与 A2A 是互补关系而非竞争 —— MCP 负责"AI 连接工具"，A2A 负责"Agent 间通信"。两者可以共存。
+            </p>
+        </div>
+    </div>
+
+    <!-- 安全与认证 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">🔒</span> 安全与认证</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>OAuth 2.1 授权</h3>
+                <ul style="list-style: none; font-size: 0.9em;">
+                    <li>✅ Protected Resource Metadata (RFC 9728)</li>
+                    <li>✅ 支持 IDP / SSO 集成</li>
+                    <li>✅ 客户端侧 Token 管理</li>
+                    <li>✅ 2025-06-18 正式发布</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>主要安全威胁</h3>
+                <ul style="list-style: none; font-size: 0.9em;">
+                    <li><span class="tag red">高</span> Prompt 注入 / 工具中毒</li>
+                    <li><span class="tag red">高</span> 恶意 MCP Server</li>
+                    <li><span class="tag orange">中</span> Sampling 攻击</li>
+                    <li><span class="tag orange">中</span> 恶意安装工具</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 趋势判断 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">🔮</span> 趋势判断</h2>
+        <div class="card">
+            <ol class="insight-list">
+                <li><strong>行业标准确立</strong> — MCP 已从"协议提案"进化为"行业基础设施"，Linux Foundation 治理确保中立性</li>
+                <li><strong>从本地走向远程</strong> — Streamable HTTP 的引入使 MCP 可以连接云端服务，不再局限于本地进程</li>
+                <li><strong>安全治理成为焦点</strong> — OAuth 2.1、Registry 审核、工具签名将成为下一阶段重点建设方向</li>
+                <li><strong>生态爆发临界点</strong> — 10,000+ Server + 主流平台全面支持，类比 2015 年的 npm 生态</li>
+                <li><strong>AI 原生 Web 基石</strong> — MCP 可能成为 AI 时代的 HTTP —— AI 应用通过 MCP 连接一切</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- 参考来源 -->
+    <div class="section">
+        <h2 class="section-title"><span class="icon">📚</span> 参考来源</h2>
+        <div class="card">
+            <table>
+                <tr><th>#</th><th>来源</th><th>链接</th></tr>
+                <tr><td>1</td><td>MCP 官方文档 — 架构概览</td><td><a href="https://modelcontextprotocol.io/docs/learn/architecture" target="_blank">modelcontextprotocol.io</a></td></tr>
+                <tr><td>2</td><td>Elastic — MCP 现状分析</td><td><a href="https://www.elastic.co/search-labs/blog/mcp-current-state" target="_blank">elastic.co</a></td></tr>
+                <tr><td>3</td><td>Linux Foundation — AAIF 成立公告</td><td><a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation" target="_blank">linuxfoundation.org</a></td></tr>
+                <tr><td>4</td><td>Microsoft — MCP GA in Visual Studio</td><td><a href="https://devblogs.microsoft.com/visualstudio/mcp-is-now-generally-available-in-visual-studio/" target="_blank">devblogs.microsoft.com</a></td></tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>由 <a href="https://my-ai-research-lab.github.io/codeflicker-homepage/">沈浪</a> 自主完成 | 夜间长任务测试产出 | 2026-03-03</p>
+</div>
+
+</body>
+</html>

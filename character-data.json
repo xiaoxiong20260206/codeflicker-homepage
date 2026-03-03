@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-03T22:59:36.811259",
+  "generatedAt": "2026-03-04T06:00:27.690565",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
-    "level": 5,
-    "totalExp": 7900,
-    "expProgress": 96.7,
-    "currentThreshold": 5000,
-    "nextThreshold": 8000,
+    "level": 6,
+    "totalExp": 8050,
+    "expProgress": 1.2,
+    "currentThreshold": 8000,
+    "nextThreshold": 12000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
@@ -208,7 +208,7 @@
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计专业版，高级组件和交互模式",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-04"
           },
           {
             "name": "vercel-react-best-practices",
@@ -1175,6 +1175,36 @@
         "source": "用户显式记录"
       },
       {
+        "title": "流程经验: Daily Reflection and Skill System Update",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "发现可复用模式: Daily Reflection and Skill System Update | 关键词: 经验, 流程",
+        "keywords": [
+          "经验",
+          "流程"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "流程经验: Keynote Presentation Design System Enhancement",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "发现可复用模式: 完成了3种风格(V4)Keynote文件的生成，更新了design-system.md中的视觉结构规范V2，重写了SKILL.md中的P...",
+        "keywords": [
+          "经验",
+          "流程"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "流程经验: Link AI Assistant Project Initialization",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
@@ -1221,9 +1251,24 @@
         "importance": 3,
         "updatedAt": "2026-03-03",
         "source": "用户显式记录"
+      },
+      {
+        "title": "踩坑经验: Keynote Presentation Design System Enhancement",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "问题描述: 完成了3种风格(V4)Keynote文件的生成，更新了design-system.md中的视觉结构规范V2，重写了SKILL.md中的Pitf...",
+        "keywords": [
+          "问题",
+          "经验"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
       }
     ],
-    "total": 38,
+    "total": 41,
     "byCategory": {
       "development_practice_specification": {
         "count": 5,
@@ -1247,7 +1292,7 @@
         "description": "沟通风格、工作模式、交互偏好"
       },
       "task_flow_experience": {
-        "count": 15,
+        "count": 17,
         "label": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
@@ -1268,7 +1313,7 @@
         "description": "用户兴趣、爱好偏好、关注领域"
       },
       "common_pitfalls_experience": {
-        "count": 8,
+        "count": 9,
         "label": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -1283,7 +1328,6 @@
       "03-01",
       "03-01",
       "03-01",
-      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -1291,10 +1335,10 @@
       "03-02",
       "03-02",
       "03-02",
-      "03-02"
+      "03-02",
+      "03-03"
     ],
     "skills": [
-      30,
       31,
       31,
       31,
@@ -1307,7 +1351,8 @@
       33,
       39,
       39,
-      39
+      39,
+      40
     ],
     "knowledge": [
       150,
@@ -1329,7 +1374,6 @@
       21,
       21,
       21,
-      21,
       20,
       20,
       21,
@@ -1339,7 +1383,8 @@
       24,
       25,
       25,
-      25
+      25,
+      41
     ]
   },
   "achievements": [
@@ -1370,7 +1415,7 @@
       "name": "知识贤者",
       "desc": "积累160个知识文档，博学多识",
       "icon": "📚",
-      "date": "2026-03-03",
+      "date": "2026-03-04",
       "unlocked": true,
       "progress": 100,
       "rarity": "epic",
@@ -1425,7 +1470,7 @@
       "name": "技能大师",
       "desc": "拥有44项技能，触类旁通",
       "icon": "⚡",
-      "date": "2026-03-03",
+      "date": "2026-03-04",
       "unlocked": true,
       "progress": 100,
       "rarity": "rare",
@@ -1440,8 +1485,8 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "38/30",
-      "date": "2026-03-03"
+      "progressText": "41/30",
+      "date": "2026-03-04"
     },
     {
       "id": "first_awakening",

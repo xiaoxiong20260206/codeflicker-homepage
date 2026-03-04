@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-03-04T07:47:04.936600",
+  "generatedAt": "2026-03-04T08:16:39.395219",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
-    "level": 5,
-    "totalExp": 7900,
-    "expProgress": 96.7,
-    "currentThreshold": 5000,
-    "nextThreshold": 8000,
+    "level": 17,
+    "totalExp": 7515,
+    "expProgress": 33.1,
+    "currentThreshold": 7225,
+    "nextThreshold": 8100,
     "stats": {
       "reasoning": 100,
       "memory": 100,
@@ -17,6 +17,12 @@
       "learning": 98.0,
       "insight": 80.0,
       "creativity": 100
+    },
+    "expBreakdown": {
+      "skills": 3520,
+      "knowledge": 2400,
+      "memories": 975,
+      "days": 620
     }
   },
   "skills": {
@@ -709,6 +715,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "首页数据同步踩坑经验",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 首页数据同步踩坑经验 ### 问题现象 首页显示的技能分类有\"其他技能\"7个，知识库图标全部是📁，与本地数据不一致。 ### 根因分析 **1. 配...",
+        "keywords": [
+          "首页",
+          "同步",
+          "部署",
+          "配置",
+          "分类"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
         "title": "AI助手\"林克\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
@@ -1206,7 +1230,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 38,
+    "total": 39,
     "byCategory": {
       "development_practice_specification": {
         "count": 5,
@@ -1251,7 +1275,7 @@
         "description": "用户兴趣、爱好偏好、关注领域"
       },
       "common_pitfalls_experience": {
-        "count": 9,
+        "count": 10,
         "label": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -1423,7 +1447,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "38/30",
+      "progressText": "39/30",
       "date": "2026-03-04"
     },
     {

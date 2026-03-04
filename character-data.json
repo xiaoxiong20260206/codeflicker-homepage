@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T20:30:38.767253",
+  "generatedAt": "2026-03-04T21:25:48.736608",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
@@ -27,30 +27,6 @@
         "color": "#a78bfa",
         "skills": [
           {
-            "name": "learn-from-mistakes",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
-            "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "meta-execution",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 58,
-            "description": "元执行框架：一次把事情做对的自审机制",
-            "lastUpdated": "2026-03-03"
-          }
-        ],
-        "count": 2,
-        "avgLevel": 3.0
-      },
-      "⚙️ 工作模式": {
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "skills": [
-          {
             "name": "daily-reflection-evolution",
             "source": "林克核心能力",
             "level": 5,
@@ -58,22 +34,6 @@
             "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
             "lastUpdated": "2026-03-02"
           },
-          {
-            "name": "night-task-runner",
-            "source": "林克核心能力",
-            "level": 4,
-            "exp": 70,
-            "description": "夜间长任务执行器，断点恢复和自主执行",
-            "lastUpdated": "2026-03-03"
-          }
-        ],
-        "count": 2,
-        "avgLevel": 4.5
-      },
-      "📦 能力管理": {
-        "icon": "📦",
-        "color": "#fbbf24",
-        "skills": [
           {
             "name": "neigong-cultivation",
             "source": "林克核心能力",
@@ -83,12 +43,12 @@
             "lastUpdated": "2026-03-04"
           },
           {
-            "name": "find-skills",
+            "name": "meta-execution",
             "source": "林克核心能力",
-            "level": 2,
-            "exp": 48,
-            "description": "技能发现和安装助手，寻找合适的能力扩展",
-            "lastUpdated": "2026-02-09"
+            "level": 3,
+            "exp": 58,
+            "description": "元执行框架：一次把事情做对的自审机制",
+            "lastUpdated": "2026-03-03"
           },
           {
             "name": "knowledge-base",
@@ -99,8 +59,40 @@
             "lastUpdated": "2026-02-24"
           }
         ],
+        "count": 4,
+        "avgLevel": 3.5
+      },
+      "⚙️ 工作模式": {
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "skills": [
+          {
+            "name": "night-task-runner",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 70,
+            "description": "夜间长任务执行器，断点恢复和自主执行",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "learn-from-mistakes",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 64,
+            "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "find-skills",
+            "source": "林克核心能力",
+            "level": 2,
+            "exp": 48,
+            "description": "技能发现和安装助手，寻找合适的能力扩展",
+            "lastUpdated": "2026-02-09"
+          }
+        ],
         "count": 3,
-        "avgLevel": 2.7
+        "avgLevel": 3.0
       },
       "AI领域洞察": {
         "icon": "🔍",
@@ -683,7 +675,7 @@
       {
         "title": "向非技术用户展示AI能力的结构化模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "**适用场景**：向非技术用户（如领导、投资人、合作方）解释AI能力 **核心结构**： 1. **开场信件** - 建立人设和信任 - 自我介绍（我是谁...",
@@ -719,7 +711,7 @@
       {
         "title": "已完成项目列表与路径",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 已完成项目列表 ### 调研类项目 1. **字节AI调研** - 字节AI开挂指南 - 路径：/Users/shenlang/Documents/...",
@@ -737,16 +729,16 @@
       {
         "title": "技能与记忆分类原则（默认使用）",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
-        "description": "## 技能与记忆分类原则 v1.0 ### 分类的分类原则（元原则） 1. **三层技能架构**：元能力层 → 领域技能包 → 执行技能层 2. **四层...",
+        "description": "## 技能与记忆分类原则 v1.1 ### 分类的分类原则（元原则） 1. **三层技能架构**：元能力层 → 领域技能包 → 执行技能层 2. **四层...",
         "keywords": [
           "分类原则",
           "技能分类",
           "记忆分类",
-          "v5.0",
-          "v3.0"
+          "v5.1",
+          "v3.1"
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
@@ -755,7 +747,7 @@
       {
         "title": "添棋飞书对话基本技能：本体与对话渠道分离",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 添棋飞书对话基本技能 ### 核心原则 虽然添棋是在「飞书助手」项目里和飞书用户做对话，但添棋的\"本体\"是在 CodeFlicker 项目下的「个人...",
@@ -773,7 +765,7 @@
       {
         "title": "清爽调研报告风格页面的渐进式开发规则",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "当一个页面是使用\"清爽调研报告风格\"（qingshuang-research-style）skill开发后，基于这个页面的所有后续改动、渐进式开发，都必须...",
@@ -791,7 +783,7 @@
       {
         "title": "系统性全局替换流程",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： ### 必检文件类型 1. **代码文件**：.j...",
@@ -935,7 +927,7 @@
       {
         "title": "UI气泡只展示有数据的内容",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "## UI气泡/Tooltip设计原则 ### 核心原则 **只展示有实际数据的内容，隐藏空白placeholder** ### 反例 气泡中显示\"如何升...",
@@ -989,7 +981,7 @@
       {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 创作类任务的前置确认原则 所有创作类任务（写文章、做PPT、设计页面、制作视频）在动手前必须确认： ### 必确认清单 1. **核心内容/场景列表...",
@@ -1025,7 +1017,7 @@
       {
         "title": "小无相功·自动学习模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 小无相功·自动学习模式 **定位**：林克的核心元技能，用于持续自我进化。 **核心行为**：看到好的技能/方法论/流程/思想，主动识别并内化，无需...",
@@ -1061,7 +1053,7 @@
       {
         "title": "思想体系可视化能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
@@ -1151,7 +1143,7 @@
       {
         "title": "每日反思与进化触发配置",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "**每日反思与进化触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codef...",
@@ -1169,7 +1161,7 @@
       {
         "title": "深色背景文字对比度规范",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "## 深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 ### 常见问题 - 深色背景上使用中等色调文...",
@@ -1205,7 +1197,7 @@
       {
         "title": "类比驱动解释能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
@@ -1223,7 +1215,7 @@
       {
         "title": "网页开发工作流偏好",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
@@ -1277,7 +1269,7 @@
       {
         "title": "输出链接格式规范",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "## 输出链接格式规范 ### 规则 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 ### 正确格式...",
@@ -1295,7 +1287,7 @@
       {
         "title": "迭代式完善能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
@@ -1331,7 +1323,7 @@
       {
         "title": "问题发现两分法：过程层自检 vs 结果层反馈",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "**模式名称**：过程层自检 vs 结果层反馈 **核心洞察**：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
@@ -1349,7 +1341,7 @@
       {
         "title": "隐藏前提识别能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
@@ -1385,7 +1377,7 @@
       {
         "title": "AI-Insight首页升级规范（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "AI-Insight首页更新检查清单详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references...",
@@ -1417,7 +1409,7 @@
       {
         "title": "AI日报周报工作流（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "AI日报/周报完整工作流详见ai-insight技能： - 日报：`~/.codeflicker/skills/ai-insight/references...",
@@ -1433,7 +1425,7 @@
       {
         "title": "AI日报部署流程（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "AI日报生成后默认执行部署流程，详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/d...",
@@ -1449,7 +1441,7 @@
       {
         "title": "KIM Doc格式规范（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
@@ -1481,7 +1473,7 @@
       {
         "title": "Keynote视觉设计（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "能力管理",
+        "categoryLabel": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
         "description": "Keynote视觉设计完整指南详见keynote技能：`~/.codeflicker/skills/keynote/` **核心能力**：JXA形状分析、...",
@@ -1549,7 +1541,7 @@
       {
         "title": "日报系统架构（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "日报系统完整规范详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/daily-rep...",
@@ -1583,10 +1575,10 @@
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
-        "label": "能力管理",
+        "label": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
-        "description": "能力规范、输出格式、管理规则"
+        "description": "开发实践规范、输出格式、工作流程"
       },
       "user_info": {
         "count": 3,
@@ -1604,10 +1596,10 @@
       },
       "task_flow_experience": {
         "count": 16,
-        "label": "思维/工作模式",
+        "label": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "元认知能力、工作流模式、最佳实践"
+        "description": "思维能力（如何思考）、工作模式（如何做事）"
       },
       "constraint_or_forbidden_rule": {
         "count": 7,

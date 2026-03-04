@@ -721,13 +721,23 @@ body {
 
 .tree-graph {
     display: flex;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
     position: relative;
     min-width: 0;
     padding: var(--spacing-md) var(--spacing-sm);
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
+    flex-wrap: nowrap;
+    gap: var(--spacing-md);
+}
+
+/* 水平布局层级分支 */
+.layer-branches {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px;
+    overflow-x: auto;
+    align-items: flex-start;
 }
 
 .tree-root {

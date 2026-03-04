@@ -1300,38 +1300,124 @@ body {
 .knowledge-tree .branch { color: var(--zelda-gold); }
 .memory-tree .branch { color: var(--sheikah-orange); }
 
-/* 三层架构树形结构样式 */
-.layer-branch {
+/* ============================================
+   塞尔达风格三层/四层架构样式 v2.0
+   灵感来源：旷野之息希卡石板UI
+   ============================================ */
+
+/* 层级分支容器 */
+.layer-branch.zelda-layer {
     margin-bottom: 16px;
+    position: relative;
 }
 
-.layer-branch > .layer-node {
+/* 层级头部 - 希卡石板风格 */
+.layer-header {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 2px solid;
+    gap: 10px;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.6) 0%, 
+        rgba(30, 35, 40, 0.8) 50%,
+        rgba(0, 0, 0, 0.6) 100%);
+    border: 2px solid var(--layer-color, var(--sheikah-blue));
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 希卡科技发光边框效果 */
+.layer-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--layer-color, var(--sheikah-blue)) 50%, 
+        transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.layer-header:hover {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.7) 0%, 
+        rgba(40, 45, 50, 0.9) 50%,
+        rgba(0, 0, 0, 0.7) 100%);
+    box-shadow: 
+        0 0 15px color-mix(in srgb, var(--layer-color, var(--sheikah-blue)) 30%, transparent),
+        inset 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: translateX(3px);
+}
+
+.layer-header:hover::before {
+    opacity: 0.1;
+}
+
+/* 层级图标 */
+.layer-icon {
+    font-size: 1.3em;
+    filter: drop-shadow(0 0 4px var(--layer-color, var(--sheikah-blue)));
+}
+
+/* 层级名称 */
+.layer-name {
+    font-family: var(--font-chinese), var(--font-main);
+    font-size: 1.1em;
     font-weight: 600;
-    font-size: 1.05em;
+    color: var(--layer-color, var(--sheikah-blue));
+    text-shadow: 0 0 8px color-mix(in srgb, var(--layer-color, var(--sheikah-blue)) 50%, transparent);
+    letter-spacing: 0.05em;
 }
 
-.layer-branch > .layer-node:hover {
-    background: rgba(0, 0, 0, 0.5);
-    transform: translateX(2px);
+/* 层级计数徽章 */
+.layer-count {
+    margin-left: auto;
+    padding: 3px 10px;
+    background: color-mix(in srgb, var(--layer-color, var(--sheikah-blue)) 20%, transparent);
+    border: 1px solid var(--layer-color, var(--sheikah-blue));
+    border-radius: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    font-weight: 600;
+    color: var(--layer-color, var(--sheikah-blue));
 }
 
-.layer-branch > .branches {
-    margin-left: 20px;
+/* 展开/折叠指示器 */
+.layer-toggle {
+    font-size: 0.7em;
+    color: var(--layer-color, var(--sheikah-blue));
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.layer-branch.collapsed .layer-toggle {
+    transform: rotate(-90deg);
+}
+
+.layer-header:hover .layer-toggle {
+    opacity: 1;
+}
+
+/* 子节点容器 */
+.layer-children {
+    margin-left: 24px;
+    margin-top: 12px;
     padding-left: 16px;
-    border-left: 2px solid rgba(255, 255, 255, 0.15);
-    margin-top: 10px;
+    border-left: 2px solid color-mix(in srgb, var(--layer-color, var(--sheikah-blue)) 30%, transparent);
+    transition: all 0.3s ease;
+    max-height: 2000px;
+    overflow: visible;
 }
 
-.layer-branch.collapsed > .branches {
+.layer-branch.collapsed .layer-children {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
@@ -1339,57 +1425,66 @@ body {
     padding-top: 0;
 }
 
-.layer-branch .toggle-indicator {
-    margin-left: auto;
-    font-size: 10px;
-    transition: transform 0.3s ease;
+/* 子分类分支 - 塞尔达风格 */
+.layer-children .branch {
+    margin-bottom: 10px;
 }
 
-.layer-branch.collapsed .toggle-indicator {
-    transform: rotate(-90deg);
-}
-
-/* 记忆树四层架构样式 */
-.memory-tree-layered .layer-branch {
-    margin-bottom: 12px;
-}
-
-.memory-tree-layered .layer-node {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    background: rgba(0, 0, 0, 0.25);
-    border: 2px solid;
-    border-radius: 8px;
-    cursor: pointer;
+.layer-children .category-node {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.4) 0%, 
+        rgba(20, 25, 30, 0.6) 100%);
+    border-radius: 6px;
     transition: all 0.2s ease;
 }
 
-.memory-tree-layered .layer-node:hover {
-    background: rgba(0, 0, 0, 0.4);
+.layer-children .category-node:hover {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.5) 0%, 
+        rgba(30, 35, 40, 0.7) 100%);
+    box-shadow: 0 0 10px color-mix(in srgb, currentColor 25%, transparent);
 }
 
-/* 技能树三层架构样式 */
-.skill-tree-layered .layer-branch {
-    margin-bottom: 14px;
-}
-
-.skill-tree-layered .layer-node {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 14px;
+/* 叶子节点优化 */
+.layer-children .leaf-node {
     background: rgba(0, 0, 0, 0.3);
-    border: 2px solid;
-    border-radius: 8px;
-    cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.skill-tree-layered .layer-node:hover {
-    background: rgba(0, 0, 0, 0.45);
-    transform: translateX(2px);
+.layer-children .leaf-node:hover {
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 8px color-mix(in srgb, currentColor 30%, transparent);
+    transform: scale(1.05);
+}
+
+/* 记忆树特殊样式 */
+.memory-tree-layered .layer-header {
+    border-color: var(--layer-color, var(--sheikah-orange));
+}
+
+.memory-tree-layered .layer-icon {
+    filter: drop-shadow(0 0 4px var(--layer-color, var(--sheikah-orange)));
+}
+
+/* 技能树特殊样式 */
+.skill-tree-layered .layer-header {
+    border-color: var(--layer-color, var(--sheikah-blue));
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .layer-header {
+        padding: 10px 12px;
+    }
+    
+    .layer-name {
+        font-size: 1em;
+    }
+    
+    .layer-children {
+        margin-left: 16px;
+        padding-left: 12px;
+    }
 }
 
 /* 树形控件按钮 */

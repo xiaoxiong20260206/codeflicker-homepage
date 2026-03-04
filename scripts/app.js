@@ -1317,20 +1317,22 @@ function renderSkillTreeWithLayers(container, tree, skills) {
             childIdx++;
         }
         
-        // 层级分支
+        // 层级分支 - 塞尔达风格
         const layerLevel = Math.round(layerInfo.avgLevel || 3);
+        // 从name中提取纯文字部分（去掉emoji前缀）
+        const layerDisplayName = layerInfo.name.replace(/^[🏛️🎯🛠️\s]+/, '').trim();
         layerBranches += `
-            <div class="layer-branch" id="${layerBranchId}" style="color: ${layerColor}; margin-bottom: 20px;">
-                <div class="layer-node ${getLevelClass(layerLevel)}" 
-                     style="border-color: ${layerColor}; color: ${layerColor}; font-weight: bold; font-size: 1.1em; padding: 8px 12px; cursor: pointer;"
+            <div class="layer-branch zelda-layer" id="${layerBranchId}">
+                <div class="layer-header" 
+                     style="--layer-color: ${layerColor};"
                      onclick="toggleBranch('${layerBranchId}')"
                      onmouseenter="showTreeTooltip(event, '${layerId}', 'skill')" onmouseleave="hideTooltip()">
-                    <span class="cat-icon">${layerIcon}</span>
-                    <span class="cat-name">${layerInfo.name.replace(/^[🏛️🎯🛠️] /, '')}</span>
-                    <span class="cat-count" style="border-color: ${layerColor};">${layerInfo.count || 0}</span>
-                    <span class="toggle-indicator">▼</span>
+                    <span class="layer-icon">${layerIcon}</span>
+                    <span class="layer-name">${layerDisplayName}</span>
+                    <span class="layer-count">${layerInfo.count || 0}</span>
+                    <span class="layer-toggle">▼</span>
                 </div>
-                <div class="branches" style="margin-left: 20px; border-left: 2px solid ${layerColor}30; padding-left: 15px;">
+                <div class="layer-children">
                     ${childBranches}
                 </div>
             </div>
@@ -1931,18 +1933,23 @@ function renderMemoryTreeWithLayers(container, tree, memoryItems) {
             idx++;
         }
         
-        // 层级分支
+        // 层级分支 - 塞尔达风格
         const layerLevel = getMemoryLevel(layerInfo.count);
+        // 从name中提取纯文字部分（去掉emoji前缀）
+        const layerDisplayName = layerName.replace(/^[👤🧠🎯🛠️📚\s]+/, '').trim();
+        const layerBranchId = 'memory-layer-branch-' + idx;
         layerBranches += `
-            <div class="layer-branch" style="color: ${layerColor}; margin-bottom: 20px;">
-                <div class="layer-node ${getLevelClass(layerLevel)}" 
-                     style="border-color: ${layerColor}; color: ${layerColor}; font-weight: bold; font-size: 1.1em; padding: 8px 12px;"
+            <div class="layer-branch zelda-layer" id="${layerBranchId}">
+                <div class="layer-header" 
+                     style="--layer-color: ${layerColor};"
+                     onclick="toggleBranch('${layerBranchId}')"
                      onmouseenter="showTreeTooltip(event, '${layerId}', 'memory')" onmouseleave="hideTooltip()">
-                    <span class="cat-icon">${layerIcon}</span>
-                    <span class="cat-name">${layerName.replace(/^[👤🧠🎯🛠️📚] /, '')}</span>
-                    <span class="cat-count" style="border-color: ${layerColor};">${layerInfo.count}</span>
+                    <span class="layer-icon">${layerIcon}</span>
+                    <span class="layer-name">${layerDisplayName}</span>
+                    <span class="layer-count">${layerInfo.count}</span>
+                    <span class="layer-toggle">▼</span>
                 </div>
-                <div class="branches" style="margin-left: 20px; border-left: 2px solid ${layerColor}30; padding-left: 15px;">
+                <div class="layer-children">
                     ${childBranches}
                 </div>
             </div>

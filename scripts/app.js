@@ -695,10 +695,24 @@ function renderCapabilityGrowth(capData) {
     if (knowledgeEl) knowledgeEl.textContent = capData.knowledgeCount || capData.knowledgeTotal || '-';
     if (memoryEl) memoryEl.textContent = capData.memoryCount || capData.memoryTotal || '-';
     
+    // 从趋势数据中计算真实的变化量（如果 capData 中的变化量不准确）
+    const trend = AppState.reportsData?.trend;
+    let actualSkillChange = capData.skillChange;
+    let actualKnowledgeChange = capData.knowledgeChange;
+    let actualMemoryChange = capData.memoryChange;
+    
+    // 如果趋势数据存在，使用趋势数据计算更准确的变化量
+    if (trend && trend.skills && trend.skills.length >= 2) {
+        const len = trend.skills.length;
+        actualSkillChange = trend.skills[len - 1] - trend.skills[len - 2];
+        actualKnowledgeChange = trend.knowledge[len - 1] - trend.knowledge[len - 2];
+        actualMemoryChange = trend.memory[len - 1] - trend.memory[len - 2];
+    }
+    
     // 能力变化
-    updateCapChangeV2('cap-skills-change-v2', capData.skillChange);
-    updateCapChangeV2('cap-knowledge-change-v2', capData.knowledgeChange);
-    updateCapChangeV2('cap-memory-change-v2', capData.memoryChange);
+    updateCapChangeV2('cap-skills-change-v2', actualSkillChange);
+    updateCapChangeV2('cap-knowledge-change-v2', actualKnowledgeChange);
+    updateCapChangeV2('cap-memory-change-v2', actualMemoryChange);
     
     // 新增内容标签
     renderNewItemsTags(capData);
@@ -1133,14 +1147,32 @@ function renderAbilitiesSection() {
     if (knowledgeTotal) knowledgeTotal.textContent = knowledge.totalFiles;
     if (memoryTotal) memoryTotal.textContent = memories.total;
     
-    // 渲染技能树形结构
-    renderSkillTreeGraph(skills);
+    // 使用新的渲染函数（来自 ability-trees.js）
+    const skillContainer = document.getElementById('skill-tree');
+    const knowledgeContainer = document.getElementById('knowledge-tree');
+    const memoryContainer = document.getElementById('memory-tree');
     
-    // 渲染知识库树形结构
-    renderKnowledgeTreeGraph(knowledge);
+    // 技能树 - 科技树风格
+    if (skillContainer && typeof renderSkillTechTree === 'function') {
+        renderSkillTechTree(skillContainer, skills);
+    } else {
+        // 回退到旧版渲染
+        renderSkillTreeGraph(skills);
+    }
     
-    // 渲染记忆库树形结构
-    renderMemoryTreeGraph(memories);
+    // 知识树 - 档案馆卡片风格
+    if (knowledgeContainer && typeof renderKnowledgeArchive === 'function') {
+        renderKnowledgeArchive(knowledgeContainer, knowledge);
+    } else {
+        renderKnowledgeTreeGraph(knowledge);
+    }
+    
+    // 记忆树 - 神经网络径向布局
+    if (memoryContainer && typeof renderMemoryNeuralNetwork === 'function') {
+        renderMemoryNeuralNetwork(memoryContainer, memories);
+    } else {
+        renderMemoryTreeGraph(memories);
+    }
     
     // 渲染成就墙
     renderAchievements(achievements);

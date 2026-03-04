@@ -164,9 +164,11 @@ function updateSidebarWithReports() {
 // Phase 1: 只加载首屏必需的数据（character + projects）
 async function loadInitialData() {
     try {
+        // 添加时间戳避免缓存
+        const timestamp = Date.now();
         const [characterRes, projectsRes] = await Promise.all([
-            fetch('./character-data.json'),
-            fetch('./projects-data.json')
+            fetch(`./character-data.json?t=${timestamp}`),
+            fetch(`./projects-data.json?t=${timestamp}`)
         ]);
         
         if (!characterRes.ok) throw new Error('Failed to load character data: ' + characterRes.status);

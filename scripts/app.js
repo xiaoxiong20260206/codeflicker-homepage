@@ -1490,7 +1490,16 @@ function renderMemoryTreeGraph(memories) {
     const container = document.getElementById('memory-tree');
     if (!container) return;
     
-    // 获取记忆分类 - 支持两种数据格式
+    // 优先使用新的四层架构tree数据
+    const tree = memories.tree;
+    
+    if (tree && Object.keys(tree).length > 0) {
+        // 使用四层架构渲染
+        renderMemoryTreeWithLayers(container, tree, memories.items || []);
+        return;
+    }
+    
+    // 回退：使用旧的byCategory数据
     let categoriesObj = memories.categories || memories.byCategory || {};
     
     // 获取记忆项目列表，用于显示每条记忆的具体描述
@@ -1609,6 +1618,147 @@ function renderMemoryTreeGraph(memories) {
                 </div>
             </div>
             <div class="branches">${branches}</div>
+        </div>
+    `;
+}
+
+// 四层架构记忆树渲染
+function renderMemoryTreeWithLayers(container, tree, memoryItems) {
+    // 层级颜色映射
+    const layerColors = {
+        '👤 用户层': '#38bdf8',
+        '🧠 能力层': '#a78bfa',
+        '🎯 领域技能包': '#8b5cf6',
+        '🛠️ 领域层': '#4ade80',
+        '📚 项目层': '#c2410c'
+    };
+    
+    // 计算等级
+    function getMemoryLevel(count) {
+        if (count >= 10) return 5;
+        if (count >= 6) return 4;
+        if (count >= 4) return 3;
+        if (count >= 2) return 2;
+        return 1;
+    }
+    
+    let idx = 0;
+    let layerBranches = '';
+    
+    // 遍历四层架构
+    for (const [layerName, layerInfo] of Object.entries(tree)) {
+        if (layerInfo.count === 0) continue; // 跳过空层
+        
+        const layerColor = layerColors[layerName] || '#fb923c';
+        const layerIcon = layerInfo.icon || '📁';
+        const layerId = 'memory-layer-' + idx;
+        
+        AppState.dataMap[layerId] = {
+            name: layerName,
+            icon: layerIcon,
+            level: getMemoryLevel(layerInfo.count),
+            description: layerInfo.description || layerName,
+            source: '记忆库'
+        };
+        
+        let childBranches = '';
+        
+        // 遍历子分类
+        for (const [childName, childInfo] of Object.entries(layerInfo.children || {})) {
+            if (childInfo.count === 0) continue;
+            
+            const childLevel = getMemoryLevel(childInfo.count);
+            const childId = 'memory-child-' + idx;
+            
+            AppState.dataMap[childId] = {
+                name: childName,
+                icon: childInfo.icon || '📁',
+                level: childLevel,
+                description: childInfo.description || `${childName}，共${childInfo.count}条`,
+                source: layerName
+            };
+            
+            // 渲染叶子节点（取前6个记忆）
+            let leaves = '';
+            const childItems = childInfo.items || [];
+            const leafCount = Math.min(childItems.length, 6);
+            
+            // 简短标签
+            const shortLabels = ['条目', '记录', '内容', '项目', '事项', '信息'];
+            
+            for (let i = 0; i < leafCount; i++) {
+                const mid = 'memory-item-' + (idx++);
+                const item = childItems[i];
+                const leafLabel = shortLabels[i % shortLabels.length];
+                
+                AppState.dataMap[mid] = {
+                    name: item.title || `${childName} #${i+1}`,
+                    icon: '💭',
+                    level: item.importance || childLevel,
+                    description: item.description || `${childName}类别下的记忆`,
+                    source: childName
+                };
+                
+                leaves += `
+                    <div class="leaf-node ${getLevelClass(childLevel)}" 
+                         style="border-color: ${layerColor}; color: ${layerColor};"
+                         onmouseenter="showTreeTooltip(event, '${mid}', 'memory')" onmouseleave="hideTooltip()">
+                        <span class="leaf-name">${leafLabel}</span>
+                    </div>
+                `;
+            }
+            
+            if (childInfo.count > 6) {
+                leaves += `<div class="leaf-more">+${childInfo.count - 6}</div>`;
+            }
+            
+            childBranches += `
+                <div class="branch" style="color: ${layerColor};">
+                    <div class="category-node ${getLevelClass(childLevel)}" 
+                         style="border-color: ${layerColor}; color: ${layerColor};"
+                         onmouseenter="showTreeTooltip(event, '${childId}', 'memory')" onmouseleave="hideTooltip()">
+                        <span class="cat-icon">${childInfo.icon || '📁'}</span>
+                        <span class="cat-name">${childName}</span>
+                        <span class="cat-level" style="border-color: ${layerColor};">${childLevel}</span>
+                        <span class="cat-count" style="border-color: ${layerColor};">${childInfo.count}</span>
+                    </div>
+                    <div class="leaves" style="color: ${layerColor};">
+                        ${leaves}
+                    </div>
+                </div>
+            `;
+            idx++;
+        }
+        
+        // 层级分支
+        const layerLevel = getMemoryLevel(layerInfo.count);
+        layerBranches += `
+            <div class="layer-branch" style="color: ${layerColor}; margin-bottom: 20px;">
+                <div class="layer-node ${getLevelClass(layerLevel)}" 
+                     style="border-color: ${layerColor}; color: ${layerColor}; font-weight: bold; font-size: 1.1em; padding: 8px 12px;"
+                     onmouseenter="showTreeTooltip(event, '${layerId}', 'memory')" onmouseleave="hideTooltip()">
+                    <span class="cat-icon">${layerIcon}</span>
+                    <span class="cat-name">${layerName.replace(/^[👤🧠🎯🛠️📚] /, '')}</span>
+                    <span class="cat-count" style="border-color: ${layerColor};">${layerInfo.count}</span>
+                </div>
+                <div class="branches" style="margin-left: 20px; border-left: 2px solid ${layerColor}30; padding-left: 15px;">
+                    ${childBranches}
+                </div>
+            </div>
+        `;
+    }
+    
+    container.innerHTML = `
+        <div class="tree-graph memory-tree-layered">
+            <div class="tree-root" style="color: var(--zelda-orange);">
+                <div class="root-node" style="border-color: var(--zelda-orange); color: var(--zelda-orange);">
+                    <span class="node-icon">🧠</span>
+                    <span class="node-level" style="border-color: var(--zelda-orange);">记忆</span>
+                </div>
+            </div>
+            <div class="layer-branches" style="margin-top: 15px;">
+                ${layerBranches}
+            </div>
         </div>
     `;
 }

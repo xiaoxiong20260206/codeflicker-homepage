@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-04T21:48:41.881101",
+  "generatedAt": "2026-03-05T06:00:28.202926",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 8920,
-    "expProgress": 23.0,
+    "totalExp": 9320,
+    "expProgress": 33.0,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -541,7 +541,7 @@
             "level": 5,
             "exp": 95,
             "description": "---",
-            "lastUpdated": "2026-03-04"
+            "lastUpdated": "2026-03-05"
           }
         ],
         "count": 1,
@@ -1080,7 +1080,7 @@
                 "level": 5,
                 "exp": 95,
                 "description": "---",
-                "lastUpdated": "2026-03-04"
+                "lastUpdated": "2026-03-05"
               }
             ],
             "count": 1,
@@ -1761,6 +1761,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "流程经验: Git Commit and Deployment Verification",
+        "category": "task_flow_experience",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "发现可复用模式: 完成了Git提交和部署流程，添加了缓存破坏机制确保加载最新数据。验证了作品展示板块的显示效果：14个作品总数正确显示，2个精选作品标记正...",
+        "keywords": [
+          "部署",
+          "经验",
+          "流程",
+          "Git",
+          "数据"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "深色背景文字对比度规范",
         "category": "development_practice_specification",
         "categoryLabel": "前端开发",
@@ -1834,6 +1853,63 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "踩坑经验: Bytedance AI Guide Website Style Fixes",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题描述: 修复了所有子页面CSS语法错误（多余的>符号），统一页面宽度为980px标准，优化了导航栏响应式样式和表格宽度问题，通过16个文件变更完成了样...",
+        "keywords": [
+          "问题",
+          "修复",
+          "优化",
+          "部署",
+          "错误"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "踩坑经验: Git Commit and Deployment Verification",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "问题描述: 完成了Git提交和部署流程，添加了缓存破坏机制确保加载最新数据。验证了作品展示板块的显示效果：14个作品总数正确显示，2个精选作品标记正常，所...",
+        "keywords": [
+          "问题",
+          "部署",
+          "经验",
+          "流程",
+          "Git"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "踩坑经验: Kim AI Bot Deployment Guide",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "问题描述: 检查了现有的kim-ai-bot项目结构，确认已具备webhook接收、AI引擎等基础组件。提供了三种部署方案：本地开发模式、ngrok临时调...",
+        "keywords": [
+          "问题",
+          "部署",
+          "调试",
+          "经验",
+          "组件"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -2180,6 +2256,73 @@
         "source": "用户显式记录"
       },
       {
+        "title": "流程经验: AI Assistant Skills Update and Documentation",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "发现可复用模式: 更新了README.md和PLAN.md文件，将技能总数从47增加到49个，新增了`ai-insight`和`linke-kim-mes...",
+        "keywords": [
+          "经验",
+          "流程",
+          "技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "流程经验: AI Knowledge Base Expansion and Restructuring",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "发现可复用模式: 完成了知识库从v4.0到v4.1的升级，新增5篇维度专属文档，包括AI发展史与能力矩阵、Agent基础设施、字节AI全景布局和企业转型方...",
+        "keywords": [
+          "经验",
+          "流程",
+          "方法"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "流程经验: Daily Task Reflection Process Improvement",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "发现可复用模式: 重构了第二步自主学习流程，引入6问深度清单和洞察卡片模板实现逐对话微观分析，同时保留跨对话的宏观元认知审计功能。最终合并形成「先微观后宏...",
+        "keywords": [
+          "实现",
+          "经验",
+          "流程"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "流程经验: Responsive Layout Adjustment for Skill Tree",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "发现可复用模式: 将响应式断点从768px调整为480px，修改了`.layer-branches`的flex-direction属性和媒体查询规则，并添...",
+        "keywords": [
+          "经验",
+          "流程"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "首页性能优化踩坑（精简版）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2197,7 +2340,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 54,
+    "total": 62,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -2221,7 +2364,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 16,
+        "count": 21,
         "label": "思维能力",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2242,7 +2385,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 15,
+        "count": 18,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -2661,6 +2804,40 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "流程经验: Daily Task Reflection Process Improvement",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "发现可复用模式: 重构了第二步自主学习流程，引入6问深度清单和洞察卡片模板实现逐对话微观分析，同时保留跨对话的宏观元认知审计功能。最终合并形成「先微观后宏...",
+                "keywords": [
+                  "实现",
+                  "经验",
+                  "流程"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "流程经验: AI Knowledge Base Expansion and Restructuring",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "发现可复用模式: 完成了知识库从v4.0到v4.1的升级，新增5篇维度专属文档，包括AI发展史与能力矩阵、Agent基础设施、字节AI全景布局和企业转型方...",
+                "keywords": [
+                  "经验",
+                  "流程",
+                  "方法"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "每日反思与进化触发配置",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
@@ -2737,7 +2914,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 9
+            "count": 11
           },
           "工作模式": {
             "icon": "⚙️",
@@ -2799,6 +2976,25 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "流程经验: Git Commit and Deployment Verification",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "发现可复用模式: 完成了Git提交和部署流程，添加了缓存破坏机制确保加载最新数据。验证了作品展示板块的显示效果：14个作品总数正确显示，2个精选作品标记正...",
+                "keywords": [
+                  "部署",
+                  "经验",
+                  "流程",
+                  "Git",
+                  "数据"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
               },
               {
@@ -2874,10 +3070,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 7
+            "count": 8
           }
         },
-        "count": 16
+        "count": 19
       },
       "🎯 领域技能包": {
         "icon": "🎯",
@@ -2958,6 +3154,25 @@
             "color": "#f472b6",
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
+              {
+                "title": "踩坑经验: Bytedance AI Guide Website Style Fixes",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题描述: 修复了所有子页面CSS语法错误（多余的>符号），统一页面宽度为980px标准，优化了导航栏响应式样式和表格宽度问题，通过16个文件变更完成了样...",
+                "keywords": [
+                  "问题",
+                  "修复",
+                  "优化",
+                  "部署",
+                  "错误"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
               {
                 "title": "日报列表同步遗漏问题及修复方案",
                 "category": "common_pitfalls_experience",
@@ -3108,13 +3323,51 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 8
+            "count": 9
           },
           "发布部署": {
             "icon": "🚀",
             "color": "#4ade80",
             "description": "GitHub Pages/部署踩坑",
             "items": [
+              {
+                "title": "踩坑经验: Kim AI Bot Deployment Guide",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "问题描述: 检查了现有的kim-ai-bot项目结构，确认已具备webhook接收、AI引擎等基础组件。提供了三种部署方案：本地开发模式、ngrok临时调...",
+                "keywords": [
+                  "问题",
+                  "部署",
+                  "调试",
+                  "经验",
+                  "组件"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "踩坑经验: Git Commit and Deployment Verification",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "问题描述: 完成了Git提交和部署流程，添加了缓存破坏机制确保加载最新数据。验证了作品展示板块的显示效果：14个作品总数正确显示，2个精选作品标记正常，所...",
+                "keywords": [
+                  "问题",
+                  "部署",
+                  "经验",
+                  "流程",
+                  "Git"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
               {
                 "title": "GitHub Pages 部署锁冲突问题及修复方案",
                 "category": "common_pitfalls_experience",
@@ -3154,7 +3407,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 4
           },
           "文档处理": {
             "icon": "📄",
@@ -3351,7 +3604,7 @@
             "count": 2
           }
         },
-        "count": 19
+        "count": 22
       },
       "📚 项目层": {
         "icon": "📚",
@@ -3366,7 +3619,6 @@
     "dates": [
       "03-01",
       "03-01",
-      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -3375,12 +3627,12 @@
       "03-02",
       "03-02",
       "03-02",
+      "03-04",
       "03-04",
       "03-04",
       "03-04"
     ],
     "skills": [
-      31,
       32,
       32,
       32,
@@ -3393,6 +3645,7 @@
       39,
       42,
       43,
+      42,
       42
     ],
     "knowledge": [
@@ -3407,12 +3660,11 @@
       150,
       150,
       150,
-      150,
+      152,
       152,
       152
     ],
     "memories": [
-      21,
       20,
       20,
       21,
@@ -3425,7 +3677,8 @@
       25,
       57,
       51,
-      52
+      52,
+      62
     ]
   },
   "achievements": [
@@ -3456,7 +3709,7 @@
       "name": "知识贤者",
       "desc": "积累162个知识文档，博学多识",
       "icon": "📚",
-      "date": "2026-03-04",
+      "date": "2026-03-05",
       "unlocked": true,
       "progress": 100,
       "rarity": "epic",
@@ -3511,7 +3764,7 @@
       "name": "技能大师",
       "desc": "拥有46项技能，触类旁通",
       "icon": "⚡",
-      "date": "2026-03-04",
+      "date": "2026-03-05",
       "unlocked": true,
       "progress": 100,
       "rarity": "rare",
@@ -3526,8 +3779,8 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "54/30",
-      "date": "2026-03-04"
+      "progressText": "62/30",
+      "date": "2026-03-05"
     },
     {
       "id": "first_awakening",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T21:31:20.527796",
+  "generatedAt": "2026-03-04T21:48:41.881101",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
@@ -25,6 +25,8 @@
       "🧠 思维能力": {
         "icon": "🧠",
         "color": "#a78bfa",
+        "layer": "meta",
+        "description": "决定林克如何思考：元执行、自进化、内功修炼、知识库",
         "skills": [
           {
             "name": "daily-reflection-evolution",
@@ -65,6 +67,8 @@
       "⚙️ 工作模式": {
         "icon": "⚙️",
         "color": "#5ec4d4",
+        "layer": "meta",
+        "description": "决定林克如何做事：举一反三、夜间长任务、技能发现、技能管理",
         "skills": [
           {
             "name": "night-task-runner",
@@ -97,6 +101,8 @@
       "AI领域洞察": {
         "icon": "🔍",
         "color": "#8b5cf6",
+        "layer": "domain_pack",
+        "description": "AI行业持续追踪：日报/周报/深度调研/追踪体系",
         "skills": [
           {
             "name": "ai-insight",
@@ -113,6 +119,8 @@
       "投资理财": {
         "icon": "💰",
         "color": "#fb923c",
+        "layer": "domain_pack",
+        "description": "投资理财全流程：股票分析、投资组合、财务决策",
         "skills": [
           {
             "name": "stock-analysis",
@@ -145,6 +153,8 @@
       "📊 调研分析": {
         "icon": "🔬",
         "color": "#a78bfa",
+        "layer": "execution",
+        "description": "行业调研、市场分析、竞品研究",
         "skills": [
           {
             "name": "industry-research",
@@ -201,6 +211,8 @@
       "📄 文档处理": {
         "icon": "📄",
         "color": "#38bdf8",
+        "layer": "execution",
+        "description": "文档读写、同步、发布：PDF/Word/PPT/Excel/Keynote",
         "skills": [
           {
             "name": "ks-kim-docs-shuttle",
@@ -273,6 +285,8 @@
       "🎨 前端开发": {
         "icon": "🎨",
         "color": "#f472b6",
+        "layer": "execution",
+        "description": "页面开发与设计：UI/UX、组件、工作流",
         "skills": [
           {
             "name": "web-dev-workflow",
@@ -321,6 +335,8 @@
       "🎭 风格模板": {
         "icon": "🎭",
         "color": "#ec4899",
+        "layer": "execution",
+        "description": "视觉风格模板库：塞尔达、清爽调研、工作汇报",
         "skills": [
           {
             "name": "zelda-style",
@@ -361,6 +377,8 @@
       "📤 发布部署": {
         "icon": "🚀",
         "color": "#4ade80",
+        "layer": "execution",
+        "description": "代码/页面部署：GitHub Pages",
         "skills": [
           {
             "name": "github-deploy-publisher",
@@ -377,6 +395,8 @@
       "💬 消息通信": {
         "icon": "💬",
         "color": "#06b6d4",
+        "layer": "execution",
+        "description": "消息推送：KIM、飞书",
         "skills": [
           {
             "name": "linke-kim-message",
@@ -401,6 +421,8 @@
       "👔 工作辅导": {
         "icon": "👔",
         "color": "#6366f1",
+        "layer": "execution",
+        "description": "晋升辅导、答辩准备",
         "skills": [
           {
             "name": "promotion-coaching",
@@ -417,6 +439,8 @@
       "✍️ 内容创作": {
         "icon": "✍️",
         "color": "#f59e0b",
+        "layer": "execution",
+        "description": "专栏写作",
         "skills": [
           {
             "name": "ai-column-writer",
@@ -433,6 +457,8 @@
       "⚡ 效率工具": {
         "icon": "⚡",
         "color": "#64748b",
+        "layer": "execution",
+        "description": "个人助理",
         "skills": [
           {
             "name": "personal-assistant",
@@ -449,6 +475,8 @@
       "🔧 开发规范": {
         "icon": "🔧",
         "color": "#94a3b8",
+        "layer": "execution",
+        "description": "开发最佳实践：React/Next.js/Remotion/MCP",
         "skills": [
           {
             "name": "vercel-react-best-practices",
@@ -505,6 +533,7 @@
       "其他技能": {
         "icon": "📦",
         "color": "#64748b",
+        "layer": "execution",
         "skills": [
           {
             "name": "ui-ux-pro-max-skill",
@@ -517,6 +546,549 @@
         ],
         "count": 1,
         "avgLevel": 5.0
+      }
+    },
+    "tree": {
+      "meta": {
+        "name": "🏛️ 元能力层",
+        "icon": "🏛️",
+        "color": "#a78bfa",
+        "description": "决定我是谁、如何思考、如何工作",
+        "children": {
+          "🧠 思维能力": {
+            "icon": "🧠",
+            "color": "#a78bfa",
+            "description": "决定林克如何思考：元执行、自进化、内功修炼、知识库",
+            "skills": [
+              {
+                "name": "daily-reflection-evolution",
+                "source": "林克核心能力",
+                "level": 5,
+                "exp": 85,
+                "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
+                "lastUpdated": "2026-03-02"
+              },
+              {
+                "name": "neigong-cultivation",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 73,
+                "description": "内功修炼：记忆/知识/技能三位一体优化器",
+                "lastUpdated": "2026-03-04"
+              },
+              {
+                "name": "meta-execution",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 58,
+                "description": "元执行框架：一次把事情做对的自审机制",
+                "lastUpdated": "2026-03-03"
+              },
+              {
+                "name": "knowledge-base",
+                "source": "林克核心能力",
+                "level": 2,
+                "exp": 48,
+                "description": "个人知识库检索，按分类查找历史调研和文档",
+                "lastUpdated": "2026-02-24"
+              }
+            ],
+            "count": 4,
+            "avgLevel": 3.5
+          },
+          "⚙️ 工作模式": {
+            "icon": "⚙️",
+            "color": "#5ec4d4",
+            "description": "决定林克如何做事：举一反三、夜间长任务、技能发现、技能管理",
+            "skills": [
+              {
+                "name": "night-task-runner",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 70,
+                "description": "夜间长任务执行器，断点恢复和自主执行",
+                "lastUpdated": "2026-03-03"
+              },
+              {
+                "name": "learn-from-mistakes",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 64,
+                "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
+                "lastUpdated": "2026-03-03"
+              },
+              {
+                "name": "find-skills",
+                "source": "林克核心能力",
+                "level": 2,
+                "exp": 48,
+                "description": "技能发现和安装助手，寻找合适的能力扩展",
+                "lastUpdated": "2026-02-09"
+              }
+            ],
+            "count": 3,
+            "avgLevel": 3.0
+          }
+        },
+        "count": 7,
+        "avgLevel": 3.3
+      },
+      "domain_pack": {
+        "name": "🎯 领域技能包",
+        "icon": "🎯",
+        "color": "#8b5cf6",
+        "description": "特定领域的完整解决方案",
+        "children": {
+          "AI领域洞察": {
+            "icon": "🔍",
+            "color": "#8b5cf6",
+            "description": "AI行业持续追踪：日报/周报/深度调研/追踪体系",
+            "skills": [
+              {
+                "name": "ai-insight",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 82,
+                "description": "AI持续洞察平台：日报/周报/深度调研/首页管理",
+                "lastUpdated": "2026-03-04"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 4.0
+          },
+          "投资理财": {
+            "icon": "💰",
+            "color": "#fb923c",
+            "description": "投资理财全流程：股票分析、投资组合、财务决策",
+            "skills": [
+              {
+                "name": "stock-analysis",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 91,
+                "description": "股票和加密货币分析，投资组合管理，定期报告",
+                "lastUpdated": "2026-02-25"
+              },
+              {
+                "name": "investment-tracker",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 73,
+                "description": "投资组合追踪，基金/股票/ETF持仓管理",
+                "lastUpdated": "2026-03-03"
+              },
+              {
+                "name": "investment-analyzer",
+                "source": "Claude技能库",
+                "level": 3,
+                "exp": 58,
+                "description": "投资机会分析，跨资产类别评估和风险分析",
+                "lastUpdated": "2026-02-25"
+              }
+            ],
+            "count": 3,
+            "avgLevel": 3.7
+          }
+        },
+        "count": 4,
+        "avgLevel": 3.8
+      },
+      "execution": {
+        "name": "🛠️ 执行技能层",
+        "icon": "🛠️",
+        "color": "#4ade80",
+        "description": "做具体事情的工具",
+        "children": {
+          "📊 调研分析": {
+            "icon": "🔬",
+            "color": "#a78bfa",
+            "description": "行业调研、市场分析、竞品研究",
+            "skills": [
+              {
+                "name": "industry-research",
+                "source": "单虓晗自定义",
+                "level": 3,
+                "exp": 63,
+                "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "apify-trend-analysis",
+                "source": "Cursor技能库",
+                "level": 2,
+                "exp": 57,
+                "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "apify-market-research",
+                "source": "Cursor技能库",
+                "level": 2,
+                "exp": 57,
+                "description": "市场调研，分析地理机会、定价、消费者行为",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "apify-competitor-intelligence",
+                "source": "Cursor技能库",
+                "level": 2,
+                "exp": 57,
+                "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "research",
+                "source": "Claude技能库",
+                "level": 2,
+                "exp": 54,
+                "description": "AI驱动的通用研究能力，带引用的综合调研",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "wechat-research",
+                "source": "单虓晗自定义",
+                "level": 2,
+                "exp": 48,
+                "description": "微信公众号内容调研、整理和知识库构建",
+                "lastUpdated": "2026-02-12"
+              }
+            ],
+            "count": 6,
+            "avgLevel": 2.2
+          },
+          "📄 文档处理": {
+            "icon": "📄",
+            "color": "#38bdf8",
+            "description": "文档读写、同步、发布：PDF/Word/PPT/Excel/Keynote",
+            "skills": [
+              {
+                "name": "ks-kim-docs-shuttle",
+                "source": "林克核心能力",
+                "level": 5,
+                "exp": 90,
+                "description": "快手内网Docs文档与本地Markdown双向同步",
+                "lastUpdated": "2026-03-04"
+              },
+              {
+                "name": "pdf",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 85,
+                "description": "PDF文档读取、提取、合并、拆分、OCR识别等全功能处理",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "pptx",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 85,
+                "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "keynote",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 79,
+                "description": "Apple Keynote演示文稿创建，JXA自动化支持",
+                "lastUpdated": "2026-03-03"
+              },
+              {
+                "name": "docx",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "Word文档创建、编辑、格式化，支持目录、页眉页脚、样式等",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "xlsx",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "Excel电子表格处理，支持公式、图表、数据分析",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "canvas-design",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "yuque-publisher",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 58,
+                "description": "语雀知识库文档自动发布、同步和管理",
+                "lastUpdated": "2026-02-25"
+              }
+            ],
+            "count": 8,
+            "avgLevel": 4.0
+          },
+          "🎨 前端开发": {
+            "icon": "🎨",
+            "color": "#f472b6",
+            "description": "页面开发与设计：UI/UX、组件、工作流",
+            "skills": [
+              {
+                "name": "web-dev-workflow",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 76,
+                "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
+                "lastUpdated": "2026-03-02"
+              },
+              {
+                "name": "ui-ux-pro-max",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "pixel-action-game",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 75,
+                "description": "像素风格动作游戏开发，含关卡设计和8位音效",
+                "lastUpdated": "2026-02-22"
+              },
+              {
+                "name": "canvas-design",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "frontend-design",
+                "source": "Cursor技能库",
+                "level": 2,
+                "exp": 51,
+                "description": "高质量前端界面设计，避免通用AI风格",
+                "lastUpdated": "2026-02-08"
+              }
+            ],
+            "count": 5,
+            "avgLevel": 3.6
+          },
+          "🎭 风格模板": {
+            "icon": "🎭",
+            "color": "#ec4899",
+            "description": "视觉风格模板库：塞尔达、清爽调研、工作汇报",
+            "skills": [
+              {
+                "name": "zelda-style",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 79,
+                "description": "塞尔达·旷野之息风格页面设计规范",
+                "lastUpdated": "2026-03-01"
+              },
+              {
+                "name": "theme-factory",
+                "source": "Cursor技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "主题工厂，10种预设主题快速应用于各类文档",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "work-report-ppt",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 70,
+                "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
+                "lastUpdated": "2026-02-27"
+              },
+              {
+                "name": "qingshuang-research-style",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 63,
+                "description": "清爽调研报告风格的CSS样式规范",
+                "lastUpdated": "2026-02-23"
+              }
+            ],
+            "count": 4,
+            "avgLevel": 3.8
+          },
+          "📤 发布部署": {
+            "icon": "🚀",
+            "color": "#4ade80",
+            "description": "代码/页面部署：GitHub Pages",
+            "skills": [
+              {
+                "name": "github-deploy-publisher",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 76,
+                "description": "自动化GitHub仓库创建、代码提交、Pages部署",
+                "lastUpdated": "2026-02-25"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 4.0
+          },
+          "💬 消息通信": {
+            "icon": "💬",
+            "color": "#06b6d4",
+            "description": "消息推送：KIM、飞书",
+            "skills": [
+              {
+                "name": "linke-kim-message",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 73,
+                "description": "KIM消息推送，支持MixCard卡片和群消息",
+                "lastUpdated": "2026-03-04"
+              },
+              {
+                "name": "feishu-assistant",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 58,
+                "description": "飞书消息自动化发送和接收，对接飞书助手",
+                "lastUpdated": "2026-02-27"
+              }
+            ],
+            "count": 2,
+            "avgLevel": 3.5
+          },
+          "👔 工作辅导": {
+            "icon": "👔",
+            "color": "#6366f1",
+            "description": "晋升辅导、答辩准备",
+            "skills": [
+              {
+                "name": "promotion-coaching",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 70,
+                "description": "晋升辅导全流程：材料整理→PPT生成→答辩攻略→模拟QA",
+                "lastUpdated": "2026-03-03"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 4.0
+          },
+          "✍️ 内容创作": {
+            "icon": "✍️",
+            "color": "#f59e0b",
+            "description": "专栏写作",
+            "skills": [
+              {
+                "name": "ai-column-writer",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 79,
+                "description": "「养了个AI」专栏写作和发布管理",
+                "lastUpdated": "2026-03-03"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 4.0
+          },
+          "⚡ 效率工具": {
+            "icon": "⚡",
+            "color": "#64748b",
+            "description": "个人助理",
+            "skills": [
+              {
+                "name": "personal-assistant",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 84,
+                "description": "个人助理能力，日程管理、任务追踪、习惯监控",
+                "lastUpdated": "2026-02-25"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 4.0
+          },
+          "🔧 开发规范": {
+            "icon": "🔧",
+            "color": "#94a3b8",
+            "description": "开发最佳实践：React/Next.js/Remotion/MCP",
+            "skills": [
+              {
+                "name": "vercel-react-best-practices",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 80,
+                "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "vercel-react-native-skills",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 80,
+                "description": "React Native和Expo移动应用开发最佳实践",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "vercel-composition-patterns",
+                "source": "Cursor技能库",
+                "level": 4,
+                "exp": 80,
+                "description": "React组合模式，构建可扩展的组件架构",
+                "lastUpdated": "2026-02-09"
+              },
+              {
+                "name": "remotion-best-practices",
+                "source": "Cursor技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "Remotion视频创作最佳实践，用React制作视频",
+                "lastUpdated": "2026-02-08"
+              },
+              {
+                "name": "mcp-builder",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 75,
+                "description": "MCP服务器开发指南，让LLM对接外部API服务",
+                "lastUpdated": "2026-02-05"
+              },
+              {
+                "name": "web-design-guidelines",
+                "source": "Cursor技能库",
+                "level": 2,
+                "exp": 48,
+                "description": "Web界面设计规范审查，检查无障碍和最佳实践",
+                "lastUpdated": "2026-02-09"
+              }
+            ],
+            "count": 6,
+            "avgLevel": 3.7
+          },
+          "其他技能": {
+            "icon": "📦",
+            "color": "#64748b",
+            "layer": "execution",
+            "skills": [
+              {
+                "name": "ui-ux-pro-max-skill",
+                "source": "codeflicker",
+                "level": 5,
+                "exp": 95,
+                "description": "---",
+                "lastUpdated": "2026-03-04"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 5.0
+          }
+        },
+        "count": 36,
+        "avgLevel": 3.6
       }
     }
   },

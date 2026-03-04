@@ -1158,6 +1158,207 @@ function renderSkillTreeGraph(skills) {
     const container = document.getElementById('skill-tree');
     if (!container) return;
     
+    // 优先使用三层架构tree数据
+    const tree = skills.tree;
+    
+    if (tree && Object.keys(tree).length > 0) {
+        // 使用三层架构渲染
+        renderSkillTreeWithLayers(container, tree, skills);
+        return;
+    }
+    
+    // 回退：使用扁平结构渲染
+    renderSkillTreeFlat(container, skills);
+}
+
+// 三层架构技能树渲染
+function renderSkillTreeWithLayers(container, tree, skills) {
+    // 技能名称到简短中文名的映射
+    const skillNameMap = {
+        // === 核心能力 ===
+        'daily-reflection-evolution': '自进化',
+        'skill-manager': '技能管理',
+        'knowledge-base': '知识库',
+        'personal-assistant': '助理',
+        'find-skills': '发现',
+        'meta-execution': '元执行',
+        'learn-from-mistakes': '举一反三',
+        'neigong-cultivation': '内功修炼',
+        'night-task-runner': '夜间任务',
+        'web-dev-workflow': '网页流程',
+        'promotion-coaching': '晋升辅导',
+        
+        // === 调研分析 ===
+        'industry-research': '行研',
+        'wechat-research': '公众号',
+        'research': '调研',
+        'apify-trend-analysis': '趋势',
+        'apify-market-research': '市场',
+        'apify-competitor-intelligence': '竞情',
+        'daily-ai-report': 'AI日报',
+        'ai-insight': 'AI洞察',
+        
+        // === 文档处理 ===
+        'pdf': 'PDF',
+        'pptx': 'PPT',
+        'docx': 'Word',
+        'xlsx': 'Excel',
+        'canvas-design': '画布',
+        'keynote': 'Keynote',
+        
+        // === 前端开发 ===
+        'ui-ux-pro-max': 'UI专家',
+        'frontend-design': '前端',
+        'qingshuang-research-style': '清爽',
+        'work-report-ppt': '汇报',
+        'pixel-action-game': '像素',
+        'theme-factory': '主题',
+        'web-design-guidelines': '规范',
+        'zelda-style': '塞尔达',
+        'vercel-react-best-practices': 'React',
+        'vercel-react-native-skills': 'RN',
+        'vercel-composition-patterns': '组合',
+        'remotion-best-practices': '视频',
+        
+        // === 发布部署 ===
+        'github-deploy-publisher': 'GitHub',
+        'yuque-publisher': '语雀',
+        'ks-kim-docs-shuttle': 'KIM文档',
+        'mcp-builder': 'MCP',
+        
+        // === 投资理财 ===
+        'stock-analysis': '股票',
+        'investment-analyzer': '投资',
+        'investment-tracker': '基金',
+        
+        // === 效率工具 ===
+        'feishu-assistant': '飞书',
+        'linke-kim-message': 'KIM消息',
+        'ai-column-writer': '专栏'
+    };
+    
+    let idx = 0;
+    let layerBranches = '';
+    
+    // 遍历三层架构
+    for (const [layerKey, layerInfo] of Object.entries(tree)) {
+        if (!layerInfo.children || Object.keys(layerInfo.children).length === 0) continue;
+        
+        const layerColor = layerInfo.color || '#4ade80';
+        const layerIcon = layerInfo.icon || '📁';
+        const layerId = 'skill-layer-' + idx;
+        const layerBranchId = 'skill-layer-branch-' + idx;
+        
+        AppState.dataMap[layerId] = {
+            name: layerInfo.name,
+            icon: layerIcon,
+            level: Math.round(layerInfo.avgLevel || 3),
+            description: layerInfo.description || layerInfo.name,
+            source: '技能分类',
+            count: layerInfo.count || 0
+        };
+        
+        let childBranches = '';
+        let childIdx = 0;
+        
+        // 遍历子分类
+        for (const [childName, childInfo] of Object.entries(layerInfo.children)) {
+            const childColor = childInfo.color || layerColor;
+            const childLevel = Math.round(childInfo.avgLevel || 3);
+            const childId = 'skill-cat-' + idx + '-' + childIdx;
+            const childBranchId = 'skill-branch-' + idx + '-' + childIdx;
+            
+            AppState.dataMap[childId] = {
+                name: childName,
+                icon: childInfo.icon || '📁',
+                level: childLevel,
+                description: childInfo.description || `${childName}类技能，共${childInfo.count}个`,
+                source: layerInfo.name
+            };
+            
+            // 渲染技能叶子节点
+            let leaves = '';
+            const childSkills = childInfo.skills || [];
+            
+            for (const s of childSkills) {
+                const sid = 'skill-' + (idx++);
+                const shortName = skillNameMap[s.name] || s.name.substring(0, 4);
+                AppState.dataMap[sid] = { ...s, icon: '⚡', catIcon: childInfo.icon };
+                
+                leaves += `
+                    <div class="leaf-node ${getLevelClass(s.level)}" 
+                         style="border-color: ${childColor}; color: ${childColor};"
+                         onmouseenter="showTreeTooltip(event, '${sid}', 'skill')" 
+                         onmouseleave="hideTooltip()"
+                         onclick="showSkillDetailPanel('${sid}')">
+                        <span class="leaf-name">${shortName}</span>
+                        <span class="leaf-level" style="border-color: ${childColor};">${s.level}</span>
+                    </div>
+                `;
+            }
+            
+            childBranches += `
+                <div class="branch" id="${childBranchId}" style="color: ${childColor};">
+                    <div class="category-node ${getLevelClass(childLevel)}" 
+                         style="border-color: ${childColor}; color: ${childColor};"
+                         onclick="toggleBranch('${childBranchId}')"
+                         onmouseenter="showTreeTooltip(event, '${childId}', 'skill')" onmouseleave="hideTooltip()">
+                        <span class="cat-icon">${childInfo.icon || '📁'}</span>
+                        <span class="cat-name">${childName}</span>
+                        <span class="cat-level" style="border-color: ${childColor};">${childLevel}</span>
+                        <span class="cat-count" style="border-color: ${childColor};">${childInfo.count}</span>
+                        <span class="toggle-indicator">▼</span>
+                    </div>
+                    <div class="leaves" style="color: ${childColor};">
+                        ${leaves}
+                    </div>
+                </div>
+            `;
+            childIdx++;
+        }
+        
+        // 层级分支
+        const layerLevel = Math.round(layerInfo.avgLevel || 3);
+        layerBranches += `
+            <div class="layer-branch" id="${layerBranchId}" style="color: ${layerColor}; margin-bottom: 20px;">
+                <div class="layer-node ${getLevelClass(layerLevel)}" 
+                     style="border-color: ${layerColor}; color: ${layerColor}; font-weight: bold; font-size: 1.1em; padding: 8px 12px; cursor: pointer;"
+                     onclick="toggleBranch('${layerBranchId}')"
+                     onmouseenter="showTreeTooltip(event, '${layerId}', 'skill')" onmouseleave="hideTooltip()">
+                    <span class="cat-icon">${layerIcon}</span>
+                    <span class="cat-name">${layerInfo.name.replace(/^[🏛️🎯🛠️] /, '')}</span>
+                    <span class="cat-count" style="border-color: ${layerColor};">${layerInfo.count || 0}</span>
+                    <span class="toggle-indicator">▼</span>
+                </div>
+                <div class="branches" style="margin-left: 20px; border-left: 2px solid ${layerColor}30; padding-left: 15px;">
+                    ${childBranches}
+                </div>
+            </div>
+        `;
+        idx++;
+    }
+    
+    container.innerHTML = `
+        <div class="tree-controls">
+            <button class="tree-btn" onclick="expandAllBranches('skill-tree')">全部展开</button>
+            <button class="tree-btn" onclick="collapseAllBranches('skill-tree')">全部折叠</button>
+        </div>
+        <div class="tree-graph skill-tree-layered">
+            <div class="tree-root" style="color: var(--green);">
+                <div class="root-node" style="border-color: var(--green); color: var(--green);">
+                    <span class="node-icon">⚡</span>
+                    <span class="node-level" style="border-color: var(--green);">技能</span>
+                </div>
+            </div>
+            <div class="layer-branches" style="margin-top: 15px;">
+                ${layerBranches}
+            </div>
+        </div>
+    `;
+}
+
+// 扁平结构技能树渲染（回退方案）
+function renderSkillTreeFlat(container, skills) {
     // 技能名称到简短中文名的映射（优化版 v2.0）
     const skillNameMap = {
         // === 核心能力 ===

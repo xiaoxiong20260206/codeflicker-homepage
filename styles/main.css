@@ -1300,6 +1300,98 @@ body {
 .knowledge-tree .branch { color: var(--zelda-gold); }
 .memory-tree .branch { color: var(--sheikah-orange); }
 
+/* 三层架构树形结构样式 */
+.layer-branch {
+    margin-bottom: 16px;
+}
+
+.layer-branch > .layer-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.layer-branch > .layer-node:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: translateX(2px);
+}
+
+.layer-branch > .branches {
+    margin-left: 20px;
+    padding-left: 16px;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+    margin-top: 10px;
+}
+
+.layer-branch.collapsed > .branches {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.layer-branch .toggle-indicator {
+    margin-left: auto;
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.layer-branch.collapsed .toggle-indicator {
+    transform: rotate(-90deg);
+}
+
+/* 记忆树四层架构样式 */
+.memory-tree-layered .layer-branch {
+    margin-bottom: 12px;
+}
+
+.memory-tree-layered .layer-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.memory-tree-layered .layer-node:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/* 技能树三层架构样式 */
+.skill-tree-layered .layer-branch {
+    margin-bottom: 14px;
+}
+
+.skill-tree-layered .layer-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 2px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.skill-tree-layered .layer-node:hover {
+    background: rgba(0, 0, 0, 0.45);
+    transform: translateX(2px);
+}
+
 /* 树形控件按钮 */
 .tree-controls {
     display: flex;

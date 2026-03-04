@@ -1,13 +1,145 @@
 {
-  "generatedAt": "2026-03-03T06:31:19.692385",
+  "generatedAt": "2026-03-04T17:24:30.721996",
   "stats": {
-    "total": 41,
-    "epic": 12,
-    "feature": 23,
-    "fix": 6,
+    "total": 45,
+    "epic": 14,
+    "feature": 22,
+    "fix": 9,
     "refactor": 0
   },
   "milestones": [
+    {
+      "id": "commit-805e9ac",
+      "date": "2026-03-04",
+      "title": "feat: 重新设计升级系统 v2.0",
+      "description": "feat: 重新设计升级系统 v2.0",
+      "type": "epic",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🏆",
+      "color": "#ffd700",
+      "priority": 1
+    },
+    {
+      "id": "commit-9fd2793",
+      "date": "2026-03-04",
+      "title": "fix: 添加缓存破坏机制，确保加载最新数据",
+      "description": "fix: 添加缓存破坏机制，确保加载最新数据",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-2c234b4",
+      "date": "2026-03-04",
+      "title": "feat: 添加等级进度面板与升级指南",
+      "description": "feat: 添加等级进度面板与升级指南",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-d9c048d",
+      "date": "2026-03-04",
+      "title": "feat: 添加未分类技能检测和部署验证机制",
+      "description": "feat: 添加未分类技能检测和部署验证机制",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-a93d90a",
+      "date": "2026-03-04",
+      "title": "fix: 过滤信息不完整的作品，优化展示质量",
+      "description": "fix: 过滤信息不完整的作品，优化展示质量",
+      "type": "fix",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🔧",
+      "color": "#4ade80",
+      "priority": 3
+    },
+    {
+      "id": "commit-6cb373f",
+      "date": "2026-03-03",
+      "title": "feat: 技能分类体系升级v3.0 - 核心能力拆分为学习成长+思考做事",
+      "description": "feat: 技能分类体系升级v3.0 - 核心能力拆分为学习成长+思考做事",
+      "type": "epic",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🏆",
+      "color": "#ffd700",
+      "priority": 1
+    },
+    {
+      "id": "commit-0bd24dc",
+      "date": "2026-03-03",
+      "title": "feat: 添加 2026-03-02 日报数据",
+      "description": "feat: 添加 2026-03-02 日报数据",
+      "type": "feature",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "✨",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "commit-54d117a",
+      "date": "2026-03-03",
+      "title": "fix: 修复侧边栏雷达图和趋势图不显示的问题",
+      "description": "fix: 修复侧边栏雷达图和趋势图不显示的问题",
+      "type": "fix",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🔧",
+      "color": "#4ade80",
+      "priority": 3
+    },
+    {
+      "id": "commit-2df0b04",
+      "date": "2026-03-03",
+      "title": "fix: 修复成就墙和成长趋势图表不显示的问题",
+      "description": "fix: 修复成就墙和成长趋势图表不显示的问题",
+      "type": "fix",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🔧",
+      "color": "#4ade80",
+      "priority": 3
+    },
+    {
+      "id": "commit-9272c20",
+      "date": "2026-03-03",
+      "title": "perf: 全面性能优化",
+      "description": "perf: 全面性能优化",
+      "type": "fix",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🔧",
+      "color": "#4ade80",
+      "priority": 3
+    },
+    {
+      "id": "commit-ab4db4b",
+      "date": "2026-03-03",
+      "title": "fix: 修复日报数据 - 补全3月2日对话任务和子项目扫描",
+      "description": "fix: 修复日报数据 - 补全3月2日对话任务和子项目扫描",
+      "type": "fix",
+      "source": "git",
+      "repo": "codeflicker-homepage",
+      "icon": "🔧",
+      "color": "#4ade80",
+      "priority": 3
+    },
     {
       "id": "commit-de74ee1",
       "date": "2026-03-02",
@@ -143,8 +275,19 @@
     {
       "id": "delivery-2026-03-02-codeflicke",
       "date": "2026-03-02",
-      "title": "📁 codeflicker-homepage: 51次提交",
-      "description": "codeflicker-homepage 项目开发，51次提交，16个文件变更",
+      "title": "📁 codeflicker-homepage: 45次提交",
+      "description": "codeflicker-homepage 项目开发，45次提交，14个文件变更",
+      "type": "feature",
+      "source": "report",
+      "icon": "📁",
+      "color": "#00d4ff",
+      "priority": 2
+    },
+    {
+      "id": "delivery-2026-03-02-knowledge/",
+      "date": "2026-03-02",
+      "title": "📁 knowledge/AI产品终极形态思考: 2次提交",
+      "description": "knowledge/AI产品终极形态思考 项目开发，2次提交，2个文件变更",
       "type": "feature",
       "source": "report",
       "icon": "📁",
@@ -329,18 +472,6 @@
       "priority": 2
     },
     {
-      "id": "commit-6069ea5",
-      "date": "2026-02-26",
-      "title": "🎨 升级清爽调研报告风格v1.6.0: 新增Tab导航、优化间距、移动端Tooltip支持",
-      "description": "🎨 升级清爽调研报告风格v1.6.0: 新增Tab导航、优化间距、移动端Tooltip支持",
-      "type": "feature",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "✨",
-      "color": "#00d4ff",
-      "priority": 2
-    },
-    {
       "id": "delivery-2026-02-26-字节AI调研",
       "date": "2026-02-26",
       "title": "📁 字节AI调研: 2次提交",
@@ -364,30 +495,6 @@
       "url": null
     },
     {
-      "id": "commit-049ea27",
-      "date": "2026-02-25",
-      "title": "feat: 新增字节AI逆袭路径、布局全景图、组织转型深度分析章节",
-      "description": "feat: 新增字节AI逆袭路径、布局全景图、组织转型深度分析章节",
-      "type": "feature",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "✨",
-      "color": "#00d4ff",
-      "priority": 2
-    },
-    {
-      "id": "commit-0c9da4d",
-      "date": "2026-02-25",
-      "title": "feat(ai-history): 深度扩展军备竞赛章节 - 新增6大深度分析模块",
-      "description": "feat(ai-history): 深度扩展军备竞赛章节 - 新增6大深度分析模块",
-      "type": "feature",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "✨",
-      "color": "#00d4ff",
-      "priority": 2
-    },
-    {
       "id": "delivery-2026-02-25-字节AI调研",
       "date": "2026-02-25",
       "title": "📁 字节AI调研: 6次提交",
@@ -395,42 +502,6 @@
       "type": "feature",
       "source": "report",
       "icon": "📁",
-      "color": "#00d4ff",
-      "priority": 2
-    },
-    {
-      "id": "commit-0dcc2e6",
-      "date": "2026-02-24",
-      "title": "优化金融启示页面：更新场景章节、删除ROI计算、新增组织转型指南",
-      "description": "优化金融启示页面：更新场景章节、删除ROI计算、新增组织转型指南",
-      "type": "feature",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "✨",
-      "color": "#00d4ff",
-      "priority": 2
-    },
-    {
-      "id": "commit-d21cd72",
-      "date": "2026-02-24",
-      "title": "添加字节Agent应用矩阵章节 & 优化页面性能",
-      "description": "添加字节Agent应用矩阵章节 & 优化页面性能",
-      "type": "feature",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "✨",
-      "color": "#00d4ff",
-      "priority": 2
-    },
-    {
-      "id": "commit-e3287b1",
-      "date": "2026-02-24",
-      "title": "添加左侧悬浮导航到5个子页面",
-      "description": "添加左侧悬浮导航到5个子页面",
-      "type": "feature",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
     },
@@ -444,30 +515,6 @@
       "icon": "📁",
       "color": "#00d4ff",
       "priority": 2
-    },
-    {
-      "id": "commit-ffc77f9",
-      "date": "2026-02-24",
-      "title": "内容审核与数据修正",
-      "description": "内容审核与数据修正",
-      "type": "fix",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "🔧",
-      "color": "#4ade80",
-      "priority": 3
-    },
-    {
-      "id": "commit-e19a7b1",
-      "date": "2026-02-24",
-      "title": "优化页面展示效果，符合清爽调研报告风格",
-      "description": "优化页面展示效果，符合清爽调研报告风格",
-      "type": "fix",
-      "source": "git",
-      "repo": "字节AI调研",
-      "icon": "🔧",
-      "color": "#4ade80",
-      "priority": 3
     },
     {
       "id": "project-bytedance-ai-guide",

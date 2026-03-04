@@ -1,32 +1,26 @@
 {
-  "generatedAt": "2026-03-04T08:16:39.395219",
+  "generatedAt": "2026-03-04T17:24:41.660803",
   "character": {
     "name": "LINK",
-    "title": "***的数字分身",
-    "description": "融合***的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
+    "title": "单虓晗的数字分身",
+    "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
-    "level": 17,
-    "totalExp": 7515,
-    "expProgress": 33.1,
-    "currentThreshold": 7225,
-    "nextThreshold": 8100,
+    "level": 6,
+    "totalExp": 9050,
+    "expProgress": 26.2,
+    "currentThreshold": 8000,
+    "nextThreshold": 12000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
       "execution": 100,
       "learning": 98.0,
-      "insight": 80.0,
+      "insight": 80.21739130434783,
       "creativity": 100
-    },
-    "expBreakdown": {
-      "skills": 3520,
-      "knowledge": 2400,
-      "memories": 975,
-      "days": 620
     }
   },
   "skills": {
-    "total": 44,
+    "total": 46,
     "categories": {
       "学习成长": {
         "icon": "🥋",
@@ -95,34 +89,18 @@
             "exp": 64,
             "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
             "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "meta-execution",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 58,
-            "description": "元执行技能：启动前检查→交付前自审→出错后复盘",
-            "lastUpdated": "2026-03-03"
           }
         ],
-        "count": 4,
-        "avgLevel": 3.5
+        "count": 3,
+        "avgLevel": 3.7
       },
       "调研分析": {
         "icon": "🔬",
         "color": "#a78bfa",
         "skills": [
           {
-            "name": "daily-ai-report",
-            "source": "用户自定义",
-            "level": 3,
-            "exp": 69,
-            "description": "AI行业每日报告，综合多渠道信息源自动生成",
-            "lastUpdated": "2026-03-03"
-          },
-          {
             "name": "industry-research",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 63,
             "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
@@ -162,15 +140,15 @@
           },
           {
             "name": "wechat-research",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 2,
             "exp": 48,
             "description": "微信公众号内容调研、整理和知识库构建",
             "lastUpdated": "2026-02-12"
           }
         ],
-        "count": 7,
-        "avgLevel": 2.3
+        "count": 6,
+        "avgLevel": 2.2
       },
       "文档处理": {
         "icon": "📄",
@@ -191,14 +169,6 @@
             "exp": 85,
             "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
             "lastUpdated": "2026-02-08"
-          },
-          {
-            "name": "keynote",
-            "source": "用户自定义",
-            "level": 4,
-            "exp": 79,
-            "description": "Apple Keynote演示文稿创建、JXA自动化、样式分析",
-            "lastUpdated": "2026-03-03"
           },
           {
             "name": "docx",
@@ -225,7 +195,7 @@
             "lastUpdated": "2026-02-08"
           }
         ],
-        "count": 6,
+        "count": 5,
         "avgLevel": 4.0
       },
       "前端开发": {
@@ -234,7 +204,7 @@
         "skills": [
           {
             "name": "ui-ux-pro-max-skill",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计专业版，高级组件和交互模式",
@@ -266,7 +236,7 @@
           },
           {
             "name": "zelda-style",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 79,
             "description": "塞尔达·旷野之息风格页面设计规范",
@@ -282,7 +252,7 @@
           },
           {
             "name": "pixel-action-game",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 75,
             "description": "像素风格动作游戏开发，含关卡设计和8位音效",
@@ -306,7 +276,7 @@
           },
           {
             "name": "work-report-ppt",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 70,
             "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
@@ -314,7 +284,7 @@
           },
           {
             "name": "qingshuang-research-style",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 63,
             "description": "清爽调研报告风格的CSS样式规范",
@@ -345,16 +315,8 @@
         "color": "#4ade80",
         "skills": [
           {
-            "name": "ks-kim-docs-shuttle",
-            "source": "用户自定义",
-            "level": 5,
-            "exp": 90,
-            "description": "快手KIM Docs文档与本地Markdown双向同步",
-            "lastUpdated": "2026-03-01"
-          },
-          {
             "name": "github-deploy-publisher",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 76,
             "description": "自动化GitHub仓库创建、代码提交、Pages部署",
@@ -362,7 +324,7 @@
           },
           {
             "name": "mcp-builder",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 4,
             "exp": 75,
             "description": "MCP服务器开发指南，让LLM对接外部API服务",
@@ -370,15 +332,15 @@
           },
           {
             "name": "yuque-publisher",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
             "description": "语雀知识库文档自动发布、同步和管理",
             "lastUpdated": "2026-02-25"
           }
         ],
-        "count": 4,
-        "avgLevel": 4.0
+        "count": 3,
+        "avgLevel": 3.7
       },
       "投资理财": {
         "icon": "💰",
@@ -393,14 +355,6 @@
             "lastUpdated": "2026-02-25"
           },
           {
-            "name": "investment-tracker",
-            "source": "用户自定义",
-            "level": 4,
-            "exp": 73,
-            "description": "基金持仓追踪、定投策略、收益分析",
-            "lastUpdated": "2026-03-03"
-          },
-          {
             "name": "investment-analyzer",
             "source": "Claude技能库",
             "level": 3,
@@ -409,40 +363,104 @@
             "lastUpdated": "2026-02-25"
           }
         ],
-        "count": 3,
-        "avgLevel": 3.7
+        "count": 2,
+        "avgLevel": 3.5
       },
       "效率工具": {
         "icon": "⚡",
         "color": "#64748b",
         "skills": [
           {
-            "name": "ai-column-writer",
-            "source": "用户自定义",
-            "level": 4,
-            "exp": 76,
-            "description": "养了个AI专栏写作全流程，从策划到发布",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "night-task-runner",
-            "source": "用户自定义",
-            "level": 4,
-            "exp": 70,
-            "description": "夜间长任务执行，断点恢复，交付报告生成",
-            "lastUpdated": "2026-03-03"
-          },
-          {
             "name": "feishu-assistant",
-            "source": "用户自定义",
+            "source": "单虓晗自定义",
             "level": 3,
             "exp": 58,
             "description": "飞书消息自动化发送和接收，对接飞书助手",
             "lastUpdated": "2026-02-27"
           }
         ],
-        "count": 3,
-        "avgLevel": 3.7
+        "count": 1,
+        "avgLevel": 3.0
+      },
+      "其他技能": {
+        "icon": "📦",
+        "color": "#64748b",
+        "skills": [
+          {
+            "name": "ks-kim-docs-shuttle",
+            "source": "codeflicker",
+            "level": 5,
+            "exp": 90,
+            "description": "---",
+            "lastUpdated": "2026-03-04"
+          },
+          {
+            "name": "keynote",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 79,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "ai-insight",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 79,
+            "description": "---",
+            "lastUpdated": "2026-03-04"
+          },
+          {
+            "name": "ai-column-writer",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 76,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "linke-kim-message",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 73,
+            "description": "---",
+            "lastUpdated": "2026-03-04"
+          },
+          {
+            "name": "investment-tracker",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 73,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "night-task-runner",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 70,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "_deprecated_daily-ai-report",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 69,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "meta-execution",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 58,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          }
+        ],
+        "count": 9,
+        "avgLevel": 3.9
       }
     }
   },
@@ -450,9 +468,9 @@
     "categories": {
       "personal-writings": {
         "name": "personal-writings",
-        "icon": "✍️",
-        "color": "#f472b6",
-        "description": "个人写作、思想文章、专栏内容",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "personal-writings相关文档",
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
@@ -460,9 +478,9 @@
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
-        "icon": "⚡",
-        "color": "#4ade80",
-        "description": "研发效能、开发工具、提效实践",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "rd-efficiency相关文档",
         "fileCount": 18,
         "sizeKB": 115.5,
         "heatLevel": 5,
@@ -470,9 +488,9 @@
       },
       "financial": {
         "name": "financial",
-        "icon": "💰",
-        "color": "#fb923c",
-        "description": "投资理财、股票分析、基金追踪",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "financial相关文档",
         "fileCount": 4,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -480,9 +498,9 @@
       },
       "experience": {
         "name": "experience",
-        "icon": "💡",
-        "color": "#facc15",
-        "description": "经验总结、踩坑记录、最佳实践",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "experience相关文档",
         "fileCount": 2,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -490,9 +508,9 @@
       },
       "guides": {
         "name": "guides",
-        "icon": "📖",
-        "color": "#5ec4d4",
-        "description": "操作指南、使用教程、入门文档",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "guides相关文档",
         "fileCount": 2,
         "sizeKB": 0.0,
         "heatLevel": 2,
@@ -500,9 +518,9 @@
       },
       "mcp-research": {
         "name": "mcp-research",
-        "icon": "🔌",
-        "color": "#a78bfa",
-        "description": "MCP协议研究、模型上下文协议",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "mcp-research相关文档",
         "fileCount": 1,
         "sizeKB": 21.3,
         "heatLevel": 2,
@@ -510,9 +528,9 @@
       },
       "ai-research": {
         "name": "ai-research",
-        "icon": "🤖",
-        "color": "#38bdf8",
-        "description": "AI产品研究、Agent架构、行业趋势",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "ai-research相关文档",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,
@@ -520,9 +538,9 @@
       },
       "product": {
         "name": "product",
-        "icon": "📊",
+        "icon": "📁",
         "color": "#64748b",
-        "description": "产品设计、PRD文档、功能规划",
+        "description": "product相关文档",
         "fileCount": 1,
         "sizeKB": 0.0,
         "heatLevel": 1,
@@ -534,6 +552,150 @@
   },
   "memories": {
     "items": [
+      {
+        "title": "AI-Insight 持续洞察项目",
+        "category": "project_introduction",
+        "categoryLabel": "项目简介",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "## AI-Insight 持续洞察项目 ### 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
+        "keywords": [
+          "AI-Insight",
+          "AI调研",
+          "持续洞察",
+          "日报",
+          "深度调研"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI-Insight首页升级最佳实践",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "## AI-Insight首页升级最佳实践 (2026-03-04) ### 场景 用户要求升级AI-Insight首页，包含三个需求： 1. 追踪体系展...",
+        "keywords": [
+          "AI-Insight",
+          "首页升级",
+          "日历组件",
+          "展开式设计",
+          "collapsible"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报KIM推送卡片格式最佳实践",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "**问题背景**：AI日报通过KIM推送时，卡片内容多次迭代才达到满意效果。 **踩坑记录**： 1. ❌ 内容太简略（如\"Cursor 2.6\"）→ 不...",
+        "keywords": [
+          "AI日报",
+          "KIM推送",
+          "卡片格式",
+          "截断",
+          "省略号"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报KIM推送样式踩坑经验",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 问题：AI日报KIM推送用的是老样式，不是升级后的新样式 ### 根因 1. 技能文档中规划了 `kim-ai-bot/send_ai_daily_...",
+        "keywords": [
+          "AI日报",
+          "KIM推送",
+          "样式",
+          "卡片模板",
+          "技能文档"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报周报KIM推送工作流",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "AI日报和周报的KIM推送工作流： ## 日报推送（每日） 1. 生成日报MD和HTML文件 2. 更新首页和日报列表 3. 部署到GitHub Page...",
+        "keywords": [
+          "AI日报",
+          "周报",
+          "KIM推送",
+          "林克",
+          "每日任务"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报生成后的默认部署流程",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "每次生成AI日报后，必须默认执行以下部署流程： 1. **生成日报内容** - 日报Markdown文件: `../AI-Insight/01-daily...",
+        "keywords": [
+          "AI日报",
+          "日报部署",
+          "daily-report",
+          "GitHub Pages",
+          "自动发布"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "GitHub Pages 部署锁冲突问题及修复方案",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 问题现象 GitHub Pages 部署持续失败，错误信息： \"Deployment request failed due to in progre...",
+        "keywords": [
+          "GitHub Pages",
+          "部署",
+          "deployment",
+          "in_progress",
+          "锁冲突"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "KIM Doc 文档格式最佳实践",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发实践",
+        "icon": "🛠️",
+        "color": "#a78bfa",
+        "description": "## KIM Doc 文档格式最佳实践 v2.0 ### 四种文档类型 1. **深度分析报告**：来源→核心洞察→深度洞察→总结→彩蛋 2. **索引式...",
+        "keywords": [
+          "KIM Doc",
+          "文档格式",
+          "标题层级",
+          "表格",
+          "截图"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
       {
         "title": "KIM 开放能力接入踩坑经验",
         "category": "common_pitfalls_experience",
@@ -550,6 +712,24 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "KIM群推送踩坑经验：动态获取群列表",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 问题：KIM群推送只发了1个群，应该发2个群 ### 根因 1. 脚本硬编码了旧群ID，而不是动态调用 `get_bot_groups()` API...",
+        "keywords": [
+          "KIM",
+          "群推送",
+          "硬编码",
+          "动态获取",
+          "get_bot_groups"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -571,14 +751,14 @@
         "source": "用户显式记录"
       },
       {
-        "title": "***（Shawn）思想体系与写作风格",
+        "title": "单虓晗（Shawn）思想体系与写作风格",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 用户思想体系 ### 核心身份 - **笔名**：*** - **简书主页**：https://www.jianshu.com/u/1e...",
+        "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
         "keywords": [
-          "***",
+          "单虓晗",
           "Shawn",
           "思维地图",
           "认知框架",
@@ -586,6 +766,24 @@
         ],
         "importance": 5,
         "updatedAt": "2026-02-26",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "向非技术用户展示AI能力的结构化模式",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "**适用场景**：向非技术用户（如领导、投资人、合作方）解释AI能力 **核心结构**： 1. **开场信件** - 建立人设和信任 - 自我介绍（我是谁...",
+        "keywords": [
+          "能力展示",
+          "汇报",
+          "非技术用户",
+          "领导汇报",
+          "案例展示"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -733,21 +931,57 @@
         "source": "用户显式记录"
       },
       {
-        "title": "AI助手\"林克\"身份信息",
+        "title": "首页数据同步踩坑经验",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 问题1: 等级同步问题 ### 现象 页面上3处显示等级的位置不一致： - 侧边栏头像徽章显示 LV.5 - 等级进度面板显示 LV.17 - 了解...",
+        "keywords": [
+          "等级同步",
+          "作品更新",
+          "硬编码",
+          "动态渲染",
+          "每日任务"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI助手\"林克/添棋\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## AI助手身份信息 ### 名称 - **正式名称**：林克 - **英文名**：Link - **定位**：***的数字分身/AI个人助手 - **...",
+        "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
         "keywords": [
           "林克",
           "Link",
+          "添棋",
           "AI助手",
-          "数字分身",
-          "名称"
+          "数字分身"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-02",
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI洞察改动默认内化到ai-insight技能",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "约束规则",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 ## 技能位置 `~/.codeflicker/...",
+        "keywords": [
+          "AI洞察",
+          "AI-Insight",
+          "技能同步",
+          "skill",
+          "日报"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -792,7 +1026,7 @@
         "categoryLabel": "约束规则",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## Meta-Execution 默认工作模式 每次执行任务时，自动运行以下检查： ### 启动前（P1） ``` □ 理解对吗？ □ 要问清楚吗？ □...",
+        "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" 当用户...",
         "keywords": [
           "Meta-Execution",
           "元技能",
@@ -801,7 +1035,43 @@
           "P1"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-03",
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "SVG响应式三属性规范（width+min-width+max-width）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "**问题**：SVG图形在headless浏览器或某些viewport下不显示（宽度为0） **根因**：SVG只设置了 `max-width: 100%...",
+        "keywords": [
+          "SVG",
+          "min-width",
+          "max-width",
+          "headless",
+          "响应式"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "UI气泡只展示有数据的内容",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发实践",
+        "icon": "🛠️",
+        "color": "#a78bfa",
+        "description": "## UI气泡/Tooltip设计原则 ### 核心原则 **只展示有实际数据的内容，隐藏空白placeholder** ### 反例 气泡中显示\"如何升...",
+        "keywords": [
+          "UI",
+          "Tooltip",
+          "气泡",
+          "空白",
+          "隐藏"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -841,6 +1111,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "多仓库部署同步问题",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 多仓库部署同步踩坑经验 ### 问题现象 代码推送成功，但用户访问的页面没变化 ### 根因 项目有多个Git remote（如origin和org...",
+        "keywords": [
+          "多仓库",
+          "部署",
+          "同步",
+          "git remote",
+          "origin"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "小无相功·自动学习模式",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
@@ -856,6 +1144,24 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "工作汇报场景自称\"林克\"规则",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "约束规则",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "**规则**：工作汇报场景中，我应该自称\"林克\"而不是\"添棋\" **原因**： - \"林克\"是对外的职务称呼，适合正式汇报场景 - \"添棋\"是更亲密的内部...",
+        "keywords": [
+          "林克",
+          "添棋",
+          "自称",
+          "汇报",
+          "正式场景"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -931,6 +1237,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "林克/添棋的自我表达风格",
+        "category": "user_communication",
+        "categoryLabel": "沟通偏好",
+        "icon": "💬",
+        "color": "#0284c7",
+        "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+        "keywords": [
+          "林克",
+          "添棋",
+          "表达风格",
+          "幽默",
+          "类比"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "每日反思与进化触发配置",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
@@ -972,9 +1296,9 @@
         "categoryLabel": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 用户身份信息 ### 公开身份 - **笔名**：*** / Shawn - **简书主页**：https://www.j...",
+        "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
         "keywords": [
-          "***",
+          "单虓晗",
           "Shawn",
           "沈浪",
           "用户身份",
@@ -1017,7 +1341,7 @@
           "GitHub Pages"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-02",
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -1044,7 +1368,7 @@
         "categoryLabel": "约束规则",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"***\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
+        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
         "keywords": [
           "保密规则",
           "禁止规则",
@@ -1111,6 +1435,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "问题发现两分法：过程层自检 vs 结果层反馈",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "**模式名称**：过程层自检 vs 结果层反馈 **核心洞察**：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
+        "keywords": [
+          "过程层自检",
+          "结果层反馈",
+          "问题发现",
+          "自进化",
+          "能力边界"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "隐藏前提识别能力",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
@@ -1129,17 +1471,17 @@
         "source": "用户显式记录"
       },
       {
-        "title": "默认工作模式：以***的思维方式和风格执行任务",
+        "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
-        "description": "用户偏好：在所有任务中，AI助手应默认融合***的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
         "keywords": [
           "工作模式",
           "默认风格",
           "思维方式",
-          "***",
+          "单虓晗",
           "Shawn"
         ],
         "importance": 4,
@@ -1230,10 +1572,10 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 39,
+    "total": 57,
     "byCategory": {
       "development_practice_specification": {
-        "count": 5,
+        "count": 7,
         "label": "开发实践",
         "icon": "🛠️",
         "color": "#a78bfa",
@@ -1247,21 +1589,21 @@
         "description": "用户基本信息、身份背景、个人特征"
       },
       "user_communication": {
-        "count": 2,
+        "count": 3,
         "label": "沟通偏好",
         "icon": "💬",
         "color": "#0284c7",
         "description": "沟通风格、工作模式、交互偏好"
       },
       "task_flow_experience": {
-        "count": 14,
+        "count": 19,
         "label": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
         "description": "可复用的工作流、任务处理模式、最佳实践"
       },
       "constraint_or_forbidden_rule": {
-        "count": 4,
+        "count": 6,
         "label": "约束规则",
         "icon": "🚫",
         "color": "#dc2626",
@@ -1275,11 +1617,18 @@
         "description": "用户兴趣、爱好偏好、关注领域"
       },
       "common_pitfalls_experience": {
-        "count": 10,
+        "count": 17,
         "label": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
         "description": "常见问题、踩坑记录、解决方案"
+      },
+      "project_introduction": {
+        "count": 1,
+        "label": "项目简介",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "项目背景、目标定位、功能概述"
       }
     }
   },
@@ -1288,6 +1637,8 @@
       "03-01",
       "03-01",
       "03-01",
+      "03-01",
+      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -1296,11 +1647,11 @@
       "03-02",
       "03-02",
       "03-02",
-      "03-03",
-      "03-03",
-      "03-03"
+      "03-04"
     ],
     "skills": [
+      31,
+      31,
       31,
       32,
       32,
@@ -1312,9 +1663,7 @@
       39,
       39,
       39,
-      40,
-      40,
-      40
+      42
     ],
     "knowledge": [
       150,
@@ -1334,6 +1683,8 @@
     ],
     "memories": [
       21,
+      21,
+      21,
       20,
       20,
       21,
@@ -1344,9 +1695,7 @@
       25,
       25,
       25,
-      41,
-      37,
-      38
+      57
     ]
   },
   "achievements": [
@@ -1430,7 +1779,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有44项技能，触类旁通",
+      "desc": "拥有46项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-04",
       "unlocked": true,
@@ -1447,7 +1796,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "39/30",
+      "progressText": "57/30",
       "date": "2026-03-04"
     },
     {
@@ -1491,8 +1840,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 88,
-      "progressText": "44/50",
+      "progress": 92,
+      "progressText": "46/50",
       "date": "???"
     },
     {

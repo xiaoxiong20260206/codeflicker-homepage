@@ -1871,23 +1871,16 @@ function showTreeTooltip(event, id, type) {
         sourceSection.style.display = 'none';
     }
     
-    // 显示升级建议
+    // 显示升级建议（已禁用，不展示无实际数据的内容）
     const lv = data.level || 1;
-    if (upgradeEl && upgradeSection) {
-        const advice = upgradeAdvice[type]?.[lv] || '继续探索和积累';
-        upgradeEl.textContent = advice;
-        upgradeEl.style.whiteSpace = 'normal';
-        upgradeSection.style.display = 'block';
+    // 始终隐藏升级建议
+    if (upgradeSection) {
+        upgradeSection.style.display = 'none';
     }
     
-    // 显示进度条
-    tooltip.querySelector('.tip-progress').style.display = 'block';
-    tooltip.querySelector('.tip-progress-text').style.display = 'flex';
-    
-    tooltip.querySelector('.tip-progress-fill').style.width = (lv / 5 * 100) + '%';
-    tooltip.querySelector('.tip-progress-fill').style.background = typeColors[type];
-    tooltip.querySelector('.prog-cur').textContent = '当前: Lv.' + lv;
-    tooltip.querySelector('.prog-next').textContent = lv >= 5 ? '已满级' : '下一级: Lv.' + (lv + 1);
+    // 始终隐藏进度条
+    tooltip.querySelector('.tip-progress').style.display = 'none';
+    tooltip.querySelector('.tip-progress-text').style.display = 'none';
     
     // 定位
     const rect = event.currentTarget.getBoundingClientRect();
@@ -2009,6 +2002,10 @@ function showProjectTooltip(event, id) {
     sourceEl.textContent = '技术栈: ' + techStack;
     sourceEl.style.whiteSpace = 'normal';
     sourceSection.style.display = 'block';
+    
+    // 隐藏升级建议
+    const upgradeSection = tooltip.querySelector('.tip-upgrade-section');
+    if (upgradeSection) upgradeSection.style.display = 'none';
     
     // 隐藏进度条
     tooltip.querySelector('.tip-progress').style.display = 'none';

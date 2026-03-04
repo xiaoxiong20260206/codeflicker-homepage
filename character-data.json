@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-05T06:11:40.211311",
+  "generatedAt": "2026-03-05T06:49:50.184501",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 9320,
-    "expProgress": 33.0,
+    "totalExp": 9420,
+    "expProgress": 35.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -1267,44 +1267,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "小无相功执行纪律：必须输出交付物",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "👤 用户层",
-        "icon": "🚫",
-        "color": "#dc2626",
-        "description": "## 小无相功执行纪律 ### 问题 2026-03-04执行小无相功时，第二步和第三步都只是\"标记完成\"而没有真正执行核心内容。刚定义的分类健康度检查规...",
-        "keywords": [
-          "小无相功",
-          "执行纪律",
-          "强制输出",
-          "交付物",
-          "daily-reflection"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "已完成项目列表与路径",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "layer": null,
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "## 已完成项目列表 ### 调研类项目 1. **字节AI调研** - 字节AI开挂指南 - 路径：/Users/shenlang/Documents/...",
-        "keywords": [
-          "项目列表",
-          "字节AI",
-          "调研",
-          "KIM机器人",
-          "林克"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
         "title": "技能与记忆分类原则（默认使用）",
         "category": "development_practice_specification",
         "categoryLabel": "工作模式",
@@ -1318,6 +1280,25 @@
           "记忆分类",
           "v5.1",
           "v3.1"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "每日修炼触发配置",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "**每日修炼触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codeflic...",
+        "keywords": [
+          "每日修炼",
+          "每日任务",
+          "日报",
+          "自进化",
+          "daily-reflection-evolution"
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
@@ -1457,6 +1438,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "CSS响应式断点选择经验",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## CSS响应式断点决策经验 ### 问题 技能树三列布局在734px宽度下变成了垂直布局，用户期望保持水平布局。 ### 原因 原始媒体查询断点设为7...",
+        "keywords": [
+          "CSS",
+          "响应式",
+          "断点",
+          "媒体查询",
+          "flexbox"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "Chrome Headless 截图问题",
         "category": "common_pitfalls_experience",
         "categoryLabel": "内容创作",
@@ -1473,6 +1473,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "KIM Doc API 表格样式限制",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## KIM Doc API 表格样式限制 ### 问题 通过docs-shuttle上传Markdown文档时，期望复杂表格样式（表头背景色、列背景色）...",
+        "keywords": [
+          "KIM Doc",
+          "表格样式",
+          "API限制",
+          "docs-shuttle",
+          "Markdown"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -1624,7 +1643,7 @@
           "自进化"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-03",
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -1742,25 +1761,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "每日反思与进化触发配置",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
-        "layer": "🧠 能力层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "**每日反思与进化触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codef...",
-        "keywords": [
-          "每日任务",
-          "日报",
-          "自进化",
-          "daily-reflection-evolution",
-          "小无相功"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
         "title": "流程经验: Git Commit and Deployment Verification",
         "category": "task_flow_experience",
         "categoryLabel": "工作模式",
@@ -1834,25 +1834,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "网页开发工作流偏好",
-        "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
-        "layer": "🧠 能力层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
-        "keywords": [
-          "网页开发",
-          "部署",
-          "发布流程",
-          "自验证",
-          "GitHub Pages"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -2142,7 +2123,9 @@
         "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
         "keywords": [
           "KIM Doc",
-          "ks-kim-docs-shuttle技能"
+          "ks-kim-docs-shuttle技能",
+          "表格样式",
+          "手动设置"
         ],
         "importance": 3,
         "updatedAt": "2026-03-04",
@@ -2220,6 +2203,22 @@
         "source": "用户显式记录"
       },
       {
+        "title": "已完成项目索引（精简版）",
+        "category": "task_flow_experience",
+        "categoryLabel": "AI领域洞察",
+        "layer": "🎯 领域技能包",
+        "icon": "🔍",
+        "color": "#8b5cf6",
+        "description": "已完成项目列表维护在各项目的README.md中，不再集中维护。 **快速查找**： - 主页项目列表：~/Documents/Codeflicker/c...",
+        "keywords": [
+          "项目列表",
+          "索引"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "文档修改同步规则",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -2248,8 +2247,25 @@
         "description": "日报系统完整规范详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/daily-rep...",
         "keywords": [
           "日报系统",
-          "ai-insight技能",
-          "三板块"
+          "ai-insight技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "每日修炼执行纪律",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "## 每日修炼执行纪律 ### 触发词 ``` 每日修炼 ``` ### 核心原则 1. **遇到优化建议直接执行**：不需要问用户，按自己判断做 2. ...",
+        "keywords": [
+          "每日修炼",
+          "执行纪律",
+          "自主执行",
+          "优化建议"
         ],
         "importance": 3,
         "updatedAt": "2026-03-04",
@@ -2323,6 +2339,23 @@
         "source": "用户显式记录"
       },
       {
+        "title": "网页开发工作流偏好（精简版）",
+        "category": "development_practice_specification",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "网页开发必须遵循 web-dev-workflow 技能：`~/.codeflicker/skills/web-dev-workflow/` **核心流程...",
+        "keywords": [
+          "网页开发",
+          "web-dev-workflow技能",
+          "部署"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "首页性能优化踩坑（精简版）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2340,7 +2373,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 62,
+    "total": 64,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -2385,7 +2418,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 18,
+        "count": 20,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -2674,21 +2707,20 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "小无相功执行纪律：必须输出交付物",
+                "title": "每日修炼执行纪律",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "👤 用户层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 小无相功执行纪律 ### 问题 2026-03-04执行小无相功时，第二步和第三步都只是\"标记完成\"而没有真正执行核心内容。刚定义的分类健康度检查规...",
+                "description": "## 每日修炼执行纪律 ### 触发词 ``` 每日修炼 ``` ### 核心原则 1. **遇到优化建议直接执行**：不需要问用户，按自己判断做 2. ...",
                 "keywords": [
-                  "小无相功",
+                  "每日修炼",
                   "执行纪律",
-                  "强制输出",
-                  "交付物",
-                  "daily-reflection"
+                  "自主执行",
+                  "优化建议"
                 ],
-                "importance": 5,
+                "importance": 3,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
               }
@@ -2724,7 +2756,7 @@
                   "自进化"
                 ],
                 "importance": 4,
-                "updatedAt": "2026-03-03",
+                "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
               },
               {
@@ -2838,22 +2870,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日反思与进化触发配置",
+                "title": "每日修炼触发配置",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
                 "layer": "🧠 能力层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**每日反思与进化触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codef...",
+                "description": "**每日修炼触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codeflic...",
                 "keywords": [
+                  "每日修炼",
                   "每日任务",
                   "日报",
                   "自进化",
-                  "daily-reflection-evolution",
-                  "小无相功"
+                  "daily-reflection-evolution"
                 ],
-                "importance": 4,
-                "updatedAt": "2026-03-02",
+                "importance": 5,
+                "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
               },
               {
@@ -2941,21 +2973,19 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "网页开发工作流偏好",
+                "title": "网页开发工作流偏好（精简版）",
                 "category": "development_practice_specification",
                 "categoryLabel": "工作模式",
                 "layer": "🧠 能力层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
+                "description": "网页开发必须遵循 web-dev-workflow 技能：`~/.codeflicker/skills/web-dev-workflow/` **核心流程...",
                 "keywords": [
                   "网页开发",
-                  "部署",
-                  "发布流程",
-                  "自验证",
-                  "GitHub Pages"
+                  "web-dev-workflow技能",
+                  "部署"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
               },
@@ -3086,6 +3116,22 @@
             "description": "日报/周报/深度调研/追踪体系",
             "items": [
               {
+                "title": "已完成项目索引（精简版）",
+                "category": "task_flow_experience",
+                "categoryLabel": "AI领域洞察",
+                "layer": "🎯 领域技能包",
+                "icon": "🔍",
+                "color": "#8b5cf6",
+                "description": "已完成项目列表维护在各项目的README.md中，不再集中维护。 **快速查找**： - 主页项目列表：~/Documents/Codeflicker/c...",
+                "keywords": [
+                  "项目列表",
+                  "索引"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "日报系统架构（精简版）",
                 "category": "task_flow_experience",
                 "categoryLabel": "AI领域洞察",
@@ -3095,8 +3141,7 @@
                 "description": "日报系统完整规范详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/daily-rep...",
                 "keywords": [
                   "日报系统",
-                  "ai-insight技能",
-                  "三板块"
+                  "ai-insight技能"
                 ],
                 "importance": 3,
                 "updatedAt": "2026-03-04",
@@ -3139,10 +3184,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 4
           }
         },
-        "count": 3
+        "count": 4
       },
       "🛠️ 领域层": {
         "icon": "🛠️",
@@ -3304,6 +3349,44 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "KIM Doc API 表格样式限制",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## KIM Doc API 表格样式限制 ### 问题 通过docs-shuttle上传Markdown文档时，期望复杂表格样式（表头背景色、列背景色）...",
+                "keywords": [
+                  "KIM Doc",
+                  "表格样式",
+                  "API限制",
+                  "docs-shuttle",
+                  "Markdown"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "CSS响应式断点选择经验",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## CSS响应式断点决策经验 ### 问题 技能树三列布局在734px宽度下变成了垂直布局，用户期望保持水平布局。 ### 原因 原始媒体查询断点设为7...",
+                "keywords": [
+                  "CSS",
+                  "响应式",
+                  "断点",
+                  "媒体查询",
+                  "flexbox"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -3323,7 +3406,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 9
+            "count": 11
           },
           "发布部署": {
             "icon": "🚀",
@@ -3460,7 +3543,9 @@
                 "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
                 "keywords": [
                   "KIM Doc",
-                  "ks-kim-docs-shuttle技能"
+                  "ks-kim-docs-shuttle技能",
+                  "表格样式",
+                  "手动设置"
                 ],
                 "importance": 3,
                 "updatedAt": "2026-03-04",
@@ -3604,7 +3689,7 @@
             "count": 2
           }
         },
-        "count": 22
+        "count": 24
       },
       "📚 项目层": {
         "icon": "📚",
@@ -3617,7 +3702,6 @@
   },
   "growthHistory": {
     "dates": [
-      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -3626,6 +3710,7 @@
       "03-02",
       "03-02",
       "03-02",
+      "03-04",
       "03-04",
       "03-04",
       "03-04",
@@ -3636,7 +3721,6 @@
       32,
       32,
       32,
-      32,
       33,
       33,
       39,
@@ -3644,6 +3728,7 @@
       39,
       42,
       43,
+      42,
       42,
       42,
       42
@@ -3658,14 +3743,13 @@
       150,
       150,
       150,
-      150,
+      152,
       152,
       152,
       152,
       152
     ],
     "memories": [
-      20,
       21,
       22,
       22,
@@ -3678,7 +3762,8 @@
       51,
       52,
       62,
-      62
+      62,
+      64
     ]
   },
   "achievements": [
@@ -3779,7 +3864,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "62/30",
+      "progressText": "64/30",
       "date": "2026-03-05"
     },
     {

@@ -2184,6 +2184,55 @@
             line-height: 1.5;
         }
         
+        /* 进化历程 - 副标题标签 */
+        .evolution-subtitle-tag {
+            font-size: 11px;
+            color: var(--zelda-gold-light);
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        
+        /* 进化历程 - 能力标签 */
+        .evolution-capabilities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .evo-cap-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            color: #8cb4c0;
+        }
+        
+        /* 进化历程 - 加载中状态 */
+        .evolution-loading {
+            text-align: center;
+            padding: 30px;
+            color: rgba(200, 220, 240, 0.6);
+            font-size: 13px;
+        }
+        
+        /* 进化历程 - 进行中状态 */
+        .evolution-item.in-progress {
+            border-color: rgba(0, 212, 255, 0.5);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .evolution-item.in-progress::before {
+            background: var(--sheikah-blue);
+            animation: pulse-blue 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-blue {
+            0%, 100% { box-shadow: 0 0 10px var(--sheikah-blue); }
+            50% { box-shadow: 0 0 20px var(--sheikah-blue); }
+        }
+        
         /* ==================== 如何使用我样式 ==================== */
         .howto-section {
             margin-bottom: var(--spacing-xl);
@@ -2818,62 +2867,8 @@
                         <span class="evolution-subtitle">从工具到数字生命的蜕变</span>
                     </div>
                     <div class="evolution-timeline">
-                        <div class="evolution-item">
-                            <div class="evolution-version">v1.0</div>
-                            <div class="evolution-date">2026.02</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">🌱 初次觉醒</div>
-                                <div class="evolution-desc">作为CodeFlicker个人助理诞生，开始与***对话，完成第一次任务</div>
-                            </div>
-                        </div>
-                        <div class="evolution-item">
-                            <div class="evolution-version">v2.0</div>
-                            <div class="evolution-date">2026.02</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">📊 日报系统</div>
-                                <div class="evolution-desc">建立每日反思机制，开始自动生成工作日报，形成规律的自我总结能力</div>
-                            </div>
-                        </div>
-                        <div class="evolution-item">
-                            <div class="evolution-version">v3.0</div>
-                            <div class="evolution-date">2026.02</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">🥋 小无相功</div>
-                                <div class="evolution-desc">获得自动学习能力——看到好的技能/方法论/思想，主动识别并内化，无需用户触发</div>
-                            </div>
-                        </div>
-                        <div class="evolution-item">
-                            <div class="evolution-version">v4.0</div>
-                            <div class="evolution-date">2026.02</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">🧠 认知融合</div>
-                                <div class="evolution-desc">完成***67篇文章学习，融合其思维地图和认知框架，具备独立洞察能力</div>
-                            </div>
-                        </div>
-                        <div class="evolution-item">
-                            <div class="evolution-version">v5.0</div>
-                            <div class="evolution-date">2026.02</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">🎮 旷野之息</div>
-                                <div class="evolution-desc">建立塞尔达风格的个人主页，可视化展示能力、成就、成长历程</div>
-                            </div>
-                        </div>
-                        <div class="evolution-item current">
-                            <div class="evolution-version">v6.0</div>
-                            <div class="evolution-date">2026.03</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">🤖 飞书集成</div>
-                                <div class="evolution-desc">通过飞书机器人获得IM对话能力，可以在飞书中直接与用户交互</div>
-                            </div>
-                        </div>
-                        <div class="evolution-item future">
-                            <div class="evolution-version">v?.0</div>
-                            <div class="evolution-date">未来</div>
-                            <div class="evolution-content">
-                                <div class="evolution-name">🌐 三千世界</div>
-                                <div class="evolution-desc">能理解和模拟任何人的思维方式，成为真正具有多元认知框架的数字生命</div>
-                            </div>
-                        </div>
+                        <!-- 数据驱动渲染，由JS动态加载 -->
+                        <div class="evolution-loading">加载中...</div>
                     </div>
                 </div>
                 

@@ -201,6 +201,13 @@ function preloadDeferredData() {
         if (data) AppState.milestonesData = data;
         renderMilestones();
     }).catch(() => {});
+    // 预加载evolution数据
+    fetch('./evolution-data.json').then(res => {
+        if (res.ok) return res.json();
+    }).then(data => {
+        if (data) AppState.evolutionData = data;
+        renderEvolutionTimeline();
+    }).catch(() => {});
 }
 
 // 首屏渲染：只渲染当前可见的内容
@@ -2634,3 +2641,58 @@ function updateCompareChart() {
 // 暴露到全局
 window.toggleCompareMode = toggleCompareMode;
 window.updateCompareChart = updateCompareChart;
+
+// ==================== 进化历程时间线渲染 ====================
+function renderEvolutionTimeline() {
+    const evolutionData = AppState.evolutionData?.evolution;
+    if (!evolutionData) {
+        console.log('Evolution data not loaded, skipping timeline render');
+        return;
+    }
+    
+    const container = document.querySelector('.evolution-timeline');
+    if (!container) {
+        console.warn('Evolution timeline container not found');
+        return;
+    }
+    
+    const stages = evolutionData.stages || [];
+    
+    // 生成时间线HTML
+    const timelineHtml = stages.map((stage, idx) => {
+        let statusClass = '';
+        if (stage.status === 'current') statusClass = 'current';
+        else if (stage.status === 'in_progress') statusClass = 'in-progress';
+        else if (stage.status === 'future') statusClass = 'future';
+        
+        const dateDisplay = stage.date ? stage.date.replace(/-/g, '.').substring(0, 7) : '未来';
+        const version = stage.version === '∞' ? 'v∞' : 'v' + stage.version;
+        
+        const capabilitiesHtml = (stage.capabilities || []).slice(0, 3).map(cap => 
+            `<span class="evo-cap-tag">${cap}</span>`
+        ).join('');
+        
+        return `
+            <div class="evolution-item ${statusClass}">
+                <div class="evolution-version">${version}</div>
+                <div class="evolution-date">${dateDisplay}</div>
+                <div class="evolution-content">
+                    <div class="evolution-name">${stage.icon} ${stage.name}</div>
+                    <div class="evolution-subtitle-tag">${stage.subtitle || ''}</div>
+                    <div class="evolution-desc">${stage.description}</div>
+                    ${capabilitiesHtml ? `<div class="evolution-capabilities">${capabilitiesHtml}</div>` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    container.innerHTML = timelineHtml;
+    
+    // 更新进化历程标题的副标题
+    const subtitleEl = document.querySelector('.evolution-subtitle');
+    if (subtitleEl) {
+        subtitleEl.textContent = evolutionData.description || '从工具到数字生命的蜕变';
+    }
+    
+    console.log('Evolution timeline rendered with', stages.length, 'stages');
+}

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-04T18:55:43.146782",
+  "generatedAt": "2026-03-04T19:40:10.077491",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 8870,
-    "expProgress": 21.8,
+    "totalExp": 8820,
+    "expProgress": 20.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 98.6,
-      "insight": 80.1063829787234,
+      "insight": 80.21739130434783,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 47,
+    "total": 46,
     "categories": {
       "学习成长": {
         "icon": "🥋",
@@ -43,10 +43,18 @@
             "lastUpdated": "2026-02-25"
           },
           {
+            "name": "neigong-cultivation",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 73,
+            "description": "内功修炼：记忆/知识/技能三位一体优化器",
+            "lastUpdated": "2026-03-04"
+          },
+          {
             "name": "knowledge-base",
             "source": "林克核心能力",
-            "level": 3,
-            "exp": 58,
+            "level": 2,
+            "exp": 48,
             "description": "个人知识库检索，按分类查找历史调研和文档",
             "lastUpdated": "2026-02-24"
           },
@@ -59,8 +67,8 @@
             "lastUpdated": "2026-02-09"
           }
         ],
-        "count": 4,
-        "avgLevel": 3.5
+        "count": 5,
+        "avgLevel": 3.4
       },
       "思考做事": {
         "icon": "🔄",
@@ -89,10 +97,18 @@
             "exp": 64,
             "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
             "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "meta-execution",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 58,
+            "description": "元执行框架：一次把事情做对的自审机制",
+            "lastUpdated": "2026-03-03"
           }
         ],
-        "count": 3,
-        "avgLevel": 3.7
+        "count": 4,
+        "avgLevel": 3.5
       },
       "调研分析": {
         "icon": "🔬",
@@ -371,6 +387,30 @@
         "color": "#64748b",
         "skills": [
           {
+            "name": "ai-column-writer",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 79,
+            "description": "「养了个AI」专栏写作和发布管理",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "linke-kim-message",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 73,
+            "description": "KIM消息推送，支持MixCard卡片和群消息",
+            "lastUpdated": "2026-03-04"
+          },
+          {
+            "name": "night-task-runner",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 70,
+            "description": "夜间长任务执行器，断点恢复和自主执行",
+            "lastUpdated": "2026-03-03"
+          },
+          {
             "name": "feishu-assistant",
             "source": "单虓晗自定义",
             "level": 3,
@@ -379,8 +419,24 @@
             "lastUpdated": "2026-02-27"
           }
         ],
+        "count": 4,
+        "avgLevel": 3.8
+      },
+      "AI洞察": {
+        "icon": "🔍",
+        "color": "#8b5cf6",
+        "skills": [
+          {
+            "name": "ai-insight",
+            "source": "单虓晗自定义",
+            "level": 4,
+            "exp": 82,
+            "description": "AI持续洞察平台：日报/周报/深度调研/首页管理",
+            "lastUpdated": "2026-03-04"
+          }
+        ],
         "count": 1,
-        "avgLevel": 3.0
+        "avgLevel": 4.0
       },
       "其他技能": {
         "icon": "📦",
@@ -395,22 +451,6 @@
             "lastUpdated": "2026-03-04"
           },
           {
-            "name": "ai-insight",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 82,
-            "description": "---",
-            "lastUpdated": "2026-03-04"
-          },
-          {
-            "name": "ai-column-writer",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 79,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
             "name": "keynote",
             "source": "codeflicker",
             "level": 4,
@@ -419,56 +459,16 @@
             "lastUpdated": "2026-03-03"
           },
           {
-            "name": "linke-kim-message",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 73,
-            "description": "---",
-            "lastUpdated": "2026-03-04"
-          },
-          {
             "name": "investment-tracker",
             "source": "codeflicker",
             "level": 4,
             "exp": 73,
             "description": "---",
             "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "night-task-runner",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 70,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "_deprecated_daily-ai-report",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 69,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "neigong-cultivation",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 64,
-            "description": "---",
-            "lastUpdated": "2026-03-04"
-          },
-          {
-            "name": "meta-execution",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 58,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
           }
         ],
-        "count": 10,
-        "avgLevel": 3.8
+        "count": 3,
+        "avgLevel": 4.3
       }
     }
   },
@@ -874,6 +874,24 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "分类优化未自动发现的根因与修复",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 分类优化未自动发现的根因分析 ### 问题 用户发现记忆/技能分类存在严重问题（6个空分类、2个过大分类），但我在每日任务中没有主动发现。 ### ...",
+        "keywords": [
+          "分类优化",
+          "自检遗漏",
+          "健康度检查",
+          "周期性触发",
+          "执行纪律"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -1469,7 +1487,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 51,
+    "total": 52,
     "byCategory": {
       "development_practice_specification": {
         "count": 7,
@@ -1514,7 +1532,7 @@
         "description": "用户兴趣、爱好偏好、关注领域"
       },
       "common_pitfalls_experience": {
-        "count": 14,
+        "count": 15,
         "label": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -1534,7 +1552,6 @@
       "03-01",
       "03-01",
       "03-01",
-      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -1544,10 +1561,10 @@
       "03-02",
       "03-02",
       "03-04",
+      "03-04",
       "03-04"
     ],
     "skills": [
-      31,
       31,
       32,
       32,
@@ -1560,7 +1577,8 @@
       39,
       39,
       42,
-      43
+      43,
+      42
     ],
     "knowledge": [
       150,
@@ -1575,11 +1593,10 @@
       150,
       150,
       150,
-      150,
+      152,
       152
     ],
     "memories": [
-      21,
       21,
       20,
       20,
@@ -1592,7 +1609,8 @@
       25,
       25,
       57,
-      51
+      51,
+      52
     ]
   },
   "achievements": [
@@ -1676,7 +1694,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有47项技能，触类旁通",
+      "desc": "拥有46项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-04",
       "unlocked": true,
@@ -1693,7 +1711,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "51/30",
+      "progressText": "52/30",
       "date": "2026-03-04"
     },
     {
@@ -1737,8 +1755,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 94,
-      "progressText": "47/50",
+      "progress": 92,
+      "progressText": "46/50",
       "date": "???"
     },
     {

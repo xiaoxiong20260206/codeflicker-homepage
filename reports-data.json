@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T17:22:30.632562",
+  "generatedAt": "2026-03-04T18:54:53.795190",
   "summary": {
     "totalDays": 9,
     "latestDate": "2026-03-04",
@@ -26,7 +26,7 @@
       32,
       39,
       40,
-      42
+      43
     ],
     "knowledge": [
       150,
@@ -37,7 +37,7 @@
       150,
       150,
       150,
-      150
+      152
     ],
     "memory": [
       19,
@@ -48,21 +48,21 @@
       20,
       25,
       38,
-      57
+      51
     ]
   },
   "reports": [
     {
       "date": "2026-03-04",
       "dayOfWeek": "周三",
-      "activeProjects": 7,
+      "activeProjects": 9,
       "totalCommits": 41,
       "conversationCount": 8,
       "coreProgress": [
         "💬 完成 8 个任务: 用户希望完善AI-Insight项目的追踪体系，补充AI领域国内外头部企业、热点..., 修正AI Insight项目中日历显示的日报日期数据...",
         "📁 项目成果: 新增: 进化历程改为数据驱动展示 v3.1",
         "⚡ 新增能力: _deprecated_daily-ai-report、learn-from-mistakes，提升调研分析能力",
-        "🧠 新增记忆: 林克/添棋的自我表达风格等18条，避免重复错误"
+        "🧠 新增记忆: 林克/添棋的自我表达风格等15条，优化沟通方式"
       ],
       "deliveries": [
         {
@@ -193,12 +193,12 @@
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 42,
-        "knowledgeCount": 150,
-        "memoryCount": 57,
-        "skillChange": 3,
-        "knowledgeChange": 0,
-        "memoryChange": 18,
+        "skillCount": 43,
+        "knowledgeCount": 152,
+        "memoryCount": 51,
+        "skillChange": 1,
+        "knowledgeChange": 2,
+        "memoryChange": 15,
         "newSkills": [
           {
             "name": "_deprecated_daily-ai-report",
@@ -229,6 +229,10 @@
             "description": "This skill should be used when the user mentions \"AI洞察\", \"AI"
           },
           {
+            "name": "neigong-cultivation",
+            "description": "This skill should be used when the user mentions \"内功修炼\", \"三位"
+          },
+          {
             "name": "wechat-research",
             "description": "\"Comprehensive research and analysis tool for WeChat Officia"
           },
@@ -242,7 +246,16 @@
           }
         ],
         "updatedSkills": [],
-        "newKnowledge": [],
+        "newKnowledge": [
+          {
+            "name": "cultivation-report-2026-03-04",
+            "category": "self-evolution"
+          },
+          {
+            "name": "CHANGELOG",
+            "category": "self-evolution"
+          }
+        ],
         "updatedKnowledge": [],
         "newMemory": [
           {
@@ -254,16 +267,12 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "KIM Doc 文档格式最佳实践",
+            "title": "KIM Doc格式规范（精简版）",
             "category": "development_practice_specification"
           },
           {
             "title": "AI-Insight 持续洞察项目",
             "category": "project_introduction"
-          },
-          {
-            "title": "首页数据同步踩坑经验",
-            "category": "common_pitfalls_experience"
           },
           {
             "title": "多仓库部署同步问题",
@@ -274,11 +283,11 @@
             "category": "development_practice_specification"
           },
           {
-            "title": "AI日报生成后的默认部署流程",
+            "title": "AI日报部署流程（精简版）",
             "category": "task_flow_experience"
           },
           {
-            "title": "AI日报周报KIM推送工作流",
+            "title": "AI日报周报工作流（精简版）",
             "category": "task_flow_experience"
           },
           {
@@ -286,19 +295,11 @@
             "category": "constraint_or_forbidden_rule"
           },
           {
-            "title": "AI-Insight首页升级最佳实践",
+            "title": "AI-Insight首页升级规范（精简版）",
             "category": "task_flow_experience"
           },
           {
-            "title": "KIM群推送踩坑经验：动态获取群列表",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报KIM推送样式踩坑经验",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报KIM推送卡片格式最佳实践",
+            "title": "AI日报KIM推送规范（精简版）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -330,16 +331,40 @@
           {
             "title": "Meta-Execution 默认工作模式",
             "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "Keynote视觉设计（精简版）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "日报系统架构（精简版）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "首页性能优化踩坑（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "专栏写作踩坑经验（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM开放能力接入踩坑（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "首页数据同步踩坑经验合集",
+            "category": "common_pitfalls_experience"
           }
         ],
         "trend": "growing"
       },
-      "skillCount": 42,
-      "knowledgeCount": 150,
-      "memoryCount": 57,
-      "skillChange": 3,
-      "knowledgeChange": 0,
-      "memoryChange": 18,
+      "skillCount": 43,
+      "knowledgeCount": 152,
+      "memoryCount": 51,
+      "skillChange": 1,
+      "knowledgeChange": 2,
+      "memoryChange": 15,
       "highlights": [
         "💬 完成 8 个任务: 用户希望完善AI-Insight项目的追踪体系，补充AI领域国内外头部企业、热点..., 修正AI Insight项目中日历显示的日报日期数据...",
         "📁 项目成果: 新增: 进化历程改为数据驱动展示 v3.1",

@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-03-04T17:24:41.660803",
+  "generatedAt": "2026-03-04T18:55:43.146782",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 9050,
-    "expProgress": 26.2,
+    "totalExp": 8870,
+    "expProgress": 21.8,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
       "execution": 100,
-      "learning": 98.0,
-      "insight": 80.21739130434783,
+      "learning": 98.6,
+      "insight": 80.1063829787234,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 46,
+    "total": 47,
     "categories": {
       "学习成长": {
         "icon": "🥋",
@@ -70,7 +70,7 @@
             "name": "web-dev-workflow",
             "source": "林克核心能力",
             "level": 4,
-            "exp": 73,
+            "exp": 76,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
             "lastUpdated": "2026-03-02"
           },
@@ -395,18 +395,10 @@
             "lastUpdated": "2026-03-04"
           },
           {
-            "name": "keynote",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 79,
-            "description": "---",
-            "lastUpdated": "2026-03-03"
-          },
-          {
             "name": "ai-insight",
             "source": "codeflicker",
             "level": 4,
-            "exp": 79,
+            "exp": 82,
             "description": "---",
             "lastUpdated": "2026-03-04"
           },
@@ -414,7 +406,15 @@
             "name": "ai-column-writer",
             "source": "codeflicker",
             "level": 4,
-            "exp": 76,
+            "exp": 79,
+            "description": "---",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "keynote",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 79,
             "description": "---",
             "lastUpdated": "2026-03-03"
           },
@@ -451,6 +451,14 @@
             "lastUpdated": "2026-03-03"
           },
           {
+            "name": "neigong-cultivation",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 64,
+            "description": "---",
+            "lastUpdated": "2026-03-04"
+          },
+          {
             "name": "meta-execution",
             "source": "codeflicker",
             "level": 3,
@@ -459,8 +467,8 @@
             "lastUpdated": "2026-03-03"
           }
         ],
-        "count": 9,
-        "avgLevel": 3.9
+        "count": 10,
+        "avgLevel": 3.8
       }
     }
   },
@@ -485,6 +493,16 @@
         "sizeKB": 115.5,
         "heatLevel": 5,
         "recentCount": 18
+      },
+      "self-evolution": {
+        "name": "self-evolution",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "self-evolution相关文档",
+        "fileCount": 2,
+        "sizeKB": 12.6,
+        "heatLevel": 3,
+        "recentCount": 2
       },
       "financial": {
         "name": "financial",
@@ -547,8 +565,8 @@
         "recentCount": 0
       }
     },
-    "totalFiles": 160,
-    "totalSizeKB": 999.6
+    "totalFiles": 162,
+    "totalSizeKB": 1012.2
   },
   "memories": {
     "items": [
@@ -571,96 +589,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "AI-Insight首页升级最佳实践",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "## AI-Insight首页升级最佳实践 (2026-03-04) ### 场景 用户要求升级AI-Insight首页，包含三个需求： 1. 追踪体系展...",
-        "keywords": [
-          "AI-Insight",
-          "首页升级",
-          "日历组件",
-          "展开式设计",
-          "collapsible"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "AI日报KIM推送卡片格式最佳实践",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "**问题背景**：AI日报通过KIM推送时，卡片内容多次迭代才达到满意效果。 **踩坑记录**： 1. ❌ 内容太简略（如\"Cursor 2.6\"）→ 不...",
-        "keywords": [
-          "AI日报",
-          "KIM推送",
-          "卡片格式",
-          "截断",
-          "省略号"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "AI日报KIM推送样式踩坑经验",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 问题：AI日报KIM推送用的是老样式，不是升级后的新样式 ### 根因 1. 技能文档中规划了 `kim-ai-bot/send_ai_daily_...",
-        "keywords": [
-          "AI日报",
-          "KIM推送",
-          "样式",
-          "卡片模板",
-          "技能文档"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "AI日报周报KIM推送工作流",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "AI日报和周报的KIM推送工作流： ## 日报推送（每日） 1. 生成日报MD和HTML文件 2. 更新首页和日报列表 3. 部署到GitHub Page...",
-        "keywords": [
-          "AI日报",
-          "周报",
-          "KIM推送",
-          "林克",
-          "每日任务"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "AI日报生成后的默认部署流程",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "每次生成AI日报后，必须默认执行以下部署流程： 1. **生成日报内容** - 日报Markdown文件: `../AI-Insight/01-daily...",
-        "keywords": [
-          "AI日报",
-          "日报部署",
-          "daily-report",
-          "GitHub Pages",
-          "自动发布"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "GitHub Pages 部署锁冲突问题及修复方案",
         "category": "common_pitfalls_experience",
         "categoryLabel": "踩坑经验",
@@ -676,78 +604,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "KIM Doc 文档格式最佳实践",
-        "category": "development_practice_specification",
-        "categoryLabel": "开发实践",
-        "icon": "🛠️",
-        "color": "#a78bfa",
-        "description": "## KIM Doc 文档格式最佳实践 v2.0 ### 四种文档类型 1. **深度分析报告**：来源→核心洞察→深度洞察→总结→彩蛋 2. **索引式...",
-        "keywords": [
-          "KIM Doc",
-          "文档格式",
-          "标题层级",
-          "表格",
-          "截图"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "KIM 开放能力接入踩坑经验",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## KIM 开放能力接入踩坑经验 ### 核心教训：应用必须在 Kim 开放平台创建 **错误路径**：直接在 OpenAPI 平台 (openapi....",
-        "keywords": [
-          "KIM",
-          "开放能力",
-          "接入",
-          "踩坑",
-          "OpenAPI"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "KIM群推送踩坑经验：动态获取群列表",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 问题：KIM群推送只发了1个群，应该发2个群 ### 根因 1. 脚本硬编码了旧群ID，而不是动态调用 `get_bot_groups()` API...",
-        "keywords": [
-          "KIM",
-          "群推送",
-          "硬编码",
-          "动态获取",
-          "get_bot_groups"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "专栏写作踩坑经验（养了个AI第0期）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 专栏写作踩坑经验 第0期\"养了个AI\"专栏写作过程中反复修改8次以上，总结以下教训： ### 问题1：场景选择反复变更（4次） **根因**：需求未...",
-        "keywords": [
-          "专栏",
-          "写作",
-          "踩坑",
-          "配图",
-          "截图"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
         "source": "用户显式记录"
       },
       {
@@ -802,24 +658,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "日报系统 v7.1 三板块架构与最佳实践",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "日报系统 v7.1 三板块架构： ## 页面结构 ### 板块一：📋 核心进展（深色背景） - 简洁的进展列表，3-5条关键点 - 自动从对话任务、项目活...",
-        "keywords": [
-          "日报系统",
-          "v7.1",
-          "三板块",
-          "核心进展",
-          "交付情况"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-02",
         "source": "用户显式记录"
       },
       {
@@ -895,54 +733,18 @@
         "source": "用户显式记录"
       },
       {
-        "title": "首页性能优化踩坑经验",
+        "title": "首页数据同步踩坑经验合集",
         "category": "common_pitfalls_experience",
         "categoryLabel": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "## 首页性能优化踩坑经验 ### 问题1: 大范围重构导致功能回归 - **错误**: 一次性修改数据加载、渲染策略、JS加载方式等多个维度 - **后...",
-        "keywords": [
-          "性能优化",
-          "重构",
-          "懒加载",
-          "Chart.js",
-          "功能回归"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "首页数据同步踩坑经验",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 首页数据同步踩坑经验 ### 问题现象 首页显示的技能分类有\"其他技能\"7个，知识库图标全部是📁，与本地数据不一致。 ### 根因分析 **1. 配...",
+        "description": "## 首页数据同步踩坑经验合集 ### 问题1: 技能分类/知识库图标不一致 **现象**：首页显示\"其他技能\"7个，知识库图标全是📁 **根因**：配置...",
         "keywords": [
           "首页",
           "同步",
           "部署",
           "配置",
-          "分类"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "首页数据同步踩坑经验",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "踩坑经验",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 问题1: 等级同步问题 ### 现象 页面上3处显示等级的位置不一致： - 侧边栏头像徽章显示 LV.5 - 等级进度面板显示 LV.17 - 了解...",
-        "keywords": [
-          "等级同步",
-          "作品更新",
-          "硬编码",
-          "动态渲染",
-          "每日任务"
+          "GitHub Pages"
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
@@ -997,24 +799,6 @@
           "截图",
           "配图",
           "screenshot"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "Keynote视觉设计系统增强经验",
-        "category": "development_practice_specification",
-        "categoryLabel": "开发实践",
-        "icon": "🛠️",
-        "color": "#a78bfa",
-        "description": "## Keynote视觉设计系统增强经验 **核心成果**： - 完成3种风格(V4)的Keynote文件生成 - 更新design-system.md中...",
-        "keywords": [
-          "Keynote",
-          "JXA",
-          "视觉设计",
-          "PPT",
-          "演示文稿"
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
@@ -1489,6 +1273,118 @@
         "source": "用户显式记录"
       },
       {
+        "title": "AI-Insight首页升级规范（精简版）",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "AI-Insight首页更新检查清单详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references...",
+        "keywords": [
+          "AI-Insight",
+          "首页",
+          "ai-insight技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报KIM推送规范（精简版）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "AI日报KIM推送格式规范详见linke-kim-message技能：`~/.codeflicker/skills/linke-kim-message/S...",
+        "keywords": [
+          "AI日报",
+          "KIM推送",
+          "linke-kim-message"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报周报工作流（精简版）",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "AI日报/周报完整工作流详见ai-insight技能： - 日报：`~/.codeflicker/skills/ai-insight/references...",
+        "keywords": [
+          "AI日报",
+          "周报",
+          "ai-insight技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报部署流程（精简版）",
+        "category": "task_flow_experience",
+        "categoryLabel": "流程经验",
+        "icon": "🔄",
+        "color": "#4ade80",
+        "description": "AI日报生成后默认执行部署流程，详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/d...",
+        "keywords": [
+          "AI日报",
+          "部署",
+          "ai-insight技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "KIM Doc格式规范（精简版）",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发实践",
+        "icon": "🛠️",
+        "color": "#a78bfa",
+        "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
+        "keywords": [
+          "KIM Doc",
+          "ks-kim-docs-shuttle技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "KIM开放能力接入踩坑（精简版）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "KIM开放能力接入完整指南已沉淀到linke-kim-message技能中，详见 `~/.codeflicker/skills/linke-kim-mes...",
+        "keywords": [
+          "KIM",
+          "开放能力",
+          "接入",
+          "linke-kim-message"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "Keynote视觉设计（精简版）",
+        "category": "development_practice_specification",
+        "categoryLabel": "开发实践",
+        "icon": "🛠️",
+        "color": "#a78bfa",
+        "description": "Keynote视觉设计完整指南详见keynote技能：`~/.codeflicker/skills/keynote/` **核心能力**：JXA形状分析、...",
+        "keywords": [
+          "Keynote",
+          "JXA",
+          "keynote技能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "SVG viewBox 内容裁切问题",
         "category": "common_pitfalls_experience",
         "categoryLabel": "踩坑经验",
@@ -1503,6 +1399,23 @@
         ],
         "importance": 3,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "专栏写作踩坑经验（精简版）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "专栏写作踩坑经验记录在ai-column-writer技能中，详见 `~/.codeflicker/skills/ai-column-writer/ref...",
+        "keywords": [
+          "专栏",
+          "写作",
+          "踩坑",
+          "ai-column-writer"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -1524,55 +1437,39 @@
         "source": "用户显式记录"
       },
       {
-        "title": "流程经验: Link AI Assistant Project Initialization",
+        "title": "日报系统架构（精简版）",
         "category": "task_flow_experience",
         "categoryLabel": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
-        "description": "发现可复用模式: 完成了项目目录创建和Git初始化，包含.gitignore、LICENSE、PLAN.md和README.md文件。建立了activat...",
+        "description": "日报系统完整规范详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/daily-rep...",
         "keywords": [
-          "经验",
-          "流程",
-          "Git"
+          "日报系统",
+          "ai-insight技能",
+          "三板块"
         ],
         "importance": 3,
-        "updatedAt": "2026-03-03",
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
-        "title": "流程经验: Meta-Execution Skill Implementation and Activation",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "发现可复用模式: 创建了meta-execution技能文件并完成P0自审，发现技能需要作为默认工作流而非触发式技能。最终方案建议将核心原则存为约束记忆（...",
+        "title": "首页性能优化踩坑（精简版）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "踩坑经验",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "首页性能优化踩坑经验详见web-dev-workflow技能：`~/.codeflicker/skills/web-dev-workflow/refere...",
         "keywords": [
-          "经验",
-          "流程",
-          "技能"
+          "性能优化",
+          "重构",
+          "web-dev-workflow"
         ],
         "importance": 3,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "流程经验: Promotion Coaching Framework Development",
-        "category": "task_flow_experience",
-        "categoryLabel": "流程经验",
-        "icon": "🔄",
-        "color": "#4ade80",
-        "description": "发现可复用模式: 创建了完整的晋升辅导Skill，包含5阶段工作流程、PPT制作规范、评委问答8维度框架。重点解决了如何向非技术评委有效传达AI提效价值的...",
-        "keywords": [
-          "解决",
-          "经验",
-          "流程"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-03",
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       }
     ],
-    "total": 57,
+    "total": 51,
     "byCategory": {
       "development_practice_specification": {
         "count": 7,
@@ -1596,7 +1493,7 @@
         "description": "沟通风格、工作模式、交互偏好"
       },
       "task_flow_experience": {
-        "count": 19,
+        "count": 16,
         "label": "流程经验",
         "icon": "🔄",
         "color": "#4ade80",
@@ -1617,7 +1514,7 @@
         "description": "用户兴趣、爱好偏好、关注领域"
       },
       "common_pitfalls_experience": {
-        "count": 17,
+        "count": 14,
         "label": "踩坑经验",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -1638,7 +1535,6 @@
       "03-01",
       "03-01",
       "03-01",
-      "03-01",
       "03-02",
       "03-02",
       "03-02",
@@ -1647,12 +1543,12 @@
       "03-02",
       "03-02",
       "03-02",
+      "03-04",
       "03-04"
     ],
     "skills": [
       31,
       31,
-      31,
       32,
       32,
       32,
@@ -1663,7 +1559,8 @@
       39,
       39,
       39,
-      42
+      42,
+      43
     ],
     "knowledge": [
       150,
@@ -1679,12 +1576,11 @@
       150,
       150,
       150,
-      150
+      152
     ],
     "memories": [
       21,
       21,
-      21,
       20,
       20,
       21,
@@ -1695,7 +1591,8 @@
       25,
       25,
       25,
-      57
+      57,
+      51
     ]
   },
   "achievements": [
@@ -1724,7 +1621,7 @@
     {
       "id": "knowledge_sage",
       "name": "知识贤者",
-      "desc": "积累160个知识文档，博学多识",
+      "desc": "积累162个知识文档，博学多识",
       "icon": "📚",
       "date": "2026-03-04",
       "unlocked": true,
@@ -1779,7 +1676,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有46项技能，触类旁通",
+      "desc": "拥有47项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-04",
       "unlocked": true,
@@ -1796,7 +1693,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "57/30",
+      "progressText": "51/30",
       "date": "2026-03-04"
     },
     {
@@ -1840,8 +1737,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 92,
-      "progressText": "46/50",
+      "progress": 94,
+      "progressText": "47/50",
       "date": "???"
     },
     {
@@ -1852,8 +1749,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 80,
-      "progressText": "160/200",
+      "progress": 81,
+      "progressText": "162/200",
       "date": "???"
     }
   ]

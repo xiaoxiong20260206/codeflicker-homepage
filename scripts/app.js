@@ -242,6 +242,10 @@ function renderAboutSection() {
     
     if (!char || !skills || !knowledge) return;
     
+    // 更新"了解我"页面的等级显示
+    const aboutLevel = document.getElementById('about-level');
+    if (aboutLevel) aboutLevel.textContent = 'LV.' + char.level;
+    
     // 更新"了解我"页面的统计数字
     const aboutSkills = document.getElementById('about-skills-2');
     const aboutKnowledge = document.getElementById('about-knowledge-2');

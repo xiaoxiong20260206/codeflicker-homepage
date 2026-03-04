@@ -277,9 +277,12 @@ function renderSidebar() {
         return;
     }
     
-    // 等级
+    // 等级 - 同时更新所有显示等级的位置
+    const levelText = 'LV.' + char.level;
     const heroLevel = document.getElementById('hero-level');
-    if (heroLevel) heroLevel.textContent = 'LV.' + char.level;
+    const aboutLevel = document.getElementById('about-level');
+    if (heroLevel) heroLevel.textContent = levelText;
+    if (aboutLevel) aboutLevel.textContent = levelText;
     
     // 渲染等级进度面板
     renderLevelProgress(char);

@@ -1163,6 +1163,10 @@
             text-align: center;
         }
         
+        .works-stat.featured .works-stat-value {
+            color: var(--zelda-gold);
+        }
+        
         .works-stat-value {
             font-family: var(--font-mono);
             font-size: 36px;
@@ -1331,6 +1335,61 @@
         
         .work-link:hover {
             color: var(--zelda-gold);
+        }
+        
+        /* 作品质量标签 */
+        .quality-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+        
+        .quality-badge.featured {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 193, 7, 0.85));
+            color: #5d4600;
+            border: 1px solid rgba(255, 215, 0, 0.8);
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+        }
+        
+        .quality-badge.excellent {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.9), rgba(139, 92, 246, 0.85));
+            color: #fff;
+            border: 1px solid rgba(139, 92, 246, 0.6);
+        }
+        
+        .work-card {
+            position: relative;
+        }
+        
+        .work-card.featured {
+            border-color: var(--zelda-gold);
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.15);
+        }
+        
+        .work-card.featured:hover {
+            box-shadow: 0 10px 40px rgba(255, 193, 7, 0.25);
+        }
+        
+        .work-features {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(94, 196, 212, 0.15);
+            border: 1px solid rgba(94, 196, 212, 0.3);
+            border-radius: 10px;
+            color: #0891b2;
         }
         
         /* ==================== 我的能力Section样式 ==================== */
@@ -2907,6 +2966,10 @@
                         <div class="works-stat">
                             <div class="works-stat-value" id="works-total">-</div>
                             <div class="works-stat-label">作品总数</div>
+                        </div>
+                        <div class="works-stat featured">
+                            <div class="works-stat-value" id="works-featured">-</div>
+                            <div class="works-stat-label">🏆 精选</div>
                         </div>
                         <div class="works-stat">
                             <div class="works-stat-value" id="works-deployed">-</div>

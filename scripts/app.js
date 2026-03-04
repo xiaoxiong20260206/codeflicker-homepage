@@ -1059,9 +1059,10 @@ function renderWorksGrid(projects) {
         }
         
         return `
-            <div class="work-card ${statusClass}" 
+            <div class="work-card ${statusClass} ${qualityLevel === 'featured' ? 'featured' : ''}" 
                  onmouseenter="showProjectTooltip(event, '${projectId}')" 
                  onmouseleave="hideTooltip()">
+                ${qualityBadgeHtml}
                 ${screenshotHtml}
                 <div class="work-body">
                     <div class="work-header">
@@ -1073,6 +1074,7 @@ function renderWorksGrid(projects) {
                         <span class="work-status ${statusClass}">${statusText}</span>
                     </div>
                     <div class="work-desc">${p.goal || ''}</div>
+                    ${featureTagsHtml ? `<div class="work-features">${featureTagsHtml}</div>` : ''}
                     <div class="work-footer">
                         <div class="work-tech">${techTags}</div>
                         ${linkHtml}

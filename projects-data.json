@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-03-04T07:55:25.639235",
+  "generatedAt": "2026-03-04T09:08:07.956832",
   "summary": {
-    "total": 26,
+    "total": 14,
     "deployed": 7,
     "inDevelopment": 0,
-    "archived": 1,
+    "archived": 0,
     "featured": 2,
     "excellent": 3
   },
@@ -13,7 +13,7 @@
       "name": "调研类",
       "icon": "🔬",
       "color": "#a78bfa",
-      "count": 4
+      "count": 3
     },
     "tools": {
       "name": "工具类",
@@ -31,7 +31,7 @@
       "name": "文档类",
       "icon": "📄",
       "color": "#fbbf24",
-      "count": 18
+      "count": 7
     }
   },
   "projects": [
@@ -345,7 +345,8 @@
         "tags": [
           "大型项目"
         ]
-      }
+      },
+      "icon": "📄"
     },
     {
       "id": "knowledge-methodology",
@@ -370,7 +371,8 @@
         "tags": [
           "大型项目"
         ]
-      }
+      },
+      "icon": "📄"
     },
     {
       "id": "knowledge-my-story",
@@ -395,7 +397,8 @@
         "tags": [
           "大型项目"
         ]
-      }
+      },
+      "icon": "📄"
     },
     {
       "id": "knowledge-essays",
@@ -420,7 +423,8 @@
         "tags": [
           "大型项目"
         ]
-      }
+      },
+      "icon": "📄"
     },
     {
       "id": "knowledge-self-cultivation",
@@ -445,43 +449,8 @@
         "tags": [
           "大型项目"
         ]
-      }
-    },
-    {
-      "id": "ai-engineer-analysis",
-      "name": "AI工程师分析",
-      "subtitle": "AI工程师能力模型研究",
-      "category": "research",
-      "icon": "👨‍💻",
-      "goal": "分析AI工程师的能力要求和发展路径",
-      "outcome": "产出AI工程师能力模型分析文档",
-      "deliverables": [
-        "分析文档",
-        "能力模型"
-      ],
-      "status": "archived",
-      "completedAt": "2026-02-15",
-      "techStack": [
-        "Markdown",
-        "研究分析"
-      ],
-      "url": null,
-      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_AIStudio/1-ai-engineer-analysis/",
-      "highlights": [
-        "能力模型梳理",
-        "发展路径分析"
-      ],
-      "metrics": {
-        "fileCount": 11
       },
-      "quality": {
-        "score": 33,
-        "level": "basic",
-        "tags": [
-          "大型项目",
-          "调研报告"
-        ]
-      }
+      "icon": "📄"
     },
     {
       "id": "knowledge-thinking-map",
@@ -504,7 +473,8 @@
         "score": 30,
         "level": "basic",
         "tags": []
-      }
+      },
+      "icon": "📄"
     },
     {
       "id": "knowledge-personal-growth",
@@ -527,260 +497,8 @@
         "score": 30,
         "level": "basic",
         "tags": []
-      }
-    },
-    {
-      "id": "knowledge-ai-devops",
-      "name": "Ai Devops",
-      "subtitle": "知识库 - rd-efficiency",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/ai-devops",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 4
       },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "rd-efficiency"
-      },
-      "quality": {
-        "score": 25,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-case-studies",
-      "name": "Case Studies",
-      "subtitle": "知识库 - rd-efficiency",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/case-studies",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 3
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "rd-efficiency"
-      },
-      "quality": {
-        "score": 25,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-family",
-      "name": "Family",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/family",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 4
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 25,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-measurement-system",
-      "name": "Measurement System",
-      "subtitle": "知识库 - rd-efficiency",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/measurement-system",
-      "status": "completed",
-      "createdAt": "2026-02-27",
-      "metrics": {
-        "fileCount": 4
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "rd-efficiency"
-      },
-      "quality": {
-        "score": 25,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-ai-coding-tools",
-      "name": "Ai Coding Tools",
-      "subtitle": "知识库 - rd-efficiency",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/ai-coding-tools",
-      "status": "completed",
-      "createdAt": "2026-02-27",
-      "metrics": {
-        "fileCount": 4
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "rd-efficiency"
-      },
-      "quality": {
-        "score": 25,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-devops-platform",
-      "name": "Devops Platform",
-      "subtitle": "知识库 - rd-efficiency",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/rd-efficiency/devops-platform",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 2
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "rd-efficiency"
-      },
-      "quality": {
-        "score": 20,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-devops",
-      "name": "Devops",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/devops",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 2
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 20,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-system-world",
-      "name": "System World",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/system-world",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 1
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 20,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-product-thinking",
-      "name": "Product Thinking",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/product-thinking",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 1
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 20,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-professional",
-      "name": "Professional",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/professional",
-      "status": "completed",
-      "createdAt": "2026-02-26",
-      "metrics": {
-        "fileCount": 2
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 20,
-        "level": "basic",
-        "tags": []
-      }
-    },
-    {
-      "id": "knowledge-about",
-      "name": "About",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/about",
-      "status": "completed",
-      "createdAt": "2026-02-26",
-      "metrics": {
-        "fileCount": 2
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 20,
-        "level": "basic",
-        "tags": []
-      }
+      "icon": "📄"
     }
   ]
 }

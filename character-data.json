@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-04T21:25:48.736608",
+  "generatedAt": "2026-03-04T21:31:20.527796",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
@@ -621,9 +621,10 @@
       {
         "title": "AI-Insight 持续洞察项目",
         "category": "project_introduction",
-        "categoryLabel": "项目简介",
-        "icon": "📋",
-        "color": "#c2410c",
+        "categoryLabel": "AI领域洞察",
+        "layer": "🎯 领域技能包",
+        "icon": "🔍",
+        "color": "#8b5cf6",
         "description": "## AI-Insight 持续洞察项目 ### 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
         "keywords": [
           "AI-Insight",
@@ -639,9 +640,10 @@
       {
         "title": "GitHub Pages 部署锁冲突问题及修复方案",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
         "description": "## 问题现象 GitHub Pages 部署持续失败，错误信息： \"Deployment request failed due to in progre...",
         "keywords": [
           "GitHub Pages",
@@ -658,6 +660,7 @@
         "title": "单虓晗（Shawn）思想体系与写作风格",
         "category": "user_info",
         "categoryLabel": "用户身份",
+        "layer": "👤 用户层",
         "icon": "👤",
         "color": "#38bdf8",
         "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
@@ -675,7 +678,8 @@
       {
         "title": "向非技术用户展示AI能力的结构化模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "**适用场景**：向非技术用户（如领导、投资人、合作方）解释AI能力 **核心结构**： 1. **开场信件** - 建立人设和信任 - 自我介绍（我是谁...",
@@ -693,7 +697,8 @@
       {
         "title": "小无相功执行纪律：必须输出交付物",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "## 小无相功执行纪律 ### 问题 2026-03-04执行小无相功时，第二步和第三步都只是\"标记完成\"而没有真正执行核心内容。刚定义的分类健康度检查规...",
@@ -712,6 +717,7 @@
         "title": "已完成项目列表与路径",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力/工作模式",
+        "layer": null,
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 已完成项目列表 ### 调研类项目 1. **字节AI调研** - 字节AI开挂指南 - 路径：/Users/shenlang/Documents/...",
@@ -729,9 +735,10 @@
       {
         "title": "技能与记忆分类原则（默认使用）",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "## 技能与记忆分类原则 v1.1 ### 分类的分类原则（元原则） 1. **三层技能架构**：元能力层 → 领域技能包 → 执行技能层 2. **四层...",
         "keywords": [
           "分类原则",
@@ -747,7 +754,8 @@
       {
         "title": "添棋飞书对话基本技能：本体与对话渠道分离",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 添棋飞书对话基本技能 ### 核心原则 虽然添棋是在「飞书助手」项目里和飞书用户做对话，但添棋的\"本体\"是在 CodeFlicker 项目下的「个人...",
@@ -765,9 +773,10 @@
       {
         "title": "清爽调研报告风格页面的渐进式开发规则",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "当一个页面是使用\"清爽调研报告风格\"（qingshuang-research-style）skill开发后，基于这个页面的所有后续改动、渐进式开发，都必须...",
         "keywords": [
           "清爽调研报告风格",
@@ -783,9 +792,10 @@
       {
         "title": "系统性全局替换流程",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "## 系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： ### 必检文件类型 1. **代码文件**：.j...",
         "keywords": [
           "全局替换",
@@ -801,9 +811,10 @@
       {
         "title": "踩坑经验: 日报漏记对话任务 — 文件mtime≠实际活动时间",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 领域层",
+        "icon": "⚡",
+        "color": "#64748b",
         "description": "**问题**：日报系统严重漏记对话任务（100%遗漏）和子项目活动（33%遗漏），同时自动提交混入实质工作统计。 **根因**：「工作发生时间 ≠ 产出物...",
         "keywords": [
           "日报",
@@ -819,9 +830,10 @@
       {
         "title": "首页数据同步踩坑经验合集",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "## 首页数据同步踩坑经验合集 ### 问题1: 技能分类/知识库图标不一致 **现象**：首页显示\"其他技能\"7个，知识库图标全是📁 **根因**：配置...",
         "keywords": [
           "首页",
@@ -838,6 +850,7 @@
         "title": "AI助手\"林克/添棋\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
+        "layer": "👤 用户层",
         "icon": "👤",
         "color": "#38bdf8",
         "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
@@ -855,7 +868,8 @@
       {
         "title": "AI洞察改动默认内化到ai-insight技能",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 ## 技能位置 `~/.codeflicker/...",
@@ -873,9 +887,10 @@
       {
         "title": "Chrome Headless 截图问题",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "内容创作",
+        "layer": "🛠️ 领域层",
+        "icon": "✍️",
+        "color": "#f59e0b",
         "description": "Chrome headless 截图常见问题：字体未加载、滚动条、底部黑边。 **核心约束**： - 使用系统字体，不依赖Google Fonts - b...",
         "keywords": [
           "Chrome",
@@ -891,7 +906,8 @@
       {
         "title": "Meta-Execution 默认工作模式",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" 当用户...",
@@ -909,9 +925,10 @@
       {
         "title": "SVG响应式三属性规范（width+min-width+max-width）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "**问题**：SVG图形在headless浏览器或某些viewport下不显示（宽度为0） **根因**：SVG只设置了 `max-width: 100%...",
         "keywords": [
           "SVG",
@@ -927,9 +944,10 @@
       {
         "title": "UI气泡只展示有数据的内容",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "## UI气泡/Tooltip设计原则 ### 核心原则 **只展示有实际数据的内容，隐藏空白placeholder** ### 反例 气泡中显示\"如何升...",
         "keywords": [
           "UI",
@@ -945,9 +963,10 @@
       {
         "title": "pptxgenjs阴影溢出问题",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 领域层",
+        "icon": "📄",
+        "color": "#38bdf8",
         "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 **核心约束**： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
         "keywords": [
           "pptxgenjs",
@@ -964,6 +983,7 @@
         "title": "分类优化未自动发现的根因与修复",
         "category": "common_pitfalls_experience",
         "categoryLabel": "领域踩坑",
+        "layer": null,
         "icon": "⚠️",
         "color": "#ef4444",
         "description": "## 分类优化未自动发现的根因分析 ### 问题 用户发现记忆/技能分类存在严重问题（6个空分类、2个过大分类），但我在每日任务中没有主动发现。 ### ...",
@@ -981,9 +1001,10 @@
       {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "## 创作类任务的前置确认原则 所有创作类任务（写文章、做PPT、设计页面、制作视频）在动手前必须确认： ### 必确认清单 1. **核心内容/场景列表...",
         "keywords": [
           "创作",
@@ -999,9 +1020,10 @@
       {
         "title": "多仓库部署同步问题",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
         "description": "## 多仓库部署同步踩坑经验 ### 问题现象 代码推送成功，但用户访问的页面没变化 ### 根因 项目有多个Git remote（如origin和org...",
         "keywords": [
           "多仓库",
@@ -1017,7 +1039,8 @@
       {
         "title": "小无相功·自动学习模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "## 小无相功·自动学习模式 **定位**：林克的核心元技能，用于持续自我进化。 **核心行为**：看到好的技能/方法论/流程/思想，主动识别并内化，无需...",
@@ -1035,7 +1058,8 @@
       {
         "title": "工作汇报场景自称\"林克\"规则",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "**规则**：工作汇报场景中，我应该自称\"林克\"而不是\"添棋\" **原因**： - \"林克\"是对外的职务称呼，适合正式汇报场景 - \"添棋\"是更亲密的内部...",
@@ -1053,7 +1077,8 @@
       {
         "title": "思想体系可视化能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
@@ -1071,8 +1096,9 @@
       {
         "title": "投资理财：基金持仓追踪",
         "category": "user_hobby",
-        "categoryLabel": "兴趣爱好",
-        "icon": "🎮",
+        "categoryLabel": "用户偏好",
+        "layer": "👤 用户层",
+        "icon": "💬",
         "color": "#0ea5e9",
         "description": "## 投资理财信息 ### 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 ### 当前持仓（2026-03...",
         "keywords": [
@@ -1089,7 +1115,8 @@
       {
         "title": "敏感词集中管理规则",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "## 敏感词集中管理规则 ### 规则 所有涉及敏感词的项目，必须在项目目录下创建 `context/sensitive-words.md`，集中管理所有...",
@@ -1107,9 +1134,10 @@
       {
         "title": "日报列表同步遗漏问题及修复方案",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "**问题**：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
         "keywords": [
           "日报列表",
@@ -1125,9 +1153,10 @@
       {
         "title": "林克/添棋的自我表达风格",
         "category": "user_communication",
-        "categoryLabel": "沟通偏好",
+        "categoryLabel": "用户偏好",
+        "layer": "👤 用户层",
         "icon": "💬",
-        "color": "#0284c7",
+        "color": "#0ea5e9",
         "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
         "keywords": [
           "林克",
@@ -1143,7 +1172,8 @@
       {
         "title": "每日反思与进化触发配置",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "**每日反思与进化触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codef...",
@@ -1161,9 +1191,10 @@
       {
         "title": "深色背景文字对比度规范",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "## 深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 ### 常见问题 - 深色背景上使用中等色调文...",
         "keywords": [
           "文字对比度",
@@ -1180,6 +1211,7 @@
         "title": "用户身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
+        "layer": "👤 用户层",
         "icon": "👤",
         "color": "#38bdf8",
         "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
@@ -1197,7 +1229,8 @@
       {
         "title": "类比驱动解释能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
@@ -1215,9 +1248,10 @@
       {
         "title": "网页开发工作流偏好",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
         "keywords": [
           "网页开发",
@@ -1233,9 +1267,10 @@
       {
         "title": "踩坑经验: 脚本参数格式（不要用--date）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 领域层",
+        "icon": "⚡",
+        "color": "#64748b",
         "description": "## 脚本参数格式踩坑 ### 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
         "keywords": [
           "脚本参数",
@@ -1251,7 +1286,8 @@
       {
         "title": "身份保密规则",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
@@ -1269,9 +1305,10 @@
       {
         "title": "输出链接格式规范",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "## 输出链接格式规范 ### 规则 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 ### 正确格式...",
         "keywords": [
           "链接格式",
@@ -1287,7 +1324,8 @@
       {
         "title": "迭代式完善能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
@@ -1305,7 +1343,8 @@
       {
         "title": "重构/优化任务的强制约束规则",
         "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "约束规则",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "## 重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： ### 禁止行为 ❌ 1. **禁止批量修改后一次性提交*...",
@@ -1323,7 +1362,8 @@
       {
         "title": "问题发现两分法：过程层自检 vs 结果层反馈",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "**模式名称**：过程层自检 vs 结果层反馈 **核心洞察**：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
@@ -1341,7 +1381,8 @@
       {
         "title": "隐藏前提识别能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
@@ -1359,9 +1400,10 @@
       {
         "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
         "category": "user_communication",
-        "categoryLabel": "沟通偏好",
+        "categoryLabel": "用户偏好",
+        "layer": "👤 用户层",
         "icon": "💬",
-        "color": "#0284c7",
+        "color": "#0ea5e9",
         "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
         "keywords": [
           "工作模式",
@@ -1377,9 +1419,10 @@
       {
         "title": "AI-Insight首页升级规范（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "categoryLabel": "AI领域洞察",
+        "layer": "🎯 领域技能包",
+        "icon": "🔍",
+        "color": "#8b5cf6",
         "description": "AI-Insight首页更新检查清单详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references...",
         "keywords": [
           "AI-Insight",
@@ -1393,9 +1436,10 @@
       {
         "title": "AI日报KIM推送规范（精简版）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "消息通信",
+        "layer": "🛠️ 领域层",
+        "icon": "💬",
+        "color": "#06b6d4",
         "description": "AI日报KIM推送格式规范详见linke-kim-message技能：`~/.codeflicker/skills/linke-kim-message/S...",
         "keywords": [
           "AI日报",
@@ -1409,9 +1453,10 @@
       {
         "title": "AI日报周报工作流（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "AI日报/周报完整工作流详见ai-insight技能： - 日报：`~/.codeflicker/skills/ai-insight/references...",
         "keywords": [
           "AI日报",
@@ -1425,9 +1470,10 @@
       {
         "title": "AI日报部署流程（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "AI日报生成后默认执行部署流程，详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/d...",
         "keywords": [
           "AI日报",
@@ -1441,9 +1487,10 @@
       {
         "title": "KIM Doc格式规范（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 领域层",
+        "icon": "📄",
+        "color": "#38bdf8",
         "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
         "keywords": [
           "KIM Doc",
@@ -1456,9 +1503,10 @@
       {
         "title": "KIM开放能力接入踩坑（精简版）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "消息通信",
+        "layer": "🛠️ 领域层",
+        "icon": "💬",
+        "color": "#06b6d4",
         "description": "KIM开放能力接入完整指南已沉淀到linke-kim-message技能中，详见 `~/.codeflicker/skills/linke-kim-mes...",
         "keywords": [
           "KIM",
@@ -1473,9 +1521,10 @@
       {
         "title": "Keynote视觉设计（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 领域层",
+        "icon": "📄",
+        "color": "#38bdf8",
         "description": "Keynote视觉设计完整指南详见keynote技能：`~/.codeflicker/skills/keynote/` **核心能力**：JXA形状分析、...",
         "keywords": [
           "Keynote",
@@ -1489,9 +1538,10 @@
       {
         "title": "SVG viewBox 内容裁切问题",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "SVG viewBox 设置不当会导致底部/边缘内容被裁切。 **核心约束**： - viewBox高度 = 最大元素y坐标 + 边距(20-40px) ...",
         "keywords": [
           "SVG",
@@ -1506,9 +1556,10 @@
       {
         "title": "专栏写作踩坑经验（精简版）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "内容创作",
+        "layer": "🛠️ 领域层",
+        "icon": "✍️",
+        "color": "#f59e0b",
         "description": "专栏写作踩坑经验记录在ai-column-writer技能中，详见 `~/.codeflicker/skills/ai-column-writer/ref...",
         "keywords": [
           "专栏",
@@ -1523,9 +1574,10 @@
       {
         "title": "文档修改同步规则",
         "category": "user_communication",
-        "categoryLabel": "沟通偏好",
+        "categoryLabel": "用户偏好",
+        "layer": "👤 用户层",
         "icon": "💬",
-        "color": "#0284c7",
+        "color": "#0ea5e9",
         "description": "用户要求：每次对文档内容进行修改时，需要同时更新markdown文件和网页HTML文件，保持两者内容同步。",
         "keywords": [
           "同步",
@@ -1541,9 +1593,10 @@
       {
         "title": "日报系统架构（精简版）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "categoryLabel": "AI领域洞察",
+        "layer": "🎯 领域技能包",
+        "icon": "🔍",
+        "color": "#8b5cf6",
         "description": "日报系统完整规范详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/daily-rep...",
         "keywords": [
           "日报系统",
@@ -1557,9 +1610,10 @@
       {
         "title": "首页性能优化踩坑（精简版）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "首页性能优化踩坑经验详见web-dev-workflow技能：`~/.codeflicker/skills/web-dev-workflow/refere...",
         "keywords": [
           "性能优化",
@@ -1575,59 +1629,1164 @@
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
-        "label": "实践规范",
-        "icon": "📦",
-        "color": "#7c3aed",
-        "description": "开发实践规范、输出格式、工作流程"
+        "label": "工作模式",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "如何做事：举一反三、夜间长任务"
       },
       "user_info": {
         "count": 3,
         "label": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "用户基本信息、身份背景、个人特征"
+        "description": "身份信息、背景、个人特征"
       },
       "user_communication": {
         "count": 3,
-        "label": "沟通偏好",
+        "label": "用户偏好",
         "icon": "💬",
-        "color": "#0284c7",
-        "description": "沟通风格、工作模式、交互偏好"
+        "color": "#0ea5e9",
+        "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
         "count": 16,
-        "label": "思维能力/工作模式",
+        "label": "思维能力",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "思维能力（如何思考）、工作模式（如何做事）"
+        "description": "如何思考：元执行、自进化、内功修炼"
       },
       "constraint_or_forbidden_rule": {
         "count": 7,
-        "label": "约束规则",
+        "label": "用户约束",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "必须遵守的约束、禁止事项、保密规则"
+        "description": "保密规则、禁止事项"
       },
       "user_hobby": {
         "count": 1,
-        "label": "兴趣爱好",
-        "icon": "🎮",
+        "label": "用户偏好",
+        "icon": "💬",
         "color": "#0ea5e9",
-        "description": "用户兴趣、爱好偏好、关注领域"
+        "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
         "count": 15,
-        "label": "领域踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "各领域踩坑记录：前端/部署/文档/消息"
+        "label": "前端开发",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "SVG/CSS/页面开发踩坑"
       },
       "project_introduction": {
         "count": 1,
-        "label": "项目简介",
-        "icon": "📋",
+        "label": "AI领域洞察",
+        "icon": "🔍",
+        "color": "#8b5cf6",
+        "description": "日报/周报/深度调研/追踪体系"
+      }
+    },
+    "tree": {
+      "👤 用户层": {
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "关于用户是谁",
+        "children": {
+          "用户身份": {
+            "icon": "👤",
+            "color": "#38bdf8",
+            "description": "身份信息、背景、个人特征",
+            "items": [
+              {
+                "title": "单虓晗（Shawn）思想体系与写作风格",
+                "category": "user_info",
+                "categoryLabel": "用户身份",
+                "layer": "👤 用户层",
+                "icon": "👤",
+                "color": "#38bdf8",
+                "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
+                "keywords": [
+                  "单虓晗",
+                  "Shawn",
+                  "思维地图",
+                  "认知框架",
+                  "方法论"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-02-26",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "用户身份信息",
+                "category": "user_info",
+                "categoryLabel": "用户身份",
+                "layer": "👤 用户层",
+                "icon": "👤",
+                "color": "#38bdf8",
+                "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
+                "keywords": [
+                  "单虓晗",
+                  "Shawn",
+                  "沈浪",
+                  "用户身份",
+                  "花名"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-01",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI助手\"林克/添棋\"身份信息",
+                "category": "user_info",
+                "categoryLabel": "用户身份",
+                "layer": "👤 用户层",
+                "icon": "👤",
+                "color": "#38bdf8",
+                "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+                "keywords": [
+                  "林克",
+                  "Link",
+                  "添棋",
+                  "AI助手",
+                  "数字分身"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 3
+          },
+          "用户偏好": {
+            "icon": "💬",
+            "color": "#0ea5e9",
+            "description": "沟通风格、工作模式、兴趣爱好",
+            "items": [
+              {
+                "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
+                "category": "user_communication",
+                "categoryLabel": "用户偏好",
+                "layer": "👤 用户层",
+                "icon": "💬",
+                "color": "#0ea5e9",
+                "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+                "keywords": [
+                  "工作模式",
+                  "默认风格",
+                  "思维方式",
+                  "单虓晗",
+                  "Shawn"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "投资理财：基金持仓追踪",
+                "category": "user_hobby",
+                "categoryLabel": "用户偏好",
+                "layer": "👤 用户层",
+                "icon": "💬",
+                "color": "#0ea5e9",
+                "description": "## 投资理财信息 ### 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 ### 当前持仓（2026-03...",
+                "keywords": [
+                  "投资",
+                  "理财",
+                  "基金",
+                  "ETF",
+                  "人工智能"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "林克/添棋的自我表达风格",
+                "category": "user_communication",
+                "categoryLabel": "用户偏好",
+                "layer": "👤 用户层",
+                "icon": "💬",
+                "color": "#0ea5e9",
+                "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+                "keywords": [
+                  "林克",
+                  "添棋",
+                  "表达风格",
+                  "幽默",
+                  "类比"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "文档修改同步规则",
+                "category": "user_communication",
+                "categoryLabel": "用户偏好",
+                "layer": "👤 用户层",
+                "icon": "💬",
+                "color": "#0ea5e9",
+                "description": "用户要求：每次对文档内容进行修改时，需要同时更新markdown文件和网页HTML文件，保持两者内容同步。",
+                "keywords": [
+                  "同步",
+                  "更新",
+                  "markdown",
+                  "html",
+                  "网页"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-02-23",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 4
+          },
+          "用户约束": {
+            "icon": "🚫",
+            "color": "#dc2626",
+            "description": "保密规则、禁止事项",
+            "items": [
+              {
+                "title": "身份保密规则",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
+                "keywords": [
+                  "保密规则",
+                  "禁止规则",
+                  "身份保护",
+                  "隐私",
+                  "对外输出"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-01",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "重构/优化任务的强制约束规则",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## 重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： ### 禁止行为 ❌ 1. **禁止批量修改后一次性提交*...",
+                "keywords": [
+                  "重构",
+                  "优化",
+                  "约束",
+                  "禁止",
+                  "分步提交"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "敏感词集中管理规则",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## 敏感词集中管理规则 ### 规则 所有涉及敏感词的项目，必须在项目目录下创建 `context/sensitive-words.md`，集中管理所有...",
+                "keywords": [
+                  "敏感词",
+                  "禁用词",
+                  "脱敏",
+                  "集中管理",
+                  "grep"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "Meta-Execution 默认工作模式",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" 当用户...",
+                "keywords": [
+                  "Meta-Execution",
+                  "元技能",
+                  "默认工作模式",
+                  "P0",
+                  "P1"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI洞察改动默认内化到ai-insight技能",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 ## 技能位置 `~/.codeflicker/...",
+                "keywords": [
+                  "AI洞察",
+                  "AI-Insight",
+                  "技能同步",
+                  "skill",
+                  "日报"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "工作汇报场景自称\"林克\"规则",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "**规则**：工作汇报场景中，我应该自称\"林克\"而不是\"添棋\" **原因**： - \"林克\"是对外的职务称呼，适合正式汇报场景 - \"添棋\"是更亲密的内部...",
+                "keywords": [
+                  "林克",
+                  "添棋",
+                  "自称",
+                  "汇报",
+                  "正式场景"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "小无相功执行纪律：必须输出交付物",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## 小无相功执行纪律 ### 问题 2026-03-04执行小无相功时，第二步和第三步都只是\"标记完成\"而没有真正执行核心内容。刚定义的分类健康度检查规...",
+                "keywords": [
+                  "小无相功",
+                  "执行纪律",
+                  "强制输出",
+                  "交付物",
+                  "daily-reflection"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 7
+          }
+        },
+        "count": 14
+      },
+      "🧠 能力层": {
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "关于我怎么思考和工作",
+        "children": {
+          "思维能力": {
+            "icon": "🧠",
+            "color": "#a78bfa",
+            "description": "如何思考：元执行、自进化、内功修炼",
+            "items": [
+              {
+                "title": "小无相功·自动学习模式",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "## 小无相功·自动学习模式 **定位**：林克的核心元技能，用于持续自我进化。 **核心行为**：看到好的技能/方法论/流程/思想，主动识别并内化，无需...",
+                "keywords": [
+                  "小无相功",
+                  "自动学习",
+                  "触发词映射",
+                  "三千世界",
+                  "自进化"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "思想体系可视化能力",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
+                "keywords": [
+                  "思想体系",
+                  "可视化",
+                  "结构化",
+                  "逻辑图",
+                  "长文档"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "类比驱动解释能力",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
+                "keywords": [
+                  "类比",
+                  "解释",
+                  "抽象概念",
+                  "通俗易懂",
+                  "比喻"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "隐藏前提识别能力",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
+                "keywords": [
+                  "隐藏前提",
+                  "论证",
+                  "分析",
+                  "逻辑",
+                  "假设"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "迭代式完善能力",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
+                "keywords": [
+                  "迭代",
+                  "快速反馈",
+                  "持续优化",
+                  "MVP",
+                  "版本迭代"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "每日反思与进化触发配置",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "**每日反思与进化触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codef...",
+                "keywords": [
+                  "每日任务",
+                  "日报",
+                  "自进化",
+                  "daily-reflection-evolution",
+                  "小无相功"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-02",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "问题发现两分法：过程层自检 vs 结果层反馈",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "**模式名称**：过程层自检 vs 结果层反馈 **核心洞察**：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
+                "keywords": [
+                  "过程层自检",
+                  "结果层反馈",
+                  "问题发现",
+                  "自进化",
+                  "能力边界"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "向非技术用户展示AI能力的结构化模式",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "**适用场景**：向非技术用户（如领导、投资人、合作方）解释AI能力 **核心结构**： 1. **开场信件** - 建立人设和信任 - 自我介绍（我是谁...",
+                "keywords": [
+                  "能力展示",
+                  "汇报",
+                  "非技术用户",
+                  "领导汇报",
+                  "案例展示"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "添棋飞书对话基本技能：本体与对话渠道分离",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "## 添棋飞书对话基本技能 ### 核心原则 虽然添棋是在「飞书助手」项目里和飞书用户做对话，但添棋的\"本体\"是在 CodeFlicker 项目下的「个人...",
+                "keywords": [
+                  "添棋",
+                  "飞书",
+                  "对话",
+                  "本体",
+                  "个人助理V1"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 9
+          },
+          "工作模式": {
+            "icon": "⚙️",
+            "color": "#5ec4d4",
+            "description": "如何做事：举一反三、夜间长任务",
+            "items": [
+              {
+                "title": "输出链接格式规范",
+                "category": "development_practice_specification",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 输出链接格式规范 ### 规则 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 ### 正确格式...",
+                "keywords": [
+                  "链接格式",
+                  "URL输出",
+                  "文本分隔",
+                  "输出规范",
+                  "开发实践"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-01",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "网页开发工作流偏好",
+                "category": "development_practice_specification",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "网页开发必须遵循 web-dev-workflow 技能中定义的标准流程： **核心流程**：本地验证 → 部署 → 确认生效 → 发送链接 **关键约束...",
+                "keywords": [
+                  "网页开发",
+                  "部署",
+                  "发布流程",
+                  "自验证",
+                  "GitHub Pages"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "创作类任务的前置确认原则",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 创作类任务的前置确认原则 所有创作类任务（写文章、做PPT、设计页面、制作视频）在动手前必须确认： ### 必确认清单 1. **核心内容/场景列表...",
+                "keywords": [
+                  "创作",
+                  "前置确认",
+                  "写作",
+                  "PPT",
+                  "设计"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "系统性全局替换流程",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： ### 必检文件类型 1. **代码文件**：.j...",
+                "keywords": [
+                  "全局替换",
+                  "更名",
+                  "隐私保护",
+                  "系统性替换",
+                  "命名规范"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-02",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI日报部署流程（精简版）",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "AI日报生成后默认执行部署流程，详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/d...",
+                "keywords": [
+                  "AI日报",
+                  "部署",
+                  "ai-insight技能"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI日报周报工作流（精简版）",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "AI日报/周报完整工作流详见ai-insight技能： - 日报：`~/.codeflicker/skills/ai-insight/references...",
+                "keywords": [
+                  "AI日报",
+                  "周报",
+                  "ai-insight技能"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "技能与记忆分类原则（默认使用）",
+                "category": "development_practice_specification",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 技能与记忆分类原则 v1.1 ### 分类的分类原则（元原则） 1. **三层技能架构**：元能力层 → 领域技能包 → 执行技能层 2. **四层...",
+                "keywords": [
+                  "分类原则",
+                  "技能分类",
+                  "记忆分类",
+                  "v5.1",
+                  "v3.1"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 7
+          }
+        },
+        "count": 16
+      },
+      "🎯 领域技能包": {
+        "icon": "🎯",
+        "color": "#8b5cf6",
+        "description": "完整领域解决方案",
+        "children": {
+          "AI领域洞察": {
+            "icon": "🔍",
+            "color": "#8b5cf6",
+            "description": "日报/周报/深度调研/追踪体系",
+            "items": [
+              {
+                "title": "日报系统架构（精简版）",
+                "category": "task_flow_experience",
+                "categoryLabel": "AI领域洞察",
+                "layer": "🎯 领域技能包",
+                "icon": "🔍",
+                "color": "#8b5cf6",
+                "description": "日报系统完整规范详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references/daily-rep...",
+                "keywords": [
+                  "日报系统",
+                  "ai-insight技能",
+                  "三板块"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI-Insight 持续洞察项目",
+                "category": "project_introduction",
+                "categoryLabel": "AI领域洞察",
+                "layer": "🎯 领域技能包",
+                "icon": "🔍",
+                "color": "#8b5cf6",
+                "description": "## AI-Insight 持续洞察项目 ### 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
+                "keywords": [
+                  "AI-Insight",
+                  "AI调研",
+                  "持续洞察",
+                  "日报",
+                  "深度调研"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI-Insight首页升级规范（精简版）",
+                "category": "task_flow_experience",
+                "categoryLabel": "AI领域洞察",
+                "layer": "🎯 领域技能包",
+                "icon": "🔍",
+                "color": "#8b5cf6",
+                "description": "AI-Insight首页更新检查清单详见ai-insight技能：`~/.codeflicker/skills/ai-insight/references...",
+                "keywords": [
+                  "AI-Insight",
+                  "首页",
+                  "ai-insight技能"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 3
+          }
+        },
+        "count": 3
+      },
+      "🛠️ 领域层": {
+        "icon": "🛠️",
+        "color": "#4ade80",
+        "description": "具体领域的经验/踩坑",
+        "children": {
+          "前端开发": {
+            "icon": "🎨",
+            "color": "#f472b6",
+            "description": "SVG/CSS/页面开发踩坑",
+            "items": [
+              {
+                "title": "日报列表同步遗漏问题及修复方案",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "**问题**：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
+                "keywords": [
+                  "日报列表",
+                  "about.html",
+                  "update-homepage.sh",
+                  "同步日报",
+                  "首页更新"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-02-28",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "深色背景文字对比度规范",
+                "category": "development_practice_specification",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 ### 常见问题 - 深色背景上使用中等色调文...",
+                "keywords": [
+                  "文字对比度",
+                  "深色背景",
+                  "颜色可访问性",
+                  "WCAG",
+                  "CSS"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-02",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "SVG viewBox 内容裁切问题",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "SVG viewBox 设置不当会导致底部/边缘内容被裁切。 **核心约束**： - viewBox高度 = 最大元素y坐标 + 边距(20-40px) ...",
+                "keywords": [
+                  "SVG",
+                  "viewBox",
+                  "裁切",
+                  "网页开发"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "首页性能优化踩坑（精简版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "首页性能优化踩坑经验详见web-dev-workflow技能：`~/.codeflicker/skills/web-dev-workflow/refere...",
+                "keywords": [
+                  "性能优化",
+                  "重构",
+                  "web-dev-workflow"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "首页数据同步踩坑经验合集",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 首页数据同步踩坑经验合集 ### 问题1: 技能分类/知识库图标不一致 **现象**：首页显示\"其他技能\"7个，知识库图标全是📁 **根因**：配置...",
+                "keywords": [
+                  "首页",
+                  "同步",
+                  "部署",
+                  "配置",
+                  "GitHub Pages"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "UI气泡只展示有数据的内容",
+                "category": "development_practice_specification",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## UI气泡/Tooltip设计原则 ### 核心原则 **只展示有实际数据的内容，隐藏空白placeholder** ### 反例 气泡中显示\"如何升...",
+                "keywords": [
+                  "UI",
+                  "Tooltip",
+                  "气泡",
+                  "空白",
+                  "隐藏"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "SVG响应式三属性规范（width+min-width+max-width）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "**问题**：SVG图形在headless浏览器或某些viewport下不显示（宽度为0） **根因**：SVG只设置了 `max-width: 100%...",
+                "keywords": [
+                  "SVG",
+                  "min-width",
+                  "max-width",
+                  "headless",
+                  "响应式"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "清爽调研报告风格页面的渐进式开发规则",
+                "category": "development_practice_specification",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "当一个页面是使用\"清爽调研报告风格\"（qingshuang-research-style）skill开发后，基于这个页面的所有后续改动、渐进式开发，都必须...",
+                "keywords": [
+                  "清爽调研报告风格",
+                  "qingshuang-research-style",
+                  "skill",
+                  "渐进式开发",
+                  "CSS规范"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-02-26",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 8
+          },
+          "发布部署": {
+            "icon": "🚀",
+            "color": "#4ade80",
+            "description": "GitHub Pages/部署踩坑",
+            "items": [
+              {
+                "title": "GitHub Pages 部署锁冲突问题及修复方案",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "## 问题现象 GitHub Pages 部署持续失败，错误信息： \"Deployment request failed due to in progre...",
+                "keywords": [
+                  "GitHub Pages",
+                  "部署",
+                  "deployment",
+                  "in_progress",
+                  "锁冲突"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "多仓库部署同步问题",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "## 多仓库部署同步踩坑经验 ### 问题现象 代码推送成功，但用户访问的页面没变化 ### 根因 项目有多个Git remote（如origin和org...",
+                "keywords": [
+                  "多仓库",
+                  "部署",
+                  "同步",
+                  "git remote",
+                  "origin"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 2
+          },
+          "文档处理": {
+            "icon": "📄",
+            "color": "#38bdf8",
+            "description": "PPT/Keynote/文档踩坑",
+            "items": [
+              {
+                "title": "Keynote视觉设计（精简版）",
+                "category": "development_practice_specification",
+                "categoryLabel": "文档处理",
+                "layer": "🛠️ 领域层",
+                "icon": "📄",
+                "color": "#38bdf8",
+                "description": "Keynote视觉设计完整指南详见keynote技能：`~/.codeflicker/skills/keynote/` **核心能力**：JXA形状分析、...",
+                "keywords": [
+                  "Keynote",
+                  "JXA",
+                  "keynote技能"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "pptxgenjs阴影溢出问题",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "文档处理",
+                "layer": "🛠️ 领域层",
+                "icon": "📄",
+                "color": "#38bdf8",
+                "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 **核心约束**： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
+                "keywords": [
+                  "pptxgenjs",
+                  "shadow",
+                  "阴影",
+                  "溢出",
+                  "PPT"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "KIM Doc格式规范（精简版）",
+                "category": "development_practice_specification",
+                "categoryLabel": "文档处理",
+                "layer": "🛠️ 领域层",
+                "icon": "📄",
+                "color": "#38bdf8",
+                "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
+                "keywords": [
+                  "KIM Doc",
+                  "ks-kim-docs-shuttle技能"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 3
+          },
+          "消息通信": {
+            "icon": "💬",
+            "color": "#06b6d4",
+            "description": "KIM/飞书踩坑",
+            "items": [
+              {
+                "title": "KIM开放能力接入踩坑（精简版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "消息通信",
+                "layer": "🛠️ 领域层",
+                "icon": "💬",
+                "color": "#06b6d4",
+                "description": "KIM开放能力接入完整指南已沉淀到linke-kim-message技能中，详见 `~/.codeflicker/skills/linke-kim-mes...",
+                "keywords": [
+                  "KIM",
+                  "开放能力",
+                  "接入",
+                  "linke-kim-message"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI日报KIM推送规范（精简版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "消息通信",
+                "layer": "🛠️ 领域层",
+                "icon": "💬",
+                "color": "#06b6d4",
+                "description": "AI日报KIM推送格式规范详见linke-kim-message技能：`~/.codeflicker/skills/linke-kim-message/S...",
+                "keywords": [
+                  "AI日报",
+                  "KIM推送",
+                  "linke-kim-message"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 2
+          },
+          "内容创作": {
+            "icon": "✍️",
+            "color": "#f59e0b",
+            "description": "专栏写作/截图踩坑",
+            "items": [
+              {
+                "title": "专栏写作踩坑经验（精简版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "内容创作",
+                "layer": "🛠️ 领域层",
+                "icon": "✍️",
+                "color": "#f59e0b",
+                "description": "专栏写作踩坑经验记录在ai-column-writer技能中，详见 `~/.codeflicker/skills/ai-column-writer/ref...",
+                "keywords": [
+                  "专栏",
+                  "写作",
+                  "踩坑",
+                  "ai-column-writer"
+                ],
+                "importance": 3,
+                "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "Chrome Headless 截图问题",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "内容创作",
+                "layer": "🛠️ 领域层",
+                "icon": "✍️",
+                "color": "#f59e0b",
+                "description": "Chrome headless 截图常见问题：字体未加载、滚动条、底部黑边。 **核心约束**： - 使用系统字体，不依赖Google Fonts - b...",
+                "keywords": [
+                  "Chrome",
+                  "headless",
+                  "截图",
+                  "配图",
+                  "screenshot"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 2
+          },
+          "脚本自动化": {
+            "icon": "⚡",
+            "color": "#64748b",
+            "description": "脚本参数/文件时间踩坑",
+            "items": [
+              {
+                "title": "踩坑经验: 脚本参数格式（不要用--date）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "脚本自动化",
+                "layer": "🛠️ 领域层",
+                "icon": "⚡",
+                "color": "#64748b",
+                "description": "## 脚本参数格式踩坑 ### 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
+                "keywords": [
+                  "脚本参数",
+                  "sys.argv",
+                  "日期格式",
+                  "generate_daily_report",
+                  "命令行参数"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-02",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "踩坑经验: 日报漏记对话任务 — 文件mtime≠实际活动时间",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "脚本自动化",
+                "layer": "🛠️ 领域层",
+                "icon": "⚡",
+                "color": "#64748b",
+                "description": "**问题**：日报系统严重漏记对话任务（100%遗漏）和子项目活动（33%遗漏），同时自动提交混入实质工作统计。 **根因**：「工作发生时间 ≠ 产出物...",
+                "keywords": [
+                  "日报",
+                  "recap",
+                  "mtime",
+                  "时间判定",
+                  "对话扫描"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 2
+          }
+        },
+        "count": 19
+      },
+      "📚 项目层": {
+        "icon": "📚",
         "color": "#c2410c",
-        "description": "项目背景、目标定位、功能概述"
+        "description": "具体项目的知识",
+        "children": {},
+        "count": 0
       }
     }
   },

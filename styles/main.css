@@ -1524,10 +1524,10 @@ body {
     background: var(--sheikah-blue);
 }
 
-/* 响应式调整 */
-@media (max-width: 768px) {
+/* 响应式调整 - 只在非常小的屏幕才垂直 */
+@media (max-width: 480px) {
     .layer-branches {
-        flex-direction: column;
+        flex-direction: column !important;
         overflow-x: visible;
     }
     

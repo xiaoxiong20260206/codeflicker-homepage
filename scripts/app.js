@@ -725,6 +725,12 @@ function updateCapChangeV2(elementId, change) {
     if (change > 0) {
         el.textContent = '+' + change;
         el.className = 'cap-change-v2 positive';
+    } else if (change < 0) {
+        el.textContent = change.toString();
+        el.className = 'cap-change-v2 negative';
+    } else if (change === 0) {
+        el.textContent = '±0';
+        el.className = 'cap-change-v2 neutral';
     } else {
         el.textContent = '-';
         el.className = 'cap-change-v2 neutral';

@@ -19,7 +19,7 @@ PROJECTS_FILE = OUTPUT_DIR / "projects-data.json"
 
 # Git 仓库路径列表（扫描这些仓库的 commit 历史）
 GIT_REPOS = [
-    Path.home() / "Documents" / "Codeflicker" / "codeflicker-homepage",
+    Path.home() / "Documents" / "Codeflicker" / "个人助理_V1" / "codeflicker-homepage",
     Path.home() / "Documents" / "Codeflicker" / "个人助理_V1",
     Path.home() / "Documents" / "Codeflicker" / "字节AI调研",
 ]

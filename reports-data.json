@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-03-05T08:28:18.217321",
-  "version": "2.0",
+  "generatedAt": "2026-03-05T09:02:39.164988",
   "summary": {
-    "totalDays": 6,
-    "latestDate": "2026-03-01",
+    "totalDays": 9,
+    "latestDate": "2026-03-04",
     "earliestDate": "2026-02-24"
   },
   "trend": {
@@ -25,8 +24,8 @@
       30,
       30,
       32,
-      39,
-      40,
+      42,
+      42,
       42
     ],
     "knowledge": [
@@ -36,8 +35,8 @@
       150,
       150,
       150,
-      150,
-      151,
+      152,
+      152,
       152
     ],
     "memory": [
@@ -47,80 +46,811 @@
       19,
       19,
       20,
-      38,
-      52,
+      65,
+      65,
       65
     ]
   },
-  "capabilitySnapshots": {
-    "2026-03-01": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 32,
-      "knowledgeCount": 150,
-      "memoryCount": 20
-    },
-    "2026-02-28": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 30,
-      "knowledgeCount": 150,
-      "memoryCount": 19
-    },
-    "2026-02-27": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 30,
-      "knowledgeCount": 150,
-      "memoryCount": 19
-    },
-    "2026-02-26": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 30,
-      "knowledgeCount": 150,
-      "memoryCount": 19
-    },
-    "2026-02-25": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 30,
-      "knowledgeCount": 150,
-      "memoryCount": 19
-    },
-    "2026-02-24": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 30,
-      "knowledgeCount": 150,
-      "memoryCount": 19
-    }
-  },
   "reports": [
+    {
+      "date": "2026-03-04",
+      "dayOfWeek": "周三",
+      "activeProjects": 9,
+      "totalCommits": 52,
+      "conversationCount": 3,
+      "coreProgress": [
+        "💬 完成 3 个任务: 用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构..., 更新AI助手林克的功能文档和技能列表，并完成git提交...",
+        "📁 项目成果: 修复: 调整响应式断点从768px到480px，保持水平布局",
+        "⚡ 新增能力: learn-from-mistakes、feishu-assistant，提升调研分析能力",
+        "🧠 新增记忆: 林克/添棋的自我表达风格等21条，避免常见错误"
+      ],
+      "deliveries": [
+        {
+          "title": "AI Knowledge Base Enhancement and Design Validation",
+          "type": "conversation",
+          "goal": "用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构系统性展示和交互设计优化。",
+          "deliverables": [],
+          "process": [
+            "完成了知识库页面美化升级，验证了胶囊形根节点、2x2网格布局、展开/折叠功能等设计元素。新增了推理模型、MCP协议等4篇深度文档，并建议系统性展示底层知识结构（实体画像、知识资产等）与顶层四大维度的完..."
+          ],
+          "tags": [
+            "knowledge-base",
+            "UI-design",
+            "AI-companies",
+            "enterprise-transformation",
+            "verification"
+          ]
+        },
+        {
+          "title": "AI Assistant Skills Update and Documentation",
+          "type": "conversation",
+          "goal": "更新AI助手林克的功能文档和技能列表，并完成git提交",
+          "deliverables": [],
+          "process": [
+            "更新了README.md和PLAN.md文件，将技能总数从47增加到49个，新增了`ai-insight`和`linke-kim-message`两个技能，移除了废弃的`_deprecated_dai..."
+          ],
+          "tags": [
+            "ai-assistant",
+            "documentation",
+            "skills-update",
+            "git-commit",
+            "project-management"
+          ]
+        },
+        {
+          "title": "Forking and Deploying AI Agent Report Repository",
+          "type": "conversation",
+          "goal": "用户想要从零开始搭建一个具有完整能力的AI Agent系统，并通过复刻和部署现有报告仓库作为起点",
+          "deliverables": [],
+          "process": [
+            "成功将xiaoxiong20260206/ai-agent-report仓库复刻到my-ai-research-lab组织下，并通过GitHub API配置了GitHub Pages部署，使用lega..."
+          ],
+          "tags": [
+            "github",
+            "repository-fork",
+            "pages-deployment",
+            "ai-agent",
+            "research"
+          ]
+        },
+        {
+          "title": "codeflicker-homepage",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+            }
+          ],
+          "process": [
+            "修复: 调整响应式断点从768px到480px，保持水平布局",
+            "修复: 强制水平布局 - 使用!important确保flex-direction:ro",
+            "新增: 技能树和记忆库改为水平展开布局 - 思维导图风格"
+          ],
+          "commitCount": 27,
+          "fileChangeCount": 5,
+          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+        },
+        {
+          "title": "Knowledge",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "cultivation-report-2026-03-04.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "CHANGELOG.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "文档完善 2 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 3,
+          "deployUrl": null
+        },
+        {
+          "title": "AI-Insight",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-insight"
+            }
+          ],
+          "process": [
+            "修复: 修复字节AI指南子页面样式问题",
+            "新增: 清爽风格v2.2系统性重构两份调研报告",
+            "修复: Fix calendar: remove March 1st (no repor"
+          ],
+          "commitCount": 17,
+          "fileChangeCount": 150,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "index.html",
+              "type": "page",
+              "url": null
+            },
+            {
+              "name": "cultivation-report-2026-03-04.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "CHANGELOG.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 3 个",
+            "文档完善 48 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 107,
+          "deployUrl": null
+        },
+        {
+          "title": "link-ai-assistant",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [],
+          "process": [
+            "新增: 更新技能列表至49个，新增ai-insight和linke-kim-messag",
+            "新增: 更新技能列表至47个，新增daily-ai-report和meta-execut"
+          ],
+          "commitCount": 2,
+          "fileChangeCount": 4,
+          "deployUrl": null
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 42,
+        "knowledgeCount": 152,
+        "memoryCount": 65,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 21,
+        "newSkills": [
+          {
+            "name": "learn-from-mistakes",
+            "description": "This skill should be used when the user says \"复盘\", \"举一反三\", \""
+          },
+          {
+            "name": "feishu-assistant",
+            "description": "当用户说\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\"、\"检查飞书\"时使用此技能。实现飞书机器人与CodeFlicke"
+          },
+          {
+            "name": "meta-execution",
+            "description": "This skill should be used automatically when receiving any t"
+          },
+          {
+            "name": "linke-kim-message",
+            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
+          },
+          {
+            "name": "neigong-cultivation",
+            "description": "This skill should be used when the user mentions \"内功修炼\", \"三位"
+          },
+          {
+            "name": "wechat-research",
+            "description": "\"Comprehensive research and analysis tool for WeChat Officia"
+          },
+          {
+            "name": "pixel-action-game",
+            "description": "Create pixel-art action/shoot-em-up browser games with pure "
+          },
+          {
+            "name": "ks-kim-docs-shuttle",
+            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+          }
+        ],
+        "updatedSkills": [],
+        "newKnowledge": [
+          {
+            "name": "cultivation-report-2026-03-04",
+            "category": "self-evolution"
+          },
+          {
+            "name": "CHANGELOG",
+            "category": "self-evolution"
+          }
+        ],
+        "updatedKnowledge": [],
+        "newMemory": [
+          {
+            "title": "林克/添棋的自我表达风格",
+            "category": "user_communication"
+          },
+          {
+            "title": "GitHub Pages 部署锁冲突问题及修复方案",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM Doc格式规范（精简版）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "AI-Insight 持续洞察项目",
+            "category": "project_introduction"
+          },
+          {
+            "title": "多仓库部署同步问题",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "UI气泡只展示有数据的内容",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "AI日报部署流程（精简版）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "AI日报周报工作流（精简版）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "AI洞察改动默认内化到ai-insight技能",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "AI-Insight首页升级规范（精简版）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "AI日报KIM推送规范（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "SVG响应式三属性规范（width+min-width+max-width）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "问题发现两分法：过程层自检 vs 结果层反馈",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "向非技术用户展示AI能力的结构化模式",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "工作汇报场景自称\"林克\"规则",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "分类优化未自动发现的根因与修复",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "每日修炼执行纪律",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "技能与记忆分类原则（默认使用）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "KIM Doc 样式设置限制（调研结论）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "CSS响应式断点选择经验",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "CSS修改前必须验证HTML引用关系",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "updatedMemory": [
+          {
+            "title": "小无相功·自动学习模式",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "AI助手\"林克/添棋\"身份信息",
+            "category": "user_info"
+          },
+          {
+            "title": "网页开发工作流偏好（精简版）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "Meta-Execution 默认工作模式",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "Keynote视觉设计（精简版）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "每日修炼触发配置",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "已完成项目索引（精简版）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "日报系统架构（精简版）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "首页性能优化踩坑（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "专栏写作踩坑经验（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM开放能力接入踩坑（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "首页数据同步踩坑经验合集",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "trend": "growing"
+      },
+      "skillCount": 42,
+      "knowledgeCount": 152,
+      "memoryCount": 65,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 21,
+      "highlights": [
+        "💬 完成 3 个任务: 用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构..., 更新AI助手林克的功能文档和技能列表，并完成git提交...",
+        "📁 项目成果: 修复: 调整响应式断点从768px到480px，保持水平布局",
+        "⚡ 新增能力: learn-from-mistakes、feishu-assistant，提升调研分析能力"
+      ]
+    },
+    {
+      "date": "2026-03-03",
+      "dayOfWeek": "周二",
+      "activeProjects": 7,
+      "totalCommits": 10,
+      "conversationCount": 4,
+      "coreProgress": [
+        "💬 完成 4 个任务: 用户想要从零开始搭建一个具有完整能力的AI Agent系统，并通过复刻和部署现有..., 通过专栏写作经验总结创作类任务的通用原则和错误预防机制...",
+        "📁 项目成果: 修复: 修复侧边栏雷达图和趋势图不显示的问题",
+        "⚡ 新增能力: ai-column-writer、promotion-coaching，扩展任务处理范围",
+        "🧠 新增记忆: 投资理财：基金持仓追踪等12条，规范化开发实践"
+      ],
+      "deliveries": [
+        {
+          "title": "Forking and Deploying AI Agent Report Repository",
+          "type": "conversation",
+          "goal": "用户想要从零开始搭建一个具有完整能力的AI Agent系统，并通过复刻和部署现有报告仓库作为起点",
+          "deliverables": [],
+          "process": [
+            "成功将xiaoxiong20260206/ai-agent-report仓库复刻到my-ai-research-lab组织下，并通过GitHub API配置了GitHub Pages部署，使用lega..."
+          ],
+          "tags": [
+            "github",
+            "repository-fork",
+            "pages-deployment",
+            "ai-agent",
+            "research"
+          ]
+        },
+        {
+          "title": "AI Assistant Column Writing Lessons Learned",
+          "type": "conversation",
+          "goal": "通过专栏写作经验总结创作类任务的通用原则和错误预防机制",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "article-writing",
+            "chrome-headless",
+            "content-creation",
+            "error-prevention",
+            "workflow-optimization"
+          ]
+        },
+        {
+          "title": "Keynote Presentation Design System Enhancement",
+          "type": "conversation",
+          "goal": "用户希望建立一套完整的Keynote视觉设计系统，包括分析现有的演示文稿风格、提取视觉结构模式、更新设计规范文档，并生成具有统一视觉结构的新演示文稿。",
+          "deliverables": [],
+          "process": [
+            "完成了3种风格(V4)Keynote文件的生成，更新了design-system.md中的视觉结构规范V2，重写了SKILL.md中的Pitfalls章节。关键成果包括形状分析结果、JXA能力边界表、..."
+          ],
+          "tags": [
+            "keynote",
+            "design-system",
+            "visual-structure",
+            "JXA",
+            "presentation"
+          ]
+        },
+        {
+          "title": "Promotion Coaching Framework Development",
+          "type": "conversation",
+          "goal": "帮助同学整理晋升提纲，向非技术背景评委清晰展示AI提效的价值和能力",
+          "deliverables": [],
+          "process": [
+            "创建了完整的晋升辅导Skill，包含5阶段工作流程、PPT制作规范、评委问答8维度框架。重点解决了如何向非技术评委有效传达AI提效价值的展示策略，构建了包含角色定位/技术深度/数据真实性等维度的问答框..."
+          ],
+          "tags": [
+            "promotion",
+            "coaching",
+            "framework",
+            "career-development",
+            "presentation"
+          ]
+        },
+        {
+          "title": "codeflicker-homepage",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+            }
+          ],
+          "process": [
+            "修复: 修复侧边栏雷达图和趋势图不显示的问题",
+            "修复: 修复成就墙和成长趋势图表不显示的问题",
+            "优化: 全面性能优化"
+          ],
+          "commitCount": 9,
+          "fileChangeCount": 1,
+          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+        },
+        {
+          "title": "养了个AI专栏",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "README.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "decision-log.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "sensitive-words.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 3 个",
+            "文档完善 6 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 12,
+          "deployUrl": null
+        },
+        {
+          "title": "Knowledge",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "index.html",
+              "type": "page",
+              "url": null
+            }
+          ],
+          "process": [
+            "网页更新 1 个"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 1,
+          "deployUrl": null
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "职级晋升评审-王娟-V2.2版.pptx",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "职级晋升评审-王娟-V2.3版.pptx",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "晋升答辩攻略-王娟-E10到E11.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 4 个",
+            "文档完善 57 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 201,
+          "deployUrl": null
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 42,
+        "knowledgeCount": 152,
+        "memoryCount": 65,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 12,
+        "newSkills": [
+          {
+            "name": "ai-column-writer",
+            "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
+          },
+          {
+            "name": "promotion-coaching",
+            "description": "\"This skill should be used when the user asks for '晋升辅导', '晋"
+          },
+          {
+            "name": "keynote",
+            "description": "\"Use this skill any time a Keynote presentation (.key file) "
+          },
+          {
+            "name": "investment-tracker",
+            "description": "\"This skill should be used when the user mentions '投资', '理财'"
+          },
+          {
+            "name": "night-task-runner",
+            "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡"
+          }
+        ],
+        "updatedSkills": [],
+        "newKnowledge": [],
+        "updatedKnowledge": [],
+        "newMemory": [
+          {
+            "title": "投资理财：基金持仓追踪",
+            "category": "user_hobby"
+          },
+          {
+            "title": "重构/优化任务的强制约束规则",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "创作类任务的前置确认原则",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "敏感词集中管理规则",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "Meta-Execution 默认工作模式",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "Keynote视觉设计（精简版）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "踩坑经验: 日报漏记对话任务 — 文件mtime≠实际活动时间",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "首页性能优化踩坑（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "专栏写作踩坑经验（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "Chrome Headless 截图问题",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM开放能力接入踩坑（精简版）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "首页数据同步踩坑经验合集",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "updatedMemory": [
+          {
+            "title": "SVG viewBox 内容裁切问题",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "pptxgenjs阴影溢出问题",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "trend": "growing"
+      },
+      "skillCount": 42,
+      "knowledgeCount": 152,
+      "memoryCount": 65,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 12,
+      "highlights": [
+        "💬 完成 4 个任务: 用户想要从零开始搭建一个具有完整能力的AI Agent系统，并通过复刻和部署现有..., 通过专栏写作经验总结创作类任务的通用原则和错误预防机制...",
+        "📁 项目成果: 修复: 修复侧边栏雷达图和趋势图不显示的问题",
+        "⚡ 新增能力: ai-column-writer、promotion-coaching，扩展任务处理范围"
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "dayOfWeek": "周一",
+      "activeProjects": 3,
+      "totalCommits": 47,
+      "conversationCount": 1,
+      "coreProgress": [
+        "💬 完成任务: 帮助同学整理晋升提纲，向非技术背景评委清晰展示AI提效的价值和能力",
+        "📁 项目成果: 修复: 修复进化历程和多处深色背景区域文字对比度问题",
+        "⚡ 新增能力: web-dev-workflow，扩展任务处理范围",
+        "🧠 新增记忆: 网页开发工作流偏好（精简版）等6条，避免常见错误"
+      ],
+      "deliveries": [
+        {
+          "title": "Promotion Coaching Framework Development",
+          "type": "conversation",
+          "goal": "帮助同学整理晋升提纲，向非技术背景评委清晰展示AI提效的价值和能力",
+          "deliverables": [],
+          "process": [
+            "创建了完整的晋升辅导Skill，包含5阶段工作流程、PPT制作规范、评委问答8维度框架。重点解决了如何向非技术评委有效传达AI提效价值的展示策略，构建了包含角色定位/技术深度/数据真实性等维度的问答框..."
+          ],
+          "tags": [
+            "promotion",
+            "coaching",
+            "framework",
+            "career-development",
+            "presentation"
+          ]
+        },
+        {
+          "title": "codeflicker-homepage",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+            }
+          ],
+          "process": [
+            "修复: 修复进化历程和多处深色背景区域文字对比度问题",
+            "优化: 系统性更名 - 添棋→林克，保护个人隐私",
+            "新增: 重构Tab结构 - 新增'了解我'Tab，调整内容布局"
+          ],
+          "commitCount": 45,
+          "fileChangeCount": 10,
+          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "职级晋升评审-王娟-V2版.pptx",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "职级晋升评审-王娟-V2.1版.pptx",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "~$职级晋升评审-王娟-V2.2版.pptx",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 18 个",
+            "文档完善 31 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 157,
+          "deployUrl": null
+        },
+        {
+          "title": "knowledge/AI产品终极形态思考",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [],
+          "process": [
+            "新增: Update: Part4 AI分身实证 v4.8 - 新增今日能力升级模块"
+          ],
+          "commitCount": 2,
+          "fileChangeCount": 2,
+          "deployUrl": null
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 42,
+        "knowledgeCount": 152,
+        "memoryCount": 65,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 6,
+        "newSkills": [
+          {
+            "name": "web-dev-workflow",
+            "description": "|"
+          }
+        ],
+        "updatedSkills": [],
+        "newKnowledge": [],
+        "updatedKnowledge": [],
+        "newMemory": [
+          {
+            "title": "网页开发工作流偏好（精简版）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "系统性全局替换流程",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "深色背景文字对比度规范",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "SVG viewBox 内容裁切问题",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "pptxgenjs阴影溢出问题",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "踩坑经验: 脚本参数格式（不要用--date）",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "updatedMemory": [],
+        "trend": "growing"
+      },
+      "skillCount": 42,
+      "knowledgeCount": 152,
+      "memoryCount": 65,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 6,
+      "highlights": [
+        "💬 完成任务: 帮助同学整理晋升提纲，向非技术背景评委清晰展示AI提效的价值和能力",
+        "📁 项目成果: 修复: 修复进化历程和多处深色背景区域文字对比度问题",
+        "⚡ 新增能力: web-dev-workflow，扩展任务处理范围"
+      ]
+    },
     {
       "date": "2026-03-01",
       "dayOfWeek": "周日",

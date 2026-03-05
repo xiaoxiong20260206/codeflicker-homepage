@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-05T09:02:39.164988",
+  "generatedAt": "2026-03-05T10:22:29.075899",
   "summary": {
-    "totalDays": 9,
-    "latestDate": "2026-03-04",
+    "totalDays": 10,
+    "latestDate": "2026-03-05",
     "earliestDate": "2026-02-24"
   },
   "trend": {
@@ -15,7 +15,8 @@
       "03-01",
       "03-02",
       "03-03",
-      "03-04"
+      "03-04",
+      "03-05"
     ],
     "skills": [
       30,
@@ -26,7 +27,8 @@
       32,
       42,
       42,
-      42
+      42,
+      43
     ],
     "knowledge": [
       150,
@@ -35,6 +37,7 @@
       150,
       150,
       150,
+      152,
       152,
       152,
       152
@@ -48,10 +51,256 @@
       20,
       65,
       65,
-      65
+      65,
+      69
     ]
   },
   "reports": [
+    {
+      "date": "2026-03-05",
+      "dayOfWeek": "周四",
+      "activeProjects": 5,
+      "totalCommits": 19,
+      "conversationCount": 6,
+      "coreProgress": [
+        "💬 完成 6 个任务: 用户希望通过获取语雀上关于产品思维的文章内容，来帮助改进交付页面的产品思维和用户..., 系统性整理个人助理文件夹结构，包括项目梳理、输入输出文件归类，并同步更新相关代码......",
+        "📁 项目成果: 优化: Update: 2026-03-05 ",
+        "⚡ 新增能力: feishu-assistant、web-dev-workflow，扩展任务处理范围",
+        "🧠 新增记忆: 踩坑经验: Bytedance AI G等12条，避免重复错误"
+      ],
+      "deliveries": [
+        {
+          "title": "Product Thinking Discussion and Resource Access Attempt",
+          "type": "conversation",
+          "goal": "用户希望通过获取语雀上关于产品思维的文章内容，来帮助改进交付页面的产品思维和用户体验。",
+          "deliverables": [],
+          "process": [
+            "尝试通过浏览器工具访问语雀文章https://www.yuque.com/danxiaohan/seafut/dmdgm033ap6i1nn9失败，因404错误和登录限制。用户最终提供了完整链接，但再..."
+          ],
+          "tags": [
+            "product-thinking",
+            "user-experience",
+            "browser-integration",
+            "resource-access"
+          ]
+        },
+        {
+          "title": "Directory Restructuring and System Optimization",
+          "type": "conversation",
+          "goal": "系统性整理个人助理文件夹结构，包括项目梳理、输入输出文件归类，并同步更新相关代码中的路径引用",
+          "deliverables": [],
+          "process": [
+            "1. 完成了`send_to_group.py`和`feishu_monitor.py`中的路径更新，将`/feishu-ai-bot`迁移至`/bots/feishu-ai-bot`"
+          ],
+          "tags": [
+            "directory-restructuring",
+            "path-updates",
+            "file-organization",
+            "system-optimization",
+            "ai-assistant"
+          ]
+        },
+        {
+          "title": "AI Insight Knowledge Base Deployment Verification",
+          "type": "conversation",
+          "goal": "验证并确保AI洞察知识库的最新更新已正确部署到线上环境",
+          "deliverables": [],
+          "process": [
+            "执行了git推送操作并验证了https://xiaoxiong20260206.github.io/ai-insight/知识库页面的更新内容，确认新增的Gemini 3系列文档和更新的OpenAI估..."
+          ],
+          "tags": [
+            "knowledge-base",
+            "git",
+            "deployment",
+            "documentation",
+            "verification"
+          ]
+        },
+        {
+          "title": "Comparison of AI Coding Assistants and Release Updates",
+          "type": "conversation",
+          "goal": "用户希望了解三篇关于AI编程工具对比和产品更新的文章的核心观点",
+          "deliverables": [],
+          "process": [
+            "分析比较了Codex、Claude Code和Gemini CLI三款AI编码工具在功能、定价、用户体验等方面的差异；总结了ChatGPT近期的产品更新和功能演进；展示了使用Gemini CLI开发C..."
+          ],
+          "tags": [
+            "AI-coding",
+            "tool-comparison",
+            "release-notes",
+            "CLI-tools",
+            "developer-tools"
+          ]
+        },
+        {
+          "title": "CodeFlicker Homepage Ability Trees Redesign",
+          "type": "conversation",
+          "goal": "优化首页能力树（技能树、知识树、记忆树）的展示样式和游戏化设计效果",
+          "deliverables": [],
+          "process": [
+            "重构了三种能力树的视觉风格：技能树改为科技树风格并添加可折叠卡片/等级进度环，知识树采用档案馆卡片网格布局，记忆树实现神经网络径向布局。调整了卡片宽度(280-380px)并恢复了Tooltip功能，..."
+          ],
+          "tags": [
+            "UI redesign",
+            "ability trees",
+            "gamification",
+            "CSS optimization",
+            "homepage"
+          ]
+        },
+        {
+          "title": "AI Assistant Daily Maintenance and Optimization",
+          "type": "conversation",
+          "goal": "完成AI助手的每日修炼任务，包括自主学习、记忆优化、日报生成和系统同步",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "AI-assistant",
+            "daily-routine",
+            "optimization",
+            "memory-management",
+            "git-sync"
+          ]
+        },
+        {
+          "title": "ai-daily-report",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-daily-report"
+            }
+          ],
+          "process": [
+            "优化: Update: 2026-03-05 "
+          ],
+          "commitCount": 2,
+          "fileChangeCount": 4,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-daily-report"
+        },
+        {
+          "title": "Knowledge",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [],
+          "process": [],
+          "commitCount": 0,
+          "fileChangeCount": 1,
+          "deployUrl": null
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 43,
+        "knowledgeCount": 152,
+        "memoryCount": 69,
+        "skillChange": 1,
+        "knowledgeChange": 0,
+        "memoryChange": 12,
+        "newSkills": [
+          {
+            "name": "feishu-assistant",
+            "description": "当用户说\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\"、\"检查飞书\"时使用此技能。实现飞书机器人与CodeFlicke"
+          },
+          {
+            "name": "web-dev-workflow",
+            "description": "|"
+          },
+          {
+            "name": "daily-reflection-evolution",
+            "description": "This skill should be used when the user mentions \"每日修炼\", \"每日"
+          },
+          {
+            "name": "linke-kim-message",
+            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
+          },
+          {
+            "name": "ai-insight",
+            "description": "This skill should be used when the user mentions \"AI洞察\", \"AI"
+          },
+          {
+            "name": "product-thinking",
+            "description": "|"
+          }
+        ],
+        "updatedSkills": [],
+        "newKnowledge": [],
+        "updatedKnowledge": [],
+        "newMemory": [
+          {
+            "title": "踩坑经验: Bytedance AI Guide Website Style Fixes",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "踩坑经验: Kim AI Bot Deployment Guide",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "踩坑经验: Git Commit and Deployment Verification",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "流程经验: Daily Task Reflection Process Improvement",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "流程经验: Responsive Layout Adjustment for Skill Tree",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "流程经验: AI Knowledge Base Expansion and Restructuring",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "流程经验: AI Assistant Skills Update and Documentation",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "流程经验: Git Commit and Deployment Verification",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "页面交付类任务的产品思维强制约束",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "目录重构完整自检清单",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "AI日报→知识库深度学习闭环规则",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "AI日报KIM卡片链接错误排查经验",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "updatedMemory": [
+          {
+            "title": "日报列表同步遗漏问题及修复方案",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "个人助理目录结构与项目索引 (v2.0)",
+            "category": "task_flow_experience"
+          }
+        ],
+        "trend": "growing"
+      },
+      "skillCount": 43,
+      "knowledgeCount": 152,
+      "memoryCount": 69,
+      "skillChange": 1,
+      "knowledgeChange": 0,
+      "memoryChange": 12,
+      "highlights": [
+        "💬 完成 6 个任务: 用户希望通过获取语雀上关于产品思维的文章内容，来帮助改进交付页面的产品思维和用户..., 系统性整理个人助理文件夹结构，包括项目梳理、输入输出文件归类，并同步更新相关代码......",
+        "📁 项目成果: 优化: Update: 2026-03-05 ",
+        "⚡ 新增能力: feishu-assistant、web-dev-workflow，扩展任务处理范围"
+      ]
+    },
     {
       "date": "2026-03-04",
       "dayOfWeek": "周三",

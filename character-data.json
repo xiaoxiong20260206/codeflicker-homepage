@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-05T09:38:29.653337",
+  "generatedAt": "2026-03-05T10:23:06.115950",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 9670,
-    "expProgress": 41.8,
+    "totalExp": 9770,
+    "expProgress": 44.2,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -1118,7 +1118,7 @@
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
-        "recentCount": 131
+        "recentCount": 130
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -1283,6 +1283,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "个人助理目录结构与项目索引 (v2.0)",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "已完成项目和文件的组织管理规范。 ## 核心目录 - **主页项目列表**：`~/Documents/Codeflicker/个人助理_V1/codefl...",
+        "keywords": [
+          "项目索引",
+          "目录结构",
+          "个人助理",
+          "projects",
+          "bots"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "单虓晗（Shawn）思想体系与写作风格",
         "category": "user_info",
         "categoryLabel": "用户身份",
@@ -1397,6 +1416,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "目录重构完整自检清单",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "## 目录重构后的完整自检清单 当执行目录结构重构时，必须检查以下所有位置的路径引用： ### 检查清单 | 检查项 | 检查方法 | |-------|...",
+        "keywords": [
+          "目录重构",
+          "路径更新",
+          "自检清单",
+          "grep",
+          "refactor"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "系统性全局替换流程",
         "category": "task_flow_experience",
         "categoryLabel": "工作模式",
@@ -1470,6 +1508,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报KIM卡片链接错误排查经验",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "消息通信",
+        "layer": "🛠️ 领域层",
+        "icon": "💬",
+        "color": "#06b6d4",
+        "description": "问题：AI日报KIM卡片中的链接与日报MD中的链接不一致，导致点击后无法访问。 根本原因：手动输入链接时出现笔误（如多写-ai-字符），而非从MD文件直接...",
+        "keywords": [
+          "KIM",
+          "MixCard",
+          "链接错误",
+          "日报推送",
+          "笔误"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -2276,23 +2333,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "已完成项目索引（精简版）",
-        "category": "task_flow_experience",
-        "categoryLabel": "AI领域洞察",
-        "layer": "🎯 领域技能包",
-        "icon": "🔍",
-        "color": "#8b5cf6",
-        "description": "已完成项目列表维护在各项目的README.md中，不再集中维护。 **快速查找**： - 主页项目列表：~/Documents/Codeflicker/个...",
-        "keywords": [
-          "项目列表",
-          "索引",
-          "projects-data"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
         "title": "文档修改同步规则",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -2447,7 +2487,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 67,
+    "total": 69,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -2492,7 +2532,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 21,
+        "count": 23,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -2982,6 +3022,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "个人助理目录结构与项目索引 (v2.0)",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "已完成项目和文件的组织管理规范。 ## 核心目录 - **主页项目列表**：`~/Documents/Codeflicker/个人助理_V1/codefl...",
+                "keywords": [
+                  "项目索引",
+                  "目录结构",
+                  "个人助理",
+                  "projects",
+                  "bots"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "问题发现两分法：过程层自检 vs 结果层反馈",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
@@ -3058,7 +3117,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 12
+            "count": 13
           },
           "工作模式": {
             "icon": "⚙️",
@@ -3215,7 +3274,7 @@
             "count": 8
           }
         },
-        "count": 20
+        "count": 21
       },
       "🎯 领域技能包": {
         "icon": "🎯",
@@ -3227,23 +3286,6 @@
             "color": "#8b5cf6",
             "description": "日报/周报/深度调研/追踪体系",
             "items": [
-              {
-                "title": "已完成项目索引（精简版）",
-                "category": "task_flow_experience",
-                "categoryLabel": "AI领域洞察",
-                "layer": "🎯 领域技能包",
-                "icon": "🔍",
-                "color": "#8b5cf6",
-                "description": "已完成项目列表维护在各项目的README.md中，不再集中维护。 **快速查找**： - 主页项目列表：~/Documents/Codeflicker/个...",
-                "keywords": [
-                  "项目列表",
-                  "索引",
-                  "projects-data"
-                ],
-                "importance": 3,
-                "updatedAt": "2026-03-05",
-                "source": "用户显式记录"
-              },
               {
                 "title": "日报系统架构（精简版）",
                 "category": "task_flow_experience",
@@ -3297,10 +3339,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 3
           }
         },
-        "count": 4
+        "count": 3
       },
       "🛠️ 领域层": {
         "icon": "🛠️",
@@ -3601,9 +3643,28 @@
                 "importance": 4,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "目录重构完整自检清单",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "## 目录重构后的完整自检清单 当执行目录结构重构时，必须检查以下所有位置的路径引用： ### 检查清单 | 检查项 | 检查方法 | |-------|...",
+                "keywords": [
+                  "目录重构",
+                  "路径更新",
+                  "自检清单",
+                  "grep",
+                  "refactor"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 5
           },
           "文档处理": {
             "icon": "📄",
@@ -3725,9 +3786,28 @@
                 "importance": 3,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "AI日报KIM卡片链接错误排查经验",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "消息通信",
+                "layer": "🛠️ 领域层",
+                "icon": "💬",
+                "color": "#06b6d4",
+                "description": "问题：AI日报KIM卡片中的链接与日报MD中的链接不一致，导致点击后无法访问。 根本原因：手动输入链接时出现笔误（如多写-ai-字符），而非从MD文件直接...",
+                "keywords": [
+                  "KIM",
+                  "MixCard",
+                  "链接错误",
+                  "日报推送",
+                  "笔误"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "内容创作": {
             "icon": "✍️",
@@ -3821,7 +3901,7 @@
             "count": 2
           }
         },
-        "count": 25
+        "count": 27
       },
       "📚 项目层": {
         "icon": "📚",
@@ -3834,7 +3914,6 @@
   },
   "growthHistory": {
     "dates": [
-      "02-25",
       "02-26",
       "02-27",
       "02-28",
@@ -3847,10 +3926,10 @@
       "03-04",
       "03-03",
       "03-04",
-      "03-04"
+      "03-04",
+      "03-05"
     ],
     "skills": [
-      30,
       30,
       30,
       30,
@@ -3863,10 +3942,10 @@
       42,
       42,
       42,
-      42
+      42,
+      43
     ],
     "knowledge": [
-      150,
       150,
       150,
       150,
@@ -3879,10 +3958,10 @@
       152,
       152,
       152,
+      152,
       152
     ],
     "memories": [
-      19,
       19,
       19,
       19,
@@ -3895,7 +3974,8 @@
       65,
       65,
       65,
-      65
+      65,
+      69
     ]
   },
   "achievements": [
@@ -3996,7 +4076,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "67/30",
+      "progressText": "69/30",
       "date": "2026-03-05"
     },
     {

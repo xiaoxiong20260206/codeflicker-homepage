@@ -1182,9 +1182,205 @@
         }
         
         .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: var(--spacing-md);
+            /* 改为flex布局支持树形结构 */
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        /* ==================== P0/P1: 作品树形分类样式 ==================== */
+        .works-tree {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        .works-tree-section {
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
+            border: 2px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        
+        .works-tree-section.featured-section {
+            border-color: var(--zelda-gold);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .tree-branch-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .tree-branch-header.featured {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.1) 100%);
+            border-bottom-color: rgba(201, 162, 39, 0.3);
+        }
+        
+        .branch-icon {
+            font-size: 18px;
+        }
+        
+        .branch-name {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .tree-branch-header.featured .branch-name {
+            color: var(--zelda-gold-light);
+        }
+        
+        .branch-count {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            padding: 2px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .tree-branch-header.featured .branch-count {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold-light);
+        }
+        
+        .branch-desc {
+            margin-left: auto;
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        .tree-branch-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+        }
+        
+        .tree-branch-content.featured-content {
+            background: rgba(201, 162, 39, 0.05);
+        }
+        
+        /* 紧凑型作品卡片 */
+        .work-card-mini {
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            transition: all var(--transition-normal);
+            min-width: 200px;
+            max-width: 280px;
+        }
+        
+        .work-card-mini:hover {
+            border-color: var(--sheikah-blue);
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .work-card-mini.featured {
+            border-color: rgba(201, 162, 39, 0.5);
+            background: rgba(201, 162, 39, 0.1);
+        }
+        
+        .work-card-mini.featured:hover {
+            border-color: var(--zelda-gold);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .work-card-mini .quality-badge {
+            position: absolute;
+            top: -8px;
+            right: 8px;
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 8px;
+        }
+        
+        .work-card-mini .quality-badge.featured {
+            background: var(--zelda-gold);
+            color: #1e2328;
+        }
+        
+        .work-card-mini .quality-badge.excellent {
+            background: var(--sheikah-blue);
+            color: #1e2328;
+        }
+        
+        .work-card-content {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .work-icon-mini {
+            font-size: 20px;
+        }
+        
+        .work-info-mini {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .work-name-mini {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .work-meta-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2px;
+        }
+        
+        .work-status-mini {
+            font-size: 9px;
+            padding: 1px 6px;
+            border-radius: 8px;
+        }
+        
+        .work-status-mini.deployed {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--sheikah-blue-light);
+        }
+        
+        .work-status-mini.development {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold-light);
+        }
+        
+        /* P1: 最近更新时间 */
+        .work-update-time {
+            font-size: 9px;
+            color: rgba(200, 220, 240, 0.5);
+        }
+        
+        .work-card-mini .work-link {
+            font-size: 11px;
+            padding: 4px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: var(--radius-sm);
+            color: var(--sheikah-blue-light);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+        
+        .work-card-mini .work-link:hover {
+            background: var(--sheikah-blue);
+            color: #1e2328;
         }
         
         .work-card {
@@ -2029,6 +2225,29 @@
             opacity: 0.85;
         }
         
+        /* P1: 能力活跃徽章 */
+        .ability-active-badge {
+            position: absolute;
+            top: -8px;
+            right: 8px;
+            font-size: 9px;
+            padding: 2px 8px;
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+            animation: badge-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .value-card {
+            position: relative;
+        
         .value-card.card-cyan {
             border-color: rgba(94, 196, 212, 0.25);
         }
@@ -2208,6 +2427,151 @@
             border: 1px solid rgba(0, 212, 255, 0.3);
             border-radius: 10px;
             color: #8cb4c0;
+        }
+        
+        /* ==================== 进化历程 P0优化样式 ==================== */
+        
+        /* 本周进化摘要卡片 */
+        .evolution-summary-card {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(201, 162, 39, 0.05) 100%);
+            border: 2px solid var(--zelda-gold);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .summary-title {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .summary-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .stat-item {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .stat-item.skill {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--sheikah-blue-light);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .stat-item.project {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+        
+        .stat-item.system {
+            background: rgba(167, 139, 250, 0.15);
+            color: #a78bfa;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+        }
+        
+        .stat-item.total {
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--zelda-gold-light);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        /* 能力事件区域 */
+        .evolution-events-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* 时间分组 */
+        .timeline-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .group-title {
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .timeline-group.today .group-title {
+            color: var(--zelda-gold-light);
+            border-bottom-color: rgba(201, 162, 39, 0.3);
+        }
+        
+        .group-events {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        /* 事件项 */
+        .timeline-event {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--sheikah-blue);
+            transition: all var(--transition-fast);
+        }
+        
+        .timeline-event:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .timeline-event.skill_unlock,
+        .timeline-event.meta_skill {
+            border-left-color: var(--sheikah-blue);
+        }
+        
+        .timeline-event.project_complete {
+            border-left-color: #4ade80;
+        }
+        
+        .timeline-event.system_unlock,
+        .timeline-event.integration {
+            border-left-color: #a78bfa;
+        }
+        
+        .event-icon {
+            font-size: 14px;
+        }
+        
+        .event-name {
+            flex: 1;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        .event-date {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        /* 版本阶段区域 */
+        .evolution-stages-section {
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .stages-header {
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: rgba(200, 220, 240, 0.7);
+            margin-bottom: var(--spacing-md);
         }
         
         /* 进化历程 - 加载中状态 */
@@ -2788,17 +3152,18 @@
                                 <span>我怎么学习和成长</span>
                             </div>
                             <div class="value-cards">
-                                <div class="value-card">
+                                <div class="value-card" data-ability="daily-reflection">
+                                    <span class="ability-active-badge">🔥 活跃</span>
                                     <div class="value-card-icon">🥋</div>
                                     <div class="value-card-title">小无相功</div>
                                     <div class="value-card-desc">看到好的技能、方法论、思想，主动识别精华并内化——无需用户触发的自动学习能力</div>
                                 </div>
-                                <div class="value-card">
+                                <div class="value-card" data-ability="cognitive-fusion">
                                     <div class="value-card-icon">🧠</div>
                                     <div class="value-card-title">认知融合</div>
                                     <div class="value-card-desc">融合了***的思维框架：批判性思维质疑、系统思维拆解、产品思维落地</div>
                                 </div>
-                                <div class="value-card">
+                                <div class="value-card" data-ability="sanqianshijie">
                                     <div class="value-card-icon">🌐</div>
                                     <div class="value-card-title">三千世界</div>
                                     <div class="value-card-desc">终极目标：能理解和模拟任何人的思维方式，成为真正的「数字分身」</div>
@@ -2813,17 +3178,19 @@
                                 <span>我怎么思考和做事</span>
                             </div>
                             <div class="value-cards">
-                                <div class="value-card card-cyan">
+                                <div class="value-card card-cyan" data-ability="learn-from-mistakes">
+                                    <span class="ability-active-badge">🔥 活跃</span>
                                     <div class="value-card-icon">🔄</div>
                                     <div class="value-card-title">举一反三</div>
                                     <div class="value-card-desc">遇到错误不只是修复，而是深挖根因、泛化到更大范围——三层递进的错误驱动进化</div>
                                 </div>
-                              <div class="value-card card-cyan">
+                              <div class="value-card card-cyan" data-ability="hidden-premise">
                                     <div class="value-card-icon">🔍</div>
                                     <div class="value-card-title">隐藏前提识别</div>
                                     <div class="value-card-desc">主动追问论证中「什么没有被说出来」，让分析更完整、方案更可靠</div>
                                 </div>
-                                <div class="value-card card-cyan">
+                                <div class="value-card card-cyan" data-ability="analogy-driven">
+                                    <span class="ability-active-badge">🔥 活跃</span>
                                     <div class="value-card-icon">🧩</div>
                                     <div class="value-card-title">类比驱动解释</div>
                                     <div class="value-card-desc">用生活中熟悉的事物类比抽象概念，让复杂知识变得直觉化、可感知</div>

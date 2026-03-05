@@ -1002,8 +1002,165 @@ function renderWorksSection() {
     if (worksDeployed) worksDeployed.textContent = projects.summary.deployed;
     if (worksFeatured) worksFeatured.textContent = projects.summary.featured || 0;
     
-    // 作品网格
-    renderWorksGrid(projects);
+    // 作品树形分类展示
+    renderWorksTree(projects);
+}
+
+// P0/P1优化: 作品树形分类展示
+function renderWorksTree(projects) {
+    const container = document.getElementById('works-grid');
+    
+    if (!container) {
+        console.warn('works-grid container not found');
+        return;
+    }
+    
+    if (!projects?.projects || projects.projects.length === 0) {
+        container.innerHTML = '<div class="no-data">暂无作品数据</div>';
+        return;
+    }
+    
+    const allProjects = projects.projects;
+    
+    // 将项目数据存入dataMap供tooltip使用
+    allProjects.forEach((p, idx) => {
+        const projectId = 'project-' + idx;
+        AppState.dataMap[projectId] = {
+            ...p,
+            type: 'project'
+        };
+    });
+    
+    // 按分类分组
+    const categories = projects.categories || {};
+    const grouped = {};
+    
+    allProjects.forEach(p => {
+        const cat = p.category || 'other';
+        if (!grouped[cat]) grouped[cat] = [];
+        grouped[cat].push(p);
+    });
+    
+    // 分类顺序和配置
+    const categoryOrder = ['research', 'tools', 'docs', 'homepage'];
+    const categoryConfig = {
+        'research': { name: '🔬 调研类', color: '#a78bfa', desc: '深度调研与分析报告' },
+        'tools': { name: '🛠️ 工具类', color: '#4ade80', desc: '自动化工具与平台' },
+        'docs': { name: '📄 文档类', color: '#fbbf24', desc: '知识沉淀与文档' },
+        'homepage': { name: '📦 其他', color: '#64748b', desc: '其他项目' }
+    };
+    
+    // 计算相对时间
+    const getRelativeTime = (dateStr) => {
+        if (!dateStr) return '';
+        const date = new Date(dateStr);
+        const now = new Date();
+        const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+        if (diff === 0) return '今天更新';
+        if (diff === 1) return '昨天更新';
+        if (diff < 7) return `${diff}天前更新`;
+        if (diff < 30) return `${Math.floor(diff / 7)}周前更新`;
+        return `${Math.floor(diff / 30)}月前更新`;
+    };
+    
+    // 生成单个项目卡片
+    const renderProjectCard = (p, idx) => {
+        const projectId = 'project-' + idx;
+        const statusClass = p.status === 'deployed' ? 'deployed' : 
+                           p.status === 'development' ? 'development' : 'archived';
+        const statusText = p.status === 'deployed' ? '✅ 已上线' : 
+                          p.status === 'development' ? '🔧 开发中' : '📦 已归档';
+        
+        const quality = p.quality || {};
+        const qualityLevel = quality.level || 'basic';
+        
+        // 精选/优秀标记
+        let qualityBadgeHtml = '';
+        if (qualityLevel === 'featured') {
+            qualityBadgeHtml = '<span class="quality-badge featured">🏆 精选</span>';
+        } else if (qualityLevel === 'excellent') {
+            qualityBadgeHtml = '<span class="quality-badge excellent">✨ 优秀</span>';
+        }
+        
+        // P1: 最近更新时间
+        const relativeTime = getRelativeTime(p.completedAt);
+        const updateTimeHtml = relativeTime ? `<span class="work-update-time">${relativeTime}</span>` : '';
+        
+        const linkHtml = p.url 
+            ? `<a href="${p.url}" target="_blank" class="work-link">🔗 访问</a>`
+            : '';
+        
+        return `
+            <div class="work-card-mini ${statusClass} ${qualityLevel === 'featured' ? 'featured' : ''}" 
+                 onmouseenter="showProjectTooltip(event, '${projectId}')" 
+                 onmouseleave="hideTooltip()">
+                ${qualityBadgeHtml}
+                <div class="work-card-content">
+                    <span class="work-icon-mini">${p.icon}</span>
+                    <div class="work-info-mini">
+                        <div class="work-name-mini">${p.name}</div>
+                        <div class="work-meta-mini">
+                            <span class="work-status-mini ${statusClass}">${statusText}</span>
+                            ${updateTimeHtml}
+                        </div>
+                    </div>
+                    ${linkHtml}
+                </div>
+            </div>
+        `;
+    };
+    
+    // 生成树形结构HTML
+    let treeHtml = '<div class="works-tree">';
+    
+    // P0: 精选置顶区域
+    const featuredProjects = allProjects.filter(p => p.quality?.level === 'featured');
+    if (featuredProjects.length > 0) {
+        treeHtml += `
+            <div class="works-tree-section featured-section">
+                <div class="tree-branch-header featured">
+                    <span class="branch-icon">🏆</span>
+                    <span class="branch-name">精选作品</span>
+                    <span class="branch-count">${featuredProjects.length}</span>
+                </div>
+                <div class="tree-branch-content featured-content">
+                    ${featuredProjects.map((p, idx) => renderProjectCard(p, allProjects.indexOf(p))).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    // 按分类展示（横向树形）
+    categoryOrder.forEach(catId => {
+        const catProjects = grouped[catId];
+        if (!catProjects || catProjects.length === 0) return;
+        
+        const config = categoryConfig[catId] || { name: catId, color: '#64748b', desc: '' };
+        
+        // 排除已在精选区域显示的
+        const nonFeatured = catProjects.filter(p => p.quality?.level !== 'featured');
+        if (nonFeatured.length === 0) return;
+        
+        treeHtml += `
+            <div class="works-tree-section">
+                <div class="tree-branch-header" style="--branch-color: ${config.color}">
+                    <span class="branch-icon">${config.name.split(' ')[0]}</span>
+                    <span class="branch-name">${config.name.split(' ').slice(1).join(' ')}</span>
+                    <span class="branch-count">${nonFeatured.length}</span>
+                    <span class="branch-desc">${config.desc}</span>
+                </div>
+                <div class="tree-branch-content">
+                    ${nonFeatured.map((p) => renderProjectCard(p, allProjects.indexOf(p))).join('')}
+                </div>
+            </div>
+        `;
+    });
+    
+    treeHtml += '</div>';
+    
+    container.innerHTML = treeHtml;
+    
+    console.log('Works tree rendered with', allProjects.length, 'projects in', Object.keys(grouped).length, 'categories');
 }
 
 function renderWorksGrid(projects) {
@@ -3056,9 +3213,104 @@ function renderEvolutionTimeline() {
     }
     
     const stages = evolutionData.stages || [];
+    const timeline = evolutionData.capabilities_timeline || [];
     
-    // 生成时间线HTML
-    const timelineHtml = stages.map((stage, idx) => {
+    // ========== P0优化：本周进化摘要 ==========
+    const today = new Date();
+    const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const todayStr = today.toISOString().split('T')[0];
+    const weekAgoStr = weekAgo.toISOString().split('T')[0];
+    
+    // 按日期分组timeline事件（倒序）
+    const sortedTimeline = [...timeline].sort((a, b) => {
+        const dateA = a.date || '1970-01-01';
+        const dateB = b.date || '1970-01-01';
+        return dateB.localeCompare(dateA); // 倒序：最新在前
+    });
+    
+    // 本周统计
+    const weekEvents = sortedTimeline.filter(e => e.date && e.date >= weekAgoStr);
+    const weekSkills = weekEvents.filter(e => e.type === 'skill_unlock' || e.type === 'meta_skill').length;
+    const weekProjects = weekEvents.filter(e => e.type === 'project_complete').length;
+    const weekSystems = weekEvents.filter(e => e.type === 'system_unlock' || e.type === 'integration').length;
+    
+    // 时间分组
+    const todayEvents = sortedTimeline.filter(e => e.date === todayStr);
+    const thisWeekEvents = sortedTimeline.filter(e => e.date && e.date < todayStr && e.date >= weekAgoStr);
+    const earlierEvents = sortedTimeline.filter(e => e.date && e.date < weekAgoStr).slice(0, 5); // 只显示最近5条
+    
+    // 生成摘要卡片HTML
+    const summaryHtml = weekEvents.length > 0 ? `
+        <div class="evolution-summary-card">
+            <div class="summary-title">📈 本周进化摘要</div>
+            <div class="summary-stats">
+                ${weekSkills > 0 ? `<span class="stat-item skill">+${weekSkills} 技能</span>` : ''}
+                ${weekProjects > 0 ? `<span class="stat-item project">+${weekProjects} 项目</span>` : ''}
+                ${weekSystems > 0 ? `<span class="stat-item system">+${weekSystems} 系统能力</span>` : ''}
+                <span class="stat-item total">共 ${weekEvents.length} 个事件</span>
+            </div>
+        </div>
+    ` : '';
+    
+    // 生成事件列表的辅助函数
+    const renderEventItem = (e) => {
+        const typeIcon = {
+            'skill_unlock': '🆕',
+            'project_complete': '✅',
+            'system_unlock': '⚙️',
+            'integration': '🔗',
+            'meta_skill': '🧠'
+        }[e.type] || '📌';
+        
+        const typeClass = e.type || 'default';
+        
+        return `
+            <div class="timeline-event ${typeClass}">
+                <span class="event-icon">${typeIcon}</span>
+                <span class="event-name">${e.name}</span>
+                <span class="event-date">${e.date ? e.date.substring(5) : ''}</span>
+            </div>
+        `;
+    };
+    
+    // 生成分组时间线HTML
+    let timelineEventsHtml = '';
+    
+    if (todayEvents.length > 0) {
+        timelineEventsHtml += `
+            <div class="timeline-group today">
+                <div class="group-title">🔥 今日</div>
+                <div class="group-events">
+                    ${todayEvents.map(renderEventItem).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    if (thisWeekEvents.length > 0) {
+        timelineEventsHtml += `
+            <div class="timeline-group this-week">
+                <div class="group-title">📅 本周</div>
+                <div class="group-events">
+                    ${thisWeekEvents.map(renderEventItem).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    if (earlierEvents.length > 0) {
+        timelineEventsHtml += `
+            <div class="timeline-group earlier">
+                <div class="group-title">📜 更早</div>
+                <div class="group-events">
+                    ${earlierEvents.map(renderEventItem).join('')}
+                </div>
+            </div>
+        `;
+    }
+    
+    // ========== 原有的版本阶段时间线 ==========
+    const stagesHtml = stages.map((stage, idx) => {
         let statusClass = '';
         if (stage.status === 'current') statusClass = 'current';
         else if (stage.status === 'in_progress') statusClass = 'in-progress';
@@ -3085,7 +3337,15 @@ function renderEvolutionTimeline() {
         `;
     }).join('');
     
-    container.innerHTML = timelineHtml;
+    // 组合所有内容：摘要 + 能力事件 + 版本阶段
+    container.innerHTML = `
+        ${summaryHtml}
+        ${timelineEventsHtml ? `<div class="evolution-events-section">${timelineEventsHtml}</div>` : ''}
+        <div class="evolution-stages-section">
+            <div class="stages-header">📌 进化阶段</div>
+            ${stagesHtml}
+        </div>
+    `;
     
     // 更新进化历程标题的副标题
     const subtitleEl = document.querySelector('.evolution-subtitle');
@@ -3093,5 +3353,5 @@ function renderEvolutionTimeline() {
         subtitleEl.textContent = evolutionData.description || '从工具到数字生命的蜕变';
     }
     
-    console.log('Evolution timeline rendered with', stages.length, 'stages');
+    console.log('Evolution timeline rendered with', stages.length, 'stages and', timeline.length, 'events');
 }

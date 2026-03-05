@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-05T10:23:06.115950",
+  "generatedAt": "2026-03-05T10:37:03.922892",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 9770,
-    "expProgress": 44.2,
+    "totalExp": 9820,
+    "expProgress": 45.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -15,7 +15,7 @@
       "memory": 100,
       "execution": 100,
       "learning": 98.6,
-      "insight": 79.8936170212766,
+      "insight": 80.1063829787234,
       "creativity": 100
     }
   },
@@ -546,14 +546,14 @@
           {
             "name": "product-thinking",
             "source": "codeflicker",
-            "level": 3,
-            "exp": 67,
+            "level": 4,
+            "exp": 70,
             "description": "---",
             "lastUpdated": "2026-03-05"
           }
         ],
         "count": 2,
-        "avgLevel": 4.0
+        "avgLevel": 4.5
       }
     },
     "tree": {
@@ -1093,18 +1093,18 @@
               {
                 "name": "product-thinking",
                 "source": "codeflicker",
-                "level": 3,
-                "exp": 67,
+                "level": 4,
+                "exp": 70,
                 "description": "---",
                 "lastUpdated": "2026-03-05"
               }
             ],
             "count": 2,
-            "avgLevel": 4.0
+            "avgLevel": 4.5
           }
         },
         "count": 37,
-        "avgLevel": 3.5
+        "avgLevel": 3.6
       }
     }
   },
@@ -1118,7 +1118,7 @@
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
-        "recentCount": 130
+        "recentCount": 126
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -1451,6 +1451,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "语雀文档读取优先使用API",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "**语雀文档读取经验：优先使用API而非浏览器工具** **问题场景**： 用户提供语雀链接要求读取内容时，fetch_web和browser_agent...",
+        "keywords": [
+          "语雀",
+          "yuque",
+          "文档读取",
+          "API",
+          "浏览器失败"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -2487,7 +2506,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 69,
+    "total": 70,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -2511,7 +2530,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 22,
+        "count": 23,
         "label": "思维能力",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4076,7 +4095,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "69/30",
+      "progressText": "70/30",
       "date": "2026-03-05"
     },
     {

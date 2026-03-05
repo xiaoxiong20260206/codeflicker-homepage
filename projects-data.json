@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-03-04T09:08:07.956832",
+  "generatedAt": "2026-03-05T10:37:04.332396",
   "summary": {
     "total": 14,
-    "deployed": 7,
+    "deployed": 14,
     "inDevelopment": 0,
     "archived": 0,
     "featured": 2,
@@ -19,7 +19,7 @@
       "name": "工具类",
       "icon": "🛠️",
       "color": "#4ade80",
-      "count": 3
+      "count": 4
     },
     "homepage": {
       "name": "其他",
@@ -31,7 +31,7 @@
       "name": "文档类",
       "icon": "📄",
       "color": "#fbbf24",
-      "count": 7
+      "count": 6
     }
   },
   "projects": [
@@ -43,37 +43,24 @@
       "icon": "📝",
       "goal": "系统梳理字节跳动AI能力布局，为内部研发效能提升提供参考",
       "outcome": "完成6个章节的深度调研报告，涵盖AI发展简史、字节AI布局、Agent基础设施、安全实践、金融洞察等",
-      "deliverables": [
-        "调研报告",
-        "在线展示页",
-        "知识沉淀"
-      ],
+      "deliverables": [],
       "status": "deployed",
       "completedAt": "2026-02-20",
       "techStack": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "GitHub Pages"
+        "Unknown"
       ],
       "url": "https://xiaoxiong20260206.github.io/bytedance-ai-guide/",
       "path": "/Users/shenlang/Documents/Codeflicker/字节AI调研/",
-      "highlights": [
-        "5000+ 字深度分析",
-        "覆盖 Agent 全栈架构",
-        "金融场景实践洞察"
-      ],
-      "screenshot": "screenshots/bytedance-ai-guide.png",
+      "highlights": [],
       "metrics": {
-        "fileCount": 263
+        "fileCount": 0
       },
       "quality": {
-        "score": 80,
+        "score": 90,
         "level": "featured",
         "tags": [
           "🏆 精选",
           "已部署",
-          "大型项目",
           "调研报告"
         ]
       }
@@ -87,418 +74,433 @@
       "goal": "探索AI产品的终极形态，论证从工具到员工的演进路径",
       "outcome": "完成4章节的论证报告，含场景区分、风险分析、技术路径、反面论证",
       "deliverables": [
-        "调研报告",
-        "分篇HTML",
-        "Vercel部署"
+        "在线页面",
+        "文档",
+        "数据文件"
       ],
       "status": "deployed",
       "completedAt": "2026-03-01",
+      "techStack": [
+        "HTML",
+        "Vercel"
+      ],
+      "url": "https://ai-product-ultimate.vercel.app/",
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/knowledge/AI产品终极形态思考",
+      "highlights": [],
+      "metrics": {
+        "fileCount": 8
+      },
+      "quality": {
+        "score": 90,
+        "level": "featured",
+        "tags": [
+          "🏆 精选",
+          "已部署",
+          "调研报告"
+        ]
+      }
+    },
+    {
+      "id": "self-evolution",
+      "name": "林克进化体系",
+      "subtitle": "AI自进化能力展示",
+      "category": "research",
+      "icon": "🔄",
+      "goal": "展示林克的自我进化机制和能力成长过程",
+      "outcome": "完整的自进化机制展示页面，包含元能力、自检机制、案例展示",
+      "deliverables": [
+        "在线页面",
+        "数据文件"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
       "techStack": [
         "HTML",
         "CSS",
         "JavaScript",
         "Vercel"
       ],
-      "url": "https://ai-product-ultimate-form.vercel.app/",
-      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/knowledge/AI产品终极形态思考/",
-      "highlights": [
-        "完整逻辑论证",
-        "to C/to B 场景区分",
-        "红队分析"
-      ],
-      "screenshot": "screenshots/ai-product-ultimate.png",
+      "url": "https://linke-self-evolution.vercel.app/",
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/knowledge/self-evolution",
+      "highlights": [],
       "metrics": {
-        "fileCount": 106
+        "fileCount": 4
       },
       "quality": {
         "score": 80,
-        "level": "featured",
+        "level": "excellent",
         "tags": [
-          "🏆 精选",
           "已部署",
-          "大型项目",
           "调研报告"
         ]
       }
     },
     {
-      "id": "feishu-bot",
-      "name": "飞书机器人「林克」",
-      "subtitle": "IM集成与消息自动化",
+      "id": "ai-insight",
+      "name": "AI持续洞察",
+      "subtitle": "AI-Insight 平台",
       "category": "tools",
-      "icon": "🤖",
-      "goal": "实现飞书消息与CodeFlicker的双向集成",
-      "outcome": "完成飞书Webhook接收、消息解析、自动触发CodeFlicker处理的完整流程",
+      "icon": "🔬",
+      "goal": "建立系统化、可持续的AI行业追踪学习平台",
+      "outcome": "整合日报、周报、深度调研、追踪体系、知识沉淀五大模块",
       "deliverables": [
-        "Python服务",
-        "Webhook接口",
-        "消息处理模块"
+        "在线页面",
+        "文档",
+        "Python脚本"
       ],
       "status": "deployed",
-      "completedAt": "2026-02-27",
+      "completedAt": "2026-03-04",
       "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
         "Python",
-        "FastAPI",
-        "飞书API",
-        "Webhook"
+        "GitHub Pages"
       ],
-      "url": null,
-      "path": "~/Documents/Codeflicker/个人助理_V1/feishu-ai-bot/",
-      "highlights": [
-        "双向消息同步",
-        "自动触发处理",
-        "群消息支持"
-      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight",
+      "highlights": [],
       "metrics": {
-        "fileCount": 30
+        "fileCount": 168
       },
       "quality": {
-        "score": 65,
+        "score": 80,
         "level": "excellent",
         "tags": [
-          "✨ 优秀",
-          "大型项目",
-          "自动化工具"
+          "已部署",
+          "大型项目"
+        ]
+      }
+    },
+    {
+      "id": "codeflicker-homepage",
+      "name": "林克首页",
+      "subtitle": "塞尔达风格个人主页",
+      "category": "homepage",
+      "icon": "🏠",
+      "goal": "建立游戏化的个人能力展示页面",
+      "outcome": "塞尔达风格的All-in-One首页，展示技能树、记忆库、知识库、作品集、进化历程",
+      "deliverables": [
+        "在线页面",
+        "文档",
+        "Python脚本"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-02",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Python",
+        "GitHub Pages"
+      ],
+      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/",
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/codeflicker-homepage",
+      "highlights": [],
+      "metrics": {
+        "fileCount": 24
+      },
+      "quality": {
+        "score": 80,
+        "level": "excellent",
+        "tags": [
+          "已部署"
         ]
       }
     },
     {
       "id": "daily-report-system",
-      "name": "日报自动生成系统",
-      "subtitle": "每日工作日报自动化",
+      "name": "日报系统",
+      "subtitle": "林克每日自我反思系统",
       "category": "tools",
       "icon": "📊",
-      "goal": "建立每日自动生成工作日报并同步到GitHub的机制",
-      "outcome": "v6.0日报系统，含小无相功自我反思、能力趋势图、清爽报告风格",
+      "goal": "建立每日自动反思和成长追踪机制",
+      "outcome": "自动生成日报、统计分析、GitHub同步",
       "deliverables": [
-        "Python脚本",
-        "HTML日报",
-        "Markdown日报",
-        "GitHub同步"
-      ],
-      "status": "deployed",
-      "completedAt": "2026-02-28",
-      "techStack": [
-        "Python",
-        "HTML",
-        "CSS",
-        "Launchd",
-        "Git"
-      ],
-      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/",
-      "path": "~/Documents/Codeflicker/个人助理_V1/scripts/generate_daily_report.py",
-      "highlights": [
-        "每日6:00自动生成",
-        "小无相功自我反思",
-        "能力趋势可视化"
-      ],
-      "screenshot": "screenshots/daily-report-system.png",
-      "metrics": {
-        "fileCount": 1
-      },
-      "quality": {
-        "score": 65,
-        "level": "excellent",
-        "tags": [
-          "✨ 优秀",
-          "已部署",
-          "数据可视化",
-          "自动化工具"
-        ]
-      }
-    },
-    {
-      "id": "character-panel",
-      "name": "角色能力面板",
-      "subtitle": "游戏风格个人主页",
-      "category": "homepage",
-      "icon": "🎮",
-      "goal": "创建游戏风格的角色能力展示页面",
-      "outcome": "v5.0角色面板，含技能树、知识树、记忆树、成就系统、能力雷达图",
-      "deliverables": [
-        "HTML页面",
-        "数据生成脚本",
-        "Chart.js可视化"
-      ],
-      "status": "deployed",
-      "completedAt": "2026-03-01",
-      "techStack": [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Chart.js"
-      ],
-      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/",
-      "path": "/Users/shenlang/Documents/Codeflicker/codeflicker-homepage/index.html",
-      "highlights": [
-        "技能树可视化",
-        "Tooltip悬浮提示",
-        "图表数据展示"
-      ],
-      "screenshot": "screenshots/character-panel.png",
-      "metrics": {
-        "fileCount": 1
-      },
-      "quality": {
-        "score": 65,
-        "level": "excellent",
-        "tags": [
-          "✨ 优秀",
-          "已部署",
-          "数据可视化"
-        ]
-      }
-    },
-    {
-      "id": "ai-financial-analysis",
-      "name": "AI金融分析",
-      "subtitle": "AI赋能金融场景研究",
-      "category": "research",
-      "icon": "💰",
-      "goal": "研究AI在金融领域的应用场景和投资价值",
-      "outcome": "完成金融AI应用分析，投资策略建议",
-      "deliverables": [
-        "分析报告",
-        "投资建议"
-      ],
-      "status": "deployed",
-      "completedAt": "2026-02-18",
-      "techStack": [
-        "研究分析",
-        "数据分析"
-      ],
-      "url": null,
-      "path": "/Users/shenlang/Documents/Codeflicker/CF0201_Financial/",
-      "highlights": [
-        "金融AI场景分析",
-        "投资策略建议"
-      ],
-      "metrics": {
-        "fileCount": 143
-      },
-      "quality": {
-        "score": 58,
-        "level": "good",
-        "tags": [
-          "大型项目",
-          "调研报告"
-        ]
-      }
-    },
-    {
-      "id": "github-sync",
-      "name": "GitHub同步系统",
-      "subtitle": "多仓库自动同步",
-      "category": "tools",
-      "icon": "🔄",
-      "goal": "实现本地项目与多个GitHub仓库的自动同步",
-      "outcome": "完成同步脚本，支持个人仓库和组织仓库双推",
-      "deliverables": [
-        "Shell脚本",
-        "Launchd配置"
+        "文档"
       ],
       "status": "deployed",
       "completedAt": "2026-02-25",
       "techStack": [
-        "Shell",
-        "Git",
-        "Launchd"
+        "Unknown"
       ],
-      "url": null,
-      "path": "~/Documents/Codeflicker/个人助理_V1/scripts/sync-to-github.sh",
-      "highlights": [
-        "双仓库同步",
-        "自动化调度",
-        "错误重试"
-      ],
+      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/#daily",
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/reports",
+      "highlights": [],
       "metrics": {
-        "fileCount": 1
+        "fileCount": 19
       },
       "quality": {
-        "score": 43,
-        "level": "good",
+        "score": 60,
+        "level": "normal",
         "tags": [
-          "自动化工具"
+          "已部署"
         ]
       }
     },
     {
-      "id": "knowledge-life-philosophy",
-      "name": "Life Philosophy",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/life-philosophy",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 24
-      },
-      "techStack": [],
+      "id": "kim-ai-bot",
+      "name": "KIM机器人",
+      "subtitle": "KIM消息推送服务",
+      "category": "tools",
+      "icon": "🤖",
+      "goal": "实现AI日报自动推送到KIM群",
+      "outcome": "MixCard卡片消息、多群推送、定时触发",
+      "deliverables": [
+        "文档",
+        "Python脚本"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-03",
+      "techStack": [
+        "Python"
+      ],
+      "url": null,
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/bots/kim-ai-bot",
       "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
+      "metrics": {
+        "fileCount": 31
       },
       "quality": {
-        "score": 40,
-        "level": "good",
+        "score": 60,
+        "level": "normal",
         "tags": [
+          "已部署"
+        ]
+      }
+    },
+    {
+      "id": "feishu-ai-bot",
+      "name": "飞书机器人",
+      "subtitle": "飞书消息处理服务",
+      "category": "tools",
+      "icon": "💬",
+      "goal": "实现飞书消息监控和自动处理",
+      "outcome": "消息监听、自动回复、群消息转发",
+      "deliverables": [
+        "文档",
+        "Python脚本"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-02-27",
+      "techStack": [
+        "Python"
+      ],
+      "url": null,
+      "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/bots/feishu-ai-bot",
+      "highlights": [],
+      "metrics": {
+        "fileCount": 23
+      },
+      "quality": {
+        "score": 60,
+        "level": "normal",
+        "tags": [
+          "已部署"
+        ]
+      }
+    },
+    {
+      "id": "ai-insight-trends-images",
+      "name": "Images",
+      "subtitle": "AI洞察-trends",
+      "category": "docs",
+      "icon": "📄",
+      "goal": "AI-Insight trends 深度调研",
+      "outcome": "深度调研文档",
+      "deliverables": [
+        "在线页面"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "techStack": [
+        "HTML",
+        "GitHub Pages"
+      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/trends/images/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/trends/images",
+      "highlights": [],
+      "metrics": {
+        "fileCount": 8
+      },
+      "quality": {
+        "score": 60,
+        "level": "normal",
+        "tags": [
+          "已部署"
+        ]
+      }
+    },
+    {
+      "id": "ai-insight-companies-bytedance-ai-guide",
+      "name": "Bytedance Ai Guide",
+      "subtitle": "AI洞察-companies",
+      "category": "docs",
+      "icon": "📄",
+      "goal": "AI-Insight companies 深度调研",
+      "outcome": "深度调研文档",
+      "deliverables": [
+        "在线页面",
+        "文档",
+        "Python脚本"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "Python",
+        "GitHub Pages"
+      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/companies/bytedance-ai-guide/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/companies/bytedance-ai-guide",
+      "highlights": [],
+      "metrics": {
+        "fileCount": 12
+      },
+      "quality": {
+        "score": 60,
+        "level": "normal",
+        "tags": [
+          "已部署"
+        ]
+      }
+    },
+    {
+      "id": "ai-insight-topics-ai-studio",
+      "name": "Ai Studio",
+      "subtitle": "AI洞察-topics",
+      "category": "docs",
+      "icon": "📄",
+      "goal": "AI-Insight topics 深度调研",
+      "outcome": "深度调研文档",
+      "deliverables": [
+        "在线页面",
+        "文档",
+        "数据文件"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Vercel"
+      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-studio/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-studio",
+      "highlights": [],
+      "metrics": {
+        "fileCount": 58
+      },
+      "quality": {
+        "score": 60,
+        "level": "normal",
+        "tags": [
+          "已部署",
           "大型项目"
         ]
-      },
-      "icon": "📄"
+      }
     },
     {
-      "id": "knowledge-methodology",
-      "name": "Methodology",
-      "subtitle": "知识库 - personal-writings",
+      "id": "ai-insight-topics-ai-financial",
+      "name": "Ai Financial",
+      "subtitle": "AI洞察-topics",
       "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/methodology",
-      "status": "completed",
-      "createdAt": "2026-02-26",
-      "metrics": {
-        "fileCount": 26
-      },
-      "techStack": [],
+      "icon": "📄",
+      "goal": "AI-Insight topics 深度调研",
+      "outcome": "深度调研文档",
+      "deliverables": [
+        "在线页面",
+        "文档"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "GitHub Pages"
+      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-financial/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-financial",
       "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
+      "metrics": {
+        "fileCount": 9
       },
       "quality": {
-        "score": 40,
-        "level": "good",
+        "score": 60,
+        "level": "normal",
         "tags": [
-          "大型项目"
+          "已部署"
         ]
-      },
-      "icon": "📄"
+      }
     },
     {
-      "id": "knowledge-my-story",
-      "name": "My Story",
-      "subtitle": "知识库 - personal-writings",
+      "id": "ai-insight-topics-ai-tools-analysis",
+      "name": "Ai Tools Analysis",
+      "subtitle": "AI洞察-topics",
       "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/my-story",
-      "status": "completed",
-      "createdAt": "2026-02-26",
-      "metrics": {
-        "fileCount": 30
-      },
-      "techStack": [],
+      "icon": "📄",
+      "goal": "AI-Insight topics 深度调研",
+      "outcome": "深度调研文档",
+      "deliverables": [
+        "在线页面",
+        "文档"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "GitHub Pages"
+      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-tools-analysis/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-tools-analysis",
       "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 40,
-        "level": "good",
-        "tags": [
-          "大型项目"
-        ]
-      },
-      "icon": "📄"
-    },
-    {
-      "id": "knowledge-essays",
-      "name": "Essays",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/essays",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 14
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 35,
-        "level": "basic",
-        "tags": [
-          "大型项目"
-        ]
-      },
-      "icon": "📄"
-    },
-    {
-      "id": "knowledge-self-cultivation",
-      "name": "Self Cultivation",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/self-cultivation",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 11
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 35,
-        "level": "basic",
-        "tags": [
-          "大型项目"
-        ]
-      },
-      "icon": "📄"
-    },
-    {
-      "id": "knowledge-thinking-map",
-      "name": "Thinking Map",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/thinking-map",
-      "status": "completed",
-      "createdAt": "2026-02-25",
-      "metrics": {
-        "fileCount": 5
-      },
-      "techStack": [],
-      "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
-      },
-      "quality": {
-        "score": 30,
-        "level": "basic",
-        "tags": []
-      },
-      "icon": "📄"
-    },
-    {
-      "id": "knowledge-personal-growth",
-      "name": "Personal Growth",
-      "subtitle": "知识库 - personal-writings",
-      "category": "docs",
-      "path": "/Users/shenlang/Documents/Codeflicker/Knowledge/personal-writings/personal-growth",
-      "status": "completed",
-      "createdAt": "2026-02-25",
       "metrics": {
         "fileCount": 6
       },
-      "techStack": [],
+      "quality": {
+        "score": 60,
+        "level": "normal",
+        "tags": [
+          "已部署"
+        ]
+      }
+    },
+    {
+      "id": "ai-insight-topics-ai-agent-guide",
+      "name": "Ai Agent Guide",
+      "subtitle": "AI洞察-topics",
+      "category": "docs",
+      "icon": "📄",
+      "goal": "AI-Insight topics 深度调研",
+      "outcome": "深度调研文档",
+      "deliverables": [
+        "在线页面"
+      ],
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "techStack": [
+        "HTML",
+        "CSS",
+        "GitHub Pages"
+      ],
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-agent-guide/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-agent-guide",
       "highlights": [],
-      "source": {
-        "type": "knowledge",
-        "directory": "personal-writings"
+      "metrics": {
+        "fileCount": 7
       },
       "quality": {
-        "score": 30,
-        "level": "basic",
-        "tags": []
-      },
-      "icon": "📄"
+        "score": 60,
+        "level": "normal",
+        "tags": [
+          "已部署"
+        ]
+      }
     }
   ]
 }

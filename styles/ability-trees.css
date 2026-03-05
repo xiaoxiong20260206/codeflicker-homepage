@@ -79,9 +79,10 @@
 .skill-layers-container {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 1200px;
     position: relative;
 }
 
@@ -90,8 +91,9 @@
     background: linear-gradient(135deg, rgba(20, 25, 30, 0.95) 0%, rgba(30, 35, 45, 0.9) 100%);
     border: 2px solid var(--layer-color, var(--sheikah-blue));
     border-radius: 12px;
-    min-width: 200px;
-    max-width: 280px;
+    min-width: 280px;
+    max-width: 380px;
+    flex: 1;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;

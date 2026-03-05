@@ -2268,10 +2268,13 @@ function showTreeTooltip(event, id, type) {
         sourceSection.style.display = 'none';
     }
     
-    // 显示升级建议（已禁用，不展示无实际数据的内容）
+    // 显示升级建议
     const lv = data.level || 1;
-    // 始终隐藏升级建议
-    if (upgradeSection) {
+    if (upgradeEl && upgradeSection && upgradeAdvice[type]) {
+        upgradeEl.textContent = upgradeAdvice[type][lv] || upgradeAdvice[type][3];
+        upgradeEl.style.whiteSpace = 'normal';
+        upgradeSection.style.display = 'block';
+    } else if (upgradeSection) {
         upgradeSection.style.display = 'none';
     }
     

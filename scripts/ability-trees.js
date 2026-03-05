@@ -366,7 +366,7 @@ function renderKnowledgeArchive(container, knowledge) {
     `;
 }
 
-// ==================== 记忆树 - 神经网络径向布局 ====================
+// ==================== 记忆树 - 神经网络径向布局 + 二级展开 ====================
 function renderMemoryNeuralNetwork(container, memories) {
     if (!container) return;
     
@@ -398,7 +398,7 @@ function renderMemoryNeuralNetwork(container, memories) {
     // 计算布局参数
     const centerX = 250;
     const centerY = 250;
-    const radius = 150;
+    const radius = 140;
     
     // 过滤有效层级
     const validLayers = Object.entries(tree).filter(([_, info]) => info.count > 0);
@@ -407,6 +407,7 @@ function renderMemoryNeuralNetwork(container, memories) {
     // 生成连接线和节点
     let connectionsHtml = '';
     let nodesHtml = '';
+    let layerDataForExpand = {};
     
     validLayers.forEach(([layerName, layerInfo], idx) => {
         const config = layerConfig[layerName] || { color: '#fb923c', label: layerName, icon: '📁' };
@@ -415,9 +416,16 @@ function renderMemoryNeuralNetwork(container, memories) {
         const y = centerY + radius * Math.sin(angle);
         
         // 节点大小根据记忆数量
-        const nodeRadius = Math.min(40, Math.max(25, 20 + layerInfo.count * 0.5));
+        const nodeRadius = Math.min(35, Math.max(22, 18 + layerInfo.count * 0.4));
         
         const nodeId = 'memory-layer-' + idx;
+        
+        // 存储层级数据供展开使用
+        layerDataForExpand[nodeId] = {
+            layerName: layerName,
+            layerInfo: layerInfo,
+            config: config
+        };
         
         // 存储到dataMap
         window.AppState.dataMap[nodeId] = {
@@ -436,9 +444,9 @@ function renderMemoryNeuralNetwork(container, memories) {
                   stroke="${config.color}"/>
         `;
         
-        // 脉冲效果
+        // 脉冲效果 - 放在节点后面避免干扰
         if (layerInfo.count >= 5) {
-            nodesHtml += `
+            connectionsHtml += `
                 <circle class="memory-pulse-ring" 
                         cx="${x}" cy="${y}" r="${nodeRadius}"
                         stroke="${config.color}"
@@ -446,18 +454,20 @@ function renderMemoryNeuralNetwork(container, memories) {
             `;
         }
         
-        // 节点
+        // 节点 - 点击展开二级
         nodesHtml += `
             <g class="memory-category-node" 
                transform="translate(${x}, ${y})"
+               data-node-id="${nodeId}"
+               onclick="toggleMemoryLayerExpand('${nodeId}')"
                onmouseenter="showTreeTooltip(event, '${nodeId}', 'memory')"
                onmouseleave="hideTooltip()">
                 <circle class="memory-category-circle" 
                         r="${nodeRadius}" 
                         stroke="${config.color}"/>
-                <text class="memory-category-icon" y="-5">${config.icon}</text>
-                <text class="memory-category-label" y="12">${config.label}</text>
-                <text class="memory-category-count" y="24">${layerInfo.count}</text>
+                <text class="memory-category-icon" y="-3">${config.icon}</text>
+                <text class="memory-category-label" y="10">${config.label}</text>
+                <text class="memory-category-count" y="22">${layerInfo.count}</text>
             </g>
         `;
     });
@@ -485,14 +495,14 @@ function renderMemoryNeuralNetwork(container, memories) {
                         </radialGradient>
                     </defs>
                     
-                    <!-- 连接线 -->
+                    <!-- 连接线和脉冲 -->
                     ${connectionsHtml}
                     
                     <!-- 中心核心节点 -->
-                    <circle class="memory-core-node" cx="${centerX}" cy="${centerY}" r="50"/>
-                    <text x="${centerX}" y="${centerY - 10}" text-anchor="middle" fill="var(--sheikah-orange)" font-size="28">🧠</text>
-                    <text x="${centerX}" y="${centerY + 15}" text-anchor="middle" fill="var(--sheikah-orange-light)" font-size="12" font-weight="600">记忆核心</text>
-                    <text x="${centerX}" y="${centerY + 30}" text-anchor="middle" fill="rgba(200,220,240,0.6)" font-size="10">${total} 条</text>
+                    <circle class="memory-core-node" cx="${centerX}" cy="${centerY}" r="45"/>
+                    <text x="${centerX}" y="${centerY - 8}" text-anchor="middle" fill="var(--sheikah-orange)" font-size="24">🧠</text>
+                    <text x="${centerX}" y="${centerY + 10}" text-anchor="middle" fill="var(--sheikah-orange-light)" font-size="11" font-weight="600">记忆核心</text>
+                    <text x="${centerX}" y="${centerY + 24}" text-anchor="middle" fill="rgba(200,220,240,0.6)" font-size="10">${total} 条</text>
                     
                     <!-- 分类节点 -->
                     ${nodesHtml}
@@ -501,9 +511,108 @@ function renderMemoryNeuralNetwork(container, memories) {
             <div class="memory-legend">
                 ${legendHtml}
             </div>
+            <!-- 展开面板 -->
+            <div class="memory-expand-panel" id="memory-expand-panel" style="display: none;">
+                <div class="memory-expand-header">
+                    <span class="memory-expand-title" id="memory-expand-title">记忆详情</span>
+                    <button class="memory-expand-close" onclick="closeMemoryExpand()">✕</button>
+                </div>
+                <div class="memory-expand-content" id="memory-expand-content">
+                </div>
+            </div>
         </div>
     `;
+    
+    // 保存层级数据到全局
+    window._memoryLayerData = layerDataForExpand;
 }
+
+// 展开记忆层级详情
+function toggleMemoryLayerExpand(nodeId) {
+    const layerData = window._memoryLayerData?.[nodeId];
+    if (!layerData) return;
+    
+    const panel = document.getElementById('memory-expand-panel');
+    const title = document.getElementById('memory-expand-title');
+    const content = document.getElementById('memory-expand-content');
+    
+    if (!panel || !title || !content) return;
+    
+    const { layerName, layerInfo, config } = layerData;
+    
+    // 设置标题
+    title.innerHTML = `<span style="color: ${config.color};">${config.icon}</span> ${config.label}层记忆 (${layerInfo.count}条)`;
+    
+    // 生成子分类内容
+    let childrenHtml = '';
+    const children = layerInfo.children || {};
+    
+    if (Object.keys(children).length === 0) {
+        childrenHtml = '<div class="memory-expand-empty">暂无详细记忆</div>';
+    } else {
+        for (const [childName, childInfo] of Object.entries(children)) {
+            if (childInfo.count === 0) continue;
+            
+            // 获取具体记忆项
+            const items = childInfo.items || [];
+            let itemsHtml = '';
+            
+            items.slice(0, 6).forEach((item, idx) => {
+                const itemId = `memory-item-${nodeId}-${idx}`;
+                
+                // 存储到dataMap
+                window.AppState.dataMap[itemId] = {
+                    name: item.title || `记忆 #${idx + 1}`,
+                    icon: item.icon || '💭',
+                    level: item.importance || 3,
+                    description: item.description || '暂无描述',
+                    source: childName
+                };
+                
+                itemsHtml += `
+                    <div class="memory-item-chip" 
+                         style="border-color: ${config.color};"
+                         onmouseenter="showTreeTooltip(event, '${itemId}', 'memory')"
+                         onmouseleave="hideTooltip()">
+                        <span class="memory-item-icon">${item.icon || '💭'}</span>
+                        <span class="memory-item-title">${(item.title || '记忆').substring(0, 15)}${(item.title?.length > 15) ? '...' : ''}</span>
+                    </div>
+                `;
+            });
+            
+            if (items.length > 6) {
+                itemsHtml += `<div class="memory-item-more">+${items.length - 6}</div>`;
+            }
+            
+            childrenHtml += `
+                <div class="memory-child-group">
+                    <div class="memory-child-header" style="color: ${config.color};">
+                        <span class="memory-child-icon">${childInfo.icon || '📁'}</span>
+                        <span class="memory-child-name">${childName}</span>
+                        <span class="memory-child-count">${childInfo.count}</span>
+                    </div>
+                    <div class="memory-child-items">
+                        ${itemsHtml}
+                    </div>
+                </div>
+            `;
+        }
+    }
+    
+    content.innerHTML = childrenHtml;
+    panel.style.display = 'block';
+}
+
+// 关闭展开面板
+function closeMemoryExpand() {
+    const panel = document.getElementById('memory-expand-panel');
+    if (panel) {
+        panel.style.display = 'none';
+    }
+}
+
+window.toggleMemoryLayerExpand = toggleMemoryLayerExpand;
+window.closeMemoryExpand = closeMemoryExpand;
 
 // ==================== 导出到全局 ====================
 window.renderSkillTechTree = renderSkillTechTree;

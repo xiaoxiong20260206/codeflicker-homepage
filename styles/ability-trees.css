@@ -529,11 +529,12 @@
 /* 分类节点 */
 .memory-category-node {
     cursor: pointer;
-    transition: transform 0.3s ease;
+    /* 移除transform动画，避免干扰tooltip定位 */
 }
 
-.memory-category-node:hover {
-    transform: scale(1.1);
+.memory-category-node:hover .memory-category-circle {
+    filter: drop-shadow(0 0 12px currentColor);
+    stroke-width: 3;
 }
 
 .memory-category-circle {
@@ -566,18 +567,21 @@
     text-anchor: middle;
 }
 
-/* 活跃记忆脉冲动画 */
+/* 活跃记忆脉冲动画 - 不干扰交互 */
 .memory-pulse-ring {
     fill: none;
     stroke: var(--sheikah-orange);
     stroke-width: 1;
     opacity: 0;
     animation: memory-pulse 3s ease-out infinite;
+    pointer-events: none; /* 不干扰鼠标事件 */
+    transform-origin: center;
+    transform-box: fill-box;
 }
 
 @keyframes memory-pulse {
-    0% { opacity: 0.6; transform: scale(1); }
-    100% { opacity: 0; transform: scale(2); }
+    0% { opacity: 0.6; r: 30; }
+    100% { opacity: 0; r: 60; }
 }
 
 /* 记忆分类颜色定义 */
@@ -612,6 +616,143 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
+}
+
+/* ==================== 记忆展开面板 ==================== */
+.memory-expand-panel {
+    margin-top: 20px;
+    background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
+    border: 2px solid var(--sheikah-orange);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.memory-expand-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.memory-expand-title {
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--sheikah-orange-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.memory-expand-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: rgba(200, 220, 240, 0.6);
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.memory-expand-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.memory-expand-content {
+    padding: 16px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.memory-expand-empty {
+    text-align: center;
+    padding: 30px;
+    color: rgba(200, 220, 240, 0.5);
+}
+
+/* 子分类组 */
+.memory-child-group {
+    margin-bottom: 16px;
+}
+
+.memory-child-group:last-child {
+    margin-bottom: 0;
+}
+
+.memory-child-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(200, 220, 240, 0.1);
+}
+
+.memory-child-icon {
+    font-size: 16px;
+}
+
+.memory-child-name {
+    flex: 1;
+}
+
+.memory-child-count {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.memory-child-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* 记忆项chip */
+.memory-item-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 220, 240, 0.2);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 11px;
+    color: rgba(200, 220, 240, 0.85);
+}
+
+.memory-item-chip:hover {
+    background: rgba(251, 146, 60, 0.15);
+    border-color: var(--sheikah-orange);
+    transform: translateY(-1px);
+}
+
+.memory-item-icon {
+    font-size: 12px;
+}
+
+.memory-item-title {
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.memory-item-more {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.5);
+    padding: 4px 8px;
 }
 
 /* ==================== 响应式调整 ==================== */

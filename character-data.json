@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-05T10:37:03.922892",
+  "generatedAt": "2026-03-06T06:00:52.106892",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 9820,
-    "expProgress": 45.5,
+    "totalExp": 10570,
+    "expProgress": 64.2,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 98.6,
-      "insight": 80.1063829787234,
+      "insight": 79.58333333333334,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 47,
+    "total": 48,
     "categories": {
       "🧠 思维能力": {
         "icon": "🧠",
@@ -123,14 +123,6 @@
         "description": "投资理财全流程：股票分析、投资组合、财务决策",
         "skills": [
           {
-            "name": "stock-analysis",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 91,
-            "description": "股票和加密货币分析，投资组合管理，定期报告",
-            "lastUpdated": "2026-02-25"
-          },
-          {
             "name": "investment-tracker",
             "source": "林克核心能力",
             "level": 4,
@@ -139,16 +131,24 @@
             "lastUpdated": "2026-03-03"
           },
           {
-            "name": "investment-analyzer",
+            "name": "stock-analysis",
             "source": "Claude技能库",
             "level": 3,
-            "exp": 58,
+            "exp": 81,
+            "description": "股票和加密货币分析，投资组合管理，定期报告",
+            "lastUpdated": "2026-02-25"
+          },
+          {
+            "name": "investment-analyzer",
+            "source": "Claude技能库",
+            "level": 2,
+            "exp": 48,
             "description": "投资机会分析，跨资产类别评估和风险分析",
             "lastUpdated": "2026-02-25"
           }
         ],
         "count": 3,
-        "avgLevel": 3.7
+        "avgLevel": 3.0
       },
       "📊 调研分析": {
         "icon": "🔬",
@@ -292,7 +292,7 @@
             "name": "web-dev-workflow",
             "source": "林克核心能力",
             "level": 4,
-            "exp": 76,
+            "exp": 79,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
             "lastUpdated": "2026-03-02"
           },
@@ -383,14 +383,14 @@
           {
             "name": "github-deploy-publisher",
             "source": "林克核心能力",
-            "level": 4,
-            "exp": 76,
+            "level": 3,
+            "exp": 66,
             "description": "自动化GitHub仓库创建、代码提交、Pages部署",
             "lastUpdated": "2026-02-25"
           }
         ],
         "count": 1,
-        "avgLevel": 4.0
+        "avgLevel": 3.0
       },
       "💬 消息通信": {
         "icon": "💬",
@@ -463,14 +463,14 @@
           {
             "name": "personal-assistant",
             "source": "Claude技能库",
-            "level": 4,
-            "exp": 84,
+            "level": 3,
+            "exp": 74,
             "description": "个人助理能力，日程管理、任务追踪、习惯监控",
             "lastUpdated": "2026-02-25"
           }
         ],
         "count": 1,
-        "avgLevel": 4.0
+        "avgLevel": 3.0
       },
       "🔧 开发规范": {
         "icon": "🔧",
@@ -541,6 +541,14 @@
             "level": 5,
             "exp": 95,
             "description": "---",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "essence-insight",
+            "source": "codeflicker",
+            "level": 5,
+            "exp": 85,
+            "description": "---",
             "lastUpdated": "2026-03-05"
           },
           {
@@ -552,8 +560,8 @@
             "lastUpdated": "2026-03-05"
           }
         ],
-        "count": 2,
-        "avgLevel": 4.5
+        "count": 3,
+        "avgLevel": 4.7
       }
     },
     "tree": {
@@ -670,14 +678,6 @@
             "description": "投资理财全流程：股票分析、投资组合、财务决策",
             "skills": [
               {
-                "name": "stock-analysis",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 91,
-                "description": "股票和加密货币分析，投资组合管理，定期报告",
-                "lastUpdated": "2026-02-25"
-              },
-              {
                 "name": "investment-tracker",
                 "source": "林克核心能力",
                 "level": 4,
@@ -686,20 +686,28 @@
                 "lastUpdated": "2026-03-03"
               },
               {
-                "name": "investment-analyzer",
+                "name": "stock-analysis",
                 "source": "Claude技能库",
                 "level": 3,
-                "exp": 58,
+                "exp": 81,
+                "description": "股票和加密货币分析，投资组合管理，定期报告",
+                "lastUpdated": "2026-02-25"
+              },
+              {
+                "name": "investment-analyzer",
+                "source": "Claude技能库",
+                "level": 2,
+                "exp": 48,
                 "description": "投资机会分析，跨资产类别评估和风险分析",
                 "lastUpdated": "2026-02-25"
               }
             ],
             "count": 3,
-            "avgLevel": 3.7
+            "avgLevel": 3.0
           }
         },
         "count": 4,
-        "avgLevel": 3.8
+        "avgLevel": 3.2
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -846,7 +854,7 @@
                 "name": "web-dev-workflow",
                 "source": "林克核心能力",
                 "level": 4,
-                "exp": 76,
+                "exp": 79,
                 "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
                 "lastUpdated": "2026-03-02"
               },
@@ -935,14 +943,14 @@
               {
                 "name": "github-deploy-publisher",
                 "source": "林克核心能力",
-                "level": 4,
-                "exp": 76,
+                "level": 3,
+                "exp": 66,
                 "description": "自动化GitHub仓库创建、代码提交、Pages部署",
                 "lastUpdated": "2026-02-25"
               }
             ],
             "count": 1,
-            "avgLevel": 4.0
+            "avgLevel": 3.0
           },
           "💬 消息通信": {
             "icon": "💬",
@@ -1011,14 +1019,14 @@
               {
                 "name": "personal-assistant",
                 "source": "Claude技能库",
-                "level": 4,
-                "exp": 84,
+                "level": 3,
+                "exp": 74,
                 "description": "个人助理能力，日程管理、任务追踪、习惯监控",
                 "lastUpdated": "2026-02-25"
               }
             ],
             "count": 1,
-            "avgLevel": 4.0
+            "avgLevel": 3.0
           },
           "🔧 开发规范": {
             "icon": "🔧",
@@ -1088,6 +1096,14 @@
                 "level": 5,
                 "exp": 95,
                 "description": "---",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "essence-insight",
+                "source": "codeflicker",
+                "level": 5,
+                "exp": 85,
+                "description": "---",
                 "lastUpdated": "2026-03-05"
               },
               {
@@ -1099,11 +1115,11 @@
                 "lastUpdated": "2026-03-05"
               }
             ],
-            "count": 2,
-            "avgLevel": 4.5
+            "count": 3,
+            "avgLevel": 4.7
           }
         },
-        "count": 37,
+        "count": 38,
         "avgLevel": 3.6
       }
     }
@@ -1118,7 +1134,7 @@
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
-        "recentCount": 126
+        "recentCount": 39
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -1128,7 +1144,7 @@
         "fileCount": 18,
         "sizeKB": 115.5,
         "heatLevel": 5,
-        "recentCount": 18
+        "recentCount": 3
       },
       "self-evolution": {
         "name": "self-evolution",
@@ -1245,6 +1261,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "CSS样式重构兼容性检查清单",
+        "category": "development_practice_specification",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "### 样式重构时的兼容性检查清单 **问题场景**： 添加新样式系统时，与旧样式冲突导致布局错乱。 **案例**： 进化历程板块： - 旧样式：左侧时间...",
+        "keywords": [
+          "CSS",
+          "样式重构",
+          "兼容性",
+          "布局",
+          "冲突"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "GitHub Pages 部署锁冲突问题及修复方案",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
@@ -1264,22 +1299,41 @@
         "source": "用户显式记录"
       },
       {
-        "title": "KIM Doc 样式设置限制（调研结论）",
+        "title": "HTML截图到Docs文档的踩坑经验",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
+        "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "## KIM Doc 样式设置限制 ### 调研结论（2026-03-05） **KIM开放平台API现状**： - ✅ 消息相关API：发送消息、撤回消...",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 ### 失败方案 Chrome headless的`--window-siz...",
         "keywords": [
-          "KIM Doc",
-          "表格样式",
-          "API限制",
-          "docs-shuttle",
-          "手动设置"
+          "HTML截图",
+          "Docs文档",
+          "Puppeteer",
+          "Chrome headless",
+          "图片裁剪"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-04",
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "专栏/系列内容创作踩坑：先设计后执行",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "内容创作",
+        "layer": "🛠️ 领域层",
+        "icon": "✍️",
+        "color": "#f59e0b",
+        "description": "## 专栏/系列内容创作踩坑：直接写内容 vs 先做体系设计 ### 问题描述 养了个AI专栏第0期做了3版： - v1: 直接按用户要求写6个实战场景 ...",
+        "keywords": [
+          "专栏",
+          "系列",
+          "体系设计",
+          "踩坑",
+          "内容创作"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -1296,6 +1350,44 @@
           "个人助理",
           "projects",
           "bots"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "五层思考框架：从执行到战略",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "## 五层思考框架：从执行到战略 ### 问题背景 同一个任务做了两遍都不对，直到上升到战略层思考才做对。这揭示了一个普遍模式：**问题往往不在当前层，而...",
+        "keywords": [
+          "五层",
+          "战略",
+          "设计",
+          "执行",
+          "层次"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "元能力：本质洞察力（触发器）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "## 元能力：本质洞察力 **定义**：在某个领域积累到一定知识后，能够透过现象看本质的元能力。 **核心原则**：如果你真的看到了本质，那它一定能被类比...",
+        "keywords": [
+          "本质洞察",
+          "元能力",
+          "透视",
+          "规律",
+          "动机"
         ],
         "importance": 5,
         "updatedAt": "2026-03-05",
@@ -1340,6 +1432,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "图片越界问题的定位方法",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## 问题现象 用户报告\"图片越界\"或\"白底太短\"，内容超出了卡片的白色背景范围。 ## 问题本质 - 不是整体截图高度不够 - 而是白色卡片(.card...",
+        "keywords": [
+          "图片越界",
+          "白底太短",
+          "card高度",
+          "定位问题",
+          "先定位后修改"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "技能与记忆分类原则（默认使用）",
         "category": "development_practice_specification",
         "categoryLabel": "工作模式",
@@ -1375,6 +1486,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "深度调研报告格式规范",
+        "category": "development_practice_specification",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "## 深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： ### 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
+        "keywords": [
+          "深度调研",
+          "报告格式",
+          "彩蛋",
+          "了解更多",
+          "AI洞察"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -1416,6 +1546,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "清爽调研报告风格：Tab导航是强制组件，不是TOC",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## 清爽调研报告风格的导航规范 ### 核心问题 **目录（TOC）+ 锚点跳转 ≠ Tab导航 + 面板切换** 这是两种完全不同的导航模式： 1. ...",
+        "keywords": [
+          "清爽调研报告",
+          "Tab导航",
+          "TOC",
+          "锚点跳转",
+          "面板切换"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "目录重构完整自检清单",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
@@ -1451,6 +1600,44 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "能力树视觉重构经验（三树差异化+径向布局）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "## 能力树视觉重构经验（2026-03-05） ### 三树差异化设计模式 | 数据类型 | 推荐风格 | 核心特征 | |----------|---...",
+        "keywords": [
+          "能力树",
+          "技能树",
+          "知识树",
+          "记忆树",
+          "径向布局"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "记忆→技能沉淀整合任务（待执行）",
+        "category": "task_flow_experience",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "## 记忆→技能沉淀整合任务（待执行） ### 背景 2026-03-05 复盘 KIM Doc 记忆整合时发现：存在大量\"精简版\"记忆只是指向技能的指针...",
+        "keywords": [
+          "记忆整合",
+          "技能沉淀",
+          "精简版",
+          "清理任务",
+          "每日修炼"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -1606,6 +1793,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "CSS闭合括号缺失导致连锁失效",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "### CSS语法错误的连锁反应 **问题模式**： - CSS选择器缺少闭合 `}`，导致后续所有规则被当作该选择器的属性而被忽略 - 表现：部分样式生...",
+        "keywords": [
+          "CSS",
+          "语法错误",
+          "括号",
+          "闭合",
+          "样式失效"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "Chrome Headless 截图问题",
         "category": "common_pitfalls_experience",
         "categoryLabel": "内容创作",
@@ -1701,6 +1907,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "体系化任务的识别与前置设计",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "## 体系化任务的识别与前置设计 ### 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
+        "keywords": [
+          "体系化",
+          "设计",
+          "专栏",
+          "系列",
+          "规划"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "分类优化未自动发现的根因与修复",
         "category": "common_pitfalls_experience",
         "categoryLabel": "领域踩坑",
@@ -1774,6 +1999,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "展示型页面的时效性优化模式",
+        "category": "task_flow_experience",
+        "categoryLabel": "AI领域洞察",
+        "layer": "🎯 领域技能包",
+        "icon": "🔍",
+        "color": "#8b5cf6",
+        "description": "### 产品化优化三板斧：时效性 > 完整性 **核心洞察**： 用户访问展示型页面时，最关心的不是\"你有什么\"，而是\"今天变了什么\"。 **优化思路**...",
+        "keywords": [
+          "产品思维",
+          "时效性",
+          "展示页",
+          "首页",
+          "用户体验"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -1926,6 +2170,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "用户强调需求的必检机制",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "领域踩坑",
+        "layer": null,
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 用户强调需求遗漏问题 ### 问题描述 在能力树重构任务中，用户明确强调\"保留tooltip中的如何升级提示\"，但第一版提交时仍然遗漏。 ### 根...",
+        "keywords": [
+          "需求遗漏",
+          "用户强调",
+          "必检项",
+          "P0检查",
+          "tooltip"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -2263,24 +2526,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "KIM Doc格式规范（精简版）",
-        "category": "development_practice_specification",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 领域层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
-        "keywords": [
-          "KIM Doc",
-          "ks-kim-docs-shuttle技能",
-          "表格样式",
-          "手动设置"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "KIM开放能力接入踩坑（精简版）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
@@ -2439,6 +2684,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "流程经验: CodeFlicker Skill Documentation Update",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力/工作模式",
+        "layer": null,
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "发现可复用模式: 新增了11.3章节详细说明Skill从60分到90分的打磨方法论，包含四个阶段说明和三个关键句式。完成了文档结构调整（标题层级优化）和2...",
+        "keywords": [
+          "优化",
+          "经验",
+          "流程",
+          "方法"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "流程经验: Daily Task Reflection Process Improvement",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -2506,10 +2769,10 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 70,
+    "total": 83,
     "byCategory": {
       "development_practice_specification": {
-        "count": 8,
+        "count": 9,
         "label": "工作模式",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2530,7 +2793,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 23,
+        "count": 30,
         "label": "思维能力",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2551,7 +2814,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 23,
+        "count": 28,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -3022,6 +3285,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "元能力：本质洞察力（触发器）",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "## 元能力：本质洞察力 **定义**：在某个领域积累到一定知识后，能够透过现象看本质的元能力。 **核心原则**：如果你真的看到了本质，那它一定能被类比...",
+                "keywords": [
+                  "本质洞察",
+                  "元能力",
+                  "透视",
+                  "规律",
+                  "动机"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "每日修炼触发配置",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
@@ -3136,7 +3418,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 13
+            "count": 14
           },
           "工作模式": {
             "icon": "⚙️",
@@ -3288,12 +3570,50 @@
                 "importance": 5,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "记忆→技能沉淀整合任务（待执行）",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 记忆→技能沉淀整合任务（待执行） ### 背景 2026-03-05 复盘 KIM Doc 记忆整合时发现：存在大量\"精简版\"记忆只是指向技能的指针...",
+                "keywords": [
+                  "记忆整合",
+                  "技能沉淀",
+                  "精简版",
+                  "清理任务",
+                  "每日修炼"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "深度调研报告格式规范",
+                "category": "development_practice_specification",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 能力层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： ### 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
+                "keywords": [
+                  "深度调研",
+                  "报告格式",
+                  "彩蛋",
+                  "了解更多",
+                  "AI洞察"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
               }
             ],
-            "count": 8
+            "count": 10
           }
         },
-        "count": 21
+        "count": 24
       },
       "🎯 领域技能包": {
         "icon": "🎯",
@@ -3356,12 +3676,31 @@
                 "importance": 3,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "展示型页面的时效性优化模式",
+                "category": "task_flow_experience",
+                "categoryLabel": "AI领域洞察",
+                "layer": "🎯 领域技能包",
+                "icon": "🔍",
+                "color": "#8b5cf6",
+                "description": "### 产品化优化三板斧：时效性 > 完整性 **核心洞察**： 用户访问展示型页面时，最关心的不是\"你有什么\"，而是\"今天变了什么\"。 **优化思路**...",
+                "keywords": [
+                  "产品思维",
+                  "时效性",
+                  "展示页",
+                  "首页",
+                  "用户体验"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 4
           }
         },
-        "count": 3
+        "count": 4
       },
       "🛠️ 领域层": {
         "icon": "🛠️",
@@ -3542,6 +3881,63 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "CSS闭合括号缺失导致连锁失效",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "### CSS语法错误的连锁反应 **问题模式**： - CSS选择器缺少闭合 `}`，导致后续所有规则被当作该选择器的属性而被忽略 - 表现：部分样式生...",
+                "keywords": [
+                  "CSS",
+                  "语法错误",
+                  "括号",
+                  "闭合",
+                  "样式失效"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "CSS样式重构兼容性检查清单",
+                "category": "development_practice_specification",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "### 样式重构时的兼容性检查清单 **问题场景**： 添加新样式系统时，与旧样式冲突导致布局错乱。 **案例**： 进化历程板块： - 旧样式：左侧时间...",
+                "keywords": [
+                  "CSS",
+                  "样式重构",
+                  "兼容性",
+                  "布局",
+                  "冲突"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "图片越界问题的定位方法",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 问题现象 用户报告\"图片越界\"或\"白底太短\"，内容超出了卡片的白色背景范围。 ## 问题本质 - 不是整体截图高度不够 - 而是白色卡片(.card...",
+                "keywords": [
+                  "图片越界",
+                  "白底太短",
+                  "card高度",
+                  "定位问题",
+                  "先定位后修改"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -3558,6 +3954,44 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-04",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "清爽调研报告风格：Tab导航是强制组件，不是TOC",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 清爽调研报告风格的导航规范 ### 核心问题 **目录（TOC）+ 锚点跳转 ≠ Tab导航 + 面板切换** 这是两种完全不同的导航模式： 1. ...",
+                "keywords": [
+                  "清爽调研报告",
+                  "Tab导航",
+                  "TOC",
+                  "锚点跳转",
+                  "面板切换"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "HTML截图到Docs文档的踩坑经验",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 ### 失败方案 Chrome headless的`--window-siz...",
+                "keywords": [
+                  "HTML截图",
+                  "Docs文档",
+                  "Puppeteer",
+                  "Chrome headless",
+                  "图片裁剪"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
               },
               {
@@ -3580,7 +4014,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 11
+            "count": 16
           },
           "发布部署": {
             "icon": "🚀",
@@ -3725,46 +4159,9 @@
                 "importance": 4,
                 "updatedAt": "2026-03-03",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "KIM Doc格式规范（精简版）",
-                "category": "development_practice_specification",
-                "categoryLabel": "文档处理",
-                "layer": "🛠️ 领域层",
-                "icon": "📄",
-                "color": "#38bdf8",
-                "description": "KIM Doc完整格式指南详见ks-kim-docs-shuttle技能：`~/.codeflicker/skills/ks-kim-docs-shutt...",
-                "keywords": [
-                  "KIM Doc",
-                  "ks-kim-docs-shuttle技能",
-                  "表格样式",
-                  "手动设置"
-                ],
-                "importance": 3,
-                "updatedAt": "2026-03-04",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "KIM Doc 样式设置限制（调研结论）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "文档处理",
-                "layer": "🛠️ 领域层",
-                "icon": "📄",
-                "color": "#38bdf8",
-                "description": "## KIM Doc 样式设置限制 ### 调研结论（2026-03-05） **KIM开放平台API现状**： - ✅ 消息相关API：发送消息、撤回消...",
-                "keywords": [
-                  "KIM Doc",
-                  "表格样式",
-                  "API限制",
-                  "docs-shuttle",
-                  "手动设置"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-04",
-                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 2
           },
           "消息通信": {
             "icon": "💬",
@@ -3869,9 +4266,28 @@
                 "importance": 4,
                 "updatedAt": "2026-03-03",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "专栏/系列内容创作踩坑：先设计后执行",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "内容创作",
+                "layer": "🛠️ 领域层",
+                "icon": "✍️",
+                "color": "#f59e0b",
+                "description": "## 专栏/系列内容创作踩坑：直接写内容 vs 先做体系设计 ### 问题描述 养了个AI专栏第0期做了3版： - v1: 直接按用户要求写6个实战场景 ...",
+                "keywords": [
+                  "专栏",
+                  "系列",
+                  "体系设计",
+                  "踩坑",
+                  "内容创作"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "脚本自动化": {
             "icon": "⚡",
@@ -3920,7 +4336,7 @@
             "count": 2
           }
         },
-        "count": 27
+        "count": 31
       },
       "📚 项目层": {
         "icon": "📚",
@@ -3933,7 +4349,6 @@
   },
   "growthHistory": {
     "dates": [
-      "02-26",
       "02-27",
       "02-28",
       "03-01",
@@ -3946,10 +4361,10 @@
       "03-03",
       "03-04",
       "03-04",
+      "03-05",
       "03-05"
     ],
     "skills": [
-      30,
       30,
       30,
       32,
@@ -3962,10 +4377,10 @@
       42,
       42,
       42,
-      43
+      43,
+      44
     ],
     "knowledge": [
-      150,
       150,
       150,
       150,
@@ -3978,10 +4393,10 @@
       152,
       152,
       152,
+      152,
       152
     ],
     "memories": [
-      19,
       19,
       19,
       20,
@@ -3994,7 +4409,8 @@
       65,
       65,
       65,
-      69
+      69,
+      83
     ]
   },
   "achievements": [
@@ -4025,7 +4441,7 @@
       "name": "知识贤者",
       "desc": "积累162个知识文档，博学多识",
       "icon": "📚",
-      "date": "2026-03-05",
+      "date": "2026-03-06",
       "unlocked": true,
       "progress": 100,
       "rarity": "epic",
@@ -4078,9 +4494,9 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有47项技能，触类旁通",
+      "desc": "拥有48项技能，触类旁通",
       "icon": "⚡",
-      "date": "2026-03-05",
+      "date": "2026-03-06",
       "unlocked": true,
       "progress": 100,
       "rarity": "rare",
@@ -4095,8 +4511,8 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "70/30",
-      "date": "2026-03-05"
+      "progressText": "83/30",
+      "date": "2026-03-06"
     },
     {
       "id": "first_awakening",
@@ -4139,8 +4555,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 94,
-      "progressText": "47/50",
+      "progress": 96,
+      "progressText": "48/50",
       "date": "???"
     },
     {

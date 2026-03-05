@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-06T06:06:36.602201",
+  "generatedAt": "2026-03-06T06:54:41.652973",
   "character": {
     "name": "LINK",
     "title": "单虓晗的数字分身",
     "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 10070,
-    "expProgress": 51.7,
+    "totalExp": 10120,
+    "expProgress": 53.0,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -1318,6 +1318,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "Meta-Execution 默认工作模式（含每日修炼强制绑定）",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" - *...",
+        "keywords": [
+          "Meta-Execution",
+          "元技能",
+          "默认工作模式",
+          "P0",
+          "P1"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
         "title": "专栏/系列内容创作踩坑：先设计后执行",
         "category": "common_pitfalls_experience",
         "categoryLabel": "内容创作",
@@ -1467,6 +1486,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "每日修炼执行纪律 v2.0（强制绑定meta-execution）",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "## 每日修炼执行纪律 v2.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
+        "keywords": [
+          "每日修炼",
+          "执行纪律",
+          "meta-execution",
+          "强制绑定",
+          "验收标准"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -1812,25 +1850,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "Meta-Execution 默认工作模式",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "👤 用户层",
-        "icon": "🚫",
-        "color": "#dc2626",
-        "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" 当用户...",
-        "keywords": [
-          "Meta-Execution",
-          "元技能",
-          "默认工作模式",
-          "P0",
-          "P1"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "SVG响应式三属性规范（width+min-width+max-width）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2075,6 +2094,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "文档章节与配图同步更新规则",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## 文档配图同步更新规则 每次修改文档章节内容时，必须同步更新对应的配图： 1. **检查章节标题变化**：如果章节标题或定位发生变化，配图需要重新设计...",
+        "keywords": [
+          "配图",
+          "同步",
+          "更新",
+          "文档",
+          "章节"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
         "source": "用户显式记录"
       },
       {
@@ -2476,24 +2514,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "每日修炼执行纪律",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "👤 用户层",
-        "icon": "🚫",
-        "color": "#dc2626",
-        "description": "## 每日修炼执行纪律 ### 触发词 ``` 每日修炼 ``` ### 核心原则 1. **遇到优化建议直接执行**：不需要问用户，按自己判断做 2. ...",
-        "keywords": [
-          "每日修炼",
-          "执行纪律",
-          "自主执行",
-          "优化建议"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "流程经验: AI Assistant Skills Update and Documentation",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力/工作模式",
@@ -2596,7 +2616,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 73,
+    "total": 74,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -2641,7 +2661,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 24,
+        "count": 25,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -2873,13 +2893,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "Meta-Execution 默认工作模式",
+                "title": "Meta-Execution 默认工作模式（含每日修炼强制绑定）",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "👤 用户层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" 当用户...",
+                "description": "## Meta-Execution 默认工作模式 ### 触发词 - \"一次把事情做对\" - \"Meta-Execution\" - \"严格工作流\" - *...",
                 "keywords": [
                   "Meta-Execution",
                   "元技能",
@@ -2887,8 +2907,8 @@
                   "P0",
                   "P1"
                 ],
-                "importance": 4,
-                "updatedAt": "2026-03-04",
+                "importance": 5,
+                "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
               },
               {
@@ -2930,21 +2950,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼执行纪律",
+                "title": "每日修炼执行纪律 v2.0（强制绑定meta-execution）",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "👤 用户层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 每日修炼执行纪律 ### 触发词 ``` 每日修炼 ``` ### 核心原则 1. **遇到优化建议直接执行**：不需要问用户，按自己判断做 2. ...",
+                "description": "## 每日修炼执行纪律 v2.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
                 "keywords": [
                   "每日修炼",
                   "执行纪律",
-                  "自主执行",
-                  "优化建议"
+                  "meta-execution",
+                  "强制绑定",
+                  "验收标准"
                 ],
-                "importance": 3,
-                "updatedAt": "2026-03-04",
+                "importance": 5,
+                "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
               },
               {
@@ -3662,6 +3683,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "文档章节与配图同步更新规则",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 文档配图同步更新规则 每次修改文档章节内容时，必须同步更新对应的配图： 1. **检查章节标题变化**：如果章节标题或定位发生变化，配图需要重新设计...",
+                "keywords": [
+                  "配图",
+                  "同步",
+                  "更新",
+                  "文档",
+                  "章节"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -3738,7 +3778,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 15
+            "count": 16
           },
           "发布部署": {
             "icon": "🚀",
@@ -3990,7 +4030,7 @@
             "count": 2
           }
         },
-        "count": 26
+        "count": 27
       },
       "📚 项目层": {
         "icon": "📚",
@@ -4003,7 +4043,6 @@
   },
   "growthHistory": {
     "dates": [
-      "02-28",
       "03-01",
       "03-02",
       "03-03",
@@ -4016,10 +4055,10 @@
       "03-04",
       "03-05",
       "03-05",
+      "03-05",
       "03-05"
     ],
     "skills": [
-      30,
       32,
       39,
       40,
@@ -4032,10 +4071,10 @@
       42,
       43,
       44,
+      44,
       44
     ],
     "knowledge": [
-      150,
       150,
       150,
       151,
@@ -4048,10 +4087,10 @@
       152,
       152,
       152,
+      152,
       152
     ],
     "memories": [
-      19,
       20,
       38,
       52,
@@ -4064,7 +4103,8 @@
       65,
       69,
       83,
-      73
+      73,
+      74
     ]
   },
   "achievements": [
@@ -4165,7 +4205,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "73/30",
+      "progressText": "74/30",
       "date": "2026-03-06"
     },
     {

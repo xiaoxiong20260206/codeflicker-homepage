@@ -3325,8 +3325,10 @@ function renderEvolutionTimeline() {
         
         return `
             <div class="evolution-item ${statusClass}">
-                <div class="evolution-version">${version}</div>
-                <div class="evolution-date">${dateDisplay}</div>
+                <div class="evolution-header-inline">
+                    <span class="evolution-version">${version}</span>
+                    <span class="evolution-date">${dateDisplay}</span>
+                </div>
                 <div class="evolution-content">
                     <div class="evolution-name">${stage.icon} ${stage.name}</div>
                     <div class="evolution-subtitle-tag">${stage.subtitle || ''}</div>

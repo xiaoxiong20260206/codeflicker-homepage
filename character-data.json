@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-06T10:42:41.984281",
+  "generatedAt": "2026-03-06T11:51:39.253767",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 10020,
-    "expProgress": 50.5,
+    "totalExp": 10270,
+    "expProgress": 56.8,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 95.6,
-      "insight": 79.31372549019608,
-      "creativity": 72
+      "insight": 79.23076923076923,
+      "creativity": 80
     }
   },
   "skills": {
-    "total": 51,
+    "total": 52,
     "categories": {
       "🧠 思维能力": {
         "icon": "🧠",
@@ -37,6 +37,14 @@
             "lastUpdated": "2026-03-02"
           },
           {
+            "name": "essence-insight",
+            "source": "codeflicker",
+            "level": 5,
+            "exp": 85,
+            "description": "---",
+            "lastUpdated": "2026-03-05"
+          },
+          {
             "name": "neigong-cultivation",
             "source": "林克核心能力",
             "level": 4,
@@ -45,11 +53,43 @@
             "lastUpdated": "2026-03-04"
           },
           {
+            "name": "product-thinking",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 70,
+            "description": "---",
+            "lastUpdated": "2026-03-05"
+          },
+          {
             "name": "meta-execution",
             "source": "林克核心能力",
             "level": 3,
             "exp": 64,
             "description": "元执行框架：一次把事情做对的自审机制",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "memory-hygiene",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 58,
+            "description": "---",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "skill-architecture",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 58,
+            "description": "---",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "knowledge-curator",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 58,
+            "description": "---",
             "lastUpdated": "2026-03-06"
           },
           {
@@ -61,8 +101,8 @@
             "lastUpdated": "2026-02-24"
           }
         ],
-        "count": 4,
-        "avgLevel": 3.5
+        "count": 9,
+        "avgLevel": 3.6
       },
       "⚙️ 工作模式": {
         "icon": "⚙️",
@@ -289,6 +329,14 @@
         "description": "页面开发与设计：UI/UX、组件、工作流",
         "skills": [
           {
+            "name": "ui-ux-pro-max-skill",
+            "source": "codeflicker",
+            "level": 5,
+            "exp": 95,
+            "description": "---",
+            "lastUpdated": "2026-03-06"
+          },
+          {
             "name": "web-dev-workflow",
             "source": "林克核心能力",
             "level": 4,
@@ -329,8 +377,8 @@
             "lastUpdated": "2026-02-08"
           }
         ],
-        "count": 5,
-        "avgLevel": 3.6
+        "count": 6,
+        "avgLevel": 3.8
       },
       "🎭 风格模板": {
         "icon": "🎭",
@@ -341,8 +389,8 @@
           {
             "name": "zelda-style",
             "source": "林克核心能力",
-            "level": 4,
-            "exp": 82,
+            "level": 5,
+            "exp": 85,
             "description": "塞尔达·旷野之息风格页面设计规范",
             "lastUpdated": "2026-03-01"
           },
@@ -372,7 +420,7 @@
           }
         ],
         "count": 4,
-        "avgLevel": 3.8
+        "avgLevel": 4.0
       },
       "📤 发布部署": {
         "icon": "🚀",
@@ -536,56 +584,16 @@
         "layer": "execution",
         "skills": [
           {
-            "name": "ui-ux-pro-max-skill",
+            "name": "knowledge-acquisition-meta",
             "source": "codeflicker",
-            "level": 5,
-            "exp": 95,
-            "description": "---",
-            "lastUpdated": "2026-03-06"
-          },
-          {
-            "name": "essence-insight",
-            "source": "codeflicker",
-            "level": 5,
-            "exp": 85,
-            "description": "---",
-            "lastUpdated": "2026-03-05"
-          },
-          {
-            "name": "product-thinking",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 70,
-            "description": "---",
-            "lastUpdated": "2026-03-05"
-          },
-          {
-            "name": "skill-architecture",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 58,
-            "description": "---",
-            "lastUpdated": "2026-03-06"
-          },
-          {
-            "name": "memory-hygiene",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 58,
-            "description": "---",
-            "lastUpdated": "2026-03-06"
-          },
-          {
-            "name": "knowledge-curator",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 58,
-            "description": "---",
+            "level": 2,
+            "exp": 36,
+            "description": "knowledge-acquisition-meta 技能",
             "lastUpdated": "2026-03-06"
           }
         ],
-        "count": 6,
-        "avgLevel": 3.8
+        "count": 1,
+        "avgLevel": 2.0
       }
     },
     "tree": {
@@ -609,6 +617,14 @@
                 "lastUpdated": "2026-03-02"
               },
               {
+                "name": "essence-insight",
+                "source": "codeflicker",
+                "level": 5,
+                "exp": 85,
+                "description": "---",
+                "lastUpdated": "2026-03-05"
+              },
+              {
                 "name": "neigong-cultivation",
                 "source": "林克核心能力",
                 "level": 4,
@@ -617,11 +633,43 @@
                 "lastUpdated": "2026-03-04"
               },
               {
+                "name": "product-thinking",
+                "source": "codeflicker",
+                "level": 4,
+                "exp": 70,
+                "description": "---",
+                "lastUpdated": "2026-03-05"
+              },
+              {
                 "name": "meta-execution",
                 "source": "林克核心能力",
                 "level": 3,
                 "exp": 64,
                 "description": "元执行框架：一次把事情做对的自审机制",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "memory-hygiene",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 58,
+                "description": "---",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "skill-architecture",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 58,
+                "description": "---",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "knowledge-curator",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 58,
+                "description": "---",
                 "lastUpdated": "2026-03-06"
               },
               {
@@ -633,8 +681,8 @@
                 "lastUpdated": "2026-02-24"
               }
             ],
-            "count": 4,
-            "avgLevel": 3.5
+            "count": 9,
+            "avgLevel": 3.6
           },
           "⚙️ 工作模式": {
             "icon": "⚙️",
@@ -670,8 +718,8 @@
             "avgLevel": 3.0
           }
         },
-        "count": 7,
-        "avgLevel": 3.3
+        "count": 12,
+        "avgLevel": 3.4
       },
       "domain_pack": {
         "name": "🎯 领域技能包",
@@ -875,6 +923,14 @@
             "description": "页面开发与设计：UI/UX、组件、工作流",
             "skills": [
               {
+                "name": "ui-ux-pro-max-skill",
+                "source": "codeflicker",
+                "level": 5,
+                "exp": 95,
+                "description": "---",
+                "lastUpdated": "2026-03-06"
+              },
+              {
                 "name": "web-dev-workflow",
                 "source": "林克核心能力",
                 "level": 4,
@@ -915,8 +971,8 @@
                 "lastUpdated": "2026-02-08"
               }
             ],
-            "count": 5,
-            "avgLevel": 3.6
+            "count": 6,
+            "avgLevel": 3.8
           },
           "🎭 风格模板": {
             "icon": "🎭",
@@ -926,8 +982,8 @@
               {
                 "name": "zelda-style",
                 "source": "林克核心能力",
-                "level": 4,
-                "exp": 82,
+                "level": 5,
+                "exp": 85,
                 "description": "塞尔达·旷野之息风格页面设计规范",
                 "lastUpdated": "2026-03-01"
               },
@@ -957,7 +1013,7 @@
               }
             ],
             "count": 4,
-            "avgLevel": 3.8
+            "avgLevel": 4.0
           },
           "📤 发布部署": {
             "icon": "🚀",
@@ -1115,59 +1171,19 @@
             "layer": "execution",
             "skills": [
               {
-                "name": "ui-ux-pro-max-skill",
+                "name": "knowledge-acquisition-meta",
                 "source": "codeflicker",
-                "level": 5,
-                "exp": 95,
-                "description": "---",
-                "lastUpdated": "2026-03-06"
-              },
-              {
-                "name": "essence-insight",
-                "source": "codeflicker",
-                "level": 5,
-                "exp": 85,
-                "description": "---",
-                "lastUpdated": "2026-03-05"
-              },
-              {
-                "name": "product-thinking",
-                "source": "codeflicker",
-                "level": 4,
-                "exp": 70,
-                "description": "---",
-                "lastUpdated": "2026-03-05"
-              },
-              {
-                "name": "skill-architecture",
-                "source": "codeflicker",
-                "level": 3,
-                "exp": 58,
-                "description": "---",
-                "lastUpdated": "2026-03-06"
-              },
-              {
-                "name": "memory-hygiene",
-                "source": "codeflicker",
-                "level": 3,
-                "exp": 58,
-                "description": "---",
-                "lastUpdated": "2026-03-06"
-              },
-              {
-                "name": "knowledge-curator",
-                "source": "codeflicker",
-                "level": 3,
-                "exp": 58,
-                "description": "---",
+                "level": 2,
+                "exp": 36,
+                "description": "knowledge-acquisition-meta 技能",
                 "lastUpdated": "2026-03-06"
               }
             ],
-            "count": 6,
-            "avgLevel": 3.8
+            "count": 1,
+            "avgLevel": 2.0
           }
         },
-        "count": 41,
+        "count": 37,
         "avgLevel": 3.5
       }
     }
@@ -1213,6 +1229,16 @@
         "sizeKB": 21.3,
         "heatLevel": 2,
         "recentCount": 1
+      },
+      "ai-insight": {
+        "name": "ai-insight",
+        "icon": "🔍",
+        "color": "#8b5cf6",
+        "description": "AI领域持续洞察：日报、深度调研、追踪体系",
+        "fileCount": 0,
+        "sizeKB": 0.0,
+        "heatLevel": 1,
+        "recentCount": 0
       }
     },
     "totalFiles": 152,
@@ -1260,11 +1286,11 @@
       },
       {
         "title": "AI洞察项目版本体系定义（内部版/public/外部版）",
-        "category": "project_configuration",
-        "categoryLabel": "项目配置",
-        "layer": "📚 项目层",
-        "icon": "🔧",
-        "color": "#f97316",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "## AI洞察项目版本体系定义 ### 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | |------|---------|-------...",
         "keywords": [
           "外部版",
@@ -1370,6 +1396,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "技能/知识库分类配置漂移问题",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类或默认图标，而不是正确的语义分类。 **根因**：分类配置信息存在多处（违反单一数据源原则）： ...",
+        "keywords": [
+          "配置漂移",
+          "技能分类",
+          "知识库分类",
+          "首页",
+          "其他"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -1570,6 +1615,25 @@
         "icon": "🚀",
         "color": "#4ade80",
         "description": "## 部署验证完整经验（合并版） ### 1. 缓存破坏 - URL添加时间戳：`?v=${Date.now()}` - 强制刷新：Ctrl+Shift+...",
+        "keywords": [
+          "部署",
+          "验证",
+          "缓存",
+          "GitHub Pages",
+          "锁冲突"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "部署验证完整经验（合并版）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## 部署验证完整经验（合并版） ### 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
         "keywords": [
           "部署",
           "验证",
@@ -1867,7 +1931,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "元能力：本质洞察力（触发器）",
+        "title": "元能力：本质洞察力（含五层框架）",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
         "layer": "🧠 能力层",
@@ -2283,6 +2347,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "踩坑记忆召回失败模式",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "**问题**：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 **案例**： 1. 技能分类配置漂移：记忆c8ed1b25c0f84f08已存在，但...",
+        "keywords": [
+          "记忆召回",
+          "踩坑复现",
+          "执行前检索",
+          "记忆应用率",
+          "被动记忆"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "身份保密规则",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -2508,7 +2591,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 68,
+    "total": 71,
     "byCategory": {
       "development_practice_specification": {
         "count": 9,
@@ -2553,7 +2636,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 20,
+        "count": 24,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -2565,13 +2648,6 @@
         "icon": "🔍",
         "color": "#8b5cf6",
         "description": "日报/周报/深度调研/追踪体系"
-      },
-      "project_configuration": {
-        "count": 1,
-        "label": "项目配置",
-        "icon": "🔧",
-        "color": "#f97316",
-        "description": "技术栈、环境配置"
       }
     },
     "tree": {
@@ -3035,7 +3111,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "元能力：本质洞察力（触发器）",
+                "title": "元能力：本质洞察力（含五层框架）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
                 "layer": "🧠 能力层",
@@ -3586,6 +3662,44 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "技能/知识库分类配置漂移问题",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类或默认图标，而不是正确的语义分类。 **根因**：分类配置信息存在多处（违反单一数据源原则）： ...",
+                "keywords": [
+                  "配置漂移",
+                  "技能分类",
+                  "知识库分类",
+                  "首页",
+                  "其他"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "踩坑记忆召回失败模式",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "**问题**：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 **案例**： 1. 技能分类配置漂移：记忆c8ed1b25c0f84f08已存在，但...",
+                "keywords": [
+                  "记忆召回",
+                  "踩坑复现",
+                  "执行前检索",
+                  "记忆应用率",
+                  "被动记忆"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -3643,6 +3757,44 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "AI洞察项目版本体系定义（内部版/public/外部版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## AI洞察项目版本体系定义 ### 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | |------|---------|-------...",
+                "keywords": [
+                  "外部版",
+                  "内部版",
+                  "版本同步",
+                  "ai-insight-public",
+                  "脱敏"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "部署验证完整经验（合并版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 部署验证完整经验（合并版） ### 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
+                "keywords": [
+                  "部署",
+                  "验证",
+                  "缓存",
+                  "GitHub Pages",
+                  "锁冲突"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -3662,7 +3814,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 16
+            "count": 20
           },
           "发布部署": {
             "icon": "🚀",
@@ -3857,48 +4009,19 @@
             "count": 2
           }
         },
-        "count": 24
+        "count": 28
       },
       "📚 项目层": {
         "icon": "📚",
         "color": "#c2410c",
         "description": "具体项目的知识",
-        "children": {
-          "项目配置": {
-            "icon": "🔧",
-            "color": "#f97316",
-            "description": "技术栈、环境配置",
-            "items": [
-              {
-                "title": "AI洞察项目版本体系定义（内部版/public/外部版）",
-                "category": "project_configuration",
-                "categoryLabel": "项目配置",
-                "layer": "📚 项目层",
-                "icon": "🔧",
-                "color": "#f97316",
-                "description": "## AI洞察项目版本体系定义 ### 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | |------|---------|-------...",
-                "keywords": [
-                  "外部版",
-                  "内部版",
-                  "版本同步",
-                  "ai-insight-public",
-                  "脱敏"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-06",
-                "source": "用户显式记录"
-              }
-            ],
-            "count": 1
-          }
-        },
-        "count": 1
+        "children": {},
+        "count": 0
       }
     }
   },
   "growthHistory": {
     "dates": [
-      "03-02",
       "03-03",
       "03-04",
       "03-02",
@@ -3911,10 +4034,10 @@
       "03-05",
       "03-05",
       "03-05",
-      "03-05"
+      "03-05",
+      "03-06"
     ],
     "skills": [
-      39,
       40,
       42,
       42,
@@ -3927,11 +4050,12 @@
       44,
       44,
       44,
+      47,
       47
     ],
     "knowledge": [
-      150,
       151,
+      152,
       152,
       152,
       152,
@@ -3946,7 +4070,6 @@
       152
     ],
     "memories": [
-      38,
       52,
       65,
       65,
@@ -3959,7 +4082,8 @@
       83,
       73,
       74,
-      73
+      73,
+      71
     ]
   },
   "achievements": [
@@ -4005,7 +4129,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "51/50",
+      "progressText": "52/50",
       "date": "2026-03-06"
     },
     {
@@ -4055,7 +4179,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有51项技能，触类旁通",
+      "desc": "拥有52项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-06",
       "unlocked": true,
@@ -4072,7 +4196,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "68/30",
+      "progressText": "71/30",
       "date": "2026-03-06"
     },
     {

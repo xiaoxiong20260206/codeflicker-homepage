@@ -1,26 +1,26 @@
 {
-  "generatedAt": "2026-03-06T12:14:45.668623",
+  "generatedAt": "2026-03-07T07:10:38.990226",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 10270,
-    "expProgress": 56.8,
+    "totalExp": 10490,
+    "expProgress": 62.3,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
       "execution": 100,
-      "learning": 95.6,
-      "insight": 79.61538461538461,
+      "learning": 97.69999999999999,
+      "insight": 80.28301886792453,
       "creativity": 80
     }
   },
   "skills": {
-    "total": 52,
+    "total": 53,
     "categories": {
       "🧠 思维能力": {
         "icon": "🧠",
@@ -44,7 +44,7 @@
             "level": 5,
             "exp": 85,
             "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
-            "lastUpdated": "2026-03-05"
+            "lastUpdated": "2026-03-06"
           },
           {
             "name": "knowledge-acquisition-meta",
@@ -416,14 +416,14 @@
             "name": "frontend-design",
             "displayName": "前端设计",
             "source": "Cursor技能库",
-            "level": 2,
-            "exp": 51,
+            "level": 4,
+            "exp": 73,
             "description": "高质量前端界面设计，避免通用AI风格",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-03-06"
           }
         ],
         "count": 6,
-        "avgLevel": 3.8
+        "avgLevel": 4.2
       },
       "🎭 风格模板": {
         "icon": "🎭",
@@ -450,6 +450,15 @@
             "lastUpdated": "2026-02-08"
           },
           {
+            "name": "qingshuang-research-style",
+            "displayName": "清爽调研",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 73,
+            "description": "清爽调研报告风格的CSS样式规范",
+            "lastUpdated": "2026-03-06"
+          },
+          {
             "name": "work-report-ppt",
             "displayName": "汇报PPT",
             "source": "林克核心能力",
@@ -457,19 +466,10 @@
             "exp": 70,
             "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
             "lastUpdated": "2026-02-27"
-          },
-          {
-            "name": "qingshuang-research-style",
-            "displayName": "清爽调研",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 63,
-            "description": "清爽调研报告风格的CSS样式规范",
-            "lastUpdated": "2026-02-23"
           }
         ],
         "count": 4,
-        "avgLevel": 4.0
+        "avgLevel": 4.2
       },
       "📤 发布部署": {
         "icon": "🚀",
@@ -638,6 +638,24 @@
         ],
         "count": 6,
         "avgLevel": 3.7
+      },
+      "其他技能": {
+        "icon": "📦",
+        "color": "#64748b",
+        "layer": "execution",
+        "skills": [
+          {
+            "name": "xiaowuxianggong",
+            "displayName": "xiaowuxianggong",
+            "source": "codeflicker",
+            "level": 4,
+            "exp": 70,
+            "description": "> **定位**：这不是一个\"执行技能\"，而是整个自进化体系的**引导程序（Bootloader）**。",
+            "lastUpdated": "2026-03-06"
+          }
+        ],
+        "count": 1,
+        "avgLevel": 4.0
       }
     },
     "tree": {
@@ -668,7 +686,7 @@
                 "level": 5,
                 "exp": 85,
                 "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
-                "lastUpdated": "2026-03-05"
+                "lastUpdated": "2026-03-06"
               },
               {
                 "name": "knowledge-acquisition-meta",
@@ -1054,14 +1072,14 @@
                 "name": "frontend-design",
                 "displayName": "前端设计",
                 "source": "Cursor技能库",
-                "level": 2,
-                "exp": 51,
+                "level": 4,
+                "exp": 73,
                 "description": "高质量前端界面设计，避免通用AI风格",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-03-06"
               }
             ],
             "count": 6,
-            "avgLevel": 3.8
+            "avgLevel": 4.2
           },
           "🎭 风格模板": {
             "icon": "🎭",
@@ -1087,6 +1105,15 @@
                 "lastUpdated": "2026-02-08"
               },
               {
+                "name": "qingshuang-research-style",
+                "displayName": "清爽调研",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 73,
+                "description": "清爽调研报告风格的CSS样式规范",
+                "lastUpdated": "2026-03-06"
+              },
+              {
                 "name": "work-report-ppt",
                 "displayName": "汇报PPT",
                 "source": "林克核心能力",
@@ -1094,19 +1121,10 @@
                 "exp": 70,
                 "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
                 "lastUpdated": "2026-02-27"
-              },
-              {
-                "name": "qingshuang-research-style",
-                "displayName": "清爽调研",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 63,
-                "description": "清爽调研报告风格的CSS样式规范",
-                "lastUpdated": "2026-02-23"
               }
             ],
             "count": 4,
-            "avgLevel": 4.0
+            "avgLevel": 4.2
           },
           "📤 发布部署": {
             "icon": "🚀",
@@ -1269,10 +1287,28 @@
             ],
             "count": 6,
             "avgLevel": 3.7
+          },
+          "其他技能": {
+            "icon": "📦",
+            "color": "#64748b",
+            "layer": "execution",
+            "skills": [
+              {
+                "name": "xiaowuxianggong",
+                "displayName": "xiaowuxianggong",
+                "source": "codeflicker",
+                "level": 4,
+                "exp": 70,
+                "description": "> **定位**：这不是一个\"执行技能\"，而是整个自进化体系的**引导程序（Bootloader）**。",
+                "lastUpdated": "2026-03-06"
+              }
+            ],
+            "count": 1,
+            "avgLevel": 4.0
           }
         },
-        "count": 36,
-        "avgLevel": 3.5
+        "count": 37,
+        "avgLevel": 3.6
       }
     }
   },
@@ -1293,20 +1329,20 @@
         "icon": "📁",
         "color": "#64748b",
         "description": "rd-efficiency相关文档",
-        "fileCount": 18,
-        "sizeKB": 115.5,
+        "fileCount": 24,
+        "sizeKB": 205.3,
         "heatLevel": 5,
-        "recentCount": 3
+        "recentCount": 9
       },
       "self-evolution": {
         "name": "self-evolution",
         "icon": "📁",
         "color": "#64748b",
         "description": "self-evolution相关文档",
-        "fileCount": 2,
-        "sizeKB": 12.6,
+        "fileCount": 3,
+        "sizeKB": 13.5,
         "heatLevel": 3,
-        "recentCount": 2
+        "recentCount": 3
       },
       "mcp-research": {
         "name": "mcp-research",
@@ -1329,8 +1365,8 @@
         "recentCount": 0
       }
     },
-    "totalFiles": 152,
-    "totalSizeKB": 1012.2
+    "totalFiles": 159,
+    "totalSizeKB": 1102.9
   },
   "memories": {
     "items": [
@@ -1411,7 +1447,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "HTML截图到Docs文档的踩坑经验",
+        "title": "HTML截图到Docs文档的踩坑经验（含高度计算强制规则）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
@@ -1426,7 +1462,7 @@
           "图片裁剪"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-05",
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -1468,6 +1504,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "元能力：本质洞察力（含五层闭环框架 v2.0）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "**本质洞察力**：在某个领域积累知识后，透过现象看本质的元能力。 **核心原则**：如果真的看到了本质，一定能被类比到熟悉场景——类比是\"试金石\"。 *...",
+        "keywords": [
+          "本质洞察",
+          "元能力",
+          "类比",
+          "动机",
+          "规律"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "向非技术用户展示AI能力的结构化模式",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -1487,19 +1542,19 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能/知识库分类配置漂移问题",
+        "title": "技能/知识库分类配置漂移问题（含描述+展示名）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类或默认图标，而不是正确的语义分类。 **根因**：分类配置信息存在多处（违反单一数据源原则）： ...",
+        "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类、描述为\"---\"、技能名显示英文截断。 **根因**：分类配置信息存在多处（违反单一数据源原则...",
         "keywords": [
           "配置漂移",
           "技能分类",
-          "知识库分类",
           "首页",
-          "其他"
+          "SKILL_CATEGORIES",
+          "SKILL_DESCRIPTIONS"
         ],
         "importance": 5,
         "updatedAt": "2026-03-06",
@@ -2019,25 +2074,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "元能力：本质洞察力（含五层框架）",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
-        "layer": "🧠 能力层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "**本质洞察力**：在某个领域积累知识后，透过现象看本质的元能力。 **核心原则**：如果真的看到了本质，一定能被类比到熟悉场景——类比是\"试金石\"。 *...",
-        "keywords": [
-          "本质洞察",
-          "元能力",
-          "类比",
-          "动机",
-          "规律"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-06",
-        "source": "用户显式记录"
-      },
-      {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
         "categoryLabel": "工作模式",
@@ -2095,17 +2131,19 @@
         "source": "用户显式记录"
       },
       {
-        "title": "小无相功·触发词映射 v3.1",
+        "title": "小无相功 v5.0 — 林克自进化内核",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "layer": null,
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**小无相功·触发词映射 v3.1** — 林克35个技能的触发词 **学习**：daily-reflection-evolution, learn-fr...",
+        "description": "小无相功 = 林克自进化内核。三域(技能/知识/思维) × 三时间尺度(秒级干中学/天级定期修炼/周月级主动学习)。 日常自动运行，无需显式调用。完整体系...",
         "keywords": [
           "小无相功",
-          "触发词",
-          "技能"
+          "自进化",
+          "xiaowuxianggong",
+          "导航",
+          "三域"
         ],
         "importance": 4,
         "updatedAt": "2026-03-06",
@@ -2242,6 +2280,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "新领域学习的\"信息源优先\"原则",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 能力层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "**新领域学习的\"信息源优先\"原则** 当第一次学习一个新领域时，执行顺序必须是： 1. **信息源收集阶段**（P0，不可跳过） - 穷举该领域的信息源...",
+        "keywords": [
+          "信息源优先",
+          "新领域学习",
+          "收集信息源",
+          "不图快",
+          "学习原则"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -2679,7 +2736,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 71,
+    "total": 72,
     "byCategory": {
       "development_practice_specification": {
         "count": 9,
@@ -2703,11 +2760,11 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 19,
-        "label": "思维能力/工作模式",
+        "count": 20,
+        "label": "思维能力",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "思维能力（如何思考）、工作模式（如何做事）"
+        "description": "如何思考：元执行、自进化、内功修炼"
       },
       "constraint_or_forbidden_rule": {
         "count": 11,
@@ -3123,6 +3180,25 @@
             "description": "如何思考：元执行、自进化、内功修炼",
             "items": [
               {
+                "title": "小无相功 v5.0 — 林克自进化内核",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "小无相功 = 林克自进化内核。三域(技能/知识/思维) × 三时间尺度(秒级干中学/天级定期修炼/周月级主动学习)。 日常自动运行，无需显式调用。完整体系...",
+                "keywords": [
+                  "小无相功",
+                  "自进化",
+                  "xiaowuxianggong",
+                  "导航",
+                  "三域"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "思想体系可视化能力",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
@@ -3199,7 +3275,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "元能力：本质洞察力（含五层框架）",
+                "title": "元能力：本质洞察力（含五层闭环框架 v2.0）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
                 "layer": "🧠 能力层",
@@ -3212,6 +3288,25 @@
                   "类比",
                   "动机",
                   "规律"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "新领域学习的\"信息源优先\"原则",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 能力层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "**新领域学习的\"信息源优先\"原则** 当第一次学习一个新领域时，执行顺序必须是： 1. **信息源收集阶段**（P0，不可跳过） - 穷举该领域的信息源...",
+                "keywords": [
+                  "信息源优先",
+                  "新领域学习",
+                  "收集信息源",
+                  "不图快",
+                  "学习原则"
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-06",
@@ -3351,7 +3446,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 12
+            "count": 14
           },
           "工作模式": {
             "icon": "⚙️",
@@ -3455,7 +3550,7 @@
             "count": 5
           }
         },
-        "count": 17
+        "count": 19
       },
       "🎯 领域技能包": {
         "icon": "🎯",
@@ -3750,19 +3845,19 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "技能/知识库分类配置漂移问题",
+                "title": "技能/知识库分类配置漂移问题（含描述+展示名）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类或默认图标，而不是正确的语义分类。 **根因**：分类配置信息存在多处（违反单一数据源原则）： ...",
+                "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类、描述为\"---\"、技能名显示英文截断。 **根因**：分类配置信息存在多处（违反单一数据源原则...",
                 "keywords": [
                   "配置漂移",
                   "技能分类",
-                  "知识库分类",
                   "首页",
-                  "其他"
+                  "SKILL_CATEGORIES",
+                  "SKILL_DESCRIPTIONS"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-06",
@@ -3826,7 +3921,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "HTML截图到Docs文档的踩坑经验",
+                "title": "HTML截图到Docs文档的踩坑经验（含高度计算强制规则）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
@@ -3841,7 +3936,7 @@
                   "图片裁剪"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-05",
+                "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               },
               {
@@ -4110,7 +4205,6 @@
   },
   "growthHistory": {
     "dates": [
-      "03-02",
       "03-03",
       "03-04",
       "03-02",
@@ -4123,10 +4217,10 @@
       "03-05",
       "03-05",
       "03-05",
-      "03-05"
+      "03-05",
+      "03-06"
     ],
     "skills": [
-      39,
       40,
       42,
       42,
@@ -4139,10 +4233,10 @@
       44,
       44,
       44,
-      47
+      47,
+      49
     ],
     "knowledge": [
-      150,
       151,
       152,
       152,
@@ -4155,10 +4249,10 @@
       152,
       152,
       152,
-      152
+      152,
+      159
     ],
     "memories": [
-      38,
       52,
       65,
       65,
@@ -4171,7 +4265,8 @@
       83,
       73,
       74,
-      73
+      73,
+      72
     ]
   },
   "achievements": [
@@ -4200,9 +4295,9 @@
     {
       "id": "knowledge_sage",
       "name": "知识贤者",
-      "desc": "积累152个知识文档，博学多识",
+      "desc": "积累159个知识文档，博学多识",
       "icon": "📚",
-      "date": "2026-03-06",
+      "date": "2026-03-07",
       "unlocked": true,
       "progress": 100,
       "rarity": "epic",
@@ -4217,8 +4312,8 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "52/50",
-      "date": "2026-03-06"
+      "progressText": "53/50",
+      "date": "2026-03-07"
     },
     {
       "id": "daily_report",
@@ -4267,9 +4362,9 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有52项技能，触类旁通",
+      "desc": "拥有53项技能，触类旁通",
       "icon": "⚡",
-      "date": "2026-03-06",
+      "date": "2026-03-07",
       "unlocked": true,
       "progress": 100,
       "rarity": "rare",
@@ -4284,8 +4379,8 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "71/30",
-      "date": "2026-03-06"
+      "progressText": "72/30",
+      "date": "2026-03-07"
     },
     {
       "id": "first_awakening",
@@ -4328,8 +4423,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 76,
-      "progressText": "152/200",
+      "progress": 80,
+      "progressText": "159/200",
       "date": "???"
     }
   ]

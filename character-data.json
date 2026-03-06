@@ -1,22 +1,22 @@
 {
-  "generatedAt": "2026-03-06T10:12:12.541698",
+  "generatedAt": "2026-03-06T10:42:41.984281",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 10370,
-    "expProgress": 59.2,
+    "totalExp": 10020,
+    "expProgress": 50.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
       "execution": 100,
-      "learning": 98.6,
+      "learning": 95.6,
       "insight": 79.31372549019608,
-      "creativity": 100
+      "creativity": 72
     }
   },
   "skills": {
@@ -342,7 +342,7 @@
             "name": "zelda-style",
             "source": "林克核心能力",
             "level": 4,
-            "exp": 79,
+            "exp": 82,
             "description": "塞尔达·旷野之息风格页面设计规范",
             "lastUpdated": "2026-03-01"
           },
@@ -927,7 +927,7 @@
                 "name": "zelda-style",
                 "source": "林克核心能力",
                 "level": 4,
-                "exp": 79,
+                "exp": 82,
                 "description": "塞尔达·旷野之息风格页面设计规范",
                 "lastUpdated": "2026-03-01"
               },
@@ -1204,36 +1204,6 @@
         "heatLevel": 3,
         "recentCount": 2
       },
-      "financial": {
-        "name": "financial",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "financial相关文档",
-        "fileCount": 4,
-        "sizeKB": 0.0,
-        "heatLevel": 2,
-        "recentCount": 0
-      },
-      "experience": {
-        "name": "experience",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "experience相关文档",
-        "fileCount": 2,
-        "sizeKB": 0.0,
-        "heatLevel": 2,
-        "recentCount": 0
-      },
-      "guides": {
-        "name": "guides",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "guides相关文档",
-        "fileCount": 2,
-        "sizeKB": 0.0,
-        "heatLevel": 2,
-        "recentCount": 0
-      },
       "mcp-research": {
         "name": "mcp-research",
         "icon": "📁",
@@ -1243,29 +1213,9 @@
         "sizeKB": 21.3,
         "heatLevel": 2,
         "recentCount": 1
-      },
-      "ai-research": {
-        "name": "ai-research",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "ai-research相关文档",
-        "fileCount": 1,
-        "sizeKB": 0.0,
-        "heatLevel": 1,
-        "recentCount": 0
-      },
-      "product": {
-        "name": "product",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "product相关文档",
-        "fileCount": 1,
-        "sizeKB": 0.0,
-        "heatLevel": 1,
-        "recentCount": 0
       }
     },
-    "totalFiles": 162,
+    "totalFiles": 152,
     "totalSizeKB": 1012.2
   },
   "memories": {
@@ -1347,25 +1297,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "GitHub Pages 部署锁冲突问题及修复方案",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 领域层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "## 问题现象 GitHub Pages 部署持续失败，错误信息： \"Deployment request failed due to in progre...",
-        "keywords": [
-          "GitHub Pages",
-          "部署",
-          "deployment",
-          "in_progress",
-          "锁冲突"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "HTML截图到Docs文档的踩坑经验",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -1442,44 +1373,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "图片越界问题的定位方法",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "## HTML配图高度溢出问题定位与修复 ### 🚨 为什么这个问题反复出现？ 这个问题在同一次对话中反复出现多次，用户反馈 → 修复 → 再反馈 → 再...",
-        "keywords": [
-          "图片越界",
-          "白底太短",
-          "card高度",
-          "HTML截图",
-          "overflow"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "技能与记忆分类原则（默认使用）",
-        "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
-        "layer": "🧠 能力层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "## 技能与记忆分类原则 v1.1 ### 分类的分类原则（元原则） 1. **三层技能架构**：元能力层 → 领域技能包 → 执行技能层 2. **四层...",
-        "keywords": [
-          "分类原则",
-          "技能分类",
-          "记忆分类",
-          "v5.1",
-          "v3.1"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "技能复用检测与单一数据源架构",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -1499,13 +1392,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "每日修炼执行纪律 v2.0（强制绑定meta-execution）",
+        "title": "每日修炼执行纪律 v3.0（禁止跳过任何步骤）",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
         "layer": "👤 用户层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 每日修炼执行纪律 v2.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
+        "description": "## 每日修炼执行纪律 v3.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
         "keywords": [
           "每日修炼",
           "执行纪律",
@@ -1514,7 +1407,7 @@
           "验收标准"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-05",
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -1651,25 +1544,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "能力树视觉重构经验（三树差异化+径向布局）",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维能力/工作模式",
-        "layer": null,
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "## 能力树视觉重构经验（2026-03-05） ### 三树差异化设计模式 | 数据类型 | 推荐风格 | 核心特征 | |----------|---...",
-        "keywords": [
-          "能力树",
-          "技能树",
-          "知识树",
-          "记忆树",
-          "径向布局"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
         "title": "语雀文档读取优先使用API",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力/工作模式",
@@ -1689,38 +1563,19 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑经验: 日报漏记对话任务 — 文件mtime≠实际活动时间",
+        "title": "部署验证完整经验（合并版）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
+        "categoryLabel": "发布部署",
         "layer": "🛠️ 领域层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "**问题**：日报系统严重漏记对话任务（100%遗漏）和子项目活动（33%遗漏），同时自动提交混入实质工作统计。 **根因**：「工作发生时间 ≠ 产出物...",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "## 部署验证完整经验（合并版） ### 1. 缓存破坏 - URL添加时间戳：`?v=${Date.now()}` - 强制刷新：Ctrl+Shift+...",
         "keywords": [
-          "日报",
-          "recap",
-          "mtime",
-          "时间判定",
-          "对话扫描"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "首页数据同步踩坑经验合集",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "## 首页数据同步踩坑经验合集 ### 问题1: 技能分类/知识库图标不一致 **现象**：首页显示\"其他技能\"7个，知识库图标全是📁 **根因**：配置...",
-        "keywords": [
-          "首页",
-          "同步",
           "部署",
-          "配置",
-          "GitHub Pages"
+          "验证",
+          "缓存",
+          "GitHub Pages",
+          "锁冲突"
         ],
         "importance": 5,
         "updatedAt": "2026-03-06",
@@ -1860,19 +1715,19 @@
         "source": "用户显式记录"
       },
       {
-        "title": "Git提交和部署验证经验",
+        "title": "HTML配图高度溢出：宁大勿小",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
+        "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "## Git提交和部署验证经验 ### 缓存破坏机制 部署后需确保加载最新数据，通过以下方式破坏CDN缓存： - URL添加时间戳参数：`?v=${Dat...",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "HTML配图高度溢出问题：宁可高度偏大100px，也不要事后被用户反馈再修改。 **核心规则**： - 默认高度640px，复杂内容720px - 创建后...",
         "keywords": [
-          "Git",
-          "部署",
-          "验证",
-          "缓存",
-          "强制刷新"
+          "图片越界",
+          "高度",
+          "HTML截图",
+          "overflow",
+          "预览"
         ],
         "importance": 4,
         "updatedAt": "2026-03-06",
@@ -1898,22 +1753,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "SVG响应式三属性规范（width+min-width+max-width）",
+        "title": "SVG开发规范（viewBox+响应式）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "**问题**：SVG图形在headless浏览器或某些viewport下不显示（宽度为0） **根因**：SVG只设置了 `max-width: 100%...",
+        "description": "SVG开发两大陷阱及规范： **1. viewBox裁切**：viewBox高度 = 最大元素y + 边距(20-40px)，修改后在DevTools验证...",
         "keywords": [
           "SVG",
-          "min-width",
-          "max-width",
-          "headless",
-          "响应式"
+          "viewBox",
+          "响应式",
+          "裁切",
+          "宽度"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-04",
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -1993,6 +1848,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "健康度检查必须量化+阈值+强制执行",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "## 健康度检查必须有量化指标+阈值+强制执行 **问题**：用户发现记忆/技能分类存在严重问题但每日任务没有主动发现。 **根因**：检查项太表面（只检...",
+        "keywords": [
+          "健康度检查",
+          "量化指标",
+          "周期性触发",
+          "执行纪律",
+          "强制执行"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "元能力：本质洞察力（触发器）",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -2009,25 +1883,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-06",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "分类优化未自动发现的根因与修复",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "layer": null,
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 分类优化未自动发现的根因分析 ### 问题 用户发现记忆/技能分类存在严重问题（6个空分类、2个过大分类），但我在每日任务中没有主动发现。 ### ...",
-        "keywords": [
-          "分类优化",
-          "自检遗漏",
-          "健康度检查",
-          "周期性触发",
-          "执行纪律"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -2085,25 +1940,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-06",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "多仓库部署同步问题",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 领域层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "## 多仓库部署同步踩坑经验 ### 问题现象 代码推送成功，但用户访问的页面没变化 ### 根因 项目有多个Git remote（如origin和org...",
-        "keywords": [
-          "多仓库",
-          "部署",
-          "同步",
-          "git remote",
-          "origin"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -2178,6 +2014,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "技能与记忆分类原则（精简版）",
+        "category": "development_practice_specification",
+        "categoryLabel": "实践规范",
+        "layer": null,
+        "icon": "📦",
+        "color": "#7c3aed",
+        "description": "技能与记忆分类遵循以下架构： **技能**：三层架构 — 元能力层(思维+工作模式) → 领域技能包(ai-insight/investment) → 执...",
+        "keywords": [
+          "分类原则",
+          "技能分类",
+          "记忆分类",
+          "taxonomy",
+          "架构"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -2257,6 +2112,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "日报漏记：文件mtime≠实际活动时间",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 领域层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 **核心约束**： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
+        "keywords": [
+          "日报",
+          "recap",
+          "mtime",
+          "时间判定",
+          "交叉校验"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "林克/添棋的自我表达风格",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -2315,21 +2189,21 @@
       },
       {
         "title": "用户强调需求的必检机制",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "layer": null,
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 用户强调需求遗漏问题 ### 问题描述 在能力树重构任务中，用户明确强调\"保留tooltip中的如何升级提示\"，但第一版提交时仍然遗漏。 ### 根...",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "## 用户强调需求的必检机制 用户说\"我特意强调过\"\"一定要保留\"等强调性语句时： 1. 在TODO中添加 `[必检]` 标记 2. P0交付前检查清单增...",
         "keywords": [
           "需求遗漏",
           "用户强调",
           "必检项",
           "P0检查",
-          "tooltip"
+          "约束"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-05",
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -2371,41 +2245,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑经验: Bytedance AI Guide Website Style Fixes",
-        "category": "common_pitfalls_experience",
+        "title": "能力树视觉重构经验（三树差异化）",
+        "category": "development_practice_specification",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "问题描述: 修复了所有子页面CSS语法错误（多余的>符号），统一页面宽度为980px标准，优化了导航栏响应式样式和表格宽度问题，通过16个文件变更完成了样...",
+        "description": "## 能力树视觉重构经验 ### 三树差异化设计 | 数据类型 | 风格 | 特征 | |----------|------|------| | 技能类 ...",
         "keywords": [
-          "问题",
-          "修复",
-          "优化",
-          "部署",
-          "错误"
+          "能力树",
+          "技能树",
+          "径向布局",
+          "SVG",
+          "可视化"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "踩坑经验: Kim AI Bot Deployment Guide",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 领域层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "问题描述: 检查了现有的kim-ai-bot项目结构，确认已具备webhook接收、AI引擎等基础组件。提供了三种部署方案：本地开发模式、ngrok临时调...",
-        "keywords": [
-          "问题",
-          "部署",
-          "调试",
-          "经验",
-          "组件"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-05",
+        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -2561,6 +2416,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "首页数据同步踩坑5条规则",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "首页数据同步5大踩坑及核心规则： 1. **配置分散**：新增技能时同步更新所有配置位置 2. **部署失败未发现**：update-homepage.s...",
+        "keywords": [
+          "首页",
+          "同步",
+          "部署",
+          "硬编码",
+          "端到端验证"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -2577,24 +2451,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "SVG viewBox 内容裁切问题",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "SVG viewBox 设置不当会导致底部/边缘内容被裁切。 **核心约束**： - viewBox高度 = 最大元素y坐标 + 边距(20-40px) ...",
-        "keywords": [
-          "SVG",
-          "viewBox",
-          "裁切",
-          "网页开发"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-03",
         "source": "用户显式记录"
       },
       {
@@ -2652,10 +2508,10 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 73,
+    "total": 68,
     "byCategory": {
       "development_practice_specification": {
-        "count": 8,
+        "count": 9,
         "label": "工作模式",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2676,14 +2532,14 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 20,
+        "count": 19,
         "label": "思维能力/工作模式",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "思维能力（如何思考）、工作模式（如何做事）"
       },
       "constraint_or_forbidden_rule": {
-        "count": 9,
+        "count": 11,
         "label": "用户约束",
         "icon": "🚫",
         "color": "#dc2626",
@@ -2697,11 +2553,11 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 27,
-        "label": "前端开发",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "SVG/CSS/页面开发踩坑"
+        "count": 20,
+        "label": "发布部署",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "GitHub Pages/部署踩坑"
       },
       "project_introduction": {
         "count": 1,
@@ -3011,13 +2867,32 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼执行纪律 v2.0（强制绑定meta-execution）",
+                "title": "健康度检查必须量化+阈值+强制执行",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "👤 用户层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 每日修炼执行纪律 v2.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
+                "description": "## 健康度检查必须有量化指标+阈值+强制执行 **问题**：用户发现记忆/技能分类存在严重问题但每日任务没有主动发现。 **根因**：检查项太表面（只检...",
+                "keywords": [
+                  "健康度检查",
+                  "量化指标",
+                  "周期性触发",
+                  "执行纪律",
+                  "强制执行"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "每日修炼执行纪律 v3.0（禁止跳过任何步骤）",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## 每日修炼执行纪律 v3.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
                 "keywords": [
                   "每日修炼",
                   "执行纪律",
@@ -3026,7 +2901,7 @@
                   "验收标准"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-05",
+                "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               },
               {
@@ -3047,12 +2922,31 @@
                 "importance": 4,
                 "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "用户强调需求的必检机制",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "👤 用户层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "## 用户强调需求的必检机制 用户说\"我特意强调过\"\"一定要保留\"等强调性语句时： 1. 在TODO中添加 `[必检]` 标记 2. P0交付前检查清单增...",
+                "keywords": [
+                  "需求遗漏",
+                  "用户强调",
+                  "必检项",
+                  "P0检查",
+                  "约束"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
               }
             ],
-            "count": 9
+            "count": 11
           }
         },
-        "count": 16
+        "count": 18
       },
       "🧠 能力层": {
         "icon": "🧠",
@@ -3375,25 +3269,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "技能与记忆分类原则（默认使用）",
-                "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
-                "layer": "🧠 能力层",
-                "icon": "⚙️",
-                "color": "#5ec4d4",
-                "description": "## 技能与记忆分类原则 v1.1 ### 分类的分类原则（元原则） 1. **三层技能架构**：元能力层 → 领域技能包 → 执行技能层 2. **四层...",
-                "keywords": [
-                  "分类原则",
-                  "技能分类",
-                  "记忆分类",
-                  "v5.1",
-                  "v3.1"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-04",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "深度调研报告格式规范",
                 "category": "development_practice_specification",
                 "categoryLabel": "工作模式",
@@ -3413,10 +3288,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 6
+            "count": 5
           }
         },
-        "count": 18
+        "count": 17
       },
       "🎯 领域技能包": {
         "icon": "🎯",
@@ -3483,25 +3358,6 @@
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
               {
-                "title": "踩坑经验: Bytedance AI Guide Website Style Fixes",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 领域层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "问题描述: 修复了所有子页面CSS语法错误（多余的>符号），统一页面宽度为980px标准，优化了导航栏响应式样式和表格宽度问题，通过16个文件变更完成了样...",
-                "keywords": [
-                  "问题",
-                  "修复",
-                  "优化",
-                  "部署",
-                  "错误"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-05",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "日报列表同步遗漏问题及修复方案",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -3540,39 +3396,40 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "SVG viewBox 内容裁切问题",
+                "title": "SVG开发规范（viewBox+响应式）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "SVG viewBox 设置不当会导致底部/边缘内容被裁切。 **核心约束**： - viewBox高度 = 最大元素y坐标 + 边距(20-40px) ...",
+                "description": "SVG开发两大陷阱及规范： **1. viewBox裁切**：viewBox高度 = 最大元素y + 边距(20-40px)，修改后在DevTools验证...",
                 "keywords": [
                   "SVG",
                   "viewBox",
+                  "响应式",
                   "裁切",
-                  "网页开发"
+                  "宽度"
                 ],
-                "importance": 3,
-                "updatedAt": "2026-03-03",
+                "importance": 4,
+                "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               },
               {
-                "title": "首页数据同步踩坑经验合集",
+                "title": "首页数据同步踩坑5条规则",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 首页数据同步踩坑经验合集 ### 问题1: 技能分类/知识库图标不一致 **现象**：首页显示\"其他技能\"7个，知识库图标全是📁 **根因**：配置...",
+                "description": "首页数据同步5大踩坑及核心规则： 1. **配置分散**：新增技能时同步更新所有配置位置 2. **部署失败未发现**：update-homepage.s...",
                 "keywords": [
                   "首页",
                   "同步",
                   "部署",
-                  "配置",
-                  "GitHub Pages"
+                  "硬编码",
+                  "端到端验证"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               },
@@ -3590,25 +3447,6 @@
                   "气泡",
                   "空白",
                   "隐藏"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-04",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "SVG响应式三属性规范（width+min-width+max-width）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 领域层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "**问题**：SVG图形在headless浏览器或某些viewport下不显示（宽度为0） **根因**：SVG只设置了 `max-width: 100%...",
-                "keywords": [
-                  "SVG",
-                  "min-width",
-                  "max-width",
-                  "headless",
-                  "响应式"
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-04",
@@ -3672,22 +3510,41 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "图片越界问题的定位方法",
+                "title": "能力树视觉重构经验（三树差异化）",
+                "category": "development_practice_specification",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 能力树视觉重构经验 ### 三树差异化设计 | 数据类型 | 风格 | 特征 | |----------|------|------| | 技能类 ...",
+                "keywords": [
+                  "能力树",
+                  "技能树",
+                  "径向布局",
+                  "SVG",
+                  "可视化"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "HTML配图高度溢出：宁大勿小",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## HTML配图高度溢出问题定位与修复 ### 🚨 为什么这个问题反复出现？ 这个问题在同一次对话中反复出现多次，用户反馈 → 修复 → 再反馈 → 再...",
+                "description": "HTML配图高度溢出问题：宁可高度偏大100px，也不要事后被用户反馈再修改。 **核心规则**： - 默认高度640px，复杂内容720px - 创建后...",
                 "keywords": [
                   "图片越界",
-                  "白底太短",
-                  "card高度",
+                  "高度",
                   "HTML截图",
-                  "overflow"
+                  "overflow",
+                  "预览"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-05",
+                "importance": 4,
+                "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               },
               {
@@ -3805,7 +3662,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 17
+            "count": 16
           },
           "发布部署": {
             "icon": "🚀",
@@ -3813,79 +3670,22 @@
             "description": "GitHub Pages/部署踩坑",
             "items": [
               {
-                "title": "踩坑经验: Kim AI Bot Deployment Guide",
+                "title": "部署验证完整经验（合并版）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 领域层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "问题描述: 检查了现有的kim-ai-bot项目结构，确认已具备webhook接收、AI引擎等基础组件。提供了三种部署方案：本地开发模式、ngrok临时调...",
+                "description": "## 部署验证完整经验（合并版） ### 1. 缓存破坏 - URL添加时间戳：`?v=${Date.now()}` - 强制刷新：Ctrl+Shift+...",
                 "keywords": [
-                  "问题",
-                  "部署",
-                  "调试",
-                  "经验",
-                  "组件"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-05",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "Git提交和部署验证经验",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 领域层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "## Git提交和部署验证经验 ### 缓存破坏机制 部署后需确保加载最新数据，通过以下方式破坏CDN缓存： - URL添加时间戳参数：`?v=${Dat...",
-                "keywords": [
-                  "Git",
                   "部署",
                   "验证",
                   "缓存",
-                  "强制刷新"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-06",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "GitHub Pages 部署锁冲突问题及修复方案",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 领域层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "## 问题现象 GitHub Pages 部署持续失败，错误信息： \"Deployment request failed due to in progre...",
-                "keywords": [
                   "GitHub Pages",
-                  "部署",
-                  "deployment",
-                  "in_progress",
                   "锁冲突"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-04",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "多仓库部署同步问题",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 领域层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "## 多仓库部署同步踩坑经验 ### 问题现象 代码推送成功，但用户访问的页面没变化 ### 根因 项目有多个Git remote（如origin和org...",
-                "keywords": [
-                  "多仓库",
-                  "部署",
-                  "同步",
-                  "git remote",
-                  "origin"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-04",
+                "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               },
               {
@@ -3908,7 +3708,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 2
           },
           "文档处理": {
             "icon": "📄",
@@ -4035,29 +3835,29 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "踩坑经验: 日报漏记对话任务 — 文件mtime≠实际活动时间",
+                "title": "日报漏记：文件mtime≠实际活动时间",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
                 "layer": "🛠️ 领域层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "**问题**：日报系统严重漏记对话任务（100%遗漏）和子项目活动（33%遗漏），同时自动提交混入实质工作统计。 **根因**：「工作发生时间 ≠ 产出物...",
+                "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 **核心约束**： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
                 "keywords": [
                   "日报",
                   "recap",
                   "mtime",
                   "时间判定",
-                  "对话扫描"
+                  "交叉校验"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-03",
+                "importance": 4,
+                "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
               }
             ],
             "count": 2
           }
         },
-        "count": 28
+        "count": 24
       },
       "📚 项目层": {
         "icon": "📚",
@@ -4188,7 +3988,7 @@
     {
       "id": "knowledge_sage",
       "name": "知识贤者",
-      "desc": "积累162个知识文档，博学多识",
+      "desc": "积累152个知识文档，博学多识",
       "icon": "📚",
       "date": "2026-03-06",
       "unlocked": true,
@@ -4272,7 +4072,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "73/30",
+      "progressText": "68/30",
       "date": "2026-03-06"
     },
     {
@@ -4316,8 +4116,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 81,
-      "progressText": "162/200",
+      "progress": 76,
+      "progressText": "152/200",
       "date": "???"
     }
   ]

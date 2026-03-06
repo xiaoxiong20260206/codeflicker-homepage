@@ -1382,6 +1382,12 @@ function renderSkillTreeWithLayers(container, tree, skills) {
         'night-task-runner': '夜间任务',
         'web-dev-workflow': '网页流程',
         'promotion-coaching': '晋升辅导',
+        'essence-insight': '本质洞察',
+        'product-thinking': '产品思维',
+        'skill-architecture': '技能架构',
+        'memory-hygiene': '记忆管理',
+        'knowledge-curator': '知识管理',
+        'knowledge-acquisition-meta': '知识习得',
         
         // === 调研分析 ===
         'industry-research': '行研',
@@ -1403,6 +1409,7 @@ function renderSkillTreeWithLayers(container, tree, skills) {
         
         // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
+        'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
@@ -1477,7 +1484,7 @@ function renderSkillTreeWithLayers(container, tree, skills) {
             
             for (const s of childSkills) {
                 const sid = 'skill-' + (idx++);
-                const shortName = skillNameMap[s.name] || s.name.substring(0, 4);
+                const shortName = skillNameMap[s.name] || s.displayName || s.name.substring(0, 4);
                 AppState.dataMap[sid] = { ...s, icon: '⚡', catIcon: childInfo.icon };
                 
                 leaves += `
@@ -1568,6 +1575,14 @@ function renderSkillTreeFlat(container, skills) {
         'learn-from-mistakes': '举一反三',
         'web-dev-workflow': '网页流程',
         'promotion-coaching': '晋升辅导',
+        'neigong-cultivation': '内功修炼',
+        'night-task-runner': '夜间任务',
+        'essence-insight': '本质洞察',
+        'product-thinking': '产品思维',
+        'skill-architecture': '技能架构',
+        'memory-hygiene': '记忆管理',
+        'knowledge-curator': '知识管理',
+        'knowledge-acquisition-meta': '知识习得',
         
         // === 调研分析 ===
         'industry-research': '行研',
@@ -1577,6 +1592,7 @@ function renderSkillTreeFlat(container, skills) {
         'apify-market-research': '市场',
         'apify-competitor-intelligence': '竞情',
         'daily-ai-report': 'AI日报',
+        'ai-insight': 'AI洞察',
         
         // === 文档处理 ===
         'pdf': 'PDF',
@@ -1588,7 +1604,7 @@ function renderSkillTreeFlat(container, skills) {
         
         // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
-        'ui-ux-pro-max-skill': 'UI/UX',
+        'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
@@ -1614,8 +1630,8 @@ function renderSkillTreeFlat(container, skills) {
         
         // === 效率工具 ===
         'feishu-assistant': '飞书',
-        'ai-column-writer': '专栏',
-        'night-task-runner': '夜间任务'
+        'linke-kim-message': 'KIM消息',
+        'ai-column-writer': '专栏'
     };
     
     let idx = 0;

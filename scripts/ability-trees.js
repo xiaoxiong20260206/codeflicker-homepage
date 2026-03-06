@@ -40,6 +40,7 @@ function renderSkillTechTree(container, skills) {
         'canvas-design': '画布',
         'keynote': 'Keynote',
         'ui-ux-pro-max': 'UI专家',
+        'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
@@ -60,7 +61,14 @@ function renderSkillTechTree(container, skills) {
         'investment-tracker': '基金',
         'feishu-assistant': '飞书',
         'linke-kim-message': 'KIM消息',
-        'ai-column-writer': '专栏'
+        'ai-column-writer': '专栏',
+        // v6.1 新增
+        'essence-insight': '本质洞察',
+        'product-thinking': '产品思维',
+        'skill-architecture': '技能架构',
+        'memory-hygiene': '记忆管理',
+        'knowledge-curator': '知识管理',
+        'knowledge-acquisition-meta': '知识习得'
     };
     
     // 判断技能是否最近使用（3天内）
@@ -82,7 +90,7 @@ function renderSkillTechTree(container, skills) {
     
     // 生成单个技能节点HTML
     function createSkillNode(skill, id) {
-        const name = skillNameMap[skill.name] || skill.name.substring(0, 4);
+        const name = skillNameMap[skill.name] || skill.displayName || skill.name.substring(0, 4);
         const level = skill.level || 1;
         const exp = skill.exp || (level * 20);
         const dashOffset = getLevelProgress(level, exp);

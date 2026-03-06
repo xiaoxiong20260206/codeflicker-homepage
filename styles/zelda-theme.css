@@ -17,6 +17,7 @@
     --sheikah-blue-dark: #00a8cc;
     --sheikah-glow: 0 0 20px rgba(0, 212, 255, 0.5);
     --sheikah-glow-intense: 0 0 40px rgba(0, 212, 255, 0.7);
+    --sheikah-glow-subtle: 0 0 12px rgba(0, 212, 255, 0.25);
     
     /* 希卡橙 - 未完成状态、待激活 */
     --sheikah-orange: #ff8c42;
@@ -31,11 +32,11 @@
     --zonai-teal: #4ecdc4;
     --zonai-glow: 0 0 25px rgba(0, 212, 255, 0.6);
     
-    /* 金色系 */
-    --zelda-gold: #c9a227;
-    --zelda-gold-light: #e8d48b;
+    /* 金色系 - 更温暖的金色 */
+    --zelda-gold: #d4a82a;
+    --zelda-gold-light: #f0dfa0;
     --zelda-gold-dark: #8b6914;
-    --gold-glow: 0 0 20px rgba(201, 162, 39, 0.5);
+    --gold-glow: 0 0 20px rgba(212, 168, 42, 0.45);
     
     /* 天空蓝 - 旷野之息特色 */
     --sky-blue: #87ceeb;
@@ -46,8 +47,8 @@
     --zelda-cream: #f5e6c8;
     --zelda-parchment: #e8dcc4;
     --zelda-brown: #6b5344;
-    --zelda-dark: #2a2520;
-    --zelda-dark-panel: rgba(30, 35, 40, 0.95);
+    --zelda-dark: #1e1a16;
+    --zelda-dark-panel: rgba(24, 28, 33, 0.96);
     
     /* 功能色 */
     --zelda-green: #5d8a4a;
@@ -58,7 +59,8 @@
     /* 文字色 */
     --text-light: #f5e6c8;
     --text-dark: #2a2520;
-    --text-muted: rgba(245, 230, 200, 0.7);
+    --text-muted: rgba(245, 230, 200, 0.65);
+    --text-bright: rgba(255, 255, 255, 0.92);
     
     /* 字体 */
     --font-title: 'Cinzel', 'Noto Serif SC', serif;
@@ -72,15 +74,32 @@
     --spacing-lg: 30px;
     --spacing-xl: 50px;
     
-    /* 圆角 */
-    --radius-sm: 4px;
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    /* 圆角 - 更现代的圆角 */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
     
-    /* 动画 */
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+    /* 动画 - 更精致的缓动 */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    
+    /* 毛玻璃效果 */
+    --glass-bg: rgba(24, 28, 33, 0.82);
+    --glass-bg-light: rgba(24, 28, 33, 0.65);
+    --glass-blur: blur(20px);
+    --glass-blur-heavy: blur(32px);
+    --glass-border: 1px solid rgba(0, 212, 255, 0.15);
+    
+    /* 深度阴影系统 */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-glow-blue: 0 4px 24px rgba(0, 212, 255, 0.2), 0 0 8px rgba(0, 212, 255, 0.1);
+    --shadow-glow-gold: 0 4px 24px rgba(212, 168, 42, 0.2), 0 0 8px rgba(212, 168, 42, 0.1);
 }
 
 /* ==================== 基础重置 ==================== */
@@ -230,14 +249,14 @@ body {
     color: var(--text-light);
 }
 
-/* 希卡角落装饰 */
+/* 希卡角落装饰 - 更精致 */
 .zonai-panel::before,
 .zonai-panel::after {
     content: '';
     position: absolute;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--sheikah-blue);
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid rgba(0, 212, 255, 0.5);
 }
 
 .zonai-panel::before { 
@@ -259,19 +278,20 @@ body {
     display: none;
 }
 
-/* ==================== 羊皮纸面板 ==================== */
+/* ==================== 羊皮纸面板 - 更温润 ==================== */
 .parchment-panel {
-    background: linear-gradient(135deg, 
-        rgba(232, 220, 196, 0.95) 0%,
-        rgba(245, 230, 200, 0.9) 50%,
-        rgba(232, 220, 196, 0.95) 100%
+    background: linear-gradient(160deg, 
+        rgba(238, 228, 208, 0.97) 0%,
+        rgba(248, 238, 218, 0.94) 50%,
+        rgba(238, 228, 208, 0.97) 100%
     );
-    border: 2px solid var(--zelda-brown);
-    border-radius: var(--radius-md);
+    border: 1.5px solid rgba(107, 83, 68, 0.3);
+    border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     box-shadow: 
-        0 5px 20px rgba(107, 83, 68, 0.2),
-        inset 0 0 30px rgba(107, 83, 68, 0.05);
+        var(--shadow-md),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 0 30px rgba(107, 83, 68, 0.04);
     color: var(--zelda-dark);
 }
 
@@ -311,30 +331,31 @@ body {
     opacity: 0.8;
 }
 
-/* 三角力标志 */
+/* 三角力标志 - 更精致的发光 */
 .triforce-container {
     display: flex;
     justify-content: center;
     margin: 25px 0;
-    gap: 5px;
+    gap: 4px;
 }
 
 .triforce {
     width: 0;
     height: 0;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 26px solid var(--zelda-gold);
-    filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.6));
-    animation: triforce-glow 3s ease-in-out infinite;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 24px solid var(--zelda-gold);
+    filter: drop-shadow(0 0 8px rgba(212, 168, 42, 0.5));
+    animation: triforce-glow 4s ease-in-out infinite;
+    transition: filter 0.3s ease;
 }
 
-.triforce:nth-child(2) { animation-delay: 0.3s; }
-.triforce:nth-child(3) { animation-delay: 0.6s; }
+.triforce:nth-child(2) { animation-delay: 0.4s; }
+.triforce:nth-child(3) { animation-delay: 0.8s; }
 
 @keyframes triforce-glow {
-    0%, 100% { filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.4)); }
-    50% { filter: drop-shadow(0 0 25px rgba(201, 162, 39, 0.8)); }
+    0%, 100% { filter: drop-shadow(0 0 8px rgba(212, 168, 42, 0.35)); }
+    50% { filter: drop-shadow(0 0 20px rgba(212, 168, 42, 0.7)); }
 }
 
 /* ==================== 神庙入口动画 ==================== */
@@ -395,39 +416,58 @@ body {
     to { transform: rotate(360deg); }
 }
 
-/* ==================== 左纳乌按钮 ==================== */
+/* ==================== 左纳乌按钮 - 更精致 ==================== */
 .zonai-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: 14px 28px;
+    padding: 12px 24px;
     font-family: var(--font-title);
-    font-size: 14px;
-    letter-spacing: 1px;
-    border: 2px solid var(--sheikah-blue);
-    border-radius: var(--radius-sm);
-    background: rgba(0, 212, 255, 0.1);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    border: 1.5px solid rgba(0, 212, 255, 0.5);
+    border-radius: var(--radius-md);
+    background: rgba(0, 212, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     color: var(--sheikah-blue-light);
     cursor: pointer;
     transition: all var(--transition-normal);
     text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.zonai-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(0, 212, 255, 0.08) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
 }
 
 .zonai-btn:hover {
-    background: rgba(0, 212, 255, 0.2);
-    box-shadow: var(--sheikah-glow);
+    background: rgba(0, 212, 255, 0.14);
+    border-color: var(--sheikah-blue);
+    box-shadow: var(--shadow-glow-blue);
     transform: translateY(-2px);
 }
 
+.zonai-btn:hover::before {
+    opacity: 1;
+}
+
 .zonai-btn.primary {
-    background: linear-gradient(135deg, var(--sheikah-blue-dark), var(--sheikah-blue));
+    background: linear-gradient(135deg, var(--sheikah-blue-dark) 0%, var(--sheikah-blue) 100%);
     color: white;
     border: none;
-    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 212, 255, 0.35);
 }
 
 .zonai-btn.primary:hover {
-    box-shadow: 0 6px 30px rgba(0, 212, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.5);
+    transform: translateY(-3px);
 }
 
 .zonai-btn.gold {

@@ -184,15 +184,37 @@
 /* 层级内容 - 技能列表 */
 .skill-layer-content {
     padding: 10px 15px 15px;
-    max-height: 400px;
-    overflow: hidden;
+    max-height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
+    /* 自定义滚动条样式 */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 120, 140, 0.4) transparent;
+}
+
+.skill-layer-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.skill-layer-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.skill-layer-content::-webkit-scrollbar-thumb {
+    background: rgba(100, 120, 140, 0.4);
+    border-radius: 3px;
+}
+
+.skill-layer-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(100, 120, 140, 0.6);
 }
 
 .skill-layer-card.collapsed .skill-layer-content {
     max-height: 0;
     padding-top: 0;
     padding-bottom: 0;
+    overflow: hidden;
 }
 
 /* 技能分类 */

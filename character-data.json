@@ -2,8 +2,8 @@
   "generatedAt": "2026-03-06T06:54:41.652973",
   "character": {
     "name": "LINK",
-    "title": "单虓晗的数字分身",
-    "description": "融合单虓晗的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
+    "title": "AI数字分身",
+    "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
     "totalExp": 10120,
@@ -158,7 +158,7 @@
         "skills": [
           {
             "name": "industry-research",
-            "source": "单虓晗自定义",
+            "source": "用户自定义",
             "level": 3,
             "exp": 63,
             "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
@@ -198,7 +198,7 @@
           },
           {
             "name": "wechat-research",
-            "source": "单虓晗自定义",
+            "source": "用户自定义",
             "level": 2,
             "exp": 48,
             "description": "微信公众号内容调研、整理和知识库构建",
@@ -722,7 +722,7 @@
             "skills": [
               {
                 "name": "industry-research",
-                "source": "单虓晗自定义",
+                "source": "用户自定义",
                 "level": 3,
                 "exp": 63,
                 "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
@@ -762,7 +762,7 @@
               },
               {
                 "name": "wechat-research",
-                "source": "单虓晗自定义",
+                "source": "用户自定义",
                 "level": 2,
                 "exp": 48,
                 "description": "微信公众号内容调研、整理和知识库构建",
@@ -1413,25 +1413,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "单虓晗（Shawn）思想体系与写作风格",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "👤 用户层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
-        "keywords": [
-          "单虓晗",
-          "Shawn",
-          "思维地图",
-          "认知框架",
-          "方法论"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-02-26",
-        "source": "用户显式记录"
-      },
-      {
         "title": "向非技术用户展示AI能力的结构化模式",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -1713,25 +1694,6 @@
           "GitHub Pages"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "AI助手\"林克/添棋\"身份信息",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "👤 用户层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
-        "keywords": [
-          "林克",
-          "Link",
-          "添棋",
-          "AI助手",
-          "数字分身"
-        ],
-        "importance": 4,
         "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
@@ -2141,7 +2103,7 @@
         "layer": "👤 用户层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+        "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟主人），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
         "keywords": [
           "林克",
           "添棋",
@@ -2208,25 +2170,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "用户身份信息",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "👤 用户层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
-        "keywords": [
-          "单虓晗",
-          "Shawn",
-          "沈浪",
-          "用户身份",
-          "花名"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-01",
         "source": "用户显式记录"
       },
       {
@@ -2322,25 +2265,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-02",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "身份保密规则",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "👤 用户层",
-        "icon": "🚫",
-        "color": "#dc2626",
-        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
-        "keywords": [
-          "保密规则",
-          "禁止规则",
-          "身份保护",
-          "隐私",
-          "对外输出"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-01",
         "source": "用户显式记录"
       },
       {
@@ -2455,25 +2379,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
-        "category": "user_communication",
-        "categoryLabel": "用户偏好",
-        "layer": "👤 用户层",
-        "icon": "💬",
-        "color": "#0ea5e9",
-        "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
-        "keywords": [
-          "工作模式",
-          "默认风格",
-          "思维方式",
-          "单虓晗",
-          "Shawn"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       },
       {
@@ -2616,7 +2521,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 74,
+    "total": 65,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -2685,91 +2590,14 @@
             "icon": "👤",
             "color": "#38bdf8",
             "description": "身份信息、背景、个人特征",
-            "items": [
-              {
-                "title": "单虓晗（Shawn）思想体系与写作风格",
-                "category": "user_info",
-                "categoryLabel": "用户身份",
-                "layer": "👤 用户层",
-                "icon": "👤",
-                "color": "#38bdf8",
-                "description": "## 用户思想体系 ### 核心身份 - **笔名**：单虓晗_Shawn - **简书主页**：https://www.jianshu.com/u/1e...",
-                "keywords": [
-                  "单虓晗",
-                  "Shawn",
-                  "思维地图",
-                  "认知框架",
-                  "方法论"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-02-26",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "用户身份信息",
-                "category": "user_info",
-                "categoryLabel": "用户身份",
-                "layer": "👤 用户层",
-                "icon": "👤",
-                "color": "#38bdf8",
-                "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
-                "keywords": [
-                  "单虓晗",
-                  "Shawn",
-                  "沈浪",
-                  "用户身份",
-                  "花名"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-01",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "AI助手\"林克/添棋\"身份信息",
-                "category": "user_info",
-                "categoryLabel": "用户身份",
-                "layer": "👤 用户层",
-                "icon": "👤",
-                "color": "#38bdf8",
-                "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
-                "keywords": [
-                  "林克",
-                  "Link",
-                  "添棋",
-                  "AI助手",
-                  "数字分身"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-04",
-                "source": "用户显式记录"
-              }
-            ],
-            "count": 3
+            "items": [],
+            "count": 0
           },
           "用户偏好": {
             "icon": "💬",
             "color": "#0ea5e9",
             "description": "沟通风格、工作模式、兴趣爱好",
             "items": [
-              {
-                "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
-                "category": "user_communication",
-                "categoryLabel": "用户偏好",
-                "layer": "👤 用户层",
-                "icon": "💬",
-                "color": "#0ea5e9",
-                "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
-                "keywords": [
-                  "工作模式",
-                  "默认风格",
-                  "思维方式",
-                  "单虓晗",
-                  "Shawn"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-02-28",
-                "source": "用户显式记录"
-              },
               {
                 "title": "投资理财：基金持仓追踪",
                 "category": "user_hobby",
@@ -2796,7 +2624,7 @@
                 "layer": "👤 用户层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+                "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟主人），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
                 "keywords": [
                   "林克",
                   "添棋",
@@ -2828,32 +2656,13 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 3
           },
           "用户约束": {
             "icon": "🚫",
             "color": "#dc2626",
             "description": "保密规则、禁止事项",
             "items": [
-              {
-                "title": "身份保密规则",
-                "category": "constraint_or_forbidden_rule",
-                "categoryLabel": "用户约束",
-                "layer": "👤 用户层",
-                "icon": "🚫",
-                "color": "#dc2626",
-                "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
-                "keywords": [
-                  "保密规则",
-                  "禁止规则",
-                  "身份保护",
-                  "隐私",
-                  "对外输出"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-01",
-                "source": "用户显式记录"
-              },
               {
                 "title": "重构/优化任务的强制约束规则",
                 "category": "constraint_or_forbidden_rule",
@@ -2988,7 +2797,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 8
+            "count": 7
           }
         },
         "count": 15

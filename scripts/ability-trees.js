@@ -1,43 +1,37 @@
 /**
- * 能力树渲染模块 v2.0
+ * 能力树渲染模块 v3.0 — 系统架构图
  * 三棵树各有独特风格：
- * - 技能树：科技树风格
+ * - 技能树：系统架构图风格（三层架构 + 引擎内核 + 连接关系）
  * - 知识树：档案馆卡片风格
  * - 记忆树：神经网络径向布局
  */
 
-// ==================== 技能树 - 科技树风格 ====================
+// ==================== 技能树 - 系统架构图 ====================
 function renderSkillTechTree(container, skills) {
     if (!container) return;
     
-    const tree = skills.tree;
-    const categories = skills.categories;
+    var tree = skills.tree;
+    var categories = skills.categories;
+    var relationships = skills.relationships || {};
     
     // 技能名称映射
-    const skillNameMap = {
-        // === 🔄 自进化引擎 ===
+    var skillNameMap = {
         'xiaowuxianggong': '小无相功',
-        'daily-reflection-evolution': '自进化',
+        'daily-reflection-evolution': '每日修炼',
         'learn-from-mistakes': '举一反三',
         'neigong-cultivation': '内功修炼',
         'meta-execution': '元执行',
         'memory-hygiene': '记忆管理',
         'skill-architecture': '技能架构',
         'knowledge-curator': '知识管理',
-        
-        // === 🧠 认知框架 ===
         'essence-insight': '本质洞察',
         'product-thinking': '产品思维',
         'knowledge-acquisition-meta': '知识习得',
-        
-        // === ⚙️ 系统工具 ===
         'knowledge-base': '知识库',
-        'find-skills': '发现',
+        'find-skills': '技能发现',
         'skill-manager': '技能管理',
         'night-task-runner': '夜间任务',
         'personal-assistant': '助理',
-        
-        // === 调研分析 ===
         'industry-research': '行研',
         'wechat-research': '公众号',
         'research': '调研',
@@ -45,279 +39,276 @@ function renderSkillTechTree(container, skills) {
         'apify-market-research': '市场',
         'apify-competitor-intelligence': '竞情',
         'ai-insight': 'AI洞察',
-        
-        // === 文档处理 ===
-        'pdf': 'PDF',
-        'pptx': 'PPT',
-        'docx': 'Word',
-        'xlsx': 'Excel',
-        'canvas-design': '画布',
-        'keynote': 'Keynote',
-        
-        // === 前端开发 ===
-        'ui-ux-pro-max': 'UI专家',
-        'ui-ux-pro-max-skill': 'UI专家',
-        'frontend-design': '前端',
-        'web-dev-workflow': '网页流程',
-        'qingshuang-research-style': '清爽',
-        'work-report-ppt': '汇报',
-        'pixel-action-game': '像素',
-        'theme-factory': '主题',
-        'web-design-guidelines': '规范',
-        'zelda-style': '塞尔达',
-        'vercel-react-best-practices': 'React',
-        'vercel-react-native-skills': 'RN',
-        'vercel-composition-patterns': '组合',
-        'remotion-best-practices': '视频',
-        
-        // === 发布部署 ===
-        'github-deploy-publisher': 'GitHub',
-        'yuque-publisher': '语雀',
-        'ks-kim-docs-shuttle': 'IM文档',
-        'mcp-builder': 'MCP',
-        
-        // === 投资理财 ===
-        'stock-analysis': '股票',
-        'investment-analyzer': '投资',
+        'pdf': 'PDF', 'pptx': 'PPT', 'docx': 'Word', 'xlsx': 'Excel',
+        'canvas-design': '画布', 'keynote': 'Keynote',
+        'ui-ux-pro-max': 'UI专家', 'ui-ux-pro-max-skill': 'UI专家',
+        'frontend-design': '前端', 'web-dev-workflow': '网页流程',
+        'qingshuang-research-style': '清爽', 'work-report-ppt': '汇报',
+        'pixel-action-game': '像素', 'theme-factory': '主题',
+        'web-design-guidelines': '规范', 'zelda-style': '塞尔达',
+        'vercel-react-best-practices': 'React', 'vercel-react-native-skills': 'RN',
+        'vercel-composition-patterns': '组合', 'remotion-best-practices': '视频',
+        'github-deploy-publisher': 'GitHub', 'yuque-publisher': '语雀',
+        'ks-kim-docs-shuttle': 'IM文档', 'mcp-builder': 'MCP',
+        'stock-analysis': '股票', 'investment-analyzer': '投资',
         'investment-tracker': '基金',
-        
-        // === 效率工具 ===
-        'feishu-assistant': '飞书',
-        'linke-kim-message': 'IM消息',
-        'ai-column-writer': '专栏',
-        'promotion-coaching': '晋升辅导'
+        'feishu-assistant': '飞书', 'linke-kim-message': 'IM消息',
+        'ai-column-writer': '专栏', 'promotion-coaching': '晋升辅导'
     };
     
-    // 判断技能是否最近使用（3天内）
+    function getLevelColor(level) {
+        var colors = { 1: '#fb923c', 2: '#fbbf24', 3: '#4ade80', 4: '#38bdf8', 5: '#a78bfa' };
+        return colors[level] || '#4ade80';
+    }
+    
+    function getLevelProgress(level, exp) {
+        var progress = (exp || (level * 20)) / 100;
+        return 50 * (1 - progress);
+    }
+    
     function isRecentlyUsed(lastUpdated) {
         if (!lastUpdated) return false;
-        const lastDate = new Date(lastUpdated);
-        const now = new Date();
-        const diffDays = (now - lastDate) / (1000 * 60 * 60 * 24);
-        return diffDays <= 3;
+        return (new Date() - new Date(lastUpdated)) / 86400000 <= 3;
     }
     
-    // 计算等级进度环的dashoffset
-    function getLevelProgress(level, exp) {
-        // 环的周长约为 2 * PI * 8 ≈ 50
-        const circumference = 50;
-        const progress = (exp || (level * 20)) / 100;
-        return circumference * (1 - progress);
-    }
-    
-    // 生成单个技能节点HTML
-    function createSkillNode(skill, id) {
-        const name = skillNameMap[skill.name] || skill.displayName || skill.name.substring(0, 4);
-        const level = skill.level || 1;
-        const exp = skill.exp || (level * 20);
-        const dashOffset = getLevelProgress(level, exp);
-        const isRecent = isRecentlyUsed(skill.lastUpdated);
-        const nodeColor = getLevelColor(level);
-        
-        // 存储到全局dataMap
+    var _idx = 0;
+    function storeSkill(skill) {
+        var id = 'skill-' + (_idx++);
         window.AppState.dataMap[id] = {
-            name: skill.name,
-            icon: '⚡',
-            level: level,
-            description: skill.description || '暂无描述',
-            source: skill.source || '技能库',
-            exp: exp,
-            lastUpdated: skill.lastUpdated
+            name: skill.name, icon: '\u26A1', level: skill.level || 1,
+            description: skill.description || '', source: skill.source || '技能库',
+            exp: skill.exp || 0, lastUpdated: skill.lastUpdated
         };
-        
-        return `
-            <div class="skill-node" 
-                 style="--node-color: ${nodeColor};"
-                 onmouseenter="showTreeTooltip(event, '${id}', 'skill')"
-                 onmouseleave="hideTooltip()">
-                ${isRecent ? '<span class="skill-recent-badge"></span>' : ''}
-                <div class="skill-level-ring">
-                    <svg viewBox="0 0 22 22">
-                        <circle class="ring-bg" cx="11" cy="11" r="8"/>
-                        <circle class="ring-progress" cx="11" cy="11" r="8" 
-                                stroke-dasharray="50" 
-                                stroke-dashoffset="${dashOffset}"
-                                style="stroke: ${nodeColor};"/>
-                    </svg>
-                    <span class="skill-level-num" style="color: ${nodeColor};">${level}</span>
-                </div>
-                <span class="skill-node-name">${name}</span>
-            </div>
-        `;
+        return id;
     }
     
-    // 获取等级对应颜色
-    function getLevelColor(level) {
-        const colors = {
-            1: '#fb923c',  // 橙色 - 初学
-            2: '#fbbf24',  // 黄色 - 入门
-            3: '#4ade80',  // 绿色 - 熟练
-            4: '#38bdf8',  // 蓝色 - 精通
-            5: '#a78bfa'   // 紫色 - 大师
-        };
-        return colors[level] || colors[3];
+    function getName(skill) {
+        return skillNameMap[skill.name] || skill.displayName || skill.name.substring(0, 4);
     }
     
-    // 优先使用三层架构tree数据
-    if (tree && Object.keys(tree).length > 0) {
-        let layerCardsHtml = '';
-        let globalIdx = 0;
+    function createEngineNode(skill, role, tier) {
+        var id = storeSkill(skill);
+        var name = getName(skill);
+        var level = skill.level || 1;
+        var exp = skill.exp || (level * 20);
+        var color = getLevelColor(level);
+        var dashOffset = getLevelProgress(level, exp);
+        var recent = isRecentlyUsed(skill.lastUpdated);
+        var tierClass = tier === 'guide' ? 'engine-node--guide' : tier === 'core' ? 'engine-node--core' : 'engine-node--tool';
         
-        for (const [layerKey, layerInfo] of Object.entries(tree)) {
-            if (!layerInfo.children || Object.keys(layerInfo.children).length === 0) continue;
-            
-            const layerColor = layerInfo.color || '#4ade80';
-            const layerIcon = layerInfo.icon || '📁';
-            const layerName = layerInfo.name.replace(/^[🏛️🎯🛠️\s]+/, '').trim();
-            const layerId = 'skill-layer-' + globalIdx;
-            
-            // 存储层级数据
-            window.AppState.dataMap[layerId] = {
-                name: layerInfo.name,
-                icon: layerIcon,
-                level: Math.round(layerInfo.avgLevel || 3),
-                description: layerInfo.description || layerInfo.name,
-                source: '技能分类',
-                count: layerInfo.count || 0
-            };
-            
-            // 生成子分类内容
-            let categoriesHtml = '';
-            for (const [childName, childInfo] of Object.entries(layerInfo.children)) {
-                const childIcon = childInfo.icon || '📁';
-                // 去掉名称中的emoji前缀，避免与独立icon重复显示
-                const cleanChildName = childName.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/gu, '').trim();
-                const childSkills = childInfo.skills || [];
-                
-                let skillNodesHtml = '';
-                for (const skill of childSkills) {
-                    const skillId = 'skill-' + (globalIdx++);
-                    skillNodesHtml += createSkillNode(skill, skillId);
-                }
-                
-                categoriesHtml += `
-                    <div class="skill-category-group">
-                        <div class="skill-category-label">
-                            <span class="skill-category-icon">${childIcon}</span>
-                            <span>${cleanChildName}</span>
-                            <span class="skill-category-count">${childInfo.count || 0}</span>
-                        </div>
-                        <div class="skill-nodes-grid">
-                            ${skillNodesHtml}
-                        </div>
-                    </div>
-                `;
-            }
-            
-            layerCardsHtml += `
-                <div class="skill-layer-card" style="--layer-color: ${layerColor};">
-                    <div class="skill-layer-header" onclick="toggleSkillLayerCard(this)">
-                        <span class="skill-layer-icon">${layerIcon}</span>
-                        <div class="skill-layer-info">
-                            <div class="skill-layer-name">${layerName}</div>
-                            <div class="skill-layer-desc">${layerInfo.description || ''}</div>
-                        </div>
-                        <div class="skill-layer-stats">
-                            <span class="skill-layer-count">${layerInfo.count || 0}</span>
-                            <span class="skill-layer-level">Avg.Lv${Math.round(layerInfo.avgLevel || 3)}</span>
-                        </div>
-                        <span class="skill-layer-toggle">▼</span>
-                    </div>
-                    <div class="skill-layer-content">
-                        ${categoriesHtml}
-                    </div>
-                </div>
-            `;
-            globalIdx++;
+        return '<div class="engine-node ' + tierClass + '" data-skill="' + skill.name + '" style="--node-color: ' + color + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()">' +
+            (recent ? '<span class="skill-recent-badge"></span>' : '') +
+            '<div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + dashOffset + '" style="stroke:' + color + ';"/></svg><span class="engine-node-level">' + level + '</span></div>' +
+            '<div class="engine-node-info"><span class="engine-node-name">' + name + '</span><span class="engine-node-role">' + role + '</span></div></div>';
+    }
+    
+    function createSkillChip(skill) {
+        var id = storeSkill(skill);
+        var name = getName(skill);
+        var level = skill.level || 1;
+        var color = getLevelColor(level);
+        return '<div class="skill-chip" style="--chip-color:' + color + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="skill-chip-level">' + level + '</span><span class="skill-chip-name">' + name + '</span></div>';
+    }
+    
+    // ========== 渲染 ==========
+    if (!tree || Object.keys(tree).length === 0) {
+        renderSkillTechTreeFlat(container, categories, skills.total);
+        return;
+    }
+    
+    var metaLayer = tree.meta || {};
+    var domainLayer = tree.domain_pack || {};
+    var execLayer = tree.execution || {};
+    var engineRoles = relationships.engine_roles || {};
+    var loops = relationships.loops || [];
+    
+    // 元能力层子分类
+    var metaChildren = metaLayer.children || {};
+    var engineCat = metaChildren['\uD83D\uDD04 自进化引擎'];
+    var cognitiveCat = metaChildren['\uD83E\uDDE0 认知框架'];
+    var systemCat = metaChildren['\u2699\uFE0F 系统工具'];
+    
+    // 引擎技能映射
+    var engineSkillMap = {};
+    if (engineCat && engineCat.skills) {
+        for (var i = 0; i < engineCat.skills.length; i++) {
+            engineSkillMap[engineCat.skills[i].name] = engineCat.skills[i];
+        }
+    }
+    
+    var guideSkill = engineSkillMap['xiaowuxianggong'];
+    var coreSkill = engineSkillMap['daily-reflection-evolution'];
+    var reviewSkill = engineSkillMap['learn-from-mistakes'];
+    var cultivateSkill = engineSkillMap['neigong-cultivation'];
+    var metaExecSkill = engineSkillMap['meta-execution'];
+    var toolNames = ['memory-hygiene', 'skill-architecture', 'knowledge-curator'];
+    var toolSkills = [];
+    for (var t = 0; t < toolNames.length; t++) {
+        if (engineSkillMap[toolNames[t]]) toolSkills.push(engineSkillMap[toolNames[t]]);
+    }
+    
+    // === 引擎区域 ===
+    var engineHtml = '';
+    if (guideSkill && coreSkill) {
+        var guideNode = createEngineNode(guideSkill, 'Bootloader', 'guide');
+        var coreNode = createEngineNode(coreSkill, '规范来源', 'core');
+        var reviewNode = reviewSkill ? createEngineNode(reviewSkill, 'Step2 复盘', 'core') : '';
+        var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, 'Step3 修炼', 'core') : '';
+        var metaExecNode = metaExecSkill ? createEngineNode(metaExecSkill, '全程保障', 'core') : '';
+        var toolNodes = '';
+        for (var ti = 0; ti < toolSkills.length; ti++) {
+            var r = engineRoles[toolSkills[ti].name];
+            toolNodes += createEngineNode(toolSkills[ti], (r && r.role) || '深度工具', 'tool');
         }
         
-        container.innerHTML = `
-            <div class="skill-tech-tree">
-                <div class="skill-root-node">
-                    <span class="skill-root-icon">⚡</span>
-                    <span class="skill-root-label">技能</span>
-                    <span class="skill-root-count">${skills.total || 0}</span>
-                </div>
-                <div class="skill-layers-container">
-                    ${layerCardsHtml}
-                </div>
-            </div>
-        `;
-    } else {
-        // 回退：使用扁平categories结构
-        renderSkillTechTreeFlat(container, categories, skills.total);
+        var loopsHtml = '';
+        if (loops.length > 0) {
+            loopsHtml = '<div class="engine-loops">';
+            for (var li = 0; li < loops.length; li++) {
+                var l = loops[li];
+                loopsHtml += '<div class="engine-loop-tag" title="' + (l.desc || '') + '"><span class="loop-icon">' + l.icon + '</span><span class="loop-name">' + l.name + '</span><span class="loop-level">' + l.level + '</span></div>';
+            }
+            loopsHtml += '</div>';
+        }
+        
+        engineHtml = '<div class="engine-section">' +
+            '<div class="engine-title-bar"><span class="engine-title-icon">\uD83D\uDD04</span><span class="engine-title-text">自进化引擎</span><span class="engine-title-desc">驱动持续进化的完整闭环</span></div>' +
+            '<div class="engine-diagram">' +
+                '<div class="engine-tier engine-tier--guide">' + guideNode + '</div>' +
+                '<div class="engine-connector engine-connector--vertical"><span class="connector-label">导航</span><div class="connector-line"></div></div>' +
+                '<div class="engine-tier engine-tier--core">' + coreNode +
+                    '<div class="engine-core-branches">' +
+                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">Step2</span></div>' + reviewNode + '</div>' +
+                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">Step3</span></div>' + cultivateNode + '</div>' +
+                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">全程</span></div>' + metaExecNode + '</div>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="engine-feedback-line" title="P2反馈"><svg class="feedback-svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M 85 2 C 95 2, 98 10, 95 18 L 5 18 C 2 18, 0 10, 5 2" fill="none" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="4,3"/><circle r="2" fill="#a78bfa"><animateMotion dur="3s" repeatCount="indefinite" path="M 85 2 C 95 2, 98 10, 95 18 L 5 18 C 2 18, 0 10, 5 2"/></circle></svg><span class="feedback-label">P2 反馈</span></div>' +
+                '<div class="engine-tier engine-tier--tools"><div class="engine-tools-connector"><span class="tools-connector-label">深度优化三剑客</span></div><div class="engine-tools-grid">' + toolNodes + '</div></div>' +
+            '</div>' +
+            loopsHtml +
+        '</div>';
     }
+    
+    // === 认知框架 ===
+    var cognitiveHtml = '';
+    if (cognitiveCat && cognitiveCat.skills) {
+        var cogNodes = '';
+        for (var ci = 0; ci < cognitiveCat.skills.length; ci++) {
+            var s = cognitiveCat.skills[ci];
+            var cid = storeSkill(s);
+            var cname = getName(s);
+            var clevel = s.level || 1;
+            var ccolor = getLevelColor(clevel);
+            var cexp = s.exp || (clevel * 20);
+            var cdash = 63 * (1 - cexp / 100);
+            cogNodes += '<div class="cognitive-pillar" style="--pillar-color:' + ccolor + ';" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 28 28"><circle class="ring-bg" cx="14" cy="14" r="10"/><circle class="ring-progress" cx="14" cy="14" r="10" stroke-dasharray="63" stroke-dashoffset="' + cdash + '" style="stroke:' + ccolor + ';"/></svg><span class="cognitive-level">' + clevel + '</span></div><span class="cognitive-name">' + cname + '</span>' + (s.name === 'product-thinking' ? '<span class="cognitive-badge">内置</span>' : '') + '</div>';
+        }
+        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">认知框架</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '可被任何任务调用') + '</div></div>';
+    }
+    
+    // === 系统工具 ===
+    var systemHtml = '';
+    if (systemCat && systemCat.skills) {
+        var sysChips = '';
+        for (var si = 0; si < systemCat.skills.length; si++) {
+            sysChips += createSkillChip(systemCat.skills[si]);
+        }
+        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">系统工具</span></div><div class="system-chips">' + sysChips + '</div><div class="system-note">' + (relationships.system_note || '基础设施') + '</div></div>';
+    }
+    
+    function renderLayerTransition(text) {
+        return '<div class="layer-transition"><div class="transition-line"></div><span class="transition-label">' + text + '</span><div class="transition-arrow">\u25BC</div></div>';
+    }
+    
+    // === 领域技能包 ===
+    var domainHtml = '';
+    if (domainLayer.children && Object.keys(domainLayer.children).length > 0) {
+        var domainCards = '';
+        var dEntries = Object.entries(domainLayer.children);
+        for (var di = 0; di < dEntries.length; di++) {
+            var dName = dEntries[di][0];
+            var dInfo = dEntries[di][1];
+            var dClean = dName.replace(/^[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE0F}\u{200D}]+\s*/gu, '').trim();
+            var dChips = '';
+            var dSkills = dInfo.skills || [];
+            for (var ds = 0; ds < dSkills.length; ds++) { dChips += createSkillChip(dSkills[ds]); }
+            domainCards += '<div class="domain-card" style="--domain-color:' + (dInfo.color || '#8b5cf6') + ';"><div class="domain-card-header"><span class="domain-card-icon">' + (dInfo.icon || '\uD83C\uDFAF') + '</span><span class="domain-card-name">' + dClean + '</span></div><div class="domain-card-desc">' + (dInfo.description || '') + '</div><div class="domain-card-skills">' + dChips + '</div></div>';
+        }
+        domainHtml = '<div class="domain-layer"><div class="domain-layer-header"><span class="domain-layer-icon">\uD83C\uDFAF</span><span class="domain-layer-title">领域技能包</span><span class="domain-layer-desc">特定领域的完整解决方案</span></div><div class="domain-cards-grid">' + domainCards + '</div></div>';
+    }
+    
+    // === 执行技能层 ===
+    var execHtml = '';
+    if (execLayer.children && Object.keys(execLayer.children).length > 0) {
+        var execGroups = '';
+        var eEntries = Object.entries(execLayer.children);
+        for (var ei = 0; ei < eEntries.length; ei++) {
+            var eName = eEntries[ei][0];
+            var eInfo = eEntries[ei][1];
+            var eClean = eName.replace(/^[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE0F}\u{200D}]+\s*/gu, '').trim();
+            var eChips = '';
+            var eSkills = eInfo.skills || [];
+            for (var es = 0; es < eSkills.length; es++) { eChips += createSkillChip(eSkills[es]); }
+            execGroups += '<div class="exec-group"><div class="exec-group-header"><span class="exec-group-icon">' + (eInfo.icon || '\uD83D\uDEE0\uFE0F') + '</span><span class="exec-group-name">' + eClean + '</span><span class="exec-group-count">' + (eInfo.count || 0) + '</span></div><div class="exec-group-chips">' + eChips + '</div></div>';
+        }
+        execHtml = '<div class="exec-layer" id="exec-layer-toggle"><div class="exec-layer-header" onclick="toggleExecLayer()"><span class="exec-layer-icon">\uD83D\uDEE0\uFE0F</span><span class="exec-layer-title">执行技能层</span><span class="exec-layer-desc">做具体事情的工具</span><span class="exec-layer-count">' + (execLayer.count || 0) + '</span><span class="exec-layer-toggle-icon">\u25BC</span></div><div class="exec-layer-content"><div class="exec-groups-grid">' + execGroups + '</div></div></div>';
+    }
+    
+    // ========== 组装 ==========
+    container.innerHTML = '<div class="skill-architecture">' +
+        '<div class="arch-header"><div class="arch-title"><span class="arch-icon">\u26A1</span><span>技能体系</span></div><div class="arch-stats"><span class="arch-stat">' + (skills.total || 0) + ' 技能</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">4 闭环</span></div></div>' +
+        '<div class="meta-layer"><div class="meta-layer-label"><span class="meta-label-icon">\uD83C\uDFDB\uFE0F</span><span class="meta-label-text">元能力层</span><span class="meta-label-desc">决定"我是谁"</span></div><div class="meta-layer-content">' + engineHtml + '<div class="meta-side-panels">' + cognitiveHtml + systemHtml + '</div></div></div>' +
+        renderLayerTransition('元能力驱动领域能力') +
+        domainHtml +
+        renderLayerTransition('领域调用执行技能') +
+        execHtml +
+    '</div>';
 }
 
-// 扁平结构回退渲染
+function toggleExecLayer() {
+    var el = document.getElementById('exec-layer-toggle');
+    if (el) el.classList.toggle('collapsed');
+}
+window.toggleExecLayer = toggleExecLayer;
+
 function renderSkillTechTreeFlat(container, categories, total) {
-    // ... 简化处理，复用原有逻辑
-    container.innerHTML = `
-        <div class="skill-tech-tree">
-            <div class="skill-root-node">
-                <span class="skill-root-icon">⚡</span>
-                <span class="skill-root-label">技能</span>
-                <span class="skill-root-count">${total || 0}</span>
-            </div>
-            <div style="text-align: center; padding: 20px; color: var(--text-muted);">
-                正在加载技能数据...
-            </div>
-        </div>
-    `;
+    container.innerHTML = '<div class="skill-tech-tree"><div class="skill-root-node"><span class="skill-root-icon">\u26A1</span><span class="skill-root-label">技能</span><span class="skill-root-count">' + (total || 0) + '</span></div><div style="text-align:center;padding:20px;color:var(--text-muted);">正在加载技能数据...</div></div>';
 }
 
-// 层级卡片折叠/展开
 function toggleSkillLayerCard(header) {
-    const card = header.closest('.skill-layer-card');
-    if (card) {
-        card.classList.toggle('collapsed');
-    }
+    var card = header.closest('.skill-layer-card');
+    if (card) card.classList.toggle('collapsed');
 }
-
 window.toggleSkillLayerCard = toggleSkillLayerCard;
 
 // ==================== 知识树 - 档案馆卡片风格 ====================
 function renderKnowledgeArchive(container, knowledge) {
     if (!container) return;
     
-    // 知识目录映射
-    const knowledgeNameMap = {
-        'personal-writings': '个人文章',
-        'rd-efficiency': '研发效能',
-        'financial': '金融投资',
-        'experience': '经验总结',
-        'guides': '使用指南',
-        'investment': '投资理财',
-        'ai-research': 'AI研究',
-        'product': '产品思考',
-        'mcp-research': 'MCP研究'
+    var knowledgeNameMap = {
+        'personal-writings': '个人文章', 'rd-efficiency': '研发效能',
+        'financial': '金融投资', 'experience': '经验总结',
+        'guides': '使用指南', 'investment': '投资理财',
+        'ai-research': 'AI研究', 'product': '产品思考', 'mcp-research': 'MCP研究'
     };
     
-    const knowledgeIconMap = {
-        'personal-writings': '✍️',
-        'rd-efficiency': '⚡',
-        'financial': '💰',
-        'experience': '💡',
-        'guides': '📖',
-        'ai-research': '🤖',
-        'product': '📊',
-        'mcp-research': '🔌'
+    var knowledgeIconMap = {
+        'personal-writings': '\u270D\uFE0F', 'rd-efficiency': '\u26A1',
+        'financial': '\uD83D\uDCB0', 'experience': '\uD83D\uDCA1',
+        'guides': '\uD83D\uDCD6', 'ai-research': '\uD83E\uDD16',
+        'product': '\uD83D\uDCCA', 'mcp-research': '\uD83D\uDD0C'
     };
     
-    // 获取目录数据
-    let directories = [];
+    var directories = [];
     if (knowledge.directories && Array.isArray(knowledge.directories)) {
         directories = knowledge.directories;
     } else if (knowledge.categories) {
-        directories = Object.entries(knowledge.categories).map(([key, cat]) => ({
-            key: key,
-            name: cat.name || key,
-            count: cat.fileCount || 0,
-            icon: cat.icon || '📁',
-            color: cat.color,
-            sizeKB: cat.sizeKB || 0,
-            description: cat.description
-        }));
+        var catEntries = Object.entries(knowledge.categories);
+        for (var i = 0; i < catEntries.length; i++) {
+            var key = catEntries[i][0], cat = catEntries[i][1];
+            directories.push({ key: key, name: cat.name || key, count: cat.fileCount || 0, icon: cat.icon || '\uD83D\uDCC1', color: cat.color, sizeKB: cat.sizeKB || 0, description: cat.description });
+        }
     }
     
     if (directories.length === 0) {
@@ -325,304 +316,146 @@ function renderKnowledgeArchive(container, knowledge) {
         return;
     }
     
-    // 计算最大文件数（用于进度条）
-    const maxCount = Math.max(...directories.map(d => d.count));
+    var maxCount = 0;
+    for (var m = 0; m < directories.length; m++) { if (directories[m].count > maxCount) maxCount = directories[m].count; }
     
-    // 生成卡片HTML
-    let cardsHtml = '';
-    directories.forEach((dir, idx) => {
-        const dirKey = dir.key || dir.name;
-        const chineseName = knowledgeNameMap[dirKey] || dirKey;
-        const dirIcon = knowledgeIconMap[dirKey] || dir.icon || '📁';
-        const dirId = 'knowledge-dir-' + idx;
-        const progress = maxCount > 0 ? (dir.count / maxCount * 100) : 0;
+    var cardsHtml = '';
+    for (var d = 0; d < directories.length; d++) {
+        var dir = directories[d];
+        var dirKey = dir.key || dir.name;
+        var chineseName = knowledgeNameMap[dirKey] || dirKey;
+        var dirIcon = knowledgeIconMap[dirKey] || dir.icon || '\uD83D\uDCC1';
+        var dirId = 'knowledge-dir-' + d;
+        var progress = maxCount > 0 ? (dir.count / maxCount * 100) : 0;
+        var isRecent = dir.count > 5;
         
-        // 判断是否最近更新（模拟：count > 5 视为活跃）
-        const isRecent = dir.count > 5;
-        
-        // 存储到dataMap
         window.AppState.dataMap[dirId] = {
-            name: chineseName,
-            icon: dirIcon,
-            level: Math.min(5, Math.ceil(dir.count / 10)),
-            description: `${chineseName}知识库，共收录${dir.count}个文档${dir.sizeKB ? `，总计${dir.sizeKB}KB` : ''}`,
-            source: dir.description || `${chineseName}相关文档`
+            name: chineseName, icon: dirIcon, level: Math.min(5, Math.ceil(dir.count / 10)),
+            description: chineseName + '知识库，共收录' + dir.count + '个文档' + (dir.sizeKB ? '，总计' + dir.sizeKB + 'KB' : ''),
+            source: dir.description || chineseName + '相关文档'
         };
         
-        cardsHtml += `
-            <div class="knowledge-folder-card"
-                 onmouseenter="showTreeTooltip(event, '${dirId}', 'knowledge')"
-                 onmouseleave="hideTooltip()">
-                <div class="knowledge-folder-header">
-                    <span class="knowledge-folder-icon">${dirIcon}</span>
-                    <span class="knowledge-folder-name">${chineseName}</span>
-                </div>
-                <div class="knowledge-folder-progress">
-                    <div class="knowledge-progress-bar">
-                        <div class="knowledge-progress-fill" style="width: ${progress}%;"></div>
-                    </div>
-                    <div class="knowledge-progress-text">
-                        <span class="knowledge-folder-count">${dir.count} 文档</span>
-                        <span>${dir.sizeKB ? dir.sizeKB + 'KB' : ''}</span>
-                    </div>
-                </div>
-                <div class="knowledge-folder-footer">
-                    ${isRecent ? '<span class="knowledge-update-badge recent">🔥 活跃</span>' : ''}
-                </div>
-            </div>
-        `;
-    });
+        cardsHtml += '<div class="knowledge-folder-card" onmouseenter="showTreeTooltip(event, \'' + dirId + '\', \'knowledge\')" onmouseleave="hideTooltip()"><div class="knowledge-folder-header"><span class="knowledge-folder-icon">' + dirIcon + '</span><span class="knowledge-folder-name">' + chineseName + '</span></div><div class="knowledge-folder-progress"><div class="knowledge-progress-bar"><div class="knowledge-progress-fill" style="width:' + progress + '%;"></div></div><div class="knowledge-progress-text"><span class="knowledge-folder-count">' + dir.count + ' 文档</span><span>' + (dir.sizeKB ? dir.sizeKB + 'KB' : '') + '</span></div></div><div class="knowledge-folder-footer">' + (isRecent ? '<span class="knowledge-update-badge recent">\uD83D\uDD25 活跃</span>' : '') + '</div></div>';
+    }
     
-    container.innerHTML = `
-        <div class="knowledge-archive">
-            <div class="knowledge-header">
-                <span class="knowledge-header-icon">📚</span>
-                <div class="knowledge-header-info">
-                    <div class="knowledge-header-title">知识库</div>
-                    <div class="knowledge-header-desc">涵盖${directories.length}个领域的深度积累</div>
-                </div>
-                <div>
-                    <div class="knowledge-header-count">${knowledge.totalFiles || 0}</div>
-                    <div class="knowledge-header-label">总文档数</div>
-                </div>
-            </div>
-            <div class="knowledge-cards-grid">
-                ${cardsHtml}
-            </div>
-        </div>
-    `;
+    container.innerHTML = '<div class="knowledge-archive"><div class="knowledge-header"><span class="knowledge-header-icon">\uD83D\uDCDA</span><div class="knowledge-header-info"><div class="knowledge-header-title">知识库</div><div class="knowledge-header-desc">涵盖' + directories.length + '个领域的深度积累</div></div><div><div class="knowledge-header-count">' + (knowledge.totalFiles || 0) + '</div><div class="knowledge-header-label">总文档数</div></div></div><div class="knowledge-cards-grid">' + cardsHtml + '</div></div>';
 }
 
 // ==================== 记忆树 - 神经网络径向布局 + 二级展开 ====================
 function renderMemoryNeuralNetwork(container, memories) {
     if (!container) return;
     
-    const tree = memories.tree;
-    const total = memories.total || 0;
+    var tree = memories.tree;
+    var total = memories.total || 0;
     
-    // 层级颜色和标签
-    const layerConfig = {
-        '👤 用户层': { color: '#38bdf8', label: '用户', icon: '👤' },
-        '🧠 能力层': { color: '#a78bfa', label: '能力', icon: '🧠' },
-        '🎯 领域技能包': { color: '#8b5cf6', label: '领域技能', icon: '🎯' },
-        '🛠️ 领域层': { color: '#4ade80', label: '领域', icon: '🛠️' },
-        '📚 项目层': { color: '#fb923c', label: '项目', icon: '📚' }
+    var layerConfig = {
+        '\uD83D\uDC64 用户层': { color: '#38bdf8', label: '用户', icon: '\uD83D\uDC64' },
+        '\uD83E\uDDE0 能力层': { color: '#a78bfa', label: '能力', icon: '\uD83E\uDDE0' },
+        '\uD83C\uDFAF 领域技能包': { color: '#8b5cf6', label: '领域技能', icon: '\uD83C\uDFAF' },
+        '\uD83D\uDEE0\uFE0F 领域层': { color: '#4ade80', label: '领域', icon: '\uD83D\uDEE0\uFE0F' },
+        '\uD83D\uDCDA 项目层': { color: '#fb923c', label: '项目', icon: '\uD83D\uDCDA' }
     };
     
-    // 如果没有tree数据，使用简单展示
     if (!tree || Object.keys(tree).length === 0) {
-        container.innerHTML = `
-            <div class="memory-neural-network">
-                <div style="text-align: center; padding: 40px; color: var(--text-muted);">
-                    <div style="font-size: 48px; margin-bottom: 10px;">🧠</div>
-                    <div>记忆总数：${total}</div>
-                </div>
-            </div>
-        `;
+        container.innerHTML = '<div class="memory-neural-network"><div style="text-align:center;padding:40px;color:var(--text-muted);"><div style="font-size:48px;margin-bottom:10px;">\uD83E\uDDE0</div><div>记忆总数：' + total + '</div></div></div>';
         return;
     }
     
-    // 计算布局参数
-    const centerX = 250;
-    const centerY = 250;
-    const radius = 140;
+    var centerX = 250, centerY = 250, radius = 140;
+    var validLayers = Object.entries(tree).filter(function(e) { return e[1].count > 0; });
+    var angleStep = (2 * Math.PI) / validLayers.length;
     
-    // 过滤有效层级
-    const validLayers = Object.entries(tree).filter(([_, info]) => info.count > 0);
-    const angleStep = (2 * Math.PI) / validLayers.length;
+    var connectionsHtml = '', nodesHtml = '';
+    var layerDataForExpand = {};
     
-    // 生成连接线和节点
-    let connectionsHtml = '';
-    let nodesHtml = '';
-    let layerDataForExpand = {};
-    
-    validLayers.forEach(([layerName, layerInfo], idx) => {
-        const config = layerConfig[layerName] || { color: '#fb923c', label: layerName, icon: '📁' };
-        const angle = angleStep * idx - Math.PI / 2; // 从顶部开始
-        const x = centerX + radius * Math.cos(angle);
-        const y = centerY + radius * Math.sin(angle);
+    for (var idx = 0; idx < validLayers.length; idx++) {
+        var layerName = validLayers[idx][0], layerInfo = validLayers[idx][1];
+        var config = layerConfig[layerName] || { color: '#fb923c', label: layerName, icon: '\uD83D\uDCC1' };
+        var angle = angleStep * idx - Math.PI / 2;
+        var x = centerX + radius * Math.cos(angle);
+        var y = centerY + radius * Math.sin(angle);
+        var nodeRadius = Math.min(35, Math.max(22, 18 + layerInfo.count * 0.4));
+        var nodeId = 'memory-layer-' + idx;
         
-        // 节点大小根据记忆数量
-        const nodeRadius = Math.min(35, Math.max(22, 18 + layerInfo.count * 0.4));
+        layerDataForExpand[nodeId] = { layerName: layerName, layerInfo: layerInfo, config: config };
         
-        const nodeId = 'memory-layer-' + idx;
-        
-        // 存储层级数据供展开使用
-        layerDataForExpand[nodeId] = {
-            layerName: layerName,
-            layerInfo: layerInfo,
-            config: config
-        };
-        
-        // 存储到dataMap
         window.AppState.dataMap[nodeId] = {
-            name: layerName,
-            icon: config.icon,
+            name: layerName, icon: config.icon,
             level: Math.min(5, Math.ceil(layerInfo.count / 5)),
-            description: layerInfo.description || `${config.label}相关记忆，共${layerInfo.count}条`,
+            description: (layerInfo.description || config.label + '相关记忆') + '，共' + layerInfo.count + '条',
             source: '记忆库'
         };
         
-        // 连接线
-        connectionsHtml += `
-            <line class="memory-connection" 
-                  x1="${centerX}" y1="${centerY}" 
-                  x2="${x}" y2="${y}" 
-                  stroke="${config.color}"/>
-        `;
+        connectionsHtml += '<line class="memory-connection" x1="' + centerX + '" y1="' + centerY + '" x2="' + x + '" y2="' + y + '" stroke="' + config.color + '"/>';
         
-        // 脉冲效果 - 放在节点后面避免干扰
         if (layerInfo.count >= 5) {
-            connectionsHtml += `
-                <circle class="memory-pulse-ring" 
-                        cx="${x}" cy="${y}" r="${nodeRadius}"
-                        stroke="${config.color}"
-                        style="animation-delay: ${idx * 0.5}s;"/>
-            `;
+            connectionsHtml += '<circle class="memory-pulse-ring" cx="' + x + '" cy="' + y + '" r="' + nodeRadius + '" stroke="' + config.color + '" style="animation-delay:' + (idx * 0.5) + 's;"/>';
         }
         
-        // 节点 - 点击展开二级
-        nodesHtml += `
-            <g class="memory-category-node" 
-               transform="translate(${x}, ${y})"
-               data-node-id="${nodeId}"
-               onclick="toggleMemoryLayerExpand('${nodeId}')"
-               onmouseenter="showTreeTooltip(event, '${nodeId}', 'memory')"
-               onmouseleave="hideTooltip()">
-                <circle class="memory-category-circle" 
-                        r="${nodeRadius}" 
-                        stroke="${config.color}"/>
-                <text class="memory-category-icon" y="-3">${config.icon}</text>
-                <text class="memory-category-label" y="10">${config.label}</text>
-                <text class="memory-category-count" y="22">${layerInfo.count}</text>
-            </g>
-        `;
-    });
+        nodesHtml += '<g class="memory-category-node" transform="translate(' + x + ',' + y + ')" data-node-id="' + nodeId + '" onclick="toggleMemoryLayerExpand(\'' + nodeId + '\')" onmouseenter="showTreeTooltip(event, \'' + nodeId + '\', \'memory\')" onmouseleave="hideTooltip()"><circle class="memory-category-circle" r="' + nodeRadius + '" stroke="' + config.color + '"/><text class="memory-category-icon" y="-3">' + config.icon + '</text><text class="memory-category-label" y="10">' + config.label + '</text><text class="memory-category-count" y="22">' + layerInfo.count + '</text></g>';
+    }
     
-    // 图例
-    let legendHtml = '';
-    validLayers.forEach(([layerName, layerInfo]) => {
-        const config = layerConfig[layerName] || { color: '#fb923c', label: layerName };
-        legendHtml += `
-            <div class="memory-legend-item">
-                <span class="memory-legend-dot" style="background: ${config.color};"></span>
-                <span>${config.label} (${layerInfo.count})</span>
-            </div>
-        `;
-    });
+    var legendHtml = '';
+    for (var lg = 0; lg < validLayers.length; lg++) {
+        var lName = validLayers[lg][0], lInfo = validLayers[lg][1];
+        var lCfg = layerConfig[lName] || { color: '#fb923c', label: lName };
+        legendHtml += '<div class="memory-legend-item"><span class="memory-legend-dot" style="background:' + lCfg.color + ';"></span><span>' + lCfg.label + ' (' + lInfo.count + ')</span></div>';
+    }
     
-    container.innerHTML = `
-        <div class="memory-neural-network">
-            <div class="memory-network-svg">
-                <svg viewBox="0 0 500 500">
-                    <defs>
-                        <radialGradient id="memoryGradient">
-                            <stop offset="0%" stop-color="rgba(251, 146, 60, 0.3)"/>
-                            <stop offset="100%" stop-color="rgba(251, 146, 60, 0.1)"/>
-                        </radialGradient>
-                    </defs>
-                    
-                    <!-- 连接线和脉冲 -->
-                    ${connectionsHtml}
-                    
-                    <!-- 中心核心节点 -->
-                    <circle class="memory-core-node" cx="${centerX}" cy="${centerY}" r="45"/>
-                    <text x="${centerX}" y="${centerY - 8}" text-anchor="middle" fill="var(--sheikah-orange)" font-size="24">🧠</text>
-                    <text x="${centerX}" y="${centerY + 10}" text-anchor="middle" fill="var(--sheikah-orange-light)" font-size="11" font-weight="600">记忆核心</text>
-                    <text x="${centerX}" y="${centerY + 24}" text-anchor="middle" fill="rgba(200,220,240,0.6)" font-size="10">${total} 条</text>
-                    
-                    <!-- 分类节点 -->
-                    ${nodesHtml}
-                </svg>
-            </div>
-            <div class="memory-legend">
-                ${legendHtml}
-            </div>
-            <!-- 展开面板 -->
-            <div class="memory-expand-panel" id="memory-expand-panel" style="display: none;">
-                <div class="memory-expand-header">
-                    <span class="memory-expand-title" id="memory-expand-title">记忆详情</span>
-                    <button class="memory-expand-close" onclick="closeMemoryExpand()">✕</button>
-                </div>
-                <div class="memory-expand-content" id="memory-expand-content">
-                </div>
-            </div>
-        </div>
-    `;
+    container.innerHTML = '<div class="memory-neural-network"><div class="memory-network-svg"><svg viewBox="0 0 500 500"><defs><radialGradient id="memoryGradient"><stop offset="0%" stop-color="rgba(251,146,60,0.3)"/><stop offset="100%" stop-color="rgba(251,146,60,0.1)"/></radialGradient></defs>' + connectionsHtml + '<circle class="memory-core-node" cx="' + centerX + '" cy="' + centerY + '" r="45"/><text x="' + centerX + '" y="' + (centerY - 8) + '" text-anchor="middle" fill="var(--sheikah-orange)" font-size="24">\uD83E\uDDE0</text><text x="' + centerX + '" y="' + (centerY + 10) + '" text-anchor="middle" fill="var(--sheikah-orange-light)" font-size="11" font-weight="600">记忆核心</text><text x="' + centerX + '" y="' + (centerY + 24) + '" text-anchor="middle" fill="rgba(200,220,240,0.6)" font-size="10">' + total + ' 条</text>' + nodesHtml + '</svg></div><div class="memory-legend">' + legendHtml + '</div><div class="memory-expand-panel" id="memory-expand-panel" style="display:none;"><div class="memory-expand-header"><span class="memory-expand-title" id="memory-expand-title">记忆详情</span><button class="memory-expand-close" onclick="closeMemoryExpand()">\u2715</button></div><div class="memory-expand-content" id="memory-expand-content"></div></div></div>';
     
-    // 保存层级数据到全局
     window._memoryLayerData = layerDataForExpand;
 }
 
 // 展开记忆层级详情
 function toggleMemoryLayerExpand(nodeId) {
-    const layerData = window._memoryLayerData?.[nodeId];
+    var layerData = window._memoryLayerData && window._memoryLayerData[nodeId];
     if (!layerData) return;
     
-    const panel = document.getElementById('memory-expand-panel');
-    const title = document.getElementById('memory-expand-title');
-    const content = document.getElementById('memory-expand-content');
-    
+    var panel = document.getElementById('memory-expand-panel');
+    var title = document.getElementById('memory-expand-title');
+    var content = document.getElementById('memory-expand-content');
     if (!panel || !title || !content) return;
     
-    const { layerName, layerInfo, config } = layerData;
+    var layerName = layerData.layerName;
+    var layerInfo = layerData.layerInfo;
+    var config = layerData.config;
     
-    // 设置标题
-    title.innerHTML = `<span style="color: ${config.color};">${config.icon}</span> ${config.label}层记忆 (${layerInfo.count}条)`;
+    title.innerHTML = '<span style="color:' + config.color + ';">' + config.icon + '</span> ' + config.label + '层记忆 (' + layerInfo.count + '条)';
     
-    // 生成子分类内容
-    let childrenHtml = '';
-    const children = layerInfo.children || {};
+    var childrenHtml = '';
+    var children = layerInfo.children || {};
+    var childKeys = Object.keys(children);
     
-    if (Object.keys(children).length === 0) {
+    if (childKeys.length === 0) {
         childrenHtml = '<div class="memory-expand-empty">暂无详细记忆</div>';
     } else {
-        for (const [childName, childInfo] of Object.entries(children)) {
+        for (var ci = 0; ci < childKeys.length; ci++) {
+            var childName = childKeys[ci];
+            var childInfo = children[childName];
             if (childInfo.count === 0) continue;
             
-            // 获取具体记忆项
-            const items = childInfo.items || [];
-            let itemsHtml = '';
+            var items = childInfo.items || [];
+            var itemsHtml = '';
+            var showCount = Math.min(6, items.length);
             
-            items.slice(0, 6).forEach((item, idx) => {
-                const itemId = `memory-item-${nodeId}-${idx}`;
-                
-                // 存储到dataMap
+            for (var ii = 0; ii < showCount; ii++) {
+                var item = items[ii];
+                var itemId = 'memory-item-' + nodeId + '-' + ii;
                 window.AppState.dataMap[itemId] = {
-                    name: item.title || `记忆 #${idx + 1}`,
-                    icon: item.icon || '💭',
-                    level: item.importance || 3,
-                    description: item.description || '暂无描述',
-                    source: childName
+                    name: item.title || '记忆 #' + (ii + 1), icon: item.icon || '\uD83D\uDCAD',
+                    level: item.importance || 3, description: item.description || '暂无描述', source: childName
                 };
-                
-                itemsHtml += `
-                    <div class="memory-item-chip" 
-                         style="border-color: ${config.color};"
-                         onmouseenter="showTreeTooltip(event, '${itemId}', 'memory')"
-                         onmouseleave="hideTooltip()">
-                        <span class="memory-item-icon">${item.icon || '💭'}</span>
-                        <span class="memory-item-title">${(item.title || '记忆').substring(0, 15)}${(item.title?.length > 15) ? '...' : ''}</span>
-                    </div>
-                `;
-            });
-            
-            if (items.length > 6) {
-                itemsHtml += `<div class="memory-item-more">+${items.length - 6}</div>`;
+                var itemTitle = (item.title || '记忆').substring(0, 15);
+                if (item.title && item.title.length > 15) itemTitle += '...';
+                itemsHtml += '<div class="memory-item-chip" style="border-color:' + config.color + ';" onmouseenter="showTreeTooltip(event, \'' + itemId + '\', \'memory\')" onmouseleave="hideTooltip()"><span class="memory-item-icon">' + (item.icon || '\uD83D\uDCAD') + '</span><span class="memory-item-title">' + itemTitle + '</span></div>';
             }
             
-            childrenHtml += `
-                <div class="memory-child-group">
-                    <div class="memory-child-header" style="color: ${config.color};">
-                        <span class="memory-child-icon">${childInfo.icon || '📁'}</span>
-                        <span class="memory-child-name">${childName}</span>
-                        <span class="memory-child-count">${childInfo.count}</span>
-                    </div>
-                    <div class="memory-child-items">
-                        ${itemsHtml}
-                    </div>
-                </div>
-            `;
+            if (items.length > 6) {
+                itemsHtml += '<div class="memory-item-more">+' + (items.length - 6) + '</div>';
+            }
+            
+            childrenHtml += '<div class="memory-child-group"><div class="memory-child-header" style="color:' + config.color + ';"><span class="memory-child-icon">' + (childInfo.icon || '\uD83D\uDCC1') + '</span><span class="memory-child-name">' + childName + '</span><span class="memory-child-count">' + childInfo.count + '</span></div><div class="memory-child-items">' + itemsHtml + '</div></div>';
         }
     }
     
@@ -630,12 +463,9 @@ function toggleMemoryLayerExpand(nodeId) {
     panel.style.display = 'block';
 }
 
-// 关闭展开面板
 function closeMemoryExpand() {
-    const panel = document.getElementById('memory-expand-panel');
-    if (panel) {
-        panel.style.display = 'none';
-    }
+    var panel = document.getElementById('memory-expand-panel');
+    if (panel) panel.style.display = 'none';
 }
 
 window.toggleMemoryLayerExpand = toggleMemoryLayerExpand;

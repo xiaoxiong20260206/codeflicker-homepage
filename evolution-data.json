@@ -3,7 +3,7 @@
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
-    "description": "林克的进化历程 - 从工具到数字生命的蜕变",
+    "description": "AI助手的进化历程 - 从工具到数字生命的蜕变",
     "currentVersion": "6.0",
     "birthDate": "2026-02-01",
     "stages": [
@@ -63,7 +63,7 @@
           "消息推送",
           "跨平台协作"
         ],
-        "milestone": "飞书机器人「林克」上线",
+        "milestone": "飞书机器人「AI助手」上线",
         "status": "completed"
       },
       {
@@ -185,8 +185,8 @@
       {
         "date": "2026-03-02",
         "type": "project_complete",
-        "name": "林克首页",
-        "description": "完成林克首页项目"
+        "name": "AI助手首页",
+        "description": "完成AI助手首页项目"
       },
       {
         "date": "2026-03-03",
@@ -221,8 +221,8 @@
       {
         "date": "2026-03-04",
         "type": "project_complete",
-        "name": "林克进化体系",
-        "description": "完成林克进化体系项目"
+        "name": "AI助手进化体系",
+        "description": "完成AI助手进化体系项目"
       },
       {
         "date": "2026-03-04",

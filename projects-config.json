@@ -34,11 +34,11 @@
     },
     {
       "id": "self-evolution",
-      "name": "林克进化体系",
+      "name": "AI助手进化体系",
       "subtitle": "AI自进化能力展示",
       "category": "research",
       "icon": "🔄",
-      "goal": "展示林克的自我进化机制和能力成长过程",
+      "goal": "展示AI助手的自我进化机制和能力成长过程",
       "outcome": "完整的自进化机制展示页面，包含元能力、自检机制、案例展示",
       "status": "deployed",
       "completedAt": "2026-03-04",
@@ -62,7 +62,7 @@
     },
     {
       "id": "codeflicker-homepage",
-      "name": "林克首页",
+      "name": "AI助手首页",
       "subtitle": "塞尔达风格个人主页",
       "category": "homepage",
       "icon": "🏠",
@@ -77,7 +77,7 @@
     {
       "id": "daily-report-system",
       "name": "日报系统",
-      "subtitle": "林克每日自我反思系统",
+      "subtitle": "AI助手每日自我反思系统",
       "category": "tools",
       "icon": "📊",
       "goal": "建立每日自动反思和成长追踪机制",

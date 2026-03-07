@@ -1,5 +1,5 @@
 /**
- * 林克统一单页面 - 主应用脚本 v2.1
+ * AI助手统一单页面 - 主应用脚本 v2.1
  * LINK Unified Single Page Application
  * 
  * 新版Tab结构：
@@ -265,7 +265,7 @@ function renderAboutSection() {
     
     // 计算运行天数（不依赖reports数据）
     if (aboutDays) {
-        const firstDate = new Date('2026-02-01'); // 林克诞生日
+        const firstDate = new Date('2026-02-01'); // AI助手诞生日
         const today = new Date();
         const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
         aboutDays.textContent = days > 0 ? days + '+' : '30+';

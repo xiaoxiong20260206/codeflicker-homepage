@@ -185,6 +185,8 @@ function renderSkillTechTree(container, skills) {
             let categoriesHtml = '';
             for (const [childName, childInfo] of Object.entries(layerInfo.children)) {
                 const childIcon = childInfo.icon || '📁';
+                // 去掉名称中的emoji前缀，避免与独立icon重复显示
+                const cleanChildName = childName.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/gu, '').trim();
                 const childSkills = childInfo.skills || [];
                 
                 let skillNodesHtml = '';
@@ -197,7 +199,7 @@ function renderSkillTechTree(container, skills) {
                     <div class="skill-category-group">
                         <div class="skill-category-label">
                             <span class="skill-category-icon">${childIcon}</span>
-                            <span>${childName}</span>
+                            <span>${cleanChildName}</span>
                             <span class="skill-category-count">${childInfo.count || 0}</span>
                         </div>
                         <div class="skill-nodes-grid">

@@ -299,7 +299,7 @@
           },
           {
             "name": "knowledge-base",
-            "description": "沈浪的个人知识库检索技能。当用户提到\"查文档\"、\"找调研\"、\"我之前做过什么调研\"、\"帮我找一下之前的文档\"、\"知识库里"
+            "description": "***的个人知识库检索技能。当用户提到\"查文档\"、\"找调研\"、\"我之前做过什么调研\"、\"帮我找一下之前的文档\"、\"知识库里"
           },
           {
             "name": "github-deploy-publisher",
@@ -418,7 +418,7 @@
         ],
         "updatedMemory": [
           {
-            "title": "单虓晗（Shawn）思想体系与写作风格",
+            "title": "***（Shawn）思想体系与写作风格",
             "category": "user_info"
           },
           {

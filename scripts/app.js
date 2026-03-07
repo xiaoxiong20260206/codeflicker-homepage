@@ -1502,6 +1502,8 @@ function renderSkillTreeWithLayers(container, tree, skills) {
                 `;
             }
             
+            // 去掉名称中的emoji前缀，避免与独立icon重复显示
+            const cleanChildName = childName.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/gu, '').trim();
             childBranches += `
                 <div class="branch" id="${childBranchId}" style="color: ${childColor};">
                     <div class="category-node ${getLevelClass(childLevel)}" 
@@ -1509,7 +1511,7 @@ function renderSkillTreeWithLayers(container, tree, skills) {
                          onclick="toggleBranch('${childBranchId}')"
                          onmouseenter="showTreeTooltip(event, '${childId}', 'skill')" onmouseleave="hideTooltip()">
                         <span class="cat-icon">${childInfo.icon || '📁'}</span>
-                        <span class="cat-name">${childName}</span>
+                        <span class="cat-name">${cleanChildName}</span>
                         <span class="cat-level" style="border-color: ${childColor};">${childLevel}</span>
                         <span class="cat-count" style="border-color: ${childColor};">${childInfo.count}</span>
                         <span class="toggle-indicator">▼</span>
@@ -1684,7 +1686,7 @@ function renderSkillTreeFlat(container, skills) {
                      onclick="toggleBranch('${branchId}')"
                      onmouseenter="showTreeTooltip(event, '${catId}', 'skill')" onmouseleave="hideTooltip()">
                     <span class="cat-icon">${cat.icon}</span>
-                    <span class="cat-name">${catName}</span>
+                    <span class="cat-name">${catName.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/gu, '').trim()}</span>
                     <span class="cat-level" style="border-color: ${cat.color || 'var(--green)'};">${avgLv}</span>
                     <span class="cat-count" style="border-color: ${cat.color || 'var(--green)'};">${cat.count}</span>
                     <span class="toggle-indicator">▼</span>

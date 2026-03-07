@@ -1,6 +1,6 @@
-/* ==================== 能力树样式 v2.0 ====================
+/* ==================== 能力树样式 v3.0 ====================
  * 三棵树各有独特风格：
- * - 技能树：科技树风格（SVG连线、等级进度环）
+ * - 技能树：系统架构图（三层架构 + 引擎内核 + 连接线）
  * - 知识树：档案馆卡片风格（网格布局、文件夹样式）
  * - 记忆树：神经网络径向布局（中心扩散、脉冲动画）
  */
@@ -12,7 +12,783 @@
     position: relative;
 }
 
-/* ==================== 1. 技能树 - 科技树风格 ==================== */
+/* ==================== 1. 技能树 - 系统架构图 ==================== */
+
+.skill-architecture {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px;
+}
+
+/* 架构头部 */
+.arch-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(200, 220, 240, 0.1);
+}
+.arch-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-title);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--sheikah-blue-light);
+}
+.arch-icon { font-size: 20px; }
+.arch-stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: rgba(200, 220, 240, 0.6);
+}
+.arch-stat-sep { opacity: 0.4; }
+
+/* === 元能力层 === */
+.meta-layer {
+    background: linear-gradient(180deg, rgba(167, 139, 250, 0.06) 0%, rgba(167, 139, 250, 0.02) 100%);
+    border: 1px solid rgba(167, 139, 250, 0.25);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+.meta-layer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a78bfa, transparent);
+}
+.meta-layer-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+}
+.meta-label-icon { font-size: 18px; }
+.meta-label-text {
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.meta-label-desc {
+    font-size: 11px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-left: 4px;
+}
+.meta-layer-content {
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+}
+.meta-side-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 160px;
+    max-width: 200px;
+}
+
+/* === 自进化引擎 === */
+.engine-section {
+    flex: 1;
+    min-width: 0;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.engine-title-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(167, 139, 250, 0.08);
+    border-bottom: 1px solid rgba(167, 139, 250, 0.15);
+}
+.engine-title-icon { font-size: 16px; }
+.engine-title-text {
+    font-family: var(--font-title);
+    font-size: 13px;
+    font-weight: 600;
+    color: #c4b5fd;
+}
+.engine-title-desc {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-left: auto;
+}
+
+/* 引擎流程图 */
+.engine-diagram {
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+.engine-tier {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 引擎节点 */
+.engine-node {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1.5px solid rgba(200, 220, 240, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    position: relative;
+}
+.engine-node:hover {
+    border-color: var(--node-color, #a78bfa);
+    background: rgba(167, 139, 250, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(167, 139, 250, 0.2);
+}
+.engine-node--guide {
+    border-color: rgba(167, 139, 250, 0.4);
+    background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+.engine-node--guide::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 10px;
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    animation: guide-glow 3s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes guide-glow {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; border-color: rgba(167, 139, 250, 0.4); }
+}
+.engine-node-ring {
+    width: 22px; height: 22px;
+    position: relative;
+    flex-shrink: 0;
+}
+.engine-node-ring svg {
+    width: 100%; height: 100%;
+    transform: rotate(-90deg);
+}
+.engine-node-ring .ring-bg {
+    fill: none;
+    stroke: rgba(100, 120, 140, 0.3);
+    stroke-width: 2;
+}
+.engine-node-ring .ring-progress {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+.engine-node-level {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--node-color, #a78bfa);
+}
+.engine-node-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+.engine-node-name {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(200, 220, 240, 0.95);
+}
+.engine-node-role {
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.45);
+    font-family: var(--font-mono);
+}
+.engine-node--tool {
+    padding: 4px 10px;
+    border-color: rgba(74, 222, 128, 0.2);
+    background: rgba(74, 222, 128, 0.05);
+}
+.engine-node--tool:hover {
+    border-color: rgba(74, 222, 128, 0.5);
+    background: rgba(74, 222, 128, 0.1);
+    box-shadow: 0 4px 12px rgba(74, 222, 128, 0.15);
+}
+
+/* 最近使用标记 */
+.skill-recent-badge {
+    position: absolute;
+    top: -3px; right: -3px;
+    width: 7px; height: 7px;
+    background: #4ade80;
+    border-radius: 50%;
+    border: 2px solid rgba(20, 25, 30, 0.95);
+    animation: recent-pulse 2s ease-in-out infinite;
+}
+@keyframes recent-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* 引擎连接器 */
+.engine-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 0;
+    position: relative;
+}
+.engine-connector--vertical { height: 28px; }
+.connector-line {
+    width: 1px;
+    flex: 1;
+    background: linear-gradient(180deg, rgba(167, 139, 250, 0.5), rgba(167, 139, 250, 0.2));
+    position: relative;
+}
+.connector-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid rgba(167, 139, 250, 0.5);
+}
+.connector-label {
+    font-size: 9px;
+    color: rgba(167, 139, 250, 0.6);
+    font-family: var(--font-mono);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1px 6px;
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    z-index: 1;
+    left: calc(50% + 8px);
+}
+
+/* 核心分支 */
+.engine-core-branches {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.engine-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    min-width: 100px;
+    max-width: 160px;
+}
+.branch-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    position: relative;
+}
+.branch-connector::before {
+    content: '';
+    position: absolute;
+    top: 0; width: 1px; height: 100%;
+    background: linear-gradient(180deg, rgba(167, 139, 250, 0.3), rgba(167, 139, 250, 0.15));
+}
+.branch-connector::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid rgba(167, 139, 250, 0.35);
+}
+.branch-label {
+    font-size: 8px;
+    color: rgba(167, 139, 250, 0.55);
+    font-family: var(--font-mono);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0 5px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 反馈线 */
+.engine-feedback-line {
+    width: 100%;
+    height: 22px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px 0;
+}
+.feedback-svg { width: 80%; height: 100%; }
+.feedback-label {
+    position: absolute;
+    top: 50%; right: 6%;
+    transform: translateY(-50%);
+    font-size: 8px;
+    color: rgba(167, 139, 250, 0.5);
+    font-family: var(--font-mono);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1px 4px;
+    border-radius: 3px;
+}
+
+/* 深度工具层 */
+.engine-tools-connector {
+    text-align: center;
+    padding: 4px 0 8px;
+    position: relative;
+}
+.engine-tools-connector::before {
+    content: '';
+    display: block;
+    width: 1px; height: 10px;
+    background: rgba(74, 222, 128, 0.3);
+    margin: 0 auto 4px;
+}
+.tools-connector-label {
+    font-size: 9px;
+    color: rgba(74, 222, 128, 0.6);
+    font-family: var(--font-mono);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(74, 222, 128, 0.15);
+}
+.engine-tools-grid {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 8px;
+}
+
+/* 四大闭环标签 */
+.engine-loops {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 10px 14px;
+    border-top: 1px solid rgba(167, 139, 250, 0.1);
+    background: rgba(0, 0, 0, 0.15);
+}
+.engine-loop-tag {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background: rgba(167, 139, 250, 0.08);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    border-radius: 12px;
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.7);
+    cursor: help;
+    transition: all 0.2s ease;
+}
+.engine-loop-tag:hover {
+    background: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.3);
+    color: rgba(200, 220, 240, 0.9);
+}
+.loop-icon { font-size: 11px; }
+.loop-name { font-weight: 500; }
+.loop-level {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    color: rgba(167, 139, 250, 0.5);
+    padding: 0 4px;
+    border-left: 1px solid rgba(167, 139, 250, 0.2);
+    margin-left: 2px;
+}
+
+/* === 认知框架 === */
+.cognitive-section {
+    background: rgba(245, 158, 11, 0.05);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.cognitive-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.cognitive-icon { font-size: 16px; }
+.cognitive-title {
+    font-family: var(--font-title);
+    font-size: 12px;
+    font-weight: 600;
+    color: #fbbf24;
+}
+.cognitive-pillars {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.cognitive-pillar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.cognitive-pillar:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+    background: rgba(245, 158, 11, 0.08);
+    transform: translateX(2px);
+}
+.cognitive-ring {
+    width: 28px; height: 28px;
+    position: relative;
+    flex-shrink: 0;
+}
+.cognitive-ring svg {
+    width: 100%; height: 100%;
+    transform: rotate(-90deg);
+}
+.cognitive-ring .ring-bg {
+    fill: none;
+    stroke: rgba(100, 120, 140, 0.3);
+    stroke-width: 2;
+}
+.cognitive-ring .ring-progress {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.cognitive-level {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--pillar-color, #fbbf24);
+}
+.cognitive-name {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(200, 220, 240, 0.9);
+    flex: 1;
+}
+.cognitive-badge {
+    font-size: 8px;
+    padding: 1px 5px;
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 4px;
+    color: #fbbf24;
+    font-family: var(--font-mono);
+}
+.cognitive-note {
+    font-size: 9px;
+    color: rgba(245, 158, 11, 0.5);
+    text-align: center;
+    font-style: italic;
+}
+
+/* === 系统工具 === */
+.system-section {
+    background: rgba(94, 196, 212, 0.05);
+    border: 1px solid rgba(94, 196, 212, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.system-header { display: flex; align-items: center; gap: 6px; }
+.system-icon { font-size: 16px; }
+.system-title {
+    font-family: var(--font-title);
+    font-size: 12px;
+    font-weight: 600;
+    color: #5ec4d4;
+}
+.system-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.system-note {
+    font-size: 9px;
+    color: rgba(94, 196, 212, 0.5);
+    text-align: center;
+    font-style: italic;
+}
+
+/* === 通用技能芯片 === */
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 220, 240, 0.12);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.skill-chip:hover {
+    border-color: var(--chip-color, var(--sheikah-blue));
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.skill-chip-level {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--chip-color, var(--sheikah-blue));
+    min-width: 12px;
+    text-align: center;
+}
+.skill-chip-name {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.85);
+    white-space: nowrap;
+}
+
+/* === 层间过渡 === */
+.layer-transition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+}
+.transition-line {
+    width: 1px; height: 10px;
+    background: rgba(200, 220, 240, 0.15);
+}
+.transition-label {
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.4);
+    font-family: var(--font-mono);
+    padding: 2px 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 220, 240, 0.08);
+    border-radius: 10px;
+    margin: 4px 0;
+}
+.transition-arrow {
+    font-size: 8px;
+    color: rgba(200, 220, 240, 0.3);
+    animation: arrow-pulse 2s ease-in-out infinite;
+}
+@keyframes arrow-pulse {
+    0%, 100% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.7; transform: translateY(2px); }
+}
+
+/* === 领域技能包 === */
+.domain-layer {
+    background: rgba(139, 92, 246, 0.04);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.domain-layer-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+}
+.domain-layer-icon { font-size: 16px; }
+.domain-layer-title {
+    font-family: var(--font-title);
+    font-size: 13px;
+    font-weight: 600;
+    color: #a78bfa;
+}
+.domain-layer-desc {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-left: auto;
+}
+.domain-cards-grid {
+    display: flex;
+    gap: 12px;
+    padding: 14px;
+    flex-wrap: wrap;
+}
+.domain-card {
+    flex: 1;
+    min-width: 200px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--domain-color, rgba(139, 92, 246, 0.2));
+    border-radius: 8px;
+    padding: 12px;
+    transition: all 0.2s ease;
+}
+.domain-card:hover {
+    border-color: var(--domain-color, #8b5cf6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.domain-card-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+}
+.domain-card-icon { font-size: 16px; }
+.domain-card-name {
+    font-family: var(--font-title);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--domain-color, #a78bfa);
+}
+.domain-card-desc {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.domain-card-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* === 执行技能层 === */
+.exec-layer {
+    background: rgba(74, 222, 128, 0.03);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.exec-layer-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(74, 222, 128, 0.15);
+}
+.exec-layer-header:hover { background: rgba(74, 222, 128, 0.05); }
+.exec-layer-icon { font-size: 16px; }
+.exec-layer-title {
+    font-family: var(--font-title);
+    font-size: 13px;
+    font-weight: 600;
+    color: #4ade80;
+}
+.exec-layer-desc {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.5);
+    flex: 1;
+}
+.exec-layer-count {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    font-weight: 700;
+    color: #4ade80;
+}
+.exec-layer-toggle-icon {
+    font-size: 10px;
+    color: rgba(74, 222, 128, 0.5);
+    transition: transform 0.3s ease;
+}
+.exec-layer.collapsed .exec-layer-toggle-icon { transform: rotate(-90deg); }
+.exec-layer-content {
+    padding: 14px;
+    max-height: 600px;
+    overflow-y: auto;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.exec-layer.collapsed .exec-layer-content {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+.exec-groups-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+}
+.exec-group {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(74, 222, 128, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+}
+.exec-group-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(200, 220, 240, 0.08);
+}
+.exec-group-icon { font-size: 14px; }
+.exec-group-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(200, 220, 240, 0.8);
+    flex: 1;
+}
+.exec-group-count {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: rgba(74, 222, 128, 0.6);
+    padding: 1px 6px;
+    background: rgba(74, 222, 128, 0.08);
+    border-radius: 4px;
+}
+.exec-group-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+/* 旧版兼容 */
 .skill-tech-tree {
     display: flex;
     flex-direction: column;
@@ -20,11 +796,8 @@
     gap: 30px;
     padding: 30px 20px;
 }
-
-/* 技能树根节点 */
 .skill-root-node {
-    width: 100px;
-    height: 100px;
+    width: 100px; height: 100px;
     border-radius: 50%;
     background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
     border: 3px solid var(--sheikah-blue);
@@ -34,311 +807,10 @@
     justify-content: center;
     position: relative;
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
-    z-index: 10;
 }
-
-.skill-root-node::before {
-    content: '';
-    position: absolute;
-    inset: -8px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, transparent 70%);
-    animation: root-pulse 3s ease-in-out infinite;
-}
-
-@keyframes root-pulse {
-    0%, 100% { transform: scale(1); opacity: 0.5; }
-    50% { transform: scale(1.15); opacity: 1; }
-}
-
-.skill-root-icon {
-    font-size: 36px;
-}
-
-.skill-root-label {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--sheikah-blue-light);
-    margin-top: 4px;
-}
-
-.skill-root-count {
-    position: absolute;
-    bottom: -10px;
-    background: linear-gradient(135deg, var(--sheikah-blue-dark), var(--sheikah-blue));
-    color: white;
-    padding: 2px 12px;
-    border-radius: 10px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 700;
-}
-
-/* 技能树层级容器 */
-.skill-layers-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    position: relative;
-}
-
-/* 技能层级卡片 */
-.skill-layer-card {
-    background: linear-gradient(135deg, rgba(20, 25, 30, 0.95) 0%, rgba(30, 35, 45, 0.9) 100%);
-    border: 2px solid var(--layer-color, var(--sheikah-blue));
-    border-radius: 12px;
-    min-width: 280px;
-    max-width: 380px;
-    flex: 1;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.skill-layer-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, var(--layer-color, var(--sheikah-blue)), transparent);
-}
-
-.skill-layer-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
-}
-
-/* 层级头部 */
-.skill-layer-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 15px;
-    background: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: background 0.2s ease;
-}
-
-.skill-layer-header:hover {
-    background: rgba(0, 212, 255, 0.1);
-}
-
-.skill-layer-icon {
-    font-size: 24px;
-    filter: drop-shadow(0 0 6px var(--layer-color, var(--sheikah-blue)));
-}
-
-.skill-layer-info {
-    flex: 1;
-}
-
-.skill-layer-name {
-    font-family: var(--font-title);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--layer-color, var(--sheikah-blue-light));
-    margin-bottom: 2px;
-}
-
-.skill-layer-desc {
-    font-size: 10px;
-    color: rgba(200, 220, 240, 0.6);
-}
-
-.skill-layer-stats {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2px;
-}
-
-.skill-layer-count {
-    font-family: var(--font-mono);
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--layer-color, var(--sheikah-blue));
-}
-
-.skill-layer-level {
-    font-size: 9px;
-    color: rgba(200, 220, 240, 0.5);
-    text-transform: uppercase;
-}
-
-.skill-layer-toggle {
-    color: var(--layer-color, var(--sheikah-blue));
-    font-size: 10px;
-    transition: transform 0.3s ease;
-}
-
-.skill-layer-card.collapsed .skill-layer-toggle {
-    transform: rotate(-90deg);
-}
-
-/* 层级内容 - 技能列表 */
-.skill-layer-content {
-    padding: 10px 15px 15px;
-    max-height: 600px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    /* 自定义滚动条样式 */
-    scrollbar-width: thin;
-    scrollbar-color: rgba(100, 120, 140, 0.4) transparent;
-}
-
-.skill-layer-content::-webkit-scrollbar {
-    width: 6px;
-}
-
-.skill-layer-content::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.skill-layer-content::-webkit-scrollbar-thumb {
-    background: rgba(100, 120, 140, 0.4);
-    border-radius: 3px;
-}
-
-.skill-layer-content::-webkit-scrollbar-thumb:hover {
-    background: rgba(100, 120, 140, 0.6);
-}
-
-.skill-layer-card.collapsed .skill-layer-content {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    overflow: hidden;
-}
-
-/* 技能分类 */
-.skill-category-group {
-    margin-bottom: 12px;
-}
-
-.skill-category-group:last-child {
-    margin-bottom: 0;
-}
-
-.skill-category-label {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    color: rgba(200, 220, 240, 0.7);
-    margin-bottom: 8px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid rgba(200, 220, 240, 0.1);
-}
-
-.skill-category-icon {
-    font-size: 14px;
-}
-
-.skill-category-count {
-    margin-left: auto;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--layer-color, var(--sheikah-blue));
-}
-
-/* 技能节点网格 */
-.skill-nodes-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-/* 单个技能节点 */
-.skill-node {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 10px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(200, 220, 240, 0.15);
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    position: relative;
-}
-
-.skill-node:hover {
-    background: rgba(0, 212, 255, 0.15);
-    border-color: var(--node-color, var(--sheikah-blue));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
-}
-
-.skill-node-name {
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(200, 220, 240, 0.9);
-    white-space: nowrap;
-}
-
-/* 等级进度环 */
-.skill-level-ring {
-    width: 22px;
-    height: 22px;
-    position: relative;
-    flex-shrink: 0;
-}
-
-.skill-level-ring svg {
-    width: 100%;
-    height: 100%;
-    transform: rotate(-90deg);
-}
-
-.skill-level-ring .ring-bg {
-    fill: none;
-    stroke: rgba(100, 120, 140, 0.3);
-    stroke-width: 2;
-}
-
-.skill-level-ring .ring-progress {
-    fill: none;
-    stroke: var(--node-color, var(--sheikah-blue));
-    stroke-width: 2;
-    stroke-linecap: round;
-    transition: stroke-dashoffset 0.5s ease;
-}
-
-.skill-level-num {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-mono);
-    font-size: 8px;
-    font-weight: 700;
-    color: var(--node-color, var(--sheikah-blue));
-}
-
-/* 最近使用标记 */
-.skill-recent-badge {
-    position: absolute;
-    top: -4px;
-    right: -4px;
-    width: 8px;
-    height: 8px;
-    background: #4ade80;
-    border-radius: 50%;
-    border: 2px solid rgba(20, 25, 30, 0.95);
-    animation: recent-pulse 2s ease-in-out infinite;
-}
-
-@keyframes recent-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
-}
+.skill-root-icon { font-size: 36px; }
+.skill-root-label { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--sheikah-blue-light); margin-top: 4px; }
+.skill-root-count { position: absolute; bottom: -10px; background: linear-gradient(135deg, var(--sheikah-blue-dark), var(--sheikah-blue)); color: white; padding: 2px 12px; border-radius: 10px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; }
 
 /* ==================== 2. 知识树 - 档案馆卡片风格 ==================== */
 .knowledge-archive {
@@ -347,8 +819,6 @@
     gap: 20px;
     padding: 20px;
 }
-
-/* 知识库头部 */
 .knowledge-header {
     display: flex;
     align-items: center;
@@ -358,48 +828,22 @@
     border: 2px solid var(--zelda-gold);
     border-radius: 12px;
 }
-
-.knowledge-header-icon {
-    font-size: 36px;
-}
-
-.knowledge-header-info {
-    flex: 1;
-}
-
+.knowledge-header-icon { font-size: 36px; }
+.knowledge-header-info { flex: 1; }
 .knowledge-header-title {
     font-family: var(--font-title);
     font-size: 18px;
     color: var(--zelda-gold-light);
     margin-bottom: 4px;
 }
-
-.knowledge-header-desc {
-    font-size: 12px;
-    color: rgba(200, 220, 240, 0.7);
-}
-
-.knowledge-header-count {
-    font-family: var(--font-mono);
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--zelda-gold);
-}
-
-.knowledge-header-label {
-    font-size: 10px;
-    color: rgba(200, 220, 240, 0.5);
-    text-align: right;
-}
-
-/* 知识卡片网格 */
+.knowledge-header-desc { font-size: 12px; color: rgba(200, 220, 240, 0.7); }
+.knowledge-header-count { font-family: var(--font-mono); font-size: 32px; font-weight: 700; color: var(--zelda-gold); }
+.knowledge-header-label { font-size: 10px; color: rgba(200, 220, 240, 0.5); text-align: right; }
 .knowledge-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
 }
-
-/* 单个知识卡片 - 文件夹样式 */
 .knowledge-folder-card {
     background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
     border: 2px solid rgba(201, 162, 39, 0.3);
@@ -410,415 +854,100 @@
     position: relative;
     overflow: hidden;
 }
-
-/* 文件夹顶部折角效果 */
 .knowledge-folder-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
+    top: 0; right: 0;
+    width: 0; height: 0;
     border-style: solid;
     border-width: 0 25px 25px 0;
     border-color: transparent rgba(201, 162, 39, 0.2) transparent transparent;
     transition: border-color 0.3s ease;
 }
-
 .knowledge-folder-card:hover {
     border-color: var(--zelda-gold);
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(201, 162, 39, 0.15);
 }
-
-.knowledge-folder-card:hover::before {
-    border-color: transparent var(--zelda-gold) transparent transparent;
-}
-
-.knowledge-folder-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.knowledge-folder-icon {
-    font-size: 28px;
-    filter: drop-shadow(0 0 4px rgba(201, 162, 39, 0.4));
-}
-
-.knowledge-folder-name {
-    font-family: var(--font-title);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--zelda-gold-light);
-    flex: 1;
-}
-
-/* 文件数量进度条 */
-.knowledge-folder-progress {
-    margin-bottom: 10px;
-}
-
-.knowledge-progress-bar {
-    height: 6px;
-    background: rgba(100, 120, 140, 0.2);
-    border-radius: 3px;
-    overflow: hidden;
-    margin-bottom: 4px;
-}
-
-.knowledge-progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--zelda-gold-dark), var(--zelda-gold));
-    border-radius: 3px;
-    transition: width 0.5s ease;
-}
-
-.knowledge-progress-text {
-    display: flex;
-    justify-content: space-between;
-    font-size: 10px;
-    color: rgba(200, 220, 240, 0.6);
-}
-
-.knowledge-folder-count {
-    font-family: var(--font-mono);
-    font-weight: 600;
-    color: var(--zelda-gold);
-}
-
-/* 最近更新标记 */
-.knowledge-folder-footer {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 10px;
-    color: rgba(200, 220, 240, 0.5);
-}
-
-.knowledge-update-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 3px;
-    padding: 2px 6px;
-    background: rgba(74, 222, 128, 0.15);
-    border-radius: 8px;
-    color: #4ade80;
-    font-size: 9px;
-}
-
-.knowledge-update-badge.recent {
-    background: rgba(251, 191, 36, 0.15);
-    color: #fbbf24;
-}
+.knowledge-folder-card:hover::before { border-color: transparent var(--zelda-gold) transparent transparent; }
+.knowledge-folder-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.knowledge-folder-icon { font-size: 28px; filter: drop-shadow(0 0 4px rgba(201, 162, 39, 0.4)); }
+.knowledge-folder-name { font-family: var(--font-title); font-size: 14px; font-weight: 600; color: var(--zelda-gold-light); flex: 1; }
+.knowledge-folder-progress { margin-bottom: 10px; }
+.knowledge-progress-bar { height: 6px; background: rgba(100, 120, 140, 0.2); border-radius: 3px; overflow: hidden; margin-bottom: 4px; }
+.knowledge-progress-fill { height: 100%; background: linear-gradient(90deg, var(--zelda-gold-dark), var(--zelda-gold)); border-radius: 3px; transition: width 0.5s ease; }
+.knowledge-progress-text { display: flex; justify-content: space-between; font-size: 10px; color: rgba(200, 220, 240, 0.6); }
+.knowledge-folder-count { font-family: var(--font-mono); font-weight: 600; color: var(--zelda-gold); }
+.knowledge-folder-footer { display: flex; align-items: center; gap: 6px; font-size: 10px; color: rgba(200, 220, 240, 0.5); }
+.knowledge-update-badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; background: rgba(74, 222, 128, 0.15); border-radius: 8px; color: #4ade80; font-size: 9px; }
+.knowledge-update-badge.recent { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
 
 /* ==================== 3. 记忆树 - 神经网络径向布局 ==================== */
-.memory-neural-network {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-    position: relative;
-}
-
-/* 神经网络SVG容器 */
-.memory-network-svg {
-    width: 100%;
-    max-width: 600px;
-    aspect-ratio: 1;
-    position: relative;
-}
-
-.memory-network-svg svg {
-    width: 100%;
-    height: 100%;
-}
-
-/* 中心核心节点 */
-.memory-core-node {
-    fill: url(#memoryGradient);
-    stroke: var(--sheikah-orange);
-    stroke-width: 3;
-    filter: drop-shadow(0 0 15px rgba(251, 146, 60, 0.4));
-}
-
-/* 连接线 */
-.memory-connection {
-    stroke: rgba(251, 146, 60, 0.3);
-    stroke-width: 2;
-    fill: none;
-}
-
-/* 分类节点 */
-.memory-category-node {
-    cursor: pointer;
-    /* 移除transform动画，避免干扰tooltip定位 */
-}
-
-.memory-category-node:hover .memory-category-circle {
-    filter: drop-shadow(0 0 12px currentColor);
-    stroke-width: 3;
-}
-
-.memory-category-circle {
-    fill: rgba(30, 35, 40, 0.9);
-    stroke-width: 2;
-    transition: all 0.3s ease;
-}
-
-.memory-category-node:hover .memory-category-circle {
-    filter: drop-shadow(0 0 10px currentColor);
-}
-
-.memory-category-icon {
-    font-size: 18px;
-    dominant-baseline: central;
-    text-anchor: middle;
-}
-
-.memory-category-label {
-    font-family: var(--font-body);
-    font-size: 11px;
-    fill: rgba(200, 220, 240, 0.8);
-    text-anchor: middle;
-}
-
-.memory-category-count {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    fill: rgba(200, 220, 240, 0.6);
-    text-anchor: middle;
-}
-
-/* 活跃记忆脉冲动画 - 不干扰交互 */
-.memory-pulse-ring {
-    fill: none;
-    stroke: var(--sheikah-orange);
-    stroke-width: 1;
-    opacity: 0;
-    animation: memory-pulse 3s ease-out infinite;
-    pointer-events: none; /* 不干扰鼠标事件 */
-    transform-origin: center;
-    transform-box: fill-box;
-}
-
+.memory-neural-network { display: flex; flex-direction: column; align-items: center; padding: 30px 20px; position: relative; }
+.memory-network-svg { width: 100%; max-width: 600px; aspect-ratio: 1; position: relative; }
+.memory-network-svg svg { width: 100%; height: 100%; }
+.memory-core-node { fill: url(#memoryGradient); stroke: var(--sheikah-orange); stroke-width: 3; filter: drop-shadow(0 0 15px rgba(251, 146, 60, 0.4)); }
+.memory-connection { stroke: rgba(251, 146, 60, 0.3); stroke-width: 2; fill: none; }
+.memory-category-node { cursor: pointer; }
+.memory-category-node:hover .memory-category-circle { filter: drop-shadow(0 0 12px currentColor); stroke-width: 3; }
+.memory-category-circle { fill: rgba(30, 35, 40, 0.9); stroke-width: 2; transition: all 0.3s ease; }
+.memory-category-icon { font-size: 18px; dominant-baseline: central; text-anchor: middle; }
+.memory-category-label { font-family: var(--font-body); font-size: 11px; fill: rgba(200, 220, 240, 0.8); text-anchor: middle; }
+.memory-category-count { font-family: var(--font-mono); font-size: 10px; fill: rgba(200, 220, 240, 0.6); text-anchor: middle; }
+.memory-pulse-ring { fill: none; stroke: var(--sheikah-orange); stroke-width: 1; opacity: 0; animation: memory-pulse 3s ease-out infinite; pointer-events: none; transform-origin: center; transform-box: fill-box; }
 @keyframes memory-pulse {
     0% { opacity: 0.6; r: 30; }
     100% { opacity: 0; r: 60; }
 }
-
-/* 记忆分类颜色定义 */
 .memory-type-user { --mem-color: #38bdf8; }
 .memory-type-capability { --mem-color: #a78bfa; }
 .memory-type-domain { --mem-color: #4ade80; }
 .memory-type-project { --mem-color: #fb923c; }
 .memory-type-constraint { --mem-color: #f87171; }
 .memory-type-flow { --mem-color: #fbbf24; }
-
-/* 图例 */
-.memory-legend {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-}
-
-.memory-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 11px;
-    color: rgba(200, 220, 240, 0.8);
-}
-
-.memory-legend-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
+.memory-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; padding: 15px; background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+.memory-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(200, 220, 240, 0.8); }
+.memory-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
 
 /* ==================== 记忆展开面板 ==================== */
-.memory-expand-panel {
-    margin-top: 20px;
-    background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
-    border: 2px solid var(--sheikah-orange);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-.memory-expand-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
-    background: rgba(0, 0, 0, 0.3);
-    border-bottom: 1px solid rgba(251, 146, 60, 0.3);
-}
-
-.memory-expand-title {
-    font-family: var(--font-title);
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--sheikah-orange-light);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.memory-expand-close {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: rgba(200, 220, 240, 0.6);
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: all 0.2s ease;
-}
-
-.memory-expand-close:hover {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
-
-.memory-expand-content {
-    padding: 16px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.memory-expand-empty {
-    text-align: center;
-    padding: 30px;
-    color: rgba(200, 220, 240, 0.5);
-}
-
-/* 子分类组 */
-.memory-child-group {
-    margin-bottom: 16px;
-}
-
-.memory-child-group:last-child {
-    margin-bottom: 0;
-}
-
-.memory-child-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(200, 220, 240, 0.1);
-}
-
-.memory-child-icon {
-    font-size: 16px;
-}
-
-.memory-child-name {
-    flex: 1;
-}
-
-.memory-child-count {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 2px 6px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-}
-
-.memory-child-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-/* 记忆项chip */
-.memory-item-chip {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 10px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(200, 220, 240, 0.2);
-    border-radius: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 11px;
-    color: rgba(200, 220, 240, 0.85);
-}
-
-.memory-item-chip:hover {
-    background: rgba(251, 146, 60, 0.15);
-    border-color: var(--sheikah-orange);
-    transform: translateY(-1px);
-}
-
-.memory-item-icon {
-    font-size: 12px;
-}
-
-.memory-item-title {
-    max-width: 120px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.memory-item-more {
-    font-size: 10px;
-    color: rgba(200, 220, 240, 0.5);
-    padding: 4px 8px;
-}
+.memory-expand-panel { margin-top: 20px; background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%); border: 2px solid var(--sheikah-orange); border-radius: 12px; overflow: hidden; }
+.memory-expand-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(251, 146, 60, 0.3); }
+.memory-expand-title { font-family: var(--font-title); font-size: 14px; font-weight: 600; color: var(--sheikah-orange-light); display: flex; align-items: center; gap: 8px; }
+.memory-expand-close { background: rgba(255, 255, 255, 0.1); border: none; color: rgba(200, 220, 240, 0.6); width: 24px; height: 24px; border-radius: 4px; cursor: pointer; font-size: 14px; transition: all 0.2s ease; }
+.memory-expand-close:hover { background: rgba(255, 255, 255, 0.2); color: white; }
+.memory-expand-content { padding: 16px; max-height: 400px; overflow-y: auto; }
+.memory-expand-empty { text-align: center; padding: 30px; color: rgba(200, 220, 240, 0.5); }
+.memory-child-group { margin-bottom: 16px; }
+.memory-child-group:last-child { margin-bottom: 0; }
+.memory-child-header { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(200, 220, 240, 0.1); }
+.memory-child-icon { font-size: 16px; }
+.memory-child-name { flex: 1; }
+.memory-child-count { font-family: var(--font-mono); font-size: 10px; padding: 2px 6px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; }
+.memory-child-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.memory-item-chip { display: flex; align-items: center; gap: 4px; padding: 4px 10px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(200, 220, 240, 0.2); border-radius: 16px; cursor: pointer; transition: all 0.2s ease; font-size: 11px; color: rgba(200, 220, 240, 0.85); }
+.memory-item-chip:hover { background: rgba(251, 146, 60, 0.15); border-color: var(--sheikah-orange); transform: translateY(-1px); }
+.memory-item-icon { font-size: 12px; }
+.memory-item-title { max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.memory-item-more { font-size: 10px; color: rgba(200, 220, 240, 0.5); padding: 4px 8px; }
 
 /* ==================== 响应式调整 ==================== */
 @media (max-width: 768px) {
-    .skill-layers-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .skill-layer-card {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .knowledge-cards-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-    
-    .memory-network-svg {
-        max-width: 400px;
-    }
+    .meta-layer-content { flex-direction: column; }
+    .meta-side-panels { flex-direction: row; max-width: 100%; min-width: 0; }
+    .cognitive-section, .system-section { flex: 1; min-width: 0; }
+    .engine-core-branches { flex-direction: column; align-items: center; }
+    .engine-branch { max-width: 100%; width: 100%; }
+    .exec-groups-grid { grid-template-columns: 1fr; }
+    .domain-cards-grid { flex-direction: column; }
+    .domain-card { min-width: 0; }
+    .knowledge-cards-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    .memory-network-svg { max-width: 400px; }
 }
 
 @media (max-width: 480px) {
-    .skill-tech-tree {
-        padding: 20px 10px;
-    }
-    
-    .skill-root-node {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .skill-root-icon {
-        font-size: 28px;
-    }
-    
-    .knowledge-cards-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .memory-network-svg {
-        max-width: 300px;
-    }
+    .skill-architecture { padding: 10px; }
+    .meta-side-panels { flex-direction: column; }
+    .arch-stats { display: none; }
+    .knowledge-cards-grid { grid-template-columns: 1fr; }
+    .memory-network-svg { max-width: 300px; }
 }

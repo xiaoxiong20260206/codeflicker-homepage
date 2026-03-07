@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-03-07T12:48:16.228510",
+  "generatedAt": "2026-03-07T22:46:29.902983",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 11460,
-    "expProgress": 86.5,
+    "totalExp": 11340,
+    "expProgress": 83.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
       "reasoning": 100,
       "memory": 100,
       "execution": 100,
-      "learning": 100,
-      "insight": 80.37037037037038,
+      "learning": 97.69999999999999,
+      "insight": 80.0,
       "creativity": 80
     }
   },
@@ -481,14 +481,14 @@
             "name": "work-report-ppt",
             "displayName": "汇报PPT",
             "source": "AI核心能力",
-            "level": 4,
-            "exp": 70,
+            "level": 3,
+            "exp": 60,
             "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
             "lastUpdated": "2026-02-27"
           }
         ],
         "count": 4,
-        "avgLevel": 4.2
+        "avgLevel": 4.0
       },
       "📤 发布部署": {
         "icon": "🚀",
@@ -528,14 +528,14 @@
             "name": "feishu-assistant",
             "displayName": "飞书助手",
             "source": "AI核心能力",
-            "level": 3,
-            "exp": 58,
+            "level": 2,
+            "exp": 48,
             "description": "飞书消息自动化发送和接收，对接飞书助手",
             "lastUpdated": "2026-02-27"
           }
         ],
         "count": 2,
-        "avgLevel": 3.5
+        "avgLevel": 3.0
       },
       "👔 工作辅导": {
         "icon": "👔",
@@ -1154,14 +1154,14 @@
                 "name": "work-report-ppt",
                 "displayName": "汇报PPT",
                 "source": "AI核心能力",
-                "level": 4,
-                "exp": 70,
+                "level": 3,
+                "exp": 60,
                 "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
                 "lastUpdated": "2026-02-27"
               }
             ],
             "count": 4,
-            "avgLevel": 4.2
+            "avgLevel": 4.0
           },
           "📤 发布部署": {
             "icon": "🚀",
@@ -1199,14 +1199,14 @@
                 "name": "feishu-assistant",
                 "displayName": "飞书助手",
                 "source": "AI核心能力",
-                "level": 3,
-                "exp": 58,
+                "level": 2,
+                "exp": 48,
                 "description": "飞书消息自动化发送和接收，对接飞书助手",
                 "lastUpdated": "2026-02-27"
               }
             ],
             "count": 2,
-            "avgLevel": 3.5
+            "avgLevel": 3.0
           },
           "👔 工作辅导": {
             "icon": "👔",
@@ -1347,35 +1347,139 @@
         "count": 37,
         "avgLevel": 3.6
       }
+    },
+    "relationships": {
+      "engine_flow": [
+        {
+          "from": "xiaowuxianggong",
+          "to": "daily-reflection-evolution",
+          "label": "导航",
+          "type": "navigate"
+        },
+        {
+          "from": "daily-reflection-evolution",
+          "to": "learn-from-mistakes",
+          "label": "Step2 复盘",
+          "type": "call"
+        },
+        {
+          "from": "daily-reflection-evolution",
+          "to": "neigong-cultivation",
+          "label": "Step3 修炼",
+          "type": "call"
+        },
+        {
+          "from": "daily-reflection-evolution",
+          "to": "meta-execution",
+          "label": "全程保障",
+          "type": "call"
+        },
+        {
+          "from": "neigong-cultivation",
+          "to": "memory-hygiene",
+          "label": "深度优化",
+          "type": "delegate"
+        },
+        {
+          "from": "neigong-cultivation",
+          "to": "skill-architecture",
+          "label": "深度优化",
+          "type": "delegate"
+        },
+        {
+          "from": "neigong-cultivation",
+          "to": "knowledge-curator",
+          "label": "深度优化",
+          "type": "delegate"
+        },
+        {
+          "from": "meta-execution",
+          "to": "learn-from-mistakes",
+          "label": "P2反馈",
+          "type": "feedback"
+        }
+      ],
+      "engine_roles": {
+        "xiaowuxianggong": {
+          "role": "Bootloader",
+          "tier": "guide"
+        },
+        "daily-reflection-evolution": {
+          "role": "Core",
+          "tier": "core"
+        },
+        "learn-from-mistakes": {
+          "role": "即时复盘",
+          "tier": "core"
+        },
+        "neigong-cultivation": {
+          "role": "即时内功",
+          "tier": "core"
+        },
+        "meta-execution": {
+          "role": "质量保障",
+          "tier": "core"
+        },
+        "memory-hygiene": {
+          "role": "深度工具",
+          "tier": "tool"
+        },
+        "skill-architecture": {
+          "role": "深度工具",
+          "tier": "tool"
+        },
+        "knowledge-curator": {
+          "role": "深度工具",
+          "tier": "tool"
+        }
+      },
+      "loops": [
+        {
+          "name": "执行质量环",
+          "level": "秒级",
+          "icon": "⚡",
+          "desc": "meta-execution → 发现问题 → learn-from-mistakes → 沉淀"
+        },
+        {
+          "name": "每日进化环",
+          "level": "天级",
+          "icon": "🔄",
+          "desc": "自主学习 → 6问+3问 → 四树优化 → 度量记录"
+        },
+        {
+          "name": "四树互养环",
+          "level": "跨域",
+          "icon": "🌀",
+          "desc": "记忆 → 技能 → 知识 → 思维 → 记忆"
+        },
+        {
+          "name": "元元环",
+          "level": "月级",
+          "icon": "♻️",
+          "desc": "技能架构自检 + 框架审视自身是否过时"
+        }
+      ],
+      "cognitive_note": "独立思维能力，可被任何任务调用",
+      "system_note": "管理能力和工作模式的基础设施"
     }
   },
   "knowledge": {
     "categories": {
       "personal-writings": {
         "name": "personal-writings",
-        "icon": "✍️",
-        "color": "#f472b6",
-        "description": "个人原创文章、思考记录、写作作品",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "personal-writings相关文档",
         "fileCount": 131,
         "sizeKB": 862.8,
         "heatLevel": 5,
         "recentCount": 0
       },
-      "ai-insight": {
-        "name": "ai-insight",
-        "icon": "🔍",
-        "color": "#8b5cf6",
-        "description": "AI行业持续洞察：日报、周报、深度调研、知识沉淀",
-        "fileCount": 47,
-        "sizeKB": 448.8,
-        "heatLevel": 5,
-        "recentCount": 47
-      },
       "rd-efficiency": {
         "name": "rd-efficiency",
-        "icon": "⚡",
-        "color": "#facc15",
-        "description": "研发效能领域的调研报告、技术分析、最佳实践",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "rd-efficiency相关文档",
         "fileCount": 24,
         "sizeKB": 205.3,
         "heatLevel": 5,
@@ -1383,9 +1487,9 @@
       },
       "self-evolution": {
         "name": "self-evolution",
-        "icon": "🧬",
-        "color": "#a78bfa",
-        "description": "AI助手自进化体系修炼记录、度量日志、能力成长追踪",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "self-evolution相关文档",
         "fileCount": 3,
         "sizeKB": 13.7,
         "heatLevel": 3,
@@ -1393,17 +1497,27 @@
       },
       "mcp-research": {
         "name": "mcp-research",
-        "icon": "🔌",
-        "color": "#38bdf8",
-        "description": "MCP协议调研、Server开发实践、工具集成方案",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "mcp-research相关文档",
         "fileCount": 1,
         "sizeKB": 21.3,
         "heatLevel": 2,
         "recentCount": 1
+      },
+      "ai-insight": {
+        "name": "ai-insight",
+        "icon": "📁",
+        "color": "#64748b",
+        "description": "ai-insight相关文档",
+        "fileCount": 0,
+        "sizeKB": 0.0,
+        "heatLevel": 1,
+        "recentCount": 0
       }
     },
-    "totalFiles": 206,
-    "totalSizeKB": 1551.8
+    "totalFiles": 159,
+    "totalSizeKB": 1103.0
   },
   "memories": {
     "items": [
@@ -1522,6 +1636,44 @@
         "source": "用户显式记录"
       },
       {
+        "title": "Git Force操作前必须保护工作区（stash优先）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "Git Force操作前必须保护工作区 问题 重建codeflicker-homepage的.git目录后，执行 `git checkout...",
+        "keywords": [
+          "git",
+          "force",
+          "stash",
+          "checkout",
+          "工作区保护"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "GitHub 公开仓库安全审计经验（完整版）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： 泄露载体清单（安全扫描必检项） 1. Git commit auth...",
+        "keywords": [
+          "GitHub",
+          "安全审计",
+          "敏感信息",
+          "git-filter-repo",
+          "package-lock"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "HTML截图到Docs文档的踩坑经验（含高度计算强制规则）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -1573,6 +1725,25 @@
           "大词",
           "冲突",
           "description"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "pathlib rglob/glob 不跟踪软链接（symlinks）导致数据丢失",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "Python pathlib.rglob()/glob() 不跟踪软链接（symlinks） 问题：Python pathlib 的 `rg...",
+        "keywords": [
+          "pathlib",
+          "rglob",
+          "glob",
+          "symlink",
+          "软链接"
         ],
         "importance": 5,
         "updatedAt": "2026-03-07",
@@ -1674,6 +1845,44 @@
         "source": "用户显式记录"
       },
       {
+        "title": "品牌色全局迁移经验（含完整新旧色值映射表）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "品牌色全局迁移经验 问题场景 项目品牌色从旧色系(#1A7F37)升级到新色系(#059669)，需要确保全局一致性。 关键教训：品...",
+        "keywords": [
+          "品牌色",
+          "色值迁移",
+          "全局替换",
+          "CSS",
+          "v3.0"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "大文件编辑的Context节约策略（含sed vs replace_in_file选择）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "大文件编辑的Context节约策略 问题 对2000+行的HTML/CSS大文件做样式修改时，分4次read_file读完全文占用大量con...",
+        "keywords": [
+          "大文件",
+          "context",
+          "读取策略",
+          "sed",
+          "grep"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "技能/知识库分类配置漂移（v6.0三域分类版）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -1709,6 +1918,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "数据模型信息冗余导致渲染重复（emoji/icon双重显示）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "数据模型信息冗余导致渲染重复 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
+        "keywords": [
+          "数据冗余",
+          "重复渲染",
+          "emoji",
+          "icon",
+          "单一数据源"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -1864,7 +2092,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑记忆召回失败模式（含完整任务检索映射）",
+        "title": "踩坑记忆召回失败模式（含完整任务检索映射 v3）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 领域层",
@@ -1918,6 +2146,41 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "首页数据管道踩坑规则（含脱敏闸门）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "首页数据管道踩坑规则（2026-03-07 更新，含脱敏经验）： 一、数据管道闸门规则 从内部数据→对外展示的管道，必须有清洗闸门。 - upda...",
+        "keywords": [
+          "首页",
+          "数据管道",
+          "脱敏",
+          "闸门",
+          "敏感信息"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI助手\"AI助手\"身份信息",
+        "category": "user_info",
+        "categoryLabel": "用户身份",
+        "layer": "👤 用户层",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+        "keywords": [
+          "AI助手",
+          "数字分身"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-04",
         "source": "用户显式记录"
       },
       {
@@ -2244,6 +2507,24 @@
         "source": "用户显式记录"
       },
       {
+        "title": "***（***）思想体系与写作风格",
+        "category": "user_info",
+        "categoryLabel": "用户身份",
+        "layer": "👤 用户层",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
+        "keywords": [
+          "***",
+          "思想体系",
+          "写作风格",
+          "认知框架"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
         "title": "外部API权限必须前置验证",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
@@ -2477,7 +2758,7 @@
         "layer": "👤 用户层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟主人），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
+        "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟*），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
         "keywords": [
           "AI助手",
           "表达风格",
@@ -2755,22 +3036,21 @@
         "source": "用户显式记录"
       },
       {
-        "title": "首页数据同步踩坑5条规则",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "首页数据同步5大踩坑及核心规则： 1. 配置分散：新增技能时同步更新所有配置位置 2. 部署失败未发现：update-homepage.s...",
+        "title": "默认工作模式：以***的思维方式和风格执行任务",
+        "category": "user_communication",
+        "categoryLabel": "用户偏好",
+        "layer": "👤 用户层",
+        "icon": "💬",
+        "color": "#0ea5e9",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
         "keywords": [
-          "首页",
-          "同步",
-          "部署",
-          "硬编码",
-          "端到端验证"
+          "工作模式",
+          "默认风格",
+          "思维方式",
+          "***"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-06",
+        "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       },
       {
@@ -2828,7 +3108,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 75,
+    "total": 82,
     "byCategory": {
       "development_practice_specification": {
         "count": 11,
@@ -2838,7 +3118,7 @@
         "description": "如何做事：举一反三、夜间长任务"
       },
       "user_info": {
-        "count": 3,
+        "count": 4,
         "label": "用户身份",
         "icon": "👤",
         "color": "#38bdf8",
@@ -2873,7 +3153,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 29,
+        "count": 35,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -2906,7 +3186,7 @@
             "description": "身份信息、背景、个人特征",
             "items": [
               {
-                "title": "***思想体系与写作风格",
+                "title": "***（***）思想体系与写作风格",
                 "category": "user_info",
                 "categoryLabel": "用户身份",
                 "layer": "👤 用户层",
@@ -2930,7 +3210,7 @@
                 "layer": "👤 用户层",
                 "icon": "👤",
                 "color": "#38bdf8",
-                "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+                "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
                 "keywords": [
                   "AI助手",
                   "数字分身"
@@ -2948,13 +3228,13 @@
             "description": "沟通风格、工作模式、兴趣爱好",
             "items": [
               {
-                "title": "默认工作模式：以用户的思维方式和风格执行任务",
+                "title": "默认工作模式：以***的思维方式和风格执行任务",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "👤 用户层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "用户偏好：在所有任务中，AI助手应默认融合*的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
+                "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
                 "keywords": [
                   "工作模式",
                   "默认风格",
@@ -2991,7 +3271,7 @@
                 "layer": "👤 用户层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟主人），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
+                "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟*），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
                 "keywords": [
                   "AI助手",
                   "表达风格",
@@ -3221,7 +3501,7 @@
             "count": 10
           }
         },
-        "count": 18
+        "count": 19
       },
       "🧠 能力层": {
         "icon": "🧠",
@@ -3766,22 +4046,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "首页数据同步踩坑5条规则",
+                "title": "首页数据管道踩坑规则（含脱敏闸门）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "首页数据同步5大踩坑及核心规则： 1. 配置分散：新增技能时同步更新所有配置位置 2. 部署失败未发现：update-homepage.s...",
+                "description": "首页数据管道踩坑规则（2026-03-07 更新，含脱敏经验）： 一、数据管道闸门规则 从内部数据→对外展示的管道，必须有清洗闸门。 - upda...",
                 "keywords": [
                   "首页",
-                  "同步",
-                  "部署",
-                  "硬编码",
-                  "端到端验证"
+                  "数据管道",
+                  "脱敏",
+                  "闸门",
+                  "敏感信息"
                 ],
-                "importance": 4,
-                "updatedAt": "2026-03-06",
+                "importance": 5,
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -3956,7 +4236,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "踩坑记忆召回失败模式（含完整任务检索映射）",
+                "title": "踩坑记忆召回失败模式（含完整任务检索映射 v3）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
@@ -4009,6 +4289,44 @@
                   "设计决策"
                 ],
                 "importance": 4,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "数据模型信息冗余导致渲染重复（emoji/icon双重显示）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "数据模型信息冗余导致渲染重复 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
+                "keywords": [
+                  "数据冗余",
+                  "重复渲染",
+                  "emoji",
+                  "icon",
+                  "单一数据源"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "pathlib rglob/glob 不跟踪软链接（symlinks）导致数据丢失",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "Python pathlib.rglob()/glob() 不跟踪软链接（symlinks） 问题：Python pathlib 的 `rg...",
+                "keywords": [
+                  "pathlib",
+                  "rglob",
+                  "glob",
+                  "symlink",
+                  "软链接"
+                ],
+                "importance": 5,
                 "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
@@ -4127,6 +4445,44 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "大文件编辑的Context节约策略（含sed vs replace_in_file选择）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "大文件编辑的Context节约策略 问题 对2000+行的HTML/CSS大文件做样式修改时，分4次read_file读完全文占用大量con...",
+                "keywords": [
+                  "大文件",
+                  "context",
+                  "读取策略",
+                  "sed",
+                  "grep"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "品牌色全局迁移经验（含完整新旧色值映射表）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "品牌色全局迁移经验 问题场景 项目品牌色从旧色系(#1A7F37)升级到新色系(#059669)，需要确保全局一致性。 关键教训：品...",
+                "keywords": [
+                  "品牌色",
+                  "色值迁移",
+                  "全局替换",
+                  "CSS",
+                  "v3.0"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -4146,7 +4502,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 24
+            "count": 28
           },
           "发布部署": {
             "icon": "🚀",
@@ -4190,9 +4546,47 @@
                 "importance": 5,
                 "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "Git Force操作前必须保护工作区（stash优先）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "Git Force操作前必须保护工作区 问题 重建codeflicker-homepage的.git目录后，执行 `git checkout...",
+                "keywords": [
+                  "git",
+                  "force",
+                  "stash",
+                  "checkout",
+                  "工作区保护"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "GitHub 公开仓库安全审计经验（完整版）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： 泄露载体清单（安全扫描必检项） 1. Git commit auth...",
+                "keywords": [
+                  "GitHub",
+                  "安全审计",
+                  "敏感信息",
+                  "git-filter-repo",
+                  "package-lock"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 4
           },
           "文档处理": {
             "icon": "📄",
@@ -4379,7 +4773,7 @@
             "count": 2
           }
         },
-        "count": 34
+        "count": 40
       },
       "📚 项目层": {
         "icon": "📚",
@@ -4510,7 +4904,7 @@
     {
       "id": "knowledge_sage",
       "name": "知识贤者",
-      "desc": "积累206个知识文档，博学多识",
+      "desc": "积累159个知识文档，博学多识",
       "icon": "📚",
       "date": "2026-03-07",
       "unlocked": true,
@@ -4528,18 +4922,6 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "54/50",
-      "date": "2026-03-07"
-    },
-    {
-      "id": "knowledge_200",
-      "name": "学富五车",
-      "desc": "积累200个知识文档",
-      "icon": "📖",
-      "rarity": "epic",
-      "category": "growth",
-      "unlocked": true,
-      "progress": 100,
-      "progressText": "206/200",
       "date": "2026-03-07"
     },
     {
@@ -4606,7 +4988,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "80/30",
+      "progressText": "87/30",
       "date": "2026-03-07"
     },
     {
@@ -4641,6 +5023,18 @@
       "progress": 0,
       "rarity": "legendary",
       "category": "ultimate"
+    },
+    {
+      "id": "knowledge_200",
+      "name": "学富五车",
+      "desc": "积累200个知识文档",
+      "icon": "📖",
+      "rarity": "epic",
+      "category": "growth",
+      "unlocked": false,
+      "progress": 80,
+      "progressText": "159/200",
+      "date": "???"
     }
   ]
 }

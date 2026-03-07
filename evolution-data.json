@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T10:59:21.172025",
+  "generatedAt": "2026-03-08T06:00:27.227500",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -307,6 +307,12 @@
         "type": "system_unlock",
         "name": "AI持续洞察",
         "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "integration",
+        "name": "IM消息推送",
+        "description": "IM开放能力集成"
       }
     ]
   },
@@ -316,6 +322,6 @@
       "重大版本变化时需要更新 stages 中的当前阶段",
       "每日任务检查时自动对比是否有新的里程碑事件"
     ],
-    "lastAutoCheck": "2026-03-07"
+    "lastAutoCheck": "2026-03-08"
   }
 }

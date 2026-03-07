@@ -92,7 +92,7 @@
         {
           "title": "Creating a Viral AI Assistant Article Series",
           "type": "conversation",
-          "goal": "创作一个关于如何将CodeFlicker改造成个人AI助理的爆款专栏文章系列，吸引快手公司所有员工关注学习。",
+          "goal": "创作一个关于如何将CodeFlicker改造成个人AI助理的爆款专栏文章系列，吸引公司所有员工关注学习。",
           "deliverables": [],
           "process": [
             "计划通过预告、悬念设置和实操指南逐步展示AI助理改造过程，已更新概览图和文档链接，替换了废弃的日报截图，目前专栏结构包含6张概览卡片和详细内容分类。"
@@ -327,7 +327,7 @@
           },
           {
             "name": "ks-kim-docs-shuttle",
-            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+            "description": "内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
           },
           {
             "name": "mcp-builder",
@@ -418,11 +418,11 @@
         ],
         "updatedMemory": [
           {
-            "title": "***（Shawn）思想体系与写作风格",
+            "title": "***（***）思想体系与写作风格",
             "category": "user_info"
           },
           {
-            "title": "小无相功 v5.0 — 林克自进化内核",
+            "title": "小无相功 v5.0 — AI自进化内核",
             "category": "task_flow_experience"
           },
           {
@@ -554,10 +554,10 @@
         {
           "title": "AI Coding Market Tracking Knowledge Integration",
           "type": "conversation",
-          "goal": "将快手内网的AI Coding市场跟踪文档内容沉淀到知识库系统中",
+          "goal": "将内网的AI Coding市场跟踪文档内容沉淀到知识库系统中",
           "deliverables": [],
           "process": [
-            "访问并解析了快手内网文档《AI Coding市场跟踪》，创建了结构化知识文档ai-coding-market-tracking.md，包含Gemini 3.1 Flash-Lite和GPT 5.3 I..."
+            "访问并解析了内网文档《AI Coding市场跟踪》，创建了结构化知识文档ai-coding-market-tracking.md，包含Gemini 3.1 Flash-Lite和GPT 5.3 I..."
           ],
           "tags": [
             "ai-models",
@@ -670,7 +670,7 @@
           },
           {
             "name": "linke-kim-message",
-            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
+            "description": "This skill should be used when the user mentions \"AI助手发消息\", \"林"
           },
           {
             "name": "product-thinking",
@@ -809,10 +809,10 @@
       "totalCommits": 52,
       "conversationCount": 3,
       "coreProgress": [
-        "💬 完成 3 个任务: 用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构..., 更新AI助手林克的功能文档和技能列表，并完成git提交...",
+        "💬 完成 3 个任务: 用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构..., 更新AI助手AI助手的功能文档和技能列表，并完成git提交...",
         "📁 项目成果: 修复: 调整响应式断点从768px到480px，保持水平布局",
         "⚡ 新增能力: learn-from-mistakes、feishu-assistant，提升调研分析能力",
-        "🧠 新增记忆: 林克/添棋的自我表达风格等21条，避免常见错误"
+        "🧠 新增记忆: AI助手的自我表达风格等21条，避免常见错误"
       ],
       "deliveries": [
         {
@@ -834,7 +834,7 @@
         {
           "title": "AI Assistant Skills Update and Documentation",
           "type": "conversation",
-          "goal": "更新AI助手林克的功能文档和技能列表，并完成git提交",
+          "goal": "更新AI助手AI助手的功能文档和技能列表，并完成git提交",
           "deliverables": [],
           "process": [
             "更新了README.md和PLAN.md文件，将技能总数从47增加到49个，新增了`ai-insight`和`linke-kim-message`两个技能，移除了废弃的`_deprecated_dai..."
@@ -992,7 +992,7 @@
           },
           {
             "name": "linke-kim-message",
-            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
+            "description": "This skill should be used when the user mentions \"AI助手发消息\", \"林"
           },
           {
             "name": "neigong-cultivation",
@@ -1008,7 +1008,7 @@
           },
           {
             "name": "ks-kim-docs-shuttle",
-            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+            "description": "内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
           }
         ],
         "updatedSkills": [],
@@ -1025,7 +1025,7 @@
         "updatedKnowledge": [],
         "newMemory": [
           {
-            "title": "林克/添棋的自我表达风格",
+            "title": "AI助手的自我表达风格",
             "category": "user_communication"
           },
           {
@@ -1081,7 +1081,7 @@
             "category": "task_flow_experience"
           },
           {
-            "title": "工作汇报场景自称\"林克\"规则",
+            "title": "工作汇报场景自称\"AI助手\"规则",
             "category": "constraint_or_forbidden_rule"
           },
           {
@@ -1115,7 +1115,7 @@
             "category": "task_flow_experience"
           },
           {
-            "title": "AI助手\"林克/添棋\"身份信息",
+            "title": "AI助手\"AI助手\"身份信息",
             "category": "user_info"
           },
           {
@@ -1168,7 +1168,7 @@
       "knowledgeChange": 0,
       "memoryChange": 21,
       "highlights": [
-        "💬 完成 3 个任务: 用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构..., 更新AI助手林克的功能文档和技能列表，并完成git提交...",
+        "💬 完成 3 个任务: 用户希望完善AI知识库内容并验证页面美化升级效果，包括头部AI企业追踪、知识结构..., 更新AI助手AI助手的功能文档和技能列表，并完成git提交...",
         "📁 项目成果: 修复: 调整响应式断点从768px到480px，保持水平布局",
         "⚡ 新增能力: learn-from-mistakes、feishu-assistant，提升调研分析能力"
       ]
@@ -1494,7 +1494,7 @@
           ],
           "process": [
             "修复: 修复进化历程和多处深色背景区域文字对比度问题",
-            "优化: 系统性更名 - 添棋→林克，保护个人隐私",
+            "优化: 系统性更名 - AI助手→AI助手，保护个人隐私",
             "新增: 重构Tab结构 - 新增'了解我'Tab，调整内容布局"
           ],
           "commitCount": 45,
@@ -2042,7 +2042,7 @@
             "title": "🆕\n新增: 小无相功·自动学习模式"
           },
           {
-            "title": "🆕\n新增: AI助手\"添棋\"身份信息"
+            "title": "🆕\n新增: AI助手\"AI助手\"身份信息"
           }
         ]
       },
@@ -2217,7 +2217,7 @@
         ],
         "newMemory": [
           {
-            "title": "🆕\n新增: 默认工作模式：以***的思维方式和风格执行任务"
+            "title": "🆕\n新增: 默认工作模式：以用户的思维方式和风格执行任务"
           },
           {
             "title": "🆕\n新增: 清爽调研报告风格页面的渐进式开发规则"
@@ -2253,7 +2253,7 @@
         "💬 修复AI Coding分析报告中移动端四卡片Tips弹窗的样式问题并优化遮罩层关闭逻辑",
         "💬 修复移动端调研报告Tooltip显示问题并更新样式规范",
         "💬 为清爽调研报告风格提炼并标准化导航组件的设计与实现要求",
-        "💬 了解并成功使用docs-shuttle技能实现本地Markdown与快手内网Docs文档系统的双向同步",
+        "💬 了解并成功使用docs-shuttle技能实现本地Markdown与内网Docs文档系统的双向同步",
         "📁 字节AI调研: 6次提交, 0个文件变更"
       ],
       "deliveries": [
@@ -2317,7 +2317,7 @@
         {
           "type": "conversation",
           "title": "Docs-Shuttle Skill Installation and Usage Guide",
-          "goal": "了解并成功使用docs-shuttle技能实现本地Markdown与快手内网Docs文档系统的双向同步",
+          "goal": "了解并成功使用docs-shuttle技能实现本地Markdown与内网Docs文档系统的双向同步",
           "deliverables": [],
           "process": [
             "完成了docs-shuttle技能的安装和配置说明，重点解释了Cookie设置流程和双向同步功能（上传MD到Docs/从Docs拉取文档）。提供了触发词列表和使用场景示例，确认技能已成功安装在`~/...."

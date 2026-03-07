@@ -90,20 +90,21 @@
 .meta-layer-content {
     padding: 12px;
     display: flex;
-    gap: 14px;
-}
-.meta-side-panels {
-    display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+/* 底部并排行（认知框架+系统工具） */
+.meta-bottom-row {
+    display: flex;
     gap: 10px;
-    flex: 0 0 220px;
+}
+.meta-bottom-row > * {
+    flex: 1;
+    min-width: 0;
 }
 
 /* === 自进化引擎 === */
 .engine-section {
-    flex: 1;
-    min-width: 0;
-    max-width: 600px;
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(167, 139, 250, 0.2);
     border-radius: 10px;
@@ -132,11 +133,13 @@
 
 /* 引擎流程图 */
 .engine-diagram {
-    padding: 10px 10px 6px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0;
+    max-width: 480px;
+    margin: 0 auto;
 }
 .engine-tier {
     display: flex;
@@ -343,28 +346,28 @@
     z-index: 1;
 }
 
-/* 反馈线 */
+/* 反馈线（纯CSS虚线） */
 .engine-feedback-line {
-    width: 80%;
-    height: 16px;
+    width: 70%;
+    max-width: 340px;
+    height: 12px;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    opacity: 0.7;
+    margin: 2px auto;
+    border-bottom: 1.5px dashed rgba(167, 139, 250, 0.3);
+    border-left: 1.5px dashed rgba(167, 139, 250, 0.2);
+    border-right: 1.5px dashed rgba(167, 139, 250, 0.2);
+    border-radius: 0 0 8px 8px;
 }
-.feedback-svg { width: 100%; height: 100%; }
 .feedback-label {
     position: absolute;
-    top: 50%; right: 6%;
-    transform: translateY(-50%);
+    bottom: -7px; right: 8px;
     font-size: 8px;
     color: rgba(167, 139, 250, 0.5);
     font-family: var(--font-mono);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 1px 4px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 0 4px;
     border-radius: 3px;
+    line-height: 14px;
 }
 
 /* 深度工具层 */
@@ -459,8 +462,8 @@
 }
 .cognitive-pillars {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    gap: 6px;
+    flex-wrap: wrap;
 }
 .cognitive-pillar {
     display: flex;
@@ -933,9 +936,7 @@
 
 /* ==================== 响应式调整 ==================== */
 @media (max-width: 768px) {
-    .meta-layer-content { flex-direction: column; }
-    .meta-side-panels { flex-direction: row; max-width: 100%; min-width: 0; }
-    .cognitive-section, .system-section { flex: 1; min-width: 0; }
+    .meta-bottom-row { flex-direction: column; }
     .engine-core-branches { flex-direction: column; align-items: center; }
     .engine-branch { max-width: 100%; width: 100%; }
     .exec-groups-grid { grid-template-columns: 1fr; }
@@ -947,8 +948,9 @@
 
 @media (max-width: 480px) {
     .skill-architecture { padding: 10px; }
-    .meta-side-panels { flex-direction: column; }
     .arch-stats { display: none; }
+    .engine-diagram { max-width: 100%; padding: 8px; }
+    .engine-core-branches { gap: 4px; }
     .knowledge-cards-grid { grid-template-columns: 1fr; }
     .memory-network-svg { max-width: 300px; }
 }

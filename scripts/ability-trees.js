@@ -183,7 +183,7 @@ function renderSkillTechTree(container, skills) {
                         '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">全程</span></div>' + metaExecNode + '</div>' +
                     '</div>' +
                 '</div>' +
-                '<div class="engine-feedback-line" title="P2反馈"><svg class="feedback-svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M 85 2 C 95 2, 98 10, 95 18 L 5 18 C 2 18, 0 10, 5 2" fill="none" stroke="rgba(167,139,250,0.3)" stroke-width="1" stroke-dasharray="4,3"/><circle r="2" fill="#a78bfa"><animateMotion dur="3s" repeatCount="indefinite" path="M 85 2 C 95 2, 98 10, 95 18 L 5 18 C 2 18, 0 10, 5 2"/></circle></svg><span class="feedback-label">P2 反馈</span></div>' +
+                '<div class="engine-feedback-line"><span class="feedback-label">P2 反馈</span></div>' +
                 '<div class="engine-tier engine-tier--tools"><div class="engine-tools-connector"><span class="tools-connector-label">深度优化三剑客</span></div><div class="engine-tools-grid">' + toolNodes + '</div></div>' +
             '</div>' +
             loopsHtml +
@@ -258,7 +258,7 @@ function renderSkillTechTree(container, skills) {
     // ========== 组装 ==========
     container.innerHTML = '<div class="skill-architecture">' +
         '<div class="arch-header"><div class="arch-title"><span class="arch-icon">\u26A1</span><span>技能体系</span></div><div class="arch-stats"><span class="arch-stat">' + (skills.total || 0) + ' 技能</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">4 闭环</span></div></div>' +
-        '<div class="meta-layer"><div class="meta-layer-label"><span class="meta-label-icon">\uD83C\uDFDB\uFE0F</span><span class="meta-label-text">元能力层</span><span class="meta-label-desc">决定"我是谁"</span></div><div class="meta-layer-content">' + engineHtml + '<div class="meta-side-panels">' + cognitiveHtml + systemHtml + '</div></div></div>' +
+        '<div class="meta-layer"><div class="meta-layer-label"><span class="meta-label-icon">\uD83C\uDFDB\uFE0F</span><span class="meta-label-text">元能力层</span><span class="meta-label-desc">决定"我是谁"</span></div><div class="meta-layer-content">' + engineHtml + '<div class="meta-bottom-row">' + cognitiveHtml + systemHtml + '</div></div></div>' +
         renderLayerTransition('元能力驱动领域能力') +
         domainHtml +
         renderLayerTransition('领域调用执行技能') +

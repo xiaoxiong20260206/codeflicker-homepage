@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-07T07:10:38.990226",
+  "generatedAt": "2026-03-07T10:59:19.973878",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 10490,
-    "expProgress": 62.3,
+    "totalExp": 10640,
+    "expProgress": 66.0,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -374,7 +374,7 @@
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-07"
           },
           {
             "name": "web-dev-workflow",
@@ -384,6 +384,15 @@
             "exp": 79,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
             "lastUpdated": "2026-03-02"
+          },
+          {
+            "name": "frontend-design",
+            "displayName": "前端设计",
+            "source": "Cursor技能库",
+            "level": 4,
+            "exp": 76,
+            "description": "高质量前端界面设计，避免通用AI风格",
+            "lastUpdated": "2026-03-06"
           },
           {
             "name": "ui-ux-pro-max",
@@ -411,15 +420,6 @@
             "exp": 75,
             "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
             "lastUpdated": "2026-02-08"
-          },
-          {
-            "name": "frontend-design",
-            "displayName": "前端设计",
-            "source": "Cursor技能库",
-            "level": 4,
-            "exp": 73,
-            "description": "高质量前端界面设计，避免通用AI风格",
-            "lastUpdated": "2026-03-06"
           }
         ],
         "count": 6,
@@ -1030,7 +1030,7 @@
                 "level": 5,
                 "exp": 95,
                 "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-07"
               },
               {
                 "name": "web-dev-workflow",
@@ -1040,6 +1040,15 @@
                 "exp": 79,
                 "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
                 "lastUpdated": "2026-03-02"
+              },
+              {
+                "name": "frontend-design",
+                "displayName": "前端设计",
+                "source": "Cursor技能库",
+                "level": 4,
+                "exp": 76,
+                "description": "高质量前端界面设计，避免通用AI风格",
+                "lastUpdated": "2026-03-06"
               },
               {
                 "name": "ui-ux-pro-max",
@@ -1067,15 +1076,6 @@
                 "exp": 75,
                 "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
                 "lastUpdated": "2026-02-08"
-              },
-              {
-                "name": "frontend-design",
-                "displayName": "前端设计",
-                "source": "Cursor技能库",
-                "level": 4,
-                "exp": 73,
-                "description": "高质量前端界面设计，避免通用AI风格",
-                "lastUpdated": "2026-03-06"
               }
             ],
             "count": 6,
@@ -1332,7 +1332,7 @@
         "fileCount": 24,
         "sizeKB": 205.3,
         "heatLevel": 5,
-        "recentCount": 9
+        "recentCount": 7
       },
       "self-evolution": {
         "name": "self-evolution",
@@ -1340,7 +1340,7 @@
         "color": "#64748b",
         "description": "self-evolution相关文档",
         "fileCount": 3,
-        "sizeKB": 13.5,
+        "sizeKB": 13.7,
         "heatLevel": 3,
         "recentCount": 3
       },
@@ -1366,7 +1366,7 @@
       }
     },
     "totalFiles": 159,
-    "totalSizeKB": 1102.9
+    "totalSizeKB": 1103.0
   },
   "memories": {
     "items": [
@@ -1425,6 +1425,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI生成UI反模式清单（去AI味指南）",
+        "category": "development_practice_specification",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## AI生成UI反模式清单 ### 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
+        "keywords": [
+          "AI反模式",
+          "前端设计",
+          "去AI味",
+          "UI设计",
+          "anti-pattern"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -1542,25 +1561,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能/知识库分类配置漂移问题（含描述+展示名）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类、描述为\"---\"、技能名显示英文截断。 **根因**：分类配置信息存在多处（违反单一数据源原则...",
-        "keywords": [
-          "配置漂移",
-          "技能分类",
-          "首页",
-          "SKILL_CATEGORIES",
-          "SKILL_DESCRIPTIONS"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-06",
-        "source": "用户显式记录"
-      },
-      {
         "title": "技能复用检测与单一数据源架构",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -1577,25 +1577,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "每日修炼执行纪律 v3.0（禁止跳过任何步骤）",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "👤 用户层",
-        "icon": "🚫",
-        "color": "#dc2626",
-        "description": "## 每日修炼执行纪律 v3.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
-        "keywords": [
-          "每日修炼",
-          "执行纪律",
-          "meta-execution",
-          "强制绑定",
-          "验收标准"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -1653,25 +1634,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "清爽调研报告风格页面的渐进式开发规则",
-        "category": "development_practice_specification",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "当一个页面是使用\"清爽调研报告风格\"（qingshuang-research-style）skill开发后，基于这个页面的所有后续改动、渐进式开发，都必须...",
-        "keywords": [
-          "清爽调研报告风格",
-          "qingshuang-research-style",
-          "skill",
-          "渐进式开发",
-          "CSS规范"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-02-26",
         "source": "用户显式记录"
       },
       {
@@ -1748,6 +1710,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "跨文件批量标准化修改经验（含防回退三件套）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## 跨文件批量标准化修改经验 ### 问题场景 需要对项目中大量HTML文件（30+个）进行统一格式修改（如统一footer、统一模块、统一样式）。 #...",
+        "keywords": [
+          "批量修改",
+          "标准化",
+          "HTML",
+          "footer",
+          "脚本化"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -1922,25 +1903,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "HTML配图高度溢出：宁大勿小",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 领域层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "HTML配图高度溢出问题：宁可高度偏大100px，也不要事后被用户反馈再修改。 **核心规则**： - 默认高度640px，复杂内容720px - 创建后...",
-        "keywords": [
-          "图片越界",
-          "高度",
-          "HTML截图",
-          "overflow",
-          "预览"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-06",
-        "source": "用户显式记录"
-      },
-      {
         "title": "Meta-Execution 工作模式（精简版）",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -1979,6 +1941,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "UI元素增删的双向布局影响（溢出+截断）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "UI元素增删的双向布局影响检查规则。 **核心规则（双向）**： - **增加元素时**：检查是否溢出容器→宁大勿小，默认高度640px，复杂内容720p...",
+        "keywords": [
+          "图片越界",
+          "高度",
+          "HTML截图",
+          "overflow",
+          "预览"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "UI气泡只展示有数据的内容",
         "category": "development_practice_specification",
         "categoryLabel": "前端开发",
@@ -2014,6 +1995,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "recap元数据污染：工具调用开头的对话标题异常",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "消息通信",
+        "layer": "🛠️ 领域层",
+        "icon": "💬",
+        "color": "#06b6d4",
+        "description": "recap元数据(title/user_intent)可能被工具调用污染。 **触发条件**: 对话以execute_command等工具调用开头，而非自...",
+        "keywords": [
+          "recap",
+          "元数据",
+          "标题",
+          "污染",
+          "工具调用"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -2207,6 +2207,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "技能/知识库分类配置漂移（精简版→指向技能）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "新建技能/知识库时，必须同步更新4个位置，否则首页显示\"其他\"分类和\"---\"描述。 **必须同步的4个位置**： 1. `generate_charac...",
+        "keywords": [
+          "配置漂移",
+          "技能分类",
+          "首页",
+          "SKILL_CATEGORIES",
+          "displayName"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "技能与记忆分类原则（精简版）",
         "category": "development_practice_specification",
         "categoryLabel": "实践规范",
@@ -2359,6 +2378,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "每日修炼执行纪律（精简版→指向SKILL.md）",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "👤 用户层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "每日修炼触发后，必须严格执行 daily-reflection-evolution 技能的完整流程。 **核心约束**： - 所有步骤必须全部执行，禁止跳...",
+        "keywords": [
+          "每日修炼",
+          "执行纪律",
+          "meta-execution",
+          "强制绑定",
+          "禁止跳过"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "深度调研启动前的目标确认检查",
         "category": "common_pitfalls_experience",
         "categoryLabel": "领域踩坑",
@@ -2394,6 +2432,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-02",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "清爽调研报告风格页面的渐进式开发规则",
+        "category": "development_practice_specification",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "当一个页面是使用\"清爽调研报告风格\"（qingshuang-research-style）skill开发后，基于这个页面的所有后续改动、渐进式开发，都必须...",
+        "keywords": [
+          "清爽调研报告风格",
+          "qingshuang-research-style",
+          "skill",
+          "渐进式开发",
+          "CSS规范"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-26",
         "source": "用户显式记录"
       },
       {
@@ -2736,10 +2793,10 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 72,
+    "total": 75,
     "byCategory": {
       "development_practice_specification": {
-        "count": 9,
+        "count": 10,
         "label": "工作模式",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2781,7 +2838,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 24,
+        "count": 26,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -3107,22 +3164,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼执行纪律 v3.0（禁止跳过任何步骤）",
+                "title": "每日修炼执行纪律（精简版→指向SKILL.md）",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "👤 用户层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 每日修炼执行纪律 v3.0 ### 触发词 ``` 每日修炼 / 补跑日报 / 运行每日任务 ``` ### ⚠️ 强制绑定 meta-execut...",
+                "description": "每日修炼触发后，必须严格执行 daily-reflection-evolution 技能的完整流程。 **核心约束**： - 所有步骤必须全部执行，禁止跳...",
                 "keywords": [
                   "每日修炼",
                   "执行纪律",
                   "meta-execution",
                   "强制绑定",
-                  "验收标准"
+                  "禁止跳过"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-06",
+                "importance": 4,
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -3788,13 +3845,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "HTML配图高度溢出：宁大勿小",
+                "title": "UI元素增删的双向布局影响（溢出+截断）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "HTML配图高度溢出问题：宁可高度偏大100px，也不要事后被用户反馈再修改。 **核心规则**： - 默认高度640px，复杂内容720px - 创建后...",
+                "description": "UI元素增删的双向布局影响检查规则。 **核心规则（双向）**： - **增加元素时**：检查是否溢出容器→宁大勿小，默认高度640px，复杂内容720p...",
                 "keywords": [
                   "图片越界",
                   "高度",
@@ -3803,7 +3860,7 @@
                   "预览"
                 ],
                 "importance": 4,
-                "updatedAt": "2026-03-06",
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -3845,22 +3902,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "技能/知识库分类配置漂移问题（含描述+展示名）",
+                "title": "技能/知识库分类配置漂移（精简版→指向技能）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "**问题**：新建技能/知识库目录后，首页显示\"其他\"分类、描述为\"---\"、技能名显示英文截断。 **根因**：分类配置信息存在多处（违反单一数据源原则...",
+                "description": "新建技能/知识库时，必须同步更新4个位置，否则首页显示\"其他\"分类和\"---\"描述。 **必须同步的4个位置**： 1. `generate_charac...",
                 "keywords": [
                   "配置漂移",
                   "技能分类",
                   "首页",
                   "SKILL_CATEGORIES",
-                  "SKILL_DESCRIPTIONS"
+                  "displayName"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-06",
+                "importance": 4,
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -3880,6 +3937,25 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI生成UI反模式清单（去AI味指南）",
+                "category": "development_practice_specification",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## AI生成UI反模式清单 ### 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
+                "keywords": [
+                  "AI反模式",
+                  "前端设计",
+                  "去AI味",
+                  "UI设计",
+                  "anti-pattern"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -3978,6 +4054,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "跨文件批量标准化修改经验（含防回退三件套）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 跨文件批量标准化修改经验 ### 问题场景 需要对项目中大量HTML文件（30+个）进行统一格式修改（如统一footer、统一模块、统一样式）。 #...",
+                "keywords": [
+                  "批量修改",
+                  "标准化",
+                  "HTML",
+                  "footer",
+                  "脚本化"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -3992,12 +4087,12 @@
                   "渐进式开发",
                   "CSS规范"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-02-26",
                 "source": "用户显式记录"
               }
             ],
-            "count": 20
+            "count": 22
           },
           "发布部署": {
             "icon": "🚀",
@@ -4078,6 +4173,25 @@
             "description": "KIM/飞书踩坑",
             "items": [
               {
+                "title": "recap元数据污染：工具调用开头的对话标题异常",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "消息通信",
+                "layer": "🛠️ 领域层",
+                "icon": "💬",
+                "color": "#06b6d4",
+                "description": "recap元数据(title/user_intent)可能被工具调用污染。 **触发条件**: 对话以execute_command等工具调用开头，而非自...",
+                "keywords": [
+                  "recap",
+                  "元数据",
+                  "标题",
+                  "污染",
+                  "工具调用"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "AI日报KIM卡片链接错误排查经验",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "消息通信",
@@ -4097,7 +4211,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 1
+            "count": 2
           },
           "内容创作": {
             "icon": "✍️",
@@ -4192,7 +4306,7 @@
             "count": 2
           }
         },
-        "count": 28
+        "count": 31
       },
       "📚 项目层": {
         "icon": "📚",
@@ -4205,7 +4319,6 @@
   },
   "growthHistory": {
     "dates": [
-      "03-03",
       "03-04",
       "03-02",
       "03-03",
@@ -4218,10 +4331,10 @@
       "03-05",
       "03-05",
       "03-05",
+      "03-06",
       "03-06"
     ],
     "skills": [
-      40,
       42,
       42,
       42,
@@ -4234,10 +4347,10 @@
       44,
       44,
       47,
+      49,
       49
     ],
     "knowledge": [
-      151,
       152,
       152,
       152,
@@ -4250,10 +4363,10 @@
       152,
       152,
       152,
+      159,
       159
     ],
     "memories": [
-      52,
       65,
       65,
       65,
@@ -4266,7 +4379,8 @@
       73,
       74,
       73,
-      72
+      72,
+      75
     ]
   },
   "achievements": [
@@ -4379,7 +4493,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "72/30",
+      "progressText": "75/30",
       "date": "2026-03-07"
     },
     {

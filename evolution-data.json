@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-07T07:10:42.085702",
+  "generatedAt": "2026-03-07T10:59:21.172025",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -301,6 +301,12 @@
         "type": "skill_unlock",
         "name": "网页开发工作流",
         "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
       }
     ]
   },

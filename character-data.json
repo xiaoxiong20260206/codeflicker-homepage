@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-08T07:26:56.242961",
+  "generatedAt": "2026-03-08T07:57:06.533056",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 11390,
-    "expProgress": 84.8,
+    "totalExp": 11490,
+    "expProgress": 87.2,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -1921,6 +1921,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "技能分层文档的同步规则（SKILL.md↔references/）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 领域层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "技能分层文档同步规则 问题 修改技能的详细参考文件（references/*.md）后，忘记在主入口（SKILL.md）同步摘要，导...",
+        "keywords": [
+          "技能更新",
+          "SKILL.md",
+          "references",
+          "分层同步",
+          "文档同步"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "技能复用检测与单一数据源架构",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -2431,6 +2450,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "replace_in_file首次匹配陷阱（同文件多出现时遗漏）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "replace_in_file 首次匹配陷阱 问题 replace_in_file 只替换文件中的第一个匹配项。如果同一模式在文...",
+        "keywords": [
+          "replace_in_file",
+          "首次匹配",
+          "遗漏",
+          "grep验证",
+          "多次出现"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "五层思考框架：从执行到战略",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力/工作模式",
@@ -2903,6 +2941,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "网页开发工作流偏好（精简版）",
+        "category": "development_practice_specification",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 能力层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "网页开发必须遵循 web-dev-workflow 技能：~/.codeflicker/skills/web-dev-workflow/ 核心流程...",
+        "keywords": [
+          "网页开发",
+          "web-dev-workflow技能",
+          "部署",
+          "链接",
+          "默认提供链接"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "能力树视觉重构经验（三树差异化）",
         "category": "development_practice_specification",
         "categoryLabel": "前端开发",
@@ -3108,26 +3165,9 @@
         "importance": 3,
         "updatedAt": "2026-02-23",
         "source": "用户显式记录"
-      },
-      {
-        "title": "网页开发工作流偏好（精简版）",
-        "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
-        "layer": "🧠 能力层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "网页开发必须遵循 web-dev-workflow 技能：~/.codeflicker/skills/web-dev-workflow/ 核心流程...",
-        "keywords": [
-          "网页开发",
-          "web-dev-workflow技能",
-          "部署"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
       }
     ],
-    "total": 83,
+    "total": 85,
     "byCategory": {
       "development_practice_specification": {
         "count": 11,
@@ -3172,7 +3212,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 36,
+        "count": 38,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -3836,10 +3876,12 @@
                 "keywords": [
                   "网页开发",
                   "web-dev-workflow技能",
-                  "部署"
+                  "部署",
+                  "链接",
+                  "默认提供链接"
                 ],
-                "importance": 3,
-                "updatedAt": "2026-03-04",
+                "importance": 4,
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -3988,6 +4030,25 @@
             "color": "#f472b6",
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
+              {
+                "title": "replace_in_file首次匹配陷阱（同文件多出现时遗漏）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "replace_in_file 首次匹配陷阱 问题 replace_in_file 只替换文件中的第一个匹配项。如果同一模式在文...",
+                "keywords": [
+                  "replace_in_file",
+                  "首次匹配",
+                  "遗漏",
+                  "grep验证",
+                  "多次出现"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
               {
                 "title": "日报列表同步遗漏问题及修复方案",
                 "category": "common_pitfalls_experience",
@@ -4540,7 +4601,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 29
+            "count": 30
           },
           "发布部署": {
             "icon": "🚀",
@@ -4564,6 +4625,25 @@
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-06",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "技能分层文档的同步规则（SKILL.md↔references/）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 领域层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "技能分层文档同步规则 问题 修改技能的详细参考文件（references/*.md）后，忘记在主入口（SKILL.md）同步摘要，导...",
+                "keywords": [
+                  "技能更新",
+                  "SKILL.md",
+                  "references",
+                  "分层同步",
+                  "文档同步"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -4624,7 +4704,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 5
           },
           "文档处理": {
             "icon": "📄",
@@ -4811,7 +4891,7 @@
             "count": 2
           }
         },
-        "count": 41
+        "count": 43
       },
       "📚 项目层": {
         "icon": "📚",
@@ -5026,7 +5106,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "88/30",
+      "progressText": "90/30",
       "date": "2026-03-08"
     },
     {

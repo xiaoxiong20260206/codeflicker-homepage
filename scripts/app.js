@@ -2483,6 +2483,8 @@ function showTreeTooltip(event, id, type) {
     
     tooltip.style.left = left + 'px';
     tooltip.style.top = top + 'px';
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'translateY(0)';
     tooltip.classList.add('visible');
 }
 
@@ -2522,6 +2524,8 @@ function showStatTooltip(event, type) {
     
     tooltip.style.left = left + 'px';
     tooltip.style.top = top + 'px';
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'translateY(0)';
     tooltip.classList.add('visible');
 }
 
@@ -2628,6 +2632,8 @@ function showProjectTooltip(event, id) {
     
     tooltip.style.left = left + 'px';
     tooltip.style.top = top + 'px';
+    tooltip.style.opacity = '1';
+    tooltip.style.transform = 'translateY(0)';
     tooltip.classList.add('visible');
 }
 
@@ -2635,6 +2641,8 @@ window.showProjectTooltip = showProjectTooltip;
 
 function hideTooltip() {
     if (DOM.tooltip) {
+        DOM.tooltip.style.opacity = '0';
+        DOM.tooltip.style.transform = 'translateY(10px)';
         DOM.tooltip.classList.remove('visible');
     }
 }

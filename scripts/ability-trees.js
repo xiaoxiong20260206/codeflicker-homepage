@@ -76,9 +76,17 @@ function renderSkillTechTree(container, skills) {
     function storeSkill(skill) {
         var id = 'skill-' + (_idx++);
         window.AppState.dataMap[id] = {
-            name: skill.name, icon: '\u26A1', level: skill.level || 1,
+            name: getName(skill), icon: '\u26A1', level: skill.level || 1,
             description: skill.description || '', source: skill.source || '技能库',
             exp: skill.exp || 0, lastUpdated: skill.lastUpdated
+        };
+        return id;
+    }
+    function storeGeneric(icon, name, desc, level) {
+        var id = 'gen-' + (_idx++);
+        window.AppState.dataMap[id] = {
+            name: name, icon: icon || '\uD83D\uDD18', level: level || '',
+            description: desc || '', source: ''
         };
         return id;
     }
@@ -167,7 +175,8 @@ function renderSkillTechTree(container, skills) {
             loopsHtml = '<div class="engine-loops">';
             for (var li = 0; li < loops.length; li++) {
                 var l = loops[li];
-                loopsHtml += '<div class="engine-loop-tag" title="' + (l.desc || '') + '"><span class="loop-icon">' + l.icon + '</span><span class="loop-name">' + l.name + '</span><span class="loop-level">' + l.level + '</span></div>';
+                var loopId = storeGeneric(l.icon, l.name, l.desc || '', l.level);
+                loopsHtml += '<div class="engine-loop-tag" onmouseenter="showTreeTooltip(event, \'' + loopId + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="loop-icon">' + l.icon + '</span><span class="loop-name">' + l.name + '</span><span class="loop-level">' + l.level + '</span></div>';
             }
             loopsHtml += '</div>';
         }
@@ -234,7 +243,8 @@ function renderSkillTechTree(container, skills) {
             var dChips = '';
             var dSkills = dInfo.skills || [];
             for (var ds = 0; ds < dSkills.length; ds++) { dChips += createSkillChip(dSkills[ds]); }
-            domainCards += '<div class="domain-card" style="--domain-color:' + (dInfo.color || '#8b5cf6') + ';"><div class="domain-card-header"><span class="domain-card-icon">' + (dInfo.icon || '\uD83C\uDFAF') + '</span><span class="domain-card-name">' + dClean + '</span></div><div class="domain-card-desc">' + (dInfo.description || '') + '</div><div class="domain-card-skills">' + dChips + '</div></div>';
+            var domId = storeGeneric(dInfo.icon || '\uD83C\uDFAF', dClean, (dInfo.description || '') + '\n包含 ' + dSkills.length + ' 个技能', '');
+            domainCards += '<div class="domain-card" style="--domain-color:' + (dInfo.color || '#8b5cf6') + ';" onmouseenter="showTreeTooltip(event, \'' + domId + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="domain-card-header"><span class="domain-card-icon">' + (dInfo.icon || '\uD83C\uDFAF') + '</span><span class="domain-card-name">' + dClean + '</span></div><div class="domain-card-desc">' + (dInfo.description || '') + '</div><div class="domain-card-skills">' + dChips + '</div></div>';
         }
         domainHtml = '<div class="domain-layer"><div class="domain-layer-header"><span class="domain-layer-icon">\uD83C\uDFAF</span><span class="domain-layer-title">领域技能包</span><span class="domain-layer-desc">特定领域的完整解决方案</span></div><div class="domain-cards-grid">' + domainCards + '</div></div>';
     }
@@ -251,7 +261,8 @@ function renderSkillTechTree(container, skills) {
             var eChips = '';
             var eSkills = eInfo.skills || [];
             for (var es = 0; es < eSkills.length; es++) { eChips += createSkillChip(eSkills[es]); }
-            execGroups += '<div class="exec-group"><div class="exec-group-header"><span class="exec-group-icon">' + (eInfo.icon || '\uD83D\uDEE0\uFE0F') + '</span><span class="exec-group-name">' + eClean + '</span><span class="exec-group-count">' + (eInfo.count || 0) + '</span></div><div class="exec-group-chips">' + eChips + '</div></div>';
+            var execId = storeGeneric(eInfo.icon || '\uD83D\uDEE0\uFE0F', eClean, '包含 ' + (eInfo.count || 0) + ' 个技能', '');
+            execGroups += '<div class="exec-group" onmouseenter="showTreeTooltip(event, \'' + execId + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="exec-group-header"><span class="exec-group-icon">' + (eInfo.icon || '\uD83D\uDEE0\uFE0F') + '</span><span class="exec-group-name">' + eClean + '</span><span class="exec-group-count">' + (eInfo.count || 0) + '</span></div><div class="exec-group-chips">' + eChips + '</div></div>';
         }
         execHtml = '<div class="exec-layer" id="exec-layer-toggle"><div class="exec-layer-header" onclick="toggleExecLayer()"><span class="exec-layer-icon">\uD83D\uDEE0\uFE0F</span><span class="exec-layer-title">执行技能层</span><span class="exec-layer-desc">做具体事情的工具</span><span class="exec-layer-count">' + (execLayer.count || 0) + '</span><span class="exec-layer-toggle-icon">\u25BC</span></div><div class="exec-layer-content"><div class="exec-groups-grid">' + execGroups + '</div></div></div>';
     }

@@ -15,17 +15,29 @@ function renderSkillTechTree(container, skills) {
     
     // 技能名称映射
     const skillNameMap = {
+        // === 🔄 自进化引擎 ===
+        'xiaowuxianggong': '小无相功',
         'daily-reflection-evolution': '自进化',
-        'skill-manager': '技能管理',
-        'knowledge-base': '知识库',
-        'personal-assistant': '助理',
-        'find-skills': '发现',
-        'meta-execution': '元执行',
         'learn-from-mistakes': '举一反三',
         'neigong-cultivation': '内功修炼',
+        'meta-execution': '元执行',
+        'memory-hygiene': '记忆管理',
+        'skill-architecture': '技能架构',
+        'knowledge-curator': '知识管理',
+        
+        // === 🧠 认知框架 ===
+        'essence-insight': '本质洞察',
+        'product-thinking': '产品思维',
+        'knowledge-acquisition-meta': '知识习得',
+        
+        // === ⚙️ 系统工具 ===
+        'knowledge-base': '知识库',
+        'find-skills': '发现',
+        'skill-manager': '技能管理',
         'night-task-runner': '夜间任务',
-        'web-dev-workflow': '网页流程',
-        'promotion-coaching': '晋升辅导',
+        'personal-assistant': '助理',
+        
+        // === 调研分析 ===
         'industry-research': '行研',
         'wechat-research': '公众号',
         'research': '调研',
@@ -33,15 +45,20 @@ function renderSkillTechTree(container, skills) {
         'apify-market-research': '市场',
         'apify-competitor-intelligence': '竞情',
         'ai-insight': 'AI洞察',
+        
+        // === 文档处理 ===
         'pdf': 'PDF',
         'pptx': 'PPT',
         'docx': 'Word',
         'xlsx': 'Excel',
         'canvas-design': '画布',
         'keynote': 'Keynote',
+        
+        // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
         'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端',
+        'web-dev-workflow': '网页流程',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
         'pixel-action-game': '像素',
@@ -52,23 +69,23 @@ function renderSkillTechTree(container, skills) {
         'vercel-react-native-skills': 'RN',
         'vercel-composition-patterns': '组合',
         'remotion-best-practices': '视频',
+        
+        // === 发布部署 ===
         'github-deploy-publisher': 'GitHub',
         'yuque-publisher': '语雀',
         'ks-kim-docs-shuttle': 'KIM文档',
         'mcp-builder': 'MCP',
+        
+        // === 投资理财 ===
         'stock-analysis': '股票',
         'investment-analyzer': '投资',
         'investment-tracker': '基金',
+        
+        // === 效率工具 ===
         'feishu-assistant': '飞书',
         'linke-kim-message': 'KIM消息',
         'ai-column-writer': '专栏',
-        // v6.1 新增
-        'essence-insight': '本质洞察',
-        'product-thinking': '产品思维',
-        'skill-architecture': '技能架构',
-        'memory-hygiene': '记忆管理',
-        'knowledge-curator': '知识管理',
-        'knowledge-acquisition-meta': '知识习得'
+        'promotion-coaching': '晋升辅导'
     };
     
     // 判断技能是否最近使用（3天内）

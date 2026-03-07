@@ -1370,24 +1370,26 @@ function renderSkillTreeGraph(skills) {
 function renderSkillTreeWithLayers(container, tree, skills) {
     // 技能名称到简短中文名的映射
     const skillNameMap = {
-        // === 核心能力 ===
+        // === 🔄 自进化引擎 ===
+        'xiaowuxianggong': '小无相功',
         'daily-reflection-evolution': '自进化',
-        'skill-manager': '技能管理',
-        'knowledge-base': '知识库',
-        'personal-assistant': '助理',
-        'find-skills': '发现',
-        'meta-execution': '元执行',
         'learn-from-mistakes': '举一反三',
         'neigong-cultivation': '内功修炼',
-        'night-task-runner': '夜间任务',
-        'web-dev-workflow': '网页流程',
-        'promotion-coaching': '晋升辅导',
+        'meta-execution': '元执行',
+        'memory-hygiene': '记忆管理',
+        'skill-architecture': '技能架构',
+        'knowledge-curator': '知识管理',
+        
+        // === 🧠 认知框架 ===
         'essence-insight': '本质洞察',
         'product-thinking': '产品思维',
-        'skill-architecture': '技能架构',
-        'memory-hygiene': '记忆管理',
-        'knowledge-curator': '知识管理',
         'knowledge-acquisition-meta': '知识习得',
+        
+        // === ⚙️ 系统工具 ===
+        'knowledge-base': '知识库',
+        'find-skills': '发现',
+        'skill-manager': '技能管理',
+        'night-task-runner': '夜间任务',
         
         // === 调研分析 ===
         'industry-research': '行研',
@@ -1436,7 +1438,8 @@ function renderSkillTreeWithLayers(container, tree, skills) {
         // === 效率工具 ===
         'feishu-assistant': '飞书',
         'linke-kim-message': 'KIM消息',
-        'ai-column-writer': '专栏'
+        'ai-column-writer': '专栏',
+        'personal-assistant': '助理'
     };
     
     let idx = 0;
@@ -1565,24 +1568,26 @@ function renderSkillTreeWithLayers(container, tree, skills) {
 function renderSkillTreeFlat(container, skills) {
     // 技能名称到简短中文名的映射（优化版 v2.0）
     const skillNameMap = {
-        // === 核心能力 ===
+        // === 🔄 自进化引擎 ===
+        'xiaowuxianggong': '小无相功',
         'daily-reflection-evolution': '自进化',
-        'skill-manager': '技能管理',
-        'knowledge-base': '知识库',
-        'personal-assistant': '助理',
-        'find-skills': '发现',
-        'meta-execution': '元执行',
         'learn-from-mistakes': '举一反三',
-        'web-dev-workflow': '网页流程',
-        'promotion-coaching': '晋升辅导',
         'neigong-cultivation': '内功修炼',
-        'night-task-runner': '夜间任务',
+        'meta-execution': '元执行',
+        'memory-hygiene': '记忆管理',
+        'skill-architecture': '技能架构',
+        'knowledge-curator': '知识管理',
+        
+        // === 🧠 认知框架 ===
         'essence-insight': '本质洞察',
         'product-thinking': '产品思维',
-        'skill-architecture': '技能架构',
-        'memory-hygiene': '记忆管理',
-        'knowledge-curator': '知识管理',
         'knowledge-acquisition-meta': '知识习得',
+        
+        // === ⚙️ 系统工具 ===
+        'knowledge-base': '知识库',
+        'find-skills': '发现',
+        'skill-manager': '技能管理',
+        'night-task-runner': '夜间任务',
         
         // === 调研分析 ===
         'industry-research': '行研',
@@ -1606,6 +1611,7 @@ function renderSkillTreeFlat(container, skills) {
         'ui-ux-pro-max': 'UI专家',
         'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端',
+        'web-dev-workflow': '网页流程',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
         'pixel-action-game': '像素',
@@ -1631,7 +1637,9 @@ function renderSkillTreeFlat(container, skills) {
         // === 效率工具 ===
         'feishu-assistant': '飞书',
         'linke-kim-message': 'KIM消息',
-        'ai-column-writer': '专栏'
+        'ai-column-writer': '专栏',
+        'promotion-coaching': '晋升辅导',
+        'personal-assistant': '助理'
     };
     
     let idx = 0;
@@ -2542,6 +2550,7 @@ function showProjectTooltip(event, id) {
     };
     
     const skillNameMap = {
+        'xiaowuxianggong': '小无相功',
         'industry-research': '行业调研',
         'github-deploy-publisher': 'GitHub部署',
         'qingshuang-research-style': '清爽报告风格',
@@ -2553,7 +2562,12 @@ function showProjectTooltip(event, id) {
         'personal-assistant': '个人助理',
         'ui-ux-pro-max': 'UI/UX专家',
         'zelda-style': '塞尔达风格',
-        'daily-reflection-evolution': '自进化'
+        'daily-reflection-evolution': '自进化',
+        'meta-execution': '元执行',
+        'learn-from-mistakes': '举一反三',
+        'neigong-cultivation': '内功修炼',
+        'essence-insight': '本质洞察',
+        'product-thinking': '产品思维'
     };
     
     const usedSkills = (projectSkillsMap[data.id] || [])

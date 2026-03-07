@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-07T10:59:19.973878",
+  "generatedAt": "2026-03-07T11:23:32.342015",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 10640,
-    "expProgress": 66.0,
+    "totalExp": 10740,
+    "expProgress": 68.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -22,11 +22,11 @@
   "skills": {
     "total": 53,
     "categories": {
-      "🧠 思维能力": {
-        "icon": "🧠",
+      "🔄 自进化引擎": {
+        "icon": "🔄",
         "color": "#a78bfa",
         "layer": "meta",
-        "description": "决定林克如何思考：元执行、自进化、内功修炼、知识库",
+        "description": "驱动林克持续进化的完整闭环：反思→学习→优化",
         "skills": [
           {
             "name": "daily-reflection-evolution",
@@ -37,6 +37,79 @@
             "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
             "lastUpdated": "2026-03-02"
           },
+          {
+            "name": "neigong-cultivation",
+            "displayName": "内功修炼",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 73,
+            "description": "内功修炼：记忆/知识/技能三位一体优化器",
+            "lastUpdated": "2026-03-04"
+          },
+          {
+            "name": "xiaowuxianggong",
+            "displayName": "小无相功",
+            "source": "林克核心能力",
+            "level": 4,
+            "exp": 70,
+            "description": "自进化体系引导程序：导航、周检、月检、进化全景",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "learn-from-mistakes",
+            "displayName": "举一反三",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 64,
+            "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
+            "lastUpdated": "2026-03-03"
+          },
+          {
+            "name": "meta-execution",
+            "displayName": "元执行",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 64,
+            "description": "元执行框架：一次把事情做对的自审机制",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "memory-hygiene",
+            "displayName": "记忆管理",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 58,
+            "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "skill-architecture",
+            "displayName": "技能架构",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 58,
+            "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
+            "lastUpdated": "2026-03-06"
+          },
+          {
+            "name": "knowledge-curator",
+            "displayName": "知识管理",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 58,
+            "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
+            "lastUpdated": "2026-03-06"
+          }
+        ],
+        "count": 8,
+        "avgLevel": 3.5
+      },
+      "🧠 认知框架": {
+        "icon": "🧠",
+        "color": "#f59e0b",
+        "layer": "meta",
+        "description": "独立的思维能力：本质洞察、产品思维、知识习得",
+        "skills": [
           {
             "name": "essence-insight",
             "displayName": "本质洞察",
@@ -56,15 +129,6 @@
             "lastUpdated": "2026-03-06"
           },
           {
-            "name": "neigong-cultivation",
-            "displayName": "内功修炼",
-            "source": "林克核心能力",
-            "level": 4,
-            "exp": 73,
-            "description": "内功修炼：记忆/知识/技能三位一体优化器",
-            "lastUpdated": "2026-03-04"
-          },
-          {
             "name": "product-thinking",
             "displayName": "产品思维",
             "source": "林克核心能力",
@@ -72,34 +136,16 @@
             "exp": 70,
             "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
             "lastUpdated": "2026-03-05"
-          },
-          {
-            "name": "meta-execution",
-            "displayName": "元执行",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
-            "description": "元执行框架：一次把事情做对的自审机制",
-            "lastUpdated": "2026-03-06"
-          },
-          {
-            "name": "knowledge-base",
-            "displayName": "知识库",
-            "source": "林克核心能力",
-            "level": 2,
-            "exp": 48,
-            "description": "个人知识库检索，按分类查找历史调研和文档",
-            "lastUpdated": "2026-02-24"
           }
         ],
-        "count": 7,
-        "avgLevel": 3.9
+        "count": 3,
+        "avgLevel": 4.3
       },
-      "⚙️ 工作模式": {
+      "⚙️ 系统工具": {
         "icon": "⚙️",
         "color": "#5ec4d4",
         "layer": "meta",
-        "description": "决定林克如何做事：举一反三、夜间长任务、技能发现、技能管理",
+        "description": "管理林克能力和工作模式的基础设施",
         "skills": [
           {
             "name": "night-task-runner",
@@ -111,40 +157,13 @@
             "lastUpdated": "2026-03-03"
           },
           {
-            "name": "learn-from-mistakes",
-            "displayName": "举一反三",
+            "name": "knowledge-base",
+            "displayName": "知识库",
             "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
-            "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
-            "lastUpdated": "2026-03-03"
-          },
-          {
-            "name": "skill-architecture",
-            "displayName": "技能架构",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 58,
-            "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-            "lastUpdated": "2026-03-06"
-          },
-          {
-            "name": "memory-hygiene",
-            "displayName": "记忆管理",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 58,
-            "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
-            "lastUpdated": "2026-03-06"
-          },
-          {
-            "name": "knowledge-curator",
-            "displayName": "知识管理",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 58,
-            "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
-            "lastUpdated": "2026-03-06"
+            "level": 2,
+            "exp": 48,
+            "description": "个人知识库检索，按分类查找历史调研和文档",
+            "lastUpdated": "2026-02-24"
           },
           {
             "name": "find-skills",
@@ -156,8 +175,8 @@
             "lastUpdated": "2026-02-09"
           }
         ],
-        "count": 6,
-        "avgLevel": 3.0
+        "count": 3,
+        "avgLevel": 2.7
       },
       "AI领域洞察": {
         "icon": "🔍",
@@ -638,24 +657,6 @@
         ],
         "count": 6,
         "avgLevel": 3.7
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "layer": "execution",
-        "skills": [
-          {
-            "name": "xiaowuxianggong",
-            "displayName": "xiaowuxianggong",
-            "source": "codeflicker",
-            "level": 4,
-            "exp": 70,
-            "description": "> **定位**：这不是一个\"执行技能\"，而是整个自进化体系的**引导程序（Bootloader）**。",
-            "lastUpdated": "2026-03-06"
-          }
-        ],
-        "count": 1,
-        "avgLevel": 4.0
       }
     },
     "tree": {
@@ -665,10 +666,10 @@
         "color": "#a78bfa",
         "description": "决定我是谁、如何思考、如何工作",
         "children": {
-          "🧠 思维能力": {
-            "icon": "🧠",
+          "🔄 自进化引擎": {
+            "icon": "🔄",
             "color": "#a78bfa",
-            "description": "决定林克如何思考：元执行、自进化、内功修炼、知识库",
+            "description": "驱动林克持续进化的完整闭环：反思→学习→优化",
             "skills": [
               {
                 "name": "daily-reflection-evolution",
@@ -679,6 +680,78 @@
                 "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
                 "lastUpdated": "2026-03-02"
               },
+              {
+                "name": "neigong-cultivation",
+                "displayName": "内功修炼",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 73,
+                "description": "内功修炼：记忆/知识/技能三位一体优化器",
+                "lastUpdated": "2026-03-04"
+              },
+              {
+                "name": "xiaowuxianggong",
+                "displayName": "小无相功",
+                "source": "林克核心能力",
+                "level": 4,
+                "exp": 70,
+                "description": "自进化体系引导程序：导航、周检、月检、进化全景",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "learn-from-mistakes",
+                "displayName": "举一反三",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 64,
+                "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
+                "lastUpdated": "2026-03-03"
+              },
+              {
+                "name": "meta-execution",
+                "displayName": "元执行",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 64,
+                "description": "元执行框架：一次把事情做对的自审机制",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "memory-hygiene",
+                "displayName": "记忆管理",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 58,
+                "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "skill-architecture",
+                "displayName": "技能架构",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 58,
+                "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
+                "lastUpdated": "2026-03-06"
+              },
+              {
+                "name": "knowledge-curator",
+                "displayName": "知识管理",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 58,
+                "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
+                "lastUpdated": "2026-03-06"
+              }
+            ],
+            "count": 8,
+            "avgLevel": 3.5
+          },
+          "🧠 认知框架": {
+            "icon": "🧠",
+            "color": "#f59e0b",
+            "description": "独立的思维能力：本质洞察、产品思维、知识习得",
+            "skills": [
               {
                 "name": "essence-insight",
                 "displayName": "本质洞察",
@@ -698,15 +771,6 @@
                 "lastUpdated": "2026-03-06"
               },
               {
-                "name": "neigong-cultivation",
-                "displayName": "内功修炼",
-                "source": "林克核心能力",
-                "level": 4,
-                "exp": 73,
-                "description": "内功修炼：记忆/知识/技能三位一体优化器",
-                "lastUpdated": "2026-03-04"
-              },
-              {
                 "name": "product-thinking",
                 "displayName": "产品思维",
                 "source": "林克核心能力",
@@ -714,33 +778,15 @@
                 "exp": 70,
                 "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
                 "lastUpdated": "2026-03-05"
-              },
-              {
-                "name": "meta-execution",
-                "displayName": "元执行",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 64,
-                "description": "元执行框架：一次把事情做对的自审机制",
-                "lastUpdated": "2026-03-06"
-              },
-              {
-                "name": "knowledge-base",
-                "displayName": "知识库",
-                "source": "林克核心能力",
-                "level": 2,
-                "exp": 48,
-                "description": "个人知识库检索，按分类查找历史调研和文档",
-                "lastUpdated": "2026-02-24"
               }
             ],
-            "count": 7,
-            "avgLevel": 3.9
+            "count": 3,
+            "avgLevel": 4.3
           },
-          "⚙️ 工作模式": {
+          "⚙️ 系统工具": {
             "icon": "⚙️",
             "color": "#5ec4d4",
-            "description": "决定林克如何做事：举一反三、夜间长任务、技能发现、技能管理",
+            "description": "管理林克能力和工作模式的基础设施",
             "skills": [
               {
                 "name": "night-task-runner",
@@ -752,40 +798,13 @@
                 "lastUpdated": "2026-03-03"
               },
               {
-                "name": "learn-from-mistakes",
-                "displayName": "举一反三",
+                "name": "knowledge-base",
+                "displayName": "知识库",
                 "source": "林克核心能力",
-                "level": 3,
-                "exp": 64,
-                "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
-                "lastUpdated": "2026-03-03"
-              },
-              {
-                "name": "skill-architecture",
-                "displayName": "技能架构",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 58,
-                "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-                "lastUpdated": "2026-03-06"
-              },
-              {
-                "name": "memory-hygiene",
-                "displayName": "记忆管理",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 58,
-                "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
-                "lastUpdated": "2026-03-06"
-              },
-              {
-                "name": "knowledge-curator",
-                "displayName": "知识管理",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 58,
-                "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
-                "lastUpdated": "2026-03-06"
+                "level": 2,
+                "exp": 48,
+                "description": "个人知识库检索，按分类查找历史调研和文档",
+                "lastUpdated": "2026-02-24"
               },
               {
                 "name": "find-skills",
@@ -797,11 +816,11 @@
                 "lastUpdated": "2026-02-09"
               }
             ],
-            "count": 6,
-            "avgLevel": 3.0
+            "count": 3,
+            "avgLevel": 2.7
           }
         },
-        "count": 13,
+        "count": 14,
         "avgLevel": 3.5
       },
       "domain_pack": {
@@ -1287,27 +1306,9 @@
             ],
             "count": 6,
             "avgLevel": 3.7
-          },
-          "其他技能": {
-            "icon": "📦",
-            "color": "#64748b",
-            "layer": "execution",
-            "skills": [
-              {
-                "name": "xiaowuxianggong",
-                "displayName": "xiaowuxianggong",
-                "source": "codeflicker",
-                "level": 4,
-                "exp": 70,
-                "description": "> **定位**：这不是一个\"执行技能\"，而是整个自进化体系的**引导程序（Bootloader）**。",
-                "lastUpdated": "2026-03-06"
-              }
-            ],
-            "count": 1,
-            "avgLevel": 4.0
           }
         },
-        "count": 37,
+        "count": 36,
         "avgLevel": 3.6
       }
     }
@@ -1485,6 +1486,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "Knowledge目录路径映射（工作区内外区分）",
+        "category": "project_configuration",
+        "categoryLabel": "项目配置",
+        "layer": "📚 项目层",
+        "icon": "🔧",
+        "color": "#f97316",
+        "description": "## 知识库路径映射（每日修炼常用） 工作区根目录：`/Users/shenlang/Documents/Codeflicker/个人助理_V1/` **...",
+        "keywords": [
+          "Knowledge",
+          "路径",
+          "目录",
+          "绝对路径",
+          "工作区"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
         "title": "专栏/系列内容创作踩坑：先设计后执行",
         "category": "common_pitfalls_experience",
         "categoryLabel": "内容创作",
@@ -1520,6 +1540,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-05",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "代码文件中文字符编码安全规则 + kimMd标记冲突",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "消息通信",
+        "layer": "🛠️ 领域层",
+        "icon": "💬",
+        "color": "#06b6d4",
+        "description": "## 代码文件中文字符编码安全规则 ### 问题场景 使用工具写入Python/JS等代码文件时，中文引号 `\"\"` (U+201C/U+201D) 可能...",
+        "keywords": [
+          "Python",
+          "中文引号",
+          "Unicode",
+          "编码",
+          "SyntaxError"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -2793,7 +2832,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 75,
+    "total": 77,
     "byCategory": {
       "development_practice_specification": {
         "count": 10,
@@ -2838,7 +2877,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 26,
+        "count": 27,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -2850,6 +2889,13 @@
         "icon": "🔍",
         "color": "#8b5cf6",
         "description": "日报/周报/深度调研/追踪体系"
+      },
+      "project_configuration": {
+        "count": 1,
+        "label": "项目配置",
+        "icon": "🔧",
+        "color": "#f97316",
+        "description": "技术栈、环境配置"
       }
     },
     "tree": {
@@ -4209,9 +4255,28 @@
                 "importance": 4,
                 "updatedAt": "2026-03-05",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "代码文件中文字符编码安全规则 + kimMd标记冲突",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "消息通信",
+                "layer": "🛠️ 领域层",
+                "icon": "💬",
+                "color": "#06b6d4",
+                "description": "## 代码文件中文字符编码安全规则 ### 问题场景 使用工具写入Python/JS等代码文件时，中文引号 `\"\"` (U+201C/U+201D) 可能...",
+                "keywords": [
+                  "Python",
+                  "中文引号",
+                  "Unicode",
+                  "编码",
+                  "SyntaxError"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "内容创作": {
             "icon": "✍️",
@@ -4306,14 +4371,42 @@
             "count": 2
           }
         },
-        "count": 31
+        "count": 32
       },
       "📚 项目层": {
         "icon": "📚",
         "color": "#c2410c",
         "description": "具体项目的知识",
-        "children": {},
-        "count": 0
+        "children": {
+          "项目配置": {
+            "icon": "🔧",
+            "color": "#f97316",
+            "description": "技术栈、环境配置",
+            "items": [
+              {
+                "title": "Knowledge目录路径映射（工作区内外区分）",
+                "category": "project_configuration",
+                "categoryLabel": "项目配置",
+                "layer": "📚 项目层",
+                "icon": "🔧",
+                "color": "#f97316",
+                "description": "## 知识库路径映射（每日修炼常用） 工作区根目录：`/Users/shenlang/Documents/Codeflicker/个人助理_V1/` **...",
+                "keywords": [
+                  "Knowledge",
+                  "路径",
+                  "目录",
+                  "绝对路径",
+                  "工作区"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 1
+          }
+        },
+        "count": 1
       }
     }
   },
@@ -4493,7 +4586,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "75/30",
+      "progressText": "77/30",
       "date": "2026-03-07"
     },
     {

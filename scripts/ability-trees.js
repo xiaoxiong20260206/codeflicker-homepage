@@ -151,11 +151,11 @@ function renderSkillTechTree(container, skills) {
     // === 引擎区域 ===
     var engineHtml = '';
     if (guideSkill && coreSkill) {
-        var guideNode = createEngineNode(guideSkill, 'Bootloader', 'guide');
-        var coreNode = createEngineNode(coreSkill, '规范来源', 'core');
-        var reviewNode = reviewSkill ? createEngineNode(reviewSkill, 'Step2 复盘', 'core') : '';
-        var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, 'Step3 修炼', 'core') : '';
-        var metaExecNode = metaExecSkill ? createEngineNode(metaExecSkill, '全程保障', 'core') : '';
+        var guideNode = createEngineNode(guideSkill, '进化导航器', 'guide');
+        var coreNode = createEngineNode(coreSkill, '每日进化源', 'core');
+        var reviewNode = reviewSkill ? createEngineNode(reviewSkill, '复盘提炼', 'core') : '';
+        var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, '能力内化', 'core') : '';
+        var metaExecNode = metaExecSkill ? createEngineNode(metaExecSkill, '质量守护', 'core') : '';
         var toolNodes = '';
         for (var ti = 0; ti < toolSkills.length; ti++) {
             var r = engineRoles[toolSkills[ti].name];
@@ -179,9 +179,9 @@ function renderSkillTechTree(container, skills) {
                 '<div class="engine-connector engine-connector--vertical"><span class="connector-label">导航</span><div class="connector-line"></div></div>' +
                 '<div class="engine-tier engine-tier--core">' + coreNode +
                     '<div class="engine-core-branches">' +
-                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">Step2</span></div>' + reviewNode + '</div>' +
-                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">Step3</span></div>' + cultivateNode + '</div>' +
-                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">全程</span></div>' + metaExecNode + '</div>' +
+                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">复盘</span></div>' + reviewNode + '</div>' +
+                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">修炼</span></div>' + cultivateNode + '</div>' +
+                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">保障</span></div>' + metaExecNode + '</div>' +
                     '</div>' +
                 '</div>' +
                 '<div class="engine-feedback-line"><span class="feedback-label">P2 反馈</span></div>' +
@@ -202,8 +202,8 @@ function renderSkillTechTree(container, skills) {
             var clevel = s.level || 1;
             var ccolor = getLevelColor(clevel);
             var cexp = s.exp || (clevel * 20);
-            var cdash = 63 * (1 - cexp / 100);
-            cogNodes += '<div class="cognitive-pillar" style="--pillar-color:' + ccolor + ';" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 28 28" width="28" height="28"><circle class="ring-bg" cx="14" cy="14" r="10"/><circle class="ring-progress" cx="14" cy="14" r="10" stroke-dasharray="63" stroke-dashoffset="' + cdash + '" style="stroke:' + ccolor + ';"/></svg><span class="cognitive-level">' + clevel + '</span></div><span class="cognitive-name">' + cname + '</span>' + (s.name === 'product-thinking' ? '<span class="cognitive-badge">内置</span>' : '') + '</div>';
+            var cdash = 50 * (1 - cexp / 100);
+            cogNodes += '<div class="cognitive-pillar" style="--pillar-color:' + ccolor + ';" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + cdash + '" style="stroke:' + ccolor + ';"/></svg><span class="cognitive-level">' + clevel + '</span></div><span class="cognitive-name">' + cname + '</span>' + (s.name === 'product-thinking' ? '<span class="cognitive-badge">内置</span>' : '') + '</div>';
         }
         cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">认知框架</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '可被任何任务调用') + '</div></div>';
     }
@@ -219,7 +219,7 @@ function renderSkillTechTree(container, skills) {
     }
     
     function renderLayerTransition(text) {
-        return '<div class="layer-transition"><div class="transition-line"></div><span class="transition-label">' + text + '</span><div class="transition-arrow">\u25BC</div></div>';
+        return '<div class="layer-transition"><div class="transition-line"></div><span class="transition-label">' + text + '</span><div class="transition-line"></div><div class="transition-arrow">\u25BC</div></div>';
     }
     
     // === 领域技能包 ===

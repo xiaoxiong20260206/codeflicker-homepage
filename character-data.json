@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-08T06:09:57.729512",
+  "generatedAt": "2026-03-08T07:26:56.242961",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 11340,
-    "expProgress": 83.5,
+    "totalExp": 11390,
+    "expProgress": 84.8,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -1547,7 +1547,7 @@
         "layer": "🧠 能力层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "AI日报生成后的必做工作流程 核心规则: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 执行步骤 1. 日报生成完成...",
+        "description": "AI日报生成后的必做工作流程 核心规则: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 执行步骤（完整版） 1. 日...",
         "keywords": [
           "日报",
           "知识库",
@@ -1556,7 +1556,26 @@
           "淬炼"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-05",
+        "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "AI日报国内覆盖不足的根因与解决方案",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题: AI日报国内新闻长期偏少（5天统计海外85条vs国内15条=85:15，3月7日甚至0条国内） 根因分析: 1. 信息可达性差距:...",
+        "keywords": [
+          "AI日报",
+          "国内覆盖",
+          "搜索策略",
+          "配额规则",
+          "信息源"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -2142,10 +2161,10 @@
           "验证",
           "缓存",
           "GitHub Pages",
-          "锁冲突"
+          "数据同步"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-06",
+        "updatedAt": "2026-03-07",
         "source": "用户显式记录"
       },
       {
@@ -3108,7 +3127,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 82,
+    "total": 83,
     "byCategory": {
       "development_practice_specification": {
         "count": 11,
@@ -3153,7 +3172,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 35,
+        "count": 36,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -3748,7 +3767,7 @@
                 "layer": "🧠 能力层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "AI日报生成后的必做工作流程 核心规则: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 执行步骤 1. 日报生成完成...",
+                "description": "AI日报生成后的必做工作流程 核心规则: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 执行步骤（完整版） 1. 日...",
                 "keywords": [
                   "日报",
                   "知识库",
@@ -3757,7 +3776,7 @@
                   "淬炼"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-05",
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -4419,10 +4438,10 @@
                   "验证",
                   "缓存",
                   "GitHub Pages",
-                  "锁冲突"
+                  "数据同步"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-06",
+                "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
               },
               {
@@ -4483,6 +4502,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "AI日报国内覆盖不足的根因与解决方案",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题: AI日报国内新闻长期偏少（5天统计海外85条vs国内15条=85:15，3月7日甚至0条国内） 根因分析: 1. 信息可达性差距:...",
+                "keywords": [
+                  "AI日报",
+                  "国内覆盖",
+                  "搜索策略",
+                  "配额规则",
+                  "信息源"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -4502,7 +4540,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 28
+            "count": 29
           },
           "发布部署": {
             "icon": "🚀",
@@ -4773,7 +4811,7 @@
             "count": 2
           }
         },
-        "count": 40
+        "count": 41
       },
       "📚 项目层": {
         "icon": "📚",
@@ -4988,7 +5026,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "87/30",
+      "progressText": "88/30",
       "date": "2026-03-08"
     },
     {

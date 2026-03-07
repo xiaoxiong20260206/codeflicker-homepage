@@ -73,7 +73,7 @@ function renderSkillTechTree(container, skills) {
         // === 发布部署 ===
         'github-deploy-publisher': 'GitHub',
         'yuque-publisher': '语雀',
-        'ks-kim-docs-shuttle': 'KIM文档',
+        'ks-kim-docs-shuttle': 'IM文档',
         'mcp-builder': 'MCP',
         
         // === 投资理财 ===
@@ -83,7 +83,7 @@ function renderSkillTechTree(container, skills) {
         
         // === 效率工具 ===
         'feishu-assistant': '飞书',
-        'linke-kim-message': 'KIM消息',
+        'linke-kim-message': 'IM消息',
         'ai-column-writer': '专栏',
         'promotion-coaching': '晋升辅导'
     };

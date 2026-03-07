@@ -239,8 +239,8 @@
       {
         "date": "2026-03-05",
         "type": "integration",
-        "name": "KIM消息推送",
-        "description": "KIM开放能力集成"
+        "name": "IM消息推送",
+        "description": "IM开放能力集成"
       },
       {
         "date": "2026-03-05",

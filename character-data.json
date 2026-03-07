@@ -306,11 +306,11 @@
         "skills": [
           {
             "name": "ks-kim-docs-shuttle",
-            "displayName": "KIM文档",
+            "displayName": "IM文档",
             "source": "AI核心能力",
             "level": 5,
             "exp": 90,
-            "description": "快手内网Docs文档与本地Markdown双向同步",
+            "description": "内部Docs文档与本地Markdown双向同步",
             "lastUpdated": "2026-03-04"
           },
           {
@@ -513,15 +513,15 @@
         "icon": "💬",
         "color": "#06b6d4",
         "layer": "execution",
-        "description": "消息推送：KIM、飞书",
+        "description": "消息推送：IM、飞书",
         "skills": [
           {
             "name": "linke-kim-message",
-            "displayName": "KIM消息",
+            "displayName": "IM消息",
             "source": "AI核心能力",
             "level": 4,
             "exp": 73,
-            "description": "KIM消息推送，支持MixCard卡片和群消息",
+            "description": "IM消息推送，支持MixCard卡片和群消息",
             "lastUpdated": "2026-03-04"
           },
           {
@@ -981,11 +981,11 @@
             "skills": [
               {
                 "name": "ks-kim-docs-shuttle",
-                "displayName": "KIM文档",
+                "displayName": "IM文档",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 90,
-                "description": "快手内网Docs文档与本地Markdown双向同步",
+                "description": "内部Docs文档与本地Markdown双向同步",
                 "lastUpdated": "2026-03-04"
               },
               {
@@ -1184,15 +1184,15 @@
           "💬 消息通信": {
             "icon": "💬",
             "color": "#06b6d4",
-            "description": "消息推送：KIM、飞书",
+            "description": "消息推送：IM、飞书",
             "skills": [
               {
                 "name": "linke-kim-message",
-                "displayName": "KIM消息",
+                "displayName": "IM消息",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 73,
-                "description": "KIM消息推送，支持MixCard卡片和群消息",
+                "description": "IM消息推送，支持MixCard卡片和群消息",
                 "lastUpdated": "2026-03-04"
               },
               {
@@ -1528,7 +1528,7 @@
         "layer": "🛠️ 领域层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
+        "description": "问题场景：将HTML图表截图上传到内部Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
         "keywords": [
           "HTML截图",
           "Docs文档",
@@ -1921,15 +1921,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "AI日报KIM卡片链接错误排查经验",
+        "title": "AI日报IM卡片链接错误排查经验",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
         "layer": "🛠️ 领域层",
         "icon": "💬",
         "color": "#06b6d4",
-        "description": "问题：AI日报KIM卡片中的链接与日报MD中的链接不一致，导致点击后无法访问。 根本原因：手动输入链接时出现笔误（如多写-ai-字符），而非从MD文件直接...",
+        "description": "问题：AI日报IM卡片中的链接与日报MD中的链接不一致，导致点击后无法访问。 根本原因：手动输入链接时出现笔误（如多写-ai-字符），而非从MD文件直接...",
         "keywords": [
-          "KIM",
+          "IM",
           "MixCard",
           "链接错误",
           "日报推送",
@@ -2250,7 +2250,7 @@
         "layer": "🛠️ 领域层",
         "icon": "💬",
         "color": "#06b6d4",
-        "description": "外部 API 权限前置验证 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 KIM 资源上传接口（/openapi/v2/...",
+        "description": "外部 API 权限前置验证 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 IM 资源上传接口（/openapi/v2/...",
         "keywords": [
           "API权限",
           "前置验证",
@@ -4057,7 +4057,7 @@
                 "layer": "🛠️ 领域层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
+                "description": "问题场景：将HTML图表截图上传到内部Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
                 "keywords": [
                   "HTML截图",
                   "Docs文档",
@@ -4224,7 +4224,7 @@
           "消息通信": {
             "icon": "💬",
             "color": "#06b6d4",
-            "description": "KIM/飞书踩坑",
+            "description": "IM/飞书踩坑",
             "items": [
               {
                 "title": "recap元数据污染：工具调用开头的对话标题异常",
@@ -4252,7 +4252,7 @@
                 "layer": "🛠️ 领域层",
                 "icon": "💬",
                 "color": "#06b6d4",
-                "description": "外部 API 权限前置验证 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 KIM 资源上传接口（/openapi/v2/...",
+                "description": "外部 API 权限前置验证 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 IM 资源上传接口（/openapi/v2/...",
                 "keywords": [
                   "API权限",
                   "前置验证",
@@ -4265,15 +4265,15 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "AI日报KIM卡片链接错误排查经验",
+                "title": "AI日报IM卡片链接错误排查经验",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "消息通信",
                 "layer": "🛠️ 领域层",
                 "icon": "💬",
                 "color": "#06b6d4",
-                "description": "问题：AI日报KIM卡片中的链接与日报MD中的链接不一致，导致点击后无法访问。 根本原因：手动输入链接时出现笔误（如多写-ai-字符），而非从MD文件直接...",
+                "description": "问题：AI日报IM卡片中的链接与日报MD中的链接不一致，导致点击后无法访问。 根本原因：手动输入链接时出现笔误（如多写-ai-字符），而非从MD文件直接...",
                 "keywords": [
-                  "KIM",
+                  "IM",
                   "MixCard",
                   "链接错误",
                   "日报推送",

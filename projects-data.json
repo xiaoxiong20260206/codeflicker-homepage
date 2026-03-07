@@ -240,11 +240,11 @@
     },
     {
       "id": "kim-ai-bot",
-      "name": "KIM机器人",
-      "subtitle": "KIM消息推送服务",
+      "name": "IM机器人",
+      "subtitle": "IM消息推送服务",
       "category": "tools",
       "icon": "🤖",
-      "goal": "实现AI日报自动推送到KIM群",
+      "goal": "实现AI日报自动推送到IM群",
       "outcome": "MixCard卡片消息、多群推送、定时触发",
       "deliverables": [
         "文档",

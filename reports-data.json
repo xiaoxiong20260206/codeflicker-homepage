@@ -194,7 +194,7 @@
           ],
           "process": [
             "修复: 终极判断图表容器高度420→480，修复底部越界",
-            "新增: KIM Doc每章配图：新增4张可视化图表+沉淀规则",
+            "新增: IM Doc每章配图：新增4张可视化图表+沉淀规则",
             "优化: v3.4: 体系化运用本质洞察力v2.2更新AI洞察报告"
           ],
           "commitCount": 26,
@@ -758,7 +758,7 @@
             "category": "task_flow_experience"
           },
           {
-            "title": "AI日报KIM卡片链接错误排查经验",
+            "title": "AI日报IM卡片链接错误排查经验",
             "category": "common_pitfalls_experience"
           },
           {
@@ -1033,7 +1033,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "KIM Doc格式规范（精简版）",
+            "title": "IM Doc格式规范（精简版）",
             "category": "development_practice_specification"
           },
           {
@@ -1065,7 +1065,7 @@
             "category": "task_flow_experience"
           },
           {
-            "title": "AI日报KIM推送规范（精简版）",
+            "title": "AI日报IM推送规范（精简版）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -1097,7 +1097,7 @@
             "category": "development_practice_specification"
           },
           {
-            "title": "KIM Doc 样式设置限制（调研结论）",
+            "title": "IM Doc 样式设置限制（调研结论）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -1151,7 +1151,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "KIM开放能力接入踩坑（精简版）",
+            "title": "IM开放能力接入踩坑（精简版）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -1420,7 +1420,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "KIM开放能力接入踩坑（精简版）",
+            "title": "IM开放能力接入踩坑（精简版）",
             "category": "common_pitfalls_experience"
           },
           {

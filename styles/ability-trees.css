@@ -57,7 +57,7 @@
     background: linear-gradient(180deg, rgba(167, 139, 250, 0.06) 0%, rgba(167, 139, 250, 0.02) 100%);
     border: 1px solid rgba(167, 139, 250, 0.25);
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
 }
 .meta-layer::before {
@@ -360,7 +360,8 @@
     border-left: 1.5px dashed rgba(167, 139, 250, 0.3);
     border-right: 1.5px dashed rgba(167, 139, 250, 0.3);
     border-radius: 0 0 8px 8px;
-    overflow: hidden;
+    overflow: visible;
+    margin-bottom: 10px;
 }
 .engine-feedback-line::after {
     content: '';

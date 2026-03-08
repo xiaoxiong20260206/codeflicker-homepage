@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-08T06:00:27.227500",
+  "generatedAt": "2026-03-08T14:10:26.288040",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -313,6 +313,48 @@
         "type": "integration",
         "name": "IM消息推送",
         "description": "IM开放能力集成"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "skill_unlock",
+        "name": "晋升辅导",
+        "description": "职级晋升材料准备与答辩辅导能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
       }
     ]
   },

@@ -75,7 +75,7 @@ function renderSkillTechTree(container, skills) {
     var _idx = 0;
     function classifySource(src) {
         if (!src) return { label: '未知', badge: '❓' };
-        if (src === 'AI核心能力' || src === 'AI核心能力') return { label: '内置技能', badge: '🔧' };
+        if (src === '林克核心能力' || src === 'AI核心能力') return { label: '内置技能', badge: '🔧' };
         if (src === '用户自定义') return { label: '自定义', badge: '✏️' };
         if (src.indexOf('技能库') > -1) return { label: '平台技能', badge: '📦' };
         return { label: src, badge: '📍' };
@@ -125,7 +125,7 @@ function renderSkillTechTree(container, skills) {
     
     function getSourceColor(source) {
         if (!source) return 'rgba(200, 220, 240, 0.2)';
-        if (source === 'AI核心能力') return '#a78bfa';
+        if (source === '林克核心能力' || source === 'AI核心能力') return '#a78bfa';
         if (source === '用户自定义') return '#38bdf8';
         return '#64748b'; // 平台技能库
     }

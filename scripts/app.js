@@ -2427,7 +2427,8 @@ function showTreeTooltip(event, id, type) {
     const typeColors = {
         skill: 'var(--zonai-green)',
         knowledge: 'var(--zelda-gold)',
-        memory: 'var(--zelda-orange)'
+        memory: 'var(--zelda-orange)',
+        mechanism: '#a78bfa'
     };
     
     // 填充数据
@@ -2445,11 +2446,21 @@ function showTreeTooltip(event, id, type) {
     
     iconEl.textContent = data.catIcon || data.icon || '⚡';
     nameEl.textContent = data.name;
-    typeEl.textContent = type === 'skill' ? '技能' : type === 'knowledge' ? '知识' : '记忆';
-    lvNumEl.textContent = data.level ? 'Lv.' + data.level : '';
+    typeEl.textContent = type === 'skill' ? '技能' : type === 'knowledge' ? '知识' : type === 'mechanism' ? '运作机制' : '记忆';
     
-    // 来源badge
-    if (sourceBadge && data.sourceLabel) {
+    // mechanism类型特殊处理：显示周期而非Lv
+    var isMechanism = (type === 'mechanism');
+    var lvLabel = tooltip.querySelector('.tip-lv-max');
+    if (isMechanism) {
+        lvNumEl.textContent = data.level || '';
+        if (lvLabel) lvLabel.textContent = '周期';
+    } else {
+        lvNumEl.textContent = data.level ? 'Lv.' + data.level : '';
+        if (lvLabel) lvLabel.textContent = '/5';
+    }
+    
+    // 来源badge（机制类型不显示）
+    if (sourceBadge && data.sourceLabel && !isMechanism) {
         var badgeType = data.sourceLabel === '内置技能' ? 'builtin' : data.sourceLabel === '自定义' ? 'custom' : 'platform';
         sourceBadge.textContent = data.sourceLabel;
         sourceBadge.setAttribute('data-type', badgeType);
@@ -2458,8 +2469,8 @@ function showTreeTooltip(event, id, type) {
         sourceBadge.style.display = 'none';
     }
     
-    // 指标
-    if (metricsSection && data.callCount > 0) {
+    // 指标（机制类型不显示）
+    if (metricsSection && data.callCount > 0 && !isMechanism) {
         tooltip.querySelector('.tip-call-count').textContent = data.callCount;
         tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
         tooltip.querySelector('.tip-success-rate').textContent = data.successRate ? data.successRate + '%' : '-';
@@ -2471,7 +2482,8 @@ function showTreeTooltip(event, id, type) {
     descEl.textContent = data.description || '暂无描述';
     descEl.style.whiteSpace = 'normal';
     
-    if (data.source) {
+    // 来源（机制类型不显示）
+    if (data.source && !isMechanism) {
         sourceEl.textContent = data.source;
         sourceEl.style.whiteSpace = 'normal';
         sourceSection.style.display = 'block';
@@ -2479,9 +2491,9 @@ function showTreeTooltip(event, id, type) {
         sourceSection.style.display = 'none';
     }
     
-    // 显示升级建议
+    // 显示升级建议（机制类型不显示）
     const lv = data.level || 1;
-    if (upgradeEl && upgradeSection && upgradeAdvice[type]) {
+    if (upgradeEl && upgradeSection && upgradeAdvice[type] && !isMechanism) {
         upgradeEl.textContent = upgradeAdvice[type][lv] || upgradeAdvice[type][3];
         upgradeEl.style.whiteSpace = 'normal';
         upgradeSection.style.display = 'block';

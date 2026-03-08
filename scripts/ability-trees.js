@@ -188,7 +188,7 @@ function renderSkillTechTree(container, skills) {
             for (var li = 0; li < loops.length; li++) {
                 var l = loops[li];
                 var loopId = storeGeneric(l.icon, l.name, l.desc || '', l.level);
-                loopsHtml += '<div class="engine-loop-tag" onmouseenter="showTreeTooltip(event, \'' + loopId + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="loop-icon">' + l.icon + '</span><span class="loop-name">' + l.name + '</span><span class="loop-level">' + l.level + '</span></div>';
+                loopsHtml += '<div class="engine-loop-tag" onmouseenter="showTreeTooltip(event, \'' + loopId + '\', \'mechanism\')" onmouseleave="hideTooltip()"><span class="loop-icon">' + l.icon + '</span><span class="loop-name">' + l.name + '</span><span class="loop-level">' + l.level + '</span></div>';
             }
             loopsHtml += '</div>';
         }

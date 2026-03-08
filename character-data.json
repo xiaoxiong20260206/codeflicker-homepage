@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-09T06:00:25.402654",
+  "generatedAt": "2026-03-09T06:46:16.854936",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 7,
-    "totalExp": 13410,
-    "expProgress": 28.2,
+    "totalExp": 13580,
+    "expProgress": 31.6,
     "currentThreshold": 12000,
     "nextThreshold": 17000,
     "stats": {
@@ -89,6 +89,18 @@
             "successRate": 91
           },
           {
+            "name": "skill-architecture",
+            "displayName": "技能架构",
+            "source": "AI核心能力",
+            "level": 3,
+            "exp": 64,
+            "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
+            "lastUpdated": "2026-03-09",
+            "callCount": 18,
+            "frequency": "0.1次/天",
+            "successRate": 94
+          },
+          {
             "name": "memory-hygiene",
             "displayName": "记忆管理",
             "source": "AI核心能力",
@@ -99,18 +111,6 @@
             "callCount": 41,
             "frequency": "0.3次/天",
             "successRate": 96
-          },
-          {
-            "name": "skill-architecture",
-            "displayName": "技能架构",
-            "source": "AI核心能力",
-            "level": 3,
-            "exp": 58,
-            "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-            "lastUpdated": "2026-03-06",
-            "callCount": 18,
-            "frequency": "0.1次/天",
-            "successRate": 94
           },
           {
             "name": "knowledge-curator",
@@ -477,7 +477,7 @@
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-03-08",
+            "lastUpdated": "2026-03-09",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
@@ -900,6 +900,18 @@
                 "successRate": 91
               },
               {
+                "name": "skill-architecture",
+                "displayName": "技能架构",
+                "source": "AI核心能力",
+                "level": 3,
+                "exp": 64,
+                "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
+                "lastUpdated": "2026-03-09",
+                "callCount": 18,
+                "frequency": "0.1次/天",
+                "successRate": 94
+              },
+              {
                 "name": "memory-hygiene",
                 "displayName": "记忆管理",
                 "source": "AI核心能力",
@@ -910,18 +922,6 @@
                 "callCount": 41,
                 "frequency": "0.3次/天",
                 "successRate": 96
-              },
-              {
-                "name": "skill-architecture",
-                "displayName": "技能架构",
-                "source": "AI核心能力",
-                "level": 3,
-                "exp": 58,
-                "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-                "lastUpdated": "2026-03-06",
-                "callCount": 18,
-                "frequency": "0.1次/天",
-                "successRate": 94
               },
               {
                 "name": "knowledge-curator",
@@ -1301,7 +1301,7 @@
                 "level": 5,
                 "exp": 95,
                 "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-03-08",
+                "lastUpdated": "2026-03-09",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
@@ -1815,10 +1815,10 @@
           "industry-research"
         ],
         "relatedMemories": [],
-        "fileCount": 24,
-        "sizeKB": 243.5,
+        "fileCount": 26,
+        "sizeKB": 282.1,
         "heatLevel": 5,
-        "recentCount": 7
+        "recentCount": 10
       },
       "self-evolution": {
         "name": "self-evolution",
@@ -1835,7 +1835,7 @@
           "thinking_pattern"
         ],
         "fileCount": 3,
-        "sizeKB": 18.0,
+        "sizeKB": 18.4,
         "heatLevel": 3,
         "recentCount": 3
       },
@@ -1898,13 +1898,13 @@
               "thinking_pattern"
             ],
             "fileCount": 3,
-            "sizeKB": 18.0,
+            "sizeKB": 18.4,
             "heatLevel": 3,
             "recentCount": 3
           }
         },
         "totalFiles": 134,
-        "totalSizeKB": 880.8
+        "totalSizeKB": 881.2
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -1943,14 +1943,14 @@
               "industry-research"
             ],
             "relatedMemories": [],
-            "fileCount": 24,
-            "sizeKB": 243.5,
+            "fileCount": 26,
+            "sizeKB": 282.1,
             "heatLevel": 5,
-            "recentCount": 7
+            "recentCount": 10
           }
         },
-        "totalFiles": 71,
-        "totalSizeKB": 692.3
+        "totalFiles": 73,
+        "totalSizeKB": 730.9
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -1981,8 +1981,8 @@
         "totalSizeKB": 21.3
       }
     },
-    "totalFiles": 206,
-    "totalSizeKB": 1594.3
+    "totalFiles": 208,
+    "totalSizeKB": 1633.4
   },
   "memories": {
     "items": [
@@ -2519,13 +2519,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞+概念联动）",
+        "title": "多文件联动更新的隐式耦合陷阱（v4：含版本联动）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞优先级） 两类联动 | 维度 | 数据联动 | 概念联动 | |:-----|:-------...",
+        "description": "多文件联动更新的隐式耦合陷阱（v4：含版本联动） 三类联动 | 维度 | 数据联动 | 概念联动 | 版本联动（v4新增） | |:----...",
         "keywords": [
           "联动更新",
           "隐式耦合",
@@ -2785,6 +2785,44 @@
         "source": "用户显式记录"
       },
       {
+        "title": "自动化管道脚本卫生规范（三层检查）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "自动化管道脚本卫生规范（三层检查） 来源 2026-03-09 每日修炼脚本排查：发现6处可能阻塞自动化执行的问题（含P0级直接写外部文件、...",
+        "keywords": [
+          "自动化",
+          "脚本卫生",
+          "交互隔离",
+          "GIT_TERMINAL_PROMPT",
+          "单写入者"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "诊断脚本输出≠工作完成（内功修炼反模式）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "诊断脚本输出≠工作完成 来源 2026-03-09 每日修炼复盘：第三步内功修炼只跑了 neigong_check.py，脚本输出了框架...",
+        "keywords": [
+          "诊断脚本",
+          "工作完成",
+          "反模式",
+          "内功修炼",
+          "操作计数"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "语雀文档读取优先使用API",
         "category": "task_flow_experience",
         "categoryLabel": "思维/工作模式",
@@ -2823,6 +2861,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "踩坑记忆召回失败模式（含完整任务检索映射 v12 — 诊断≠治疗门槛已加固）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v12 共12个）： 1-11: 见历史版本 12. 诊断脚本≠工作...",
+        "keywords": [
+          "记忆召回",
+          "踩坑复现",
+          "执行前检索",
+          "记忆应用率",
+          "被动记忆"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "部署验证完整经验（合并版v3.5）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2842,13 +2899,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "部署验证完整经验（含P0双仓库陷阱）",
+        "title": "部署验证完整经验（含P0双仓库陷阱 - 2026-03-09强化）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3次） 这是最高频的部署失败原因，...",
+        "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3+次） 这是最高频的部署失败原因...",
         "keywords": [
           "部署",
           "验证",
@@ -3824,25 +3881,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑记忆召回失败模式（含完整任务检索映射 v10 — 执行差距已确认关闭）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v10 共10个）： 1-9: 见历史版本 10. git remo...",
-        "keywords": [
-          "记忆召回",
-          "踩坑复现",
-          "执行前检索",
-          "记忆应用率",
-          "被动记忆"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
         "title": "输出链接格式规范",
         "category": "development_practice_specification",
         "categoryLabel": "工作模式",
@@ -3932,6 +3970,25 @@
           "默认提供链接",
           "本地预览",
           "localhost"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "项目健康检查的三级优先级框架（P0安全→P1文档→P2代码）【已迁移】",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📄",
+        "color": "#38bdf8",
+        "description": "项目健康检查的三级优先级框架 核心原则：项目健康检查需要系统化框架，而非零散修复 三级优先级： | 优先级 | 关注点 | 处理时间...",
+        "keywords": [
+          "健康度检查",
+          "项目健康",
+          "安全修复",
+          "代码优化",
+          "文档对齐"
         ],
         "importance": 4,
         "updatedAt": "2026-03-08",
@@ -4069,7 +4126,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 105,
+    "total": 108,
     "byCategory": {
       "development_practice_specification": {
         "count": 12,
@@ -4114,7 +4171,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 52,
+        "count": 55,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -5122,13 +5179,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞+概念联动）",
+                "title": "多文件联动更新的隐式耦合陷阱（v4：含版本联动）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞优先级） 两类联动 | 维度 | 数据联动 | 概念联动 | |:-----|:-------...",
+                "description": "多文件联动更新的隐式耦合陷阱（v4：含版本联动） 三类联动 | 维度 | 数据联动 | 概念联动 | 版本联动（v4新增） | |:----...",
                 "keywords": [
                   "联动更新",
                   "隐式耦合",
@@ -5401,25 +5458,6 @@
                   "记忆分类",
                   "三层架构",
                   "SKILL_CATEGORIES"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-08",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "踩坑记忆召回失败模式（含完整任务检索映射 v10 — 执行差距已确认关闭）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v10 共10个）： 1-9: 见历史版本 10. git remo...",
-                "keywords": [
-                  "记忆召回",
-                  "踩坑复现",
-                  "执行前检索",
-                  "记忆应用率",
-                  "被动记忆"
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-08",
@@ -5749,7 +5787,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 35
+            "count": 34
           },
           "发布部署": {
             "icon": "🚀",
@@ -5757,13 +5795,13 @@
             "description": "GitHub Pages/部署踩坑",
             "items": [
               {
-                "title": "部署验证完整经验（含P0双仓库陷阱）",
+                "title": "部署验证完整经验（含P0双仓库陷阱 - 2026-03-09强化）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3次） 这是最高频的部署失败原因，...",
+                "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3+次） 这是最高频的部署失败原因...",
                 "keywords": [
                   "部署",
                   "验证",
@@ -5811,6 +5849,25 @@
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-05",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "踩坑记忆召回失败模式（含完整任务检索映射 v12 — 诊断≠治疗门槛已加固）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v12 共12个）： 1-11: 见历史版本 12. 诊断脚本≠工作...",
+                "keywords": [
+                  "记忆召回",
+                  "踩坑复现",
+                  "执行前检索",
+                  "记忆应用率",
+                  "被动记忆"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -5869,9 +5926,28 @@
                 "importance": 5,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "自动化管道脚本卫生规范（三层检查）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "自动化管道脚本卫生规范（三层检查） 来源 2026-03-09 每日修炼脚本排查：发现6处可能阻塞自动化执行的问题（含P0级直接写外部文件、...",
+                "keywords": [
+                  "自动化",
+                  "脚本卫生",
+                  "交互隔离",
+                  "GIT_TERMINAL_PROMPT",
+                  "单写入者"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
               }
             ],
-            "count": 6
+            "count": 8
           },
           "文档处理": {
             "icon": "📄",
@@ -5953,9 +6029,28 @@
                 "importance": 4,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "项目健康检查的三级优先级框架（P0安全→P1文档→P2代码）【已迁移】",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "文档处理",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "📄",
+                "color": "#38bdf8",
+                "description": "项目健康检查的三级优先级框架 核心原则：项目健康检查需要系统化框架，而非零散修复 三级优先级： | 优先级 | 关注点 | 处理时间...",
+                "keywords": [
+                  "健康度检查",
+                  "项目健康",
+                  "安全修复",
+                  "代码优化",
+                  "文档对齐"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 5
           },
           "消息通信": {
             "icon": "💬",
@@ -6112,6 +6207,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "诊断脚本输出≠工作完成（内功修炼反模式）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "脚本自动化",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚡",
+                "color": "#64748b",
+                "description": "诊断脚本输出≠工作完成 来源 2026-03-09 每日修炼复盘：第三步内功修炼只跑了 neigong_check.py，脚本输出了框架...",
+                "keywords": [
+                  "诊断脚本",
+                  "工作完成",
+                  "反模式",
+                  "内功修炼",
+                  "操作计数"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "FastMCP构造参数port移除的兼容坑与Wrapper修复",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
@@ -6131,7 +6245,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "项目知识": {
             "icon": "📋",
@@ -6199,13 +6313,12 @@
             "count": 3
           }
         },
-        "count": 56
+        "count": 59
       }
     }
   },
   "growthHistory": {
     "dates": [
-      "03-01",
       "03-02",
       "03-03",
       "03-04",
@@ -6218,10 +6331,10 @@
       "03-05",
       "03-08",
       "03-08",
-      "03-08"
+      "03-08",
+      "03-09"
     ],
     "skills": [
-      32,
       39,
       40,
       42,
@@ -6234,10 +6347,10 @@
       43,
       53,
       57,
+      57,
       57
     ],
     "knowledge": [
-      150,
       150,
       151,
       152,
@@ -6250,10 +6363,10 @@
       152,
       160,
       160,
-      160
+      160,
+      162
     ],
     "memories": [
-      20,
       38,
       52,
       65,
@@ -6266,7 +6379,8 @@
       69,
       112,
       113,
-      113
+      113,
+      116
     ]
   },
   "achievements": [
@@ -6295,7 +6409,7 @@
     {
       "id": "knowledge_sage",
       "name": "知识贤者",
-      "desc": "积累206个知识文档，博学多识",
+      "desc": "积累208个知识文档，博学多识",
       "icon": "📚",
       "date": "2026-03-09",
       "unlocked": true,
@@ -6324,7 +6438,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "206/200",
+      "progressText": "208/200",
       "date": "2026-03-09"
     },
     {
@@ -6391,7 +6505,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "113/30",
+      "progressText": "116/30",
       "date": "2026-03-09"
     },
     {

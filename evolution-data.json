@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T06:00:26.732852",
+  "generatedAt": "2026-03-09T06:46:18.098582",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -361,6 +361,18 @@
         "type": "integration",
         "name": "飞书集成",
         "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
       }
     ]
   },

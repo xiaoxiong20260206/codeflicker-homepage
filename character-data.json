@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-08T15:10:25.372553",
+  "generatedAt": "2026-03-08T22:36:57.560839",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 7,
-    "totalExp": 12860,
-    "expProgress": 17.2,
+    "totalExp": 13410,
+    "expProgress": 28.2,
     "currentThreshold": 12000,
     "nextThreshold": 17000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 100,
-      "insight": 79.82142857142857,
+      "insight": 80.08771929824562,
       "creativity": 80
     }
   },
   "skills": {
-    "total": 56,
+    "total": 57,
     "categories": {
       "🔄 自进化引擎": {
         "icon": "🔄",
@@ -382,7 +382,7 @@
             "source": "用户自定义",
             "level": 5,
             "exp": 90,
-            "description": "内网Docs文档与本地Markdown双向同步",
+            "description": "快手内网Docs文档与本地Markdown双向同步",
             "lastUpdated": "2026-03-04",
             "callCount": 16,
             "frequency": "0.1次/天",
@@ -808,6 +808,18 @@
         "layer": "execution",
         "skills": [
           {
+            "name": "ai-image-generator",
+            "displayName": "ai-image-generator",
+            "source": "codeflicker",
+            "level": 5,
+            "exp": 85,
+            "description": "AI 图像生成器是一个通用的图像生成工具，可以根据用户的文字描述或结构化文档生成各种类型的图片。支持多种现代设计风格，适用于技术文档、商业演示、知识分享等场景。",
+            "lastUpdated": "2026-03-08",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
             "name": "codeflicker-homepage",
             "displayName": "codeflicker-homepage",
             "source": "codeflicker",
@@ -820,8 +832,8 @@
             "successRate": 0
           }
         ],
-        "count": 1,
-        "avgLevel": 3.0
+        "count": 2,
+        "avgLevel": 4.0
       }
     },
     "tree": {
@@ -1204,7 +1216,7 @@
                 "source": "用户自定义",
                 "level": 5,
                 "exp": 90,
-                "description": "内网Docs文档与本地Markdown双向同步",
+                "description": "快手内网Docs文档与本地Markdown双向同步",
                 "lastUpdated": "2026-03-04",
                 "callCount": 16,
                 "frequency": "0.1次/天",
@@ -1625,6 +1637,18 @@
             "layer": "execution",
             "skills": [
               {
+                "name": "ai-image-generator",
+                "displayName": "ai-image-generator",
+                "source": "codeflicker",
+                "level": 5,
+                "exp": 85,
+                "description": "AI 图像生成器是一个通用的图像生成工具，可以根据用户的文字描述或结构化文档生成各种类型的图片。支持多种现代设计风格，适用于技术文档、商业演示、知识分享等场景。",
+                "lastUpdated": "2026-03-08",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
                 "name": "codeflicker-homepage",
                 "displayName": "codeflicker-homepage",
                 "source": "codeflicker",
@@ -1637,11 +1661,11 @@
                 "successRate": 0
               }
             ],
-            "count": 1,
-            "avgLevel": 3.0
+            "count": 2,
+            "avgLevel": 4.0
           }
         },
-        "count": 38,
+        "count": 39,
         "avgLevel": 3.5
       }
     },
@@ -1829,7 +1853,7 @@
           "thinking_pattern"
         ],
         "fileCount": 3,
-        "sizeKB": 15.0,
+        "sizeKB": 18.0,
         "heatLevel": 3,
         "recentCount": 3
       },
@@ -1892,13 +1916,13 @@
               "thinking_pattern"
             ],
             "fileCount": 3,
-            "sizeKB": 15.0,
+            "sizeKB": 18.0,
             "heatLevel": 3,
             "recentCount": 3
           }
         },
         "totalFiles": 134,
-        "totalSizeKB": 877.8
+        "totalSizeKB": 880.8
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -1976,7 +2000,7 @@
       }
     },
     "totalFiles": 206,
-    "totalSizeKB": 1591.4
+    "totalSizeKB": 1594.3
   },
   "memories": {
     "items": [
@@ -2002,7 +2026,7 @@
       {
         "title": "AI日报→知识库深度学习闭环规则",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2072,7 +2096,7 @@
           "脱敏"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-06",
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -2196,7 +2220,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "问题场景：将HTML图表截图上传到内网Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
+        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
         "keywords": [
           "HTML截图",
           "Docs文档",
@@ -2268,7 +2292,7 @@
       {
         "title": "Skill触发词精确匹配原则（避免大词冲突）",
         "category": "development_practice_specification",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2363,7 +2387,7 @@
       {
         "title": "个人助理目录结构与项目索引 (v2.0)",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2399,13 +2423,70 @@
         "source": "用户显式记录"
       },
       {
+        "title": "企业数字员工平台 — 前端技术栈与代码规范",
+        "category": "project_tech_stack",
+        "categoryLabel": "项目知识",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "企业数字员工平台 — 前端技术栈与代码规范 当前架构：单 HTML 文件 React SPA - React 18.2.0 + Babel ...",
+        "keywords": [
+          "React",
+          "CSS变量",
+          "设计系统",
+          "组件库",
+          "Claude API"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "企业数字员工平台 — 增量开发差距清单与优先级",
+        "category": "project_configuration",
+        "categoryLabel": "项目配置",
+        "layer": null,
+        "icon": "🔧",
+        "color": "#f97316",
+        "description": "企业数字员工平台 — 增量开发差距清单与优先级 当前状态：Web 端 7 页全部实现基本框架，使用 Mock 数据，Claude API 对...",
+        "keywords": [
+          "增量开发",
+          "差距分析",
+          "优先级",
+          "P0",
+          "P1"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "企业数字员工平台 — 项目概览与产品定位",
+        "category": "project_introduction",
+        "categoryLabel": "项目知识",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "项目：企业数字员工平台 产品定义：以「养宠物」为交互隐喻的 AI Agent 平台，让金融公司每位员工拥有一个持续学习、记忆成长、主动分忧的...",
+        "keywords": [
+          "数字员工",
+          "Agent平台",
+          "金融",
+          "宠物隐喻",
+          "PRD"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "企业案例学习工作流（四阶段法）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "企业案例学习工作流（四阶段法） 来源：研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+        "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
         "keywords": [
           "企业案例",
           "学习工作流",
@@ -2439,7 +2520,7 @@
       {
         "title": "元能力：本质洞察力（含五层闭环框架 v2.0）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2456,9 +2537,28 @@
         "source": "用户显式记录"
       },
       {
+        "title": "同步脚本脱敏闸门不完善（文件泄漏+凭证硬编码双漏洞）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "同步脚本脱敏闸门不完善（sync_to_public.py敏感文件泄漏） 来源 2026-03-08 Git日志：15:02 sync_to...",
+        "keywords": [
+          "脱敏",
+          "sync_to_public",
+          "敏感信息",
+          "公开仓库",
+          "凭证硬编码"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "向非技术用户展示AI能力的结构化模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2491,6 +2591,44 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "声明式标记≠实际执行（frontmatter/WARNING不等于流程步骤）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "声明式标记≠实际执行：frontmatter/WARNING块不等于流程步骤 问题：20个技能的 frontmatter 都标记了 `req...",
+        "keywords": [
+          "声明式标记",
+          "实际执行",
+          "frontmatter",
+          "meta-execution",
+          "强制绑定"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞+概念联动）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞优先级） 两类联动 | 维度 | 数据联动 | 概念联动 | |:-----|:-------...",
+        "keywords": [
+          "联动更新",
+          "隐式耦合",
+          "数据一致性",
+          "多文件",
+          "概念重命名"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -2534,7 +2672,7 @@
       {
         "title": "封闭生态接入的通用桥接模式（索引入口→MCP封装→工作流）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2572,7 +2710,7 @@
       {
         "title": "技能/模块粒度的合并信号检测（四信号法）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2589,28 +2727,28 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能分层文档的同步规则（SKILL.md↔references/）",
+        "title": "技能分层文档的同步规则（v2：双向同步）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
+        "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "技能分层文档同步规则 问题 修改技能的详细参考文件（references/*.md）后，忘记在主入口（SKILL.md）同步摘要，导...",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "技能分层文档同步规则（v2：双向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
         "keywords": [
           "技能更新",
           "SKILL.md",
           "references",
-          "分层同步",
-          "文档同步"
+          "examples",
+          "分层同步"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-07",
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
         "title": "技能复用检测与单一数据源架构",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2646,9 +2784,47 @@
         "source": "用户显式记录"
       },
       {
+        "title": "新层交互盲区：视觉升级的四问检查法",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "新层交互盲区（视觉升级批量踩坑总结） 来源 2026-03-08 codeflicker-homepage v4.0 塞尔达风格升级，一次提...",
+        "keywords": [
+          "新层交互",
+          "CSS覆盖",
+          "!important",
+          "伪元素",
+          "动态DOM"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "日报/自学漏记修复：文件mtime代理信号陷阱（v2 含完整修复）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "日报和自主学习漏记对话/项目活动的根因是「代理信号陷阱」——用 recap 文件的 mtime 作为\"对话是否活跃\"的判据，相当于用\"论文发表时间\"代替\"...",
+        "keywords": [
+          "日报",
+          "recap",
+          "mtime",
+          "时间判定",
+          "交叉校验"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "每日修炼触发配置",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2667,7 +2843,7 @@
       {
         "title": "深度调研报告格式规范",
         "category": "development_practice_specification",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2681,25 +2857,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "AI助手飞书对话基本技能 核心原则 虽然AI助手是在「飞书助手」项目里和飞书用户做对话，但AI助手的\"本体\"是在 CodeFlicker 项目下的「个人...",
-        "keywords": [
-          "AI助手",
-          "飞书",
-          "对话",
-          "本体",
-          "个人助理V1"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       },
       {
@@ -2743,7 +2900,7 @@
       {
         "title": "系统性全局替换流程",
         "category": "task_flow_experience",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2798,51 +2955,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑记忆召回失败模式（含完整任务检索映射 v4）",
+        "title": "部署验证完整经验（合并版v3.5）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例： 1. 技能分类配置漂移：记忆已存在，但新建6个技能时仍未更新SKILL...",
-        "keywords": [
-          "记忆召回",
-          "踩坑复现",
-          "执行前检索",
-          "记忆应用率",
-          "被动记忆"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "部署验证完整经验（合并版）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "部署验证完整经验（合并版） 1. 缓存破坏 - URL添加时间戳：?v=${Date.now()} - 强制刷新：Ctrl+Shift+...",
-        "keywords": [
-          "部署",
-          "验证",
-          "缓存",
-          "GitHub Pages",
-          "锁冲突"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-06",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "部署验证完整经验（合并版）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "部署验证完整经验（合并版） 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
+        "description": "部署验证完整经验（合并版v3.5） 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项...",
         "keywords": [
           "部署",
           "验证",
@@ -2851,7 +2970,26 @@
           "数据同步"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-07",
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "部署验证完整经验（含P0双仓库陷阱）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3次） 这是最高频的部署失败原因，...",
+        "keywords": [
+          "部署",
+          "验证",
+          "缓存",
+          "GitHub Pages",
+          "锁冲突"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -2868,6 +3006,25 @@
           "CSDN",
           "搜索引擎",
           "SEO"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "风格技能升级的 Flagship-then-Replicate 工作流",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "风格技能升级的 Flagship-then-Replicate 工作流 适用场景 需要将 N 个同类文件（示例页面、组件库、参考文档）统一升...",
+        "keywords": [
+          "旗舰先行",
+          "Flagship",
+          "风格升级",
+          "多文件",
+          "复制推广"
         ],
         "importance": 5,
         "updatedAt": "2026-03-08",
@@ -3139,7 +3296,7 @@
       {
         "title": "体系化任务的识别与前置设计",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3194,9 +3351,28 @@
         "source": "用户显式记录"
       },
       {
+        "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
+        "category": "task_flow_experience",
+        "categoryLabel": "工作模式",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "全角色走查法（Demo/原型全覆盖质量检查） 来源 2026-03-08 企业数字员工Demo自查：模拟5类角色走完整流程，发现23个问题（...",
+        "keywords": [
+          "全角色走查",
+          "Demo测试",
+          "质量检查",
+          "P0分级",
+          "用户角色"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3271,7 +3447,7 @@
       {
         "title": "小无相功 v5.0 — AI自进化内核",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3290,7 +3466,7 @@
       {
         "title": "展示型页面的时效性优化模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3325,28 +3501,9 @@
         "source": "用户显式记录"
       },
       {
-        "title": "思想体系可视化能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
-        "keywords": [
-          "思想体系",
-          "可视化",
-          "结构化",
-          "逻辑图",
-          "长文档"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
         "title": "技能与记忆分类原则（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3422,7 +3579,7 @@
       {
         "title": "新领域学习的\"信息源优先\"原则",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3455,25 +3612,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-05",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "日报漏记：文件mtime≠实际活动时间",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 核心约束： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
-        "keywords": [
-          "日报",
-          "recap",
-          "mtime",
-          "时间判定",
-          "交叉校验"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-06",
         "source": "用户显式记录"
       },
       {
@@ -3552,6 +3690,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "AI助手飞书对话基本技能 核心原则 虽然AI助手是在「飞书助手」项目里和飞书用户做对话，但AI助手的\"本体\"是在 CodeFlicker 项目下的「个人...",
+        "keywords": [
+          "AI助手",
+          "飞书",
+          "对话",
+          "本体",
+          "个人助理V1"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
         "title": "清单≠全集：批量操作前必须全量扫描",
         "category": "common_pitfalls_experience",
         "categoryLabel": "领域踩坑",
@@ -3615,7 +3772,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
+        "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
         "keywords": [
           "知识学习",
           "文档抓取",
@@ -3628,28 +3785,9 @@
         "source": "用户显式记录"
       },
       {
-        "title": "类比驱动解释能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
-        "keywords": [
-          "类比",
-          "解释",
-          "抽象概念",
-          "通俗易懂",
-          "比喻"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
         "title": "网页开发工作流偏好（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3704,9 +3842,28 @@
         "source": "用户显式记录"
       },
       {
+        "title": "踩坑记忆召回失败模式（含完整任务检索映射 v10 — 执行差距已确认关闭）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v10 共10个）： 1-9: 见历史版本 10. git remo...",
+        "keywords": [
+          "记忆召回",
+          "踩坑复现",
+          "执行前检索",
+          "记忆应用率",
+          "被动记忆"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "输出链接格式规范",
         "category": "development_practice_specification",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3720,25 +3877,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "迭代式完善能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
-        "keywords": [
-          "迭代",
-          "快速反馈",
-          "持续优化",
-          "MVP",
-          "版本迭代"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       },
       {
@@ -3763,7 +3901,7 @@
       {
         "title": "问题发现两分法：过程层自检 vs 结果层反馈",
         "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3777,25 +3915,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "隐藏前提识别能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维框架",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
-        "keywords": [
-          "隐藏前提",
-          "论证",
-          "分析",
-          "逻辑",
-          "假设"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       },
       {
@@ -3820,7 +3939,7 @@
       {
         "title": "页面修改后默认提供预览链接",
         "category": "development_practice_specification",
-        "categoryLabel": "工作基座",
+        "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3837,20 +3956,21 @@
         "source": "用户显式记录"
       },
       {
-        "title": "默认工作模式：以用户的思维方式和风格执行任务",
-        "category": "user_communication",
-        "categoryLabel": "用户偏好",
+        "title": "思想体系可视化能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
-        "icon": "💬",
-        "color": "#0ea5e9",
-        "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
         "keywords": [
-          "工作模式",
-          "默认风格",
-          "思维方式",
-          "***"
+          "思想体系",
+          "可视化",
+          "结构化",
+          "逻辑图",
+          "长文档"
         ],
-        "importance": 4,
+        "importance": 3,
         "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       },
@@ -3890,13 +4010,88 @@
         "importance": 3,
         "updatedAt": "2026-02-23",
         "source": "用户显式记录"
+      },
+      {
+        "title": "类比驱动解释能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
+        "keywords": [
+          "类比",
+          "解释",
+          "抽象概念",
+          "通俗易懂",
+          "比喻"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "迭代式完善能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
+        "keywords": [
+          "迭代",
+          "快速反馈",
+          "持续优化",
+          "MVP",
+          "版本迭代"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "隐藏前提识别能力",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维能力",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
+        "keywords": [
+          "隐藏前提",
+          "论证",
+          "分析",
+          "逻辑",
+          "假设"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "默认工作模式：以***的思维方式和风格执行任务",
+        "category": "user_communication",
+        "categoryLabel": "用户偏好",
+        "layer": "🧠 元认知层",
+        "icon": "💬",
+        "color": "#0ea5e9",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
+        "keywords": [
+          "工作模式",
+          "默认风格",
+          "思维方式",
+          "***"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-02-28",
+        "source": "用户显式记录"
       }
     ],
-    "total": 100,
+    "total": 108,
     "byCategory": {
       "development_practice_specification": {
         "count": 12,
-        "label": "工作基座",
+        "label": "工作模式",
         "icon": "⚙️",
         "color": "#5ec4d4",
         "description": "如何做事：工作流程、执行方法"
@@ -3916,8 +4111,8 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 23,
-        "label": "思维框架",
+        "count": 25,
+        "label": "思维能力",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "如何思考：洞察力、批判性思维、元执行"
@@ -3937,20 +4132,27 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 48,
+        "count": 52,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
         "description": "GitHub Pages/部署踩坑"
       },
       "project_introduction": {
-        "count": 1,
+        "count": 2,
         "label": "AI领域洞察",
         "icon": "🔍",
         "color": "#8b5cf6",
         "description": "日报/周报/深度调研/追踪体系经验"
       },
       "project_configuration": {
+        "count": 2,
+        "label": "项目知识",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "项目背景、配置、技术栈"
+      },
+      "project_tech_stack": {
         "count": 1,
         "label": "项目知识",
         "icon": "📋",
@@ -4012,7 +4214,7 @@
             "description": "沟通风格、工作模式、兴趣爱好",
             "items": [
               {
-                "title": "默认工作模式：以用户的思维方式和风格执行任务",
+                "title": "默认工作模式：以***的思维方式和风格执行任务",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",
@@ -4025,7 +4227,7 @@
                   "思维方式",
                   "***"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-02-28",
                 "source": "用户显式记录"
               },
@@ -4284,7 +4486,7 @@
             ],
             "count": 10
           },
-          "思维框架": {
+          "思维能力": {
             "icon": "🧠",
             "color": "#a78bfa",
             "description": "如何思考：洞察力、批判性思维、元执行",
@@ -4292,7 +4494,7 @@
               {
                 "title": "小无相功 v5.0 — AI自进化内核",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4311,7 +4513,7 @@
               {
                 "title": "思想体系可视化能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4323,14 +4525,14 @@
                   "逻辑图",
                   "长文档"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-02-28",
                 "source": "用户显式记录"
               },
               {
                 "title": "类比驱动解释能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4342,14 +4544,14 @@
                   "通俗易懂",
                   "比喻"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-02-28",
                 "source": "用户显式记录"
               },
               {
                 "title": "隐藏前提识别能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4361,14 +4563,14 @@
                   "逻辑",
                   "假设"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-02-28",
                 "source": "用户显式记录"
               },
               {
                 "title": "迭代式完善能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4380,14 +4582,14 @@
                   "MVP",
                   "版本迭代"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-02-28",
                 "source": "用户显式记录"
               },
               {
                 "title": "元能力：本质洞察力（含五层闭环框架 v2.0）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4406,7 +4608,7 @@
               {
                 "title": "体系化任务的识别与前置设计",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4425,7 +4627,7 @@
               {
                 "title": "新领域学习的\"信息源优先\"原则",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4444,7 +4646,7 @@
               {
                 "title": "封闭生态接入的通用桥接模式（索引入口→MCP封装→工作流）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4463,7 +4665,7 @@
               {
                 "title": "技能/模块粒度的合并信号检测（四信号法）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4482,11 +4684,11 @@
               {
                 "title": "企业案例学习工作流（四阶段法）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "企业案例学习工作流（四阶段法） 来源：研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+                "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
                 "keywords": [
                   "企业案例",
                   "学习工作流",
@@ -4501,7 +4703,7 @@
               {
                 "title": "每日修炼触发配置",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4520,7 +4722,7 @@
               {
                 "title": "个人助理目录结构与项目索引 (v2.0)",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4539,7 +4741,7 @@
               {
                 "title": "问题发现两分法：过程层自检 vs 结果层反馈",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4558,7 +4760,7 @@
               {
                 "title": "向非技术用户展示AI能力的结构化模式",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4577,7 +4779,7 @@
               {
                 "title": "展示型页面的时效性优化模式",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4596,7 +4798,7 @@
               {
                 "title": "技能复用检测与单一数据源架构",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4613,9 +4815,28 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "风格技能升级的 Flagship-then-Replicate 工作流",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维能力",
+                "layer": "🧠 元认知层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "风格技能升级的 Flagship-then-Replicate 工作流 适用场景 需要将 N 个同类文件（示例页面、组件库、参考文档）统一升...",
+                "keywords": [
+                  "旗舰先行",
+                  "Flagship",
+                  "风格升级",
+                  "多文件",
+                  "复制推广"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "AI日报→知识库深度学习闭环规则",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4634,7 +4855,7 @@
               {
                 "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维框架",
+                "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4646,14 +4867,14 @@
                   "本体",
                   "个人助理V1"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-02-28",
                 "source": "用户显式记录"
               }
             ],
-            "count": 19
+            "count": 20
           },
-          "工作基座": {
+          "工作模式": {
             "icon": "⚙️",
             "color": "#5ec4d4",
             "description": "如何做事：工作流程、执行方法",
@@ -4661,7 +4882,7 @@
               {
                 "title": "输出链接格式规范",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4680,7 +4901,7 @@
               {
                 "title": "网页开发工作流偏好（精简版）",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4699,7 +4920,7 @@
               {
                 "title": "创作类任务的前置确认原则",
                 "category": "task_flow_experience",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4718,7 +4939,7 @@
               {
                 "title": "页面修改后默认提供预览链接",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4735,9 +4956,28 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
+                "category": "task_flow_experience",
+                "categoryLabel": "工作模式",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "全角色走查法（Demo/原型全覆盖质量检查） 来源 2026-03-08 企业数字员工Demo自查：模拟5类角色走完整流程，发现23个问题（...",
+                "keywords": [
+                  "全角色走查",
+                  "Demo测试",
+                  "质量检查",
+                  "P0分级",
+                  "用户角色"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "系统性全局替换流程",
                 "category": "task_flow_experience",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4756,7 +4996,7 @@
               {
                 "title": "技能与记忆分类原则（精简版）",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4775,7 +5015,7 @@
               {
                 "title": "Skill触发词精确匹配原则（避免大词冲突）",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4794,7 +5034,7 @@
               {
                 "title": "深度调研报告格式规范",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作基座",
+                "categoryLabel": "工作模式",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -4811,10 +5051,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 8
+            "count": 9
           }
         },
-        "count": 46
+        "count": 48
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -4862,6 +5102,25 @@
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
               {
+                "title": "技能分层文档的同步规则（v2：双向同步）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "技能分层文档同步规则（v2：双向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
+                "keywords": [
+                  "技能更新",
+                  "SKILL.md",
+                  "references",
+                  "examples",
+                  "分层同步"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "replace_in_file首次匹配陷阱（同文件多出现时遗漏）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -4878,6 +5137,25 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-07",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞+概念联动）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞优先级） 两类联动 | 维度 | 数据联动 | 概念联动 | |:-----|:-------...",
+                "keywords": [
+                  "联动更新",
+                  "隐式耦合",
+                  "数据一致性",
+                  "多文件",
+                  "概念重命名"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -5147,13 +5425,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "踩坑记忆召回失败模式（含完整任务检索映射 v4）",
+                "title": "踩坑记忆召回失败模式（含完整任务检索映射 v10 — 执行差距已确认关闭）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例： 1. 技能分类配置漂移：记忆已存在，但新建6个技能时仍未更新SKILL...",
+                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v10 共10个）： 1-9: 见历史版本 10. git remo...",
                 "keywords": [
                   "记忆召回",
                   "踩坑复现",
@@ -5161,7 +5439,7 @@
                   "记忆应用率",
                   "被动记忆"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
@@ -5242,6 +5520,44 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "新层交互盲区：视觉升级的四问检查法",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "新层交互盲区（视觉升级批量踩坑总结） 来源 2026-03-08 codeflicker-homepage v4.0 塞尔达风格升级，一次提...",
+                "keywords": [
+                  "新层交互",
+                  "CSS覆盖",
+                  "!important",
+                  "伪元素",
+                  "动态DOM"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "声明式标记≠实际执行（frontmatter/WARNING不等于流程步骤）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "声明式标记≠实际执行：frontmatter/WARNING块不等于流程步骤 问题：20个技能的 frontmatter 都标记了 `req...",
+                "keywords": [
+                  "声明式标记",
+                  "实际执行",
+                  "frontmatter",
+                  "meta-execution",
+                  "强制绑定"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -5286,7 +5602,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "问题场景：将HTML图表截图上传到内网Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
+                "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
                 "keywords": [
                   "HTML截图",
                   "Docs文档",
@@ -5314,17 +5630,17 @@
                   "脱敏"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-06",
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
-                "title": "部署验证完整经验（合并版）",
+                "title": "部署验证完整经验（合并版v3.5）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "部署验证完整经验（合并版） 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
+                "description": "部署验证完整经验（合并版v3.5） 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项...",
                 "keywords": [
                   "部署",
                   "验证",
@@ -5333,7 +5649,7 @@
                   "数据同步"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-07",
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -5470,7 +5786,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 32
+            "count": 36
           },
           "发布部署": {
             "icon": "🚀",
@@ -5478,13 +5794,13 @@
             "description": "GitHub Pages/部署踩坑",
             "items": [
               {
-                "title": "部署验证完整经验（合并版）",
+                "title": "部署验证完整经验（含P0双仓库陷阱）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "部署验证完整经验（合并版） 1. 缓存破坏 - URL添加时间戳：?v=${Date.now()} - 强制刷新：Ctrl+Shift+...",
+                "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3次） 这是最高频的部署失败原因，...",
                 "keywords": [
                   "部署",
                   "验证",
@@ -5493,26 +5809,7 @@
                   "锁冲突"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-06",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "技能分层文档的同步规则（SKILL.md↔references/）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "技能分层文档同步规则 问题 修改技能的详细参考文件（references/*.md）后，忘记在主入口（SKILL.md）同步摘要，导...",
-                "keywords": [
-                  "技能更新",
-                  "SKILL.md",
-                  "references",
-                  "分层同步",
-                  "文档同步"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-07",
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -5529,6 +5826,25 @@
                   "检查返回值",
                   "多步骤",
                   "工作流"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "日报/自学漏记修复：文件mtime代理信号陷阱（v2 含完整修复）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "日报和自主学习漏记对话/项目活动的根因是「代理信号陷阱」——用 recap 文件的 mtime 作为\"对话是否活跃\"的判据，相当于用\"论文发表时间\"代替\"...",
+                "keywords": [
+                  "日报",
+                  "recap",
+                  "mtime",
+                  "时间判定",
+                  "交叉校验"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-08",
@@ -5590,9 +5906,28 @@
                 "importance": 5,
                 "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "同步脚本脱敏闸门不完善（文件泄漏+凭证硬编码双漏洞）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "同步脚本脱敏闸门不完善（sync_to_public.py敏感文件泄漏） 来源 2026-03-08 Git日志：15:02 sync_to...",
+                "keywords": [
+                  "脱敏",
+                  "sync_to_public",
+                  "敏感信息",
+                  "公开仓库",
+                  "凭证硬编码"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
               }
             ],
-            "count": 6
+            "count": 7
           },
           "文档处理": {
             "icon": "📄",
@@ -5682,7 +6017,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
+                "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
                 "keywords": [
                   "知识学习",
                   "文档抓取",
@@ -5852,25 +6187,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "日报漏记：文件mtime≠实际活动时间",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 核心约束： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
-                "keywords": [
-                  "日报",
-                  "recap",
-                  "mtime",
-                  "时间判定",
-                  "交叉校验"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-06",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "FastMCP构造参数port移除的兼容坑与Wrapper修复",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
@@ -5890,7 +6206,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 2
           },
           "项目知识": {
             "icon": "📋",
@@ -5915,19 +6231,55 @@
                 "importance": 5,
                 "updatedAt": "2026-03-07",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "企业数字员工平台 — 项目概览与产品定位",
+                "category": "project_introduction",
+                "categoryLabel": "项目知识",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "📋",
+                "color": "#c2410c",
+                "description": "项目：企业数字员工平台 产品定义：以「养宠物」为交互隐喻的 AI Agent 平台，让金融公司每位员工拥有一个持续学习、记忆成长、主动分忧的...",
+                "keywords": [
+                  "数字员工",
+                  "Agent平台",
+                  "金融",
+                  "宠物隐喻",
+                  "PRD"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "企业数字员工平台 — 前端技术栈与代码规范",
+                "category": "project_tech_stack",
+                "categoryLabel": "项目知识",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "📋",
+                "color": "#c2410c",
+                "description": "企业数字员工平台 — 前端技术栈与代码规范 当前架构：单 HTML 文件 React SPA - React 18.2.0 + Babel ...",
+                "keywords": [
+                  "React",
+                  "CSS变量",
+                  "设计系统",
+                  "组件库",
+                  "Claude API"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
               }
             ],
-            "count": 1
+            "count": 3
           }
         },
-        "count": 53
+        "count": 59
       }
     }
   },
   "growthHistory": {
     "dates": [
-      "02-26",
-      "02-27",
       "02-28",
       "03-01",
       "03-02",
@@ -5939,11 +6291,11 @@
       "03-03",
       "03-04",
       "03-04",
-      "03-05"
+      "03-05",
+      "03-08",
+      "03-08"
     ],
     "skills": [
-      30,
-      30,
       30,
       32,
       39,
@@ -5955,11 +6307,11 @@
       42,
       42,
       42,
-      43
+      43,
+      53,
+      57
     ],
     "knowledge": [
-      150,
-      150,
       150,
       150,
       150,
@@ -5971,11 +6323,11 @@
       152,
       152,
       152,
-      152
+      152,
+      160,
+      160
     ],
     "memories": [
-      19,
-      19,
       19,
       20,
       38,
@@ -5987,7 +6339,9 @@
       65,
       65,
       65,
-      69
+      69,
+      112,
+      113
     ]
   },
   "achievements": [
@@ -6033,7 +6387,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "56/50",
+      "progressText": "57/50",
       "date": "2026-03-08"
     },
     {
@@ -6095,7 +6449,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有56项技能，触类旁通",
+      "desc": "拥有57项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-08",
       "unlocked": true,
@@ -6112,7 +6466,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "104/30",
+      "progressText": "113/30",
       "date": "2026-03-08"
     },
     {

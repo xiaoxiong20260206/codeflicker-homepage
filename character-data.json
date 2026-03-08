@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-08T08:48:51.011240",
+  "generatedAt": "2026-03-08T10:18:07.026938",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 6,
-    "totalExp": 11490,
-    "expProgress": 87.2,
+    "totalExp": 11540,
+    "expProgress": 88.5,
     "currentThreshold": 8000,
     "nextThreshold": 12000,
     "stats": {
@@ -229,7 +229,7 @@
           {
             "name": "ai-insight",
             "displayName": "AI洞察",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 82,
             "description": "AI持续洞察平台：日报/周报/深度调研/首页管理",
@@ -251,7 +251,7 @@
           {
             "name": "investment-tracker",
             "displayName": "基金追踪",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 73,
             "description": "投资组合追踪，基金/股票/ETF持仓管理",
@@ -379,7 +379,7 @@
           {
             "name": "ks-kim-docs-shuttle",
             "displayName": "IM文档",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 5,
             "exp": 90,
             "description": "内部Docs文档与本地Markdown双向同步",
@@ -415,7 +415,7 @@
           {
             "name": "keynote",
             "displayName": "Keynote",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 79,
             "description": "Apple Keynote演示文稿创建，JXA自动化支持",
@@ -463,7 +463,7 @@
           {
             "name": "yuque-publisher",
             "displayName": "语雀发布",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 2,
             "exp": 48,
             "description": "语雀知识库文档自动发布、同步和管理",
@@ -497,7 +497,7 @@
           {
             "name": "web-dev-workflow",
             "displayName": "网页开发",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 79,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
@@ -533,7 +533,7 @@
           {
             "name": "pixel-action-game",
             "displayName": "像素游戏",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 75,
             "description": "像素风格动作游戏开发，含关卡设计和8位音效",
@@ -567,7 +567,7 @@
           {
             "name": "zelda-style",
             "displayName": "塞尔达风格",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 5,
             "exp": 85,
             "description": "塞尔达·旷野之息风格页面设计规范",
@@ -591,7 +591,7 @@
           {
             "name": "qingshuang-research-style",
             "displayName": "清爽调研",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 73,
             "description": "清爽调研报告风格的CSS样式规范",
@@ -603,7 +603,7 @@
           {
             "name": "work-report-ppt",
             "displayName": "汇报PPT",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 3,
             "exp": 60,
             "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
@@ -625,7 +625,7 @@
           {
             "name": "github-deploy-publisher",
             "displayName": "GitHub部署",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 3,
             "exp": 66,
             "description": "自动化GitHub仓库创建、代码提交、Pages部署",
@@ -647,7 +647,7 @@
           {
             "name": "linke-kim-message",
             "displayName": "IM消息",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 73,
             "description": "IM消息推送，支持MixCard卡片和群消息",
@@ -659,7 +659,7 @@
           {
             "name": "feishu-assistant",
             "displayName": "飞书助手",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 2,
             "exp": 48,
             "description": "飞书消息自动化发送和接收，对接飞书助手",
@@ -681,7 +681,7 @@
           {
             "name": "promotion-coaching",
             "displayName": "晋升辅导",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 70,
             "description": "晋升辅导全流程：材料整理→PPT生成→答辩攻略→模拟QA",
@@ -703,7 +703,7 @@
           {
             "name": "ai-column-writer",
             "displayName": "专栏写作",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 79,
             "description": "「养了个AI」专栏写作和发布管理",
@@ -795,7 +795,7 @@
           {
             "name": "mcp-builder",
             "displayName": "MCP开发",
-            "source": "AI核心能力",
+            "source": "用户自定义",
             "level": 4,
             "exp": 75,
             "description": "MCP服务器开发指南，让LLM对接外部API服务",
@@ -827,11 +827,11 @@
         "skills": [
           {
             "name": "codeflicker-weekly-report",
-            "displayName": "codeflicker-weekly-report",
-            "source": "codeflicker",
+            "displayName": "项目周报",
+            "source": "用户自定义",
             "level": 4,
             "exp": 70,
-            "description": "每周六触发的 CodeFlicker 项目周报生成与发送技能。",
+            "description": "CodeFlicker项目周报生成与IM推送",
             "lastUpdated": "2026-03-07",
             "callCount": 6,
             "frequency": "1次/周",
@@ -1062,7 +1062,7 @@
               {
                 "name": "ai-insight",
                 "displayName": "AI洞察",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 82,
                 "description": "AI持续洞察平台：日报/周报/深度调研/首页管理",
@@ -1083,7 +1083,7 @@
               {
                 "name": "investment-tracker",
                 "displayName": "基金追踪",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 73,
                 "description": "投资组合追踪，基金/股票/ETF持仓管理",
@@ -1219,7 +1219,7 @@
               {
                 "name": "ks-kim-docs-shuttle",
                 "displayName": "IM文档",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 5,
                 "exp": 90,
                 "description": "内部Docs文档与本地Markdown双向同步",
@@ -1255,7 +1255,7 @@
               {
                 "name": "keynote",
                 "displayName": "Keynote",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 79,
                 "description": "Apple Keynote演示文稿创建，JXA自动化支持",
@@ -1303,7 +1303,7 @@
               {
                 "name": "yuque-publisher",
                 "displayName": "语雀发布",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 2,
                 "exp": 48,
                 "description": "语雀知识库文档自动发布、同步和管理",
@@ -1336,7 +1336,7 @@
               {
                 "name": "web-dev-workflow",
                 "displayName": "网页开发",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 79,
                 "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
@@ -1372,7 +1372,7 @@
               {
                 "name": "pixel-action-game",
                 "displayName": "像素游戏",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 75,
                 "description": "像素风格动作游戏开发，含关卡设计和8位音效",
@@ -1405,7 +1405,7 @@
               {
                 "name": "zelda-style",
                 "displayName": "塞尔达风格",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 5,
                 "exp": 85,
                 "description": "塞尔达·旷野之息风格页面设计规范",
@@ -1429,7 +1429,7 @@
               {
                 "name": "qingshuang-research-style",
                 "displayName": "清爽调研",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 73,
                 "description": "清爽调研报告风格的CSS样式规范",
@@ -1441,7 +1441,7 @@
               {
                 "name": "work-report-ppt",
                 "displayName": "汇报PPT",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 3,
                 "exp": 60,
                 "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
@@ -1462,7 +1462,7 @@
               {
                 "name": "github-deploy-publisher",
                 "displayName": "GitHub部署",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 3,
                 "exp": 66,
                 "description": "自动化GitHub仓库创建、代码提交、Pages部署",
@@ -1483,7 +1483,7 @@
               {
                 "name": "linke-kim-message",
                 "displayName": "IM消息",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 73,
                 "description": "IM消息推送，支持MixCard卡片和群消息",
@@ -1495,7 +1495,7 @@
               {
                 "name": "feishu-assistant",
                 "displayName": "飞书助手",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 2,
                 "exp": 48,
                 "description": "飞书消息自动化发送和接收，对接飞书助手",
@@ -1516,7 +1516,7 @@
               {
                 "name": "promotion-coaching",
                 "displayName": "晋升辅导",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 70,
                 "description": "晋升辅导全流程：材料整理→PPT生成→答辩攻略→模拟QA",
@@ -1537,7 +1537,7 @@
               {
                 "name": "ai-column-writer",
                 "displayName": "专栏写作",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 79,
                 "description": "「养了个AI」专栏写作和发布管理",
@@ -1627,7 +1627,7 @@
               {
                 "name": "mcp-builder",
                 "displayName": "MCP开发",
-                "source": "AI核心能力",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 75,
                 "description": "MCP服务器开发指南，让LLM对接外部API服务",
@@ -1659,11 +1659,11 @@
             "skills": [
               {
                 "name": "codeflicker-weekly-report",
-                "displayName": "codeflicker-weekly-report",
-                "source": "codeflicker",
+                "displayName": "项目周报",
+                "source": "用户自定义",
                 "level": 4,
                 "exp": 70,
-                "description": "每周六触发的 CodeFlicker 项目周报生成与发送技能。",
+                "description": "CodeFlicker项目周报生成与IM推送",
                 "lastUpdated": "2026-03-07",
                 "callCount": 6,
                 "frequency": "1次/周",
@@ -2517,6 +2517,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "链接时效性陷阱：搜索引擎排名≠信息新鲜度",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 领域层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "链接时效性陷阱：搜索引擎排名≠信息新鲜度 问题 2026-03-08 AI日报IM卡片中，通义灵码的链接指向一篇2025-02-15的CS...",
+        "keywords": [
+          "链接时效性",
+          "过时链接",
+          "CSDN",
+          "搜索引擎",
+          "SEO"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "首页数据管道踩坑规则（含脱敏闸门）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2552,7 +2571,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "AI日报IM卡片链接错误排查经验",
+        "title": "AI日报IM卡片链接错误排查经验（含时效性验证）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
         "layer": "🛠️ 领域层",
@@ -2567,7 +2586,7 @@
           "笔误"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-05",
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -3334,16 +3353,16 @@
         "layer": "🧠 能力层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "输出链接格式规范 规则 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 正确格式...",
+        "description": "输出链接格式规范 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 2. ...",
         "keywords": [
           "链接格式",
           "URL输出",
           "文本分隔",
           "输出规范",
-          "开发实践"
+          "括号"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-01",
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -3497,7 +3516,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 85,
+    "total": 86,
     "byCategory": {
       "development_practice_specification": {
         "count": 11,
@@ -3542,7 +3561,7 @@
         "description": "沟通风格、工作模式、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 38,
+        "count": 39,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -4183,16 +4202,16 @@
                 "layer": "🧠 能力层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "输出链接格式规范 规则 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 正确格式...",
+                "description": "输出链接格式规范 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 2. ...",
                 "keywords": [
                   "链接格式",
                   "URL输出",
                   "文本分隔",
                   "输出规范",
-                  "开发实践"
+                  "括号"
                 ],
                 "importance": 4,
-                "updatedAt": "2026-03-01",
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -4912,6 +4931,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "链接时效性陷阱：搜索引擎排名≠信息新鲜度",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 领域层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "链接时效性陷阱：搜索引擎排名≠信息新鲜度 问题 2026-03-08 AI日报IM卡片中，通义灵码的链接指向一篇2025-02-15的CS...",
+                "keywords": [
+                  "链接时效性",
+                  "过时链接",
+                  "CSDN",
+                  "搜索引擎",
+                  "SEO"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -4931,7 +4969,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 30
+            "count": 31
           },
           "发布部署": {
             "icon": "🚀",
@@ -5107,7 +5145,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "AI日报IM卡片链接错误排查经验",
+                "title": "AI日报IM卡片链接错误排查经验（含时效性验证）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "消息通信",
                 "layer": "🛠️ 领域层",
@@ -5122,7 +5160,7 @@
                   "笔误"
                 ],
                 "importance": 4,
-                "updatedAt": "2026-03-05",
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -5221,7 +5259,7 @@
             "count": 2
           }
         },
-        "count": 43
+        "count": 44
       },
       "📚 项目层": {
         "icon": "📚",
@@ -5436,7 +5474,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "90/30",
+      "progressText": "91/30",
       "date": "2026-03-08"
     },
     {

@@ -107,7 +107,7 @@
 .engine-section {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(167, 139, 250, 0.2);
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
 }
 .engine-title-bar {
@@ -457,11 +457,11 @@
     margin-left: 2px;
 }
 
-/* === 认知框架（思维工具）=== */
+/* === 认知框架 === */
 .cognitive-section {
     background: rgba(245, 158, 11, 0.05);
     border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -545,7 +545,7 @@
     font-family: var(--font-mono);
 }
 .cognitive-note {
-    font-size: 10px;
+    font-size: 9px;
     color: rgba(245, 158, 11, 0.5);
     text-align: center;
     font-style: italic;
@@ -555,7 +555,7 @@
 .system-section {
     background: rgba(94, 196, 212, 0.05);
     border: 1px solid rgba(94, 196, 212, 0.2);
-    border-radius: 12px;
+    border-radius: 10px;
     padding: 12px;
     display: flex;
     flex-direction: column;

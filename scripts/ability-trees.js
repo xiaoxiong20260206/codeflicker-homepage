@@ -29,19 +29,19 @@ function renderSkillTechTree(container, skills) {
         'product-thinking': '产品思维',
         'knowledge-acquisition-meta': '知识习得',
         'knowledge-base': '知识库',
-        'find-skills': '技能发现',
+        'find-skills': '技能搜索',
         'skill-manager': '技能管理',
         'night-task-runner': '夜间任务',
-        'personal-assistant': '助理',
+        'personal-assistant': '个人助理',
         'industry-research': '行研',
-        'wechat-research': '公众号',
-        'research': '调研',
+        'wechat-research': '公众号调研',
+        'research': '通用调研',
         'apify-trend-analysis': '趋势',
         'apify-market-research': '市场',
         'apify-competitor-intelligence': '竞情',
         'ai-insight': 'AI洞察',
         'pdf': 'PDF', 'pptx': 'PPT', 'docx': 'Word', 'xlsx': 'Excel',
-        'canvas-design': '画布', 'keynote': 'Keynote',
+        'canvas-design': '视觉设计', 'keynote': 'Keynote',
         'ui-ux-pro-max': 'UI专家', 'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端', 'web-dev-workflow': '网页流程',
         'qingshuang-research-style': '清爽', 'work-report-ppt': '汇报',
@@ -123,12 +123,20 @@ function renderSkillTechTree(container, skills) {
             '<div class="engine-node-info"><span class="engine-node-name">' + name + '</span><span class="engine-node-role">' + role + '</span></div></div>';
     }
     
+    function getSourceColor(source) {
+        if (!source) return 'rgba(200, 220, 240, 0.2)';
+        if (source === 'AI核心能力') return '#a78bfa';
+        if (source === '用户自定义') return '#38bdf8';
+        return '#64748b'; // 平台技能库
+    }
+    
     function createSkillChip(skill) {
         var id = storeSkill(skill);
         var name = getName(skill);
         var level = skill.level || 1;
         var color = getLevelColor(level);
-        return '<div class="skill-chip" style="--chip-color:' + color + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="skill-chip-level">' + level + '</span><span class="skill-chip-name">' + name + '</span></div>';
+        var sourceColor = getSourceColor(skill.source);
+        return '<div class="skill-chip" style="--chip-color:' + color + ';--chip-source-color:' + sourceColor + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="skill-chip-level">' + level + '</span><span class="skill-chip-name">' + name + '</span></div>';
     }
     
     // ========== 渲染 ==========
@@ -146,8 +154,8 @@ function renderSkillTechTree(container, skills) {
     // 元能力层子分类
     var metaChildren = metaLayer.children || {};
     var engineCat = metaChildren['\uD83D\uDD04 自进化引擎'];
-    var cognitiveCat = metaChildren['\uD83E\uDDE0 认知框架'];
-    var systemCat = metaChildren['\u2699\uFE0F 系统工具'];
+    var cognitiveCat = metaChildren['\uD83E\uDDE0 思维框架'];
+    var systemCat = metaChildren['\u2699\uFE0F 工作基座'];
     
     // 引擎技能映射
     var engineSkillMap = {};
@@ -171,11 +179,11 @@ function renderSkillTechTree(container, skills) {
     // === 引擎区域 ===
     var engineHtml = '';
     if (guideSkill && coreSkill) {
-        var guideNode = createEngineNode(guideSkill, '进化导航器', 'guide');
-        var coreNode = createEngineNode(coreSkill, '每日进化源', 'core');
-        var reviewNode = reviewSkill ? createEngineNode(reviewSkill, '复盘提炼', 'core') : '';
-        var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, '能力内化', 'core') : '';
-        var metaExecNode = metaExecSkill ? createEngineNode(metaExecSkill, '质量守护', 'core') : '';
+        var guideNode = createEngineNode(guideSkill, '进化导航', 'guide');
+        var coreNode = createEngineNode(coreSkill, '每日驱动', 'core');
+        var reviewNode = reviewSkill ? createEngineNode(reviewSkill, '即时复盘', 'core') : '';
+        var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, '深度修炼', 'core') : '';
+        var metaExecNode = metaExecSkill ? createEngineNode(metaExecSkill, '质量保障', 'core') : '';
         var toolNodes = '';
         for (var ti = 0; ti < toolSkills.length; ti++) {
             var r = engineRoles[toolSkills[ti].name];
@@ -206,7 +214,7 @@ function renderSkillTechTree(container, skills) {
                     '</div>' +
                 '</div>' +
                 '<div class="engine-feedback-line"><span class="feedback-label">P2 反馈</span></div>' +
-                '<div class="engine-tier engine-tier--tools"><div class="engine-tools-connector"><span class="tools-connector-label">深度优化三剑客</span></div><div class="engine-tools-grid">' + toolNodes + '</div></div>' +
+                '<div class="engine-tier engine-tier--tools"><div class="engine-tools-connector"><span class="tools-connector-label">基座工具</span></div><div class="engine-tools-grid">' + toolNodes + '</div></div>' +
             '</div>' +
             loopsHtml +
         '</div>';
@@ -226,7 +234,7 @@ function renderSkillTechTree(container, skills) {
             var cdash = 50 * (1 - cexp / 100);
             cogNodes += '<div class="cognitive-pillar" style="--pillar-color:' + ccolor + ';" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + cdash + '" style="stroke:' + ccolor + ';"/></svg><span class="cognitive-level">' + clevel + '</span></div><span class="cognitive-name">' + cname + '</span>' + (s.name === 'product-thinking' ? '<span class="cognitive-badge">内置</span>' : '') + '</div>';
         }
-        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">思维工具</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '思考过程中的元技能') + '</div></div>';
+        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">思维框架</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '独立思维能力，贯穿所有任务') + '</div></div>';
     }
     
     // === 做事工具（原系统工具）===
@@ -243,7 +251,7 @@ function renderSkillTechTree(container, skills) {
             var ssdash = 50 * (1 - ssexp / 100);
             sysNodes += '<div class="cognitive-pillar" style="--pillar-color:' + sscolor + ';" onmouseenter="showTreeTooltip(event, \'' + ssid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + ssdash + '" style="stroke:' + sscolor + ';"/></svg><span class="cognitive-level">' + sslevel + '</span></div><span class="cognitive-name">' + ssname + '</span></div>';
         }
-        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">做事工具</span></div><div class="cognitive-pillars">' + sysNodes + '</div><div class="cognitive-note" style="color:rgba(94, 196, 212, 0.5);">' + (relationships.system_note || '执行过程中的元技能') + '</div></div>';
+        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">工作基座</span></div><div class="cognitive-pillars">' + sysNodes + '</div><div class="cognitive-note" style="color:rgba(94, 196, 212, 0.5);">' + (relationships.system_note || '支撑工作运转的基础能力') + '</div></div>';;
     }
     
     function renderLayerTransition(text) {
@@ -265,7 +273,7 @@ function renderSkillTechTree(container, skills) {
             var domId = storeGeneric(dInfo.icon || '\uD83C\uDFAF', dClean, (dInfo.description || '') + '\n包含 ' + dSkills.length + ' 个技能', '');
             domainCards += '<div class="domain-card" style="--domain-color:' + (dInfo.color || '#8b5cf6') + ';" onmouseenter="showTreeTooltip(event, \'' + domId + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="domain-card-header"><span class="domain-card-icon">' + (dInfo.icon || '\uD83C\uDFAF') + '</span><span class="domain-card-name">' + dClean + '</span></div><div class="domain-card-desc">' + (dInfo.description || '') + '</div><div class="domain-card-skills">' + dChips + '</div></div>';
         }
-        domainHtml = '<div class="domain-layer"><div class="domain-layer-header"><span class="domain-layer-icon">\uD83C\uDFAF</span><span class="domain-layer-title">领域技能包</span><span class="domain-layer-desc">特定领域的完整解决方案</span></div><div class="domain-cards-grid">' + domainCards + '</div></div>';
+        domainHtml = '<div class="domain-layer"><div class="domain-layer-header"><span class="domain-layer-icon">\uD83C\uDFAF</span><span class="domain-layer-title">领域能力层</span><span class="domain-layer-desc">特定领域的完整解决方案</span></div><div class="domain-cards-grid">' + domainCards + '</div></div>';
     }
     
     // === 执行技能层 ===

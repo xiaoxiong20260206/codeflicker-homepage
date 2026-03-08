@@ -555,7 +555,7 @@
 .system-section {
     background: rgba(94, 196, 212, 0.05);
     border: 1px solid rgba(94, 196, 212, 0.2);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 12px;
     display: flex;
     flex-direction: column;

@@ -148,6 +148,7 @@ body {
         0 0 6px var(--sheikah-blue-light),
         0 0 14px rgba(0, 212, 255, 0.2);
     animation: spark-float 6s ease-in-out infinite;
+    will-change: transform, opacity;
 }
 
 @keyframes spark-float {
@@ -165,7 +166,7 @@ body {
     contain: strict;
 }
 
-/* 旧版 emoji 粒子兼容 */
+/* 旧版 emoji 粒子兼容（v3.0 遗留，新版已使用 .leaf-particle SVG 系统） */
 .particle {
     position: absolute;
     font-size: 18px;
@@ -196,7 +197,7 @@ body {
     }
 }
 
-/* 希卡蓝光点粒子 - 兼容旧版 */
+/* 旧版希卡蓝光点粒子（v3.0 遗留，新版已使用 .sheikah-spark 系统） */
 .light-particle {
     position: absolute;
     width: 4px;
@@ -2756,12 +2757,28 @@ body {
 .reveal:nth-child(4) { transition-delay: 0.24s; }
 
 /* ==================== v4.0 鼠标跟随光效 ==================== */
-.mouse-glow-active {
-    background-image: radial-gradient(
+/* 使用 ::after 伪元素实现，避免覆盖卡片自身 background */
+.stat-item,
+.overview-card,
+.cap-card,
+.value-card,
+.highlight-card,
+.work-card-mini {
+    position: relative;
+}
+
+.mouse-glow-active::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
         circle 120px at var(--glow-x, 50%) var(--glow-y, 50%),
         rgba(0, 212, 255, 0.06),
         transparent
-    ) !important;
+    );
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* ==================== v4.0 希卡之眼装饰 ==================== */
@@ -2847,6 +2864,24 @@ body {
     .skills-grid,
     .projects-grid {
         grid-template-columns: 1fr;
+    }
+    
+    /* v4.0 移动端性能优化：隐藏高开销背景层 */
+    .topographic-layer {
+        display: none;
+    }
+    
+    .cloud-layer {
+        animation: none;
+    }
+    
+    .landscape-layer {
+        height: 20vh;
+    }
+    
+    /* 希卡分割线在移动端稍微收窄 */
+    .sheikah-divider {
+        margin: 18px 0;
     }
     
     /* 移动端菜单按钮 */

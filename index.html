@@ -3694,30 +3694,47 @@
             }
         }
 
-        // v4.0 Scroll Reveal 动画
+        // v4.0 Scroll Reveal 动画 - 支持动态DOM
         function initScrollReveal() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) entry.target.classList.add('visible');
                 });
             }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            
+            // 观察现有 .reveal 元素
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            
+            // 监听动态添加的 .reveal 元素
+            const mutObs = new MutationObserver(mutations => {
+                mutations.forEach(m => {
+                    m.addedNodes.forEach(node => {
+                        if (node.nodeType === 1) {
+                            if (node.classList?.contains('reveal')) observer.observe(node);
+                            node.querySelectorAll?.('.reveal').forEach(el => observer.observe(el));
+                        }
+                    });
+                });
+            });
+            mutObs.observe(document.body, { childList: true, subtree: true });
         }
 
-        // v4.0 鼠标跟随光效
+        // v4.0 鼠标跟随光效 - 使用事件委托支持动态DOM
         function initMouseGlow() {
-            document.querySelectorAll('.stat-item, .overview-card, .cap-card, .value-card, .highlight-card, .work-card-mini').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--glow-x', x + 'px');
-                    card.style.setProperty('--glow-y', y + 'px');
-                    card.classList.add('mouse-glow-active');
-                });
-                card.addEventListener('mouseleave', () => {
+            const glowSelectors = '.stat-item, .overview-card, .cap-card, .value-card, .highlight-card, .work-card-mini';
+            document.addEventListener('mousemove', (e) => {
+                const card = e.target.closest(glowSelectors);
+                if (!card) return;
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--glow-x', (e.clientX - rect.left) + 'px');
+                card.style.setProperty('--glow-y', (e.clientY - rect.top) + 'px');
+                card.classList.add('mouse-glow-active');
+            });
+            document.addEventListener('mouseout', (e) => {
+                const card = e.target.closest(glowSelectors);
+                if (card && !card.contains(e.relatedTarget)) {
                     card.classList.remove('mouse-glow-active');
-                });
+                }
             });
         }
         
@@ -3739,7 +3756,7 @@
             initMouseGlow();
         });
     </script>
-    <script src="scripts/ability-trees.js?v=14"></script>
-    <script src="scripts/app.js?v=14"></script>
+    <script src="scripts/ability-trees.js?v=15"></script>
+    <script src="scripts/app.js?v=15"></script>
 </body>
 </html>

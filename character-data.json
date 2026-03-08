@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-08T22:36:57.560839",
+  "generatedAt": "2026-03-09T06:00:25.402654",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,7 +15,7 @@
       "memory": 100,
       "execution": 100,
       "learning": 100,
-      "insight": 80.08771929824562,
+      "insight": 80.6140350877193,
       "creativity": 80
     }
   },
@@ -39,6 +39,18 @@
             "callCount": 156,
             "frequency": "1.2次/天",
             "successRate": 94
+          },
+          {
+            "name": "meta-execution",
+            "displayName": "元执行",
+            "source": "AI核心能力",
+            "level": 4,
+            "exp": 76,
+            "description": "元执行框架：一次把事情做对的自审机制",
+            "lastUpdated": "2026-03-06",
+            "callCount": 312,
+            "frequency": "2.4次/天",
+            "successRate": 97
           },
           {
             "name": "neigong-cultivation",
@@ -75,18 +87,6 @@
             "callCount": 89,
             "frequency": "0.7次/天",
             "successRate": 91
-          },
-          {
-            "name": "meta-execution",
-            "displayName": "元执行",
-            "source": "AI核心能力",
-            "level": 3,
-            "exp": 64,
-            "description": "元执行框架：一次把事情做对的自审机制",
-            "lastUpdated": "2026-03-06",
-            "callCount": 312,
-            "frequency": "2.4次/天",
-            "successRate": 97
           },
           {
             "name": "memory-hygiene",
@@ -126,7 +126,7 @@
           }
         ],
         "count": 8,
-        "avgLevel": 3.5
+        "avgLevel": 3.6
       },
       "🧠 思维框架": {
         "icon": "🧠",
@@ -486,13 +486,25 @@
             "name": "web-dev-workflow",
             "displayName": "网页开发",
             "source": "用户自定义",
-            "level": 4,
-            "exp": 82,
+            "level": 5,
+            "exp": 85,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
             "lastUpdated": "2026-03-02",
             "callCount": 187,
             "frequency": "1.4次/天",
             "successRate": 93
+          },
+          {
+            "name": "ai-image-generator",
+            "displayName": "AI图片生成",
+            "source": "用户自定义",
+            "level": 5,
+            "exp": 85,
+            "description": "AI图片生成：架构图、流程图、信息图、路线图、对比图等",
+            "lastUpdated": "2026-03-08",
+            "callCount": 32,
+            "frequency": "0.2次/天",
+            "successRate": 91
           },
           {
             "name": "frontend-design",
@@ -531,8 +543,8 @@
             "successRate": 88
           }
         ],
-        "count": 5,
-        "avgLevel": 4.2
+        "count": 6,
+        "avgLevel": 4.5
       },
       "🎭 风格模板": {
         "icon": "🎭",
@@ -623,11 +635,23 @@
             "successRate": 95
           },
           {
+            "name": "codeflicker-homepage",
+            "displayName": "个人首页",
+            "source": "用户自定义",
+            "level": 4,
+            "exp": 70,
+            "description": "AI助手个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
+            "lastUpdated": "2026-03-08",
+            "callCount": 68,
+            "frequency": "0.5次/天",
+            "successRate": 93
+          },
+          {
             "name": "github-deploy-publisher",
             "displayName": "GitHub部署",
             "source": "用户自定义",
             "level": 3,
-            "exp": 66,
+            "exp": 69,
             "description": "自动化GitHub仓库创建、代码提交、Pages部署",
             "lastUpdated": "2026-02-25",
             "callCount": 72,
@@ -671,8 +695,8 @@
             "successRate": 90
           }
         ],
-        "count": 6,
-        "avgLevel": 3.0
+        "count": 7,
+        "avgLevel": 3.1
       },
       "📝 创作与辅导": {
         "icon": "📝",
@@ -801,39 +825,6 @@
         ],
         "count": 6,
         "avgLevel": 3.7
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "layer": "execution",
-        "skills": [
-          {
-            "name": "ai-image-generator",
-            "displayName": "ai-image-generator",
-            "source": "codeflicker",
-            "level": 5,
-            "exp": 85,
-            "description": "AI 图像生成器是一个通用的图像生成工具，可以根据用户的文字描述或结构化文档生成各种类型的图片。支持多种现代设计风格，适用于技术文档、商业演示、知识分享等场景。",
-            "lastUpdated": "2026-03-08",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "codeflicker-homepage",
-            "displayName": "codeflicker-homepage",
-            "source": "codeflicker",
-            "level": 3,
-            "exp": 67,
-            "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1+C2+C3+C5: 首页门面+脱敏+部署+公开）。",
-            "lastUpdated": "2026-03-08",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          }
-        ],
-        "count": 2,
-        "avgLevel": 4.0
       }
     },
     "tree": {
@@ -859,6 +850,18 @@
                 "callCount": 156,
                 "frequency": "1.2次/天",
                 "successRate": 94
+              },
+              {
+                "name": "meta-execution",
+                "displayName": "元执行",
+                "source": "AI核心能力",
+                "level": 4,
+                "exp": 76,
+                "description": "元执行框架：一次把事情做对的自审机制",
+                "lastUpdated": "2026-03-06",
+                "callCount": 312,
+                "frequency": "2.4次/天",
+                "successRate": 97
               },
               {
                 "name": "neigong-cultivation",
@@ -895,18 +898,6 @@
                 "callCount": 89,
                 "frequency": "0.7次/天",
                 "successRate": 91
-              },
-              {
-                "name": "meta-execution",
-                "displayName": "元执行",
-                "source": "AI核心能力",
-                "level": 3,
-                "exp": 64,
-                "description": "元执行框架：一次把事情做对的自审机制",
-                "lastUpdated": "2026-03-06",
-                "callCount": 312,
-                "frequency": "2.4次/天",
-                "successRate": 97
               },
               {
                 "name": "memory-hygiene",
@@ -946,7 +937,7 @@
               }
             ],
             "count": 8,
-            "avgLevel": 3.5
+            "avgLevel": 3.6
           },
           "🧠 思维框架": {
             "icon": "🧠",
@@ -1040,7 +1031,7 @@
           }
         },
         "count": 14,
-        "avgLevel": 3.5
+        "avgLevel": 3.6
       },
       "domain_pack": {
         "name": "🎯 领域能力层",
@@ -1319,13 +1310,25 @@
                 "name": "web-dev-workflow",
                 "displayName": "网页开发",
                 "source": "用户自定义",
-                "level": 4,
-                "exp": 82,
+                "level": 5,
+                "exp": 85,
                 "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
                 "lastUpdated": "2026-03-02",
                 "callCount": 187,
                 "frequency": "1.4次/天",
                 "successRate": 93
+              },
+              {
+                "name": "ai-image-generator",
+                "displayName": "AI图片生成",
+                "source": "用户自定义",
+                "level": 5,
+                "exp": 85,
+                "description": "AI图片生成：架构图、流程图、信息图、路线图、对比图等",
+                "lastUpdated": "2026-03-08",
+                "callCount": 32,
+                "frequency": "0.2次/天",
+                "successRate": 91
               },
               {
                 "name": "frontend-design",
@@ -1364,8 +1367,8 @@
                 "successRate": 88
               }
             ],
-            "count": 5,
-            "avgLevel": 4.2
+            "count": 6,
+            "avgLevel": 4.5
           },
           "🎭 风格模板": {
             "icon": "🎭",
@@ -1454,11 +1457,23 @@
                 "successRate": 95
               },
               {
+                "name": "codeflicker-homepage",
+                "displayName": "个人首页",
+                "source": "用户自定义",
+                "level": 4,
+                "exp": 70,
+                "description": "AI助手个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
+                "lastUpdated": "2026-03-08",
+                "callCount": 68,
+                "frequency": "0.5次/天",
+                "successRate": 93
+              },
+              {
                 "name": "github-deploy-publisher",
                 "displayName": "GitHub部署",
                 "source": "用户自定义",
                 "level": 3,
-                "exp": 66,
+                "exp": 69,
                 "description": "自动化GitHub仓库创建、代码提交、Pages部署",
                 "lastUpdated": "2026-02-25",
                 "callCount": 72,
@@ -1502,8 +1517,8 @@
                 "successRate": 90
               }
             ],
-            "count": 6,
-            "avgLevel": 3.0
+            "count": 7,
+            "avgLevel": 3.1
           },
           "📝 创作与辅导": {
             "icon": "📝",
@@ -1630,43 +1645,10 @@
             ],
             "count": 6,
             "avgLevel": 3.7
-          },
-          "其他技能": {
-            "icon": "📦",
-            "color": "#64748b",
-            "layer": "execution",
-            "skills": [
-              {
-                "name": "ai-image-generator",
-                "displayName": "ai-image-generator",
-                "source": "codeflicker",
-                "level": 5,
-                "exp": 85,
-                "description": "AI 图像生成器是一个通用的图像生成工具，可以根据用户的文字描述或结构化文档生成各种类型的图片。支持多种现代设计风格，适用于技术文档、商业演示、知识分享等场景。",
-                "lastUpdated": "2026-03-08",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "codeflicker-homepage",
-                "displayName": "codeflicker-homepage",
-                "source": "codeflicker",
-                "level": 3,
-                "exp": 67,
-                "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1+C2+C3+C5: 首页门面+脱敏+部署+公开）。",
-                "lastUpdated": "2026-03-08",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              }
-            ],
-            "count": 2,
-            "avgLevel": 4.0
           }
         },
         "count": 39,
-        "avgLevel": 3.5
+        "avgLevel": 3.6
       }
     },
     "relationships": {
@@ -2195,25 +2177,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "GitHub 公开仓库安全审计经验（完整版）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： 泄露载体清单（安全扫描必检项） 1. Git commit auth...",
-        "keywords": [
-          "GitHub",
-          "安全审计",
-          "敏感信息",
-          "git-filter-repo",
-          "package-lock"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-07",
-        "source": "用户显式记录"
-      },
-      {
         "title": "HTML截图到Docs文档的踩坑经验（含高度计算强制规则）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2309,25 +2272,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "UI元素布局影响检查规则（含overflow裁切三分法）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "UI元素布局影响检查规则（含overflow裁切三分法）。 核心规则一：增删的双向影响： - 增加元素时：检查是否溢出容器→宁大勿小，默认...",
-        "keywords": [
-          "overflow",
-          "hidden",
-          "裁切",
-          "截断",
-          "溢出"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
         "title": "pathlib rglob/glob 不跟踪软链接（symlinks）导致数据丢失",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2344,25 +2288,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-07",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "三棵树分类配置同步清单（v4.0 三层架构版）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "新建技能/知识库/记忆分类时，必须同步更新多个位置，否则首页显示异常。 v4.0 三棵树统一三层架构（2026-03-08） 三棵树共享统一的 l...",
-        "keywords": [
-          "配置漂移",
-          "技能分类",
-          "知识分类",
-          "记忆分类",
-          "三层架构"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -2594,25 +2519,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "声明式标记≠实际执行（frontmatter/WARNING不等于流程步骤）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "声明式标记≠实际执行：frontmatter/WARNING块不等于流程步骤 问题：20个技能的 frontmatter 都标记了 `req...",
-        "keywords": [
-          "声明式标记",
-          "实际执行",
-          "frontmatter",
-          "meta-execution",
-          "强制绑定"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
         "title": "多文件联动更新的隐式耦合陷阱（v3：含环境阻塞+概念联动）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -2626,25 +2532,6 @@
           "数据一致性",
           "多文件",
           "概念重命名"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "多步骤工作流中的静默失败陷阱（每步断言原则）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "多步骤工作流中的静默失败陷阱 来源 2026-03-08 AI日报部署时，git push org main 返回 \"repositor...",
-        "keywords": [
-          "静默失败",
-          "断言",
-          "检查返回值",
-          "多步骤",
-          "工作流"
         ],
         "importance": 5,
         "updatedAt": "2026-03-08",
@@ -2781,25 +2668,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-07",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "新层交互盲区：视觉升级的四问检查法",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "新层交互盲区（视觉升级批量踩坑总结） 来源 2026-03-08 codeflicker-homepage v4.0 塞尔达风格升级，一次提...",
-        "keywords": [
-          "新层交互",
-          "CSS覆盖",
-          "!important",
-          "伪元素",
-          "动态DOM"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -3161,6 +3029,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "GitHub 公开仓库安全审计（已迁移→github-deploy-publisher）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "公开仓库安全审计9项必检：commit author/email、lock文件内部registry、.DS_Store、JSON数据、JS映射表、.npm...",
+        "keywords": [
+          "GitHub",
+          "安全审计",
+          "敏感信息",
+          "git-filter-repo",
+          "脱敏"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "SVG开发规范（viewBox+响应式）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -3196,6 +3083,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "UI元素布局影响检查规则（已迁移→web-dev-workflow）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "overflow:hidden 三分法：A类文本截断(安全)、B类结构裁切(安全)、C类容器+负偏移子元素(高风险)。增删UI元素时检查容器高度和溢出。 ...",
+        "keywords": [
+          "overflow",
+          "hidden",
+          "裁切",
+          "CSS",
+          "布局"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -3275,6 +3181,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "三棵树分类配置同步清单（已迁移→codeflicker-homepage）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "新建技能/知识库/记忆分类时，必须同步 generate_character_data.py（3个CATEGORIES+DESCRIPTIONS）、abi...",
+        "keywords": [
+          "配置漂移",
+          "技能分类",
+          "记忆分类",
+          "三层架构",
+          "SKILL_CATEGORIES"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "五层思考框架：从执行到战略",
         "category": "task_flow_experience",
         "categoryLabel": "思维/工作模式",
@@ -3332,19 +3257,19 @@
         "source": "用户显式记录"
       },
       {
-        "title": "元工具的自举困境：质量机制本身也需要质量保证",
+        "title": "元工具的自举困境（已迁移→meta-execution）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "元工具的自举困境：质量机制本身也需要质量保证 问题：meta-execution 是用来保证交付质量的机制，但它自己的文档有编号重复(P2...",
+        "categoryLabel": "领域踩坑",
+        "layer": null,
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "元技能自审自己有盲区（自举困境）。修改元技能后必须用 research_task 做外部审计，不能只靠自己Review。 📚 详细分析已迁移至：`~/.c...",
         "keywords": [
           "自举困境",
           "元技能",
           "自证悖论",
           "外部审计",
-          "质量保证"
+          "meta-execution"
         ],
         "importance": 4,
         "updatedAt": "2026-03-08",
@@ -3426,6 +3351,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "声明式标记≠实际执行（已迁移→meta-execution）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "领域踩坑",
+        "layer": null,
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "声明式配置（frontmatter/WARNING）≠过程式执行。Agent不会因为看到 requires_meta_execution: true ...",
+        "keywords": [
+          "声明式标记",
+          "实际执行",
+          "frontmatter",
+          "meta-execution",
+          "强制绑定"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "外部API权限必须前置验证",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
@@ -3442,6 +3386,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "多步骤工作流静默失败陷阱（已迁移→meta-execution）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "领域踩坑",
+        "layer": null,
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "多步骤工作流中，关键步骤必须检查返回值/状态。静默失败比显式失败危险10倍。当发现自己在\"跳过错误继续执行\"时，必须停下来。 📚 详细规则已迁移至：`~/...",
+        "keywords": [
+          "静默失败",
+          "断言",
+          "检查返回值",
+          "多步骤",
+          "工作流"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -3577,6 +3540,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "新层交互盲区（已迁移→web-dev-workflow）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "新增视觉/交互层后必须检查四种交叉点：CSS覆盖、DOM时序、设备性能、缓存通知。同批次元素必须横向对齐审查。 📚 详细内容已迁移至：`~/.codefl...",
+        "keywords": [
+          "新层交互",
+          "CSS覆盖",
+          "事件委托",
+          "移动端性能",
+          "已迁移"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "用户显式记录"
+      },
+      {
         "title": "新领域学习的\"信息源优先\"原则",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
@@ -3709,13 +3691,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "清单≠全集：批量操作前必须全量扫描",
+        "title": "清单≠全集（已迁移→meta-execution）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "领域踩坑",
         "layer": null,
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "清单≠全集：批量操作前必须全量扫描 问题：给技能批量添加 meta-execution 绑定时，只看了现有清单（10个），实际应标20个，...",
+        "description": "批量操作前必须全量扫描确认完整集合，禁止直接信任现有清单。扫描结果数 vs 清单数有差异必须先解释。 📚 详细规则已迁移至：`~/.codeflicker...",
         "keywords": [
           "批量操作",
           "全量扫描",
@@ -4087,7 +4069,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 108,
+    "total": 105,
     "byCategory": {
       "development_practice_specification": {
         "count": 12,
@@ -5349,21 +5331,21 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "UI元素布局影响检查规则（含overflow裁切三分法）",
+                "title": "UI元素布局影响检查规则（已迁移→web-dev-workflow）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "UI元素布局影响检查规则（含overflow裁切三分法）。 核心规则一：增删的双向影响： - 增加元素时：检查是否溢出容器→宁大勿小，默认...",
+                "description": "overflow:hidden 三分法：A类文本截断(安全)、B类结构裁切(安全)、C类容器+负偏移子元素(高风险)。增删UI元素时检查容器高度和溢出。 ...",
                 "keywords": [
                   "overflow",
                   "hidden",
                   "裁切",
-                  "截断",
-                  "溢出"
+                  "CSS",
+                  "布局"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
@@ -5406,21 +5388,21 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "三棵树分类配置同步清单（v4.0 三层架构版）",
+                "title": "三棵树分类配置同步清单（已迁移→codeflicker-homepage）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "新建技能/知识库/记忆分类时，必须同步更新多个位置，否则首页显示异常。 v4.0 三棵树统一三层架构（2026-03-08） 三棵树共享统一的 l...",
+                "description": "新建技能/知识库/记忆分类时，必须同步 generate_character_data.py（3个CATEGORIES+DESCRIPTIONS）、abi...",
                 "keywords": [
                   "配置漂移",
                   "技能分类",
-                  "知识分类",
                   "记忆分类",
-                  "三层架构"
+                  "三层架构",
+                  "SKILL_CATEGORIES"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
@@ -5520,40 +5502,21 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "新层交互盲区：视觉升级的四问检查法",
+                "title": "新层交互盲区（已迁移→web-dev-workflow）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "新层交互盲区（视觉升级批量踩坑总结） 来源 2026-03-08 codeflicker-homepage v4.0 塞尔达风格升级，一次提...",
+                "description": "新增视觉/交互层后必须检查四种交叉点：CSS覆盖、DOM时序、设备性能、缓存通知。同批次元素必须横向对齐审查。 📚 详细内容已迁移至：`~/.codefl...",
                 "keywords": [
                   "新层交互",
                   "CSS覆盖",
-                  "!important",
-                  "伪元素",
-                  "动态DOM"
+                  "事件委托",
+                  "移动端性能",
+                  "已迁移"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "声明式标记≠实际执行（frontmatter/WARNING不等于流程步骤）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "声明式标记≠实际执行：frontmatter/WARNING块不等于流程步骤 问题：20个技能的 frontmatter 都标记了 `req...",
-                "keywords": [
-                  "声明式标记",
-                  "实际执行",
-                  "frontmatter",
-                  "meta-execution",
-                  "强制绑定"
-                ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
@@ -5786,7 +5749,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 36
+            "count": 35
           },
           "发布部署": {
             "icon": "🚀",
@@ -5807,25 +5770,6 @@
                   "缓存",
                   "GitHub Pages",
                   "锁冲突"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "多步骤工作流中的静默失败陷阱（每步断言原则）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "多步骤工作流中的静默失败陷阱 来源 2026-03-08 AI日报部署时，git push org main 返回 \"repositor...",
-                "keywords": [
-                  "静默失败",
-                  "断言",
-                  "检查返回值",
-                  "多步骤",
-                  "工作流"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-08",
@@ -5889,22 +5833,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "GitHub 公开仓库安全审计经验（完整版）",
+                "title": "GitHub 公开仓库安全审计（已迁移→github-deploy-publisher）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： 泄露载体清单（安全扫描必检项） 1. Git commit auth...",
+                "description": "公开仓库安全审计9项必检：commit author/email、lock文件内部registry、.DS_Store、JSON数据、JS映射表、.npm...",
                 "keywords": [
                   "GitHub",
                   "安全审计",
                   "敏感信息",
                   "git-filter-repo",
-                  "package-lock"
+                  "脱敏"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-07",
+                "importance": 4,
+                "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
               },
               {
@@ -5927,7 +5871,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 7
+            "count": 6
           },
           "文档处理": {
             "icon": "📄",
@@ -5973,25 +5917,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "元工具的自举困境：质量机制本身也需要质量保证",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "文档处理",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "📄",
-                "color": "#38bdf8",
-                "description": "元工具的自举困境：质量机制本身也需要质量保证 问题：meta-execution 是用来保证交付质量的机制，但它自己的文档有编号重复(P2...",
-                "keywords": [
-                  "自举困境",
-                  "元技能",
-                  "自证悖论",
-                  "外部审计",
-                  "质量保证"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-08",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "pptxgenjs阴影溢出问题",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "文档处理",
@@ -6030,7 +5955,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 4
           },
           "消息通信": {
             "icon": "💬",
@@ -6274,13 +6199,12 @@
             "count": 3
           }
         },
-        "count": 59
+        "count": 56
       }
     }
   },
   "growthHistory": {
     "dates": [
-      "02-28",
       "03-01",
       "03-02",
       "03-03",
@@ -6293,10 +6217,10 @@
       "03-04",
       "03-05",
       "03-08",
+      "03-08",
       "03-08"
     ],
     "skills": [
-      30,
       32,
       39,
       40,
@@ -6309,10 +6233,10 @@
       42,
       43,
       53,
+      57,
       57
     ],
     "knowledge": [
-      150,
       150,
       150,
       151,
@@ -6325,10 +6249,10 @@
       152,
       152,
       160,
+      160,
       160
     ],
     "memories": [
-      19,
       20,
       38,
       52,
@@ -6341,6 +6265,7 @@
       65,
       69,
       112,
+      113,
       113
     ]
   },
@@ -6372,7 +6297,7 @@
       "name": "知识贤者",
       "desc": "积累206个知识文档，博学多识",
       "icon": "📚",
-      "date": "2026-03-08",
+      "date": "2026-03-09",
       "unlocked": true,
       "progress": 100,
       "rarity": "epic",
@@ -6388,7 +6313,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "57/50",
-      "date": "2026-03-08"
+      "date": "2026-03-09"
     },
     {
       "id": "knowledge_200",
@@ -6400,7 +6325,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "206/200",
-      "date": "2026-03-08"
+      "date": "2026-03-09"
     },
     {
       "id": "daily_report",
@@ -6451,7 +6376,7 @@
       "name": "技能大师",
       "desc": "拥有57项技能，触类旁通",
       "icon": "⚡",
-      "date": "2026-03-08",
+      "date": "2026-03-09",
       "unlocked": true,
       "progress": 100,
       "rarity": "rare",
@@ -6467,7 +6392,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "113/30",
-      "date": "2026-03-08"
+      "date": "2026-03-09"
     },
     {
       "id": "first_awakening",

@@ -2440,11 +2440,33 @@ function showTreeTooltip(event, id, type) {
     const sourceSection = tooltip.querySelector('.tip-source-section');
     const upgradeEl = tooltip.querySelector('.tip-upgrade');
     const upgradeSection = tooltip.querySelector('.tip-upgrade-section');
+    const sourceBadge = tooltip.querySelector('.tip-source-badge');
+    const metricsSection = tooltip.querySelector('.tip-metrics-section');
     
     iconEl.textContent = data.catIcon || data.icon || '⚡';
     nameEl.textContent = data.name;
     typeEl.textContent = type === 'skill' ? '技能' : type === 'knowledge' ? '知识' : '记忆';
-    lvNumEl.textContent = 'Lv.' + (data.level || 1);
+    lvNumEl.textContent = data.level ? 'Lv.' + data.level : '';
+    
+    // 来源badge
+    if (sourceBadge && data.sourceLabel) {
+        var badgeType = data.sourceLabel === '内置技能' ? 'builtin' : data.sourceLabel === '自定义' ? 'custom' : 'platform';
+        sourceBadge.textContent = data.sourceLabel;
+        sourceBadge.setAttribute('data-type', badgeType);
+        sourceBadge.style.display = 'inline';
+    } else if (sourceBadge) {
+        sourceBadge.style.display = 'none';
+    }
+    
+    // 指标
+    if (metricsSection && data.callCount > 0) {
+        tooltip.querySelector('.tip-call-count').textContent = data.callCount;
+        tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
+        tooltip.querySelector('.tip-success-rate').textContent = data.successRate ? data.successRate + '%' : '-';
+        metricsSection.style.display = 'block';
+    } else if (metricsSection) {
+        metricsSection.style.display = 'none';
+    }
     
     descEl.textContent = data.description || '暂无描述';
     descEl.style.whiteSpace = 'normal';

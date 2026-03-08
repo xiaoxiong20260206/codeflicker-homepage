@@ -73,12 +73,24 @@ function renderSkillTechTree(container, skills) {
     }
     
     var _idx = 0;
+    function classifySource(src) {
+        if (!src) return { label: '未知', badge: '❓' };
+        if (src === 'AI核心能力' || src === 'AI核心能力') return { label: '内置技能', badge: '🔧' };
+        if (src === '用户自定义') return { label: '自定义', badge: '✏️' };
+        if (src.indexOf('技能库') > -1) return { label: '平台技能', badge: '📦' };
+        return { label: src, badge: '📍' };
+    }
     function storeSkill(skill) {
         var id = 'skill-' + (_idx++);
+        var src = classifySource(skill.source);
         window.AppState.dataMap[id] = {
             name: getName(skill), icon: '\u26A1', level: skill.level || 1,
             description: skill.description || '', source: skill.source || '技能库',
-            exp: skill.exp || 0, lastUpdated: skill.lastUpdated
+            sourceLabel: src.label, sourceBadge: src.badge,
+            exp: skill.exp || 0, lastUpdated: skill.lastUpdated,
+            callCount: skill.callCount || 0,
+            frequency: skill.frequency || '',
+            successRate: skill.successRate || 0
         };
         return id;
     }
@@ -200,7 +212,7 @@ function renderSkillTechTree(container, skills) {
         '</div>';
     }
     
-    // === 认知框架 ===
+    // === 思维工具（原认知框架）===
     var cognitiveHtml = '';
     if (cognitiveCat && cognitiveCat.skills) {
         var cogNodes = '';
@@ -214,17 +226,24 @@ function renderSkillTechTree(container, skills) {
             var cdash = 50 * (1 - cexp / 100);
             cogNodes += '<div class="cognitive-pillar" style="--pillar-color:' + ccolor + ';" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + cdash + '" style="stroke:' + ccolor + ';"/></svg><span class="cognitive-level">' + clevel + '</span></div><span class="cognitive-name">' + cname + '</span>' + (s.name === 'product-thinking' ? '<span class="cognitive-badge">内置</span>' : '') + '</div>';
         }
-        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">认知框架</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '可被任何任务调用') + '</div></div>';
+        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">思维工具</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '思考过程中的元技能') + '</div></div>';
     }
     
-    // === 系统工具 ===
+    // === 做事工具（原系统工具）===
     var systemHtml = '';
     if (systemCat && systemCat.skills) {
-        var sysChips = '';
+        var sysNodes = '';
         for (var si = 0; si < systemCat.skills.length; si++) {
-            sysChips += createSkillChip(systemCat.skills[si]);
+            var ss = systemCat.skills[si];
+            var ssid = storeSkill(ss);
+            var ssname = getName(ss);
+            var sslevel = ss.level || 1;
+            var sscolor = getLevelColor(sslevel);
+            var ssexp = ss.exp || (sslevel * 20);
+            var ssdash = 50 * (1 - ssexp / 100);
+            sysNodes += '<div class="cognitive-pillar" style="--pillar-color:' + sscolor + ';" onmouseenter="showTreeTooltip(event, \'' + ssid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + ssdash + '" style="stroke:' + sscolor + ';"/></svg><span class="cognitive-level">' + sslevel + '</span></div><span class="cognitive-name">' + ssname + '</span></div>';
         }
-        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">系统工具</span></div><div class="system-chips">' + sysChips + '</div><div class="system-note">' + (relationships.system_note || '基础设施') + '</div></div>';
+        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">做事工具</span></div><div class="cognitive-pillars">' + sysNodes + '</div><div class="cognitive-note" style="color:rgba(94, 196, 212, 0.5);">' + (relationships.system_note || '执行过程中的元技能') + '</div></div>';
     }
     
     function renderLayerTransition(text) {

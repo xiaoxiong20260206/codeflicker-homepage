@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-08T07:57:06.533056",
+  "generatedAt": "2026-03-08T08:48:51.011240",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -35,7 +35,10 @@
             "level": 5,
             "exp": 85,
             "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
-            "lastUpdated": "2026-03-02"
+            "lastUpdated": "2026-03-02",
+            "callCount": 156,
+            "frequency": "1.2次/天",
+            "successRate": 94
           },
           {
             "name": "neigong-cultivation",
@@ -44,7 +47,10 @@
             "level": 4,
             "exp": 73,
             "description": "内功修炼：记忆/知识/技能三位一体优化器",
-            "lastUpdated": "2026-03-04"
+            "lastUpdated": "2026-03-04",
+            "callCount": 52,
+            "frequency": "0.4次/天",
+            "successRate": 93
           },
           {
             "name": "xiaowuxianggong",
@@ -53,7 +59,10 @@
             "level": 4,
             "exp": 70,
             "description": "自进化体系引导程序：导航、周检、月检、进化全景",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 48,
+            "frequency": "0.4次/天",
+            "successRate": 96
           },
           {
             "name": "learn-from-mistakes",
@@ -62,7 +71,10 @@
             "level": 3,
             "exp": 64,
             "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-03",
+            "callCount": 89,
+            "frequency": "0.7次/天",
+            "successRate": 91
           },
           {
             "name": "meta-execution",
@@ -71,7 +83,10 @@
             "level": 3,
             "exp": 64,
             "description": "元执行框架：一次把事情做对的自审机制",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 312,
+            "frequency": "2.4次/天",
+            "successRate": 97
           },
           {
             "name": "memory-hygiene",
@@ -80,7 +95,10 @@
             "level": 3,
             "exp": 58,
             "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 41,
+            "frequency": "0.3次/天",
+            "successRate": 96
           },
           {
             "name": "skill-architecture",
@@ -89,7 +107,10 @@
             "level": 3,
             "exp": 58,
             "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 18,
+            "frequency": "0.1次/天",
+            "successRate": 94
           },
           {
             "name": "knowledge-curator",
@@ -98,7 +119,10 @@
             "level": 3,
             "exp": 58,
             "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 22,
+            "frequency": "0.2次/天",
+            "successRate": 95
           }
         ],
         "count": 8,
@@ -117,7 +141,10 @@
             "level": 5,
             "exp": 85,
             "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 34,
+            "frequency": "0.3次/天",
+            "successRate": 88
           },
           {
             "name": "knowledge-acquisition-meta",
@@ -126,7 +153,10 @@
             "level": 4,
             "exp": 79,
             "description": "快速掌握新领域的元框架：五阶段渐进学习+三重质量闭环",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 27,
+            "frequency": "0.2次/天",
+            "successRate": 92
           },
           {
             "name": "product-thinking",
@@ -135,7 +165,10 @@
             "level": 4,
             "exp": 70,
             "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
-            "lastUpdated": "2026-03-05"
+            "lastUpdated": "2026-03-05",
+            "callCount": 278,
+            "frequency": "2.1次/天",
+            "successRate": 95
           }
         ],
         "count": 3,
@@ -154,7 +187,10 @@
             "level": 4,
             "exp": 70,
             "description": "夜间长任务执行器，断点恢复和自主执行",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-03",
+            "callCount": 35,
+            "frequency": "0.3次/天",
+            "successRate": 89
           },
           {
             "name": "knowledge-base",
@@ -163,7 +199,10 @@
             "level": 2,
             "exp": 48,
             "description": "个人知识库检索，按分类查找历史调研和文档",
-            "lastUpdated": "2026-02-24"
+            "lastUpdated": "2026-02-24",
+            "callCount": 67,
+            "frequency": "0.5次/天",
+            "successRate": 93
           },
           {
             "name": "find-skills",
@@ -172,7 +211,10 @@
             "level": 2,
             "exp": 48,
             "description": "技能发现和安装助手，寻找合适的能力扩展",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 15,
+            "frequency": "0.1次/天",
+            "successRate": 87
           }
         ],
         "count": 3,
@@ -191,7 +233,10 @@
             "level": 4,
             "exp": 82,
             "description": "AI持续洞察平台：日报/周报/深度调研/首页管理",
-            "lastUpdated": "2026-03-04"
+            "lastUpdated": "2026-03-04",
+            "callCount": 124,
+            "frequency": "1.0次/天",
+            "successRate": 91
           }
         ],
         "count": 1,
@@ -210,7 +255,10 @@
             "level": 4,
             "exp": 73,
             "description": "投资组合追踪，基金/股票/ETF持仓管理",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-03",
+            "callCount": 38,
+            "frequency": "0.3次/天",
+            "successRate": 92
           },
           {
             "name": "stock-analysis",
@@ -219,7 +267,10 @@
             "level": 3,
             "exp": 81,
             "description": "股票和加密货币分析，投资组合管理，定期报告",
-            "lastUpdated": "2026-02-25"
+            "lastUpdated": "2026-02-25",
+            "callCount": 45,
+            "frequency": "0.3次/天",
+            "successRate": 90
           },
           {
             "name": "investment-analyzer",
@@ -228,7 +279,10 @@
             "level": 2,
             "exp": 48,
             "description": "投资机会分析，跨资产类别评估和风险分析",
-            "lastUpdated": "2026-02-25"
+            "lastUpdated": "2026-02-25",
+            "callCount": 12,
+            "frequency": "0.1次/天",
+            "successRate": 85
           }
         ],
         "count": 3,
@@ -247,7 +301,10 @@
             "level": 3,
             "exp": 63,
             "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 18,
+            "frequency": "0.1次/天",
+            "successRate": 88
           },
           {
             "name": "apify-trend-analysis",
@@ -256,7 +313,10 @@
             "level": 2,
             "exp": 57,
             "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "apify-market-research",
@@ -265,7 +325,10 @@
             "level": 2,
             "exp": 57,
             "description": "市场调研，分析地理机会、定价、消费者行为",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "apify-competitor-intelligence",
@@ -274,7 +337,10 @@
             "level": 2,
             "exp": 57,
             "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "research",
@@ -283,7 +349,10 @@
             "level": 2,
             "exp": 54,
             "description": "AI驱动的通用研究能力，带引用的综合调研",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 42,
+            "frequency": "0.3次/天",
+            "successRate": 87
           },
           {
             "name": "wechat-research",
@@ -292,7 +361,10 @@
             "level": 2,
             "exp": 48,
             "description": "微信公众号内容调研、整理和知识库构建",
-            "lastUpdated": "2026-02-12"
+            "lastUpdated": "2026-02-12",
+            "callCount": 9,
+            "frequency": "0.1次/天",
+            "successRate": 85
           }
         ],
         "count": 6,
@@ -311,7 +383,10 @@
             "level": 5,
             "exp": 90,
             "description": "内部Docs文档与本地Markdown双向同步",
-            "lastUpdated": "2026-03-04"
+            "lastUpdated": "2026-03-04",
+            "callCount": 16,
+            "frequency": "0.1次/天",
+            "successRate": 90
           },
           {
             "name": "pdf",
@@ -320,7 +395,10 @@
             "level": 4,
             "exp": 85,
             "description": "PDF文档读取、提取、合并、拆分、OCR识别等全功能处理",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 85,
+            "frequency": "0.7次/天",
+            "successRate": 96
           },
           {
             "name": "pptx",
@@ -329,7 +407,10 @@
             "level": 4,
             "exp": 85,
             "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 47,
+            "frequency": "0.4次/天",
+            "successRate": 89
           },
           {
             "name": "keynote",
@@ -338,7 +419,10 @@
             "level": 4,
             "exp": 79,
             "description": "Apple Keynote演示文稿创建，JXA自动化支持",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-03",
+            "callCount": 19,
+            "frequency": "0.1次/天",
+            "successRate": 84
           },
           {
             "name": "docx",
@@ -347,7 +431,10 @@
             "level": 4,
             "exp": 75,
             "description": "Word文档创建、编辑、格式化，支持目录、页眉页脚、样式等",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 36,
+            "frequency": "0.3次/天",
+            "successRate": 93
           },
           {
             "name": "xlsx",
@@ -356,7 +443,10 @@
             "level": 4,
             "exp": 75,
             "description": "Excel电子表格处理，支持公式、图表、数据分析",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 24,
+            "frequency": "0.2次/天",
+            "successRate": 91
           },
           {
             "name": "canvas-design",
@@ -365,7 +455,10 @@
             "level": 4,
             "exp": 75,
             "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 31,
+            "frequency": "0.2次/天",
+            "successRate": 90
           },
           {
             "name": "yuque-publisher",
@@ -374,7 +467,10 @@
             "level": 2,
             "exp": 48,
             "description": "语雀知识库文档自动发布、同步和管理",
-            "lastUpdated": "2026-02-25"
+            "lastUpdated": "2026-02-25",
+            "callCount": 31,
+            "frequency": "0.2次/天",
+            "successRate": 90
           }
         ],
         "count": 8,
@@ -393,7 +489,10 @@
             "level": 5,
             "exp": 95,
             "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-03-08"
+            "lastUpdated": "2026-03-08",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "web-dev-workflow",
@@ -402,7 +501,10 @@
             "level": 4,
             "exp": 79,
             "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
-            "lastUpdated": "2026-03-02"
+            "lastUpdated": "2026-03-02",
+            "callCount": 187,
+            "frequency": "1.4次/天",
+            "successRate": 93
           },
           {
             "name": "frontend-design",
@@ -411,7 +513,10 @@
             "level": 4,
             "exp": 76,
             "description": "高质量前端界面设计，避免通用AI风格",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 96,
+            "frequency": "0.7次/天",
+            "successRate": 91
           },
           {
             "name": "ui-ux-pro-max",
@@ -420,7 +525,10 @@
             "level": 4,
             "exp": 75,
             "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 52,
+            "frequency": "0.4次/天",
+            "successRate": 92
           },
           {
             "name": "pixel-action-game",
@@ -429,7 +537,10 @@
             "level": 4,
             "exp": 75,
             "description": "像素风格动作游戏开发，含关卡设计和8位音效",
-            "lastUpdated": "2026-02-22"
+            "lastUpdated": "2026-02-22",
+            "callCount": 5,
+            "frequency": "<0.1/天",
+            "successRate": 88
           },
           {
             "name": "canvas-design",
@@ -438,7 +549,10 @@
             "level": 4,
             "exp": 75,
             "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 31,
+            "frequency": "0.2次/天",
+            "successRate": 90
           }
         ],
         "count": 6,
@@ -457,7 +571,10 @@
             "level": 5,
             "exp": 85,
             "description": "塞尔达·旷野之息风格页面设计规范",
-            "lastUpdated": "2026-03-01"
+            "lastUpdated": "2026-03-01",
+            "callCount": 42,
+            "frequency": "0.3次/天",
+            "successRate": 95
           },
           {
             "name": "theme-factory",
@@ -466,7 +583,10 @@
             "level": 4,
             "exp": 75,
             "description": "主题工厂，10种预设主题快速应用于各类文档",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 11,
+            "frequency": "0.1次/天",
+            "successRate": 94
           },
           {
             "name": "qingshuang-research-style",
@@ -475,7 +595,10 @@
             "level": 4,
             "exp": 73,
             "description": "清爽调研报告风格的CSS样式规范",
-            "lastUpdated": "2026-03-06"
+            "lastUpdated": "2026-03-06",
+            "callCount": 38,
+            "frequency": "0.3次/天",
+            "successRate": 94
           },
           {
             "name": "work-report-ppt",
@@ -484,7 +607,10 @@
             "level": 3,
             "exp": 60,
             "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
-            "lastUpdated": "2026-02-27"
+            "lastUpdated": "2026-02-27",
+            "callCount": 14,
+            "frequency": "0.1次/天",
+            "successRate": 91
           }
         ],
         "count": 4,
@@ -503,7 +629,10 @@
             "level": 3,
             "exp": 66,
             "description": "自动化GitHub仓库创建、代码提交、Pages部署",
-            "lastUpdated": "2026-02-25"
+            "lastUpdated": "2026-02-25",
+            "callCount": 72,
+            "frequency": "0.6次/天",
+            "successRate": 88
           }
         ],
         "count": 1,
@@ -522,7 +651,10 @@
             "level": 4,
             "exp": 73,
             "description": "IM消息推送，支持MixCard卡片和群消息",
-            "lastUpdated": "2026-03-04"
+            "lastUpdated": "2026-03-04",
+            "callCount": 56,
+            "frequency": "0.4次/天",
+            "successRate": 92
           },
           {
             "name": "feishu-assistant",
@@ -531,7 +663,10 @@
             "level": 2,
             "exp": 48,
             "description": "飞书消息自动化发送和接收，对接飞书助手",
-            "lastUpdated": "2026-02-27"
+            "lastUpdated": "2026-02-27",
+            "callCount": 28,
+            "frequency": "0.2次/天",
+            "successRate": 86
           }
         ],
         "count": 2,
@@ -550,7 +685,10 @@
             "level": 4,
             "exp": 70,
             "description": "晋升辅导全流程：材料整理→PPT生成→答辩攻略→模拟QA",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-03",
+            "callCount": 8,
+            "frequency": "0.1次/天",
+            "successRate": 95
           }
         ],
         "count": 1,
@@ -569,7 +707,10 @@
             "level": 4,
             "exp": 79,
             "description": "「养了个AI」专栏写作和发布管理",
-            "lastUpdated": "2026-03-03"
+            "lastUpdated": "2026-03-03",
+            "callCount": 22,
+            "frequency": "0.2次/天",
+            "successRate": 93
           }
         ],
         "count": 1,
@@ -588,7 +729,10 @@
             "level": 3,
             "exp": 74,
             "description": "个人助理能力，日程管理、任务追踪、习惯监控",
-            "lastUpdated": "2026-02-25"
+            "lastUpdated": "2026-02-25",
+            "callCount": 64,
+            "frequency": "0.5次/天",
+            "successRate": 94
           }
         ],
         "count": 1,
@@ -607,7 +751,10 @@
             "level": 4,
             "exp": 80,
             "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "vercel-react-native-skills",
@@ -616,7 +763,10 @@
             "level": 4,
             "exp": 80,
             "description": "React Native和Expo移动应用开发最佳实践",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "vercel-composition-patterns",
@@ -625,7 +775,10 @@
             "level": 4,
             "exp": 80,
             "description": "React组合模式，构建可扩展的组件架构",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "remotion-best-practices",
@@ -634,7 +787,10 @@
             "level": 4,
             "exp": 75,
             "description": "Remotion视频创作最佳实践，用React制作视频",
-            "lastUpdated": "2026-02-08"
+            "lastUpdated": "2026-02-08",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           },
           {
             "name": "mcp-builder",
@@ -643,7 +799,10 @@
             "level": 4,
             "exp": 75,
             "description": "MCP服务器开发指南，让LLM对接外部API服务",
-            "lastUpdated": "2026-02-05"
+            "lastUpdated": "2026-02-05",
+            "callCount": 7,
+            "frequency": "<0.1/天",
+            "successRate": 86
           },
           {
             "name": "web-design-guidelines",
@@ -652,7 +811,10 @@
             "level": 2,
             "exp": 48,
             "description": "Web界面设计规范审查，检查无障碍和最佳实践",
-            "lastUpdated": "2026-02-09"
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           }
         ],
         "count": 6,
@@ -670,7 +832,10 @@
             "level": 4,
             "exp": 70,
             "description": "每周六触发的 CodeFlicker 项目周报生成与发送技能。",
-            "lastUpdated": "2026-03-07"
+            "lastUpdated": "2026-03-07",
+            "callCount": 6,
+            "frequency": "1次/周",
+            "successRate": 95
           }
         ],
         "count": 1,
@@ -696,7 +861,10 @@
                 "level": 5,
                 "exp": 85,
                 "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
-                "lastUpdated": "2026-03-02"
+                "lastUpdated": "2026-03-02",
+                "callCount": 156,
+                "frequency": "1.2次/天",
+                "successRate": 94
               },
               {
                 "name": "neigong-cultivation",
@@ -705,7 +873,10 @@
                 "level": 4,
                 "exp": 73,
                 "description": "内功修炼：记忆/知识/技能三位一体优化器",
-                "lastUpdated": "2026-03-04"
+                "lastUpdated": "2026-03-04",
+                "callCount": 52,
+                "frequency": "0.4次/天",
+                "successRate": 93
               },
               {
                 "name": "xiaowuxianggong",
@@ -714,7 +885,10 @@
                 "level": 4,
                 "exp": 70,
                 "description": "自进化体系引导程序：导航、周检、月检、进化全景",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 48,
+                "frequency": "0.4次/天",
+                "successRate": 96
               },
               {
                 "name": "learn-from-mistakes",
@@ -723,7 +897,10 @@
                 "level": 3,
                 "exp": 64,
                 "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
-                "lastUpdated": "2026-03-03"
+                "lastUpdated": "2026-03-03",
+                "callCount": 89,
+                "frequency": "0.7次/天",
+                "successRate": 91
               },
               {
                 "name": "meta-execution",
@@ -732,7 +909,10 @@
                 "level": 3,
                 "exp": 64,
                 "description": "元执行框架：一次把事情做对的自审机制",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 312,
+                "frequency": "2.4次/天",
+                "successRate": 97
               },
               {
                 "name": "memory-hygiene",
@@ -741,7 +921,10 @@
                 "level": 3,
                 "exp": 58,
                 "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 41,
+                "frequency": "0.3次/天",
+                "successRate": 96
               },
               {
                 "name": "skill-architecture",
@@ -750,7 +933,10 @@
                 "level": 3,
                 "exp": 58,
                 "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 18,
+                "frequency": "0.1次/天",
+                "successRate": 94
               },
               {
                 "name": "knowledge-curator",
@@ -759,7 +945,10 @@
                 "level": 3,
                 "exp": 58,
                 "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 22,
+                "frequency": "0.2次/天",
+                "successRate": 95
               }
             ],
             "count": 8,
@@ -777,7 +966,10 @@
                 "level": 5,
                 "exp": 85,
                 "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 34,
+                "frequency": "0.3次/天",
+                "successRate": 88
               },
               {
                 "name": "knowledge-acquisition-meta",
@@ -786,7 +978,10 @@
                 "level": 4,
                 "exp": 79,
                 "description": "快速掌握新领域的元框架：五阶段渐进学习+三重质量闭环",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 27,
+                "frequency": "0.2次/天",
+                "successRate": 92
               },
               {
                 "name": "product-thinking",
@@ -795,7 +990,10 @@
                 "level": 4,
                 "exp": 70,
                 "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
-                "lastUpdated": "2026-03-05"
+                "lastUpdated": "2026-03-05",
+                "callCount": 278,
+                "frequency": "2.1次/天",
+                "successRate": 95
               }
             ],
             "count": 3,
@@ -813,7 +1011,10 @@
                 "level": 4,
                 "exp": 70,
                 "description": "夜间长任务执行器，断点恢复和自主执行",
-                "lastUpdated": "2026-03-03"
+                "lastUpdated": "2026-03-03",
+                "callCount": 35,
+                "frequency": "0.3次/天",
+                "successRate": 89
               },
               {
                 "name": "knowledge-base",
@@ -822,7 +1023,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "个人知识库检索，按分类查找历史调研和文档",
-                "lastUpdated": "2026-02-24"
+                "lastUpdated": "2026-02-24",
+                "callCount": 67,
+                "frequency": "0.5次/天",
+                "successRate": 93
               },
               {
                 "name": "find-skills",
@@ -831,7 +1035,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "技能发现和安装助手，寻找合适的能力扩展",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 15,
+                "frequency": "0.1次/天",
+                "successRate": 87
               }
             ],
             "count": 3,
@@ -859,7 +1066,10 @@
                 "level": 4,
                 "exp": 82,
                 "description": "AI持续洞察平台：日报/周报/深度调研/首页管理",
-                "lastUpdated": "2026-03-04"
+                "lastUpdated": "2026-03-04",
+                "callCount": 124,
+                "frequency": "1.0次/天",
+                "successRate": 91
               }
             ],
             "count": 1,
@@ -877,7 +1087,10 @@
                 "level": 4,
                 "exp": 73,
                 "description": "投资组合追踪，基金/股票/ETF持仓管理",
-                "lastUpdated": "2026-03-03"
+                "lastUpdated": "2026-03-03",
+                "callCount": 38,
+                "frequency": "0.3次/天",
+                "successRate": 92
               },
               {
                 "name": "stock-analysis",
@@ -886,7 +1099,10 @@
                 "level": 3,
                 "exp": 81,
                 "description": "股票和加密货币分析，投资组合管理，定期报告",
-                "lastUpdated": "2026-02-25"
+                "lastUpdated": "2026-02-25",
+                "callCount": 45,
+                "frequency": "0.3次/天",
+                "successRate": 90
               },
               {
                 "name": "investment-analyzer",
@@ -895,7 +1111,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "投资机会分析，跨资产类别评估和风险分析",
-                "lastUpdated": "2026-02-25"
+                "lastUpdated": "2026-02-25",
+                "callCount": 12,
+                "frequency": "0.1次/天",
+                "successRate": 85
               }
             ],
             "count": 3,
@@ -923,7 +1142,10 @@
                 "level": 3,
                 "exp": 63,
                 "description": "行业调研与竞品分析，多维度对比，生成结构化报告",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 18,
+                "frequency": "0.1次/天",
+                "successRate": 88
               },
               {
                 "name": "apify-trend-analysis",
@@ -932,7 +1154,10 @@
                 "level": 2,
                 "exp": 57,
                 "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "apify-market-research",
@@ -941,7 +1166,10 @@
                 "level": 2,
                 "exp": 57,
                 "description": "市场调研，分析地理机会、定价、消费者行为",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "apify-competitor-intelligence",
@@ -950,7 +1178,10 @@
                 "level": 2,
                 "exp": 57,
                 "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "research",
@@ -959,7 +1190,10 @@
                 "level": 2,
                 "exp": 54,
                 "description": "AI驱动的通用研究能力，带引用的综合调研",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 42,
+                "frequency": "0.3次/天",
+                "successRate": 87
               },
               {
                 "name": "wechat-research",
@@ -968,7 +1202,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "微信公众号内容调研、整理和知识库构建",
-                "lastUpdated": "2026-02-12"
+                "lastUpdated": "2026-02-12",
+                "callCount": 9,
+                "frequency": "0.1次/天",
+                "successRate": 85
               }
             ],
             "count": 6,
@@ -986,7 +1223,10 @@
                 "level": 5,
                 "exp": 90,
                 "description": "内部Docs文档与本地Markdown双向同步",
-                "lastUpdated": "2026-03-04"
+                "lastUpdated": "2026-03-04",
+                "callCount": 16,
+                "frequency": "0.1次/天",
+                "successRate": 90
               },
               {
                 "name": "pdf",
@@ -995,7 +1235,10 @@
                 "level": 4,
                 "exp": 85,
                 "description": "PDF文档读取、提取、合并、拆分、OCR识别等全功能处理",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 85,
+                "frequency": "0.7次/天",
+                "successRate": 96
               },
               {
                 "name": "pptx",
@@ -1004,7 +1247,10 @@
                 "level": 4,
                 "exp": 85,
                 "description": "PowerPoint演示文稿创建、幻灯片设计、模板应用",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 47,
+                "frequency": "0.4次/天",
+                "successRate": 89
               },
               {
                 "name": "keynote",
@@ -1013,7 +1259,10 @@
                 "level": 4,
                 "exp": 79,
                 "description": "Apple Keynote演示文稿创建，JXA自动化支持",
-                "lastUpdated": "2026-03-03"
+                "lastUpdated": "2026-03-03",
+                "callCount": 19,
+                "frequency": "0.1次/天",
+                "successRate": 84
               },
               {
                 "name": "docx",
@@ -1022,7 +1271,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "Word文档创建、编辑、格式化，支持目录、页眉页脚、样式等",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 36,
+                "frequency": "0.3次/天",
+                "successRate": 93
               },
               {
                 "name": "xlsx",
@@ -1031,7 +1283,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "Excel电子表格处理，支持公式、图表、数据分析",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 24,
+                "frequency": "0.2次/天",
+                "successRate": 91
               },
               {
                 "name": "canvas-design",
@@ -1040,7 +1295,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 31,
+                "frequency": "0.2次/天",
+                "successRate": 90
               },
               {
                 "name": "yuque-publisher",
@@ -1049,7 +1307,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "语雀知识库文档自动发布、同步和管理",
-                "lastUpdated": "2026-02-25"
+                "lastUpdated": "2026-02-25",
+                "callCount": 31,
+                "frequency": "0.2次/天",
+                "successRate": 90
               }
             ],
             "count": 8,
@@ -1067,7 +1328,10 @@
                 "level": 5,
                 "exp": 95,
                 "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-03-08"
+                "lastUpdated": "2026-03-08",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "web-dev-workflow",
@@ -1076,7 +1340,10 @@
                 "level": 4,
                 "exp": 79,
                 "description": "网页开发标准工作流：本地验证→部署→确认→发送链接",
-                "lastUpdated": "2026-03-02"
+                "lastUpdated": "2026-03-02",
+                "callCount": 187,
+                "frequency": "1.4次/天",
+                "successRate": 93
               },
               {
                 "name": "frontend-design",
@@ -1085,7 +1352,10 @@
                 "level": 4,
                 "exp": 76,
                 "description": "高质量前端界面设计，避免通用AI风格",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 96,
+                "frequency": "0.7次/天",
+                "successRate": 91
               },
               {
                 "name": "ui-ux-pro-max",
@@ -1094,7 +1364,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 52,
+                "frequency": "0.4次/天",
+                "successRate": 92
               },
               {
                 "name": "pixel-action-game",
@@ -1103,7 +1376,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "像素风格动作游戏开发，含关卡设计和8位音效",
-                "lastUpdated": "2026-02-22"
+                "lastUpdated": "2026-02-22",
+                "callCount": 5,
+                "frequency": "<0.1/天",
+                "successRate": 88
               },
               {
                 "name": "canvas-design",
@@ -1112,7 +1388,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 31,
+                "frequency": "0.2次/天",
+                "successRate": 90
               }
             ],
             "count": 6,
@@ -1130,7 +1409,10 @@
                 "level": 5,
                 "exp": 85,
                 "description": "塞尔达·旷野之息风格页面设计规范",
-                "lastUpdated": "2026-03-01"
+                "lastUpdated": "2026-03-01",
+                "callCount": 42,
+                "frequency": "0.3次/天",
+                "successRate": 95
               },
               {
                 "name": "theme-factory",
@@ -1139,7 +1421,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "主题工厂，10种预设主题快速应用于各类文档",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 11,
+                "frequency": "0.1次/天",
+                "successRate": 94
               },
               {
                 "name": "qingshuang-research-style",
@@ -1148,7 +1433,10 @@
                 "level": 4,
                 "exp": 73,
                 "description": "清爽调研报告风格的CSS样式规范",
-                "lastUpdated": "2026-03-06"
+                "lastUpdated": "2026-03-06",
+                "callCount": 38,
+                "frequency": "0.3次/天",
+                "successRate": 94
               },
               {
                 "name": "work-report-ppt",
@@ -1157,7 +1445,10 @@
                 "level": 3,
                 "exp": 60,
                 "description": "企业工作汇报PPT设计规范，暖色渐变现代风格",
-                "lastUpdated": "2026-02-27"
+                "lastUpdated": "2026-02-27",
+                "callCount": 14,
+                "frequency": "0.1次/天",
+                "successRate": 91
               }
             ],
             "count": 4,
@@ -1175,7 +1466,10 @@
                 "level": 3,
                 "exp": 66,
                 "description": "自动化GitHub仓库创建、代码提交、Pages部署",
-                "lastUpdated": "2026-02-25"
+                "lastUpdated": "2026-02-25",
+                "callCount": 72,
+                "frequency": "0.6次/天",
+                "successRate": 88
               }
             ],
             "count": 1,
@@ -1193,7 +1487,10 @@
                 "level": 4,
                 "exp": 73,
                 "description": "IM消息推送，支持MixCard卡片和群消息",
-                "lastUpdated": "2026-03-04"
+                "lastUpdated": "2026-03-04",
+                "callCount": 56,
+                "frequency": "0.4次/天",
+                "successRate": 92
               },
               {
                 "name": "feishu-assistant",
@@ -1202,7 +1499,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "飞书消息自动化发送和接收，对接飞书助手",
-                "lastUpdated": "2026-02-27"
+                "lastUpdated": "2026-02-27",
+                "callCount": 28,
+                "frequency": "0.2次/天",
+                "successRate": 86
               }
             ],
             "count": 2,
@@ -1220,7 +1520,10 @@
                 "level": 4,
                 "exp": 70,
                 "description": "晋升辅导全流程：材料整理→PPT生成→答辩攻略→模拟QA",
-                "lastUpdated": "2026-03-03"
+                "lastUpdated": "2026-03-03",
+                "callCount": 8,
+                "frequency": "0.1次/天",
+                "successRate": 95
               }
             ],
             "count": 1,
@@ -1238,7 +1541,10 @@
                 "level": 4,
                 "exp": 79,
                 "description": "「养了个AI」专栏写作和发布管理",
-                "lastUpdated": "2026-03-03"
+                "lastUpdated": "2026-03-03",
+                "callCount": 22,
+                "frequency": "0.2次/天",
+                "successRate": 93
               }
             ],
             "count": 1,
@@ -1256,7 +1562,10 @@
                 "level": 3,
                 "exp": 74,
                 "description": "个人助理能力，日程管理、任务追踪、习惯监控",
-                "lastUpdated": "2026-02-25"
+                "lastUpdated": "2026-02-25",
+                "callCount": 64,
+                "frequency": "0.5次/天",
+                "successRate": 94
               }
             ],
             "count": 1,
@@ -1274,7 +1583,10 @@
                 "level": 4,
                 "exp": 80,
                 "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "vercel-react-native-skills",
@@ -1283,7 +1595,10 @@
                 "level": 4,
                 "exp": 80,
                 "description": "React Native和Expo移动应用开发最佳实践",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "vercel-composition-patterns",
@@ -1292,7 +1607,10 @@
                 "level": 4,
                 "exp": 80,
                 "description": "React组合模式，构建可扩展的组件架构",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "remotion-best-practices",
@@ -1301,7 +1619,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "Remotion视频创作最佳实践，用React制作视频",
-                "lastUpdated": "2026-02-08"
+                "lastUpdated": "2026-02-08",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               },
               {
                 "name": "mcp-builder",
@@ -1310,7 +1631,10 @@
                 "level": 4,
                 "exp": 75,
                 "description": "MCP服务器开发指南，让LLM对接外部API服务",
-                "lastUpdated": "2026-02-05"
+                "lastUpdated": "2026-02-05",
+                "callCount": 7,
+                "frequency": "<0.1/天",
+                "successRate": 86
               },
               {
                 "name": "web-design-guidelines",
@@ -1319,7 +1643,10 @@
                 "level": 2,
                 "exp": 48,
                 "description": "Web界面设计规范审查，检查无障碍和最佳实践",
-                "lastUpdated": "2026-02-09"
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               }
             ],
             "count": 6,
@@ -1337,7 +1664,10 @@
                 "level": 4,
                 "exp": 70,
                 "description": "每周六触发的 CodeFlicker 项目周报生成与发送技能。",
-                "lastUpdated": "2026-03-07"
+                "lastUpdated": "2026-03-07",
+                "callCount": 6,
+                "frequency": "1次/周",
+                "successRate": 95
               }
             ],
             "count": 1,

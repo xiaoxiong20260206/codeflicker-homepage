@@ -107,7 +107,7 @@
 .engine-section {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(167, 139, 250, 0.2);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
 }
 .engine-title-bar {
@@ -457,11 +457,11 @@
     margin-left: 2px;
 }
 
-/* === 认知框架 === */
+/* === 认知框架（思维工具）=== */
 .cognitive-section {
     background: rgba(245, 158, 11, 0.05);
     border: 1px solid rgba(245, 158, 11, 0.2);
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -545,13 +545,13 @@
     font-family: var(--font-mono);
 }
 .cognitive-note {
-    font-size: 9px;
+    font-size: 10px;
     color: rgba(245, 158, 11, 0.5);
     text-align: center;
     font-style: italic;
 }
 
-/* === 系统工具 === */
+/* === 系统工具（做事工具） === */
 .system-section {
     background: rgba(94, 196, 212, 0.05);
     border: 1px solid rgba(94, 196, 212, 0.2);
@@ -559,7 +559,7 @@
     padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
 }
 .system-header { display: flex; align-items: center; gap: 6px; }
 .system-icon { font-size: 16px; }
@@ -569,16 +569,17 @@
     font-weight: 600;
     color: #5ec4d4;
 }
-.system-chips {
+.system-section .cognitive-pillars {
     display: flex;
-    flex-wrap: wrap;
     gap: 6px;
+    flex-wrap: wrap;
 }
-.system-note {
-    font-size: 9px;
-    color: rgba(94, 196, 212, 0.5);
-    text-align: center;
-    font-style: italic;
+.system-section .cognitive-pillar {
+    border-color: rgba(94, 196, 212, 0.15);
+}
+.system-section .cognitive-pillar:hover {
+    border-color: rgba(94, 196, 212, 0.4);
+    background: rgba(94, 196, 212, 0.08);
 }
 
 /* === 通用技能芯片 === */

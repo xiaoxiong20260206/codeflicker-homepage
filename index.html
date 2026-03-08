@@ -20,7 +20,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 已改为按需动态加载 -->
     <link rel="stylesheet" href="styles/zelda-theme.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/ability-trees.css?v=8">
+    <link rel="stylesheet" href="styles/ability-trees.css?v=9">
     <style>
         /* ==================== 页面特定样式 ==================== */
         .app-container {
@@ -3541,7 +3541,10 @@
             <div class="tip-icon"></div>
             <div class="tip-title">
                 <div class="tip-name"></div>
-                <div class="tip-type"></div>
+                <div class="tip-type-row">
+                    <span class="tip-type"></span>
+                    <span class="tip-source-badge"></span>
+                </div>
             </div>
             <div class="tip-level">
                 <div class="tip-lv-num"></div>
@@ -3549,6 +3552,13 @@
             </div>
         </div>
         <div class="tip-body">
+            <div class="tip-section tip-metrics-section" style="display:none">
+                <div class="tip-metrics-row">
+                    <div class="tip-metric"><span class="tip-metric-val tip-call-count">0</span><span class="tip-metric-label">调用</span></div>
+                    <div class="tip-metric"><span class="tip-metric-val tip-frequency">-</span><span class="tip-metric-label">频率</span></div>
+                    <div class="tip-metric"><span class="tip-metric-val tip-success-rate">0%</span><span class="tip-metric-label">成功率</span></div>
+                </div>
+            </div>
             <div class="tip-section">
                 <div class="tip-section-title">📝 描述</div>
                 <div class="tip-desc"></div>
@@ -3621,7 +3631,7 @@
         
         createParticles();
     </script>
-    <script src="scripts/ability-trees.js?v=8"></script>
-    <script src="scripts/app.js?v=8"></script>
+    <script src="scripts/ability-trees.js?v=9"></script>
+    <script src="scripts/app.js?v=9"></script>
 </body>
 </html>

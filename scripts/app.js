@@ -244,6 +244,7 @@ function renderAboutSection() {
     const char = AppState.characterData?.character;
     const skills = AppState.characterData?.skills;
     const knowledge = AppState.characterData?.knowledge;
+    const memories = AppState.characterData?.memories;
     const projects = AppState.projectsData;
     const achievements = AppState.characterData?.achievements || [];
     
@@ -264,15 +265,70 @@ function renderAboutSection() {
     if (aboutWorks && projects?.summary) aboutWorks.textContent = projects.summary.total;
     
     // 计算运行天数（不依赖reports数据）
+    let runDays = 30;
     if (aboutDays) {
         const firstDate = new Date('2026-02-01'); // AI助手诞生日
         const today = new Date();
-        const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
-        aboutDays.textContent = days > 0 ? days + '+' : '30+';
+        runDays = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
+        aboutDays.textContent = runDays > 0 ? runDays + '+' : '30+';
     }
+    
+    // 渲染核心统计指标面板
+    renderAboutCoreStats({
+        skills: skills,
+        knowledge: knowledge,
+        memories: memories,
+        projects: projects,
+        runDays: runDays,
+        achievements: achievements
+    });
     
     // 渲染成就墙（在了解我Section中）
     renderAchievements(achievements);
+}
+
+// 了解我 - 核心统计指标面板
+function renderAboutCoreStats(data) {
+    const container = document.getElementById('about-core-stats');
+    if (!container) return;
+    
+    const { skills, knowledge, memories, projects, runDays, achievements } = data;
+    
+    // 计算核心指标
+    const totalSkills = skills?.total || 0;
+    const totalKnowledge = knowledge?.totalFiles || 0;
+    const totalMemories = memories?.total || 0;
+    const totalProjects = projects?.summary?.total || 0;
+    const deployedProjects = projects?.summary?.deployed || 0;
+    const unlockedAchievements = (achievements || []).filter(a => a.unlocked).length;
+    const totalAchievements = (achievements || []).length;
+    
+    // 计算技能类别数
+    const skillCategories = skills?.categories ? Object.keys(skills.categories).length : 0;
+    
+    // 计算知识目录数
+    const knowledgeDirs = knowledge?.directories?.length || 
+                          (knowledge?.categories ? Object.keys(knowledge.categories).length : 0);
+    
+    const stats = [
+        { icon: '⚡', value: totalSkills, label: '项技能', sub: `${skillCategories}大类` },
+        { icon: '📚', value: totalKnowledge, label: '篇知识', sub: `${knowledgeDirs}个领域` },
+        { icon: '🧠', value: totalMemories, label: '条记忆', sub: '持续积累' },
+        { icon: '🎨', value: totalProjects, label: '个作品', sub: `${deployedProjects}已上线` },
+        { icon: '🏆', value: unlockedAchievements, label: '项成就', sub: `共${totalAchievements}项` },
+        { icon: '📅', value: runDays > 0 ? runDays : 30, label: '天运行', sub: '持续进化' },
+    ];
+    
+    container.innerHTML = `
+        <div class="about-stats-title">📊 核心数据</div>
+        ${stats.map(s => `
+            <div class="stat-card">
+                <div class="stat-card-icon">${s.icon}</div>
+                <div class="stat-card-value">${s.value}</div>
+                <div class="stat-card-label">${s.label}</div>
+            </div>
+        `).join('')}
+    `;
 }
 
 // ==================== 侧边栏渲染 ====================
@@ -475,6 +531,7 @@ function renderSelectedReport(index) {
     renderCoreProgress(report.coreProgress || report.highlights || [], report.capabilityGrowth || report);
     
     // 板块二：交付情况
+    renderDeliveryStats(report.deliveries || []);
     renderDeliveries(report.deliveries || []);
     
     // 板块三：能力提升
@@ -611,6 +668,64 @@ function renderProgressItem(item, index) {
 }
 
 // ========== v7.1: 板块二 - 交付情况 ==========
+
+// 渲染交付核心统计指标
+function renderDeliveryStats(deliveries) {
+    const container = document.getElementById('delivery-stats-bar');
+    if (!container) return;
+    
+    if (!deliveries || deliveries.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+    container.style.display = '';
+    
+    // 统计指标计算
+    const totalDeliveries = deliveries.length;
+    const conversations = deliveries.filter(d => d.type === 'conversation' || !d.type).length;
+    const projects = deliveries.filter(d => d.type === 'project').length;
+    
+    // 统计所有交付物数量
+    let totalDeliverables = 0;
+    let totalCommits = 0;
+    let totalFileChanges = 0;
+    let totalDeploys = 0;
+    
+    deliveries.forEach(d => {
+        if (d.deliverables) totalDeliverables += d.deliverables.length;
+        if (d.commitCount) totalCommits += d.commitCount;
+        if (d.fileChangeCount) totalFileChanges += d.fileChangeCount;
+        if (d.deployUrl) totalDeploys++;
+    });
+    
+    // 统计执行步骤数
+    let totalSteps = 0;
+    deliveries.forEach(d => {
+        if (d.process) totalSteps += d.process.length;
+    });
+    
+    const stats = [
+        { icon: '📋', value: totalDeliveries, label: '总任务数' },
+        { icon: '💬', value: conversations, label: '对话任务' },
+        { icon: '📁', value: projects, label: '项目交付' },
+        { icon: '📦', value: totalDeliverables, label: '交付物' },
+    ];
+    
+    // 只在有数据时显示
+    if (totalCommits > 0) stats.push({ icon: '💾', value: totalCommits, label: '代码提交' });
+    if (totalFileChanges > 0) stats.push({ icon: '📝', value: totalFileChanges, label: '文件变更' });
+    if (totalDeploys > 0) stats.push({ icon: '🚀', value: totalDeploys, label: '线上部署' });
+    if (totalSteps > 0) stats.push({ icon: '⚙️', value: totalSteps, label: '执行步骤' });
+    
+    container.innerHTML = stats.map(s => `
+        <div class="delivery-stat-item">
+            <div class="delivery-stat-icon">${s.icon}</div>
+            <div class="delivery-stat-value">${s.value}</div>
+            <div class="delivery-stat-label">${s.label}</div>
+        </div>
+    `).join('');
+}
+
 function renderDeliveries(deliveries) {
     const container = document.getElementById('deliveries-list');
     if (!container) return;
@@ -1310,6 +1425,14 @@ function renderAbilitiesSection() {
     if (knowledgeTotal) knowledgeTotal.textContent = knowledge.totalFiles;
     if (memoryTotal) memoryTotal.textContent = memories.total;
     
+    // 更新Tab计数
+    const tabSkillCount = document.getElementById('tab-skill-count');
+    const tabMemoryCount = document.getElementById('tab-memory-count');
+    const tabKnowledgeCount = document.getElementById('tab-knowledge-count');
+    if (tabSkillCount) tabSkillCount.textContent = skills.total;
+    if (tabMemoryCount) tabMemoryCount.textContent = memories.total;
+    if (tabKnowledgeCount) tabKnowledgeCount.textContent = knowledge.totalFiles;
+    
     // 使用新的渲染函数（来自 ability-trees.js）
     const skillContainer = document.getElementById('skill-tree');
     const knowledgeContainer = document.getElementById('knowledge-tree');
@@ -1798,6 +1921,20 @@ function closeSkillDetailPanel() {
 
 window.showSkillDetailPanel = showSkillDetailPanel;
 window.closeSkillDetailPanel = closeSkillDetailPanel;
+
+// ==================== 能力Tab切换 ====================
+function switchAbilityTab(tabName) {
+    // 切换按钮状态
+    document.querySelectorAll('.ability-tab-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-ability-tab') === tabName);
+    });
+    
+    // 切换内容显示
+    document.querySelectorAll('.ability-tab-content').forEach(content => {
+        content.classList.toggle('active', content.id === 'ability-tab-' + tabName);
+    });
+}
+window.switchAbilityTab = switchAbilityTab;
 
 function renderKnowledgeTreeGraph(knowledge) {
     const container = document.getElementById('knowledge-tree');
@@ -3316,103 +3453,8 @@ function renderEvolutionTimeline() {
     }
     
     const stages = evolutionData.stages || [];
-    const timeline = evolutionData.capabilities_timeline || [];
     
-    // ========== P0优化：本周进化摘要 ==========
-    const today = new Date();
-    const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
-    const todayStr = today.toISOString().split('T')[0];
-    const weekAgoStr = weekAgo.toISOString().split('T')[0];
-    
-    // 按日期分组timeline事件（倒序）
-    const sortedTimeline = [...timeline].sort((a, b) => {
-        const dateA = a.date || '1970-01-01';
-        const dateB = b.date || '1970-01-01';
-        return dateB.localeCompare(dateA); // 倒序：最新在前
-    });
-    
-    // 本周统计
-    const weekEvents = sortedTimeline.filter(e => e.date && e.date >= weekAgoStr);
-    const weekSkills = weekEvents.filter(e => e.type === 'skill_unlock' || e.type === 'meta_skill').length;
-    const weekProjects = weekEvents.filter(e => e.type === 'project_complete').length;
-    const weekSystems = weekEvents.filter(e => e.type === 'system_unlock' || e.type === 'integration').length;
-    
-    // 时间分组
-    const todayEvents = sortedTimeline.filter(e => e.date === todayStr);
-    const thisWeekEvents = sortedTimeline.filter(e => e.date && e.date < todayStr && e.date >= weekAgoStr);
-    const earlierEvents = sortedTimeline.filter(e => e.date && e.date < weekAgoStr).slice(0, 5); // 只显示最近5条
-    
-    // 生成摘要卡片HTML
-    const summaryHtml = weekEvents.length > 0 ? `
-        <div class="evolution-summary-card">
-            <div class="summary-title">📈 本周进化摘要</div>
-            <div class="summary-stats">
-                ${weekSkills > 0 ? `<span class="stat-item skill">+${weekSkills} 技能</span>` : ''}
-                ${weekProjects > 0 ? `<span class="stat-item project">+${weekProjects} 项目</span>` : ''}
-                ${weekSystems > 0 ? `<span class="stat-item system">+${weekSystems} 系统能力</span>` : ''}
-                <span class="stat-item total">共 ${weekEvents.length} 个事件</span>
-            </div>
-        </div>
-    ` : '';
-    
-    // 生成事件列表的辅助函数
-    const renderEventItem = (e) => {
-        const typeIcon = {
-            'skill_unlock': '🆕',
-            'project_complete': '✅',
-            'system_unlock': '⚙️',
-            'integration': '🔗',
-            'meta_skill': '🧠'
-        }[e.type] || '📌';
-        
-        const typeClass = e.type || 'default';
-        
-        return `
-            <div class="timeline-event ${typeClass}">
-                <span class="event-icon">${typeIcon}</span>
-                <span class="event-name">${e.name}</span>
-                <span class="event-date">${e.date ? e.date.substring(5) : ''}</span>
-            </div>
-        `;
-    };
-    
-    // 生成分组时间线HTML
-    let timelineEventsHtml = '';
-    
-    if (todayEvents.length > 0) {
-        timelineEventsHtml += `
-            <div class="timeline-group today">
-                <div class="group-title">🔥 今日</div>
-                <div class="group-events">
-                    ${todayEvents.map(renderEventItem).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    if (thisWeekEvents.length > 0) {
-        timelineEventsHtml += `
-            <div class="timeline-group this-week">
-                <div class="group-title">📅 本周</div>
-                <div class="group-events">
-                    ${thisWeekEvents.map(renderEventItem).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    if (earlierEvents.length > 0) {
-        timelineEventsHtml += `
-            <div class="timeline-group earlier">
-                <div class="group-title">📜 更早</div>
-                <div class="group-events">
-                    ${earlierEvents.map(renderEventItem).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    // ========== 原有的版本阶段时间线 ==========
+    // 只渲染版本阶段（精简版：少就是多）
     const stagesHtml = stages.map((stage, idx) => {
         let statusClass = '';
         if (stage.status === 'current') statusClass = 'current';
@@ -3442,15 +3484,8 @@ function renderEvolutionTimeline() {
         `;
     }).join('');
     
-    // 组合所有内容：摘要 + 能力事件 + 版本阶段
-    container.innerHTML = `
-        ${summaryHtml}
-        ${timelineEventsHtml ? `<div class="evolution-events-section">${timelineEventsHtml}</div>` : ''}
-        <div class="evolution-stages-section">
-            <div class="stages-header">📌 进化阶段</div>
-            ${stagesHtml}
-        </div>
-    `;
+    // 只渲染进化阶段（移除了事件时间线和摘要卡片）
+    container.innerHTML = stagesHtml;
     
     // 更新进化历程标题的副标题
     const subtitleEl = document.querySelector('.evolution-subtitle');
@@ -3458,5 +3493,5 @@ function renderEvolutionTimeline() {
         subtitleEl.textContent = evolutionData.description || '从工具到数字生命的蜕变';
     }
     
-    console.log('Evolution timeline rendered with', stages.length, 'stages and', timeline.length, 'events');
+    console.log('Evolution timeline rendered with', stages.length, 'stages (simplified)');
 }

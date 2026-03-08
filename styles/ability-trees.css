@@ -854,116 +854,338 @@
     gap: 20px;
     padding: 20px;
 }
-.knowledge-header {
+
+/* ==================== 2. 知识树 - 纵向三层架构图（v3.0） ==================== */
+.knowledge-arch {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px;
+}
+
+/* 知识树层级容器 */
+.kn-layer {
+    border: 1px solid rgba(200, 220, 240, 0.15);
+    border-radius: 12px;
+    overflow: visible;
+    position: relative;
+}
+.kn-layer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--kn-color, rgba(200,220,240,0.3)), transparent);
+}
+.kn-layer-label {
     display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 15px 20px;
-    background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(180, 140, 30, 0.1) 100%);
-    border: 2px solid var(--zelda-gold);
-    border-radius: 12px;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(200, 220, 240, 0.1);
+    flex-wrap: wrap;
 }
-.knowledge-header-icon { font-size: 36px; }
-.knowledge-header-info { flex: 1; }
-.knowledge-header-title {
+.kn-label-icon { font-size: 18px; }
+.kn-label-text {
     font-family: var(--font-title);
-    font-size: 18px;
-    color: var(--zelda-gold-light);
-    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
 }
-.knowledge-header-desc { font-size: 12px; color: rgba(200, 220, 240, 0.7); }
-.knowledge-header-count { font-family: var(--font-mono); font-size: 32px; font-weight: 700; color: var(--zelda-gold); }
-.knowledge-header-label { font-size: 10px; color: rgba(200, 220, 240, 0.5); text-align: right; }
-.knowledge-cards-grid {
+.kn-label-desc {
+    font-size: 11px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-left: 4px;
+}
+.kn-label-align {
+    margin-left: auto;
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.35);
+    font-family: var(--font-mono);
+    letter-spacing: 0.3px;
+}
+.kn-label-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+.kn-layer-content {
+    padding: 12px;
+}
+
+/* 知识领域卡片网格 */
+.kn-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
 }
-.knowledge-folder-card {
+
+/* 知识领域卡片 */
+.kn-domain-card {
     background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
-    border: 2px solid rgba(201, 162, 39, 0.3);
-    border-radius: 10px;
-    padding: 15px;
+    border: 1px solid rgba(200, 220, 240, 0.15);
+    border-left: 3px solid var(--kn-color, rgba(200,220,240,0.3));
+    border-radius: 8px;
+    padding: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
 }
-.knowledge-folder-card::before {
+.kn-domain-card:hover {
+    border-color: var(--kn-color, rgba(200,220,240,0.5));
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.kn-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+.kn-card-icon {
+    font-size: 24px;
+    filter: drop-shadow(0 0 4px rgba(200, 220, 240, 0.2));
+}
+.kn-card-info {
+    flex: 1;
+    min-width: 0;
+}
+.kn-card-name {
+    font-family: var(--font-title);
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(200, 220, 240, 0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.kn-card-meta {
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-top: 2px;
+}
+.kn-card-count {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* 热度指示器 */
+.kn-card-heat {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+.kn-heat-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: rgba(200, 220, 240, 0.15);
+    transition: background 0.3s ease;
+}
+.kn-heat-dot.active {
+    box-shadow: 0 0 4px currentColor;
+}
+
+/* 进度条 */
+.kn-card-progress {
+    height: 3px;
+    background: rgba(100, 120, 140, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.kn-progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.5s ease;
+    opacity: 0.7;
+}
+
+/* 关联技能标签 */
+.kn-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.kn-skill-tag {
+    font-size: 9px;
+    padding: 1px 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 220, 240, 0.15);
+    border-radius: 8px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+.kn-domain-card:hover .kn-skill-tag {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(200, 220, 240, 0.3);
+}
+.kn-skill-tag-more {
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.4);
+    padding: 1px 4px;
+}
+
+/* ==================== 3. 记忆树 - 纵向三层架构图（v3.0） ==================== */
+.memory-arch {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px;
+}
+
+/* 记忆树层级容器 */
+.mem-layer {
+    border: 1px solid rgba(200, 220, 240, 0.15);
+    border-radius: 12px;
+    overflow: visible;
+    position: relative;
+}
+.mem-layer::before {
     content: '';
     position: absolute;
-    top: 0; right: 0;
-    width: 0; height: 0;
-    border-style: solid;
-    border-width: 0 25px 25px 0;
-    border-color: transparent rgba(201, 162, 39, 0.2) transparent transparent;
-    transition: border-color 0.3s ease;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--mem-layer-color, rgba(200,220,240,0.3)), transparent);
 }
-.knowledge-folder-card:hover {
-    border-color: var(--zelda-gold);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.15);
+.mem-layer-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(200, 220, 240, 0.1);
+    flex-wrap: wrap;
 }
-.knowledge-folder-card:hover::before { border-color: transparent var(--zelda-gold) transparent transparent; }
-.knowledge-folder-header { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
-.knowledge-folder-icon { font-size: 28px; filter: drop-shadow(0 0 4px rgba(201, 162, 39, 0.4)); }
-.knowledge-folder-name { font-family: var(--font-title); font-size: 14px; font-weight: 600; color: var(--zelda-gold-light); flex: 1; }
-.knowledge-folder-progress { margin-bottom: 10px; }
-.knowledge-progress-bar { height: 6px; background: rgba(100, 120, 140, 0.2); border-radius: 3px; overflow: hidden; margin-bottom: 4px; }
-.knowledge-progress-fill { height: 100%; background: linear-gradient(90deg, var(--zelda-gold-dark), var(--zelda-gold)); border-radius: 3px; transition: width 0.5s ease; }
-.knowledge-progress-text { display: flex; justify-content: space-between; font-size: 10px; color: rgba(200, 220, 240, 0.6); }
-.knowledge-folder-count { font-family: var(--font-mono); font-weight: 600; color: var(--zelda-gold); }
-.knowledge-folder-footer { display: flex; align-items: center; gap: 6px; font-size: 10px; color: rgba(200, 220, 240, 0.5); }
-.knowledge-update-badge { display: inline-flex; align-items: center; gap: 3px; padding: 2px 6px; background: rgba(74, 222, 128, 0.15); border-radius: 8px; color: #4ade80; font-size: 9px; }
-.knowledge-update-badge.recent { background: rgba(251, 191, 36, 0.15); color: #fbbf24; }
+.mem-label-icon { font-size: 18px; }
+.mem-label-text {
+    font-family: var(--font-title);
+    font-size: 14px;
+    font-weight: 600;
+}
+.mem-label-desc {
+    font-size: 11px;
+    color: rgba(200, 220, 240, 0.5);
+    margin-left: 4px;
+}
+.mem-label-align {
+    margin-left: auto;
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.35);
+    font-family: var(--font-mono);
+    letter-spacing: 0.3px;
+}
+.mem-label-count {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+}
+.mem-layer-content {
+    padding: 12px;
+}
 
-/* ==================== 3. 记忆树 - 神经网络径向布局 ==================== */
-.memory-neural-network { display: flex; flex-direction: column; align-items: center; padding: 30px 20px; position: relative; }
-.memory-network-svg { width: 100%; max-width: 600px; aspect-ratio: 1; position: relative; }
-.memory-network-svg svg { width: 100%; height: 100%; }
-.memory-core-node { fill: url(#memoryGradient); stroke: var(--sheikah-orange); stroke-width: 3; filter: drop-shadow(0 0 15px rgba(251, 146, 60, 0.4)); }
-.memory-connection { stroke: rgba(251, 146, 60, 0.3); stroke-width: 2; fill: none; }
-.memory-category-node { cursor: pointer; }
-.memory-category-node:hover .memory-category-circle { filter: drop-shadow(0 0 12px currentColor); stroke-width: 3; }
-.memory-category-circle { fill: rgba(30, 35, 40, 0.9); stroke-width: 2; transition: all 0.3s ease; }
-.memory-category-icon { font-size: 18px; dominant-baseline: central; text-anchor: middle; }
-.memory-category-label { font-family: var(--font-body); font-size: 11px; fill: rgba(200, 220, 240, 0.8); text-anchor: middle; }
-.memory-category-count { font-family: var(--font-mono); font-size: 10px; fill: rgba(200, 220, 240, 0.6); text-anchor: middle; }
-.memory-pulse-ring { fill: none; stroke: var(--sheikah-orange); stroke-width: 1; opacity: 0; animation: memory-pulse 3s ease-out infinite; pointer-events: none; transform-origin: center; transform-box: fill-box; }
-@keyframes memory-pulse {
-    0% { opacity: 0.6; r: 30; }
-    100% { opacity: 0; r: 60; }
+/* 记忆分类卡片网格 */
+.mem-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
 }
-.memory-type-user { --mem-color: #38bdf8; }
-.memory-type-capability { --mem-color: #a78bfa; }
-.memory-type-domain { --mem-color: #4ade80; }
-.memory-type-project { --mem-color: #fb923c; }
-.memory-type-constraint { --mem-color: #f87171; }
-.memory-type-flow { --mem-color: #fbbf24; }
-.memory-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; padding: 15px; background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
-.memory-legend-item { display: flex; align-items: center; gap: 6px; font-size: 11px; color: rgba(200, 220, 240, 0.8); }
-.memory-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
 
-/* ==================== 记忆展开面板 ==================== */
-.memory-expand-panel { margin-top: 20px; background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%); border: 2px solid var(--sheikah-orange); border-radius: 12px; overflow: hidden; }
-.memory-expand-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: rgba(0, 0, 0, 0.3); border-bottom: 1px solid rgba(251, 146, 60, 0.3); }
-.memory-expand-title { font-family: var(--font-title); font-size: 14px; font-weight: 600; color: var(--sheikah-orange-light); display: flex; align-items: center; gap: 8px; }
-.memory-expand-close { background: rgba(255, 255, 255, 0.1); border: none; color: rgba(200, 220, 240, 0.6); width: 24px; height: 24px; border-radius: 4px; cursor: pointer; font-size: 14px; transition: all 0.2s ease; }
-.memory-expand-close:hover { background: rgba(255, 255, 255, 0.2); color: white; }
-.memory-expand-content { padding: 16px; max-height: 400px; overflow-y: auto; }
-.memory-expand-empty { text-align: center; padding: 30px; color: rgba(200, 220, 240, 0.5); }
-.memory-child-group { margin-bottom: 16px; }
-.memory-child-group:last-child { margin-bottom: 0; }
-.memory-child-header { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(200, 220, 240, 0.1); }
-.memory-child-icon { font-size: 16px; }
-.memory-child-name { flex: 1; }
-.memory-child-count { font-family: var(--font-mono); font-size: 10px; padding: 2px 6px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; }
-.memory-child-items { display: flex; flex-wrap: wrap; gap: 8px; }
-.memory-item-chip { display: flex; align-items: center; gap: 4px; padding: 4px 10px; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(200, 220, 240, 0.2); border-radius: 16px; cursor: pointer; transition: all 0.2s ease; font-size: 11px; color: rgba(200, 220, 240, 0.85); }
-.memory-item-chip:hover { background: rgba(251, 146, 60, 0.15); border-color: var(--sheikah-orange); transform: translateY(-1px); }
-.memory-item-icon { font-size: 12px; }
-.memory-item-title { max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.memory-item-more { font-size: 10px; color: rgba(200, 220, 240, 0.5); padding: 4px 8px; }
+/* 记忆分类卡片 */
+.mem-category-card {
+    background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
+    border: 1px solid rgba(200, 220, 240, 0.15);
+    border-left: 3px solid var(--mem-cat-color, rgba(200,220,240,0.3));
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.mem-category-card:hover {
+    border-color: var(--mem-cat-color, rgba(200,220,240,0.5));
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.mem-category-card.expanded {
+    border-color: var(--mem-cat-color, rgba(200,220,240,0.5));
+    background: linear-gradient(135deg, rgba(25, 30, 35, 0.98) 0%, rgba(35, 40, 50, 0.95) 100%);
+}
+
+/* 分类卡片头部 */
+.mem-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.mem-cat-icon { font-size: 18px; }
+.mem-cat-name {
+    font-family: var(--font-title);
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(200, 220, 240, 0.85);
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mem-cat-count {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+}
+.mem-cat-toggle {
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.4);
+    transition: transform 0.3s ease;
+    user-select: none;
+}
+.mem-category-card.expanded .mem-cat-toggle {
+    color: var(--mem-cat-color, rgba(200,220,240,0.6));
+}
+
+/* 记忆条目（展开后） */
+.mem-cat-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(200, 220, 240, 0.1);
+}
+.mem-item-chip {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(200, 220, 240, 0.15);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 10px;
+    color: rgba(200, 220, 240, 0.8);
+    max-width: 100%;
+}
+.mem-item-chip:hover {
+    background: rgba(0, 0, 0, 0.5);
+    border-color: rgba(200, 220, 240, 0.35);
+    transform: translateY(-1px);
+}
+.mem-item-icon { font-size: 11px; flex-shrink: 0; }
+.mem-item-title {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.mem-item-more {
+    font-size: 9px;
+    color: rgba(200, 220, 240, 0.4);
+    padding: 3px 6px;
+}
 
 /* ==================== 响应式调整 ==================== */
 @media (max-width: 768px) {
@@ -973,15 +1195,19 @@
     .exec-groups-grid { grid-template-columns: 1fr; }
     .domain-cards-grid { flex-direction: column; }
     .domain-card { min-width: 0; }
-    .knowledge-cards-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
-    .memory-network-svg { max-width: 400px; }
+    .kn-cards-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .mem-cards-grid { grid-template-columns: 1fr; }
+    .kn-label-desc, .mem-label-desc { display: none; }
+    .kn-label-align, .mem-label-align { display: none; }
 }
 
 @media (max-width: 480px) {
     .skill-architecture { padding: 10px; }
+    .knowledge-arch { padding: 10px; }
+    .memory-arch { padding: 10px; }
     .arch-stats { display: none; }
     .engine-diagram { max-width: 100%; padding: 8px; }
     .engine-core-branches { gap: 4px; }
-    .knowledge-cards-grid { grid-template-columns: 1fr; }
-    .memory-network-svg { max-width: 300px; }
+    .kn-cards-grid { grid-template-columns: 1fr; }
+    .mem-cards-grid { grid-template-columns: 1fr; }
 }

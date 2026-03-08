@@ -2469,12 +2469,41 @@ function showTreeTooltip(event, id, type) {
         sourceBadge.style.display = 'none';
     }
     
-    // 指标（机制类型不显示）
-    if (metricsSection && data.callCount > 0 && !isMechanism) {
-        tooltip.querySelector('.tip-call-count').textContent = data.callCount;
-        tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
-        tooltip.querySelector('.tip-success-rate').textContent = data.successRate ? data.successRate + '%' : '-';
-        metricsSection.style.display = 'block';
+    // 指标（机制类型不显示）— 根据type动态调整标签
+    if (metricsSection && !isMechanism) {
+        var metricLabels = tooltip.querySelectorAll('.tip-metric-label');
+        var hasMetrics = false;
+        
+        if (type === 'skill' && data.callCount > 0) {
+            // 技能：调用 | 频率 | 成功率
+            tooltip.querySelector('.tip-call-count').textContent = data.callCount;
+            tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
+            tooltip.querySelector('.tip-success-rate').textContent = data.successRate ? data.successRate + '%' : '-';
+            if (metricLabels[0]) metricLabels[0].textContent = '调用';
+            if (metricLabels[1]) metricLabels[1].textContent = '频率';
+            if (metricLabels[2]) metricLabels[2].textContent = '成功率';
+            hasMetrics = true;
+        } else if (type === 'knowledge' && data.callCount > 0) {
+            // 知识：文档数 | 热度 | 关联数
+            tooltip.querySelector('.tip-call-count').textContent = data.callCount;
+            tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
+            tooltip.querySelector('.tip-success-rate').textContent = data.successRate || '-';
+            if (metricLabels[0]) metricLabels[0].textContent = '文档';
+            if (metricLabels[1]) metricLabels[1].textContent = '热度';
+            if (metricLabels[2]) metricLabels[2].textContent = '关联';
+            hasMetrics = true;
+        } else if (type === 'memory' && data.callCount > 0) {
+            // 记忆：记忆数 | 活跃度 | 重要度
+            tooltip.querySelector('.tip-call-count').textContent = data.callCount;
+            tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
+            tooltip.querySelector('.tip-success-rate').textContent = data.successRate || '-';
+            if (metricLabels[0]) metricLabels[0].textContent = '记忆';
+            if (metricLabels[1]) metricLabels[1].textContent = '活跃度';
+            if (metricLabels[2]) metricLabels[2].textContent = '重要度';
+            hasMetrics = true;
+        }
+        
+        metricsSection.style.display = hasMetrics ? 'block' : 'none';
     } else if (metricsSection) {
         metricsSection.style.display = 'none';
     }

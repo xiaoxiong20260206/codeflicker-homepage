@@ -321,194 +321,211 @@ function toggleSkillLayerCard(header) {
 }
 window.toggleSkillLayerCard = toggleSkillLayerCard;
 
-// ==================== 知识树 - 档案馆卡片风格 ====================
+// ==================== 知识树 - 纵向三层架构图（v3.0） ====================
 function renderKnowledgeArchive(container, knowledge) {
     if (!container) return;
     
-    var knowledgeNameMap = {
-        'personal-writings': '个人文章', 'rd-efficiency': '研发效能',
-        'financial': '金融投资', 'experience': '经验总结',
-        'guides': '使用指南', 'investment': '投资理财',
-        'ai-research': 'AI研究', 'product': '产品思考', 'mcp-research': 'MCP研究'
-    };
+    var layerDef = [
+        { tag: 'L1-meta', icon: '\uD83D\uDCD6', label: '\u57fa\u5ea7\u77e5\u8bc6\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u652f\u6491\u5143\u80fd\u529b\u7684\u601d\u60f3\u548c\u65b9\u6cd5\u8bba', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u5143\u8ba4\u77e5\u5c42' },
+        { tag: 'L2-domain', icon: '\uD83D\uDD0D', label: '\u9886\u57df\u77e5\u8bc6\u5c42', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '\u7279\u5b9a\u9886\u57df\u7684\u6df1\u5ea6\u7814\u7a76\u548c\u77e5\u8bc6\u6c89\u6dc0', align: '\u2194 \u9886\u57df\u80fd\u529b\u5c42 \u00b7 \u9886\u57df\u8bb0\u5fc6\u5c42' },
+        { tag: 'L3-execution', icon: '\uD83D\uDCE6', label: '\u5b9e\u8df5\u77e5\u8bc6\u5c42', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '\u5177\u4f53\u6267\u884c\u4e2d\u4ea7\u51fa\u7684\u65b9\u6848\u548c\u6587\u6863', align: '\u2194 \u6267\u884c\u6280\u80fd\u5c42 \u00b7 \u5b9e\u8df5\u8bb0\u5fc6\u5c42' }
+    ];
     
-    var knowledgeIconMap = {
-        'personal-writings': '\u270D\uFE0F', 'rd-efficiency': '\u26A1',
-        'financial': '\uD83D\uDCB0', 'experience': '\uD83D\uDCA1',
-        'guides': '\uD83D\uDCD6', 'ai-research': '\uD83E\uDD16',
-        'product': '\uD83D\uDCCA', 'mcp-research': '\uD83D\uDD0C'
-    };
+    // Build per-layer category lists from tree or flat categories
+    var layerCats = {};
+    layerDef.forEach(function(l){ layerCats[l.tag] = []; });
     
-    var directories = [];
-    if (knowledge.directories && Array.isArray(knowledge.directories)) {
-        directories = knowledge.directories;
+    var src = (knowledge.tree && Object.keys(knowledge.tree).length > 0) ? 'tree' : 'flat';
+    if (src === 'tree') {
+        Object.keys(knowledge.tree).forEach(function(layerName) {
+            var li = knowledge.tree[layerName];
+            var tag = li.layerTag || 'L3-execution';
+            var cats = li.categories || {};
+            Object.keys(cats).forEach(function(k) { var c = cats[k]; c._key = k; if (!layerCats[tag]) layerCats[tag] = []; layerCats[tag].push(c); });
+        });
     } else if (knowledge.categories) {
-        var catEntries = Object.entries(knowledge.categories);
-        for (var i = 0; i < catEntries.length; i++) {
-            var key = catEntries[i][0], cat = catEntries[i][1];
-            directories.push({ key: key, name: cat.name || key, count: cat.fileCount || 0, icon: cat.icon || '\uD83D\uDCC1', color: cat.color, sizeKB: cat.sizeKB || 0, description: cat.description });
+        Object.keys(knowledge.categories).forEach(function(k) { var c = knowledge.categories[k]; c._key = k; var t = c.layerTag || 'L3-execution'; if (!layerCats[t]) layerCats[t] = []; layerCats[t].push(c); });
+    }
+    
+    var totalFiles = knowledge.totalFiles || 0;
+    var totalCats = 0;
+    layerDef.forEach(function(l){ totalCats += layerCats[l.tag].length; });
+    
+    if (totalCats === 0) { container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);">\uD83D\uDCDA \u6682\u65e0\u77e5\u8bc6\u5e93\u6570\u636e</div>'; return; }
+    
+    // Header
+    var html = '<div class="knowledge-arch"><div class="arch-header"><div class="arch-title"><span class="arch-icon">\uD83D\uDCDA</span>\u77e5\u8bc6\u5e93 \u00b7 \u4e09\u5c42\u67b6\u6784</div><div class="arch-stats"><span>' + totalCats + ' \u9886\u57df</span><span class="arch-stat-sep">\u00b7</span><span>' + totalFiles + ' \u6587\u6863</span></div></div>';
+    
+    var maxCount = 1;
+    layerDef.forEach(function(l){ layerCats[l.tag].forEach(function(c){ if ((c.fileCount||0) > maxCount) maxCount = c.fileCount||0; }); });
+    
+    // Render each layer
+    for (var li = 0; li < layerDef.length; li++) {
+        var ld = layerDef[li];
+        var cats = layerCats[ld.tag];
+        if (cats.length === 0) continue;
+        
+        var layerFiles = 0;
+        cats.forEach(function(c){ layerFiles += c.fileCount || 0; });
+        
+        html += '<div class="kn-layer" style="border-color:' + ld.border + ';background:linear-gradient(180deg,' + ld.bg + ',' + ld.bg.replace('0.06','0.02') + ');">';
+        html += '<div class="kn-layer-label" style="border-bottom-color:' + ld.border + ';"><span class="kn-label-icon">' + ld.icon + '</span><span class="kn-label-text" style="color:' + ld.color + ';">' + ld.label + '</span><span class="kn-label-desc">' + ld.desc + '</span><span class="kn-label-align">' + ld.align + '</span><span class="kn-label-count" style="color:' + ld.color + ';">' + layerFiles + ' \u6587\u6863</span></div>';
+        html += '<div class="kn-layer-content"><div class="kn-cards-grid">';
+        
+        for (var ci = 0; ci < cats.length; ci++) {
+            var cat = cats[ci];
+            var name = cat.displayName || cat.name || cat._key || '?';
+            var icon = cat.icon || '\uD83D\uDCC1';
+            var count = cat.fileCount || 0;
+            var size = cat.sizeKB || 0;
+            var heat = cat.heatLevel || 1;
+            var skills = cat.relatedSkills || [];
+            var progress = (count / maxCount * 100);
+            var cardId = 'kn-' + ld.tag + '-' + ci;
+            
+            // 指标数据
+            var relatedTotal = skills.length + (cat.relatedMemories || []).length;
+            var heatLabels = ['', '\u4f4e', '\u4f4e', '\u4e2d', '\u9ad8', '\u6781\u9ad8'];
+            
+            window.AppState.dataMap[cardId] = { name: name, icon: icon, level: Math.min(5, Math.ceil(count / 10)), description: (cat.description || name) + '\n\u6587\u6863\u6570: ' + count + (size ? ' | \u5927\u5c0f: ' + size + 'KB' : '') + (skills.length ? '\n\u5173\u8054\u6280\u80fd: ' + skills.join(', ') : '') + ((cat.relatedMemories || []).length ? '\n\u5173\u8054\u8bb0\u5fc6: ' + (cat.relatedMemories || []).join(', ') : ''), source: ld.label, callCount: count, frequency: heatLabels[Math.min(5, heat)] || '\u4f4e', successRate: relatedTotal > 0 ? '\u26A1' + skills.length + ' \uD83E\uDDE0' + (cat.relatedMemories || []).length : '0' };
+            
+            // Heat dots
+            var heatHtml = '';
+            for (var h = 0; h < 5; h++) { heatHtml += '<span class="kn-heat-dot' + (h < heat ? ' active' : '') + '" style="' + (h < heat ? 'background:' + ld.color + ';' : '') + '"></span>'; }
+            
+            // Related skills tags
+            var tagsHtml = '';
+            if (skills.length > 0) {
+                tagsHtml = '<div class="kn-card-tags">';
+                var showSkills = skills.slice(0, 3);
+                for (var si = 0; si < showSkills.length; si++) { tagsHtml += '<span class="kn-skill-tag" style="border-color:' + ld.border + ';color:' + ld.color + ';">\u26A1 ' + showSkills[si] + '</span>'; }
+                if (skills.length > 3) tagsHtml += '<span class="kn-skill-tag-more">+' + (skills.length - 3) + '</span>';
+                tagsHtml += '</div>';
+            }
+            
+            html += '<div class="kn-domain-card" style="--kn-color:' + ld.color + ';border-color:' + ld.border + ';" onmouseenter="showTreeTooltip(event,\'' + cardId + '\',\'knowledge\')" onmouseleave="hideTooltip()">';
+            html += '<div class="kn-card-header"><span class="kn-card-icon">' + icon + '</span><div class="kn-card-info"><div class="kn-card-name">' + name + '</div><div class="kn-card-meta"><span class="kn-card-count" style="color:' + ld.color + ';">' + count + '</span> \u6587\u6863' + (size ? ' \u00b7 ' + size + 'KB' : '') + '</div></div><div class="kn-card-heat">' + heatHtml + '</div></div>';
+            html += '<div class="kn-card-progress"><div class="kn-progress-fill" style="width:' + progress + '%;background:' + ld.color + ';"></div></div>';
+            html += tagsHtml;
+            html += '</div>';
+        }
+        
+        html += '</div></div></div>';
+        
+        // Layer transition
+        if (li < layerDef.length - 1) {
+            var nextCats = layerCats[layerDef[li+1].tag];
+            if (nextCats && nextCats.length > 0) {
+                var transLabels = ['\u601d\u60f3\u6c89\u6dc0 \u2192 \u9886\u57df\u6df1\u5316', '\u9886\u57df\u77e5\u8bc6 \u2192 \u5b9e\u8df5\u6307\u5bfc'];
+                html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabels[li] + '</div><div class="transition-arrow">\u25BC</div></div>';
+            }
         }
     }
     
-    if (directories.length === 0) {
-        container.innerHTML = '<div class="no-data">暂无知识库数据</div>';
-        return;
-    }
-    
-    var maxCount = 0;
-    for (var m = 0; m < directories.length; m++) { if (directories[m].count > maxCount) maxCount = directories[m].count; }
-    
-    var cardsHtml = '';
-    for (var d = 0; d < directories.length; d++) {
-        var dir = directories[d];
-        var dirKey = dir.key || dir.name;
-        var chineseName = knowledgeNameMap[dirKey] || dirKey;
-        var dirIcon = knowledgeIconMap[dirKey] || dir.icon || '\uD83D\uDCC1';
-        var dirId = 'knowledge-dir-' + d;
-        var progress = maxCount > 0 ? (dir.count / maxCount * 100) : 0;
-        var isRecent = dir.count > 5;
-        
-        window.AppState.dataMap[dirId] = {
-            name: chineseName, icon: dirIcon, level: Math.min(5, Math.ceil(dir.count / 10)),
-            description: chineseName + '知识库，共收录' + dir.count + '个文档' + (dir.sizeKB ? '，总计' + dir.sizeKB + 'KB' : ''),
-            source: dir.description || chineseName + '相关文档'
-        };
-        
-        cardsHtml += '<div class="knowledge-folder-card" onmouseenter="showTreeTooltip(event, \'' + dirId + '\', \'knowledge\')" onmouseleave="hideTooltip()"><div class="knowledge-folder-header"><span class="knowledge-folder-icon">' + dirIcon + '</span><span class="knowledge-folder-name">' + chineseName + '</span></div><div class="knowledge-folder-progress"><div class="knowledge-progress-bar"><div class="knowledge-progress-fill" style="width:' + progress + '%;"></div></div><div class="knowledge-progress-text"><span class="knowledge-folder-count">' + dir.count + ' 文档</span><span>' + (dir.sizeKB ? dir.sizeKB + 'KB' : '') + '</span></div></div><div class="knowledge-folder-footer">' + (isRecent ? '<span class="knowledge-update-badge recent">\uD83D\uDD25 活跃</span>' : '') + '</div></div>';
-    }
-    
-    container.innerHTML = '<div class="knowledge-archive"><div class="knowledge-header"><span class="knowledge-header-icon">\uD83D\uDCDA</span><div class="knowledge-header-info"><div class="knowledge-header-title">知识库</div><div class="knowledge-header-desc">涵盖' + directories.length + '个领域的深度积累</div></div><div><div class="knowledge-header-count">' + (knowledge.totalFiles || 0) + '</div><div class="knowledge-header-label">总文档数</div></div></div><div class="knowledge-cards-grid">' + cardsHtml + '</div></div>';
+    html += '</div>';
+    container.innerHTML = html;
 }
 
-// ==================== 记忆树 - 神经网络径向布局 + 二级展开 ====================
+// ==================== 记忆树 - 纵向三层架构图（v3.0） ====================
 function renderMemoryNeuralNetwork(container, memories) {
     if (!container) return;
     
     var tree = memories.tree;
     var total = memories.total || 0;
     
-    var layerConfig = {
-        '\uD83D\uDC64 用户层': { color: '#38bdf8', label: '用户', icon: '\uD83D\uDC64' },
-        '\uD83E\uDDE0 能力层': { color: '#a78bfa', label: '能力', icon: '\uD83E\uDDE0' },
-        '\uD83C\uDFAF 领域技能包': { color: '#8b5cf6', label: '领域技能', icon: '\uD83C\uDFAF' },
-        '\uD83D\uDEE0\uFE0F 领域层': { color: '#4ade80', label: '领域', icon: '\uD83D\uDEE0\uFE0F' },
-        '\uD83D\uDCDA 项目层': { color: '#fb923c', label: '项目', icon: '\uD83D\uDCDA' }
-    };
+    var layerDef = [
+        { key: '\uD83E\uDDE0 \u5143\u8ba4\u77e5\u5c42', icon: '\uD83E\uDDE0', label: '\u5143\u8ba4\u77e5\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u7528\u6237\u8eab\u4efd\u3001\u601d\u7ef4\u80fd\u529b\u3001\u5de5\u4f5c\u6a21\u5f0f', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u57fa\u5ea7\u77e5\u8bc6\u5c42' },
+        { key: '\uD83C\uDFAF \u9886\u57df\u8bb0\u5fc6\u5c42', icon: '\uD83C\uDFAF', label: '\u9886\u57df\u8bb0\u5fc6\u5c42', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '\u7279\u5b9a\u9886\u57df\u7684\u5b8c\u6574\u7ecf\u9a8c\u6c89\u6dc0', align: '\u2194 \u9886\u57df\u80fd\u529b\u5c42 \u00b7 \u9886\u57df\u77e5\u8bc6\u5c42' },
+        { key: '\uD83D\uDEE0\uFE0F \u5b9e\u8df5\u8bb0\u5fc6\u5c42', icon: '\uD83D\uDEE0\uFE0F', label: '\u5b9e\u8df5\u8bb0\u5fc6\u5c42', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '\u5177\u4f53\u9886\u57df\u7684\u8e29\u5751\u7ecf\u9a8c\u548c\u9879\u76ee\u77e5\u8bc6', align: '\u2194 \u6267\u884c\u6280\u80fd\u5c42 \u00b7 \u5b9e\u8df5\u77e5\u8bc6\u5c42' }
+    ];
     
     if (!tree || Object.keys(tree).length === 0) {
-        container.innerHTML = '<div class="memory-neural-network"><div style="text-align:center;padding:40px;color:var(--text-muted);"><div style="font-size:48px;margin-bottom:10px;">\uD83E\uDDE0</div><div>记忆总数：' + total + '</div></div></div>';
+        container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);"><div style="font-size:48px;margin-bottom:10px;">\uD83E\uDDE0</div><div>\u8bb0\u5fc6\u603b\u6570\uff1a' + total + '</div></div>';
         return;
     }
     
-    var centerX = 250, centerY = 250, radius = 140;
-    var validLayers = Object.entries(tree).filter(function(e) { return e[1].count > 0; });
-    var angleStep = (2 * Math.PI) / validLayers.length;
+    var html = '<div class="memory-arch"><div class="arch-header"><div class="arch-title"><span class="arch-icon">\uD83E\uDDE0</span>\u8bb0\u5fc6\u5e93 \u00b7 \u4e09\u5c42\u67b6\u6784</div><div class="arch-stats"><span>' + total + ' \u6761\u8bb0\u5fc6</span><span class="arch-stat-sep">\u00b7</span><span>3 \u5c42\u67b6\u6784</span></div></div>';
     
-    var connectionsHtml = '', nodesHtml = '';
-    var layerDataForExpand = {};
-    
-    for (var idx = 0; idx < validLayers.length; idx++) {
-        var layerName = validLayers[idx][0], layerInfo = validLayers[idx][1];
-        var config = layerConfig[layerName] || { color: '#fb923c', label: layerName, icon: '\uD83D\uDCC1' };
-        var angle = angleStep * idx - Math.PI / 2;
-        var x = centerX + radius * Math.cos(angle);
-        var y = centerY + radius * Math.sin(angle);
-        var nodeRadius = Math.min(35, Math.max(22, 18 + layerInfo.count * 0.4));
-        var nodeId = 'memory-layer-' + idx;
+    for (var li = 0; li < layerDef.length; li++) {
+        var ld = layerDef[li];
+        var layerInfo = tree[ld.key];
+        if (!layerInfo || layerInfo.count === 0) continue;
         
-        layerDataForExpand[nodeId] = { layerName: layerName, layerInfo: layerInfo, config: config };
+        html += '<div class="mem-layer" style="border-color:' + ld.border + ';background:linear-gradient(180deg,' + ld.bg + ',' + ld.bg.replace('0.06','0.02') + ');">';
+        html += '<div class="mem-layer-label" style="border-bottom-color:' + ld.border + ';"><span class="mem-label-icon">' + ld.icon + '</span><span class="mem-label-text" style="color:' + ld.color + ';">' + ld.label + '</span><span class="mem-label-desc">' + ld.desc + '</span><span class="mem-label-align">' + ld.align + '</span><span class="mem-label-count" style="color:' + ld.color + ';">' + layerInfo.count + ' \u6761</span></div>';
+        html += '<div class="mem-layer-content">';
         
-        window.AppState.dataMap[nodeId] = {
-            name: layerName, icon: config.icon,
-            level: Math.min(5, Math.ceil(layerInfo.count / 5)),
-            description: (layerInfo.description || config.label + '相关记忆') + '，共' + layerInfo.count + '条',
-            source: '记忆库'
-        };
+        var children = layerInfo.children || {};
+        var childKeys = Object.keys(children);
         
-        connectionsHtml += '<line class="memory-connection" x1="' + centerX + '" y1="' + centerY + '" x2="' + x + '" y2="' + y + '" stroke="' + config.color + '"/>';
-        
-        if (layerInfo.count >= 5) {
-            connectionsHtml += '<circle class="memory-pulse-ring" cx="' + x + '" cy="' + y + '" r="' + nodeRadius + '" stroke="' + config.color + '" style="animation-delay:' + (idx * 0.5) + 's;"/>';
-        }
-        
-        nodesHtml += '<g class="memory-category-node" transform="translate(' + x + ',' + y + ')" data-node-id="' + nodeId + '" onclick="toggleMemoryLayerExpand(\'' + nodeId + '\')" onmouseenter="showTreeTooltip(event, \'' + nodeId + '\', \'memory\')" onmouseleave="hideTooltip()"><circle class="memory-category-circle" r="' + nodeRadius + '" stroke="' + config.color + '"/><text class="memory-category-icon" y="-3">' + config.icon + '</text><text class="memory-category-label" y="10">' + config.label + '</text><text class="memory-category-count" y="22">' + layerInfo.count + '</text></g>';
-    }
-    
-    var legendHtml = '';
-    for (var lg = 0; lg < validLayers.length; lg++) {
-        var lName = validLayers[lg][0], lInfo = validLayers[lg][1];
-        var lCfg = layerConfig[lName] || { color: '#fb923c', label: lName };
-        legendHtml += '<div class="memory-legend-item"><span class="memory-legend-dot" style="background:' + lCfg.color + ';"></span><span>' + lCfg.label + ' (' + lInfo.count + ')</span></div>';
-    }
-    
-    container.innerHTML = '<div class="memory-neural-network"><div class="memory-network-svg"><svg viewBox="0 0 500 500"><defs><radialGradient id="memoryGradient"><stop offset="0%" stop-color="rgba(251,146,60,0.3)"/><stop offset="100%" stop-color="rgba(251,146,60,0.1)"/></radialGradient></defs>' + connectionsHtml + '<circle class="memory-core-node" cx="' + centerX + '" cy="' + centerY + '" r="45"/><text x="' + centerX + '" y="' + (centerY - 8) + '" text-anchor="middle" fill="var(--sheikah-orange)" font-size="24">\uD83E\uDDE0</text><text x="' + centerX + '" y="' + (centerY + 10) + '" text-anchor="middle" fill="var(--sheikah-orange-light)" font-size="11" font-weight="600">记忆核心</text><text x="' + centerX + '" y="' + (centerY + 24) + '" text-anchor="middle" fill="rgba(200,220,240,0.6)" font-size="10">' + total + ' 条</text>' + nodesHtml + '</svg></div><div class="memory-legend">' + legendHtml + '</div><div class="memory-expand-panel" id="memory-expand-panel" style="display:none;"><div class="memory-expand-header"><span class="memory-expand-title" id="memory-expand-title">记忆详情</span><button class="memory-expand-close" onclick="closeMemoryExpand()">\u2715</button></div><div class="memory-expand-content" id="memory-expand-content"></div></div></div>';
-    
-    window._memoryLayerData = layerDataForExpand;
-}
-
-// 展开记忆层级详情
-function toggleMemoryLayerExpand(nodeId) {
-    var layerData = window._memoryLayerData && window._memoryLayerData[nodeId];
-    if (!layerData) return;
-    
-    var panel = document.getElementById('memory-expand-panel');
-    var title = document.getElementById('memory-expand-title');
-    var content = document.getElementById('memory-expand-content');
-    if (!panel || !title || !content) return;
-    
-    var layerName = layerData.layerName;
-    var layerInfo = layerData.layerInfo;
-    var config = layerData.config;
-    
-    title.innerHTML = '<span style="color:' + config.color + ';">' + config.icon + '</span> ' + config.label + '层记忆 (' + layerInfo.count + '条)';
-    
-    var childrenHtml = '';
-    var children = layerInfo.children || {};
-    var childKeys = Object.keys(children);
-    
-    if (childKeys.length === 0) {
-        childrenHtml = '<div class="memory-expand-empty">暂无详细记忆</div>';
-    } else {
+        html += '<div class="mem-cards-grid">';
         for (var ci = 0; ci < childKeys.length; ci++) {
             var childName = childKeys[ci];
-            var childInfo = children[childName];
-            if (childInfo.count === 0) continue;
+            var child = children[childName];
+            if (child.count === 0) continue;
             
-            var items = childInfo.items || [];
-            var itemsHtml = '';
-            var showCount = Math.min(6, items.length);
+            var cIcon = child.icon || '\uD83D\uDCC1';
+            var cColor = child.color || ld.color;
+            var cardId = 'mem-' + li + '-' + ci;
+            var nodeId = 'mem-expand-' + li + '-' + ci;
             
-            for (var ii = 0; ii < showCount; ii++) {
-                var item = items[ii];
-                var itemId = 'memory-item-' + nodeId + '-' + ii;
-                window.AppState.dataMap[itemId] = {
-                    name: item.title || '记忆 #' + (ii + 1), icon: item.icon || '\uD83D\uDCAD',
-                    level: item.importance || 3, description: item.description || '暂无描述', source: childName
-                };
-                var itemTitle = (item.title || '记忆').substring(0, 15);
-                if (item.title && item.title.length > 15) itemTitle += '...';
-                itemsHtml += '<div class="memory-item-chip" style="border-color:' + config.color + ';" onmouseenter="showTreeTooltip(event, \'' + itemId + '\', \'memory\')" onmouseleave="hideTooltip()"><span class="memory-item-icon">' + (item.icon || '\uD83D\uDCAD') + '</span><span class="memory-item-title">' + itemTitle + '</span></div>';
+            window.AppState.dataMap[cardId] = { name: childName, icon: cIcon, level: Math.min(5, Math.ceil(child.count / 5)), description: (child.description || childName) + '\n\u8bb0\u5fc6\u6570: ' + child.count, source: ld.label, callCount: child.count, frequency: child.count >= 10 ? '\u9ad8' : child.count >= 5 ? '\u4e2d' : '\u4f4e', successRate: child.count >= 10 ? '\u2605\u2605\u2605' : child.count >= 5 ? '\u2605\u2605' : '\u2605' };
+            
+            html += '<div class="mem-category-card" style="--mem-cat-color:' + cColor + ';border-color:' + ld.border + ';" onclick="toggleMemCategoryExpand(\'' + nodeId + '\')" onmouseenter="showTreeTooltip(event,\'' + cardId + '\',\'memory\')" onmouseleave="hideTooltip()">';
+            html += '<div class="mem-cat-header"><span class="mem-cat-icon">' + cIcon + '</span><span class="mem-cat-name">' + childName + '</span><span class="mem-cat-count" style="color:' + cColor + ';">' + child.count + '</span><span class="mem-cat-toggle">\u25B6</span></div>';
+            
+            // Inline expandable items
+            var items = child.items || [];
+            if (items.length > 0) {
+                html += '<div class="mem-cat-items" id="' + nodeId + '" style="display:none;">';
+                var showCount = Math.min(8, items.length);
+                for (var ii = 0; ii < showCount; ii++) {
+                    var item = items[ii];
+                    var itemId = 'mem-item-' + li + '-' + ci + '-' + ii;
+                    var title = (item.title || '\u8bb0\u5fc6').substring(0, 18);
+                    if (item.title && item.title.length > 18) title += '...';
+                    window.AppState.dataMap[itemId] = { name: item.title || '\u8bb0\u5fc6', icon: item.icon || '\uD83D\uDCAD', level: item.importance || 3, description: item.description || '\u6682\u65e0\u63cf\u8ff0', source: childName, callCount: 1, frequency: item.importance >= 4 ? '\u9ad8' : item.importance >= 2 ? '\u4e2d' : '\u4f4e', successRate: item.importance >= 4 ? '\u2605\u2605\u2605' : item.importance >= 2 ? '\u2605\u2605' : '\u2605' };
+                    html += '<div class="mem-item-chip" style="border-color:rgba(' + (cColor === '#38bdf8' ? '56,189,248' : cColor === '#a78bfa' ? '167,139,250' : cColor === '#dc2626' ? '220,38,38' : '200,220,240') + ',0.3);" onmouseenter="showTreeTooltip(event,\'' + itemId + '\',\'memory\')" onmouseleave="hideTooltip()"><span class="mem-item-icon">' + (item.icon || '\uD83D\uDCAD') + '</span><span class="mem-item-title">' + title + '</span></div>';
+                }
+                if (items.length > 8) html += '<div class="mem-item-more">+' + (items.length - 8) + ' \u6761</div>';
+                html += '</div>';
             }
             
-            if (items.length > 6) {
-                itemsHtml += '<div class="memory-item-more">+' + (items.length - 6) + '</div>';
+            html += '</div>';
+        }
+        html += '</div></div></div>';
+        
+        // Layer transition
+        if (li < layerDef.length - 1) {
+            var nextLayer = tree[layerDef[li+1].key];
+            if (nextLayer && nextLayer.count > 0) {
+                var transLabels = ['\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u9886\u57df\u4e13\u7cbe', '\u9886\u57df\u7ecf\u9a8c \u2192 \u5b9e\u8df5\u6307\u5bfc'];
+                html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabels[li] + '</div><div class="transition-arrow">\u25BC</div></div>';
             }
-            
-            childrenHtml += '<div class="memory-child-group"><div class="memory-child-header" style="color:' + config.color + ';"><span class="memory-child-icon">' + (childInfo.icon || '\uD83D\uDCC1') + '</span><span class="memory-child-name">' + childName + '</span><span class="memory-child-count">' + childInfo.count + '</span></div><div class="memory-child-items">' + itemsHtml + '</div></div>';
         }
     }
     
-    content.innerHTML = childrenHtml;
-    panel.style.display = 'block';
+    html += '</div>';
+    container.innerHTML = html;
 }
 
-function closeMemoryExpand() {
-    var panel = document.getElementById('memory-expand-panel');
-    if (panel) panel.style.display = 'none';
+// Toggle memory category expand
+function toggleMemCategoryExpand(nodeId) {
+    var el = document.getElementById(nodeId);
+    if (!el) return;
+    var card = el.closest('.mem-category-card');
+    var toggle = card ? card.querySelector('.mem-cat-toggle') : null;
+    if (el.style.display === 'none') {
+        el.style.display = 'flex';
+        if (toggle) toggle.textContent = '\u25BC';
+        if (card) card.classList.add('expanded');
+    } else {
+        el.style.display = 'none';
+        if (toggle) toggle.textContent = '\u25B6';
+        if (card) card.classList.remove('expanded');
+    }
 }
-
-window.toggleMemoryLayerExpand = toggleMemoryLayerExpand;
-window.closeMemoryExpand = closeMemoryExpand;
+window.toggleMemCategoryExpand = toggleMemCategoryExpand;
 
 // ==================== 导出到全局 ====================
 window.renderSkillTechTree = renderSkillTechTree;

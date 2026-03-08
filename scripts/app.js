@@ -1469,7 +1469,7 @@ function renderSkillTreeGraph(skills) {
 
 // 三层架构技能树渲染
 function renderSkillTreeWithLayers(container, tree, skills) {
-    // 技能名称到简短中文名的映射
+    // 技能名称到简短中文名的映射（规范版 v3.0）
     const skillNameMap = {
         // === 🔄 自进化引擎 ===
         'xiaowuxianggong': '小无相功',
@@ -1509,11 +1509,13 @@ function renderSkillTreeWithLayers(container, tree, skills) {
         'xlsx': 'Excel',
         'canvas-design': '画布',
         'keynote': 'Keynote',
+        'ks-kim-docs-shuttle': 'IM文档',
         
         // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
         'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端',
+        'web-dev-workflow': '网页流程',
         'qingshuang-research-style': '清爽',
         'work-report-ppt': '汇报',
         'pixel-action-game': '像素',
@@ -1528,7 +1530,6 @@ function renderSkillTreeWithLayers(container, tree, skills) {
         // === 发布部署 ===
         'github-deploy-publisher': 'GitHub',
         'yuque-publisher': '语雀',
-        'ks-kim-docs-shuttle': 'IM文档',
         'mcp-builder': 'MCP',
         
         // === 投资理财 ===
@@ -1540,7 +1541,9 @@ function renderSkillTreeWithLayers(container, tree, skills) {
         'feishu-assistant': '飞书',
         'linke-kim-message': 'IM消息',
         'ai-column-writer': '专栏',
-        'personal-assistant': '助理'
+        'promotion-coaching': '晋升辅导',
+        'personal-assistant': '助理',
+        'codeflicker-weekly-report': '周报'
     };
     
     let idx = 0;
@@ -1669,7 +1672,7 @@ function renderSkillTreeWithLayers(container, tree, skills) {
 
 // 扁平结构技能树渲染（回退方案）
 function renderSkillTreeFlat(container, skills) {
-    // 技能名称到简短中文名的映射（优化版 v2.0）
+    // 技能名称到简短中文名的映射（规范版 v3.0）
     const skillNameMap = {
         // === 🔄 自进化引擎 ===
         'xiaowuxianggong': '小无相功',
@@ -1709,6 +1712,7 @@ function renderSkillTreeFlat(container, skills) {
         'xlsx': 'Excel',
         'canvas-design': '画布',
         'keynote': 'Keynote',
+        'ks-kim-docs-shuttle': 'IM文档',
         
         // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家',
@@ -1729,7 +1733,6 @@ function renderSkillTreeFlat(container, skills) {
         // === 发布部署 ===
         'github-deploy-publisher': 'GitHub',
         'yuque-publisher': '语雀',
-        'ks-kim-docs-shuttle': 'IM文档',
         'mcp-builder': 'MCP',
         
         // === 投资理财 ===
@@ -1742,7 +1745,8 @@ function renderSkillTreeFlat(container, skills) {
         'linke-kim-message': 'IM消息',
         'ai-column-writer': '专栏',
         'promotion-coaching': '晋升辅导',
-        'personal-assistant': '助理'
+        'personal-assistant': '助理',
+        'codeflicker-weekly-report': '周报'
     };
     
     let idx = 0;
@@ -1918,35 +1922,45 @@ function renderKnowledgeTreeGraph(knowledge) {
     const container = document.getElementById('knowledge-tree');
     if (!container) return;
     
-    // 知识目录中文名称映射
+    // 知识目录中文名称映射（v3.0 与 character-data.json 同步）
     const knowledgeNameMap = {
-        'personal-writings': '个人文章',
+        'personal-writings': '思想体系',
         'rd-efficiency': '研发效能',
+        'ai-insight': 'AI-Insight知识库',
+        'self-evolution': '自进化日志',
+        'mcp-research': 'MCP研究',
+        // 兼容旧数据
         'financial': '金融投资',
         'experience': '经验总结',
         'guides': '使用指南',
         'investment': '投资理财',
         'ai-research': 'AI研究',
-        'product': '产品思考',
-        'mcp-research': 'MCP研究'
+        'product': '产品思考'
     };
     
-    // 知识目录图标映射
+    // 知识目录图标映射（v3.0 补全）
     const knowledgeIconMap = {
         'personal-writings': '✍️',
         'rd-efficiency': '⚡',
+        'ai-insight': '🤖',
+        'self-evolution': '🔄',
+        'mcp-research': '🔌',
+        // 兼容旧数据
         'financial': '💰',
         'experience': '💡',
         'guides': '📖',
         'ai-research': '🤖',
-        'product': '📊',
-        'mcp-research': '🔌'
+        'product': '📊'
     };
     
-    // 知识目录来源描述映射
+    // 知识目录来源描述映射（v3.0 补全）
     const knowledgeSourceMap = {
         'personal-writings': '个人原创文章、思考记录、写作作品，涵盖人生哲学、认知框架、方法论等内容',
         'rd-efficiency': '研发效能领域的调研报告、技术分析、最佳实践，源自工作中的技术积累',
+        'ai-insight': 'AI持续洞察平台的知识沉淀，包含日报、深度调研、行业分析等',
+        'self-evolution': '自进化系统的运行日志、健康度报告、修炼记录',
+        'mcp-research': 'MCP协议研究、Server开发实践、工具链分析',
+        // 兼容旧数据
         'financial': '金融投资相关的分析报告、数据研究、决策框架',
         'experience': '项目实践中的经验沉淀、踩坑记录、解决方案',
         'guides': '工具使用指南、操作手册、配置说明',
@@ -2163,8 +2177,12 @@ function renderMemoryTreeGraph(memories) {
 
 // 三层架构记忆树渲染（回退版本）
 function renderMemoryTreeWithLayers(container, tree, memoryItems) {
-    // 层级颜色映射
+    // 层级颜色映射（v3.0 三层架构）
     const layerColors = {
+        '🧠 元认知层': '#a78bfa',
+        '🎯 领域记忆层': '#8b5cf6',
+        '🛠️ 实践记忆层': '#4ade80',
+        // 兼容旧数据
         '👤 用户层': '#38bdf8',
         '🧠 能力层': '#a78bfa',
         '🎯 领域技能包': '#8b5cf6',

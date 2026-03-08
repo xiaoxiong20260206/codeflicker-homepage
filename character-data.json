@@ -26,12 +26,12 @@
         "icon": "🔄",
         "color": "#a78bfa",
         "layer": "meta",
-        "description": "驱动林克持续进化的完整闭环：反思→学习→优化",
+        "description": "驱动AI助手持续进化的完整闭环：反思→学习→优化",
         "skills": [
           {
             "name": "daily-reflection-evolution",
             "displayName": "自进化",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 85,
             "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
@@ -43,7 +43,7 @@
           {
             "name": "neigong-cultivation",
             "displayName": "内功修炼",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 73,
             "description": "内功修炼：记忆/知识/技能三位一体优化器",
@@ -55,7 +55,7 @@
           {
             "name": "xiaowuxianggong",
             "displayName": "小无相功",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 70,
             "description": "自进化体系引导程序：导航、周检、月检、进化全景",
@@ -67,7 +67,7 @@
           {
             "name": "learn-from-mistakes",
             "displayName": "举一反三",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 3,
             "exp": 64,
             "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
@@ -79,7 +79,7 @@
           {
             "name": "meta-execution",
             "displayName": "元执行",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 3,
             "exp": 64,
             "description": "元执行框架：一次把事情做对的自审机制",
@@ -91,7 +91,7 @@
           {
             "name": "memory-hygiene",
             "displayName": "记忆管理",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 3,
             "exp": 58,
             "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
@@ -103,7 +103,7 @@
           {
             "name": "skill-architecture",
             "displayName": "技能架构",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 3,
             "exp": 58,
             "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
@@ -115,7 +115,7 @@
           {
             "name": "knowledge-curator",
             "displayName": "知识管理",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 3,
             "exp": 58,
             "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
@@ -137,7 +137,7 @@
           {
             "name": "essence-insight",
             "displayName": "本质洞察",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 85,
             "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
@@ -149,7 +149,7 @@
           {
             "name": "knowledge-acquisition-meta",
             "displayName": "知识习得",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 79,
             "description": "快速掌握新领域的元框架：五阶段渐进学习+三重质量闭环",
@@ -161,7 +161,7 @@
           {
             "name": "product-thinking",
             "displayName": "产品思维",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 70,
             "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
@@ -183,7 +183,7 @@
           {
             "name": "night-task-runner",
             "displayName": "夜间任务",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 70,
             "description": "夜间长任务执行器，断点恢复和自主执行",
@@ -195,7 +195,7 @@
           {
             "name": "knowledge-base",
             "displayName": "知识库",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 2,
             "exp": 48,
             "description": "个人知识库检索，按分类查找历史调研和文档",
@@ -207,7 +207,7 @@
           {
             "name": "find-skills",
             "displayName": "技能发现",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 2,
             "exp": 48,
             "description": "技能发现和安装助手，寻找合适的能力扩展",
@@ -640,7 +640,7 @@
             "source": "codeflicker",
             "level": 3,
             "exp": 58,
-            "description": "本技能已合并进 `wechat-research`，后者是统一入口，包含：",
+            "description": "本技能已合并进 wechat-research，后者是统一入口，包含：",
             "lastUpdated": "2026-03-08",
             "callCount": 0,
             "frequency": "",
@@ -813,7 +813,7 @@
             "source": "codeflicker",
             "level": 3,
             "exp": 67,
-            "description": "> **⚠️ META-EXECUTION REQUIRED** — 本技能已启用强制质量保障（C1+C2+C3+C5: 首页门面+脱敏+部署+公开）。",
+            "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1+C2+C3+C5: 首页门面+脱敏+部署+公开）。",
             "lastUpdated": "2026-03-08",
             "callCount": 0,
             "frequency": "",
@@ -834,12 +834,12 @@
           "🔄 自进化引擎": {
             "icon": "🔄",
             "color": "#a78bfa",
-            "description": "驱动林克持续进化的完整闭环：反思→学习→优化",
+            "description": "驱动AI助手持续进化的完整闭环：反思→学习→优化",
             "skills": [
               {
                 "name": "daily-reflection-evolution",
                 "displayName": "自进化",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 85,
                 "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
@@ -851,7 +851,7 @@
               {
                 "name": "neigong-cultivation",
                 "displayName": "内功修炼",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 73,
                 "description": "内功修炼：记忆/知识/技能三位一体优化器",
@@ -863,7 +863,7 @@
               {
                 "name": "xiaowuxianggong",
                 "displayName": "小无相功",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 70,
                 "description": "自进化体系引导程序：导航、周检、月检、进化全景",
@@ -875,7 +875,7 @@
               {
                 "name": "learn-from-mistakes",
                 "displayName": "举一反三",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
                 "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
@@ -887,7 +887,7 @@
               {
                 "name": "meta-execution",
                 "displayName": "元执行",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
                 "description": "元执行框架：一次把事情做对的自审机制",
@@ -899,7 +899,7 @@
               {
                 "name": "memory-hygiene",
                 "displayName": "记忆管理",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 3,
                 "exp": 58,
                 "description": "记忆健康管理：自动化扫描、批量诊断、优化执行",
@@ -911,7 +911,7 @@
               {
                 "name": "skill-architecture",
                 "displayName": "技能架构",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 3,
                 "exp": 58,
                 "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
@@ -923,7 +923,7 @@
               {
                 "name": "knowledge-curator",
                 "displayName": "知识管理",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 3,
                 "exp": 58,
                 "description": "知识库健康管理：索引完整性、重复检测、过时标记、分类整理",
@@ -944,7 +944,7 @@
               {
                 "name": "essence-insight",
                 "displayName": "本质洞察",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 85,
                 "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
@@ -956,7 +956,7 @@
               {
                 "name": "knowledge-acquisition-meta",
                 "displayName": "知识习得",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 79,
                 "description": "快速掌握新领域的元框架：五阶段渐进学习+三重质量闭环",
@@ -968,7 +968,7 @@
               {
                 "name": "product-thinking",
                 "displayName": "产品思维",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 70,
                 "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
@@ -989,7 +989,7 @@
               {
                 "name": "night-task-runner",
                 "displayName": "夜间任务",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 70,
                 "description": "夜间长任务执行器，断点恢复和自主执行",
@@ -1001,7 +1001,7 @@
               {
                 "name": "knowledge-base",
                 "displayName": "知识库",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 2,
                 "exp": 48,
                 "description": "个人知识库检索，按分类查找历史调研和文档",
@@ -1013,7 +1013,7 @@
               {
                 "name": "find-skills",
                 "displayName": "技能发现",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 2,
                 "exp": 48,
                 "description": "技能发现和安装助手，寻找合适的能力扩展",
@@ -1459,7 +1459,7 @@
                 "source": "codeflicker",
                 "level": 3,
                 "exp": 58,
-                "description": "本技能已合并进 `wechat-research`，后者是统一入口，包含：",
+                "description": "本技能已合并进 wechat-research，后者是统一入口，包含：",
                 "lastUpdated": "2026-03-08",
                 "callCount": 0,
                 "frequency": "",
@@ -1630,7 +1630,7 @@
                 "source": "codeflicker",
                 "level": 3,
                 "exp": 67,
-                "description": "> **⚠️ META-EXECUTION REQUIRED** — 本技能已启用强制质量保障（C1+C2+C3+C5: 首页门面+脱敏+部署+公开）。",
+                "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1+C2+C3+C5: 首页门面+脱敏+部署+公开）。",
                 "lastUpdated": "2026-03-08",
                 "callCount": 0,
                 "frequency": "",
@@ -1987,7 +1987,7 @@
         "layer": "🎯 领域记忆层",
         "icon": "🔍",
         "color": "#8b5cf6",
-        "description": "## AI-Insight 持续洞察项目 ### 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
+        "description": "AI-Insight 持续洞察项目 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
         "keywords": [
           "AI-Insight",
           "AI调研",
@@ -2006,7 +2006,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## AI日报生成后的必做工作流程 **核心规则**: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 ### 执行步骤（完整版） 1. **日...",
+        "description": "AI日报生成后的必做工作流程 核心规则: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 执行步骤（完整版） 1. 日...",
         "keywords": [
           "日报",
           "知识库",
@@ -2025,7 +2025,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "**问题**: AI日报国内新闻长期偏少（海外信息源开放易搜；国内核心载体是微信公众号封闭生态），导致板块配额长期难满足。 **根因分析**: 1. 信息...",
+        "description": "问题: AI日报国内新闻长期偏少（海外信息源开放易搜；国内核心载体是微信公众号封闭生态），导致板块配额长期难满足。 根因分析: 1. 信息...",
         "keywords": [
           "AI日报",
           "国内覆盖",
@@ -2044,7 +2044,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## AI日报工作流上下文溢出的根因与优化方案 ### 问题 2026-03-08 AI日报执行时跨了两个上下文窗口，导致发布延迟3小时+。 ### 根因...",
+        "description": "AI日报工作流上下文溢出的根因与优化方案 问题 2026-03-08 AI日报执行时跨了两个上下文窗口，导致发布延迟3小时+。 根因...",
         "keywords": [
           "AI日报",
           "上下文溢出",
@@ -2063,7 +2063,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## AI洞察项目版本体系定义 ### 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | |------|---------|-------...",
+        "description": "AI洞察项目版本体系定义 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | -------...",
         "keywords": [
           "外部版",
           "内部版",
@@ -2082,7 +2082,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## AI生成UI反模式清单 ### 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
+        "description": "AI生成UI反模式清单 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
         "keywords": [
           "AI反模式",
           "前端设计",
@@ -2101,7 +2101,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "### 样式重构时的兼容性检查清单 **问题场景**： 添加新样式系统时，与旧样式冲突导致布局错乱。 **案例**： 进化历程板块： - 旧样式：左侧时间...",
+        "description": "样式重构时的兼容性检查清单 问题场景： 添加新样式系统时，与旧样式冲突导致布局错乱。 案例： 进化历程板块： - 旧样式：左侧时间...",
         "keywords": [
           "CSS",
           "样式重构",
@@ -2120,7 +2120,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## Chrome Headless 截图完整经验 ### 基础问题 字体未加载、滚动条、底部黑边： - 使用系统字体，不依赖 Google Fonts ...",
+        "description": "Chrome Headless 截图完整经验 基础问题 字体未加载、滚动条、底部黑边： - 使用系统字体，不依赖 Google Fonts ...",
         "keywords": [
           "Chrome",
           "headless",
@@ -2139,7 +2139,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "⚡",
         "color": "#64748b",
-        "description": "## FastMCP 版本兼容坑：`FastMCP(port=...)` 参数移除导致 MCP Server 无法启动 ### 现象 运行 `weixin...",
+        "description": "FastMCP 版本兼容坑：FastMCP(port=...) 参数移除导致 MCP Server 无法启动 现象 运行 `weixin...",
         "keywords": [
           "FastMCP",
           "port",
@@ -2158,7 +2158,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## Git Force操作前必须保护工作区 ### 问题 重建codeflicker-homepage的.git目录后，执行 `git checkout...",
+        "description": "Git Force操作前必须保护工作区 问题 重建codeflicker-homepage的.git目录后，执行 `git checkout...",
         "keywords": [
           "git",
           "force",
@@ -2177,7 +2177,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## 问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： ### 泄露载体清单（安全扫描必检项） 1. **Git commit auth...",
+        "description": "问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： 泄露载体清单（安全扫描必检项） 1. Git commit auth...",
         "keywords": [
           "GitHub",
           "安全审计",
@@ -2196,7 +2196,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 ### 失败方案 Chrome headless的`--window-siz...",
+        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
         "keywords": [
           "HTML截图",
           "Docs文档",
@@ -2215,7 +2215,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "💬",
         "color": "#06b6d4",
-        "description": "## KIM卡片视觉层次优化（v3.2→v3.4迭代经验） ### 问题 2026-03-08 AI日报KIM卡片v3.1-v3.3版本中，热度趋势条目和...",
+        "description": "KIM卡片视觉层次优化（v3.2→v3.4迭代经验） 问题 2026-03-08 AI日报KIM卡片v3.1-v3.3版本中，热度趋势条目和...",
         "keywords": [
           "KIM",
           "卡片",
@@ -2234,7 +2234,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📋",
         "color": "#c2410c",
-        "description": "## 知识库路径映射（每日修炼常用） 工作区根目录：`/Users/shenlang/Documents/Codeflicker/个人助理_V1/` **...",
+        "description": "知识库路径映射（每日修炼常用） 工作区根目录：/Users/shenlang/Documents/Codeflicker/个人助理_V1/ ...",
         "keywords": [
           "Knowledge",
           "路径",
@@ -2253,7 +2253,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "**Meta-Execution 工作模式（v1.7 完整版）** 每次执行任务时自动运行的严格工作流。 **三阶段检查**： - **P1启动前**：理...",
+        "description": "Meta-Execution 工作模式（v1.7 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前：理...",
         "keywords": [
           "Meta-Execution",
           "元技能",
@@ -2272,7 +2272,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "## Skill 触发词精确匹配原则 ### 问题 CodeFlicker 周报 Skill 最初用\"周报\"做触发词，太宽泛会和其他周报技能（如 AI-I...",
+        "description": "Skill 触发词精确匹配原则 问题 CodeFlicker 周报 Skill 最初用\"周报\"做触发词，太宽泛会和其他周报技能（如 AI-I...",
         "keywords": [
           "Skill触发词",
           "精确匹配",
@@ -2291,7 +2291,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "UI元素布局影响检查规则（含overflow裁切三分法）。 **核心规则一：增删的双向影响**： - **增加元素时**：检查是否溢出容器→宁大勿小，默认...",
+        "description": "UI元素布局影响检查规则（含overflow裁切三分法）。 核心规则一：增删的双向影响： - 增加元素时：检查是否溢出容器→宁大勿小，默认...",
         "keywords": [
           "overflow",
           "hidden",
@@ -2310,7 +2310,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## Python pathlib.rglob()/glob() 不跟踪软链接（symlinks） **问题**：Python pathlib 的 `rg...",
+        "description": "Python pathlib.rglob()/glob() 不跟踪软链接（symlinks） 问题：Python pathlib 的 `rg...",
         "keywords": [
           "pathlib",
           "rglob",
@@ -2329,7 +2329,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "新建技能/知识库/记忆分类时，必须同步更新多个位置，否则首页显示异常。 **v4.0 三棵树统一三层架构（2026-03-08）** 三棵树共享统一的 l...",
+        "description": "新建技能/知识库/记忆分类时，必须同步更新多个位置，否则首页显示异常。 v4.0 三棵树统一三层架构（2026-03-08） 三棵树共享统一的 l...",
         "keywords": [
           "配置漂移",
           "技能分类",
@@ -2348,7 +2348,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "✍️",
         "color": "#f59e0b",
-        "description": "## 专栏/系列内容创作踩坑：直接写内容 vs 先做体系设计 ### 问题描述 养了个AI专栏第0期做了3版： - v1: 直接按用户要求写6个实战场景 ...",
+        "description": "专栏/系列内容创作踩坑：直接写内容 vs 先做体系设计 问题描述 养了个AI专栏第0期做了3版： - v1: 直接按用户要求写6个实战场景 ...",
         "keywords": [
           "专栏",
           "系列",
@@ -2367,7 +2367,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "已完成项目和文件的组织管理规范。 ## 核心目录 - **主页项目列表**：`~/Documents/Codeflicker/个人助理_V1/codefl...",
+        "description": "已完成项目和文件的组织管理规范。 核心目录 - 主页项目列表：`~/Documents/Codeflicker/个人助理_V1/codefl...",
         "keywords": [
           "项目索引",
           "目录结构",
@@ -2386,7 +2386,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "💬",
         "color": "#06b6d4",
-        "description": "## 代码文件中文字符编码安全规则 ### 问题场景 使用工具写入Python/JS等代码文件时，中文引号 `\"\"` (U+201C/U+201D) 可能...",
+        "description": "代码文件中文字符编码安全规则 问题场景 使用工具写入Python/JS等代码文件时，中文引号 \"\" (U+201C/U+201D) 可能...",
         "keywords": [
           "Python",
           "中文引号",
@@ -2405,7 +2405,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**企业案例学习工作流（四阶段法）** 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+        "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
         "keywords": [
           "企业案例",
           "学习工作流",
@@ -2424,7 +2424,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "## 信息失真三问法（事实验证通用框架） ### 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
+        "description": "信息失真三问法（事实验证通用框架） 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
         "keywords": [
           "事实验证",
           "三问法",
@@ -2443,7 +2443,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**本质洞察力**：在某个领域积累知识后，透过现象看本质的元能力。 **核心原则**：如果真的看到了本质，一定能被类比到熟悉场景——类比是\"试金石\"。 *...",
+        "description": "本质洞察力：在某个领域积累知识后，透过现象看本质的元能力。 核心原则：如果真的看到了本质，一定能被类比到熟悉场景——类比是\"试金石\"。 *...",
         "keywords": [
           "本质洞察",
           "元能力",
@@ -2462,7 +2462,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**适用场景**：向非技术用户（如领导、投资人、合作方）解释AI能力 **核心结构**： 1. **开场信件** - 建立人设和信任 - 自我介绍（我是谁...",
+        "description": "适用场景：向非技术用户（如领导、投资人、合作方）解释AI能力 核心结构： 1. 开场信件 - 建立人设和信任 - 自我介绍（我是谁...",
         "keywords": [
           "能力展示",
           "汇报",
@@ -2481,7 +2481,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 品牌色全局迁移经验 ### 问题场景 项目品牌色从旧色系(#1A7F37)升级到新色系(#059669)，需要确保全局一致性。 ### 关键教训：品...",
+        "description": "品牌色全局迁移经验 问题场景 项目品牌色从旧色系(#1A7F37)升级到新色系(#059669)，需要确保全局一致性。 关键教训：品...",
         "keywords": [
           "品牌色",
           "色值迁移",
@@ -2500,7 +2500,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## 多步骤工作流中的静默失败陷阱 ### 来源 2026-03-08 AI日报部署时，`git push org main` 返回 \"repositor...",
+        "description": "多步骤工作流中的静默失败陷阱 来源 2026-03-08 AI日报部署时，git push org main 返回 \"repositor...",
         "keywords": [
           "静默失败",
           "断言",
@@ -2519,7 +2519,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 大文件编辑的Context节约策略 ### 问题 对2000+行的HTML/CSS大文件做样式修改时，分4次read_file读完全文占用大量con...",
+        "description": "大文件编辑的Context节约策略 问题 对2000+行的HTML/CSS大文件做样式修改时，分4次read_file读完全文占用大量con...",
         "keywords": [
           "大文件",
           "context",
@@ -2538,7 +2538,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 封闭生态接入的通用桥接模式 ### 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
+        "description": "封闭生态接入的通用桥接模式 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
         "keywords": [
           "封闭生态",
           "桥接模式",
@@ -2557,7 +2557,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "## 工具能力边界测试原则 ### 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
+        "description": "工具能力边界测试原则 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
         "keywords": [
           "边界测试",
           "工具能力",
@@ -2576,7 +2576,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 技能粒度的合并信号检测 ### 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
+        "description": "技能粒度的合并信号检测 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
         "keywords": [
           "技能合并",
           "粒度",
@@ -2595,7 +2595,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## 技能分层文档同步规则 ### 问题 修改技能的详细参考文件（`references/*.md`）后，忘记在主入口（`SKILL.md`）同步摘要，导...",
+        "description": "技能分层文档同步规则 问题 修改技能的详细参考文件（references/*.md）后，忘记在主入口（SKILL.md）同步摘要，导...",
         "keywords": [
           "技能更新",
           "SKILL.md",
@@ -2614,7 +2614,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 技能复用检测与单一数据源架构 ### 识别信号 - 两个技能有相似的执行步骤（>3步相同） - 两个技能有相似的验收标准或输出模板 - 两个技能引用...",
+        "description": "技能复用检测与单一数据源架构 识别信号 - 两个技能有相似的执行步骤（>3步相同） - 两个技能有相似的验收标准或输出模板 - 两个技能引用...",
         "keywords": [
           "技能复用",
           "单一数据源",
@@ -2633,7 +2633,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 数据模型信息冗余导致渲染重复 ### 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
+        "description": "数据模型信息冗余导致渲染重复 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
         "keywords": [
           "数据冗余",
           "重复渲染",
@@ -2646,32 +2646,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "核心身份关系与称呼规范（权威版）",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "🧠 元认知层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "## 核心身份关系（权威版，其他身份记忆以此为准） ### AI助手 - 本名：添棋 - 快手工作名：林克（Link） - 通用代号：AI / AI助手 ...",
-        "keywords": [
-          "核心身份",
-          "添棋",
-          "林克",
-          "单虓晗",
-          "沈浪"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-07",
-        "source": "用户显式记录"
-      },
-      {
         "title": "每日修炼触发配置",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**每日修炼触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codeflic...",
+        "description": "每日修炼触发配置 每天早上6:00自动触发技能：daily-reflection-evolution 技能位置 `~/.codeflic...",
         "keywords": [
           "每日修炼",
           "每日任务",
@@ -2690,7 +2671,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "## 深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： ### 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
+        "description": "深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
         "keywords": [
           "深度调研",
           "报告格式",
@@ -2703,15 +2684,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "添棋飞书对话基本技能：本体与对话渠道分离",
+        "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 添棋飞书对话基本技能 ### 核心原则 虽然添棋是在「飞书助手」项目里和飞书用户做对话，但添棋的\"本体\"是在 CodeFlicker 项目下的「个人...",
+        "description": "AI助手飞书对话基本技能 核心原则 虽然AI助手是在「飞书助手」项目里和飞书用户做对话，但AI助手的\"本体\"是在 CodeFlicker 项目下的「个人...",
         "keywords": [
-          "添棋",
+          "AI助手",
           "飞书",
           "对话",
           "本体",
@@ -2728,7 +2709,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 清爽调研报告风格的导航规范 ### 核心问题 **目录（TOC）+ 锚点跳转 ≠ Tab导航 + 面板切换** 这是两种完全不同的导航模式： 1. ...",
+        "description": "清爽调研报告风格的导航规范 核心问题 目录（TOC）+ 锚点跳转 ≠ Tab导航 + 面板切换 这是两种完全不同的导航模式： 1. ...",
         "keywords": [
           "清爽调研报告",
           "Tab导航",
@@ -2747,7 +2728,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## 目录重构后的完整自检清单 当执行目录结构重构时，必须检查以下所有位置的路径引用： ### 检查清单 | 检查项 | 检查方法 | |-------|...",
+        "description": "目录重构后的完整自检清单 当执行目录结构重构时，必须检查以下所有位置的路径引用： 检查清单 | 检查项 | 检查方法 | |-------|...",
         "keywords": [
           "目录重构",
           "路径更新",
@@ -2766,7 +2747,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "## 系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： ### 必检文件类型 1. **代码文件**：.j...",
+        "description": "系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： 必检文件类型 1. 代码文件：.j...",
         "keywords": [
           "全局替换",
           "更名",
@@ -2785,7 +2766,7 @@
         "layer": null,
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**语雀文档读取经验：优先使用API而非浏览器工具** **问题场景**： 用户提供语雀链接要求读取内容时，fetch_web和browser_agent...",
+        "description": "语雀文档读取经验：优先使用API而非浏览器工具 问题场景： 用户提供语雀链接要求读取内容时，fetch_web和browser_agent...",
         "keywords": [
           "语雀",
           "yuque",
@@ -2804,7 +2785,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 跨文件批量标准化修改经验 ### 问题场景 需要对项目中大量HTML文件（30+个）进行统一格式修改（如统一footer、统一模块、统一样式）。 #...",
+        "description": "跨文件批量标准化修改经验 问题场景 需要对项目中大量HTML文件（30+个）进行统一格式修改（如统一footer、统一模块、统一样式）。 #...",
         "keywords": [
           "批量修改",
           "标准化",
@@ -2823,7 +2804,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "**问题**：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 **案例**： 1. 技能分类配置漂移：记忆已存在，但新建6个技能时仍未更新SKILL...",
+        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例： 1. 技能分类配置漂移：记忆已存在，但新建6个技能时仍未更新SKILL...",
         "keywords": [
           "记忆召回",
           "踩坑复现",
@@ -2842,7 +2823,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## 部署验证完整经验（合并版） ### 1. 缓存破坏 - URL添加时间戳：`?v=${Date.now()}` - 强制刷新：Ctrl+Shift+...",
+        "description": "部署验证完整经验（合并版） 1. 缓存破坏 - URL添加时间戳：?v=${Date.now()} - 强制刷新：Ctrl+Shift+...",
         "keywords": [
           "部署",
           "验证",
@@ -2861,7 +2842,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 部署验证完整经验（合并版） ### 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
+        "description": "部署验证完整经验（合并版） 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
         "keywords": [
           "部署",
           "验证",
@@ -2880,7 +2861,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 链接时效性陷阱：搜索引擎排名≠信息新鲜度 ### 问题 2026-03-08 AI日报KIM卡片中，通义灵码的链接指向一篇2025-02-15的CS...",
+        "description": "链接时效性陷阱：搜索引擎排名≠信息新鲜度 问题 2026-03-08 AI日报KIM卡片中，通义灵码的链接指向一篇2025-02-15的CS...",
         "keywords": [
           "链接时效性",
           "过时链接",
@@ -2899,7 +2880,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "首页数据管道踩坑规则（2026-03-08 更新，含脱敏经验）： **一、数据管道闸门规则** 从内部数据→对外展示的管道，必须有清洗闸门。 - upda...",
+        "description": "首页数据管道踩坑规则（2026-03-08 更新，含脱敏经验）： 一、数据管道闸门规则 从内部数据→对外展示的管道，必须有清洗闸门。 - upda...",
         "keywords": [
           "首页",
           "数据管道",
@@ -2912,17 +2893,14 @@
         "source": "用户显式记录"
       },
       {
-        "title": "AI助手\"林克/添棋\"身份信息",
+        "title": "AI助手\"AI助手\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "layer": "🧠 元认知层",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+        "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
         "keywords": [
-          "林克",
-          "Link",
-          "添棋",
           "AI助手",
           "数字分身"
         ],
@@ -2956,7 +2934,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 ## 技能位置 `~/.codeflicker/...",
+        "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 技能位置 `~/.codeflicker/...",
         "keywords": [
           "AI洞察",
           "AI-Insight",
@@ -2975,7 +2953,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "**问题场景**：修改CSS样式不生效 **根因**：项目存在多个CSS文件时，修改了未被HTML引用的CSS文件。 **预防措施**： 1. 修改CSS...",
+        "description": "问题场景：修改CSS样式不生效 根因：项目存在多个CSS文件时，修改了未被HTML引用的CSS文件。 预防措施： 1. 修改CSS...",
         "keywords": [
           "CSS",
           "样式不生效",
@@ -2994,7 +2972,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## CSS响应式断点决策经验 ### 问题 技能树三列布局在734px宽度下变成了垂直布局，用户期望保持水平布局。 ### 原因 原始媒体查询断点设为7...",
+        "description": "CSS响应式断点决策经验 问题 技能树三列布局在734px宽度下变成了垂直布局，用户期望保持水平布局。 原因 原始媒体查询断点设为7...",
         "keywords": [
           "CSS",
           "响应式",
@@ -3013,7 +2991,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "### CSS语法错误的连锁反应 **问题模式**： - CSS选择器缺少闭合 `}`，导致后续所有规则被当作该选择器的属性而被忽略 - 表现：部分样式生...",
+        "description": "CSS语法错误的连锁反应 问题模式： - CSS选择器缺少闭合 }，导致后续所有规则被当作该选择器的属性而被忽略 - 表现：部分样式生...",
         "keywords": [
           "CSS",
           "语法错误",
@@ -3032,7 +3010,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "SVG开发两大陷阱及规范： **1. viewBox裁切**：viewBox高度 = 最大元素y + 边距(20-40px)，修改后在DevTools验证...",
+        "description": "SVG开发两大陷阱及规范： 1. viewBox裁切：viewBox高度 = 最大元素y + 边距(20-40px)，修改后在DevTools验证...",
         "keywords": [
           "SVG",
           "viewBox",
@@ -3051,7 +3029,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## Skill 沉淀必须对照源码，不能凭记忆 ### 问题 从对话中抽象 Skill 时凭记忆写，结果漏了 7 项关键设计决策（如去掉 Acquisit...",
+        "description": "Skill 沉淀必须对照源码，不能凭记忆 问题 从对话中抽象 Skill 时凭记忆写，结果漏了 7 项关键设计决策（如去掉 Acquisit...",
         "keywords": [
           "Skill沉淀",
           "对照源码",
@@ -3070,7 +3048,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## UI气泡/Tooltip设计原则 ### 核心原则 **只展示有实际数据的内容，隐藏空白placeholder** ### 反例 气泡中显示\"如何升...",
+        "description": "UI气泡/Tooltip设计原则 核心原则 只展示有实际数据的内容，隐藏空白placeholder 反例 气泡中显示\"如何升...",
         "keywords": [
           "UI",
           "Tooltip",
@@ -3089,7 +3067,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 **核心约束**： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
+        "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 核心约束： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
         "keywords": [
           "pptxgenjs",
           "shadow",
@@ -3108,7 +3086,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "💬",
         "color": "#06b6d4",
-        "description": "recap元数据(title/user_intent)可能被工具调用污染。 **触发条件**: 对话以execute_command等工具调用开头，而非自...",
+        "description": "recap元数据(title/user_intent)可能被工具调用污染。 触发条件: 对话以execute_command等工具调用开头，而非自...",
         "keywords": [
           "recap",
           "元数据",
@@ -3127,7 +3105,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## replace_in_file 首次匹配陷阱 ### 问题 `replace_in_file` 只替换文件中的**第一个匹配项**。如果同一模式在文...",
+        "description": "replace_in_file 首次匹配陷阱 问题 replace_in_file 只替换文件中的第一个匹配项。如果同一模式在文...",
         "keywords": [
           "replace_in_file",
           "首次匹配",
@@ -3146,7 +3124,7 @@
         "layer": null,
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**五层思考框架**：从执行到战略 ``` L5 愿景层: 为什么要做？ L4 战略层: 核心主张和差异化？ L3 设计层: 整体结构和用户旅程？ L2 ...",
+        "description": "五层思考框架：从执行到战略 ``` L5 愿景层: 为什么要做？ L4 战略层: 核心主张和差异化？ L3 设计层: 整体结构和用户旅程？ L2 ...",
         "keywords": [
           "五层",
           "战略",
@@ -3165,7 +3143,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 体系化任务的识别与前置设计 ### 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
+        "description": "体系化任务的识别与前置设计 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
         "keywords": [
           "体系化",
           "设计",
@@ -3184,7 +3162,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 健康度检查必须有量化指标+阈值+强制执行 **问题**：用户发现记忆/技能分类存在严重问题但每日任务没有主动发现。 **根因**：检查项太表面（只检...",
+        "description": "健康度检查必须有量化指标+阈值+强制执行 问题：用户发现记忆/技能分类存在严重问题但每日任务没有主动发现。 根因：检查项太表面（只检...",
         "keywords": [
           "健康度检查",
           "量化指标",
@@ -3203,7 +3181,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "**元工具的自举困境：质量机制本身也需要质量保证** **问题**：meta-execution 是用来保证交付质量的机制，但它自己的文档有编号重复(P2...",
+        "description": "元工具的自举困境：质量机制本身也需要质量保证 问题：meta-execution 是用来保证交付质量的机制，但它自己的文档有编号重复(P2...",
         "keywords": [
           "自举困境",
           "元技能",
@@ -3222,7 +3200,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "**创作类任务前置确认原则** 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. **核心内容/场景列表** — 用户确认，不是我猜 ...",
+        "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
         "keywords": [
           "创作",
           "前置确认",
@@ -3241,7 +3219,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 前端功能实现的边界场景覆盖不足 ### 问题描述 codeflicker-homepage首页三板块产品化优化（feat提交）后，紧接着出现6+个f...",
+        "description": "前端功能实现的边界场景覆盖不足 问题描述 codeflicker-homepage首页三板块产品化优化（feat提交）后，紧接着出现6+个f...",
         "keywords": [
           "前端",
           "边界场景",
@@ -3254,16 +3232,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "单虓晗（Shawn）思想体系与写作风格",
+        "title": "***（***）思想体系与写作风格",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "layer": "🧠 元认知层",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 用户思想体系（精简版） **核心框架**：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） **四种核心思维**：批判性...",
+        "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
         "keywords": [
-          "单虓晗",
-          "Shawn",
+          "***",
           "思想体系",
           "写作风格",
           "认知框架"
@@ -3279,7 +3256,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "💬",
         "color": "#06b6d4",
-        "description": "## 外部 API 权限前置验证 ### 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 KIM 资源上传接口（/openapi/v2/...",
+        "description": "外部 API 权限前置验证 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 KIM 资源上传接口（/openapi/v2/...",
         "keywords": [
           "API权限",
           "前置验证",
@@ -3292,13 +3269,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "小无相功 v5.0 — 林克自进化内核",
+        "title": "小无相功 v5.0 — AI自进化内核",
         "category": "task_flow_experience",
         "categoryLabel": "思维能力",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "小无相功 = 林克自进化内核。三域(技能/知识/思维) × 三时间尺度(秒级干中学/天级定期修炼/周月级主动学习)。 日常自动运行，无需显式调用。完整体系...",
+        "description": "小无相功 = AI自进化内核。三域(技能/知识/思维) × 三时间尺度(秒级干中学/天级定期修炼/周月级主动学习)。 日常自动运行，无需显式调用。完整体系...",
         "keywords": [
           "小无相功",
           "自进化",
@@ -3317,7 +3294,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "### 产品化优化三板斧：时效性 > 完整性 **核心洞察**： 用户访问展示型页面时，最关心的不是\"你有什么\"，而是\"今天变了什么\"。 **优化思路**...",
+        "description": "产品化优化三板斧：时效性 > 完整性 核心洞察： 用户访问展示型页面时，最关心的不是\"你有什么\"，而是\"今天变了什么\"。 优化思路...",
         "keywords": [
           "产品思维",
           "时效性",
@@ -3330,16 +3307,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "工作汇报场景自称\"林克\"规则",
+        "title": "工作汇报场景自称\"AI助手\"规则",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "**规则**：工作汇报场景中，我应该自称\"林克\"而不是\"添棋\" **原因**： - \"林克\"是对外的职务称呼，适合正式汇报场景 - \"添棋\"是更亲密的内部...",
+        "description": "规则：工作汇报场景中，我应该自称\"AI助手\"而不是\"AI助手\" 原因： - \"AI助手\"是对外的职务称呼，适合正式汇报场景 - \"AI助手\"是更亲密的内部...",
         "keywords": [
-          "林克",
-          "添棋",
+          "AI助手",
           "自称",
           "汇报",
           "正式场景"
@@ -3374,7 +3350,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "技能与记忆分类遵循以下架构： **技能**：三层架构 — 元能力层(思维+工作模式) → 领域技能包(ai-insight/investment) → 执...",
+        "description": "技能与记忆分类遵循以下架构： 技能：三层架构 — 元能力层(思维+工作模式) → 领域技能包(ai-insight/investment) → 执...",
         "keywords": [
           "分类原则",
           "技能分类",
@@ -3393,7 +3369,7 @@
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "## 投资理财信息 ### 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 ### 当前持仓（2026-03...",
+        "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
         "keywords": [
           "投资",
           "理财",
@@ -3412,7 +3388,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 敏感词集中管理规则 ### 规则 所有涉及敏感词的项目，必须在项目目录下创建 `context/sensitive-words.md`，集中管理所有...",
+        "description": "敏感词集中管理规则 规则 所有涉及敏感词的项目，必须在项目目录下创建 context/sensitive-words.md，集中管理所有...",
         "keywords": [
           "敏感词",
           "禁用词",
@@ -3431,7 +3407,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 文档配图同步更新规则 每次修改文档章节内容时，必须同步更新对应的配图： 1. **检查章节标题变化**：如果章节标题或定位发生变化，配图需要重新设计...",
+        "description": "文档配图同步更新规则 每次修改文档章节内容时，必须同步更新对应的配图： 1. 检查章节标题变化：如果章节标题或定位发生变化，配图需要重新设计...",
         "keywords": [
           "配图",
           "同步",
@@ -3450,7 +3426,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**新领域学习的\"信息源优先\"原则** 当第一次学习一个新领域时，执行顺序必须是： 1. **信息源收集阶段**（P0，不可跳过） - 穷举该领域的信息源...",
+        "description": "新领域学习的\"信息源优先\"原则 当第一次学习一个新领域时，执行顺序必须是： 1. 信息源收集阶段（P0，不可跳过） - 穷举该领域的信息源...",
         "keywords": [
           "信息源优先",
           "新领域学习",
@@ -3469,7 +3445,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "**问题**：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
+        "description": "问题：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
         "keywords": [
           "日报列表",
           "about.html",
@@ -3488,7 +3464,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "⚡",
         "color": "#64748b",
-        "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 **核心约束**： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
+        "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 核心约束： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
         "keywords": [
           "日报",
           "recap",
@@ -3501,16 +3477,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "林克/添棋的自我表达风格",
+        "title": "AI助手的自我表达风格",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+        "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟*），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
         "keywords": [
-          "林克",
-          "添棋",
+          "AI助手",
           "表达风格",
           "幽默",
           "类比"
@@ -3526,7 +3501,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "每日修炼触发后，必须严格执行 daily-reflection-evolution 技能的完整流程。 **核心约束**： - 所有步骤必须全部执行，禁止跳...",
+        "description": "每日修炼触发后，必须严格执行 daily-reflection-evolution 技能的完整流程。 核心约束： - 所有步骤必须全部执行，禁止跳...",
         "keywords": [
           "每日修炼",
           "执行纪律",
@@ -3545,7 +3520,7 @@
         "layer": null,
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "## 深度调研目标确认踩坑 ### 问题描述 OpenClaw深度调研时，初始调研了Crawl4AI而非用户指定的OpenClaw，导致整个调研内容需要删...",
+        "description": "深度调研目标确认踩坑 问题描述 OpenClaw深度调研时，初始调研了Crawl4AI而非用户指定的OpenClaw，导致整个调研内容需要删...",
         "keywords": [
           "调研",
           "产品确认",
@@ -3564,7 +3539,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 ### 常见问题 - 深色背景上使用中等色调文...",
+        "description": "深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 常见问题 - 深色背景上使用中等色调文...",
         "keywords": [
           "文字对比度",
           "深色背景",
@@ -3583,7 +3558,7 @@
         "layer": null,
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "**清单≠全集：批量操作前必须全量扫描** **问题**：给技能批量添加 meta-execution 绑定时，只看了现有清单（10个），实际应标20个，...",
+        "description": "清单≠全集：批量操作前必须全量扫描 问题：给技能批量添加 meta-execution 绑定时，只看了现有清单（10个），实际应标20个，...",
         "keywords": [
           "批量操作",
           "全量扫描",
@@ -3621,7 +3596,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 用户强调需求的必检机制 用户说\"我特意强调过\"\"一定要保留\"等强调性语句时： 1. 在TODO中添加 `[必检]` 标记 2. P0交付前检查清单增...",
+        "description": "用户强调需求的必检机制 用户说\"我特意强调过\"\"一定要保留\"等强调性语句时： 1. 在TODO中添加 [必检] 标记 2. P0交付前检查清单增...",
         "keywords": [
           "需求遗漏",
           "用户强调",
@@ -3634,32 +3609,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "用户身份信息",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "🧠 元认知层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
-        "keywords": [
-          "单虓晗",
-          "Shawn",
-          "沈浪",
-          "用户身份",
-          "花名"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-01",
-        "source": "用户显式记录"
-      },
-      {
         "title": "知识学习场景文档抓取完整性踩坑（API vs CDP）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "文档处理",
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "**问题**：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
+        "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
         "keywords": [
           "知识学习",
           "文档抓取",
@@ -3697,7 +3653,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "网页开发必须遵循 web-dev-workflow 技能：`~/.codeflicker/skills/web-dev-workflow/` **核心流程...",
+        "description": "网页开发必须遵循 web-dev-workflow 技能：~/.codeflicker/skills/web-dev-workflow/ 核心流程...",
         "keywords": [
           "网页开发",
           "web-dev-workflow技能",
@@ -3716,7 +3672,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 能力树视觉重构经验 ### 三树差异化设计 | 数据类型 | 风格 | 特征 | |----------|------|------| | 技能类 ...",
+        "description": "能力树视觉重构经验 三树差异化设计 | 数据类型 | 风格 | 特征 | 技能类 ...",
         "keywords": [
           "能力树",
           "技能树",
@@ -3735,7 +3691,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "⚡",
         "color": "#64748b",
-        "description": "## 脚本参数格式踩坑 ### 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
+        "description": "脚本参数格式踩坑 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
         "keywords": [
           "脚本参数",
           "sys.argv",
@@ -3748,32 +3704,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "身份保密规则",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "🧠 元认知层",
-        "icon": "🚫",
-        "color": "#dc2626",
-        "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
-        "keywords": [
-          "保密规则",
-          "禁止规则",
-          "身份保护",
-          "隐私",
-          "对外输出"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-01",
-        "source": "用户显式记录"
-      },
-      {
         "title": "输出链接格式规范",
         "category": "development_practice_specification",
         "categoryLabel": "工作模式",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "## 输出链接格式规范 ### 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 2. **...",
+        "description": "输出链接格式规范 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 2. ...",
         "keywords": [
           "链接格式",
           "URL输出",
@@ -3811,7 +3748,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： ### 禁止行为 ❌ 1. **禁止批量修改后一次性提交*...",
+        "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
         "keywords": [
           "重构",
           "优化",
@@ -3830,7 +3767,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**模式名称**：过程层自检 vs 结果层反馈 **核心洞察**：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
+        "description": "模式名称：过程层自检 vs 结果层反馈 核心洞察：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
         "keywords": [
           "过程层自检",
           "结果层反馈",
@@ -3868,7 +3805,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "**所有交付任务的产品思维约束（内置核心能力）** 每个人的所有交付物都是给别人用的，都可以理解成一种\"产品\"。 **适用范围**：所有有交付物的任务（网...",
+        "description": "所有交付任务的产品思维约束（内置核心能力） 每个人的所有交付物都是给别人用的，都可以理解成一种\"产品\"。 适用范围：所有有交付物的任务（网...",
         "keywords": [
           "产品思维",
           "交付",
@@ -3900,19 +3837,18 @@
         "source": "用户显式记录"
       },
       {
-        "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
+        "title": "默认工作模式：以***的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
         "keywords": [
           "工作模式",
           "默认风格",
           "思维方式",
-          "单虓晗",
-          "Shawn"
+          "***"
         ],
         "importance": 4,
         "updatedAt": "2026-02-28",
@@ -3925,7 +3861,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "**推理闭环原则** 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 **正确模式**：信息收集 → 逻辑推理 → 得出结论 → 输出 **兜底原则**：...",
+        "description": "推理闭环原则 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 正确模式：信息收集 → 逻辑推理 → 得出结论 → 输出 兜底原则：...",
         "keywords": [
           "推理闭环",
           "验证",
@@ -3956,7 +3892,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 104,
+    "total": 100,
     "byCategory": {
       "development_practice_specification": {
         "count": 12,
@@ -4026,7 +3962,7 @@
       "🧠 元认知层": {
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "关于用户身份和林克如何思考/工作",
+        "description": "关于用户身份和AI助手如何思考/工作",
         "children": {
           "用户身份": {
             "icon": "👤",
@@ -4034,16 +3970,15 @@
             "description": "身份信息、背景、个人特征",
             "items": [
               {
-                "title": "单虓晗（Shawn）思想体系与写作风格",
+                "title": "***（***）思想体系与写作风格",
                 "category": "user_info",
                 "categoryLabel": "用户身份",
                 "layer": "🧠 元认知层",
                 "icon": "👤",
                 "color": "#38bdf8",
-                "description": "## 用户思想体系（精简版） **核心框架**：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） **四种核心思维**：批判性...",
+                "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
                 "keywords": [
-                  "单虓晗",
-                  "Shawn",
+                  "***",
                   "思想体系",
                   "写作风格",
                   "认知框架"
@@ -4053,64 +3988,23 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "用户身份信息",
+                "title": "AI助手\"AI助手\"身份信息",
                 "category": "user_info",
                 "categoryLabel": "用户身份",
                 "layer": "🧠 元认知层",
                 "icon": "👤",
                 "color": "#38bdf8",
-                "description": "## 用户身份信息 ### 公开身份 - **笔名**：单虓晗（Shan Xiaohan）/ Shawn - **简书主页**：https://www.j...",
+                "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
                 "keywords": [
-                  "单虓晗",
-                  "Shawn",
-                  "沈浪",
-                  "用户身份",
-                  "花名"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-01",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "AI助手\"林克/添棋\"身份信息",
-                "category": "user_info",
-                "categoryLabel": "用户身份",
-                "layer": "🧠 元认知层",
-                "icon": "👤",
-                "color": "#38bdf8",
-                "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
-                "keywords": [
-                  "林克",
-                  "Link",
-                  "添棋",
                   "AI助手",
                   "数字分身"
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "核心身份关系与称呼规范（权威版）",
-                "category": "user_info",
-                "categoryLabel": "用户身份",
-                "layer": "🧠 元认知层",
-                "icon": "👤",
-                "color": "#38bdf8",
-                "description": "## 核心身份关系（权威版，其他身份记忆以此为准） ### AI助手 - 本名：添棋 - 快手工作名：林克（Link） - 通用代号：AI / AI助手 ...",
-                "keywords": [
-                  "核心身份",
-                  "添棋",
-                  "林克",
-                  "单虓晗",
-                  "沈浪"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-07",
-                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 2
           },
           "用户偏好": {
             "icon": "💬",
@@ -4118,19 +4012,18 @@
             "description": "沟通风格、工作模式、兴趣爱好",
             "items": [
               {
-                "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
+                "title": "默认工作模式：以***的思维方式和风格执行任务",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+                "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
                 "keywords": [
                   "工作模式",
                   "默认风格",
                   "思维方式",
-                  "单虓晗",
-                  "Shawn"
+                  "***"
                 ],
                 "importance": 4,
                 "updatedAt": "2026-02-28",
@@ -4143,7 +4036,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "## 投资理财信息 ### 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 ### 当前持仓（2026-03...",
+                "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
                 "keywords": [
                   "投资",
                   "理财",
@@ -4156,16 +4049,15 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "林克/添棋的自我表达风格",
+                "title": "AI助手的自我表达风格",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+                "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟*），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
                 "keywords": [
-                  "林克",
-                  "添棋",
+                  "AI助手",
                   "表达风格",
                   "幽默",
                   "类比"
@@ -4202,32 +4094,13 @@
             "description": "保密规则、禁止事项、必须遵守的约束",
             "items": [
               {
-                "title": "身份保密规则",
-                "category": "constraint_or_forbidden_rule",
-                "categoryLabel": "用户约束",
-                "layer": "🧠 元认知层",
-                "icon": "🚫",
-                "color": "#dc2626",
-                "description": "## 身份保密规则 ### 对外输出（文档、网页、GitHub、日报等） - ✅ 使用\"单虓晗\"或\"Shawn\" - ❌ 禁止出现\"沈浪\" - ❌ 禁止出...",
-                "keywords": [
-                  "保密规则",
-                  "禁止规则",
-                  "身份保护",
-                  "隐私",
-                  "对外输出"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-01",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "重构/优化任务的强制约束规则",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： ### 禁止行为 ❌ 1. **禁止批量修改后一次性提交*...",
+                "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
                 "keywords": [
                   "重构",
                   "优化",
@@ -4246,7 +4119,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 敏感词集中管理规则 ### 规则 所有涉及敏感词的项目，必须在项目目录下创建 `context/sensitive-words.md`，集中管理所有...",
+                "description": "敏感词集中管理规则 规则 所有涉及敏感词的项目，必须在项目目录下创建 context/sensitive-words.md，集中管理所有...",
                 "keywords": [
                   "敏感词",
                   "禁用词",
@@ -4265,7 +4138,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "**Meta-Execution 工作模式（v1.7 完整版）** 每次执行任务时自动运行的严格工作流。 **三阶段检查**： - **P1启动前**：理...",
+                "description": "Meta-Execution 工作模式（v1.7 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前：理...",
                 "keywords": [
                   "Meta-Execution",
                   "元技能",
@@ -4284,7 +4157,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "**推理闭环原则** 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 **正确模式**：信息收集 → 逻辑推理 → 得出结论 → 输出 **兜底原则**：...",
+                "description": "推理闭环原则 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 正确模式：信息收集 → 逻辑推理 → 得出结论 → 输出 兜底原则：...",
                 "keywords": [
                   "推理闭环",
                   "验证",
@@ -4302,7 +4175,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 ## 技能位置 `~/.codeflicker/...",
+                "description": "当进行任何与AI洞察（AI-Insight）相关的改动时，必须同步更新到 ai-insight 技能中。 技能位置 `~/.codeflicker/...",
                 "keywords": [
                   "AI洞察",
                   "AI-Insight",
@@ -4315,16 +4188,15 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "工作汇报场景自称\"林克\"规则",
+                "title": "工作汇报场景自称\"AI助手\"规则",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "**规则**：工作汇报场景中，我应该自称\"林克\"而不是\"添棋\" **原因**： - \"林克\"是对外的职务称呼，适合正式汇报场景 - \"添棋\"是更亲密的内部...",
+                "description": "规则：工作汇报场景中，我应该自称\"AI助手\"而不是\"AI助手\" 原因： - \"AI助手\"是对外的职务称呼，适合正式汇报场景 - \"AI助手\"是更亲密的内部...",
                 "keywords": [
-                  "林克",
-                  "添棋",
+                  "AI助手",
                   "自称",
                   "汇报",
                   "正式场景"
@@ -4340,7 +4212,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 健康度检查必须有量化指标+阈值+强制执行 **问题**：用户发现记忆/技能分类存在严重问题但每日任务没有主动发现。 **根因**：检查项太表面（只检...",
+                "description": "健康度检查必须有量化指标+阈值+强制执行 问题：用户发现记忆/技能分类存在严重问题但每日任务没有主动发现。 根因：检查项太表面（只检...",
                 "keywords": [
                   "健康度检查",
                   "量化指标",
@@ -4359,7 +4231,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "每日修炼触发后，必须严格执行 daily-reflection-evolution 技能的完整流程。 **核心约束**： - 所有步骤必须全部执行，禁止跳...",
+                "description": "每日修炼触发后，必须严格执行 daily-reflection-evolution 技能的完整流程。 核心约束： - 所有步骤必须全部执行，禁止跳...",
                 "keywords": [
                   "每日修炼",
                   "执行纪律",
@@ -4378,7 +4250,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "**所有交付任务的产品思维约束（内置核心能力）** 每个人的所有交付物都是给别人用的，都可以理解成一种\"产品\"。 **适用范围**：所有有交付物的任务（网...",
+                "description": "所有交付任务的产品思维约束（内置核心能力） 每个人的所有交付物都是给别人用的，都可以理解成一种\"产品\"。 适用范围：所有有交付物的任务（网...",
                 "keywords": [
                   "产品思维",
                   "交付",
@@ -4397,7 +4269,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 用户强调需求的必检机制 用户说\"我特意强调过\"\"一定要保留\"等强调性语句时： 1. 在TODO中添加 `[必检]` 标记 2. P0交付前检查清单增...",
+                "description": "用户强调需求的必检机制 用户说\"我特意强调过\"\"一定要保留\"等强调性语句时： 1. 在TODO中添加 [必检] 标记 2. P0交付前检查清单增...",
                 "keywords": [
                   "需求遗漏",
                   "用户强调",
@@ -4410,7 +4282,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 11
+            "count": 10
           },
           "思维能力": {
             "icon": "🧠",
@@ -4418,13 +4290,13 @@
             "description": "如何思考：洞察力、批判性思维、元执行",
             "items": [
               {
-                "title": "小无相功 v5.0 — 林克自进化内核",
+                "title": "小无相功 v5.0 — AI自进化内核",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "小无相功 = 林克自进化内核。三域(技能/知识/思维) × 三时间尺度(秒级干中学/天级定期修炼/周月级主动学习)。 日常自动运行，无需显式调用。完整体系...",
+                "description": "小无相功 = AI自进化内核。三域(技能/知识/思维) × 三时间尺度(秒级干中学/天级定期修炼/周月级主动学习)。 日常自动运行，无需显式调用。完整体系...",
                 "keywords": [
                   "小无相功",
                   "自进化",
@@ -4519,7 +4391,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**本质洞察力**：在某个领域积累知识后，透过现象看本质的元能力。 **核心原则**：如果真的看到了本质，一定能被类比到熟悉场景——类比是\"试金石\"。 *...",
+                "description": "本质洞察力：在某个领域积累知识后，透过现象看本质的元能力。 核心原则：如果真的看到了本质，一定能被类比到熟悉场景——类比是\"试金石\"。 *...",
                 "keywords": [
                   "本质洞察",
                   "元能力",
@@ -4538,7 +4410,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 体系化任务的识别与前置设计 ### 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
+                "description": "体系化任务的识别与前置设计 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
                 "keywords": [
                   "体系化",
                   "设计",
@@ -4557,7 +4429,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**新领域学习的\"信息源优先\"原则** 当第一次学习一个新领域时，执行顺序必须是： 1. **信息源收集阶段**（P0，不可跳过） - 穷举该领域的信息源...",
+                "description": "新领域学习的\"信息源优先\"原则 当第一次学习一个新领域时，执行顺序必须是： 1. 信息源收集阶段（P0，不可跳过） - 穷举该领域的信息源...",
                 "keywords": [
                   "信息源优先",
                   "新领域学习",
@@ -4576,7 +4448,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 封闭生态接入的通用桥接模式 ### 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
+                "description": "封闭生态接入的通用桥接模式 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
                 "keywords": [
                   "封闭生态",
                   "桥接模式",
@@ -4595,7 +4467,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 技能粒度的合并信号检测 ### 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
+                "description": "技能粒度的合并信号检测 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
                 "keywords": [
                   "技能合并",
                   "粒度",
@@ -4614,7 +4486,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**企业案例学习工作流（四阶段法）** 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+                "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
                 "keywords": [
                   "企业案例",
                   "学习工作流",
@@ -4633,7 +4505,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**每日修炼触发配置** 每天早上6:00自动触发技能：`daily-reflection-evolution` ## 技能位置 `~/.codeflic...",
+                "description": "每日修炼触发配置 每天早上6:00自动触发技能：daily-reflection-evolution 技能位置 `~/.codeflic...",
                 "keywords": [
                   "每日修炼",
                   "每日任务",
@@ -4652,7 +4524,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "已完成项目和文件的组织管理规范。 ## 核心目录 - **主页项目列表**：`~/Documents/Codeflicker/个人助理_V1/codefl...",
+                "description": "已完成项目和文件的组织管理规范。 核心目录 - 主页项目列表：`~/Documents/Codeflicker/个人助理_V1/codefl...",
                 "keywords": [
                   "项目索引",
                   "目录结构",
@@ -4671,7 +4543,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**模式名称**：过程层自检 vs 结果层反馈 **核心洞察**：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
+                "description": "模式名称：过程层自检 vs 结果层反馈 核心洞察：问题发现有两种本质不同的类型，需要区分对待 | 类型 | 触发方式 | 用户角色 | 我...",
                 "keywords": [
                   "过程层自检",
                   "结果层反馈",
@@ -4690,7 +4562,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**适用场景**：向非技术用户（如领导、投资人、合作方）解释AI能力 **核心结构**： 1. **开场信件** - 建立人设和信任 - 自我介绍（我是谁...",
+                "description": "适用场景：向非技术用户（如领导、投资人、合作方）解释AI能力 核心结构： 1. 开场信件 - 建立人设和信任 - 自我介绍（我是谁...",
                 "keywords": [
                   "能力展示",
                   "汇报",
@@ -4709,7 +4581,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "### 产品化优化三板斧：时效性 > 完整性 **核心洞察**： 用户访问展示型页面时，最关心的不是\"你有什么\"，而是\"今天变了什么\"。 **优化思路**...",
+                "description": "产品化优化三板斧：时效性 > 完整性 核心洞察： 用户访问展示型页面时，最关心的不是\"你有什么\"，而是\"今天变了什么\"。 优化思路...",
                 "keywords": [
                   "产品思维",
                   "时效性",
@@ -4728,7 +4600,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 技能复用检测与单一数据源架构 ### 识别信号 - 两个技能有相似的执行步骤（>3步相同） - 两个技能有相似的验收标准或输出模板 - 两个技能引用...",
+                "description": "技能复用检测与单一数据源架构 识别信号 - 两个技能有相似的执行步骤（>3步相同） - 两个技能有相似的验收标准或输出模板 - 两个技能引用...",
                 "keywords": [
                   "技能复用",
                   "单一数据源",
@@ -4747,7 +4619,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## AI日报生成后的必做工作流程 **核心规则**: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 ### 执行步骤（完整版） 1. **日...",
+                "description": "AI日报生成后的必做工作流程 核心规则: 日报里的每一篇内容，都需要深度学习，并淬炼沉淀到知识库。 执行步骤（完整版） 1. 日...",
                 "keywords": [
                   "日报",
                   "知识库",
@@ -4760,15 +4632,15 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "添棋飞书对话基本技能：本体与对话渠道分离",
+                "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维能力",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 添棋飞书对话基本技能 ### 核心原则 虽然添棋是在「飞书助手」项目里和飞书用户做对话，但添棋的\"本体\"是在 CodeFlicker 项目下的「个人...",
+                "description": "AI助手飞书对话基本技能 核心原则 虽然AI助手是在「飞书助手」项目里和飞书用户做对话，但AI助手的\"本体\"是在 CodeFlicker 项目下的「个人...",
                 "keywords": [
-                  "添棋",
+                  "AI助手",
                   "飞书",
                   "对话",
                   "本体",
@@ -4793,7 +4665,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "## 输出链接格式规范 ### 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 2. **...",
+                "description": "输出链接格式规范 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。 2. ...",
                 "keywords": [
                   "链接格式",
                   "URL输出",
@@ -4812,7 +4684,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "网页开发必须遵循 web-dev-workflow 技能：`~/.codeflicker/skills/web-dev-workflow/` **核心流程...",
+                "description": "网页开发必须遵循 web-dev-workflow 技能：~/.codeflicker/skills/web-dev-workflow/ 核心流程...",
                 "keywords": [
                   "网页开发",
                   "web-dev-workflow技能",
@@ -4831,7 +4703,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "**创作类任务前置确认原则** 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. **核心内容/场景列表** — 用户确认，不是我猜 ...",
+                "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
                 "keywords": [
                   "创作",
                   "前置确认",
@@ -4869,7 +4741,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "## 系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： ### 必检文件类型 1. **代码文件**：.j...",
+                "description": "系统性全局替换流程 当需要在项目中全局替换某个术语/名称时（如隐私保护更名），必须检查以下位置： 必检文件类型 1. 代码文件：.j...",
                 "keywords": [
                   "全局替换",
                   "更名",
@@ -4888,7 +4760,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "技能与记忆分类遵循以下架构： **技能**：三层架构 — 元能力层(思维+工作模式) → 领域技能包(ai-insight/investment) → 执...",
+                "description": "技能与记忆分类遵循以下架构： 技能：三层架构 — 元能力层(思维+工作模式) → 领域技能包(ai-insight/investment) → 执...",
                 "keywords": [
                   "分类原则",
                   "技能分类",
@@ -4907,7 +4779,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "## Skill 触发词精确匹配原则 ### 问题 CodeFlicker 周报 Skill 最初用\"周报\"做触发词，太宽泛会和其他周报技能（如 AI-I...",
+                "description": "Skill 触发词精确匹配原则 问题 CodeFlicker 周报 Skill 最初用\"周报\"做触发词，太宽泛会和其他周报技能（如 AI-I...",
                 "keywords": [
                   "Skill触发词",
                   "精确匹配",
@@ -4926,7 +4798,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "## 深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： ### 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
+                "description": "深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
                 "keywords": [
                   "深度调研",
                   "报告格式",
@@ -4961,7 +4833,7 @@
                 "layer": "🎯 领域记忆层",
                 "icon": "🔍",
                 "color": "#8b5cf6",
-                "description": "## AI-Insight 持续洞察项目 ### 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
+                "description": "AI-Insight 持续洞察项目 项目定位 系统化、可持续的AI行业追踪学习平台，整合AI日报、深度调研、追踪体系、知识沉淀、对外输出五大...",
                 "keywords": [
                   "AI-Insight",
                   "AI调研",
@@ -4996,7 +4868,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## replace_in_file 首次匹配陷阱 ### 问题 `replace_in_file` 只替换文件中的**第一个匹配项**。如果同一模式在文...",
+                "description": "replace_in_file 首次匹配陷阱 问题 replace_in_file 只替换文件中的第一个匹配项。如果同一模式在文...",
                 "keywords": [
                   "replace_in_file",
                   "首次匹配",
@@ -5015,7 +4887,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "**问题**：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
+                "description": "问题：update-homepage.sh 脚本在同步日报文件时，只复制了日报HTML文件到首页目录，但没有更新 about.html 中的\"最近...",
                 "keywords": [
                   "日报列表",
                   "about.html",
@@ -5034,7 +4906,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 ### 常见问题 - 深色背景上使用中等色调文...",
+                "description": "深色背景文字对比度规范 在网页开发中，深色背景区域的文字必须保证足够的对比度（WCAG AA标准）。 常见问题 - 深色背景上使用中等色调文...",
                 "keywords": [
                   "文字对比度",
                   "深色背景",
@@ -5053,7 +4925,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "SVG开发两大陷阱及规范： **1. viewBox裁切**：viewBox高度 = 最大元素y + 边距(20-40px)，修改后在DevTools验证...",
+                "description": "SVG开发两大陷阱及规范： 1. viewBox裁切：viewBox高度 = 最大元素y + 边距(20-40px)，修改后在DevTools验证...",
                 "keywords": [
                   "SVG",
                   "viewBox",
@@ -5072,7 +4944,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## Chrome Headless 截图完整经验 ### 基础问题 字体未加载、滚动条、底部黑边： - 使用系统字体，不依赖 Google Fonts ...",
+                "description": "Chrome Headless 截图完整经验 基础问题 字体未加载、滚动条、底部黑边： - 使用系统字体，不依赖 Google Fonts ...",
                 "keywords": [
                   "Chrome",
                   "headless",
@@ -5091,7 +4963,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "首页数据管道踩坑规则（2026-03-08 更新，含脱敏经验）： **一、数据管道闸门规则** 从内部数据→对外展示的管道，必须有清洗闸门。 - upda...",
+                "description": "首页数据管道踩坑规则（2026-03-08 更新，含脱敏经验）： 一、数据管道闸门规则 从内部数据→对外展示的管道，必须有清洗闸门。 - upda...",
                 "keywords": [
                   "首页",
                   "数据管道",
@@ -5110,7 +4982,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## UI气泡/Tooltip设计原则 ### 核心原则 **只展示有实际数据的内容，隐藏空白placeholder** ### 反例 气泡中显示\"如何升...",
+                "description": "UI气泡/Tooltip设计原则 核心原则 只展示有实际数据的内容，隐藏空白placeholder 反例 气泡中显示\"如何升...",
                 "keywords": [
                   "UI",
                   "Tooltip",
@@ -5129,7 +5001,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## CSS响应式断点决策经验 ### 问题 技能树三列布局在734px宽度下变成了垂直布局，用户期望保持水平布局。 ### 原因 原始媒体查询断点设为7...",
+                "description": "CSS响应式断点决策经验 问题 技能树三列布局在734px宽度下变成了垂直布局，用户期望保持水平布局。 原因 原始媒体查询断点设为7...",
                 "keywords": [
                   "CSS",
                   "响应式",
@@ -5148,7 +5020,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "### CSS语法错误的连锁反应 **问题模式**： - CSS选择器缺少闭合 `}`，导致后续所有规则被当作该选择器的属性而被忽略 - 表现：部分样式生...",
+                "description": "CSS语法错误的连锁反应 问题模式： - CSS选择器缺少闭合 }，导致后续所有规则被当作该选择器的属性而被忽略 - 表现：部分样式生...",
                 "keywords": [
                   "CSS",
                   "语法错误",
@@ -5167,7 +5039,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "### 样式重构时的兼容性检查清单 **问题场景**： 添加新样式系统时，与旧样式冲突导致布局错乱。 **案例**： 进化历程板块： - 旧样式：左侧时间...",
+                "description": "样式重构时的兼容性检查清单 问题场景： 添加新样式系统时，与旧样式冲突导致布局错乱。 案例： 进化历程板块： - 旧样式：左侧时间...",
                 "keywords": [
                   "CSS",
                   "样式重构",
@@ -5186,7 +5058,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 能力树视觉重构经验 ### 三树差异化设计 | 数据类型 | 风格 | 特征 | |----------|------|------| | 技能类 ...",
+                "description": "能力树视觉重构经验 三树差异化设计 | 数据类型 | 风格 | 特征 | 技能类 ...",
                 "keywords": [
                   "能力树",
                   "技能树",
@@ -5205,7 +5077,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "UI元素布局影响检查规则（含overflow裁切三分法）。 **核心规则一：增删的双向影响**： - **增加元素时**：检查是否溢出容器→宁大勿小，默认...",
+                "description": "UI元素布局影响检查规则（含overflow裁切三分法）。 核心规则一：增删的双向影响： - 增加元素时：检查是否溢出容器→宁大勿小，默认...",
                 "keywords": [
                   "overflow",
                   "hidden",
@@ -5224,7 +5096,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 文档配图同步更新规则 每次修改文档章节内容时，必须同步更新对应的配图： 1. **检查章节标题变化**：如果章节标题或定位发生变化，配图需要重新设计...",
+                "description": "文档配图同步更新规则 每次修改文档章节内容时，必须同步更新对应的配图： 1. 检查章节标题变化：如果章节标题或定位发生变化，配图需要重新设计...",
                 "keywords": [
                   "配图",
                   "同步",
@@ -5243,7 +5115,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 前端功能实现的边界场景覆盖不足 ### 问题描述 codeflicker-homepage首页三板块产品化优化（feat提交）后，紧接着出现6+个f...",
+                "description": "前端功能实现的边界场景覆盖不足 问题描述 codeflicker-homepage首页三板块产品化优化（feat提交）后，紧接着出现6+个f...",
                 "keywords": [
                   "前端",
                   "边界场景",
@@ -5262,7 +5134,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "新建技能/知识库/记忆分类时，必须同步更新多个位置，否则首页显示异常。 **v4.0 三棵树统一三层架构（2026-03-08）** 三棵树共享统一的 l...",
+                "description": "新建技能/知识库/记忆分类时，必须同步更新多个位置，否则首页显示异常。 v4.0 三棵树统一三层架构（2026-03-08） 三棵树共享统一的 l...",
                 "keywords": [
                   "配置漂移",
                   "技能分类",
@@ -5281,7 +5153,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "**问题**：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 **案例**： 1. 技能分类配置漂移：记忆已存在，但新建6个技能时仍未更新SKILL...",
+                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例： 1. 技能分类配置漂移：记忆已存在，但新建6个技能时仍未更新SKILL...",
                 "keywords": [
                   "记忆召回",
                   "踩坑复现",
@@ -5300,7 +5172,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## AI生成UI反模式清单 ### 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
+                "description": "AI生成UI反模式清单 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
                 "keywords": [
                   "AI反模式",
                   "前端设计",
@@ -5319,7 +5191,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## Skill 沉淀必须对照源码，不能凭记忆 ### 问题 从对话中抽象 Skill 时凭记忆写，结果漏了 7 项关键设计决策（如去掉 Acquisit...",
+                "description": "Skill 沉淀必须对照源码，不能凭记忆 问题 从对话中抽象 Skill 时凭记忆写，结果漏了 7 项关键设计决策（如去掉 Acquisit...",
                 "keywords": [
                   "Skill沉淀",
                   "对照源码",
@@ -5338,7 +5210,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 数据模型信息冗余导致渲染重复 ### 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
+                "description": "数据模型信息冗余导致渲染重复 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
                 "keywords": [
                   "数据冗余",
                   "重复渲染",
@@ -5357,7 +5229,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## Python pathlib.rglob()/glob() 不跟踪软链接（symlinks） **问题**：Python pathlib 的 `rg...",
+                "description": "Python pathlib.rglob()/glob() 不跟踪软链接（symlinks） 问题：Python pathlib 的 `rg...",
                 "keywords": [
                   "pathlib",
                   "rglob",
@@ -5376,7 +5248,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "**问题场景**：修改CSS样式不生效 **根因**：项目存在多个CSS文件时，修改了未被HTML引用的CSS文件。 **预防措施**： 1. 修改CSS...",
+                "description": "问题场景：修改CSS样式不生效 根因：项目存在多个CSS文件时，修改了未被HTML引用的CSS文件。 预防措施： 1. 修改CSS...",
                 "keywords": [
                   "CSS",
                   "样式不生效",
@@ -5395,7 +5267,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 清爽调研报告风格的导航规范 ### 核心问题 **目录（TOC）+ 锚点跳转 ≠ Tab导航 + 面板切换** 这是两种完全不同的导航模式： 1. ...",
+                "description": "清爽调研报告风格的导航规范 核心问题 目录（TOC）+ 锚点跳转 ≠ Tab导航 + 面板切换 这是两种完全不同的导航模式： 1. ...",
                 "keywords": [
                   "清爽调研报告",
                   "Tab导航",
@@ -5414,7 +5286,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 ### 失败方案 Chrome headless的`--window-siz...",
+                "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
                 "keywords": [
                   "HTML截图",
                   "Docs文档",
@@ -5433,7 +5305,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## AI洞察项目版本体系定义 ### 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | |------|---------|-------...",
+                "description": "AI洞察项目版本体系定义 三版本架构 | 版本 | 仓库名称 | 访问链接 | 用途 | -------...",
                 "keywords": [
                   "外部版",
                   "内部版",
@@ -5452,7 +5324,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 部署验证完整经验（合并版） ### 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
+                "description": "部署验证完整经验（合并版） 1. 配置变更影响评估 当修改任何\"标识符\"（仓库名、域名、API端点等）时，必须全局搜索替换： - 项目所有代...",
                 "keywords": [
                   "部署",
                   "验证",
@@ -5471,7 +5343,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 跨文件批量标准化修改经验 ### 问题场景 需要对项目中大量HTML文件（30+个）进行统一格式修改（如统一footer、统一模块、统一样式）。 #...",
+                "description": "跨文件批量标准化修改经验 问题场景 需要对项目中大量HTML文件（30+个）进行统一格式修改（如统一footer、统一模块、统一样式）。 #...",
                 "keywords": [
                   "批量修改",
                   "标准化",
@@ -5490,7 +5362,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 大文件编辑的Context节约策略 ### 问题 对2000+行的HTML/CSS大文件做样式修改时，分4次read_file读完全文占用大量con...",
+                "description": "大文件编辑的Context节约策略 问题 对2000+行的HTML/CSS大文件做样式修改时，分4次read_file读完全文占用大量con...",
                 "keywords": [
                   "大文件",
                   "context",
@@ -5509,7 +5381,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 品牌色全局迁移经验 ### 问题场景 项目品牌色从旧色系(#1A7F37)升级到新色系(#059669)，需要确保全局一致性。 ### 关键教训：品...",
+                "description": "品牌色全局迁移经验 问题场景 项目品牌色从旧色系(#1A7F37)升级到新色系(#059669)，需要确保全局一致性。 关键教训：品...",
                 "keywords": [
                   "品牌色",
                   "色值迁移",
@@ -5528,7 +5400,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "**问题**: AI日报国内新闻长期偏少（海外信息源开放易搜；国内核心载体是微信公众号封闭生态），导致板块配额长期难满足。 **根因分析**: 1. 信息...",
+                "description": "问题: AI日报国内新闻长期偏少（海外信息源开放易搜；国内核心载体是微信公众号封闭生态），导致板块配额长期难满足。 根因分析: 1. 信息...",
                 "keywords": [
                   "AI日报",
                   "国内覆盖",
@@ -5547,7 +5419,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 链接时效性陷阱：搜索引擎排名≠信息新鲜度 ### 问题 2026-03-08 AI日报KIM卡片中，通义灵码的链接指向一篇2025-02-15的CS...",
+                "description": "链接时效性陷阱：搜索引擎排名≠信息新鲜度 问题 2026-03-08 AI日报KIM卡片中，通义灵码的链接指向一篇2025-02-15的CS...",
                 "keywords": [
                   "链接时效性",
                   "过时链接",
@@ -5566,7 +5438,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## AI日报工作流上下文溢出的根因与优化方案 ### 问题 2026-03-08 AI日报执行时跨了两个上下文窗口，导致发布延迟3小时+。 ### 根因...",
+                "description": "AI日报工作流上下文溢出的根因与优化方案 问题 2026-03-08 AI日报执行时跨了两个上下文窗口，导致发布延迟3小时+。 根因...",
                 "keywords": [
                   "AI日报",
                   "上下文溢出",
@@ -5612,7 +5484,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## 部署验证完整经验（合并版） ### 1. 缓存破坏 - URL添加时间戳：`?v=${Date.now()}` - 强制刷新：Ctrl+Shift+...",
+                "description": "部署验证完整经验（合并版） 1. 缓存破坏 - URL添加时间戳：?v=${Date.now()} - 强制刷新：Ctrl+Shift+...",
                 "keywords": [
                   "部署",
                   "验证",
@@ -5631,7 +5503,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## 技能分层文档同步规则 ### 问题 修改技能的详细参考文件（`references/*.md`）后，忘记在主入口（`SKILL.md`）同步摘要，导...",
+                "description": "技能分层文档同步规则 问题 修改技能的详细参考文件（references/*.md）后，忘记在主入口（SKILL.md）同步摘要，导...",
                 "keywords": [
                   "技能更新",
                   "SKILL.md",
@@ -5650,7 +5522,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## 多步骤工作流中的静默失败陷阱 ### 来源 2026-03-08 AI日报部署时，`git push org main` 返回 \"repositor...",
+                "description": "多步骤工作流中的静默失败陷阱 来源 2026-03-08 AI日报部署时，git push org main 返回 \"repositor...",
                 "keywords": [
                   "静默失败",
                   "断言",
@@ -5669,7 +5541,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## 目录重构后的完整自检清单 当执行目录结构重构时，必须检查以下所有位置的路径引用： ### 检查清单 | 检查项 | 检查方法 | |-------|...",
+                "description": "目录重构后的完整自检清单 当执行目录结构重构时，必须检查以下所有位置的路径引用： 检查清单 | 检查项 | 检查方法 | |-------|...",
                 "keywords": [
                   "目录重构",
                   "路径更新",
@@ -5688,7 +5560,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## Git Force操作前必须保护工作区 ### 问题 重建codeflicker-homepage的.git目录后，执行 `git checkout...",
+                "description": "Git Force操作前必须保护工作区 问题 重建codeflicker-homepage的.git目录后，执行 `git checkout...",
                 "keywords": [
                   "git",
                   "force",
@@ -5707,7 +5579,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## 问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： ### 泄露载体清单（安全扫描必检项） 1. **Git commit auth...",
+                "description": "问题场景 公开 GitHub 仓库中的敏感信息泄露，涵盖多个维度： 泄露载体清单（安全扫描必检项） 1. Git commit auth...",
                 "keywords": [
                   "GitHub",
                   "安全审计",
@@ -5734,7 +5606,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "## 信息失真三问法（事实验证通用框架） ### 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
+                "description": "信息失真三问法（事实验证通用框架） 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
                 "keywords": [
                   "事实验证",
                   "三问法",
@@ -5753,7 +5625,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "## 工具能力边界测试原则 ### 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
+                "description": "工具能力边界测试原则 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
                 "keywords": [
                   "边界测试",
                   "工具能力",
@@ -5772,7 +5644,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "**元工具的自举困境：质量机制本身也需要质量保证** **问题**：meta-execution 是用来保证交付质量的机制，但它自己的文档有编号重复(P2...",
+                "description": "元工具的自举困境：质量机制本身也需要质量保证 问题：meta-execution 是用来保证交付质量的机制，但它自己的文档有编号重复(P2...",
                 "keywords": [
                   "自举困境",
                   "元技能",
@@ -5791,7 +5663,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 **核心约束**： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
+                "description": "使用pptxgenjs时，shadow属性可能导致EMU数值溢出问题。 核心约束： - 优先使用边框（line）替代阴影 - 如必须用阴影，每次创...",
                 "keywords": [
                   "pptxgenjs",
                   "shadow",
@@ -5810,7 +5682,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "**问题**：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
+                "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
                 "keywords": [
                   "知识学习",
                   "文档抓取",
@@ -5837,7 +5709,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "💬",
                 "color": "#06b6d4",
-                "description": "recap元数据(title/user_intent)可能被工具调用污染。 **触发条件**: 对话以execute_command等工具调用开头，而非自...",
+                "description": "recap元数据(title/user_intent)可能被工具调用污染。 触发条件: 对话以execute_command等工具调用开头，而非自...",
                 "keywords": [
                   "recap",
                   "元数据",
@@ -5856,7 +5728,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "💬",
                 "color": "#06b6d4",
-                "description": "## 外部 API 权限前置验证 ### 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 KIM 资源上传接口（/openapi/v2/...",
+                "description": "外部 API 权限前置验证 问题 CodeFlicker 周报图片上传功能：代码写完后才发现 KIM 资源上传接口（/openapi/v2/...",
                 "keywords": [
                   "API权限",
                   "前置验证",
@@ -5894,7 +5766,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "💬",
                 "color": "#06b6d4",
-                "description": "## 代码文件中文字符编码安全规则 ### 问题场景 使用工具写入Python/JS等代码文件时，中文引号 `\"\"` (U+201C/U+201D) 可能...",
+                "description": "代码文件中文字符编码安全规则 问题场景 使用工具写入Python/JS等代码文件时，中文引号 \"\" (U+201C/U+201D) 可能...",
                 "keywords": [
                   "Python",
                   "中文引号",
@@ -5913,7 +5785,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "💬",
                 "color": "#06b6d4",
-                "description": "## KIM卡片视觉层次优化（v3.2→v3.4迭代经验） ### 问题 2026-03-08 AI日报KIM卡片v3.1-v3.3版本中，热度趋势条目和...",
+                "description": "KIM卡片视觉层次优化（v3.2→v3.4迭代经验） 问题 2026-03-08 AI日报KIM卡片v3.1-v3.3版本中，热度趋势条目和...",
                 "keywords": [
                   "KIM",
                   "卡片",
@@ -5940,7 +5812,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "✍️",
                 "color": "#f59e0b",
-                "description": "## 专栏/系列内容创作踩坑：直接写内容 vs 先做体系设计 ### 问题描述 养了个AI专栏第0期做了3版： - v1: 直接按用户要求写6个实战场景 ...",
+                "description": "专栏/系列内容创作踩坑：直接写内容 vs 先做体系设计 问题描述 养了个AI专栏第0期做了3版： - v1: 直接按用户要求写6个实战场景 ...",
                 "keywords": [
                   "专栏",
                   "系列",
@@ -5967,7 +5839,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "## 脚本参数格式踩坑 ### 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
+                "description": "脚本参数格式踩坑 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
                 "keywords": [
                   "脚本参数",
                   "sys.argv",
@@ -5986,7 +5858,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 **核心约束**： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
+                "description": "日报漏记对话和项目活动的根因是「工作发生时间 ≠ 产出物生成时间」。 核心约束： - 用 thread 目录下所有文件的递归 mtime 判断活跃...",
                 "keywords": [
                   "日报",
                   "recap",
@@ -6005,7 +5877,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "## FastMCP 版本兼容坑：`FastMCP(port=...)` 参数移除导致 MCP Server 无法启动 ### 现象 运行 `weixin...",
+                "description": "FastMCP 版本兼容坑：FastMCP(port=...) 参数移除导致 MCP Server 无法启动 现象 运行 `weixin...",
                 "keywords": [
                   "FastMCP",
                   "port",
@@ -6032,7 +5904,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📋",
                 "color": "#c2410c",
-                "description": "## 知识库路径映射（每日修炼常用） 工作区根目录：`/Users/shenlang/Documents/Codeflicker/个人助理_V1/` **...",
+                "description": "知识库路径映射（每日修炼常用） 工作区根目录：/Users/shenlang/Documents/Codeflicker/个人助理_V1/ ...",
                 "keywords": [
                   "Knowledge",
                   "路径",

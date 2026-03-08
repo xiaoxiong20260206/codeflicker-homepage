@@ -15,33 +15,40 @@ function renderSkillTechTree(container, skills) {
     var categories = skills.categories;
     var relationships = skills.relationships || {};
     
-    // 技能名称映射
+    // 技能名称映射（规范版 v3.0 — 与 app.js 保持一致）
     var skillNameMap = {
+        // === 🔄 自进化引擎 ===
         'xiaowuxianggong': '小无相功',
-        'daily-reflection-evolution': '每日修炼',
+        'daily-reflection-evolution': '自进化',
         'learn-from-mistakes': '举一反三',
         'neigong-cultivation': '内功修炼',
         'meta-execution': '元执行',
         'memory-hygiene': '记忆管理',
         'skill-architecture': '技能架构',
         'knowledge-curator': '知识管理',
+        // === 🧠 认知框架 ===
         'essence-insight': '本质洞察',
         'product-thinking': '产品思维',
         'knowledge-acquisition-meta': '知识习得',
+        // === ⚙️ 系统工具 ===
         'knowledge-base': '知识库',
-        'find-skills': '技能搜索',
+        'find-skills': '发现',
         'skill-manager': '技能管理',
         'night-task-runner': '夜间任务',
-        'personal-assistant': '个人助理',
+        // === 调研分析 ===
         'industry-research': '行研',
-        'wechat-research': '公众号调研',
-        'research': '通用调研',
+        'wechat-research': '公众号',
+        'research': '调研',
         'apify-trend-analysis': '趋势',
         'apify-market-research': '市场',
         'apify-competitor-intelligence': '竞情',
+        'daily-ai-report': 'AI日报',
         'ai-insight': 'AI洞察',
+        // === 文档处理 ===
         'pdf': 'PDF', 'pptx': 'PPT', 'docx': 'Word', 'xlsx': 'Excel',
-        'canvas-design': '视觉设计', 'keynote': 'Keynote',
+        'canvas-design': '画布', 'keynote': 'Keynote',
+        'ks-kim-docs-shuttle': 'IM文档',
+        // === 前端开发 ===
         'ui-ux-pro-max': 'UI专家', 'ui-ux-pro-max-skill': 'UI专家',
         'frontend-design': '前端', 'web-dev-workflow': '网页流程',
         'qingshuang-research-style': '清爽', 'work-report-ppt': '汇报',
@@ -49,12 +56,17 @@ function renderSkillTechTree(container, skills) {
         'web-design-guidelines': '规范', 'zelda-style': '塞尔达',
         'vercel-react-best-practices': 'React', 'vercel-react-native-skills': 'RN',
         'vercel-composition-patterns': '组合', 'remotion-best-practices': '视频',
+        // === 发布部署 ===
         'github-deploy-publisher': 'GitHub', 'yuque-publisher': '语雀',
-        'ks-kim-docs-shuttle': 'IM文档', 'mcp-builder': 'MCP',
+        'mcp-builder': 'MCP',
+        // === 投资理财 ===
         'stock-analysis': '股票', 'investment-analyzer': '投资',
         'investment-tracker': '基金',
+        // === 效率工具 ===
         'feishu-assistant': '飞书', 'linke-kim-message': 'IM消息',
-        'ai-column-writer': '专栏', 'promotion-coaching': '晋升辅导'
+        'ai-column-writer': '专栏', 'promotion-coaching': '晋升辅导',
+        'personal-assistant': '助理',
+        'codeflicker-weekly-report': '周报'
     };
     
     function getLevelColor(level) {

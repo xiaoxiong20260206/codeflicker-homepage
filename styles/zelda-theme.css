@@ -63,7 +63,7 @@
     --text-bright: rgba(255, 255, 255, 0.92);
     
     /* 字体 */
-    --font-title: 'Cinzel', 'Noto Serif SC', serif;
+    --font-title: 'Philosopher', 'Cinzel', 'Noto Serif SC', serif;
     --font-body: 'Noto Serif SC', Georgia, serif;
     --font-mono: 'Orbitron', monospace;
     
@@ -233,30 +233,36 @@ body {
 }
 
 /* ==================== 希卡面板 ==================== */
+/* 希卡面板 v4.0 - 毛玻璃升级 */
 .zonai-panel {
-    background: linear-gradient(135deg, 
-        rgba(30, 35, 40, 0.95) 0%,
-        rgba(40, 45, 55, 0.92) 50%,
-        rgba(30, 35, 40, 0.95) 100%
-    );
-    border: 2px solid var(--sheikah-blue);
-    border-radius: var(--radius-sm);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+    border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     position: relative;
     box-shadow: 
-        var(--sheikah-glow),
-        inset 0 0 40px rgba(0, 212, 255, 0.08);
+        var(--shadow-glow-blue),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        inset 0 0 40px rgba(0, 212, 255, 0.05);
     color: var(--text-light);
+    transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.zonai-panel:hover {
+    border-color: rgba(0, 212, 255, 0.4);
 }
 
 /* 希卡角落装饰 - 更精致 */
+/* 希卡角落装饰 - v4.0 更精致 */
 .zonai-panel::before,
 .zonai-panel::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
-    border: 1.5px solid rgba(0, 212, 255, 0.5);
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid rgba(0, 212, 255, 0.4);
 }
 
 .zonai-panel::before { 
@@ -279,13 +285,14 @@ body {
 }
 
 /* ==================== 羊皮纸面板 - 更温润 ==================== */
+/* 羊皮纸面板 v4.0 - 更温润 */
 .parchment-panel {
     background: linear-gradient(160deg, 
         rgba(238, 228, 208, 0.97) 0%,
         rgba(248, 238, 218, 0.94) 50%,
         rgba(238, 228, 208, 0.97) 100%
     );
-    border: 1.5px solid rgba(107, 83, 68, 0.3);
+    border: 1.5px solid rgba(107, 83, 68, 0.2);
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     box-shadow: 
@@ -553,13 +560,14 @@ body {
     gap: 15px;
 }
 
+/* 物品栏格子 v4.0 */
 .inventory-slot {
     aspect-ratio: 1;
-    background: linear-gradient(135deg, 
-        rgba(232, 220, 196, 0.9) 0%,
-        rgba(245, 230, 200, 0.8) 100%
+    background: linear-gradient(150deg, 
+        rgba(240, 230, 212, 0.96) 0%,
+        rgba(248, 240, 222, 0.92) 100%
     );
-    border: 2px solid var(--zelda-brown);
+    border: 1.5px solid rgba(107, 83, 68, 0.18);
     border-radius: var(--radius-md);
     display: flex;
     flex-direction: column;
@@ -570,28 +578,32 @@ body {
 }
 
 .inventory-slot:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(107, 83, 68, 0.3);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(107, 83, 68, 0.2);
     border-color: var(--zelda-gold);
 }
 
 .inventory-slot.zonai { 
-    border-color: var(--sheikah-blue); 
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.4); 
+    border-color: rgba(0, 212, 255, 0.4); 
+    box-shadow: 0 0 14px rgba(0, 212, 255, 0.2); 
 }
 
 .inventory-slot.legendary { 
-    border-color: var(--zelda-gold); 
-    box-shadow: 0 0 15px rgba(201, 162, 39, 0.5); 
+    border-color: rgba(201, 162, 39, 0.5); 
+    box-shadow: 0 0 14px rgba(201, 162, 39, 0.3); 
 }
 
 /* ==================== 任务日志 ==================== */
+/* 任务日志 v4.0 - 毛玻璃升级 */
 .quest-log {
-    background: rgba(30, 35, 40, 0.95);
-    border: 2px solid var(--sheikah-blue-dark);
-    border-radius: var(--radius-sm);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    border-radius: var(--radius-md);
     padding: var(--spacing-md);
     color: var(--text-light);
+    box-shadow: var(--shadow-lg);
 }
 
 .quest-title {
@@ -631,9 +643,12 @@ body {
 }
 
 /* ==================== 统计卡片 ==================== */
+/* 统计卡片 v4.0 - 毛玻璃升级 */
 .stat-card {
-    background: rgba(30, 35, 40, 0.9);
-    border: 2px solid var(--sheikah-blue-dark);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid rgba(0, 212, 255, 0.12);
     border-radius: var(--radius-md);
     padding: var(--spacing-md);
     text-align: center;
@@ -641,9 +656,9 @@ body {
 }
 
 .stat-card:hover {
-    border-color: var(--sheikah-blue);
-    box-shadow: var(--sheikah-glow);
+    border-color: rgba(0, 212, 255, 0.35);
     transform: translateY(-3px);
+    box-shadow: var(--shadow-glow-blue);
 }
 
 .stat-icon {

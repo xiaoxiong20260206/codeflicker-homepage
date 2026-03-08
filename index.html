@@ -14,8 +14,8 @@
     <!-- 预加载头像图片 -->
     <link rel="preload" href="link-avatar-small.png" as="image">
     <!-- Google Fonts 异步加载：避免阻塞首次渲染 -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
     <!-- Chart.js 延迟加载：首屏不需要图表 -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 已改为按需动态加载 -->
     <link rel="stylesheet" href="styles/zelda-theme.css">
@@ -2961,8 +2961,49 @@
     </style>
 </head>
 <body>
-    <!-- 背景效果 - 旷野之息水彩天空 -->
+    <!-- 背景效果 - 旷野之息水彩天空 v4.0 -->
     <div class="bg-effects"></div>
+    <!-- 等高线地形纹理层 -->
+    <svg class="topographic-layer" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="topo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6b5344;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#8b7364;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#topo-grad)" stroke-width="1.2">
+            <path d="M0,200 Q150,160 300,190 T600,170 T900,195 T1200,180" />
+            <path d="M0,260 Q200,230 400,255 T800,240 T1200,250" />
+            <path d="M0,330 Q180,300 360,325 T720,310 T1080,330 T1200,320" />
+            <path d="M0,400 Q250,370 500,395 T1000,380 T1200,390" />
+            <path d="M0,470 Q160,440 320,465 T640,450 T960,470 T1200,460" />
+            <path d="M0,540 Q220,510 440,535 T880,520 T1200,530" />
+            <path d="M0,610 Q180,580 360,605 T720,590 T1080,610 T1200,600" />
+            <ellipse cx="300" cy="350" rx="60" ry="40" />
+            <ellipse cx="300" cy="350" rx="40" ry="25" />
+            <ellipse cx="800" cy="500" rx="70" ry="45" />
+            <ellipse cx="800" cy="500" rx="45" ry="28" />
+            <ellipse cx="800" cy="500" rx="20" ry="12" />
+        </g>
+    </svg>
+    <!-- 远山剪影 + 云海 -->
+    <div class="landscape-layer">
+        <svg class="mountain-silhouette" viewBox="0 0 1200 300" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="mtn-far" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(139,115,100,0.15)" />
+                    <stop offset="100%" stop-color="rgba(139,115,100,0.05)" />
+                </linearGradient>
+                <linearGradient id="mtn-near" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(107,83,68,0.2)" />
+                    <stop offset="100%" stop-color="rgba(107,83,68,0.08)" />
+                </linearGradient>
+            </defs>
+            <path d="M0,180 Q60,100 150,130 Q250,80 350,120 Q450,70 550,110 Q650,60 750,100 Q850,50 950,90 Q1050,60 1150,80 L1200,100 L1200,300 L0,300 Z" fill="url(#mtn-far)" />
+            <path d="M0,220 Q80,160 180,190 Q280,140 380,175 Q480,130 580,165 Q680,120 780,155 Q880,110 980,145 Q1080,100 1150,130 L1200,150 L1200,300 L0,300 Z" fill="url(#mtn-near)" />
+        </svg>
+        <div class="cloud-layer"></div>
+    </div>
     <div class="particles" id="particles"></div>
     <div class="scanlines"></div>
     
@@ -2980,6 +3021,18 @@
                     <div class="level-badge" id="hero-level">--</div>
                 </div>
                 <h1 class="character-name">LINK</h1>
+                <!-- v4.0 希卡之眼装饰 -->
+                <div style="display:flex;justify-content:center;margin:8px 0">
+                    <svg class="sheikah-eye-svg" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="12" stroke="#00d4ff" stroke-width="2.5"/>
+                        <circle cx="50" cy="50" r="4" fill="#00d4ff"/>
+                        <path d="M50 38 L50 18" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M50 62 L40 80" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M50 62 L60 80" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M38 50 C30 35 20 42 15 50" stroke="#00d4ff" stroke-width="1.8" fill="none"/>
+                        <path d="M62 50 C70 35 80 42 85 50" stroke="#00d4ff" stroke-width="1.8" fill="none"/>
+                    </svg>
+                </div>
                 <p class="character-title">***的数字分身</p>
                 <div class="character-tags">
                     <span class="tag tag-gold">小无相功</span>
@@ -3221,7 +3274,7 @@
                         </div>
                     </div>
                     
-                    <div class="about-highlights">
+                    <div class="about-highlights reveal">
                         <div class="highlight-card">
                             <div class="highlight-icon">⚡</div>
                             <div class="highlight-value" id="about-skills-2">34</div>
@@ -3250,7 +3303,12 @@
                 </div>
                 
                 <!-- 进化历程时间线 -->
-                <div class="evolution-section">
+                <div class="sheikah-divider">
+                    <span class="line"></span>
+                    <span class="diamond"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="evolution-section reveal">
                     <div class="evolution-header">
                         <span class="evolution-icon">🚀</span>
                         <span class="evolution-title">进化历程</span>
@@ -3263,7 +3321,7 @@
                 </div>
                 
                 <!-- 如何使用我 -->
-                <div class="howto-section">
+                <div class="howto-section reveal">
                     <div class="howto-header">
                         <span class="howto-icon">🎯</span>
                         <span class="howto-title">如何与我对话</span>
@@ -3319,7 +3377,12 @@
                 </div>
                 
                 <!-- 成就墙 -->
-                <div class="achievements-section">
+                <div class="sheikah-divider">
+                    <span class="line"></span>
+                    <span class="diamond"></span>
+                    <span class="line"></span>
+                </div>
+                <div class="achievements-section reveal">
                     <div class="achievements-title">
                         🏆 成就墙
                         <span class="achievements-stats" id="achievements-stats-2"></span>
@@ -3580,42 +3643,82 @@
     </div>
     
     <script>
-        // 创建飘落粒子 - 旷野之息风格落叶 + 希卡蓝光点
-        // 性能优化：减少粒子数量，尊重用户动画偏好设置
+        // v4.0 SVG叶子粒子系统 + 希卡蓝光点
+        // 使用SVG路径代替emoji，确保跨平台一致渲染
+        const leafSVGs = [
+            `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 4 6 4 12c0 4 3 7 6 9l2 1 2-1c3-2 6-5 6-9 0-6-4-10-8-10z" fill="rgba(93,138,74,0.7)" stroke="rgba(61,90,42,0.5)" stroke-width="0.8"/></svg>`,
+            `<svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="7" ry="10" fill="rgba(139,184,122,0.6)" stroke="rgba(93,138,74,0.4)" stroke-width="0.8" transform="rotate(-15 12 12)"/><line x1="12" y1="2" x2="12" y2="22" stroke="rgba(93,138,74,0.5)" stroke-width="0.6"/></svg>`,
+            `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z" fill="rgba(210,140,70,0.6)" stroke="rgba(180,110,50,0.4)" stroke-width="0.7"/></svg>`,
+            `<svg viewBox="0 0 24 24" fill="none"><path d="M12 1 Q16 8 14 16 Q13 20 12 23 Q11 20 10 16 Q8 8 12 1Z" fill="rgba(120,160,90,0.6)" stroke="rgba(80,120,60,0.4)" stroke-width="0.6"/></svg>`
+        ];
+
         function createParticles() {
-            // 检查用户是否偏好减少动画
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                console.log('Reduced motion preferred, skipping particle creation');
-                return;
-            }
-            
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             const container = document.getElementById('particles');
             if (!container) return;
-            
-            // 落叶粒子 - 自然美学（从12个减少到8个）
-            const leaves = ['🍃', '🍂', '🌿', '🍁'];
-            
-            for (let i = 0; i < 8; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.textContent = leaves[Math.floor(Math.random() * leaves.length)];
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDuration = (15 + Math.random() * 12) + 's';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.fontSize = (14 + Math.random() * 8) + 'px';
-                container.appendChild(particle);
+
+            // 前景叶子：大、清晰、快
+            for (let i = 0; i < 10; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf-particle';
+                leaf.innerHTML = leafSVGs[Math.floor(Math.random() * leafSVGs.length)];
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDuration = (12 + Math.random() * 10) + 's';
+                leaf.style.animationDelay = Math.random() * 15 + 's';
+                const size = (12 + Math.random() * 8) + 'px';
+                leaf.style.width = size;
+                leaf.style.height = size;
+                container.appendChild(leaf);
             }
-            
-            // 希卡蓝光点粒子 - 科技感（从25个减少到15个）
-            for (let i = 0; i < 15; i++) {
-                const light = document.createElement('div');
-                light.className = 'light-particle';
-                light.style.left = Math.random() * 100 + '%';
-                light.style.top = Math.random() * 100 + '%';
-                light.style.animationDelay = Math.random() * 4 + 's';
-                light.style.animationDuration = (3 + Math.random() * 3) + 's';
-                container.appendChild(light);
+
+            // 背景叶子：小、模糊、慢
+            for (let i = 0; i < 6; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf-particle bg-leaf';
+                leaf.innerHTML = leafSVGs[Math.floor(Math.random() * leafSVGs.length)];
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDuration = (18 + Math.random() * 12) + 's';
+                leaf.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(leaf);
             }
+
+            // 希卡蓝光点粒子 - 优化为底部浮升
+            for (let i = 0; i < 16; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'sheikah-spark';
+                spark.style.left = Math.random() * 100 + '%';
+                spark.style.top = (40 + Math.random() * 55) + '%';
+                spark.style.animationDuration = (5 + Math.random() * 5) + 's';
+                spark.style.animationDelay = Math.random() * 8 + 's';
+                container.appendChild(spark);
+            }
+        }
+
+        // v4.0 Scroll Reveal 动画
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        }
+
+        // v4.0 鼠标跟随光效
+        function initMouseGlow() {
+            document.querySelectorAll('.stat-item, .overview-card, .cap-card, .value-card, .highlight-card, .work-card-mini').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--glow-x', x + 'px');
+                    card.style.setProperty('--glow-y', y + 'px');
+                    card.classList.add('mouse-glow-active');
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.classList.remove('mouse-glow-active');
+                });
+            });
         }
         
         // 移动端侧边栏切换
@@ -3630,6 +3733,11 @@
         document.getElementById('sidebarOverlay')?.addEventListener('click', toggleSidebar);
         
         createParticles();
+        // 延迟初始化非关键交互
+        requestAnimationFrame(() => {
+            initScrollReveal();
+            initMouseGlow();
+        });
     </script>
     <script src="scripts/ability-trees.js?v=14"></script>
     <script src="scripts/app.js?v=14"></script>

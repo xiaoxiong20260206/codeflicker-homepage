@@ -146,14 +146,6 @@ function updateSidebarWithReports() {
     if (lastUpdate && reports.length > 0) {
         lastUpdate.textContent = reports[0].date;
     }
-    // 更新"了解我"的运行天数
-    const aboutDays = document.getElementById('about-days-2');
-    if (aboutDays && reports.length > 0) {
-        const firstDate = new Date('2026-02-01');
-        const today = new Date();
-        const days = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
-        aboutDays.textContent = days > 0 ? days + '+' : '30+';
-    }
     // 渲染侧边栏迷你趋势图（依赖reportsData）
     loadChartJS().then(() => {
         renderMiniTrendChart();
@@ -254,24 +246,10 @@ function renderAboutSection() {
     const aboutLevel = document.getElementById('about-level');
     if (aboutLevel) aboutLevel.textContent = 'LV.' + char.level;
     
-    // 更新"了解我"页面的统计数字
-    const aboutSkills = document.getElementById('about-skills-2');
-    const aboutKnowledge = document.getElementById('about-knowledge-2');
-    const aboutWorks = document.getElementById('about-works-2');
-    const aboutDays = document.getElementById('about-days-2');
-    
-    if (aboutSkills) aboutSkills.textContent = skills.total;
-    if (aboutKnowledge) aboutKnowledge.textContent = knowledge.totalFiles;
-    if (aboutWorks && projects?.summary) aboutWorks.textContent = projects.summary.total;
-    
-    // 计算运行天数（不依赖reports数据）
-    let runDays = 30;
-    if (aboutDays) {
-        const firstDate = new Date('2026-02-01'); // AI助手诞生日
-        const today = new Date();
-        runDays = Math.floor((today - firstDate) / (1000 * 60 * 60 * 24));
-        aboutDays.textContent = runDays > 0 ? runDays + '+' : '30+';
-    }
+    // 计算运行天数
+    const firstDate = new Date('2026-02-01'); // AI助手诞生日
+    const today = new Date();
+    const runDays = Math.max(30, Math.floor((today - firstDate) / (1000 * 60 * 60 * 24)));
     
     // 渲染核心统计指标面板
     renderAboutCoreStats({
@@ -320,7 +298,7 @@ function renderAboutCoreStats(data) {
     ];
     
     container.innerHTML = `
-        <div class="about-stats-title">📊 核心数据</div>
+        <div class="about-stats-title">📊 我的工作成果</div>
         ${stats.map(s => `
             <div class="stat-card">
                 <div class="stat-card-icon">${s.icon}</div>

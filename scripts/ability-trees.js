@@ -15,8 +15,9 @@ function renderSkillTechTree(container, skills) {
     var categories = skills.categories;
     var relationships = skills.relationships || {};
     
-    // 技能名称映射（规范版 v3.0 — 与 app.js 保持一致）
-    var skillNameMap = {
+    // 技能名称映射（规范版 v3.0 — Single Source of Truth）
+    // 注意：此映射表通过 window.SKILL_NAME_MAP 导出供 app.js 使用
+    var skillNameMap = window.SKILL_NAME_MAP || {
         // === 🔄 自进化引擎 ===
         'xiaowuxianggong': '小无相功',
         'daily-reflection-evolution': '自进化',
@@ -66,8 +67,15 @@ function renderSkillTechTree(container, skills) {
         'feishu-assistant': '飞书', 'linke-kim-message': 'IM消息',
         'ai-column-writer': '专栏', 'promotion-coaching': '晋升辅导',
         'personal-assistant': '助理',
-        'codeflicker-weekly-report': '周报'
+        'codeflicker-weekly-report': '周报',
+        // === 兼容项 ===
+        'wechat-content-access': '公众号(旧)',
+        'codeflicker-homepage': '首页',
+        'ai-image-generator': 'AI绘图',
+        'settings': '设置'
     };
+    // 导出为全局 Single Source of Truth（供 app.js 的 showProjectTooltip 等引用）
+    window.SKILL_NAME_MAP = skillNameMap;
     
     function getLevelColor(level) {
         var colors = { 1: '#fb923c', 2: '#fbbf24', 3: '#4ade80', 4: '#38bdf8', 5: '#a78bfa' };
@@ -446,7 +454,7 @@ function renderMemoryNeuralNetwork(container, memories) {
     var total = memories.total || 0;
     
     var layerDef = [
-        { key: '\uD83E\uDDE0 \u5143\u8ba4\u77e5\u5c42', icon: '\uD83E\uDDE0', label: '\u5143\u8ba4\u77e5\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u7528\u6237\u8eab\u4efd\u3001\u601d\u7ef4\u80fd\u529b\u3001\u5de5\u4f5c\u6a21\u5f0f', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u57fa\u5ea7\u77e5\u8bc6\u5c42' },
+        { key: '\uD83E\uDDE0 \u5143\u8ba4\u77e5\u5c42', icon: '\uD83E\uDDE0', label: '\u5143\u8ba4\u77e5\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u7528\u6237\u8eab\u4efd\u3001\u601d\u7ef4\u6846\u67b6\u3001\u5de5\u4f5c\u57fa\u5ea7', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u57fa\u5ea7\u77e5\u8bc6\u5c42' },
         { key: '\uD83C\uDFAF \u9886\u57df\u8bb0\u5fc6\u5c42', icon: '\uD83C\uDFAF', label: '\u9886\u57df\u8bb0\u5fc6\u5c42', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '\u7279\u5b9a\u9886\u57df\u7684\u5b8c\u6574\u7ecf\u9a8c\u6c89\u6dc0', align: '\u2194 \u9886\u57df\u80fd\u529b\u5c42 \u00b7 \u9886\u57df\u77e5\u8bc6\u5c42' },
         { key: '\uD83D\uDEE0\uFE0F \u5b9e\u8df5\u8bb0\u5fc6\u5c42', icon: '\uD83D\uDEE0\uFE0F', label: '\u5b9e\u8df5\u8bb0\u5fc6\u5c42', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '\u5177\u4f53\u9886\u57df\u7684\u8e29\u5751\u7ecf\u9a8c\u548c\u9879\u76ee\u77e5\u8bc6', align: '\u2194 \u6267\u884c\u6280\u80fd\u5c42 \u00b7 \u5b9e\u8df5\u77e5\u8bc6\u5c42' }
     ];

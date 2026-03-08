@@ -1416,12 +1416,11 @@ function renderAbilitiesSection() {
     const knowledgeContainer = document.getElementById('knowledge-tree');
     const memoryContainer = document.getElementById('memory-tree');
     
-    // 技能树 - 科技树风格
+    // 技能树 - 科技树风格（来自 ability-trees.js）
     if (skillContainer && typeof renderSkillTechTree === 'function') {
         renderSkillTechTree(skillContainer, skills);
     } else {
-        // 回退到旧版渲染
-        renderSkillTreeGraph(skills);
+        console.warn('ability-trees.js not loaded, skill tree rendering skipped');
     }
     
     // 知识树 - 纵向三层架构图（v3.0）
@@ -1450,404 +1449,11 @@ function getLevelClass(level) {
     return 'lv5';
 }
 
-function renderSkillTreeGraph(skills) {
-    const container = document.getElementById('skill-tree');
-    if (!container) return;
-    
-    // 优先使用三层架构tree数据
-    const tree = skills.tree;
-    
-    if (tree && Object.keys(tree).length > 0) {
-        // 使用三层架构渲染
-        renderSkillTreeWithLayers(container, tree, skills);
-        return;
-    }
-    
-    // 回退：使用扁平结构渲染
-    renderSkillTreeFlat(container, skills);
-}
+// [已删除] 旧版技能树渲染器（renderSkillTreeGraph/WithLayers/Flat + toggleBranch 等）
+// 已迁移到 ability-trees.js，此处约 400 行死代码在 2026-03-08 清理
+// 如需回退到旧版渲染，请查看 git 历史
 
-// 三层架构技能树渲染
-function renderSkillTreeWithLayers(container, tree, skills) {
-    // 技能名称到简短中文名的映射（规范版 v3.0）
-    const skillNameMap = {
-        // === 🔄 自进化引擎 ===
-        'xiaowuxianggong': '小无相功',
-        'daily-reflection-evolution': '自进化',
-        'learn-from-mistakes': '举一反三',
-        'neigong-cultivation': '内功修炼',
-        'meta-execution': '元执行',
-        'memory-hygiene': '记忆管理',
-        'skill-architecture': '技能架构',
-        'knowledge-curator': '知识管理',
-        
-        // === 🧠 认知框架 ===
-        'essence-insight': '本质洞察',
-        'product-thinking': '产品思维',
-        'knowledge-acquisition-meta': '知识习得',
-        
-        // === ⚙️ 系统工具 ===
-        'knowledge-base': '知识库',
-        'find-skills': '发现',
-        'skill-manager': '技能管理',
-        'night-task-runner': '夜间任务',
-        
-        // === 调研分析 ===
-        'industry-research': '行研',
-        'wechat-research': '公众号',
-        'research': '调研',
-        'apify-trend-analysis': '趋势',
-        'apify-market-research': '市场',
-        'apify-competitor-intelligence': '竞情',
-        'daily-ai-report': 'AI日报',
-        'ai-insight': 'AI洞察',
-        
-        // === 文档处理 ===
-        'pdf': 'PDF',
-        'pptx': 'PPT',
-        'docx': 'Word',
-        'xlsx': 'Excel',
-        'canvas-design': '画布',
-        'keynote': 'Keynote',
-        'ks-kim-docs-shuttle': 'IM文档',
-        
-        // === 前端开发 ===
-        'ui-ux-pro-max': 'UI专家',
-        'ui-ux-pro-max-skill': 'UI专家',
-        'frontend-design': '前端',
-        'web-dev-workflow': '网页流程',
-        'qingshuang-research-style': '清爽',
-        'work-report-ppt': '汇报',
-        'pixel-action-game': '像素',
-        'theme-factory': '主题',
-        'web-design-guidelines': '规范',
-        'zelda-style': '塞尔达',
-        'vercel-react-best-practices': 'React',
-        'vercel-react-native-skills': 'RN',
-        'vercel-composition-patterns': '组合',
-        'remotion-best-practices': '视频',
-        
-        // === 发布部署 ===
-        'github-deploy-publisher': 'GitHub',
-        'yuque-publisher': '语雀',
-        'mcp-builder': 'MCP',
-        
-        // === 投资理财 ===
-        'stock-analysis': '股票',
-        'investment-analyzer': '投资',
-        'investment-tracker': '基金',
-        
-        // === 效率工具 ===
-        'feishu-assistant': '飞书',
-        'linke-kim-message': 'IM消息',
-        'ai-column-writer': '专栏',
-        'promotion-coaching': '晋升辅导',
-        'personal-assistant': '助理',
-        'codeflicker-weekly-report': '周报'
-    };
-    
-    let idx = 0;
-    let layerBranches = '';
-    
-    // 遍历三层架构
-    for (const [layerKey, layerInfo] of Object.entries(tree)) {
-        if (!layerInfo.children || Object.keys(layerInfo.children).length === 0) continue;
-        
-        const layerColor = layerInfo.color || '#4ade80';
-        const layerIcon = layerInfo.icon || '📁';
-        const layerId = 'skill-layer-' + idx;
-        const layerBranchId = 'skill-layer-branch-' + idx;
-        
-        AppState.dataMap[layerId] = {
-            name: layerInfo.name,
-            icon: layerIcon,
-            level: Math.round(layerInfo.avgLevel || 3),
-            description: layerInfo.description || layerInfo.name,
-            source: '技能分类',
-            count: layerInfo.count || 0
-        };
-        
-        let childBranches = '';
-        let childIdx = 0;
-        
-        // 遍历子分类
-        for (const [childName, childInfo] of Object.entries(layerInfo.children)) {
-            const childColor = childInfo.color || layerColor;
-            const childLevel = Math.round(childInfo.avgLevel || 3);
-            const childId = 'skill-cat-' + idx + '-' + childIdx;
-            const childBranchId = 'skill-branch-' + idx + '-' + childIdx;
-            
-            AppState.dataMap[childId] = {
-                name: childName,
-                icon: childInfo.icon || '📁',
-                level: childLevel,
-                description: childInfo.description || `${childName}类技能，共${childInfo.count}个`,
-                source: layerInfo.name
-            };
-            
-            // 渲染技能叶子节点
-            let leaves = '';
-            const childSkills = childInfo.skills || [];
-            
-            for (const s of childSkills) {
-                const sid = 'skill-' + (idx++);
-                const shortName = skillNameMap[s.name] || s.displayName || s.name.substring(0, 4);
-                AppState.dataMap[sid] = { ...s, icon: '⚡', catIcon: childInfo.icon };
-                
-                leaves += `
-                    <div class="leaf-node ${getLevelClass(s.level)}" 
-                         style="border-color: ${childColor}; color: ${childColor};"
-                         onmouseenter="showTreeTooltip(event, '${sid}', 'skill')" 
-                         onmouseleave="hideTooltip()"
-                         onclick="showSkillDetailPanel('${sid}')">
-                        <span class="leaf-name">${shortName}</span>
-                        <span class="leaf-level" style="border-color: ${childColor};">${s.level}</span>
-                    </div>
-                `;
-            }
-            
-            // 去掉名称中的emoji前缀，避免与独立icon重复显示
-            const cleanChildName = childName.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/gu, '').trim();
-            childBranches += `
-                <div class="branch" id="${childBranchId}" style="color: ${childColor};">
-                    <div class="category-node ${getLevelClass(childLevel)}" 
-                         style="border-color: ${childColor}; color: ${childColor};"
-                         onclick="toggleBranch('${childBranchId}')"
-                         onmouseenter="showTreeTooltip(event, '${childId}', 'skill')" onmouseleave="hideTooltip()">
-                        <span class="cat-icon">${childInfo.icon || '📁'}</span>
-                        <span class="cat-name">${cleanChildName}</span>
-                        <span class="cat-level" style="border-color: ${childColor};">${childLevel}</span>
-                        <span class="cat-count" style="border-color: ${childColor};">${childInfo.count}</span>
-                        <span class="toggle-indicator">▼</span>
-                    </div>
-                    <div class="leaves" style="color: ${childColor};">
-                        ${leaves}
-                    </div>
-                </div>
-            `;
-            childIdx++;
-        }
-        
-        // 层级分支 - 塞尔达风格
-        const layerLevel = Math.round(layerInfo.avgLevel || 3);
-        // 从name中提取纯文字部分（去掉emoji前缀）
-        const layerDisplayName = layerInfo.name.replace(/^[🏛️🎯🛠️\s]+/, '').trim();
-        layerBranches += `
-            <div class="layer-branch zelda-layer" id="${layerBranchId}">
-                <div class="layer-header" 
-                     style="--layer-color: ${layerColor};"
-                     onclick="toggleBranch('${layerBranchId}')"
-                     onmouseenter="showTreeTooltip(event, '${layerId}', 'skill')" onmouseleave="hideTooltip()">
-                    <span class="layer-icon">${layerIcon}</span>
-                    <span class="layer-name">${layerDisplayName}</span>
-                    <span class="layer-count">${layerInfo.count || 0}</span>
-                    <span class="layer-toggle">▼</span>
-                </div>
-                <div class="layer-children">
-                    ${childBranches}
-                </div>
-            </div>
-        `;
-        idx++;
-    }
-    
-    container.innerHTML = `
-        <div class="tree-controls">
-            <button class="tree-btn" onclick="expandAllBranches('skill-tree')">全部展开</button>
-            <button class="tree-btn" onclick="collapseAllBranches('skill-tree')">全部折叠</button>
-        </div>
-        <div class="tree-graph skill-tree-layered">
-            <div class="tree-root" style="color: var(--green);">
-                <div class="root-node" style="border-color: var(--green); color: var(--green);">
-                    <span class="node-icon">⚡</span>
-                    <span class="node-level" style="border-color: var(--green);">技能</span>
-                </div>
-            </div>
-            <div class="layer-branches" style="margin-top: 15px;">
-                ${layerBranches}
-            </div>
-        </div>
-    `;
-}
-
-// 扁平结构技能树渲染（回退方案）
-function renderSkillTreeFlat(container, skills) {
-    // 技能名称到简短中文名的映射（规范版 v3.0）
-    const skillNameMap = {
-        // === 🔄 自进化引擎 ===
-        'xiaowuxianggong': '小无相功',
-        'daily-reflection-evolution': '自进化',
-        'learn-from-mistakes': '举一反三',
-        'neigong-cultivation': '内功修炼',
-        'meta-execution': '元执行',
-        'memory-hygiene': '记忆管理',
-        'skill-architecture': '技能架构',
-        'knowledge-curator': '知识管理',
-        
-        // === 🧠 认知框架 ===
-        'essence-insight': '本质洞察',
-        'product-thinking': '产品思维',
-        'knowledge-acquisition-meta': '知识习得',
-        
-        // === ⚙️ 系统工具 ===
-        'knowledge-base': '知识库',
-        'find-skills': '发现',
-        'skill-manager': '技能管理',
-        'night-task-runner': '夜间任务',
-        
-        // === 调研分析 ===
-        'industry-research': '行研',
-        'wechat-research': '公众号',
-        'research': '调研',
-        'apify-trend-analysis': '趋势',
-        'apify-market-research': '市场',
-        'apify-competitor-intelligence': '竞情',
-        'daily-ai-report': 'AI日报',
-        'ai-insight': 'AI洞察',
-        
-        // === 文档处理 ===
-        'pdf': 'PDF',
-        'pptx': 'PPT',
-        'docx': 'Word',
-        'xlsx': 'Excel',
-        'canvas-design': '画布',
-        'keynote': 'Keynote',
-        'ks-kim-docs-shuttle': 'IM文档',
-        
-        // === 前端开发 ===
-        'ui-ux-pro-max': 'UI专家',
-        'ui-ux-pro-max-skill': 'UI专家',
-        'frontend-design': '前端',
-        'web-dev-workflow': '网页流程',
-        'qingshuang-research-style': '清爽',
-        'work-report-ppt': '汇报',
-        'pixel-action-game': '像素',
-        'theme-factory': '主题',
-        'web-design-guidelines': '规范',
-        'zelda-style': '塞尔达',
-        'vercel-react-best-practices': 'React',
-        'vercel-react-native-skills': 'RN',
-        'vercel-composition-patterns': '组合',
-        'remotion-best-practices': '视频',
-        
-        // === 发布部署 ===
-        'github-deploy-publisher': 'GitHub',
-        'yuque-publisher': '语雀',
-        'mcp-builder': 'MCP',
-        
-        // === 投资理财 ===
-        'stock-analysis': '股票',
-        'investment-analyzer': '投资',
-        'investment-tracker': '基金',
-        
-        // === 效率工具 ===
-        'feishu-assistant': '飞书',
-        'linke-kim-message': 'IM消息',
-        'ai-column-writer': '专栏',
-        'promotion-coaching': '晋升辅导',
-        'personal-assistant': '助理',
-        'codeflicker-weekly-report': '周报'
-    };
-    
-    let idx = 0;
-    let branches = '';
-    let branchIdx = 0;
-    
-    for (const [catName, cat] of Object.entries(skills.categories)) {
-        const avgLv = Math.round(cat.avgLevel || 3);
-        const catId = 'skill-cat-' + idx;
-        const branchId = 'skill-branch-' + branchIdx;
-        
-        AppState.dataMap[catId] = { 
-            name: catName, 
-            icon: cat.icon, 
-            level: avgLv, 
-            description: `${catName}类技能，共${cat.count}个。平均等级Lv.${avgLv}`,
-            source: '技能分类',
-            branchId: branchId
-        };
-        
-        let leaves = '';
-        for (const s of cat.skills) {
-            const sid = 'skill-' + (idx++);
-            const shortName = skillNameMap[s.name] || s.name.substring(0, 4);
-            AppState.dataMap[sid] = { ...s, icon: '⚡', catIcon: cat.icon };
-            leaves += `
-                <div class="leaf-node ${getLevelClass(s.level)}" 
-                     style="border-color: var(--node-color); color: var(--node-color);"
-                     onmouseenter="showTreeTooltip(event, '${sid}', 'skill')" 
-                     onmouseleave="hideTooltip()"
-                     onclick="showSkillDetailPanel('${sid}')">
-                    <span class="leaf-name">${shortName}</span>
-                    <span class="leaf-level" style="border-color: var(--node-color);">${s.level}</span>
-                </div>
-            `;
-        }
-        
-        branches += `
-            <div class="branch" id="${branchId}" style="color: ${cat.color || 'var(--green)'};">
-                <div class="category-node ${getLevelClass(avgLv)}" 
-                     style="border-color: ${cat.color || 'var(--green)'}; color: ${cat.color || 'var(--green)'};"
-                     onclick="toggleBranch('${branchId}')"
-                     onmouseenter="showTreeTooltip(event, '${catId}', 'skill')" onmouseleave="hideTooltip()">
-                    <span class="cat-icon">${cat.icon}</span>
-                    <span class="cat-name">${catName.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/gu, '').trim()}</span>
-                    <span class="cat-level" style="border-color: ${cat.color || 'var(--green)'};">${avgLv}</span>
-                    <span class="cat-count" style="border-color: ${cat.color || 'var(--green)'};">${cat.count}</span>
-                    <span class="toggle-indicator">▼</span>
-                </div>
-                <div class="leaves" style="color: ${cat.color || 'var(--green)'};">
-                    ${leaves}
-                </div>
-            </div>
-        `;
-        branchIdx++;
-    }
-    
-    container.innerHTML = `
-        <div class="tree-controls">
-            <button class="tree-btn" onclick="expandAllBranches('skill-tree')">全部展开</button>
-            <button class="tree-btn" onclick="collapseAllBranches('skill-tree')">全部折叠</button>
-        </div>
-        <div class="tree-graph">
-            <div class="tree-root" style="color: var(--green);">
-                <div class="root-node" style="border-color: var(--green); color: var(--green);">
-                    <span class="node-icon">⚡</span>
-                    <span class="node-level" style="border-color: var(--green);">技能</span>
-                </div>
-            </div>
-            <div class="branches">${branches}</div>
-        </div>
-    `;
-}
-
-// 分支展开/折叠
-function toggleBranch(branchId) {
-    const branch = document.getElementById(branchId);
-    if (branch) {
-        branch.classList.toggle('collapsed');
-    }
-}
-
-function expandAllBranches(treeId) {
-    const tree = document.getElementById(treeId);
-    if (tree) {
-        tree.querySelectorAll('.branch.collapsed').forEach(b => b.classList.remove('collapsed'));
-    }
-}
-
-function collapseAllBranches(treeId) {
-    const tree = document.getElementById(treeId);
-    if (tree) {
-        tree.querySelectorAll('.branch').forEach(b => b.classList.add('collapsed'));
-    }
-}
-
-// 暴露到全局
-window.toggleBranch = toggleBranch;
-window.expandAllBranches = expandAllBranches;
-window.collapseAllBranches = collapseAllBranches;
-
+// 技能详情面板
 // 技能详情面板
 function showSkillDetailPanel(skillId) {
     const data = AppState.dataMap[skillId];
@@ -2751,8 +2357,8 @@ function showProjectTooltip(event, id) {
         'character-panel': ['ui-ux-pro-max', 'frontend-design', 'zelda-style', 'github-deploy-publisher']
     };
     
-    const skillNameMap = {
-        'xiaowuxianggong': '小无相功',
+    // 使用全局 skillNameMap（from ability-trees.js），Tooltip 场景用更完整的名称
+    const tooltipNameOverrides = {
         'industry-research': '行业调研',
         'github-deploy-publisher': 'GitHub部署',
         'qingshuang-research-style': '清爽报告风格',
@@ -2764,16 +2370,12 @@ function showProjectTooltip(event, id) {
         'personal-assistant': '个人助理',
         'ui-ux-pro-max': 'UI/UX专家',
         'zelda-style': '塞尔达风格',
-        'daily-reflection-evolution': '自进化',
-        'meta-execution': '元执行',
-        'learn-from-mistakes': '举一反三',
-        'neigong-cultivation': '内功修炼',
-        'essence-insight': '本质洞察',
-        'product-thinking': '产品思维'
     };
+    const baseMap = window.SKILL_NAME_MAP || {};
+    const getSkillDisplayName = (s) => tooltipNameOverrides[s] || baseMap[s] || s;
     
     const usedSkills = (projectSkillsMap[data.id] || [])
-        .map(s => skillNameMap[s] || s)
+        .map(s => getSkillDisplayName(s))
         .join('、') || '暂无';
     
     // 填充数据

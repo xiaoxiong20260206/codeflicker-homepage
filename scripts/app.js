@@ -1323,14 +1323,14 @@ function renderAbilitiesSection() {
         renderSkillTreeGraph(skills);
     }
     
-    // 知识树 - 档案馆卡片风格
+    // 知识树 - 纵向三层架构图（v3.0）
     if (knowledgeContainer && typeof renderKnowledgeArchive === 'function') {
         renderKnowledgeArchive(knowledgeContainer, knowledge);
     } else {
         renderKnowledgeTreeGraph(knowledge);
     }
     
-    // 记忆树 - 神经网络径向布局
+    // 记忆树 - 纵向三层架构图 + 可展开卡片（v3.0）
     if (memoryContainer && typeof renderMemoryNeuralNetwork === 'function') {
         renderMemoryNeuralNetwork(memoryContainer, memories);
     } else {
@@ -1914,11 +1914,11 @@ function renderMemoryTreeGraph(memories) {
     const container = document.getElementById('memory-tree');
     if (!container) return;
     
-    // 优先使用新的四层架构tree数据
+    // 优先使用三层架构tree数据
     const tree = memories.tree;
     
     if (tree && Object.keys(tree).length > 0) {
-        // 使用四层架构渲染
+        // 使用三层架构渲染
         renderMemoryTreeWithLayers(container, tree, memories.items || []);
         return;
     }
@@ -2046,7 +2046,7 @@ function renderMemoryTreeGraph(memories) {
     `;
 }
 
-// 四层架构记忆树渲染
+// 三层架构记忆树渲染（回退版本）
 function renderMemoryTreeWithLayers(container, tree, memoryItems) {
     // 层级颜色映射
     const layerColors = {
@@ -2069,7 +2069,7 @@ function renderMemoryTreeWithLayers(container, tree, memoryItems) {
     let idx = 0;
     let layerBranches = '';
     
-    // 遍历四层架构
+    // 遍历三层架构
     for (const [layerName, layerInfo] of Object.entries(tree)) {
         if (layerInfo.count === 0) continue; // 跳过空层
         

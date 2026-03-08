@@ -847,14 +847,6 @@
 .skill-root-label { font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--sheikah-blue-light); margin-top: 4px; }
 .skill-root-count { position: absolute; bottom: -10px; background: linear-gradient(135deg, var(--sheikah-blue-dark), var(--sheikah-blue)); color: white; padding: 2px 12px; border-radius: 10px; font-family: var(--font-mono); font-size: 11px; font-weight: 700; }
 
-/* ==================== 2. 知识树 - 档案馆卡片风格 ==================== */
-.knowledge-archive {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-}
-
 /* ==================== 2. 知识树 - 纵向三层架构图（v3.0） ==================== */
 .knowledge-arch {
     display: flex;

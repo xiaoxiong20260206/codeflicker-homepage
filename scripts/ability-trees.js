@@ -20,6 +20,7 @@ function renderSkillTechTree(container, skills) {
     var skillNameMap = window.SKILL_NAME_MAP || {
         // === 🔄 自进化引擎 ===
         'xiaowuxianggong': '小无相功',
+        'xixingdafa': '吸星大法',
         'daily-reflection-evolution': '自进化',
         'learn-from-mistakes': '举一反三',
         'neigong-cultivation': '内功修炼',
@@ -27,11 +28,11 @@ function renderSkillTechTree(container, skills) {
         'memory-hygiene': '记忆管理',
         'skill-architecture': '技能架构',
         'knowledge-curator': '知识管理',
-        // === 🧠 认知框架 ===
+        // === 🧠 思维方法 ===
         'essence-insight': '本质洞察',
         'product-thinking': '产品思维',
         'knowledge-acquisition-meta': '知识习得',
-        // === ⚙️ 系统工具 ===
+        // === ⚙️ 做事方法 ===
         'knowledge-base': '知识库',
         'find-skills': '发现',
         'skill-manager': '技能管理',
@@ -174,8 +175,8 @@ function renderSkillTechTree(container, skills) {
     // 元能力层子分类
     var metaChildren = metaLayer.children || {};
     var engineCat = metaChildren['\uD83D\uDD04 自进化引擎'];
-    var cognitiveCat = metaChildren['\uD83E\uDDE0 思维框架'];
-    var systemCat = metaChildren['\u2699\uFE0F 工作基座'];
+    var cognitiveCat = metaChildren['\uD83E\uDDE0 思维方法'];
+    var systemCat = metaChildren['\u2699\uFE0F 做事方法'];
     
     // 引擎技能映射
     var engineSkillMap = {};
@@ -186,6 +187,7 @@ function renderSkillTechTree(container, skills) {
     }
     
     var guideSkill = engineSkillMap['xiaowuxianggong'];
+    var absorbSkill = engineSkillMap['xixingdafa'];
     var coreSkill = engineSkillMap['daily-reflection-evolution'];
     var reviewSkill = engineSkillMap['learn-from-mistakes'];
     var cultivateSkill = engineSkillMap['neigong-cultivation'];
@@ -200,6 +202,7 @@ function renderSkillTechTree(container, skills) {
     var engineHtml = '';
     if (guideSkill && coreSkill) {
         var guideNode = createEngineNode(guideSkill, '进化导航', 'guide');
+        var absorbNode = absorbSkill ? createEngineNode(absorbSkill, '外部吸收', 'guide') : '';
         var coreNode = createEngineNode(coreSkill, '每日驱动', 'core');
         var reviewNode = reviewSkill ? createEngineNode(reviewSkill, '即时复盘', 'core') : '';
         var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, '深度修炼', 'core') : '';
@@ -224,7 +227,7 @@ function renderSkillTechTree(container, skills) {
         engineHtml = '<div class="engine-section">' +
             '<div class="engine-title-bar"><span class="engine-title-icon">\uD83D\uDD04</span><span class="engine-title-text">自进化引擎</span><span class="engine-title-desc">驱动持续进化的完整闭环</span></div>' +
             '<div class="engine-diagram">' +
-                '<div class="engine-tier engine-tier--guide">' + guideNode + '</div>' +
+                '<div class="engine-tier engine-tier--guide">' + guideNode + absorbNode + '</div>' +
                 '<div class="engine-connector engine-connector--vertical"><span class="connector-label">导航</span><div class="connector-line"></div></div>' +
                 '<div class="engine-tier engine-tier--core">' + coreNode +
                     '<div class="engine-core-branches">' +
@@ -254,7 +257,7 @@ function renderSkillTechTree(container, skills) {
             var cdash = 50 * (1 - cexp / 100);
             cogNodes += '<div class="cognitive-pillar" style="--pillar-color:' + ccolor + ';" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + cdash + '" style="stroke:' + ccolor + ';"/></svg><span class="cognitive-level">' + clevel + '</span></div><span class="cognitive-name">' + cname + '</span>' + (s.name === 'product-thinking' ? '<span class="cognitive-badge">内置</span>' : '') + '</div>';
         }
-        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">思维框架</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '独立思维能力，贯穿所有任务') + '</div></div>';
+        cognitiveHtml = '<div class="cognitive-section"><div class="cognitive-header"><span class="cognitive-icon">\uD83E\uDDE0</span><span class="cognitive-title">思维方法</span></div><div class="cognitive-pillars">' + cogNodes + '</div><div class="cognitive-note">' + (relationships.cognitive_note || '独立的思维方法，贯穿所有任务') + '</div></div>';
     }
     
     // === 做事工具（原系统工具）===
@@ -271,7 +274,7 @@ function renderSkillTechTree(container, skills) {
             var ssdash = 50 * (1 - ssexp / 100);
             sysNodes += '<div class="cognitive-pillar" style="--pillar-color:' + sscolor + ';" onmouseenter="showTreeTooltip(event, \'' + ssid + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="cognitive-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + ssdash + '" style="stroke:' + sscolor + ';"/></svg><span class="cognitive-level">' + sslevel + '</span></div><span class="cognitive-name">' + ssname + '</span></div>';
         }
-        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">工作基座</span></div><div class="cognitive-pillars">' + sysNodes + '</div><div class="cognitive-note" style="color:rgba(94, 196, 212, 0.5);">' + (relationships.system_note || '支撑工作运转的基础能力') + '</div></div>';;
+        systemHtml = '<div class="system-section"><div class="system-header"><span class="system-icon">\u2699\uFE0F</span><span class="system-title">做事方法</span></div><div class="cognitive-pillars">' + sysNodes + '</div><div class="cognitive-note" style="color:rgba(94, 196, 212, 0.5);">' + (relationships.system_note || '支撑工作运转的基础方法') + '</div></div>';;
     }
     
     function renderLayerTransition(text) {
@@ -316,7 +319,7 @@ function renderSkillTechTree(container, skills) {
     
     // ========== 组装 ==========
     container.innerHTML = '<div class="skill-architecture">' +
-        '<div class="arch-header"><div class="arch-title"><span class="arch-icon">\u26A1</span><span>技能体系</span></div><div class="arch-stats"><span class="arch-stat">' + (skills.total || 0) + ' 技能</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">4 闭环</span></div></div>' +
+        '<div class="arch-header"><div class="arch-title"><span class="arch-icon">\u26A1</span><span>技能体系</span></div><div class="arch-stats"><span class="arch-stat">' + (skills.total || 0) + ' 技能</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">5 闭环</span></div></div>' +
         '<div class="meta-layer"><div class="meta-layer-label"><span class="meta-label-icon">\uD83C\uDFDB\uFE0F</span><span class="meta-label-text">元能力层</span><span class="meta-label-desc">决定"我是谁"</span></div><div class="meta-layer-content">' + engineHtml + '<div class="meta-bottom-row">' + cognitiveHtml + systemHtml + '</div></div></div>' +
         renderLayerTransition('元能力驱动领域能力') +
         domainHtml +
@@ -454,7 +457,7 @@ function renderMemoryNeuralNetwork(container, memories) {
     var total = memories.total || 0;
     
     var layerDef = [
-        { key: '\uD83E\uDDE0 \u5143\u8ba4\u77e5\u5c42', icon: '\uD83E\uDDE0', label: '\u5143\u8ba4\u77e5\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u7528\u6237\u8eab\u4efd\u3001\u601d\u7ef4\u6846\u67b6\u3001\u5de5\u4f5c\u57fa\u5ea7', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u57fa\u5ea7\u77e5\u8bc6\u5c42' },
+        { key: '\uD83E\uDDE0 \u5143\u8ba4\u77e5\u5c42', icon: '\uD83E\uDDE0', label: '\u5143\u8ba4\u77e5\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u7528\u6237\u8eab\u4efd\u3001\u601d\u7ef4\u65b9\u6cd5\u3001\u505a\u4e8b\u65b9\u6cd5', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u57fa\u5ea7\u77e5\u8bc6\u5c42' },
         { key: '\uD83C\uDFAF \u9886\u57df\u8bb0\u5fc6\u5c42', icon: '\uD83C\uDFAF', label: '\u9886\u57df\u8bb0\u5fc6\u5c42', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '\u7279\u5b9a\u9886\u57df\u7684\u5b8c\u6574\u7ecf\u9a8c\u6c89\u6dc0', align: '\u2194 \u9886\u57df\u80fd\u529b\u5c42 \u00b7 \u9886\u57df\u77e5\u8bc6\u5c42' },
         { key: '\uD83D\uDEE0\uFE0F \u5b9e\u8df5\u8bb0\u5fc6\u5c42', icon: '\uD83D\uDEE0\uFE0F', label: '\u5b9e\u8df5\u8bb0\u5fc6\u5c42', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '\u5177\u4f53\u9886\u57df\u7684\u8e29\u5751\u7ecf\u9a8c\u548c\u9879\u76ee\u77e5\u8bc6', align: '\u2194 \u6267\u884c\u6280\u80fd\u5c42 \u00b7 \u5b9e\u8df5\u77e5\u8bc6\u5c42' }
     ];

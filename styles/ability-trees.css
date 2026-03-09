@@ -150,6 +150,11 @@
     align-items: center;
     width: 100%;
 }
+.engine-tier--guide {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+}
 
 /* 引擎节点 */
 .engine-node {

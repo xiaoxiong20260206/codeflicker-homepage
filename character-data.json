@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T08:19:47.417634",
+  "generatedAt": "2026-03-09T08:47:42.118532",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -34,7 +34,7 @@
             "source": "AI核心能力",
             "level": 5,
             "exp": 90,
-            "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
+            "description": "每日反思与自进化：五维反思+分流决策树+自修正工作流",
             "lastUpdated": "2026-03-09",
             "callCount": 156,
             "frequency": "1.2次/天",
@@ -58,7 +58,7 @@
             "source": "AI核心能力",
             "level": 4,
             "exp": 76,
-            "description": "元执行框架：一次把事情做对的自审机制",
+            "description": "元执行框架：一次做对+自修正工作流+五维问题分类",
             "lastUpdated": "2026-03-06",
             "callCount": 312,
             "frequency": "2.4次/天",
@@ -70,7 +70,7 @@
             "source": "AI核心能力",
             "level": 4,
             "exp": 73,
-            "description": "自进化体系引导程序：导航、周检、月检、进化全景",
+            "description": "自进化体系引导程序：复利循环+善巧方便五原则+五大闭环",
             "lastUpdated": "2026-03-06",
             "callCount": 48,
             "frequency": "0.4次/天",
@@ -140,11 +140,11 @@
         "count": 9,
         "avgLevel": 3.6
       },
-      "🧠 思维框架": {
+      "🧠 思维方法": {
         "icon": "🧠",
         "color": "#f59e0b",
         "layer": "meta",
-        "description": "独立思维能力，贯穿所有任务",
+        "description": "独立的思维方法，贯穿所有任务",
         "skills": [
           {
             "name": "essence-insight",
@@ -186,11 +186,11 @@
         "count": 3,
         "avgLevel": 4.3
       },
-      "⚙️ 工作基座": {
+      "⚙️ 做事方法": {
         "icon": "⚙️",
         "color": "#5ec4d4",
         "layer": "meta",
-        "description": "支撑工作运转的基础能力",
+        "description": "支撑工作运转的基础方法",
         "skills": [
           {
             "name": "night-task-runner",
@@ -857,7 +857,7 @@
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 90,
-                "description": "每日反思与自进化元技能，复盘→分析→自动迭代",
+                "description": "每日反思与自进化：五维反思+分流决策树+自修正工作流",
                 "lastUpdated": "2026-03-09",
                 "callCount": 156,
                 "frequency": "1.2次/天",
@@ -881,7 +881,7 @@
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 76,
-                "description": "元执行框架：一次把事情做对的自审机制",
+                "description": "元执行框架：一次做对+自修正工作流+五维问题分类",
                 "lastUpdated": "2026-03-06",
                 "callCount": 312,
                 "frequency": "2.4次/天",
@@ -893,7 +893,7 @@
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 73,
-                "description": "自进化体系引导程序：导航、周检、月检、进化全景",
+                "description": "自进化体系引导程序：复利循环+善巧方便五原则+五大闭环",
                 "lastUpdated": "2026-03-06",
                 "callCount": 48,
                 "frequency": "0.4次/天",
@@ -963,10 +963,10 @@
             "count": 9,
             "avgLevel": 3.6
           },
-          "🧠 思维框架": {
+          "🧠 思维方法": {
             "icon": "🧠",
             "color": "#f59e0b",
-            "description": "独立思维能力，贯穿所有任务",
+            "description": "独立的思维方法，贯穿所有任务",
             "skills": [
               {
                 "name": "essence-insight",
@@ -1008,10 +1008,10 @@
             "count": 3,
             "avgLevel": 4.3
           },
-          "⚙️ 工作基座": {
+          "⚙️ 做事方法": {
             "icon": "⚙️",
             "color": "#5ec4d4",
-            "description": "支撑工作运转的基础能力",
+            "description": "支撑工作运转的基础方法",
             "skills": [
               {
                 "name": "night-task-runner",
@@ -1786,8 +1786,8 @@
           "desc": "每月审视自进化体系本身是否过时：检查技能架构是否合理、工作流程是否高效、整个进化机制是否需要升级，确保进化能力本身也在进化。"
         }
       ],
-      "cognitive_note": "独立思维能力，贯穿所有任务",
-      "system_note": "支撑工作运转的基础能力"
+      "cognitive_note": "独立的思维方法，贯穿所有任务",
+      "system_note": "支撑工作运转的基础方法"
     }
   },
   "knowledge": {
@@ -2032,7 +2032,7 @@
       {
         "title": "AI日报→知识库深度学习闭环规则",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2279,7 +2279,7 @@
       {
         "title": "Skill触发词精确匹配原则（避免大词冲突）",
         "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2336,7 +2336,7 @@
       {
         "title": "个人助理目录结构与项目索引 (v2.0)",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2431,7 +2431,7 @@
       {
         "title": "企业案例学习工作流（四阶段法）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2469,7 +2469,7 @@
       {
         "title": "元能力：本质洞察力（含五层闭环框架 v2.0）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2507,7 +2507,7 @@
       {
         "title": "向非技术用户展示AI能力的结构化模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2583,7 +2583,7 @@
       {
         "title": "封闭生态接入的通用桥接模式（索引入口→MCP封装→工作流）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2621,7 +2621,7 @@
       {
         "title": "技能/模块粒度的合并信号检测（四信号法）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2659,7 +2659,7 @@
       {
         "title": "技能复用检测与单一数据源架构",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2678,7 +2678,7 @@
       {
         "title": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式）",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2735,7 +2735,7 @@
       {
         "title": "每日修炼触发配置",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -2754,7 +2754,7 @@
       {
         "title": "深度调研报告格式规范",
         "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2811,7 +2811,7 @@
       {
         "title": "系统性全局替换流程",
         "category": "task_flow_experience",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -2887,7 +2887,7 @@
       {
         "title": "语雀文档读取优先使用API",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维/做事方法",
         "layer": null,
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3001,7 +3001,7 @@
       {
         "title": "风格技能升级的 Flagship-then-Replicate 工作流",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3321,7 +3321,7 @@
       {
         "title": "五层思考框架：从执行到战略",
         "category": "task_flow_experience",
-        "categoryLabel": "思维/工作模式",
+        "categoryLabel": "思维/做事方法",
         "layer": null,
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3340,7 +3340,7 @@
       {
         "title": "体系化任务的识别与前置设计",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3397,7 +3397,7 @@
       {
         "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
         "category": "task_flow_experience",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3416,7 +3416,7 @@
       {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3529,7 +3529,7 @@
       {
         "title": "小无相功 v5.0 — AI自进化内核",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3548,7 +3548,7 @@
       {
         "title": "展示型页面的时效性优化模式",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3585,7 +3585,7 @@
       {
         "title": "技能与记忆分类原则（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3680,7 +3680,7 @@
       {
         "title": "新领域学习的\"信息源优先\"原则",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3793,7 +3793,7 @@
       {
         "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -3888,7 +3888,7 @@
       {
         "title": "网页开发工作流偏好（精简版）",
         "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3945,7 +3945,7 @@
       {
         "title": "输出链接格式规范",
         "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -3983,7 +3983,7 @@
       {
         "title": "问题发现两分法：过程层自检 vs 结果层反馈",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4021,7 +4021,7 @@
       {
         "title": "页面修改后默认提供预览链接",
         "category": "development_practice_specification",
-        "categoryLabel": "工作模式",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -4059,7 +4059,7 @@
       {
         "title": "思想体系可视化能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4115,7 +4115,7 @@
       {
         "title": "类比驱动解释能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4134,7 +4134,7 @@
       {
         "title": "迭代式完善能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4153,7 +4153,7 @@
       {
         "title": "隐藏前提识别能力",
         "category": "task_flow_experience",
-        "categoryLabel": "思维能力",
+        "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4192,7 +4192,7 @@
     "byCategory": {
       "development_practice_specification": {
         "count": 12,
-        "label": "工作模式",
+        "label": "做事方法",
         "icon": "⚙️",
         "color": "#5ec4d4",
         "description": "如何做事：工作流程、执行方法"
@@ -4209,11 +4209,11 @@
         "label": "用户偏好",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "沟通风格、工作模式、兴趣爱好"
+        "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
         "count": 26,
-        "label": "思维能力",
+        "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
         "description": "如何思考：洞察力、批判性思维、元执行"
@@ -4230,7 +4230,7 @@
         "label": "用户偏好",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "沟通风格、工作模式、兴趣爱好"
+        "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "common_pitfalls_experience": {
         "count": 56,
@@ -4312,7 +4312,7 @@
           "用户偏好": {
             "icon": "💬",
             "color": "#0ea5e9",
-            "description": "沟通风格、工作模式、兴趣爱好",
+            "description": "沟通风格、做事偏好、兴趣爱好",
             "items": [
               {
                 "title": "默认工作模式：以***的思维方式和风格执行任务",
@@ -4587,7 +4587,7 @@
             ],
             "count": 10
           },
-          "思维能力": {
+          "思维方法": {
             "icon": "🧠",
             "color": "#a78bfa",
             "description": "如何思考：洞察力、批判性思维、元执行",
@@ -4595,7 +4595,7 @@
               {
                 "title": "小无相功 v5.0 — AI自进化内核",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4614,7 +4614,7 @@
               {
                 "title": "思想体系可视化能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4633,7 +4633,7 @@
               {
                 "title": "类比驱动解释能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4652,7 +4652,7 @@
               {
                 "title": "隐藏前提识别能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4671,7 +4671,7 @@
               {
                 "title": "迭代式完善能力",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4690,7 +4690,7 @@
               {
                 "title": "元能力：本质洞察力（含五层闭环框架 v2.0）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4709,7 +4709,7 @@
               {
                 "title": "体系化任务的识别与前置设计",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4728,7 +4728,7 @@
               {
                 "title": "新领域学习的\"信息源优先\"原则",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4747,7 +4747,7 @@
               {
                 "title": "封闭生态接入的通用桥接模式（索引入口→MCP封装→工作流）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4766,7 +4766,7 @@
               {
                 "title": "技能/模块粒度的合并信号检测（四信号法）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4785,7 +4785,7 @@
               {
                 "title": "企业案例学习工作流（四阶段法）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4804,7 +4804,7 @@
               {
                 "title": "每日修炼触发配置",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4823,7 +4823,7 @@
               {
                 "title": "个人助理目录结构与项目索引 (v2.0)",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4842,7 +4842,7 @@
               {
                 "title": "问题发现两分法：过程层自检 vs 结果层反馈",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4861,7 +4861,7 @@
               {
                 "title": "向非技术用户展示AI能力的结构化模式",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4880,7 +4880,7 @@
               {
                 "title": "展示型页面的时效性优化模式",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4899,7 +4899,7 @@
               {
                 "title": "技能复用检测与单一数据源架构",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4918,7 +4918,7 @@
               {
                 "title": "风格技能升级的 Flagship-then-Replicate 工作流",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4937,7 +4937,7 @@
               {
                 "title": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式）",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4956,7 +4956,7 @@
               {
                 "title": "AI日报→知识库深度学习闭环规则",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4975,7 +4975,7 @@
               {
                 "title": "AI助手飞书对话基本技能：本体与对话渠道分离",
                 "category": "task_flow_experience",
-                "categoryLabel": "思维能力",
+                "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
@@ -4994,7 +4994,7 @@
             ],
             "count": 21
           },
-          "工作模式": {
+          "做事方法": {
             "icon": "⚙️",
             "color": "#5ec4d4",
             "description": "如何做事：工作流程、执行方法",
@@ -5002,7 +5002,7 @@
               {
                 "title": "输出链接格式规范",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5021,7 +5021,7 @@
               {
                 "title": "网页开发工作流偏好（精简版）",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5040,7 +5040,7 @@
               {
                 "title": "创作类任务的前置确认原则",
                 "category": "task_flow_experience",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5059,7 +5059,7 @@
               {
                 "title": "页面修改后默认提供预览链接",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5078,7 +5078,7 @@
               {
                 "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
                 "category": "task_flow_experience",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5097,7 +5097,7 @@
               {
                 "title": "系统性全局替换流程",
                 "category": "task_flow_experience",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5116,7 +5116,7 @@
               {
                 "title": "技能与记忆分类原则（精简版）",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5135,7 +5135,7 @@
               {
                 "title": "Skill触发词精确匹配原则（避免大词冲突）",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
@@ -5154,7 +5154,7 @@
               {
                 "title": "深度调研报告格式规范",
                 "category": "development_practice_specification",
-                "categoryLabel": "工作模式",
+                "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",

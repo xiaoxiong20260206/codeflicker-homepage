@@ -1,10 +1,10 @@
 /**
- * 能力树渲染模块 v3.2 — 统一三层架构（纵向堆叠布局）
- * Build: 20260308-1545
- * 三棵树各有独特风格：
- * - 技能树：系统架构图风格（三层架构 + 引擎内核 + 连接关系）
- * - 知识树：纵向三层架构图（L1基座/L2领域/L3实践 + 关联标签）
- * - 记忆树：纵向三层架构图（L1元认知/L2领域/L3实践 + 可展开卡片）
+ * 能力树渲染模块 v4.0 — 数据驱动架构（统一三层 + role 匹配）
+ * Build: 20260309-0900
+ * 核心原则：
+ * - 所有分类名、技能名从 JSON 数据读取，不再硬编码中文
+ * - 通过 role/layerTag 稳定标识符匹配分类，改名无需修改 JS
+ * - shortName/displayName 从数据中读取，消除 skillNameMap 双重维护
  */
 
 // ==================== 技能树 - 系统架构图 ====================
@@ -15,69 +15,11 @@ function renderSkillTechTree(container, skills) {
     var categories = skills.categories;
     var relationships = skills.relationships || {};
     
-    // 技能名称映射（规范版 v3.0 — Single Source of Truth）
-    // 注意：此映射表通过 window.SKILL_NAME_MAP 导出供 app.js 使用
-    var skillNameMap = window.SKILL_NAME_MAP || {
-        // === 🔄 自进化引擎 ===
-        'xiaowuxianggong': '小无相功',
-        'xixingdafa': '吸星大法',
-        'daily-reflection-evolution': '自进化',
-        'learn-from-mistakes': '举一反三',
-        'neigong-cultivation': '内功修炼',
-        'meta-execution': '元执行',
-        'memory-hygiene': '记忆管理',
-        'skill-architecture': '技能架构',
-        'knowledge-curator': '知识管理',
-        // === 🧠 思维方法 ===
-        'essence-insight': '本质洞察',
-        'product-thinking': '产品思维',
-        'knowledge-acquisition-meta': '知识习得',
-        // === ⚙️ 做事方法 ===
-        'knowledge-base': '知识库',
-        'find-skills': '发现',
-        'skill-manager': '技能管理',
-        'night-task-runner': '夜间任务',
-        // === 调研分析 ===
-        'industry-research': '行研',
-        'wechat-research': '公众号',
-        'research': '调研',
-        'apify-trend-analysis': '趋势',
-        'apify-market-research': '市场',
-        'apify-competitor-intelligence': '竞情',
-        'daily-ai-report': 'AI日报',
-        'ai-insight': 'AI洞察',
-        // === 文档处理 ===
-        'pdf': 'PDF', 'pptx': 'PPT', 'docx': 'Word', 'xlsx': 'Excel',
-        'canvas-design': '画布', 'keynote': 'Keynote',
-        'ks-kim-docs-shuttle': 'IM文档',
-        // === 前端开发 ===
-        'ui-ux-pro-max': 'UI专家', 'ui-ux-pro-max-skill': 'UI专家',
-        'frontend-design': '前端', 'web-dev-workflow': '网页流程',
-        'qingshuang-research-style': '清爽', 'work-report-ppt': '汇报',
-        'pixel-action-game': '像素', 'theme-factory': '主题',
-        'web-design-guidelines': '规范', 'zelda-style': '塞尔达',
-        'vercel-react-best-practices': 'React', 'vercel-react-native-skills': 'RN',
-        'vercel-composition-patterns': '组合', 'remotion-best-practices': '视频',
-        // === 发布部署 ===
-        'github-deploy-publisher': 'GitHub', 'yuque-publisher': '语雀',
-        'mcp-builder': 'MCP',
-        // === 投资理财 ===
-        'stock-analysis': '股票', 'investment-analyzer': '投资',
-        'investment-tracker': '基金',
-        // === 效率工具 ===
-        'feishu-assistant': '飞书', 'linke-kim-message': 'IM消息',
-        'ai-column-writer': '专栏', 'promotion-coaching': '晋升辅导',
-        'personal-assistant': '助理',
-        'codeflicker-weekly-report': '周报',
-        // === 兼容项 ===
-        'wechat-content-access': '公众号(旧)',
-        'codeflicker-homepage': '首页',
-        'ai-image-generator': 'AI绘图',
-        'settings': '设置'
-    };
-    // 导出为全局 Single Source of Truth（供 app.js 的 showProjectTooltip 等引用）
-    window.SKILL_NAME_MAP = skillNameMap;
-    
+    // 技能名称全部从数据读取（v4.0 — 消除 skillNameMap 硬编码）
+    // shortName: 2-4字芯片标签, displayName: 完整中文名, name: 英文标识符
+    function getName(skill) {
+        return skill.shortName || skill.displayName || skill.name;
+    }
     function getLevelColor(level) {
         var colors = { 1: '#fb923c', 2: '#fbbf24', 3: '#4ade80', 4: '#38bdf8', 5: '#a78bfa' };
         return colors[level] || '#4ade80';
@@ -124,8 +66,23 @@ function renderSkillTechTree(container, skills) {
         return id;
     }
     
-    function getName(skill) {
-        return skillNameMap[skill.name] || skill.displayName || skill.name.substring(0, 4);
+    // 保留兼容层（app.js 可能引用 window.SKILL_NAME_MAP）
+    if (!window.SKILL_NAME_MAP) {
+        window.SKILL_NAME_MAP = {};
+        // 从数据中动态构建映射
+        function _buildNameMap(cats) {
+            if (!cats) return;
+            Object.values(cats).forEach(function(cat) {
+                (cat.skills || []).forEach(function(s) {
+                    if (s.name) window.SKILL_NAME_MAP[s.name] = s.shortName || s.displayName || s.name;
+                });
+            });
+        }
+        if (tree) {
+            _buildNameMap((tree.meta || {}).children);
+            _buildNameMap((tree.domain_pack || {}).children);
+            _buildNameMap((tree.execution || {}).children);
+        }
     }
     
     function createEngineNode(skill, role, tier) {
@@ -172,11 +129,16 @@ function renderSkillTechTree(container, skills) {
     var engineRoles = relationships.engine_roles || {};
     var loops = relationships.loops || [];
     
-    // 元能力层子分类
+    // 元能力层子分类 — 按 role 稳定标识符匹配（不依赖中文 key）
     var metaChildren = metaLayer.children || {};
-    var engineCat = metaChildren['\uD83D\uDD04 自进化引擎'];
-    var cognitiveCat = metaChildren['\uD83E\uDDE0 思维方法'];
-    var systemCat = metaChildren['\u2699\uFE0F 做事方法'];
+    var engineCat = null, cognitiveCat = null, systemCat = null;
+    var metaKeys = Object.keys(metaChildren);
+    for (var mk = 0; mk < metaKeys.length; mk++) {
+        var mc = metaChildren[metaKeys[mk]];
+        if (mc.role === 'engine') engineCat = mc;
+        else if (mc.role === 'cognitive') cognitiveCat = mc;
+        else if (mc.role === 'system') systemCat = mc;
+    }
     
     // 引擎技能映射
     var engineSkillMap = {};
@@ -227,7 +189,10 @@ function renderSkillTechTree(container, skills) {
         engineHtml = '<div class="engine-section">' +
             '<div class="engine-title-bar"><span class="engine-title-icon">\uD83D\uDD04</span><span class="engine-title-text">自进化引擎</span><span class="engine-title-desc">驱动持续进化的完整闭环</span></div>' +
             '<div class="engine-diagram">' +
-                '<div class="engine-tier engine-tier--guide">' + guideNode + absorbNode + '</div>' +
+                '<div class="engine-guide-row">' +
+                    '<div class="engine-tier engine-tier--guide">' + guideNode + '</div>' +
+                    (absorbNode ? '<div class="engine-absorb-link"><span class="absorb-arrow"></span><span class="absorb-label">增强</span></div><div class="engine-absorb-node">' + absorbNode + '</div>' : '') +
+                '</div>' +
                 '<div class="engine-connector engine-connector--vertical"><span class="connector-label">导航</span><div class="connector-line"></div></div>' +
                 '<div class="engine-tier engine-tier--core">' + coreNode +
                     '<div class="engine-core-branches">' +
@@ -456,11 +421,21 @@ function renderMemoryNeuralNetwork(container, memories) {
     var tree = memories.tree;
     var total = memories.total || 0;
     
-    var layerDef = [
-        { key: '\uD83E\uDDE0 \u5143\u8ba4\u77e5\u5c42', icon: '\uD83E\uDDE0', label: '\u5143\u8ba4\u77e5\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '\u7528\u6237\u8eab\u4efd\u3001\u601d\u7ef4\u65b9\u6cd5\u3001\u505a\u4e8b\u65b9\u6cd5', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u57fa\u5ea7\u77e5\u8bc6\u5c42' },
-        { key: '\uD83C\uDFAF \u9886\u57df\u8bb0\u5fc6\u5c42', icon: '\uD83C\uDFAF', label: '\u9886\u57df\u8bb0\u5fc6\u5c42', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '\u7279\u5b9a\u9886\u57df\u7684\u5b8c\u6574\u7ecf\u9a8c\u6c89\u6dc0', align: '\u2194 \u9886\u57df\u80fd\u529b\u5c42 \u00b7 \u9886\u57df\u77e5\u8bc6\u5c42' },
-        { key: '\uD83D\uDEE0\uFE0F \u5b9e\u8df5\u8bb0\u5fc6\u5c42', icon: '\uD83D\uDEE0\uFE0F', label: '\u5b9e\u8df5\u8bb0\u5fc6\u5c42', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '\u5177\u4f53\u9886\u57df\u7684\u8e29\u5751\u7ecf\u9a8c\u548c\u9879\u76ee\u77e5\u8bc6', align: '\u2194 \u6267\u884c\u6280\u80fd\u5c42 \u00b7 \u5b9e\u8df5\u77e5\u8bc6\u5c42' }
+    // 记忆树三层定义 — 按 layerTag 稳定标识符匹配（不依赖中文 key）
+    var memLayerDef = [
+        { layerTag: 'L1-meta', icon: '\uD83E\uDDE0', label: '元认知层', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '用户身份、思维方法、做事方法', align: '↔ 元能力层 · 基座知识层' },
+        { layerTag: 'L2-domain', icon: '\uD83C\uDFAF', label: '领域记忆层', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '特定领域的完整经验沉淀', align: '↔ 领域能力层 · 领域知识层' },
+        { layerTag: 'L3-execution', icon: '\uD83D\uDEE0\uFE0F', label: '实践记忆层', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '具体领域的踩坑经验和项目知识', align: '↔ 执行技能层 · 实践知识层' }
     ];
+    
+    // 按 layerTag 匹配树数据
+    var memTreeKeys = Object.keys(tree);
+    function findMemLayerData(layerTag) {
+        for (var i = 0; i < memTreeKeys.length; i++) {
+            if (tree[memTreeKeys[i]].layerTag === layerTag) return tree[memTreeKeys[i]];
+        }
+        return null;
+    }
     
     if (!tree || Object.keys(tree).length === 0) {
         container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);"><div style="font-size:48px;margin-bottom:10px;">\uD83E\uDDE0</div><div>\u8bb0\u5fc6\u603b\u6570\uff1a' + total + '</div></div>';
@@ -469,9 +444,9 @@ function renderMemoryNeuralNetwork(container, memories) {
     
     var html = '<div class="memory-arch"><div class="arch-header"><div class="arch-title"><span class="arch-icon">\uD83E\uDDE0</span>\u8bb0\u5fc6\u5e93 \u00b7 \u4e09\u5c42\u67b6\u6784</div><div class="arch-stats"><span>' + total + ' \u6761\u8bb0\u5fc6</span><span class="arch-stat-sep">\u00b7</span><span>3 \u5c42\u67b6\u6784</span></div></div>';
     
-    for (var li = 0; li < layerDef.length; li++) {
-        var ld = layerDef[li];
-        var layerInfo = tree[ld.key];
+    for (var li = 0; li < memLayerDef.length; li++) {
+        var ld = memLayerDef[li];
+        var layerInfo = findMemLayerData(ld.layerTag);
         if (!layerInfo || layerInfo.count === 0) continue;
         
         html += '<div class="mem-layer" style="border-color:' + ld.border + ';background:linear-gradient(180deg,' + ld.bg + ',' + ld.bg.replace('0.06','0.02') + ');">';
@@ -519,8 +494,8 @@ function renderMemoryNeuralNetwork(container, memories) {
         html += '</div></div></div>';
         
         // Layer transition
-        if (li < layerDef.length - 1) {
-            var nextLayer = tree[layerDef[li+1].key];
+        if (li < memLayerDef.length - 1) {
+            var nextLayer = findMemLayerData(memLayerDef[li+1].layerTag);
             if (nextLayer && nextLayer.count > 0) {
                 var transLabels = ['\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u9886\u57df\u4e13\u7cbe', '\u9886\u57df\u7ecf\u9a8c \u2192 \u5b9e\u8df5\u6307\u5bfc'];
                 html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabels[li] + '</div><div class="transition-arrow">\u25BC</div></div>';

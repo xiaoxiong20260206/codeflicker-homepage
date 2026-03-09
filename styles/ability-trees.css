@@ -150,10 +150,67 @@
     align-items: center;
     width: 100%;
 }
-.engine-tier--guide {
-    flex-direction: row;
+
+/* 引导行：小无相功居中 + 吸星大法侧面 + 增强箭头 */
+.engine-guide-row {
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 12px;
+    width: 100%;
+    position: relative;
+}
+/* 吸星大法侧悬浮：绝对定位到右侧，不影响小无相功居中 */
+.engine-absorb-link {
+    position: absolute;
+    right: 50%;
+    margin-right: -170px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+.engine-absorb-link .absorb-arrow {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: linear-gradient(270deg, rgba(167,139,250,0.5), rgba(167,139,250,0.15));
+    position: relative;
+}
+.engine-absorb-link .absorb-arrow::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-right-color: rgba(167,139,250,0.5);
+}
+.engine-absorb-link .absorb-label {
+    font-size: 10px;
+    color: rgba(167,139,250,0.7);
+    white-space: nowrap;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+}
+.engine-absorb-node {
+    position: absolute;
+    right: 50%;
+    margin-right: -310px;
+    display: flex;
+    align-items: center;
+}
+.engine-absorb-node .engine-node {
+    border-color: rgba(167,139,250,0.25);
+    background: rgba(167,139,250,0.06);
+    border-style: dashed;
+    opacity: 0.85;
+}
+.engine-absorb-node .engine-node:hover {
+    opacity: 1;
+    border-color: rgba(167,139,250,0.5);
+    border-style: solid;
 }
 
 /* 引擎节点 */

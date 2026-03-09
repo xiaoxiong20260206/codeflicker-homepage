@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-10T07:09:02.059757",
+  "generatedAt": "2026-03-10T07:22:38.982425",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 7,
-    "totalExp": 14030,
-    "expProgress": 40.6,
+    "totalExp": 14130,
+    "expProgress": 42.6,
     "currentThreshold": 12000,
     "nextThreshold": 17000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 100,
-      "insight": 82.11864406779661,
+      "insight": 82.0,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 59,
+    "total": 60,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -901,6 +901,19 @@
             "successRate": 92
           },
           {
+            "name": "summarize",
+            "displayName": "summarize",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 66,
+            "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
             "name": "tavily-search",
             "displayName": "tavily-search",
             "shortName": "",
@@ -927,7 +940,7 @@
             "successRate": 85
           }
         ],
-        "count": 3,
+        "count": 4,
         "avgLevel": 3.0
       }
     },
@@ -1825,6 +1838,19 @@
                 "successRate": 92
               },
               {
+                "name": "summarize",
+                "displayName": "summarize",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 66,
+                "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
                 "name": "tavily-search",
                 "displayName": "tavily-search",
                 "shortName": "",
@@ -1851,11 +1877,11 @@
                 "successRate": 85
               }
             ],
-            "count": 3,
+            "count": 4,
             "avgLevel": 3.0
           }
         },
-        "count": 41,
+        "count": 42,
         "avgLevel": 3.7
       }
     },
@@ -6806,7 +6832,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "59/50",
+      "progressText": "60/50",
       "date": "2026-03-10"
     },
     {
@@ -6868,7 +6894,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有59项技能，触类旁通",
+      "desc": "拥有60项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-10",
       "unlocked": true,

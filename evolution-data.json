@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T06:46:18.098582",
+  "generatedAt": "2026-03-09T08:19:48.984003",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -373,6 +373,24 @@
         "type": "meta_skill",
         "name": "内功修炼",
         "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
       }
     ]
   },

@@ -2194,6 +2194,10 @@ function showTreeTooltip(event, id, type) {
     descEl.textContent = data.description || '暂无描述';
     descEl.style.whiteSpace = 'normal';
     
+    // 来源区块：技能tooltip中隐藏（统一用顶部 sourceBadge 标签）
+    const sourceSection = tooltip.querySelector('.tip-source-section');
+    if (sourceSection) sourceSection.style.display = 'none';
+    
     // 显示升级建议（机制类型不显示）
     const lv = data.level || 1;
     if (upgradeEl && upgradeSection && upgradeAdvice[type] && !isMechanism) {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-09T10:28:26.011165",
+  "generatedAt": "2026-03-09T10:58:20.670271",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -306,23 +306,10 @@
             "callCount": 45,
             "frequency": "0.3次/天",
             "successRate": 90
-          },
-          {
-            "name": "investment-analyzer",
-            "displayName": "投资分析",
-            "shortName": "投资",
-            "source": "Claude技能库",
-            "level": 2,
-            "exp": 48,
-            "description": "投资机会分析，跨资产类别评估和风险分析",
-            "lastUpdated": "2026-02-25",
-            "callCount": 12,
-            "frequency": "0.1次/天",
-            "successRate": 85
           }
         ],
-        "count": 3,
-        "avgLevel": 3.0
+        "count": 2,
+        "avgLevel": 3.5
       },
       "📊 调研分析": {
         "role": "research",
@@ -497,23 +484,10 @@
             "callCount": 24,
             "frequency": "0.2次/天",
             "successRate": 91
-          },
-          {
-            "name": "canvas-design",
-            "displayName": "画布设计",
-            "shortName": "画布",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 75,
-            "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
-            "lastUpdated": "2026-02-08",
-            "callCount": 31,
-            "frequency": "0.2次/天",
-            "successRate": 90
           }
         ],
-        "count": 7,
-        "avgLevel": 4.1
+        "count": 6,
+        "avgLevel": 4.2
       },
       "🎨 前端开发": {
         "role": "frontend",
@@ -575,19 +549,6 @@
             "successRate": 91
           },
           {
-            "name": "ui-ux-pro-max",
-            "displayName": "UI专家",
-            "shortName": "UI专家",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 75,
-            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-02-08",
-            "callCount": 52,
-            "frequency": "0.4次/天",
-            "successRate": 92
-          },
-          {
             "name": "pixel-action-game",
             "displayName": "像素游戏",
             "shortName": "像素",
@@ -599,6 +560,19 @@
             "callCount": 5,
             "frequency": "<0.1/天",
             "successRate": 88
+          },
+          {
+            "name": "canvas-design",
+            "displayName": "画布设计",
+            "shortName": "画布",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
+            "lastUpdated": "2026-02-08",
+            "callCount": 31,
+            "frequency": "0.2次/天",
+            "successRate": 90
           }
         ],
         "count": 6,
@@ -728,12 +702,12 @@
           },
           {
             "name": "wechat-content-access",
-            "displayName": "wechat-content-access",
-            "shortName": "",
-            "source": "codeflicker",
+            "displayName": "公众号基础",
+            "shortName": "公众号基础",
+            "source": "用户自定义",
             "level": 3,
             "exp": 58,
-            "description": "本技能已合并进 `wechat-research`，后者是统一入口，包含：",
+            "description": "微信公众号基础信息获取（已合并到wechat-research）",
             "lastUpdated": "2026-03-08",
             "callCount": 0,
             "frequency": "",
@@ -907,6 +881,41 @@
         ],
         "count": 6,
         "avgLevel": 3.7
+      },
+      "其他技能": {
+        "icon": "📦",
+        "color": "#64748b",
+        "layer": "execution",
+        "skills": [
+          {
+            "name": "ui-ux-pro-max",
+            "displayName": "UI专家",
+            "shortName": "UI专家",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 75,
+            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+            "lastUpdated": "2026-02-08",
+            "callCount": 52,
+            "frequency": "0.4次/天",
+            "successRate": 92
+          },
+          {
+            "name": "investment-analyzer",
+            "displayName": "投资分析",
+            "shortName": "投资",
+            "source": "Claude技能库",
+            "level": 2,
+            "exp": 48,
+            "description": "投资机会分析，跨资产类别评估和风险分析",
+            "lastUpdated": "2026-02-25",
+            "callCount": 12,
+            "frequency": "0.1次/天",
+            "successRate": 85
+          }
+        ],
+        "count": 2,
+        "avgLevel": 3.0
       }
     },
     "tree": {
@@ -1205,27 +1214,14 @@
                 "callCount": 45,
                 "frequency": "0.3次/天",
                 "successRate": 90
-              },
-              {
-                "name": "investment-analyzer",
-                "displayName": "投资分析",
-                "shortName": "投资",
-                "source": "Claude技能库",
-                "level": 2,
-                "exp": 48,
-                "description": "投资机会分析，跨资产类别评估和风险分析",
-                "lastUpdated": "2026-02-25",
-                "callCount": 12,
-                "frequency": "0.1次/天",
-                "successRate": 85
               }
             ],
-            "count": 3,
-            "avgLevel": 3.0
+            "count": 2,
+            "avgLevel": 3.5
           }
         },
-        "count": 4,
-        "avgLevel": 3.5
+        "count": 3,
+        "avgLevel": 4.0
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -1404,23 +1400,10 @@
                 "callCount": 24,
                 "frequency": "0.2次/天",
                 "successRate": 91
-              },
-              {
-                "name": "canvas-design",
-                "displayName": "画布设计",
-                "shortName": "画布",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 75,
-                "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
-                "lastUpdated": "2026-02-08",
-                "callCount": 31,
-                "frequency": "0.2次/天",
-                "successRate": 90
               }
             ],
-            "count": 7,
-            "avgLevel": 4.1
+            "count": 6,
+            "avgLevel": 4.2
           },
           "🎨 前端开发": {
             "role": "frontend",
@@ -1481,19 +1464,6 @@
                 "successRate": 91
               },
               {
-                "name": "ui-ux-pro-max",
-                "displayName": "UI专家",
-                "shortName": "UI专家",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 75,
-                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-02-08",
-                "callCount": 52,
-                "frequency": "0.4次/天",
-                "successRate": 92
-              },
-              {
                 "name": "pixel-action-game",
                 "displayName": "像素游戏",
                 "shortName": "像素",
@@ -1505,6 +1475,19 @@
                 "callCount": 5,
                 "frequency": "<0.1/天",
                 "successRate": 88
+              },
+              {
+                "name": "canvas-design",
+                "displayName": "画布设计",
+                "shortName": "画布",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "Canvas画布设计，创建精美的可视化海报和艺术作品",
+                "lastUpdated": "2026-02-08",
+                "callCount": 31,
+                "frequency": "0.2次/天",
+                "successRate": 90
               }
             ],
             "count": 6,
@@ -1632,12 +1615,12 @@
               },
               {
                 "name": "wechat-content-access",
-                "displayName": "wechat-content-access",
-                "shortName": "",
-                "source": "codeflicker",
+                "displayName": "公众号基础",
+                "shortName": "公众号基础",
+                "source": "用户自定义",
                 "level": 3,
                 "exp": 58,
-                "description": "本技能已合并进 `wechat-research`，后者是统一入口，包含：",
+                "description": "微信公众号基础信息获取（已合并到wechat-research）",
                 "lastUpdated": "2026-03-08",
                 "callCount": 0,
                 "frequency": "",
@@ -1809,9 +1792,44 @@
             ],
             "count": 6,
             "avgLevel": 3.7
+          },
+          "其他技能": {
+            "icon": "📦",
+            "color": "#64748b",
+            "layer": "execution",
+            "skills": [
+              {
+                "name": "ui-ux-pro-max",
+                "displayName": "UI专家",
+                "shortName": "UI专家",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 75,
+                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+                "lastUpdated": "2026-02-08",
+                "callCount": 52,
+                "frequency": "0.4次/天",
+                "successRate": 92
+              },
+              {
+                "name": "investment-analyzer",
+                "displayName": "投资分析",
+                "shortName": "投资",
+                "source": "Claude技能库",
+                "level": 2,
+                "exp": 48,
+                "description": "投资机会分析，跨资产类别评估和风险分析",
+                "lastUpdated": "2026-02-25",
+                "callCount": 12,
+                "frequency": "0.1次/天",
+                "successRate": 85
+              }
+            ],
+            "count": 2,
+            "avgLevel": 3.0
           }
         },
-        "count": 39,
+        "count": 40,
         "avgLevel": 3.6
       }
     },
@@ -2974,12 +2992,12 @@
         "layer": null,
         "icon": "📦",
         "color": "#7c3aed",
-        "description": "## 生图完成后必须发送可点击链接 生成图片后，必须直接把图片的本地文件路径发给用户，让用户点击即可在本地打开查看，而不是只在对话中描述图片内容。 ###...",
+        "description": "## 生图完成后必须发送可点击链接 生成图片后，必须让用户能直接查看图片。 ### 执行方式 1. 生成图片后，使用 `open` 命令直接打开图片文件，...",
         "keywords": [
           "生图",
-          "图片路径",
+          "open",
+          "图片查看",
           "本地文件",
-          "可点击",
           "交付"
         ],
         "importance": 5,

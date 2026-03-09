@@ -1487,8 +1487,8 @@ function showSkillDetailPanel(skillId) {
                 <span class="skill-panel-value">${escapeHtml(data.description || '暂无描述')}</span>
             </div>
             <div class="skill-panel-row">
-                <span class="skill-panel-label">来源</span>
-                <span class="skill-panel-value">${escapeHtml(data.source || '未知')}</span>
+                <span class="skill-panel-label">分类</span>
+                <span class="skill-panel-value"><span class="tip-source-badge" data-type="${data.sourceLabel === '内置技能' ? 'builtin' : data.sourceLabel === '自定义' ? 'custom' : 'platform'}" style="display:inline">${escapeHtml(data.sourceLabel || '未知')}</span></span>
             </div>
             <div class="skill-panel-row">
                 <span class="skill-panel-label">使用频率</span>
@@ -2122,8 +2122,6 @@ function showTreeTooltip(event, id, type) {
     const typeEl = tooltip.querySelector('.tip-type');
     const lvNumEl = tooltip.querySelector('.tip-lv-num');
     const descEl = tooltip.querySelector('.tip-desc');
-    const sourceEl = tooltip.querySelector('.tip-source');
-    const sourceSection = tooltip.querySelector('.tip-source-section');
     const upgradeEl = tooltip.querySelector('.tip-upgrade');
     const upgradeSection = tooltip.querySelector('.tip-upgrade-section');
     const sourceBadge = tooltip.querySelector('.tip-source-badge');
@@ -2195,9 +2193,6 @@ function showTreeTooltip(event, id, type) {
     
     descEl.textContent = data.description || '暂无描述';
     descEl.style.whiteSpace = 'normal';
-    
-    // 来源区块已移除（统一用顶部 sourceBadge 标签表达）
-    if (sourceSection) sourceSection.style.display = 'none';
     
     // 显示升级建议（机制类型不显示）
     const lv = data.level || 1;

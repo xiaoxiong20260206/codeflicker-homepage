@@ -1,5 +1,5 @@
 /**
- * AI助手统一单页面 - 主应用脚本 v2.1
+ * AI助手统一单页面 - 主应用脚本 v2.2
  * LINK Unified Single Page Application
  * 
  * 新版Tab结构：
@@ -8,6 +8,37 @@
  * 3. 我的能力（技能树、记忆库、知识库、成长趋势）
  * 4. 我的日报
  */
+
+// ==================== 共享常量（消除重复定义）====================
+const RARITY_LABELS = { 'common': '普通', 'rare': '稀有', 'epic': '史诗', 'legendary': '传说' };
+const TREND_ICONS = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
+const STATUS_MAP = {
+    'deployed':    { cls: 'deployed',    text: '✅ 已上线' },
+    'development': { cls: 'development', text: '🔧 开发中' },
+    'archived':    { cls: 'archived',    text: '📦 已归档' }
+};
+
+// 归一化数据：将起始值设为基准100，显示相对增长百分比
+function normalizeChartData(data) {
+    if (!data || data.length === 0) return [];
+    var baseValue = data[0] || 1;
+    return data.map(function(v) { return Math.round((v / baseValue) * 100); });
+}
+// 计算实际变化值
+function getChartChange(data) {
+    if (!data || data.length < 2) return 0;
+    return data[data.length - 1] - data[0];
+}
+// 项目状态文本
+function getStatusInfo(status) {
+    return STATUS_MAP[status] || STATUS_MAP['archived'];
+}
+// 质量徽章
+function getQualityBadgeHtml(qualityLevel) {
+    if (qualityLevel === 'featured') return '<span class="quality-badge featured">🏆 精选</span>';
+    if (qualityLevel === 'excellent') return '<span class="quality-badge excellent">✨ 优秀</span>';
+    return '';
+}
 
 // ==================== 全局状态 ====================
 const AppState = {
@@ -886,27 +917,13 @@ function renderDailyTrendChart() {
     
     const ctx = canvas.getContext('2d');
     
-    // 归一化数据：将每个指标的起始值设为100，显示相对增长百分比
-    // 这样不同量级的指标可以在同一个图表中比较成长趋势
-    const normalizeData = (data) => {
-        if (!data || data.length === 0) return [];
-        const baseValue = data[0] || 1; // 避免除以0
-        return data.map(v => Math.round((v / baseValue) * 100));
-    };
+    const skillsNorm = normalizeChartData(trend.skills);
+    const knowledgeNorm = normalizeChartData(trend.knowledge);
+    const memoryNorm = normalizeChartData(trend.memory);
     
-    const skillsNorm = normalizeData(trend.skills);
-    const knowledgeNorm = normalizeData(trend.knowledge);
-    const memoryNorm = normalizeData(trend.memory);
-    
-    // 计算实际变化值（用于tooltip显示）
-    const getChange = (data) => {
-        if (!data || data.length < 2) return 0;
-        return data[data.length - 1] - data[0];
-    };
-    
-    const skillChange = getChange(trend.skills);
-    const knowledgeChange = getChange(trend.knowledge);
-    const memoryChange = getChange(trend.memory);
+    const skillChange = getChartChange(trend.skills);
+    const knowledgeChange = getChartChange(trend.knowledge);
+    const memoryChange = getChartChange(trend.memory);
     
     dailyTrendChartInstance = new Chart(ctx, {
         type: 'line',
@@ -991,10 +1008,9 @@ function renderDailyTrendChart() {
                             // 获取原始值
                             const originalData = context.dataset.originalData;
                             const actualValue = originalData ? originalData[context.dataIndex] : normValue;
-                            const icons = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
                             const growthPercent = normValue - 100;
                             const growthStr = growthPercent > 0 ? `+${growthPercent}%` : (growthPercent < 0 ? `${growthPercent}%` : '—');
-                            return ` ${icons[label] || ''} ${label}: ${actualValue} (${growthStr})`;
+                            return ` ${TREND_ICONS[label] || ''} ${label}: ${actualValue} (${growthStr})`;
                         }
                     }
                 }
@@ -1159,21 +1175,15 @@ function renderWorksTree(projects) {
     // 生成单个项目卡片
     const renderProjectCard = (p, idx) => {
         const projectId = 'project-' + idx;
-        const statusClass = p.status === 'deployed' ? 'deployed' : 
-                           p.status === 'development' ? 'development' : 'archived';
-        const statusText = p.status === 'deployed' ? '✅ 已上线' : 
-                          p.status === 'development' ? '🔧 开发中' : '📦 已归档';
+        const si = getStatusInfo(p.status);
+        const statusClass = si.cls;
+        const statusText = si.text;
         
         const quality = p.quality || {};
         const qualityLevel = quality.level || 'basic';
         
         // 精选/优秀标记
-        let qualityBadgeHtml = '';
-        if (qualityLevel === 'featured') {
-            qualityBadgeHtml = '<span class="quality-badge featured">🏆 精选</span>';
-        } else if (qualityLevel === 'excellent') {
-            qualityBadgeHtml = '<span class="quality-badge excellent">✨ 优秀</span>';
-        }
+        let qualityBadgeHtml = getQualityBadgeHtml(qualityLevel);
         
         // P1: 最近更新时间
         const relativeTime = getRelativeTime(p.completedAt);
@@ -1296,10 +1306,9 @@ function renderWorksGrid(projects) {
     
     container.innerHTML = displayProjects.map((p, idx) => {
         const projectId = 'project-' + idx;
-        const statusClass = p.status === 'deployed' ? 'deployed' : 
-                           p.status === 'development' ? 'development' : 'archived';
-        const statusText = p.status === 'deployed' ? '✅ 已上线' : 
-                          p.status === 'development' ? '🔧 开发中' : '📦 已归档';
+        const si = getStatusInfo(p.status);
+        const statusClass = si.cls;
+        const statusText = si.text;
         
         const techTags = (p.techStack || []).slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join('');
         
@@ -1314,12 +1323,7 @@ function renderWorksGrid(projects) {
         const qualityTags = quality.tags || [];
         
         // 精选标记
-        let qualityBadgeHtml = '';
-        if (qualityLevel === 'featured') {
-            qualityBadgeHtml = '<span class="quality-badge featured">🏆 精选</span>';
-        } else if (qualityLevel === 'excellent') {
-            qualityBadgeHtml = '<span class="quality-badge excellent">✨ 优秀</span>';
-        }
+        let qualityBadgeHtml = getQualityBadgeHtml(qualityLevel);
         
         // 特征标签（最多显示3个）
         const featureTags = qualityTags.filter(t => !t.includes('精选') && !t.includes('优秀')).slice(0, 3);
@@ -1528,52 +1532,8 @@ function renderKnowledgeTreeGraph(knowledge) {
     const container = document.getElementById('knowledge-tree');
     if (!container) return;
     
-    // 知识目录中文名称映射（v3.0 与 character-data.json 同步）
-    const knowledgeNameMap = {
-        'personal-writings': '思想体系',
-        'rd-efficiency': '研发效能',
-        'ai-insight': 'AI-Insight知识库',
-        'self-evolution': '自进化日志',
-        'mcp-research': 'MCP研究',
-        // 兼容旧数据
-        'financial': '金融投资',
-        'experience': '经验总结',
-        'guides': '使用指南',
-        'investment': '投资理财',
-        'ai-research': 'AI研究',
-        'product': '产品思考'
-    };
-    
-    // 知识目录图标映射（v3.0 补全）
-    const knowledgeIconMap = {
-        'personal-writings': '✍️',
-        'rd-efficiency': '⚡',
-        'ai-insight': '🤖',
-        'self-evolution': '🔄',
-        'mcp-research': '🔌',
-        // 兼容旧数据
-        'financial': '💰',
-        'experience': '💡',
-        'guides': '📖',
-        'ai-research': '🤖',
-        'product': '📊'
-    };
-    
-    // 知识目录来源描述映射（v3.0 补全）
-    const knowledgeSourceMap = {
-        'personal-writings': '个人原创文章、思考记录、写作作品，涵盖人生哲学、认知框架、方法论等内容',
-        'rd-efficiency': '研发效能领域的调研报告、技术分析、最佳实践，源自工作中的技术积累',
-        'ai-insight': 'AI持续洞察平台的知识沉淀，包含日报、深度调研、行业分析等',
-        'self-evolution': '自进化系统的运行日志、健康度报告、修炼记录',
-        'mcp-research': 'MCP协议研究、Server开发实践、工具链分析',
-        // 兼容旧数据
-        'financial': '金融投资相关的分析报告、数据研究、决策框架',
-        'experience': '项目实践中的经验沉淀、踩坑记录、解决方案',
-        'guides': '工具使用指南、操作手册、配置说明',
-        'investment': '投资策略、市场分析、理财规划相关内容',
-        'ai-research': 'AI技术调研、行业分析、产品形态探索',
-        'product': '产品设计思考、用户体验研究、功能规划'
-    };
+    // v4.0: 直接从 JSON 数据中读取，不再维护本地映射表
+    // character-data.json 中的 knowledge.categories 已包含 displayName/icon/description
     
     // 获取知识目录 - 支持两种数据格式
     let directories = [];
@@ -1602,10 +1562,11 @@ function renderKnowledgeTreeGraph(knowledge) {
     
     for (const dir of directories) {
         const dirKey = dir.key || dir.name;
-        const chineseName = knowledgeNameMap[dirKey] || dirKey;
-        const sourceDesc = knowledgeSourceMap[dirKey] || `${chineseName}相关文档`;
+        // v4.0: 从 JSON 数据中直接读取显示信息，不再依赖本地映射表
+        const chineseName = dir.displayName || dir.name || dirKey;
+        const sourceDesc = dir.description || `${chineseName}相关文档`;
         const dirId = 'knowledge-dir-' + idx++;
-        const dirIcon = knowledgeIconMap[dirKey] || dir.icon || '📁';
+        const dirIcon = dir.icon || '📁';
         
         // 根据文件数量计算等级：1-10为Lv1, 11-30为Lv2, 31-60为Lv3, 61-100为Lv4, 100+为Lv5
         const level = dir.count <= 10 ? 1 : dir.count <= 30 ? 2 : dir.count <= 60 ? 3 : dir.count <= 100 ? 4 : 5;
@@ -1783,17 +1744,11 @@ function renderMemoryTreeGraph(memories) {
 
 // 三层架构记忆树渲染（回退版本）
 function renderMemoryTreeWithLayers(container, tree, memoryItems) {
-    // 层级颜色映射（v3.0 三层架构）
-    const layerColors = {
-        '🧠 元认知层': '#a78bfa',
-        '🎯 领域记忆层': '#8b5cf6',
-        '🛠️ 实践记忆层': '#4ade80',
-        // 兼容旧数据
-        '👤 用户层': '#38bdf8',
-        '🧠 能力层': '#a78bfa',
-        '🎯 领域技能包': '#8b5cf6',
-        '🛠️ 领域层': '#4ade80',
-        '📚 项目层': '#c2410c'
+    // 层级颜色映射（v4.0 通过 layerTag 匹配，消除中文耦合）
+    const layerColorsByTag = {
+        'L1-meta': '#a78bfa',
+        'L2-domain': '#8b5cf6',
+        'L3-execution': '#4ade80',
     };
     
     // 计算等级
@@ -1812,7 +1767,7 @@ function renderMemoryTreeWithLayers(container, tree, memoryItems) {
     for (const [layerName, layerInfo] of Object.entries(tree)) {
         if (layerInfo.count === 0) continue; // 跳过空层
         
-        const layerColor = layerColors[layerName] || '#fb923c';
+        const layerColor = (layerInfo.layerTag && layerColorsByTag[layerInfo.layerTag]) || layerInfo.color || '#fb923c';
         const layerIcon = layerInfo.icon || '📁';
         const layerId = 'memory-layer-' + idx;
         
@@ -1966,17 +1921,9 @@ function renderAchievements(achievements) {
         };
     });
     
-    // 稀有度标签映射
-    const rarityLabels = {
-        'common': '普通',
-        'rare': '稀有',
-        'epic': '史诗',
-        'legendary': '传说'
-    };
-    
     const html = achievements.map((a, idx) => {
         const rarity = a.rarity || 'common';
-        const rarityLabel = rarityLabels[rarity] || '普通';
+        const rarityLabel = RARITY_LABELS[rarity] || '普通';
         const progress = a.progress || 0;
         const progressText = a.progressText || '';
         
@@ -2031,8 +1978,7 @@ function showAchievementModal(id) {
     iconEl.textContent = data.icon || '🏆';
     nameEl.textContent = data.name;
     
-    const rarityLabels = { 'common': '普通', 'rare': '稀有', 'epic': '史诗', 'legendary': '传说' };
-    rarityEl.textContent = rarityLabels[data.rarity] || '普通';
+    rarityEl.textContent = RARITY_LABELS[data.rarity] || '普通';
     rarityEl.className = 'ach-rarity-badge ' + (data.rarity || 'common');
     
     descEl.textContent = data.desc || '暂无描述';
@@ -2250,14 +2196,8 @@ function showTreeTooltip(event, id, type) {
     descEl.textContent = data.description || '暂无描述';
     descEl.style.whiteSpace = 'normal';
     
-    // 来源（机制类型不显示）
-    if (data.source && !isMechanism) {
-        sourceEl.textContent = data.source;
-        sourceEl.style.whiteSpace = 'normal';
-        sourceSection.style.display = 'block';
-    } else {
-        sourceSection.style.display = 'none';
-    }
+    // 来源区块已移除（统一用顶部 sourceBadge 标签表达）
+    if (sourceSection) sourceSection.style.display = 'none';
     
     // 显示升级建议（机制类型不显示）
     const lv = data.level || 1;
@@ -2695,27 +2635,14 @@ function renderTrendChart() {
         chartInstances.trendChart.destroy();
     }
     
-    // v2.0 归一化处理：让不同量级的指标可以在同一图表中比较成长趋势
-    // 将起始值设为基准100，显示相对变化百分比
-    const normalizeData = (data) => {
-        if (!data || data.length === 0) return [];
-        const baseValue = data[0] || 1;
-        return data.map(v => Math.round((v / baseValue) * 100));
-    };
+    // v4.0 使用共享工具函数
+    const skillsNorm = normalizeChartData(trend.skills);
+    const knowledgeNorm = normalizeChartData(trend.knowledge);
+    const memoryNorm = normalizeChartData(trend.memory);
     
-    const skillsNorm = normalizeData(trend.skills);
-    const knowledgeNorm = normalizeData(trend.knowledge);
-    const memoryNorm = normalizeData(trend.memory);
-    
-    // 计算实际变化值（用于图例显示）
-    const getChange = (data) => {
-        if (!data || data.length < 2) return 0;
-        return data[data.length - 1] - data[0];
-    };
-    
-    const skillChange = getChange(trend.skills);
-    const knowledgeChange = getChange(trend.knowledge);
-    const memoryChange = getChange(trend.memory);
+    const skillChange = getChartChange(trend.skills);
+    const knowledgeChange = getChartChange(trend.knowledge);
+    const memoryChange = getChartChange(trend.memory);
     
     // 计算Y轴范围，让变化更明显
     const allNormData = [...skillsNorm, ...knowledgeNorm, ...memoryNorm];
@@ -2836,7 +2763,7 @@ function renderTrendChart() {
                             const normValue = context.parsed.y;
                             const originalData = context.dataset.originalData;
                             const actualValue = originalData ? originalData[context.dataIndex] : normValue;
-                            const icons = { '技能': '⚡', '知识': '📚', '记忆': '🧠' };
+                            const icons = TREND_ICONS;
                             const growthPercent = normValue - 100;
                             const growthStr = growthPercent > 0 ? `+${growthPercent}%` : (growthPercent < 0 ? `${growthPercent}%` : '—');
                             return ` ${icons[label] || ''} ${label}: ${actualValue} (${growthStr})`;

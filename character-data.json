@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-10T06:01:22.639411",
+  "generatedAt": "2026-03-10T07:09:02.059757",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 7,
-    "totalExp": 14330,
-    "expProgress": 46.6,
+    "totalExp": 14030,
+    "expProgress": 40.6,
     "currentThreshold": 12000,
     "nextThreshold": 17000,
     "stats": {
@@ -2057,7 +2057,7 @@
           "thinking_pattern"
         ],
         "fileCount": 8,
-        "sizeKB": 101.9,
+        "sizeKB": 102.6,
         "heatLevel": 4,
         "recentCount": 8
       },
@@ -2162,13 +2162,13 @@
               "thinking_pattern"
             ],
             "fileCount": 8,
-            "sizeKB": 101.9,
+            "sizeKB": 102.6,
             "heatLevel": 4,
             "recentCount": 8
           }
         },
         "totalFiles": 139,
-        "totalSizeKB": 964.7
+        "totalSizeKB": 965.4
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -2302,7 +2302,7 @@
       }
     },
     "totalFiles": 228,
-    "totalSizeKB": 2443.5
+    "totalSizeKB": 2444.2
   },
   "memories": {
     "items": [
@@ -2934,13 +2934,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能分层文档的同步规则（v2：双向同步）",
+        "title": "技能分层文档的同步规则（v3：三向同步）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "技能分层文档同步规则（v2：双向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
+        "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
         "keywords": [
           "技能更新",
           "SKILL.md",
@@ -2949,7 +2949,7 @@
           "分层同步"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-08",
+        "updatedAt": "2026-03-09",
         "source": "用户显式记录"
       },
       {
@@ -3181,13 +3181,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "自动化管道脚本卫生规范（三层检查）",
+        "title": "自动化管道脚本卫生规范（四层检查 v2）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "自动化管道脚本卫生规范（三层检查） 来源 2026-03-09 每日修炼脚本排查：发现6处可能阻塞自动化执行的问题（含P0级直接写外部文件、...",
+        "description": "自动化管道脚本卫生规范（四层检查 v2） 来源 2026-03-09 脚本全面审查：发现21个问题（含P0级set-e冲突、P1版本漂移、P...",
         "keywords": [
           "自动化",
           "脚本卫生",
@@ -3196,7 +3196,7 @@
           "单写入者"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-08",
+        "updatedAt": "2026-03-09",
         "source": "用户显式记录"
       },
       {
@@ -3767,25 +3767,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "元工具的自举困境（已迁移→meta-execution）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "layer": null,
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "元技能自审自己有盲区（自举困境）。修改元技能后必须用 research_task 做外部审计，不能只靠自己Review。 📚 详细分析已迁移至：`~/.c...",
-        "keywords": [
-          "自举困境",
-          "元技能",
-          "自证悖论",
-          "外部审计",
-          "meta-execution"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
         "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
         "category": "task_flow_experience",
         "categoryLabel": "做事方法",
@@ -3896,25 +3877,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-07",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "多步骤工作流静默失败陷阱（已迁移→meta-execution）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "layer": null,
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "多步骤工作流中，关键步骤必须检查返回值/状态。静默失败比显式失败危险10倍。当发现自己在\"跳过错误继续执行\"时，必须停下来。 📚 详细规则已迁移至：`~/...",
-        "keywords": [
-          "静默失败",
-          "断言",
-          "检查返回值",
-          "多步骤",
-          "工作流"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -4125,6 +4087,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "AI助手核心认知能力集（三合一：可视化+类比+前提识别）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维方法",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "AI助手的三项核心认知能力，用于深度分析和复杂内容表达： 1. 思想体系可视化 - 将复杂思想分层结构化（Part 1/2/3/4） - 用全文逻辑图...",
+        "keywords": [
+          "思想体系",
+          "可视化",
+          "类比",
+          "隐藏前提",
+          "认知能力"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-09",
+        "source": "用户显式记录"
+      },
+      {
         "title": "每日修炼执行纪律（精简版→指向SKILL.md）",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -4198,25 +4179,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "清单≠全集（已迁移→meta-execution）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "领域踩坑",
-        "layer": null,
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "批量操作前必须全量扫描确认完整集合，禁止直接信任现有清单。扫描结果数 vs 清单数有差异必须先解释。 📚 详细规则已迁移至：`~/.codeflicker...",
-        "keywords": [
-          "批量操作",
-          "全量扫描",
-          "清单陷阱",
-          "覆盖率",
-          "遗漏"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-08",
         "source": "用户显式记录"
       },
       {
@@ -4448,25 +4410,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "思想体系可视化能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
-        "keywords": [
-          "思想体系",
-          "可视化",
-          "结构化",
-          "逻辑图",
-          "长文档"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
         "title": "推理闭环原则",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -4504,63 +4447,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "类比驱动解释能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
-        "keywords": [
-          "类比",
-          "解释",
-          "抽象概念",
-          "通俗易懂",
-          "比喻"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "迭代式完善能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
-        "keywords": [
-          "迭代",
-          "快速反馈",
-          "持续优化",
-          "MVP",
-          "版本迭代"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "隐藏前提识别能力",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
-        "keywords": [
-          "隐藏前提",
-          "论证",
-          "分析",
-          "逻辑",
-          "假设"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-02-28",
-        "source": "用户显式记录"
-      },
-      {
         "title": "默认工作模式：以***的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -4579,7 +4465,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 113,
+    "total": 110,
     "byCategory": {
       "development_practice_specification": {
         "count": 14,
@@ -4603,7 +4489,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 27,
+        "count": 24,
         "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -4624,7 +4510,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 58,
+        "count": 55,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -5004,79 +4890,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "思想体系可视化能力",
+                "title": "AI助手核心认知能力集（三合一：可视化+类比+前提识别）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "当用户要求做深度思考、长文档、调研报告时，应该： 1. 将复杂思想分层结构化（如分成Part 1/2/3/4） 2. 每层有清晰的核心问题和章节划分 3....",
+                "description": "AI助手的三项核心认知能力，用于深度分析和复杂内容表达： 1. 思想体系可视化 - 将复杂思想分层结构化（Part 1/2/3/4） - 用全文逻辑图...",
                 "keywords": [
                   "思想体系",
                   "可视化",
-                  "结构化",
-                  "逻辑图",
-                  "长文档"
-                ],
-                "importance": 3,
-                "updatedAt": "2026-02-28",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "类比驱动解释能力",
-                "category": "task_flow_experience",
-                "categoryLabel": "思维方法",
-                "layer": "🧠 元认知层",
-                "icon": "🧠",
-                "color": "#a78bfa",
-                "description": "当概念太抽象、需要让非专业人士理解时，应该： 1. 主动寻找一个大家都熟悉的事物作为类比 2. 好的类比应该在多个维度上都能对应（如\"养育孩子\"类比AI ...",
-                "keywords": [
                   "类比",
-                  "解释",
-                  "抽象概念",
-                  "通俗易懂",
-                  "比喻"
-                ],
-                "importance": 3,
-                "updatedAt": "2026-02-28",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "隐藏前提识别能力",
-                "category": "task_flow_experience",
-                "categoryLabel": "思维方法",
-                "layer": "🧠 元认知层",
-                "icon": "🧠",
-                "color": "#a78bfa",
-                "description": "当做分析、论证、方案设计时，应该： 1. 主动思考\"这个论证有什么隐藏的前提没有被明说\" 2. 如果发现重要的隐藏前提，应该显式地补充出来 3. 隐藏前提...",
-                "keywords": [
                   "隐藏前提",
-                  "论证",
-                  "分析",
-                  "逻辑",
-                  "假设"
+                  "认知能力"
                 ],
-                "importance": 3,
-                "updatedAt": "2026-02-28",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "迭代式完善能力",
-                "category": "task_flow_experience",
-                "categoryLabel": "思维方法",
-                "layer": "🧠 元认知层",
-                "icon": "🧠",
-                "color": "#a78bfa",
-                "description": "当处理复杂任务、长内容创作时，应该： 1. 先出初版，不追求一次完美 2. 快速部署/呈现给用户，获取反馈 3. 根据用户反馈快速迭代优化 4. 形成\"修...",
-                "keywords": [
-                  "迭代",
-                  "快速反馈",
-                  "持续优化",
-                  "MVP",
-                  "版本迭代"
-                ],
-                "importance": 3,
-                "updatedAt": "2026-02-28",
+                "importance": 4,
+                "updatedAt": "2026-03-09",
                 "source": "用户显式记录"
               },
               {
@@ -5403,7 +5232,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 22
+            "count": 19
           },
           "做事方法": {
             "icon": "⚙️",
@@ -5604,7 +5433,7 @@
             "count": 10
           }
         },
-        "count": 51
+        "count": 48
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -5654,13 +5483,13 @@
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
               {
-                "title": "技能分层文档的同步规则（v2：双向同步）",
+                "title": "技能分层文档的同步规则（v3：三向同步）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "技能分层文档同步规则（v2：双向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
+                "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
                 "keywords": [
                   "技能更新",
                   "SKILL.md",
@@ -5669,7 +5498,7 @@
                   "分层同步"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-08",
+                "updatedAt": "2026-03-09",
                 "source": "用户显式记录"
               },
               {
@@ -6479,13 +6308,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "自动化管道脚本卫生规范（三层检查）",
+                "title": "自动化管道脚本卫生规范（四层检查 v2）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "自动化管道脚本卫生规范（三层检查） 来源 2026-03-09 每日修炼脚本排查：发现6处可能阻塞自动化执行的问题（含P0级直接写外部文件、...",
+                "description": "自动化管道脚本卫生规范（四层检查 v2） 来源 2026-03-09 脚本全面审查：发现21个问题（含P0级set-e冲突、P1版本漂移、P...",
                 "keywords": [
                   "自动化",
                   "脚本卫生",
@@ -6494,7 +6323,7 @@
                   "单写入者"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-08",
+                "updatedAt": "2026-03-09",
                 "source": "用户显式记录"
               }
             ],
@@ -6870,7 +6699,6 @@
   },
   "growthHistory": {
     "dates": [
-      "03-02",
       "03-03",
       "03-04",
       "03-03",
@@ -6883,10 +6711,10 @@
       "03-09",
       "03-09",
       "03-08",
+      "03-09",
       "03-09"
     ],
     "skills": [
-      42,
       42,
       42,
       42,
@@ -6899,10 +6727,10 @@
       57,
       58,
       58,
+      59,
       59
     ],
     "knowledge": [
-      152,
       152,
       152,
       152,
@@ -6915,10 +6743,10 @@
       162,
       163,
       174,
+      174,
       174
     ],
     "memories": [
-      65,
       65,
       65,
       65,
@@ -6931,7 +6759,8 @@
       116,
       123,
       123,
-      123
+      123,
+      117
     ]
   },
   "achievements": [
@@ -7056,7 +6885,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "123/30",
+      "progressText": "117/30",
       "date": "2026-03-10"
     },
     {

@@ -1669,8 +1669,8 @@
         
         /* ==================== 我的能力Section样式 ==================== */
         
-        /* 趋势图 */
-        .trend-section {
+        /* 成长趋势仪表板 v3.0 */
+        .growth-dashboard {
             background: linear-gradient(160deg, 
                 rgba(238, 228, 208, 0.97) 0%,
                 rgba(248, 238, 218, 0.94) 100%
@@ -1679,87 +1679,257 @@
             border-radius: var(--radius-lg);
             padding: var(--spacing-lg);
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-        }
-            border-radius: var(--radius-md);
-            padding: var(--spacing-lg);
             margin-bottom: var(--spacing-lg);
         }
         
-        .trend-section-header {
+        .growth-dashboard-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
             flex-wrap: wrap;
             gap: var(--spacing-sm);
         }
         
-        .trend-section-title {
+        .growth-dashboard-title {
             font-family: var(--font-title);
             font-size: 18px;
             color: var(--zelda-brown);
         }
         
-        .trend-compare-controls {
+        .period-toggle {
             display: flex;
-            align-items: center;
-            gap: var(--spacing-md);
+            gap: 3px;
+            background: rgba(107, 83, 68, 0.08);
+            border-radius: 20px;
+            padding: 3px;
         }
         
-        .compare-toggle {
+        .period-btn {
+            padding: 5px 14px;
+            border: none;
+            border-radius: 17px;
+            font-size: 12px;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--zelda-brown);
+            opacity: 0.55;
+        }
+        
+        .period-btn.active {
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--zelda-brown);
+            opacity: 1;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            font-weight: 600;
+        }
+        
+        .period-btn:hover:not(.active) { opacity: 0.8; }
+        
+        /* Growth Summary Cards */
+        .growth-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .growth-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(107, 83, 68, 0.1);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .growth-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+        }
+        
+        .growth-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .growth-card-label {
             display: flex;
             align-items: center;
             gap: 6px;
-            cursor: pointer;
         }
         
-        .compare-toggle input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            accent-color: var(--sheikah-blue);
-        }
+        .growth-card-icon { font-size: 20px; }
         
-        .toggle-label {
-            font-size: 12px;
-            color: var(--zelda-brown);
-        }
-        
-        .compare-selectors {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .compare-selectors select {
-            padding: 4px 8px;
-            border: 1px solid var(--zelda-brown);
-            border-radius: var(--radius-sm);
-            background: rgba(255, 255, 255, 0.8);
-            font-size: 12px;
-            color: var(--zelda-brown);
-        }
-        
-        .compare-selectors span {
-            font-size: 12px;
+        .growth-card-name {
+            font-size: 13px;
             color: var(--zelda-brown);
             opacity: 0.7;
+            font-family: var(--font-body);
         }
         
-        .compare-radar-container {
+        .growth-card-badge {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 9px;
+            border-radius: 10px;
+        }
+        
+        .growth-card-badge.positive {
+            background: rgba(93, 138, 74, 0.15);
+            color: #5d8a4a;
+        }
+        
+        .growth-card-badge.neutral {
+            background: rgba(107, 83, 68, 0.08);
+            color: var(--zelda-brown);
+        }
+        
+        .growth-card-body {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        
+        .growth-card-value {
+            font-family: var(--font-mono);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+            line-height: 1;
+        }
+        
+        .growth-card-sparkline {
+            width: 80px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+        
+        .growth-card-rate {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.55;
+            margin-top: 4px;
+        }
+        
+        /* Growth Insight */
+        .growth-insight {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            background: rgba(93, 138, 74, 0.07);
+            border: 1px solid rgba(93, 138, 74, 0.18);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            font-size: 13px;
+            color: var(--zelda-brown);
+            line-height: 1.6;
+        }
+        
+        .growth-insight-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        /* Main Trend Chart */
+        .growth-chart-wrap {
             height: 300px;
-            margin-top: var(--spacing-md);
-            padding: var(--spacing-md);
-            background: rgba(30, 35, 40, 0.95);
-            border: 2px solid var(--sheikah-blue);
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(107, 83, 68, 0.08);
             border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
         }
         
-        .trend-chart-container {
-            height: 320px;
-            background: rgba(30, 35, 40, 0.95);
-            border: 2px solid var(--sheikah-blue-dark);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
+        /* Growth Comparison Bars */
+        .growth-compare-title {
+            font-size: 14px;
+            font-family: var(--font-body);
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+        
+        .growth-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .growth-bar-label {
+            width: 56px;
+            font-size: 13px;
+            color: var(--zelda-brown);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+        
+        .growth-bar-track {
+            flex: 1;
+            height: 26px;
+            background: rgba(107, 83, 68, 0.05);
+            border-radius: 13px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .growth-bar-fill {
+            height: 100%;
+            border-radius: 13px;
+            transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            min-width: 48px;
+        }
+        
+        .growth-bar-fill.skills {
+            background: linear-gradient(90deg, rgba(8, 145, 178, 0.55), rgba(8, 145, 178, 0.85));
+        }
+        
+        .growth-bar-fill.knowledge {
+            background: linear-gradient(90deg, rgba(184, 134, 11, 0.55), rgba(184, 134, 11, 0.85));
+        }
+        
+        .growth-bar-fill.memory {
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.55), rgba(139, 92, 246, 0.85));
+        }
+        
+        .growth-bar-pct {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .growth-bar-abs {
+            width: 85px;
+            text-align: right;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .growth-cards { grid-template-columns: 1fr; }
+            .growth-card-value { font-size: 26px; }
+            .growth-chart-wrap { height: 220px; }
         }
         
         /* 树形面板 */
@@ -3646,28 +3816,84 @@
                     </div>
                 </div>
                 
-                <!-- 成长趋势 v2.0 - 支持日期对比 -->
-                <div class="trend-section">
-                    <div class="trend-section-header">
-                        <div class="trend-section-title">📈 能力成长趋势</div>
-                        <div class="trend-compare-controls">
-                            <label class="compare-toggle">
-                                <input type="checkbox" id="compare-mode-toggle" onchange="toggleCompareMode()">
-                                <span class="toggle-label">对比模式</span>
-                            </label>
-                            <div class="compare-selectors" id="compare-selectors" style="display: none;">
-                                <select id="compare-date-1" onchange="updateCompareChart()"></select>
-                                <span>vs</span>
-                                <select id="compare-date-2" onchange="updateCompareChart()"></select>
+                <!-- 成长趋势仪表板 v3.0 -->
+                <div class="growth-dashboard">
+                    <div class="growth-dashboard-header">
+                        <div class="growth-dashboard-title">📈 能力成长趋势</div>
+                        <div class="period-toggle" id="period-toggle">
+                            <button class="period-btn" data-period="7" onclick="switchGrowthPeriod(7)">近7天</button>
+                            <button class="period-btn active" data-period="14" onclick="switchGrowthPeriod(14)">近14天</button>
+                            <button class="period-btn" data-period="0" onclick="switchGrowthPeriod(0)">全部</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 增长概览卡片 -->
+                    <div class="growth-cards" id="growth-cards">
+                        <div class="growth-card">
+                            <div class="growth-card-top">
+                                <div class="growth-card-label">
+                                    <span class="growth-card-icon">⚡</span>
+                                    <span class="growth-card-name">技能</span>
+                                </div>
+                                <span class="growth-card-badge" id="growth-badge-skills">-</span>
+                            </div>
+                            <div class="growth-card-body">
+                                <div>
+                                    <div class="growth-card-value" id="growth-value-skills">-</div>
+                                    <div class="growth-card-rate" id="growth-rate-skills"></div>
+                                </div>
+                                <canvas class="growth-card-sparkline" id="sparkline-skills"></canvas>
+                            </div>
+                        </div>
+                        <div class="growth-card">
+                            <div class="growth-card-top">
+                                <div class="growth-card-label">
+                                    <span class="growth-card-icon">📚</span>
+                                    <span class="growth-card-name">知识</span>
+                                </div>
+                                <span class="growth-card-badge" id="growth-badge-knowledge">-</span>
+                            </div>
+                            <div class="growth-card-body">
+                                <div>
+                                    <div class="growth-card-value" id="growth-value-knowledge">-</div>
+                                    <div class="growth-card-rate" id="growth-rate-knowledge"></div>
+                                </div>
+                                <canvas class="growth-card-sparkline" id="sparkline-knowledge"></canvas>
+                            </div>
+                        </div>
+                        <div class="growth-card">
+                            <div class="growth-card-top">
+                                <div class="growth-card-label">
+                                    <span class="growth-card-icon">🧠</span>
+                                    <span class="growth-card-name">记忆</span>
+                                </div>
+                                <span class="growth-card-badge" id="growth-badge-memory">-</span>
+                            </div>
+                            <div class="growth-card-body">
+                                <div>
+                                    <div class="growth-card-value" id="growth-value-memory">-</div>
+                                    <div class="growth-card-rate" id="growth-rate-memory"></div>
+                                </div>
+                                <canvas class="growth-card-sparkline" id="sparkline-memory"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="trend-chart-container">
+                    
+                    <!-- 增长洞察 -->
+                    <div class="growth-insight" id="growth-insight">
+                        <span class="growth-insight-icon">💡</span>
+                        <span id="growth-insight-text">加载中...</span>
+                    </div>
+                    
+                    <!-- 主趋势图 -->
+                    <div class="growth-chart-wrap">
                         <canvas id="trendChart"></canvas>
                     </div>
-                    <!-- 对比雷达图容器 -->
-                    <div class="compare-radar-container" id="compare-radar-container" style="display: none;">
-                        <canvas id="compareRadarChart"></canvas>
+                    
+                    <!-- 增长对比条 -->
+                    <div class="growth-compare">
+                        <div class="growth-compare-title">📊 维度增长对比</div>
+                        <div id="growth-bars"></div>
                     </div>
                 </div>
             </section>

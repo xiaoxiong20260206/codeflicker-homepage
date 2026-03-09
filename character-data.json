@@ -4423,7 +4423,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "默认工作模式：以***的思维方式和风格执行任务",
+        "title": "默认工作模式：以用户的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
@@ -4569,7 +4569,7 @@
             "description": "沟通风格、做事偏好、兴趣爱好",
             "items": [
               {
-                "title": "默认工作模式：以***的思维方式和风格执行任务",
+                "title": "默认工作模式：以用户的思维方式和风格执行任务",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",

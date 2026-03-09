@@ -2434,7 +2434,7 @@ function setupDeferredCharts() {
                 setTimeout(() => {
                     renderAbilityRadarChart();
                     renderTrendChart();
-                }, 150);
+                }, 300);
             }
         });
     });
@@ -2612,160 +2612,291 @@ function renderAbilityRadarChart() {
     });
 }
 
+// ==================== 成长趋势仪表板 v3.0 ====================
+let _growthPeriod = 14;
+
+function getGrowthData(period) {
+    const trend = AppState.reportsData?.trend;
+    if (!trend || !trend.dates) return null;
+    
+    const len = trend.dates.length;
+    if (period === 0 || period >= len) {
+        return { dates: trend.dates, skills: trend.skills, knowledge: trend.knowledge, memory: trend.memory };
+    }
+    const start = Math.max(0, len - period);
+    return {
+        dates: trend.dates.slice(start),
+        skills: trend.skills.slice(start),
+        knowledge: trend.knowledge.slice(start),
+        memory: trend.memory.slice(start)
+    };
+}
+
+function renderGrowthCards(data) {
+    const dims = [
+        { key: 'skills', icon: '⚡', name: '技能', color: '#0891b2' },
+        { key: 'knowledge', icon: '📚', name: '知识', color: '#b8860b' },
+        { key: 'memory', icon: '🧠', name: '记忆', color: '#8b5cf6' }
+    ];
+    
+    dims.forEach(dim => {
+        const arr = data[dim.key];
+        if (!arr || arr.length === 0) return;
+        
+        const current = arr[arr.length - 1];
+        const start = arr[0];
+        const change = current - start;
+        const pct = start > 0 ? Math.round(((current - start) / start) * 100) : 0;
+        
+        const valueEl = document.getElementById(`growth-value-${dim.key}`);
+        const badgeEl = document.getElementById(`growth-badge-${dim.key}`);
+        const rateEl = document.getElementById(`growth-rate-${dim.key}`);
+        
+        if (valueEl) valueEl.textContent = current;
+        if (badgeEl) {
+            badgeEl.textContent = change >= 0 ? `+${change}` : `${change}`;
+            badgeEl.className = 'growth-card-badge ' + (change > 0 ? 'positive' : 'neutral');
+        }
+        if (rateEl) {
+            rateEl.textContent = pct !== 0 ? `${pct > 0 ? '+' : ''}${pct}% 相较期初` : '持平';
+        }
+        
+        // Sparkline
+        renderSparkline(`sparkline-${dim.key}`, arr, dim.color);
+    });
+}
+
+function renderSparkline(canvasId, data, color) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas || data.length < 2) return;
+    
+    const dpr = window.devicePixelRatio || 1;
+    // Use offsetWidth as fallback, then hardcoded minimum
+    const w = canvas.clientWidth || canvas.offsetWidth || 80;
+    const h = canvas.clientHeight || canvas.offsetHeight || 32;
+    
+    // If canvas still has no size (hidden tab), retry after a delay
+    if (w <= 1 || h <= 1) {
+        setTimeout(() => renderSparkline(canvasId, data, color), 200);
+        return;
+    }
+    
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    
+    const ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, w, h);
+    
+    const min = Math.min(...data);
+    const max = Math.max(...data);
+    const range = max - min || 1;
+    const padY = 3;
+    
+    const points = data.map((v, i) => ({
+        x: (i / (data.length - 1)) * w,
+        y: padY + (1 - (v - min) / range) * (h - padY * 2)
+    }));
+    
+    // Fill
+    ctx.beginPath();
+    ctx.moveTo(points[0].x, h);
+    points.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.lineTo(points[points.length - 1].x, h);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, 0, 0, h);
+    grad.addColorStop(0, color + '30');
+    grad.addColorStop(1, color + '05');
+    ctx.fillStyle = grad;
+    ctx.fill();
+    
+    // Line
+    ctx.beginPath();
+    points.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1.5;
+    ctx.lineJoin = 'round';
+    ctx.stroke();
+    
+    // End dot
+    const last = points[points.length - 1];
+    ctx.beginPath();
+    ctx.arc(last.x, last.y, 2.5, 0, Math.PI * 2);
+    ctx.fillStyle = color;
+    ctx.fill();
+}
+
+function renderGrowthInsight(data) {
+    const el = document.getElementById('growth-insight-text');
+    if (!el) return;
+    
+    const dims = [
+        { key: 'skills', name: '技能', icon: '⚡' },
+        { key: 'knowledge', name: '知识', icon: '📚' },
+        { key: 'memory', name: '记忆', icon: '🧠' }
+    ];
+    
+    let bestDim = null, bestPct = -Infinity;
+    const insights = [];
+    
+    dims.forEach(dim => {
+        const arr = data[dim.key];
+        if (!arr || arr.length < 2) return;
+        const start = arr[0], end = arr[arr.length - 1];
+        const pct = start > 0 ? Math.round(((end - start) / start) * 100) : 0;
+        insights.push({ ...dim, start, end, change: end - start, pct });
+        if (pct > bestPct) { bestPct = pct; bestDim = { ...dim, start, end, pct }; }
+    });
+    
+    if (!bestDim) { el.textContent = '数据不足，无法生成洞察'; return; }
+    
+    const parts = [];
+    if (bestDim.pct > 0) {
+        parts.push(`<b>${bestDim.icon} ${bestDim.name}</b>增长最为显著，从 ${bestDim.start} 增至 ${bestDim.end}，涨幅 <b>${bestDim.pct}%</b>。`);
+    }
+    
+    const totalChange = insights.reduce((s, d) => s + d.change, 0);
+    if (totalChange > 10) {
+        parts.push(`整体能力持续高速成长 🚀`);
+    } else if (totalChange > 0) {
+        parts.push(`各维度均稳步提升中 📈`);
+    }
+    
+    el.innerHTML = parts.join(' ') || '当前时段暂无明显变化';
+}
+
 function renderTrendChart() {
     if (!window.Chart) {
         loadChartJS().then(() => renderTrendChart());
         return;
     }
+    
+    const data = getGrowthData(_growthPeriod);
+    if (!data) return;
+    
+    // Render cards, insight, bars
+    renderGrowthCards(data);
+    renderGrowthInsight(data);
+    renderGrowthBars(data);
+    
+    // Main chart
     const canvas = document.getElementById('trendChart');
     if (!canvas) return;
     
-    // 强制跳过可见性检查，因为tab切换时canvas可能还未完全可见
-    // 由ensureSectionRendered的setTimeout保证时序
-    
-    const trend = AppState.reportsData?.trend;
-    if (!trend) {
-        console.log('trendChart: no trend data available');
+    // Wait for canvas to have proper dimensions (tab might still be transitioning)
+    if (canvas.clientWidth <= 1) {
+        setTimeout(() => renderTrendChart(), 250);
         return;
     }
     
-    // 销毁旧实例
-    if (chartInstances.trendChart) {
-        chartInstances.trendChart.destroy();
-    }
+    if (chartInstances.trendChart) chartInstances.trendChart.destroy();
     
-    // v4.0 使用共享工具函数
-    const skillsNorm = normalizeChartData(trend.skills);
-    const knowledgeNorm = normalizeChartData(trend.knowledge);
-    const memoryNorm = normalizeChartData(trend.memory);
+    const skillsNorm = normalizeChartData(data.skills);
+    const knowledgeNorm = normalizeChartData(data.knowledge);
+    const memoryNorm = normalizeChartData(data.memory);
     
-    const skillChange = getChartChange(trend.skills);
-    const knowledgeChange = getChartChange(trend.knowledge);
-    const memoryChange = getChartChange(trend.memory);
-    
-    // 计算Y轴范围，让变化更明显
-    const allNormData = [...skillsNorm, ...knowledgeNorm, ...memoryNorm];
-    const minNorm = Math.min(...allNormData);
-    const maxNorm = Math.max(...allNormData);
-    const yPadding = Math.max(5, Math.ceil((maxNorm - minNorm) * 0.3));
+    const allNorm = [...skillsNorm, ...knowledgeNorm, ...memoryNorm];
+    const minN = Math.min(...allNorm);
+    const maxN = Math.max(...allNorm);
+    const pad = Math.max(5, Math.ceil((maxN - minN) * 0.25));
     
     chartInstances.trendChart = new Chart(canvas, {
         type: 'line',
         data: {
-            labels: trend.dates,
+            labels: data.dates,
             datasets: [
                 {
-                    label: `技能 (${skillChange >= 0 ? '+' : ''}${skillChange})`,
+                    label: `技能 (+${getChartChange(data.skills)})`,
                     data: skillsNorm,
-                    borderColor: '#00d4ff',
-                    backgroundColor: 'rgba(0, 212, 255, 0.15)',
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 6,
-                    pointHoverRadius: 10,
-                    pointBackgroundColor: '#00d4ff',
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 2,
-                    borderWidth: 3,
-                    originalData: trend.skills
+                    borderColor: '#0891b2',
+                    backgroundColor: 'rgba(8, 145, 178, 0.08)',
+                    fill: true, tension: 0.4,
+                    pointRadius: 4, pointHoverRadius: 8,
+                    pointBackgroundColor: '#0891b2',
+                    pointBorderColor: 'rgba(255,255,255,0.9)', pointBorderWidth: 2,
+                    borderWidth: 2.5,
+                    originalData: data.skills
                 },
                 {
-                    label: `知识 (${knowledgeChange >= 0 ? '+' : ''}${knowledgeChange})`,
+                    label: `知识 (+${getChartChange(data.knowledge)})`,
                     data: knowledgeNorm,
-                    borderColor: '#c9a227',
-                    backgroundColor: 'rgba(201, 162, 39, 0.15)',
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 6,
-                    pointHoverRadius: 10,
-                    pointBackgroundColor: '#c9a227',
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 2,
-                    borderWidth: 3,
-                    originalData: trend.knowledge
+                    borderColor: '#b8860b',
+                    backgroundColor: 'rgba(184, 134, 11, 0.08)',
+                    fill: true, tension: 0.4,
+                    pointRadius: 4, pointHoverRadius: 8,
+                    pointBackgroundColor: '#b8860b',
+                    pointBorderColor: 'rgba(255,255,255,0.9)', pointBorderWidth: 2,
+                    borderWidth: 2.5,
+                    originalData: data.knowledge
                 },
                 {
-                    label: `记忆 (${memoryChange >= 0 ? '+' : ''}${memoryChange})`,
+                    label: `记忆 (+${getChartChange(data.memory)})`,
                     data: memoryNorm,
-                    borderColor: '#9b59b6',
-                    backgroundColor: 'rgba(155, 89, 182, 0.15)',
-                    fill: true,
-                    tension: 0.4,
-                    pointRadius: 6,
-                    pointHoverRadius: 10,
-                    pointBackgroundColor: '#9b59b6',
-                    pointBorderColor: '#fff',
-                    pointBorderWidth: 2,
-                    borderWidth: 3,
-                    originalData: trend.memory
+                    borderColor: '#8b5cf6',
+                    backgroundColor: 'rgba(139, 92, 246, 0.08)',
+                    fill: true, tension: 0.4,
+                    pointRadius: 4, pointHoverRadius: 8,
+                    pointBackgroundColor: '#8b5cf6',
+                    pointBorderColor: 'rgba(255,255,255,0.9)', pointBorderWidth: 2,
+                    borderWidth: 2.5,
+                    originalData: data.memory
                 }
             ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            interaction: {
-                mode: 'index',
-                intersect: false
-            },
+            interaction: { mode: 'index', intersect: false },
             scales: {
                 x: {
-                    grid: { color: 'rgba(0, 212, 255, 0.1)' },
-                    ticks: { color: '#8cb4c0', font: { size: 11, weight: '500' } }
+                    grid: { color: 'rgba(107, 83, 68, 0.06)' },
+                    ticks: { color: 'rgba(107, 83, 68, 0.55)', font: { size: 11, family: "'Noto Serif SC', serif" } }
                 },
                 y: {
-                    grid: { color: 'rgba(0, 212, 255, 0.1)' },
-                    ticks: { 
-                        color: '#8cb4c0', 
+                    grid: { color: 'rgba(107, 83, 68, 0.06)' },
+                    ticks: {
+                        color: 'rgba(107, 83, 68, 0.55)',
                         font: { size: 10 },
-                        callback: function(value) {
-                            // 显示为相对增长率
-                            if (value === 100) return '基准';
-                            return (value > 100 ? '+' : '') + (value - 100) + '%';
+                        callback: function(v) {
+                            if (v === 100) return '基准';
+                            return (v > 100 ? '+' : '') + (v - 100) + '%';
                         }
                     },
-                    min: Math.max(95, minNorm - yPadding),
-                    max: maxNorm + yPadding
+                    min: Math.max(95, minN - pad),
+                    max: maxN + pad
                 }
             },
             plugins: {
                 legend: {
                     position: 'top',
                     labels: {
-                        color: '#8cb4c0',
+                        color: 'rgba(107, 83, 68, 0.8)',
                         usePointStyle: true,
-                        font: { size: 12, weight: '500' },
-                        padding: 20
+                        font: { size: 12, family: "'Noto Serif SC', serif" },
+                        padding: 18
                     }
                 },
                 tooltip: {
-                    enabled: true,
-                    mode: 'index',
-                    intersect: false,
-                    backgroundColor: 'rgba(30, 35, 40, 0.95)',
-                    titleColor: '#00d4ff',
-                    titleFont: { size: 14, weight: 'bold' },
-                    bodyColor: '#e8dcc4',
-                    bodyFont: { size: 13 },
-                    borderColor: '#00d4ff',
+                    mode: 'index', intersect: false,
+                    backgroundColor: 'rgba(42, 37, 32, 0.92)',
+                    titleColor: '#f5e6c8',
+                    titleFont: { size: 13, weight: 'bold' },
+                    bodyColor: '#f5e6c8',
+                    bodyFont: { size: 12 },
+                    borderColor: 'rgba(107, 83, 68, 0.3)',
                     borderWidth: 1,
-                    padding: 14,
-                    cornerRadius: 10,
+                    padding: 12,
+                    cornerRadius: 8,
                     displayColors: true,
                     callbacks: {
-                        title: function(context) {
-                            return '📅 ' + context[0].label;
-                        },
-                        label: function(context) {
-                            const labelParts = context.dataset.label.split(' ');
-                            const label = labelParts[0];
-                            const normValue = context.parsed.y;
-                            const originalData = context.dataset.originalData;
-                            const actualValue = originalData ? originalData[context.dataIndex] : normValue;
-                            const icons = TREND_ICONS;
-                            const growthPercent = normValue - 100;
-                            const growthStr = growthPercent > 0 ? `+${growthPercent}%` : (growthPercent < 0 ? `${growthPercent}%` : '—');
-                            return ` ${icons[label] || ''} ${label}: ${actualValue} (${growthStr})`;
+                        title: function(ctx) { return '📅 ' + ctx[0].label; },
+                        label: function(ctx) {
+                            const label = ctx.dataset.label.split(' ')[0];
+                            const orig = ctx.dataset.originalData;
+                            const actual = orig ? orig[ctx.dataIndex] : ctx.parsed.y;
+                            const g = ctx.parsed.y - 100;
+                            const gs = g > 0 ? `+${g}%` : (g < 0 ? `${g}%` : '—');
+                            return ` ${TREND_ICONS[label] || ''} ${label}: ${actual} (${gs})`;
                         }
                     }
                 }
@@ -2773,6 +2904,68 @@ function renderTrendChart() {
         }
     });
 }
+
+function renderGrowthBars(data) {
+    const container = document.getElementById('growth-bars');
+    if (!container) return;
+    
+    const dims = [
+        { key: 'skills', icon: '⚡', name: '技能', cls: 'skills' },
+        { key: 'knowledge', icon: '📚', name: '知识', cls: 'knowledge' },
+        { key: 'memory', icon: '🧠', name: '记忆', cls: 'memory' }
+    ];
+    
+    // Find max pct for bar scaling
+    let maxPct = 0;
+    const dimData = dims.map(dim => {
+        const arr = data[dim.key];
+        const start = arr[0], end = arr[arr.length - 1];
+        const pct = start > 0 ? Math.round(((end - start) / start) * 100) : 0;
+        if (pct > maxPct) maxPct = pct;
+        return { ...dim, start, end, change: end - start, pct };
+    });
+    
+    if (maxPct === 0) maxPct = 1;
+    
+    container.innerHTML = dimData.map(d => {
+        const barWidth = Math.max(8, (d.pct / maxPct) * 100);
+        return `
+            <div class="growth-bar-item">
+                <div class="growth-bar-label">${d.icon} ${d.name}</div>
+                <div class="growth-bar-track">
+                    <div class="growth-bar-fill ${d.cls}" style="width: 0%;" data-width="${barWidth}%">
+                        <span class="growth-bar-pct">${d.pct > 0 ? '+' + d.pct + '%' : '—'}</span>
+                    </div>
+                </div>
+                <div class="growth-bar-abs">${d.start} → ${d.end}</div>
+            </div>
+        `;
+    }).join('');
+    
+    // Animate bars with delay to ensure DOM layout is complete
+    setTimeout(() => {
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                container.querySelectorAll('.growth-bar-fill').forEach(el => {
+                    el.style.width = el.dataset.width;
+                });
+            });
+        });
+    }, 100);
+}
+
+function switchGrowthPeriod(period) {
+    _growthPeriod = period;
+    
+    // Update toggle buttons
+    document.querySelectorAll('.period-btn').forEach(btn => {
+        btn.classList.toggle('active', parseInt(btn.dataset.period) === period);
+    });
+    
+    renderTrendChart();
+}
+
+window.switchGrowthPeriod = switchGrowthPeriod;
 
 // ==================== 里程碑渲染 ====================
 function renderMilestones() {
@@ -2803,164 +2996,7 @@ function renderMilestones() {
     }).join('');
 }
 
-// ==================== 能力雷达图对比 ====================
-let compareRadarChartInstance = null;
-
-function initCompareSelectors() {
-    const select1 = document.getElementById('compare-date-1');
-    const select2 = document.getElementById('compare-date-2');
-    
-    if (!select1 || !select2) return;
-    
-    // 获取可用日期
-    const snapshots = AppState.reportsData?.capabilitySnapshots || {};
-    const dates = Object.keys(snapshots).sort().reverse(); // 最新日期在前
-    
-    if (dates.length < 2) {
-        // 数据不足，禁用对比
-        const toggle = document.getElementById('compare-mode-toggle');
-        if (toggle) toggle.disabled = true;
-        return;
-    }
-    
-    // 填充选择器
-    dates.forEach((date, idx) => {
-        const option1 = new Option(date, date);
-        const option2 = new Option(date, date);
-        select1.add(option1);
-        select2.add(option2);
-    });
-    
-    // 默认选择最新和次新
-    select1.value = dates[0];
-    select2.value = dates.length > 1 ? dates[1] : dates[0];
-}
-
-function toggleCompareMode() {
-    const toggle = document.getElementById('compare-mode-toggle');
-    const selectors = document.getElementById('compare-selectors');
-    const radarContainer = document.getElementById('compare-radar-container');
-    
-    if (!toggle || !selectors || !radarContainer) return;
-    
-    if (toggle.checked) {
-        selectors.style.display = 'flex';
-        radarContainer.style.display = 'block';
-        initCompareSelectors();
-        updateCompareChart();
-    } else {
-        selectors.style.display = 'none';
-        radarContainer.style.display = 'none';
-        if (compareRadarChartInstance) {
-            compareRadarChartInstance.destroy();
-            compareRadarChartInstance = null;
-        }
-    }
-}
-
-function updateCompareChart() {
-    if (!window.Chart) {
-        loadChartJS().then(() => updateCompareChart());
-        return;
-    }
-    const select1 = document.getElementById('compare-date-1');
-    const select2 = document.getElementById('compare-date-2');
-    const canvas = document.getElementById('compareRadarChart');
-    
-    if (!select1 || !select2 || !canvas) return;
-    
-    const date1 = select1.value;
-    const date2 = select2.value;
-    
-    const snapshots = AppState.reportsData?.capabilitySnapshots || {};
-    const data1 = snapshots[date1];
-    const data2 = snapshots[date2];
-    
-    if (!data1 || !data2) return;
-    
-    // 销毁旧图表
-    if (compareRadarChartInstance) {
-        compareRadarChartInstance.destroy();
-    }
-    
-    const ctx = canvas.getContext('2d');
-    
-    const labels = ['推理能力', '记忆深度', '执行效率', '学习速度', '洞察力', '创造力'];
-    const keys = ['reasoning', 'memory', 'execution', 'learning', 'insight', 'creativity'];
-    
-    compareRadarChartInstance = new Chart(ctx, {
-        type: 'radar',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    label: date1,
-                    data: keys.map(k => data1[k] || 0),
-                    backgroundColor: 'rgba(0, 212, 255, 0.2)',
-                    borderColor: '#00d4ff',
-                    borderWidth: 2,
-                    pointBackgroundColor: '#00d4ff',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#00d4ff'
-                },
-                {
-                    label: date2,
-                    data: keys.map(k => data2[k] || 0),
-                    backgroundColor: 'rgba(255, 215, 0, 0.2)',
-                    borderColor: '#ffd700',
-                    borderWidth: 2,
-                    pointBackgroundColor: '#ffd700',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: '#ffd700'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                r: {
-                    angleLines: { color: 'rgba(0, 212, 255, 0.2)' },
-                    grid: { color: 'rgba(0, 212, 255, 0.2)' },
-                    pointLabels: { 
-                        color: '#e8dcc4', 
-                        font: { size: 11 }
-                    },
-                    ticks: {
-                        color: '#6e7781',
-                        backdropColor: 'transparent',
-                        stepSize: 20
-                    },
-                    suggestedMin: 0,
-                    suggestedMax: 100
-                }
-            },
-            plugins: {
-                legend: {
-                    position: 'top',
-                    labels: {
-                        color: '#e8dcc4',
-                        usePointStyle: true,
-                        font: { size: 12 }
-                    }
-                },
-                tooltip: {
-                    backgroundColor: 'rgba(30, 35, 40, 0.95)',
-                    titleColor: '#00d4ff',
-                    bodyColor: '#e8dcc4',
-                    borderColor: '#00d4ff',
-                    borderWidth: 1
-                }
-            }
-        }
-    });
-}
-
-// 暴露到全局
-window.toggleCompareMode = toggleCompareMode;
-window.updateCompareChart = updateCompareChart;
+// (Compare mode removed in v3.0 - replaced by growth dashboard with period toggle)
 
 // ==================== 进化历程时间线渲染 ====================
 function renderEvolutionTimeline() {

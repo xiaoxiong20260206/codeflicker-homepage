@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-09T08:47:42.118532",
+  "generatedAt": "2026-03-09T09:03:19.880104",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 7,
-    "totalExp": 13780,
-    "expProgress": 35.6,
+    "totalExp": 13830,
+    "expProgress": 36.6,
     "currentThreshold": 12000,
     "nextThreshold": 17000,
     "stats": {
@@ -2733,6 +2733,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "本地HTTP服务器端口分配：禁止盲猜，必须系统动态分配",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "本地HTTP服务器端口分配经验 问题 启动 python3 -m http.server 进行本地预览时，连续盲猜端口（8080 → 8...",
+        "keywords": [
+          "端口",
+          "HTTP服务器",
+          "本地预览",
+          "端口冲突",
+          "python"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-09",
+        "source": "用户显式记录"
+      },
+      {
         "title": "每日修炼触发配置",
         "category": "task_flow_experience",
         "categoryLabel": "思维方法",
@@ -2961,22 +2980,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "部署验证完整经验（含P0双仓库陷阱 - 2026-03-09强化）",
+        "title": "部署验证完整经验（含项目拓扑速查表 - 2026-03-09强化v2）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3+次） 这是最高频的部署失败原因...",
+        "description": "部署验证完整经验（合并版） 0. P0: 项目部署拓扑速查表（先查后推，禁止盲推） | 项目 | origin 仓库 | org 仓库 | ...",
         "keywords": [
           "部署",
           "验证",
-          "缓存",
           "GitHub Pages",
-          "锁冲突"
+          "双仓库",
+          "git remote"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-08",
+        "updatedAt": "2026-03-09",
         "source": "用户显式记录"
       },
       {
@@ -4188,7 +4207,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 110,
+    "total": 111,
     "byCategory": {
       "development_practice_specification": {
         "count": 12,
@@ -4233,7 +4252,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 56,
+        "count": 57,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -5868,6 +5887,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "本地HTTP服务器端口分配：禁止盲猜，必须系统动态分配",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "本地HTTP服务器端口分配经验 问题 启动 python3 -m http.server 进行本地预览时，连续盲猜端口（8080 → 8...",
+                "keywords": [
+                  "端口",
+                  "HTTP服务器",
+                  "本地预览",
+                  "端口冲突",
+                  "python"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-09",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -5887,7 +5925,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 35
+            "count": 36
           },
           "发布部署": {
             "icon": "🚀",
@@ -5895,22 +5933,22 @@
             "description": "GitHub Pages/部署踩坑",
             "items": [
               {
-                "title": "部署验证完整经验（含P0双仓库陷阱 - 2026-03-09强化）",
+                "title": "部署验证完整经验（含项目拓扑速查表 - 2026-03-09强化v2）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "部署验证完整经验（合并版） 0. P0: codeflicker-homepage 双仓库陷阱（已踩坑3+次） 这是最高频的部署失败原因...",
+                "description": "部署验证完整经验（合并版） 0. P0: 项目部署拓扑速查表（先查后推，禁止盲推） | 项目 | origin 仓库 | org 仓库 | ...",
                 "keywords": [
                   "部署",
                   "验证",
-                  "缓存",
                   "GitHub Pages",
-                  "锁冲突"
+                  "双仓库",
+                  "git remote"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-08",
+                "updatedAt": "2026-03-09",
                 "source": "用户显式记录"
               },
               {
@@ -6413,7 +6451,7 @@
             "count": 3
           }
         },
-        "count": 60
+        "count": 61
       }
     }
   },
@@ -6605,7 +6643,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "118/30",
+      "progressText": "119/30",
       "date": "2026-03-09"
     },
     {

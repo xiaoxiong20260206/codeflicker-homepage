@@ -605,15 +605,6 @@
     color: rgba(200, 220, 240, 0.9);
     flex: 1;
 }
-.cognitive-badge {
-    font-size: 8px;
-    padding: 1px 5px;
-    background: rgba(245, 158, 11, 0.15);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    border-radius: 4px;
-    color: #fbbf24;
-    font-family: var(--font-mono);
-}
 .cognitive-note {
     font-size: 9px;
     color: rgba(245, 158, 11, 0.5);

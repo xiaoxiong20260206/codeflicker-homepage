@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-03-10T07:22:38.982425",
+  "generatedAt": "2026-03-10T08:11:31.766891",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "6.0",
     "level": 7,
-    "totalExp": 14130,
-    "expProgress": 42.6,
+    "totalExp": 14530,
+    "expProgress": 50.6,
     "currentThreshold": 12000,
     "nextThreshold": 17000,
     "stats": {
@@ -15,12 +15,12 @@
       "memory": 100,
       "execution": 100,
       "learning": 100,
-      "insight": 82.0,
+      "insight": 81.5625,
       "creativity": 100
     }
   },
   "skills": {
-    "total": 60,
+    "total": 64,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -901,6 +901,32 @@
             "successRate": 92
           },
           {
+            "name": "nano-pdf",
+            "displayName": "nano-pdf",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 66,
+            "description": "Use nano-pdf to apply edits to a specific page in a PDF using a natural-language instruction.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "openai-whisper",
+            "displayName": "openai-whisper",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 66,
+            "description": "Use whisper to transcribe audio locally.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
             "name": "summarize",
             "displayName": "summarize",
             "shortName": "",
@@ -908,6 +934,32 @@
             "level": 3,
             "exp": 66,
             "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "github",
+            "displayName": "github",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 66,
+            "description": "Use the gh CLI to interact with GitHub. Always specify --repo owner/repo when not in a git direc",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "debug-pro",
+            "displayName": "debug-pro",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 3,
+            "exp": 66,
+            "description": "Systematic debugging methodology and language-specific debugging commands.",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
@@ -940,7 +992,7 @@
             "successRate": 85
           }
         ],
-        "count": 4,
+        "count": 8,
         "avgLevel": 3.0
       }
     },
@@ -1838,6 +1890,32 @@
                 "successRate": 92
               },
               {
+                "name": "nano-pdf",
+                "displayName": "nano-pdf",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 66,
+                "description": "Use nano-pdf to apply edits to a specific page in a PDF using a natural-language instruction.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "openai-whisper",
+                "displayName": "openai-whisper",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 66,
+                "description": "Use whisper to transcribe audio locally.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
                 "name": "summarize",
                 "displayName": "summarize",
                 "shortName": "",
@@ -1845,6 +1923,32 @@
                 "level": 3,
                 "exp": 66,
                 "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "github",
+                "displayName": "github",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 66,
+                "description": "Use the gh CLI to interact with GitHub. Always specify --repo owner/repo when not in a git direc",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "debug-pro",
+                "displayName": "debug-pro",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 3,
+                "exp": 66,
+                "description": "Systematic debugging methodology and language-specific debugging commands.",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
@@ -1877,11 +1981,11 @@
                 "successRate": 85
               }
             ],
-            "count": 4,
+            "count": 8,
             "avgLevel": 3.0
           }
         },
-        "count": 42,
+        "count": 46,
         "avgLevel": 3.7
       }
     },
@@ -6725,67 +6829,63 @@
   },
   "growthHistory": {
     "dates": [
+      "02-24",
+      "02-25",
+      "02-26",
+      "02-27",
+      "02-28",
+      "03-01",
+      "03-02",
       "03-03",
-      "03-04",
-      "03-03",
-      "03-04",
       "03-04",
       "03-05",
       "03-08",
-      "03-08",
-      "03-08",
       "03-09",
-      "03-09",
-      "03-08",
-      "03-09",
-      "03-09"
+      "03-10"
     ],
     "skills": [
-      42,
-      42,
+      30,
+      30,
+      30,
+      30,
+      30,
+      32,
       42,
       42,
       42,
       43,
-      53,
-      57,
-      57,
-      57,
-      58,
       58,
       59,
-      59
+      64
     ],
     "knowledge": [
+      150,
+      150,
+      150,
+      150,
+      150,
+      150,
       152,
       152,
       152,
       152,
-      152,
-      152,
-      160,
-      160,
-      160,
-      162,
-      163,
       174,
       174,
-      174
+      228
     ],
     "memories": [
-      65,
-      65,
+      19,
+      19,
+      19,
+      19,
+      19,
+      20,
       65,
       65,
       65,
       69,
-      112,
-      113,
-      113,
-      116,
       123,
-      123,
-      123,
+      117,
       117
     ]
   },
@@ -6832,7 +6932,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "60/50",
+      "progressText": "64/50",
       "date": "2026-03-10"
     },
     {
@@ -6894,7 +6994,7 @@
     {
       "id": "skill_master",
       "name": "技能大师",
-      "desc": "拥有60项技能，触类旁通",
+      "desc": "拥有64项技能，触类旁通",
       "icon": "⚡",
       "date": "2026-03-10",
       "unlocked": true,

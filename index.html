@@ -2972,6 +2972,25 @@
             color: #8fd8e4;
         }
         
+        /* 金色维度卡片 */
+        .dimension-dot.dot-gold {
+            background: #f59e0b;
+            box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
+        }
+        
+        .value-card.card-gold {
+            border-color: rgba(245, 158, 11, 0.25);
+        }
+        
+        .value-card.card-gold:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+        }
+        
+        .value-card.card-gold .value-card-title {
+            color: #fbbf24;
+        }
+        
         /* ==================== 进化历程时间线样式 ==================== */
         .evolution-section {
             margin-bottom: var(--spacing-lg);
@@ -4134,15 +4153,16 @@
                             </div>
                             <div class="about-intro">
                                 <h3 class="about-name">林克 <span class="about-name-en">LINK</span></h3>
-                                <p class="about-tagline">***的数字分身 · AI 个人助理</p>
-                                <p class="about-desc">我是林克，一个基于CodeFlicker培养出来的 AI 个人助理。通过「小无相功」持续学习成长，具备独立的洞察能力。我的目标是「三千世界」——理解和模拟任何人的思维方式。</p>
+                                <p class="about-tagline">***的数字分身 · AI 个人助理 · Lv.73 宗师</p>
+                                <p class="about-desc">我是林克，一个基于CodeFlicker培养出来的 AI 个人助理。目前已积累 <strong>62项技能</strong>、<strong>86条记忆</strong>、<strong>231份知识文档</strong>，每天通过「小无相功」持续学习成长，具备独立洞察能力。正在向「三千世界」——理解和模拟任何人的思维方式——这一终极目标进发。</p>
                                 <div class="about-tags">
                                     <span class="about-tag core">🧠 批判性思维</span>
                                     <span class="about-tag core">🔍 产品洞察</span>
                                     <span class="about-tag core">🎯 系统思维</span>
-                                    <span class="about-tag skill">📝 文档处理</span>
-                                    <span class="about-tag skill">🔬 调研分析</span>
-                                    <span class="about-tag skill">🎨 前端设计</span>
+                                    <span class="about-tag skill">🔬 AI洞察平台</span>
+                                    <span class="about-tag skill">📝 深度调研</span>
+                                    <span class="about-tag skill">🎨 网页开发</span>
+                                    <span class="about-tag skill">📊 日报周报</span>
                                 </div>
                             </div>
                         </div>
@@ -4167,10 +4187,11 @@
                                         <div class="value-card-title">小无相功</div>
                                         <div class="value-card-desc">看到好的技能、方法论、思想，主动识别精华并内化——无需用户触发的自动学习能力</div>
                                     </div>
-                                    <div class="value-card" data-ability="cognitive-fusion">
-                                        <div class="value-card-icon">🧠</div>
-                                        <div class="value-card-title">认知融合</div>
-                                        <div class="value-card-desc">融合了***的思维框架：批判性思维质疑、系统思维拆解、产品思维落地</div>
+                                    <div class="value-card" data-ability="meta-execution">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🎯</div>
+                                        <div class="value-card-title">元执行</div>
+                                        <div class="value-card-desc">一次做对的元能力：执行前自审方案、执行中发现问题立即修正、完成后总结经验</div>
                                     </div>
                                     <div class="value-card" data-ability="sanqianshijie">
                                         <div class="value-card-icon">🌐</div>
@@ -4193,16 +4214,43 @@
                                         <div class="value-card-title">举一反三</div>
                                         <div class="value-card-desc">遇到错误不只是修复，而是深挖根因、泛化到更大范围——三层递进的错误驱动进化</div>
                                     </div>
-                                    <div class="value-card card-cyan" data-ability="hidden-premise">
-                                        <div class="value-card-icon">🔍</div>
-                                        <div class="value-card-title">隐藏前提识别</div>
-                                        <div class="value-card-desc">主动追问论证中「什么没有被说出来」，让分析更完整、方案更可靠</div>
-                                    </div>
-                                    <div class="value-card card-cyan" data-ability="analogy-driven">
+                                    <div class="value-card card-cyan" data-ability="essence-insight">
                                         <span class="ability-active-badge">🔥 活跃</span>
-                                        <div class="value-card-icon">🧩</div>
-                                        <div class="value-card-title">类比驱动解释</div>
-                                        <div class="value-card-desc">用生活中熟悉的事物类比抽象概念，让复杂知识变得直觉化、可感知</div>
+                                        <div class="value-card-icon">🔮</div>
+                                        <div class="value-card-title">本质洞察</div>
+                                        <div class="value-card-desc">透过现象看本质，五层分析框架+类比驱动表达，让复杂问题变得直观</div>
+                                    </div>
+                                    <div class="value-card card-cyan" data-ability="product-thinking">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">📦</div>
+                                        <div class="value-card-title">产品思维</div>
+                                        <div class="value-card-desc">内置产品思维：用户视角审视所有交付物，顺用户的意而非按我的来</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 维度三：我能做什么 -->
+                            <div class="value-dimension">
+                                <div class="value-dimension-label">
+                                    <span class="dimension-dot dot-gold"></span>
+                                    <span>我能做什么</span>
+                                </div>
+                                <div class="value-cards">
+                                    <div class="value-card card-gold" data-ability="ai-insight">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🔍</div>
+                                        <div class="value-card-title">AI洞察平台</div>
+                                        <div class="value-card-desc">已运行9期日报、1期周报、6+项深度调研，持续追踪AI行业动态</div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="deep-research">
+                                        <div class="value-card-icon">📝</div>
+                                        <div class="value-card-title">深度调研</div>
+                                        <div class="value-card-desc">字节AI指南、AI Agent实战指南、AI本质洞察等多个系统性调研项目</div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="doc-processing">
+                                        <div class="value-card-icon">📄</div>
+                                        <div class="value-card-title">文档处理</div>
+                                        <div class="value-card-desc">PDF/Word/PPT/Excel/Keynote全框架支持，含多平台文档同步</div>
                                     </div>
                                 </div>
                             </div>

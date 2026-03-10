@@ -180,9 +180,15 @@
         
         .level-header {
             display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .level-main-row {
+            display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: var(--spacing-sm);
         }
         
         .level-info {
@@ -193,7 +199,7 @@
         
         .level-current {
             font-family: var(--font-mono);
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             color: var(--zelda-gold-light);
             text-shadow: 0 0 10px rgba(201, 162, 39, 0.5);
@@ -202,23 +208,33 @@
         .level-arrow {
             color: var(--sheikah-blue);
             font-size: 14px;
+            opacity: 0.6;
         }
         
         .level-next {
             font-family: var(--font-mono);
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
         }
         
         .level-title-badge {
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.15) 100%);
+            border: 1.5px solid rgba(255, 215, 0, 0.4);
+            padding: 4px 12px;
+            border-radius: 12px;
+            letter-spacing: 2px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+        }
+        
+        .level-percent {
+            font-family: var(--font-mono);
+            font-size: 13px;
             font-weight: 600;
-            color: var(--zelda-gold);
-            background: rgba(201, 162, 39, 0.15);
-            border: 1px solid rgba(201, 162, 39, 0.3);
-            padding: 1px 8px;
-            border-radius: 10px;
-            letter-spacing: 1px;
+            color: var(--sheikah-blue-light);
+            opacity: 0.8;
         }
         
         .level-title-display {
@@ -3650,13 +3666,19 @@
             <!-- 等级进度面板 -->
             <div class="level-progress-panel">
                 <div class="level-header">
-                    <div class="level-info">
-                        <span class="level-current" id="level-current">--</span>
-                        <span class="level-title-badge" id="level-title">--</span>
-                        <span class="level-arrow">→</span>
-                        <span class="level-next" id="level-next">--</span>
+                    <div class="level-main-row">
+                        <div class="level-info">
+                            <span class="level-current" id="level-current">--</span>
+                            <span class="level-title-badge" id="level-title">--</span>
+                        </div>
                     </div>
-                    <span class="level-percent" id="level-percent">--%</span>
+                    <div class="level-main-row">
+                        <div class="level-info">
+                            <span class="level-arrow">→</span>
+                            <span class="level-next" id="level-next">--</span>
+                        </div>
+                        <span class="level-percent" id="level-percent">--%</span>
+                    </div>
                 </div>
                 <div class="exp-bar-container">
                     <div class="exp-bar-fill" id="exp-bar-fill" style="width: 0%"></div>

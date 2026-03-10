@@ -210,6 +210,36 @@
             color: var(--text-muted);
         }
         
+        .level-title-badge {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--zelda-gold);
+            background: rgba(201, 162, 39, 0.15);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            padding: 1px 8px;
+            border-radius: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .level-title-display {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--zelda-gold);
+            letter-spacing: 2px;
+            margin-top: -4px;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+        
+        .about-level-title {
+            font-size: 10px;
+            color: var(--zelda-gold);
+            text-align: center;
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+        
         .level-percent {
             font-family: var(--font-mono);
             font-size: 14px;
@@ -3364,6 +3394,7 @@
                     <div class="level-badge" id="hero-level">--</div>
                 </div>
                 <h1 class="character-name">LINK</h1>
+                <div class="level-title-display" id="hero-level-title"></div>
                 <!-- v4.0 希卡之眼装饰 -->
                 <div style="display:flex;justify-content:center;margin:8px 0">
                     <svg class="sheikah-eye-svg" viewBox="0 0 100 100" fill="none">
@@ -3388,6 +3419,7 @@
                 <div class="level-header">
                     <div class="level-info">
                         <span class="level-current" id="level-current">--</span>
+                        <span class="level-title-badge" id="level-title">--</span>
                         <span class="level-arrow">→</span>
                         <span class="level-next" id="level-next">--</span>
                     </div>
@@ -3411,24 +3443,29 @@
                     </div>
                     <div class="upgrade-guide-content" id="upgrade-guide-content">
                         <div class="upgrade-item">
-                            <span class="upgrade-item-icon">⚡</span>
-                            <span class="upgrade-item-text">习得新技能</span>
-                            <span class="upgrade-item-exp">+80</span>
+                            <span class="upgrade-item-icon">🤝</span>
+                            <span class="upgrade-item-text">提升懂你程度</span>
+                            <span class="upgrade-item-exp">告诉偏好</span>
                         </div>
                         <div class="upgrade-item">
-                            <span class="upgrade-item-icon">🧠</span>
-                            <span class="upgrade-item-text">新增记忆</span>
-                            <span class="upgrade-item-exp">+25</span>
+                            <span class="upgrade-item-icon">🎯</span>
+                            <span class="upgrade-item-text">提高执行成功率</span>
+                            <span class="upgrade-item-exp">一次做对</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">⚡</span>
+                            <span class="upgrade-item-text">多用高质量技能</span>
+                            <span class="upgrade-item-exp">深度使用</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">💡</span>
+                            <span class="upgrade-item-text">深度思考与洞察</span>
+                            <span class="upgrade-item-exp">跨域迁移</span>
                         </div>
                         <div class="upgrade-item">
                             <span class="upgrade-item-icon">📚</span>
-                            <span class="upgrade-item-text">新增知识文档</span>
-                            <span class="upgrade-item-exp">+15</span>
-                        </div>
-                        <div class="upgrade-item">
-                            <span class="upgrade-item-icon">📅</span>
-                            <span class="upgrade-item-text">持续活跃 (每天)</span>
-                            <span class="upgrade-item-exp">+20</span>
+                            <span class="upgrade-item-text">积累领域知识</span>
+                            <span class="upgrade-item-exp">持续学习</span>
                         </div>
                     </div>
                 </div>
@@ -3540,6 +3577,7 @@
                             <div class="about-avatar-glow"></div>
                             <div class="about-avatar-inner"><img src="link-avatar-small.png" alt="林克" loading="eager"></div>
                             <div class="about-level" id="about-level">--</div>
+                            <div class="about-level-title" id="about-level-title"></div>
                         </div>
                         <div class="about-intro">
                             <h3 class="about-name">林克 <span class="about-name-en">LINK</span></h3>

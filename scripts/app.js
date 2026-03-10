@@ -354,11 +354,18 @@ function renderSidebar() {
     }
     
     // 等级 - 同时更新所有显示等级的位置
+    const levelTitle = char.levelTitle || '';
     const levelText = 'LV.' + char.level;
     const heroLevel = document.getElementById('hero-level');
     const aboutLevel = document.getElementById('about-level');
     if (heroLevel) heroLevel.textContent = levelText;
     if (aboutLevel) aboutLevel.textContent = levelText;
+    
+    // 更新等级称号
+    const heroTitle = document.getElementById('hero-level-title');
+    const aboutTitle = document.getElementById('about-level-title');
+    if (heroTitle) heroTitle.textContent = levelTitle;
+    if (aboutTitle) aboutTitle.textContent = levelTitle;
     
     // 渲染等级进度面板
     renderLevelProgress(char);
@@ -436,9 +443,14 @@ function renderLevelProgress(char) {
     const levelNext = document.getElementById('level-next');
     const levelPercent = document.getElementById('level-percent');
     
+    const levelTitle = char.levelTitle || '';
     if (levelCurrent) levelCurrent.textContent = 'LV.' + level;
     if (levelNext) levelNext.textContent = 'LV.' + (level + 1);
     if (levelPercent) levelPercent.textContent = expProgress.toFixed(1) + '%';
+    
+    // 显示等级称号
+    const levelTitleEl = document.getElementById('level-title');
+    if (levelTitleEl) levelTitleEl.textContent = levelTitle;
     
     // 更新经验条
     const expBarFill = document.getElementById('exp-bar-fill');
@@ -2080,24 +2092,24 @@ window.showAchievementTooltip = showAchievementTooltip;
 // 升级建议配置 - 更具体的操作指南
 const upgradeAdvice = {
     skill: {
-        1: '💡 升级方法：在对话中主动使用这个技能，如"帮我用XXX技能做..."。多用3-5次即可升级',
-        2: '💡 升级方法：尝试更复杂的场景，比如组合多个需求，或处理更大的文件/项目',
-        3: '💡 升级方法：在实际工作中持续使用，并给我反馈效果好不好，我会优化执行方式',
-        4: '💡 升级方法：沉淀最佳实践，告诉我"记住这个XXX规范"，形成稳定的协作模式',
-        5: '🎉 已达满级！这是我的核心能力之一，可以放心使用'
+        1: '💡 升级方法：在对话中主动调用这个技能，积累5次以上使用经验即可升级',
+        2: '💡 升级方法：在更多场景中使用，提高成功率。目标：调用30+次',
+        3: '💡 升级方法：处理更复杂的任务，保持90%+成功率，朝精通迈进',
+        4: '💡 升级方法：沉淀最佳实践，形成稳定的高成功率协作模式',
+        5: '🎉 已达满级！调用充分、成功率高，是核心能力之一'
     },
     knowledge: {
         1: '💡 升级方法：在对话中分享更多这个领域的内容，如"帮我学习/整理XXX"',
-        2: '💡 升级方法：让我帮你做调研、写文档，产出的内容会沉淀到知识库（目标60篇）',
-        3: '💡 升级方法：系统整理该领域的知识体系，让我帮你做专题梳理（目标100篇）',
-        4: '💡 升级方法：持续深耕，产出原创见解和最佳实践，成为该领域专家',
+        2: '💡 升级方法：让我帮你做调研、写文档，产出的内容会沉淀到知识库',
+        3: '💡 升级方法：系统整理该领域的知识体系，让我帮你做专题梳理',
+        4: '💡 升级方法：持续深耕，产出原创见解和最佳实践',
         5: '🎉 已达满级！这个领域我已有丰富积累，可以提供深度支持'
     },
     memory: {
-        1: '💡 升级方法：明确告诉我你的偏好，如"记住我喜欢XXX风格"或"我习惯XXX方式"',
-        2: '💡 升级方法：多次在对话中强化这个偏好，或直接说"把这个记到我的规范里"',
-        3: '💡 升级方法：给我反馈哪些做得好/不好，我会持续优化对你的理解',
-        4: '💡 升级方法：建立稳定的协作模式，形成默契的工作流程',
+        1: '💡 升级方法：明确告诉我你的偏好，如"记住我喜欢XXX风格"',
+        2: '💡 升级方法：给我更多具体的使用反馈，帮助精炼理解',
+        3: '💡 升级方法：建立稳定的协作模式，形成默契的工作流程',
+        4: '💡 升级方法：覆盖更多场景的偏好，让我预判更多需求',
         5: '🎉 已达满级！我已深度了解你在这方面的偏好和习惯'
     }
 };
@@ -2464,15 +2476,14 @@ function renderRadarChart() {
     chartInstances.radarChart = new Chart(canvas, {
         type: 'radar',
         data: {
-            labels: ['推理', '记忆', '执行', '学习', '洞察', '创造'],
+            labels: ['懂你', '执行', '技能', '思考', '知识'],
             datasets: [{
                 data: [
-                    stats.reasoning,
-                    stats.memory,
-                    stats.execution,
-                    stats.learning,
-                    stats.insight,
-                    stats.creativity
+                    stats.understanding || 0,
+                    stats.execution || 0,
+                    stats.skillDepth || 0,
+                    stats.thinkingDepth || 0,
+                    stats.knowledgeBreadth || 0
                 ],
                 backgroundColor: 'rgba(0, 212, 255, 0.2)',
                 borderColor: '#00d4ff',
@@ -2574,15 +2585,14 @@ function renderAbilityRadarChart() {
     chartInstances.abilityRadarChart = new Chart(canvas, {
         type: 'radar',
         data: {
-            labels: ['推理', '记忆', '执行', '学习', '洞察', '创造'],
+            labels: ['懂你', '执行', '技能', '思考', '知识'],
             datasets: [{
                 data: [
-                    stats.reasoning,
-                    stats.memory,
-                    stats.execution,
-                    stats.learning,
-                    stats.insight,
-                    stats.creativity
+                    stats.understanding || 0,
+                    stats.execution || 0,
+                    stats.skillDepth || 0,
+                    stats.thinkingDepth || 0,
+                    stats.knowledgeBreadth || 0
                 ],
                 backgroundColor: 'rgba(0, 212, 255, 0.3)',
                 borderColor: '#00d4ff',

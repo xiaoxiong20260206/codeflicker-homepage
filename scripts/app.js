@@ -297,7 +297,7 @@ function renderAboutSection() {
     renderAchievements(achievements);
 }
 
-// 了解我 - 核心统计指标面板 v3.0（五维能力 + EXP构成 + 段位进阶）
+// 了解我 - 核心统计指标面板 v3.1（五维能力简洁版）
 function renderAboutCoreStats(data) {
     const container = document.getElementById('about-core-stats');
     if (!container) return;
@@ -306,7 +306,6 @@ function renderAboutCoreStats(data) {
     
     // 五维能力数据
     const stats = char?.stats || {};
-    const tier = char?.tier || { name: '青铜', color: '#cd7f32', icon: '🥉', minLevel: 1, maxLevel: 10 };
     const expBreakdown = char?.debug?.expBreakdown || {};
     
     // 五维能力定义
@@ -329,59 +328,64 @@ function renderAboutCoreStats(data) {
     // EXP总量
     const totalExp = char?.totalExp || 0;
     
+    // 计算一些关键统计
+    const totalSkills = skills?.total || 0;
+    const totalKnowledge = knowledge?.totalFiles || 0;
+    const totalMemories = memories?.total || 0;
+    const totalProjects = projects?.summary?.total || 0;
+    const deployedProjects = projects?.summary?.deployed || 0;
+    const unlockedAchievements = (achievements || []).filter(a => a.unlocked).length;
+    
     container.innerHTML = `
-        <div class="about-stats-title">📊 五维能力雷达</div>
+        <div class="about-stats-title">📊 五维能力</div>
         
-        <!-- 五维能力卡片 -->
-        <div class="dimension-cards">
+        <!-- 五维能力横向条形图 -->
+        <div class="dimension-bars-v2">
             ${dimensions.map(dim => {
                 const score = stats[dim.key] || 0;
-                const exp = expBreakdown[dim.key] || expBreakdown[dim.key.toLowerCase()] || 0;
                 const isWeakest = dim.key === weakestDim.key;
                 return `
-                    <div class="dimension-card ${isWeakest ? 'weakest' : ''}" style="--dim-color: ${dim.color}">
-                        <div class="dim-header">
-                            <span class="dim-icon">${dim.icon}</span>
-                            <span class="dim-name">${dim.name}</span>
-                            ${isWeakest ? '<span class="dim-weak-badge">📈 待提升</span>' : ''}
+                    <div class="dim-row ${isWeakest ? 'weakest' : ''}">
+                        <div class="dim-row-label">
+                            <span class="dim-row-icon">${dim.icon}</span>
+                            <span class="dim-row-name">${dim.name}</span>
                         </div>
-                        <div class="dim-score">${score.toFixed(0)}</div>
-                        <div class="dim-bar">
-                            <div class="dim-bar-fill" style="width: ${score}%; background: ${dim.color}"></div>
+                        <div class="dim-row-bar-wrap">
+                            <div class="dim-row-bar">
+                                <div class="dim-row-fill" style="width: ${score}%; background: ${dim.color}"></div>
+                            </div>
+                            <span class="dim-row-score" style="color: ${dim.color}">${score.toFixed(0)}</span>
                         </div>
-                        <div class="dim-exp">+${exp.toLocaleString()} EXP</div>
+                        ${isWeakest ? '<span class="dim-weak-tag">待提升</span>' : ''}
                     </div>
                 `;
             }).join('')}
         </div>
         
-        <!-- 段位进阶路径 -->
-        <div class="tier-progress-section">
-            <div class="tier-progress-header">
-                <span class="tier-icon">${tier.icon}</span>
-                <span class="tier-name" style="color: ${tier.color}">${tier.name}段位</span>
-                <span class="tier-level">Lv.${char?.level || 1} / ${tier.maxLevel}</span>
-            </div>
-            <div class="tier-roadmap">
-                ${renderTierRoadmap(char?.level || 1)}
-            </div>
+        <!-- 核心数据统计 -->
+        <div class="about-stats-grid">
+            <div class="stat-mini"><span class="stat-mini-icon">⚡</span><span class="stat-mini-value">${totalSkills}</span><span class="stat-mini-label">技能</span></div>
+            <div class="stat-mini"><span class="stat-mini-icon">📚</span><span class="stat-mini-value">${totalKnowledge}</span><span class="stat-mini-label">知识</span></div>
+            <div class="stat-mini"><span class="stat-mini-icon">🧠</span><span class="stat-mini-value">${totalMemories}</span><span class="stat-mini-label">记忆</span></div>
+            <div class="stat-mini"><span class="stat-mini-icon">🎨</span><span class="stat-mini-value">${totalProjects}</span><span class="stat-mini-label">作品</span></div>
+            <div class="stat-mini"><span class="stat-mini-icon">🏆</span><span class="stat-mini-value">${unlockedAchievements}</span><span class="stat-mini-label">成就</span></div>
+            <div class="stat-mini"><span class="stat-mini-icon">📈</span><span class="stat-mini-value">${runDays}</span><span class="stat-mini-label">天</span></div>
         </div>
         
         <!-- 总EXP和升级建议 -->
-        <div class="exp-summary">
-            <div class="exp-total">
-                <span class="exp-label">总经验值</span>
-                <span class="exp-value">${totalExp.toLocaleString()} EXP</span>
+        <div class="exp-summary-v2">
+            <div class="exp-total-v2">
+                <span class="exp-label-v2">总经验</span>
+                <span class="exp-value-v2">${totalExp.toLocaleString()} EXP</span>
             </div>
-            <div class="upgrade-hint">
-                <span class="hint-icon">💡</span>
-                <span class="hint-text">提升「${weakestDim.name}」最能加速升级：${weakestDim.desc}</span>
+            <div class="upgrade-hint-v2">
+                💡 提升「${weakestDim.name}」最能加速升级
             </div>
         </div>
     `;
 }
 
-// 渲染段位进阶路径
+// 渲染段位进阶路径（用于hover气泡）
 function renderTierRoadmap(currentLevel) {
     const tiers = [
         { name: '青铜', minLevel: 1, maxLevel: 10, color: '#cd7f32', icon: '🥉' },
@@ -395,19 +399,32 @@ function renderTierRoadmap(currentLevel) {
         { name: '神话', minLevel: 91, maxLevel: 100, color: '#ffd700', icon: '✨' }
     ];
     
-    return tiers.slice(0, 6).map(tier => {
+    // 统计已达成、当前、未达成
+    let passedCount = 0;
+    let currentTier = null;
+    let futureCount = 0;
+    
+    tiers.forEach(tier => {
+        if (currentLevel > tier.maxLevel) passedCount++;
+        else if (currentLevel >= tier.minLevel && currentLevel <= tier.maxLevel) currentTier = tier;
+        else futureCount++;
+    });
+    
+    return tiers.map(tier => {
         const isActive = currentLevel >= tier.minLevel && currentLevel <= tier.maxLevel;
         const isPassed = currentLevel > tier.maxLevel;
         const statusClass = isActive ? 'active' : (isPassed ? 'passed' : 'future');
+        const statusIcon = isPassed ? '✓' : (isActive ? '◆' : '○');
         
         return `
-            <div class="tier-node ${statusClass}" style="--tier-color: ${tier.color}">
-                <span class="tier-node-icon">${tier.icon}</span>
-                <span class="tier-node-name">${tier.name}</span>
-                <span class="tier-node-range">Lv.${tier.minLevel}-${tier.maxLevel}</span>
+            <div class="tier-item ${statusClass}">
+                <span class="tier-status">${statusIcon}</span>
+                <span class="tier-icon">${tier.icon}</span>
+                <span class="tier-name" style="color: ${isActive ? tier.color : 'inherit'}">${tier.name}</span>
+                <span class="tier-range">Lv.${tier.minLevel}-${tier.maxLevel}</span>
             </div>
         `;
-    }).join('<div class="tier-connector"></div>');
+    }).join('');
 }
 
 // ==================== 侧边栏渲染 ====================
@@ -518,9 +535,22 @@ function renderLevelProgress(char) {
     if (levelNext) levelNext.textContent = 'LV.' + (level + 1);
     if (levelPercent) levelPercent.textContent = expProgress.toFixed(1) + '%';
     
-    // 显示等级称号
+    // 显示等级称号（带hover气泡显示进阶路径）
     const levelTitleEl = document.getElementById('level-title');
-    if (levelTitleEl) levelTitleEl.textContent = levelTitle;
+    if (levelTitleEl) {
+        levelTitleEl.textContent = levelTitle;
+        // 渲染进阶路径到气泡容器
+        const tierPopup = document.getElementById('tier-popup');
+        if (tierPopup) {
+            tierPopup.innerHTML = `
+                <div class="tier-popup-header">🏅 段位进阶路径</div>
+                <div class="tier-popup-list">
+                    ${renderTierRoadmap(level)}
+                </div>
+                <div class="tier-popup-footer">当前: Lv.${level}</div>
+            `;
+        }
+    }
     
     // 更新经验条
     const expBarFill = document.getElementById('exp-bar-fill');
@@ -538,7 +568,7 @@ function renderLevelProgress(char) {
     const expCurrent = document.getElementById('exp-current');
     const expNeeded = document.getElementById('exp-needed');
     
-    if (expCurrent) expCurrent.textContent = totalExp + ' EXP';
+    if (expCurrent) expCurrent.textContent = totalExp.toLocaleString() + ' EXP';
     
     const needed = nextThreshold - totalExp;
     if (expNeeded) {
@@ -546,7 +576,7 @@ function renderLevelProgress(char) {
             expNeeded.textContent = '即将升级!';
             expNeeded.style.color = 'var(--zelda-gold)';
         } else {
-            expNeeded.textContent = '还需 ' + needed + ' EXP';
+            expNeeded.textContent = '还需 ' + needed.toLocaleString() + ' EXP';
             expNeeded.style.color = '';
         }
     }

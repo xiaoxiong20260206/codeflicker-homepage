@@ -227,6 +227,131 @@
             border-radius: 12px;
             letter-spacing: 2px;
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .level-title-badge:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 140, 0, 0.25) 100%);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .level-title-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* 段位进阶气泡 */
+        .tier-popup {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            background: linear-gradient(135deg, rgba(20, 25, 30, 0.98) 0%, rgba(30, 40, 50, 0.96) 100%);
+            border: 1.5px solid rgba(0, 212, 255, 0.4);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.15);
+        }
+        
+        .tier-popup::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(0, 212, 255, 0.4);
+        }
+        
+        .level-title-wrapper:hover .tier-popup {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .tier-popup-header {
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: var(--zelda-gold-light);
+            text-align: center;
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .tier-popup-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .tier-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            transition: all 0.15s ease;
+        }
+        
+        .tier-item.passed {
+            opacity: 0.5;
+        }
+        
+        .tier-item.active {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .tier-item.future {
+            opacity: 0.4;
+        }
+        
+        .tier-status {
+            font-size: 10px;
+            width: 14px;
+            text-align: center;
+            color: var(--sheikah-blue);
+        }
+        
+        .tier-item.passed .tier-status {
+            color: #4ade80;
+        }
+        
+        .tier-item.active .tier-status {
+            color: var(--zelda-gold);
+        }
+        
+        .tier-icon {
+            font-size: 14px;
+        }
+        
+        .tier-name {
+            flex: 1;
+            font-weight: 600;
+        }
+        
+        .tier-range {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.5);
+        }
+        
+        .tier-popup-footer {
+            font-size: 11px;
+            color: var(--sheikah-blue-light);
+            text-align: center;
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
         }
         
         .level-percent {
@@ -2482,191 +2607,131 @@
             margin-bottom: var(--spacing-md);
         }
         
-        /* ==================== 五维能力卡片 v3.0 ==================== */
-        .dimension-cards {
+        /* ==================== 五维能力条形图 v2 ==================== */
+        .dimension-bars-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .dim-row {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            position: relative;
+        }
+        
+        .dim-row.weakest {
+            background: rgba(251, 191, 36, 0.08);
+            border-radius: var(--radius-sm);
+            padding: 6px 8px;
+            margin: -6px -8px;
+        }
+        
+        .dim-row-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            width: 110px;
+            flex-shrink: 0;
+        }
+        
+        .dim-row-icon {
+            font-size: 16px;
+        }
+        
+        .dim-row-name {
+            font-size: 13px;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+        
+        .dim-row-bar-wrap {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .dim-row-bar {
+            flex: 1;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .dim-row-fill {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 0.5s ease;
+        }
+        
+        .dim-row-score {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 700;
+            min-width: 30px;
+            text-align: right;
+        }
+        
+        .dim-weak-tag {
+            position: absolute;
+            right: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 10px;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.2);
+            padding: 2px 6px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        
+        /* ==================== 核心数据统计网格 ==================== */
+        .about-stats-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(6, 1fr);
             gap: var(--spacing-sm);
             margin-bottom: var(--spacing-lg);
         }
         
         @media (max-width: 900px) {
-            .dimension-cards {
+            .about-stats-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
         
-        @media (max-width: 600px) {
-            .dimension-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .dimension-card {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-md);
-            text-align: center;
-            transition: all var(--transition-normal);
-            position: relative;
-        }
-        
-        .dimension-card:hover {
-            border-color: var(--dim-color, var(--sheikah-blue));
-            box-shadow: 0 0 20px color-mix(in srgb, var(--dim-color, var(--sheikah-blue)) 30%, transparent);
-            transform: translateY(-3px);
-        }
-        
-        .dimension-card.weakest {
-            border-color: rgba(251, 191, 36, 0.4);
-            background: rgba(251, 191, 36, 0.05);
-        }
-        
-        .dim-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-            margin-bottom: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-        
-        .dim-icon {
-            font-size: 16px;
-        }
-        
-        .dim-name {
-            font-size: 11px;
-            color: rgba(200, 220, 240, 0.8);
-        }
-        
-        .dim-weak-badge {
-            font-size: 9px;
-            background: rgba(251, 191, 36, 0.3);
-            color: #fbbf24;
-            padding: 2px 6px;
-            border-radius: 10px;
-        }
-        
-        .dim-score {
-            font-family: var(--font-mono);
-            font-size: 28px;
-            font-weight: 700;
-            color: var(--dim-color, var(--sheikah-blue-light));
-            line-height: 1.2;
-        }
-        
-        .dim-bar {
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-            margin: var(--spacing-sm) 0;
-            overflow: hidden;
-        }
-        
-        .dim-bar-fill {
-            height: 100%;
-            border-radius: 2px;
-            transition: width 0.5s ease;
-        }
-        
-        .dim-exp {
-            font-size: 10px;
-            color: rgba(200, 220, 240, 0.5);
-        }
-        
-        /* ==================== 段位进阶路径 ==================== */
-        .tier-progress-section {
-            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: var(--radius-lg);
-            padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
-        }
-        
-        .tier-progress-header {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
-        }
-        
-        .tier-icon {
-            font-size: 24px;
-        }
-        
-        .tier-name {
-            font-family: var(--font-title);
-            font-size: 18px;
-            font-weight: 700;
-        }
-        
-        .tier-level {
-            margin-left: auto;
-            font-family: var(--font-mono);
-            font-size: 14px;
-            color: rgba(200, 220, 240, 0.7);
-        }
-        
-        .tier-roadmap {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 0;
-            overflow-x: auto;
-            padding: var(--spacing-sm) 0;
-        }
-        
-        .tier-node {
+        .stat-mini {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            gap: 2px;
             padding: var(--spacing-sm);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: var(--radius-md);
-            min-width: 60px;
-            transition: all var(--transition-normal);
+            border: 1px solid rgba(0, 212, 255, 0.1);
         }
         
-        .tier-node.active {
-            background: rgba(0, 212, 255, 0.15);
-            border: 1px solid var(--tier-color, var(--sheikah-blue));
-            box-shadow: 0 0 15px color-mix(in srgb, var(--tier-color, var(--sheikah-blue)) 40%, transparent);
+        .stat-mini-icon {
+            font-size: 18px;
         }
         
-        .tier-node.passed {
-            opacity: 0.5;
+        .stat-mini-value {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-light);
         }
         
-        .tier-node.future {
-            opacity: 0.3;
+        .stat-mini-label {
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.6);
         }
         
-        .tier-node-icon {
-            font-size: 20px;
-        }
-        
-        .tier-node-name {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--tier-color, var(--text-light));
-        }
-        
-        .tier-node-range {
-            font-size: 9px;
-            color: rgba(200, 220, 240, 0.5);
-        }
-        
-        .tier-connector {
-            flex: 1;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 212, 255, 0.1) 100%);
-            min-width: 10px;
-        }
-        
-        /* ==================== EXP总览 ==================== */
-        .exp-summary {
+        /* ==================== EXP总览 v2 ==================== */
+        .exp-summary-v2 {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -2678,36 +2743,28 @@
             flex-wrap: wrap;
         }
         
-        .exp-total {
+        .exp-total-v2 {
             display: flex;
-            flex-direction: column;
-            gap: 2px;
+            align-items: center;
+            gap: 8px;
         }
         
-        .exp-label {
-            font-size: 11px;
+        .exp-label-v2 {
+            font-size: 12px;
             color: rgba(200, 220, 240, 0.6);
         }
         
-        .exp-value {
+        .exp-value-v2 {
             font-family: var(--font-mono);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--zelda-gold-light);
         }
         
-        .upgrade-hint {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            border-radius: var(--radius-md);
-            padding: var(--spacing-sm) var(--spacing-md);
+        .upgrade-hint-v2 {
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.7);
         }
-        
-        .hint-icon {
-            font-size: 16px;
         }
         
         .hint-text {
@@ -3669,7 +3726,13 @@
                     <div class="level-main-row">
                         <div class="level-info">
                             <span class="level-current" id="level-current">--</span>
-                            <span class="level-title-badge" id="level-title">--</span>
+                            <div class="level-title-wrapper">
+                                <span class="level-title-badge" id="level-title">--</span>
+                                <!-- 段位进阶气泡 -->
+                                <div class="tier-popup" id="tier-popup">
+                                    <!-- 由JS动态填充 -->
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="level-main-row">

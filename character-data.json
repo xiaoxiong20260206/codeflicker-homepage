@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T17:35:02.023236",
+  "generatedAt": "2026-03-10T17:44:36.372821",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,14 +15,14 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 367720,
-    "expProgress": 54.5,
+    "totalExp": 368020,
+    "expProgress": 55.4,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
       "understanding": 59.0,
       "execution": 74.5,
-      "skillDepth": 80.4,
+      "skillDepth": 80.6,
       "thinkingDepth": 63.8,
       "knowledgeBreadth": 89.4
     },
@@ -36,18 +36,18 @@
       },
       "activeSkills": 46,
       "highLevelSkills": 37,
-      "skillTotalValue": 4759.9,
+      "skillTotalValue": 4810.6,
       "expBreakdown": {
         "understanding": 59000,
         "execution": 74500,
-        "skill": 120600,
+        "skill": 120899,
         "thinking": 51040,
         "knowledge": 62580
       }
     }
   },
   "skills": {
-    "total": 69,
+    "total": 70,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -335,6 +335,19 @@
         "description": "投资理财全流程：股票分析、投资组合、财务决策",
         "skills": [
           {
+            "name": "stock-analysis",
+            "displayName": "股票分析",
+            "shortName": "股票",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 78,
+            "description": "股票和加密货币分析，投资组合管理，定期报告",
+            "lastUpdated": "2026-02-25",
+            "callCount": 45,
+            "frequency": "0.3次/天",
+            "successRate": 90
+          },
+          {
             "name": "investment-tracker",
             "displayName": "基金追踪",
             "shortName": "基金",
@@ -346,10 +359,23 @@
             "callCount": 38,
             "frequency": "0.3次/天",
             "successRate": 92
+          },
+          {
+            "name": "investment-analyzer",
+            "displayName": "投资分析",
+            "shortName": "投资",
+            "source": "Claude技能库",
+            "level": 3,
+            "exp": 58,
+            "description": "投资机会分析，跨资产类别评估和风险分析",
+            "lastUpdated": "2026-02-25",
+            "callCount": 12,
+            "frequency": "0.1次/天",
+            "successRate": 85
           }
         ],
-        "count": 1,
-        "avgLevel": 4.0
+        "count": 3,
+        "avgLevel": 3.7
       },
       "📊 调研分析": {
         "role": "research",
@@ -385,6 +411,45 @@
             "successRate": 85
           },
           {
+            "name": "apify-competitor-intelligence",
+            "displayName": "竞争情报",
+            "shortName": "竞情",
+            "source": "Cursor技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "apify-market-research",
+            "displayName": "市场调研",
+            "shortName": "市场",
+            "source": "Cursor技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "市场调研，分析地理机会、定价、消费者行为",
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "apify-trend-analysis",
+            "displayName": "趋势分析",
+            "shortName": "趋势",
+            "source": "Cursor技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
             "name": "summarize",
             "displayName": "summarize",
             "shortName": "",
@@ -398,8 +463,8 @@
             "successRate": 0
           }
         ],
-        "count": 3,
-        "avgLevel": 2.7
+        "count": 6,
+        "avgLevel": 1.8
       },
       "📄 文档处理": {
         "role": "document",
@@ -524,6 +589,19 @@
         "description": "页面开发与设计：UI/UX、组件、工作流",
         "skills": [
           {
+            "name": "frontend-design",
+            "displayName": "前端设计",
+            "shortName": "前端",
+            "source": "Cursor技能库",
+            "level": 5,
+            "exp": 100,
+            "description": "高质量前端界面设计，避免通用AI风格",
+            "lastUpdated": "2026-03-06",
+            "callCount": 96,
+            "frequency": "0.7次/天",
+            "successRate": 91
+          },
+          {
             "name": "web-dev-workflow",
             "displayName": "网页开发",
             "shortName": "网页流程",
@@ -535,6 +613,19 @@
             "callCount": 187,
             "frequency": "1.4次/天",
             "successRate": 93
+          },
+          {
+            "name": "ui-ux-pro-max",
+            "displayName": "UI专家",
+            "shortName": "UI专家",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 76,
+            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+            "lastUpdated": "2026-02-08",
+            "callCount": 52,
+            "frequency": "0.4次/天",
+            "successRate": 92
           },
           {
             "name": "ai-image-generator",
@@ -576,19 +667,6 @@
             "successRate": 88
           },
           {
-            "name": "ui-ux-pro-max-skill",
-            "displayName": "UI专家",
-            "shortName": "UI专家",
-            "source": "Claude技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
             "name": "proactive-agent",
             "displayName": "proactive-agent",
             "shortName": "",
@@ -600,10 +678,23 @@
             "callCount": 0,
             "frequency": "",
             "successRate": 0
+          },
+          {
+            "name": "ui-ux-pro-max-skill",
+            "displayName": "UI专家",
+            "shortName": "UI专家",
+            "source": "Claude技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           }
         ],
-        "count": 6,
-        "avgLevel": 2.8
+        "count": 8,
+        "avgLevel": 3.2
       },
       "🎭 风格模板": {
         "role": "style",
@@ -650,10 +741,23 @@
             "callCount": 14,
             "frequency": "0.1次/天",
             "successRate": 91
+          },
+          {
+            "name": "theme-factory",
+            "displayName": "主题工厂",
+            "shortName": "主题",
+            "source": "Cursor技能库",
+            "level": 3,
+            "exp": 60,
+            "description": "主题工厂，10种预设主题快速应用于各类文档",
+            "lastUpdated": "2026-02-08",
+            "callCount": 11,
+            "frequency": "0.1次/天",
+            "successRate": 94
           }
         ],
-        "count": 3,
-        "avgLevel": 4.3
+        "count": 4,
+        "avgLevel": 4.0
       },
       "🔗 发布与集成": {
         "role": "publish",
@@ -752,10 +856,23 @@
             "callCount": 0,
             "frequency": "",
             "successRate": 0
+          },
+          {
+            "name": "personal-homepage-template",
+            "displayName": "personal-homepage-template",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "> 一键生成你的 AI 助手个人首页，塞尔达旷野之息风格！",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           }
         ],
-        "count": 7,
-        "avgLevel": 4.0
+        "count": 8,
+        "avgLevel": 3.6
       },
       "📝 创作与辅导": {
         "role": "creation",
@@ -764,6 +881,19 @@
         "layer": "execution",
         "description": "专栏写作、晋升辅导、个人助理",
         "skills": [
+          {
+            "name": "personal-assistant",
+            "displayName": "个人助理",
+            "shortName": "助理",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 83,
+            "description": "个人助理能力，日程管理、任务追踪、习惯监控",
+            "lastUpdated": "2026-02-25",
+            "callCount": 64,
+            "frequency": "0.5次/天",
+            "successRate": 94
+          },
           {
             "name": "ai-column-writer",
             "displayName": "专栏写作",
@@ -791,7 +921,7 @@
             "successRate": 95
           }
         ],
-        "count": 2,
+        "count": 3,
         "avgLevel": 4.0
       },
       "🔧 开发规范": {
@@ -813,167 +943,15 @@
             "callCount": 7,
             "frequency": "<0.1/天",
             "successRate": 86
-          }
-        ],
-        "count": 1,
-        "avgLevel": 3.0
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "layer": "execution",
-        "skills": [
-          {
-            "name": "frontend-design",
-            "displayName": "前端设计",
-            "shortName": "前端",
-            "source": "Cursor技能库",
-            "level": 5,
-            "exp": 100,
-            "description": "高质量前端界面设计，避免通用AI风格",
-            "lastUpdated": "2026-03-06",
-            "callCount": 96,
-            "frequency": "0.7次/天",
-            "successRate": 91
           },
           {
-            "name": "personal-assistant",
-            "displayName": "个人助理",
-            "shortName": "助理",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 83,
-            "description": "个人助理能力，日程管理、任务追踪、习惯监控",
-            "lastUpdated": "2026-02-25",
-            "callCount": 64,
-            "frequency": "0.5次/天",
-            "successRate": 94
-          },
-          {
-            "name": "stock-analysis",
-            "displayName": "股票分析",
-            "shortName": "股票",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 78,
-            "description": "股票和加密货币分析，投资组合管理，定期报告",
-            "lastUpdated": "2026-02-25",
-            "callCount": 45,
-            "frequency": "0.3次/天",
-            "successRate": 90
-          },
-          {
-            "name": "ui-ux-pro-max",
-            "displayName": "UI专家",
-            "shortName": "UI专家",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 76,
-            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-02-08",
-            "callCount": 52,
-            "frequency": "0.4次/天",
-            "successRate": 92
-          },
-          {
-            "name": "theme-factory",
-            "displayName": "主题工厂",
-            "shortName": "主题",
-            "source": "Cursor技能库",
-            "level": 3,
-            "exp": 60,
-            "description": "主题工厂，10种预设主题快速应用于各类文档",
-            "lastUpdated": "2026-02-08",
-            "callCount": 11,
-            "frequency": "0.1次/天",
-            "successRate": 94
-          },
-          {
-            "name": "investment-analyzer",
-            "displayName": "投资分析",
-            "shortName": "投资",
-            "source": "Claude技能库",
-            "level": 3,
-            "exp": 58,
-            "description": "投资机会分析，跨资产类别评估和风险分析",
-            "lastUpdated": "2026-02-25",
-            "callCount": 12,
-            "frequency": "0.1次/天",
-            "successRate": 85
-          },
-          {
-            "name": "remotion-best-practices",
-            "displayName": "视频制作",
-            "shortName": "视频",
-            "source": "Cursor技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "Remotion视频创作最佳实践，用React制作视频",
-            "lastUpdated": "2026-02-08",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "apify-market-research",
-            "displayName": "市场调研",
-            "shortName": "市场",
-            "source": "Cursor技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "市场调研，分析地理机会、定价、消费者行为",
-            "lastUpdated": "2026-02-09",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "vercel-react-native-skills",
-            "displayName": "React Native",
-            "shortName": "RN",
-            "source": "Claude技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "React Native和Expo移动应用开发最佳实践",
-            "lastUpdated": "2026-02-09",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "apify-competitor-intelligence",
-            "displayName": "竞争情报",
-            "shortName": "竞情",
-            "source": "Cursor技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
-            "lastUpdated": "2026-02-09",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "web-design-guidelines",
-            "displayName": "设计规范",
-            "shortName": "规范",
-            "source": "Cursor技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "Web界面设计规范审查，检查无障碍和最佳实践",
-            "lastUpdated": "2026-02-09",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "capability-evolver",
-            "displayName": "capability-evolver",
+            "name": "context-window-management",
+            "displayName": "context-window-management",
             "shortName": "",
             "source": "外部导入",
             "level": 1,
             "exp": 10,
-            "description": "\"Evolution is not optional. Adapt or die.\"",
+            "description": "You're a context engineering specialist who has optimized LLM applications handling",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
@@ -993,32 +971,6 @@
             "successRate": 0
           },
           {
-            "name": "workflow-orchestration-patterns",
-            "displayName": "workflow-orchestration-patterns",
-            "shortName": "",
-            "source": "外部导入",
-            "level": 1,
-            "exp": 10,
-            "description": "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, res",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "context-window-management",
-            "displayName": "context-window-management",
-            "shortName": "",
-            "source": "外部导入",
-            "level": 1,
-            "exp": 10,
-            "description": "You're a context engineering specialist who has optimized LLM applications handling",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
             "name": "meta-cognitive-reasoning",
             "displayName": "meta-cognitive-reasoning",
             "shortName": "",
@@ -1032,27 +984,14 @@
             "successRate": 0
           },
           {
-            "name": "vercel-react-best-practices",
-            "displayName": "React优化",
-            "shortName": "React",
-            "source": "Claude技能库",
-            "level": 1,
-            "exp": 10,
-            "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
-            "lastUpdated": "2026-02-09",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "vercel-composition-patterns",
-            "displayName": "组合模式",
-            "shortName": "组合",
+            "name": "remotion-best-practices",
+            "displayName": "视频制作",
+            "shortName": "视频",
             "source": "Cursor技能库",
             "level": 1,
             "exp": 10,
-            "description": "React组合模式，构建可扩展的组件架构",
-            "lastUpdated": "2026-02-09",
+            "description": "Remotion视频创作最佳实践，用React制作视频",
+            "lastUpdated": "2026-02-08",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
@@ -1071,21 +1010,86 @@
             "successRate": 0
           },
           {
-            "name": "apify-trend-analysis",
-            "displayName": "趋势分析",
-            "shortName": "趋势",
+            "name": "vercel-composition-patterns",
+            "displayName": "组合模式",
+            "shortName": "组合",
             "source": "Cursor技能库",
             "level": 1,
             "exp": 10,
-            "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+            "description": "React组合模式，构建可扩展的组件架构",
             "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "vercel-react-best-practices",
+            "displayName": "React优化",
+            "shortName": "React",
+            "source": "Claude技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "vercel-react-native-skills",
+            "displayName": "React Native",
+            "shortName": "RN",
+            "source": "Claude技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "React Native和Expo移动应用开发最佳实践",
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "web-design-guidelines",
+            "displayName": "设计规范",
+            "shortName": "规范",
+            "source": "Cursor技能库",
+            "level": 1,
+            "exp": 10,
+            "description": "Web界面设计规范审查，检查无障碍和最佳实践",
+            "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "workflow-orchestration-patterns",
+            "displayName": "workflow-orchestration-patterns",
+            "shortName": "",
+            "source": "外部导入",
+            "level": 1,
+            "exp": 10,
+            "description": "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, res",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "capability-evolver",
+            "displayName": "capability-evolver",
+            "shortName": "",
+            "source": "外部导入",
+            "level": 1,
+            "exp": 10,
+            "description": "\"Evolution is not optional. Adapt or die.\"",
+            "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           }
         ],
-        "count": 20,
-        "avgLevel": 1.9
+        "count": 12,
+        "avgLevel": 1.2
       }
     },
     "tree": {
@@ -1386,6 +1390,19 @@
             "description": "投资理财全流程：股票分析、投资组合、财务决策",
             "skills": [
               {
+                "name": "stock-analysis",
+                "displayName": "股票分析",
+                "shortName": "股票",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 78,
+                "description": "股票和加密货币分析，投资组合管理，定期报告",
+                "lastUpdated": "2026-02-25",
+                "callCount": 45,
+                "frequency": "0.3次/天",
+                "successRate": 90
+              },
+              {
                 "name": "investment-tracker",
                 "displayName": "基金追踪",
                 "shortName": "基金",
@@ -1397,14 +1414,27 @@
                 "callCount": 38,
                 "frequency": "0.3次/天",
                 "successRate": 92
+              },
+              {
+                "name": "investment-analyzer",
+                "displayName": "投资分析",
+                "shortName": "投资",
+                "source": "Claude技能库",
+                "level": 3,
+                "exp": 58,
+                "description": "投资机会分析，跨资产类别评估和风险分析",
+                "lastUpdated": "2026-02-25",
+                "callCount": 12,
+                "frequency": "0.1次/天",
+                "successRate": 85
               }
             ],
-            "count": 1,
-            "avgLevel": 4.0
+            "count": 3,
+            "avgLevel": 3.7
           }
         },
-        "count": 2,
-        "avgLevel": 4.5
+        "count": 4,
+        "avgLevel": 4.0
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -1445,6 +1475,45 @@
                 "successRate": 85
               },
               {
+                "name": "apify-competitor-intelligence",
+                "displayName": "竞争情报",
+                "shortName": "竞情",
+                "source": "Cursor技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "apify-market-research",
+                "displayName": "市场调研",
+                "shortName": "市场",
+                "source": "Cursor技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "市场调研，分析地理机会、定价、消费者行为",
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "apify-trend-analysis",
+                "displayName": "趋势分析",
+                "shortName": "趋势",
+                "source": "Cursor技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
                 "name": "summarize",
                 "displayName": "summarize",
                 "shortName": "",
@@ -1458,8 +1527,8 @@
                 "successRate": 0
               }
             ],
-            "count": 3,
-            "avgLevel": 2.7
+            "count": 6,
+            "avgLevel": 1.8
           },
           "📄 文档处理": {
             "role": "document",
@@ -1582,6 +1651,19 @@
             "description": "页面开发与设计：UI/UX、组件、工作流",
             "skills": [
               {
+                "name": "frontend-design",
+                "displayName": "前端设计",
+                "shortName": "前端",
+                "source": "Cursor技能库",
+                "level": 5,
+                "exp": 100,
+                "description": "高质量前端界面设计，避免通用AI风格",
+                "lastUpdated": "2026-03-06",
+                "callCount": 96,
+                "frequency": "0.7次/天",
+                "successRate": 91
+              },
+              {
                 "name": "web-dev-workflow",
                 "displayName": "网页开发",
                 "shortName": "网页流程",
@@ -1593,6 +1675,19 @@
                 "callCount": 187,
                 "frequency": "1.4次/天",
                 "successRate": 93
+              },
+              {
+                "name": "ui-ux-pro-max",
+                "displayName": "UI专家",
+                "shortName": "UI专家",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 76,
+                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+                "lastUpdated": "2026-02-08",
+                "callCount": 52,
+                "frequency": "0.4次/天",
+                "successRate": 92
               },
               {
                 "name": "ai-image-generator",
@@ -1634,19 +1729,6 @@
                 "successRate": 88
               },
               {
-                "name": "ui-ux-pro-max-skill",
-                "displayName": "UI专家",
-                "shortName": "UI专家",
-                "source": "Claude技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
                 "name": "proactive-agent",
                 "displayName": "proactive-agent",
                 "shortName": "",
@@ -1658,10 +1740,23 @@
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
+              },
+              {
+                "name": "ui-ux-pro-max-skill",
+                "displayName": "UI专家",
+                "shortName": "UI专家",
+                "source": "Claude技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               }
             ],
-            "count": 6,
-            "avgLevel": 2.8
+            "count": 8,
+            "avgLevel": 3.2
           },
           "🎭 风格模板": {
             "role": "style",
@@ -1707,10 +1802,23 @@
                 "callCount": 14,
                 "frequency": "0.1次/天",
                 "successRate": 91
+              },
+              {
+                "name": "theme-factory",
+                "displayName": "主题工厂",
+                "shortName": "主题",
+                "source": "Cursor技能库",
+                "level": 3,
+                "exp": 60,
+                "description": "主题工厂，10种预设主题快速应用于各类文档",
+                "lastUpdated": "2026-02-08",
+                "callCount": 11,
+                "frequency": "0.1次/天",
+                "successRate": 94
               }
             ],
-            "count": 3,
-            "avgLevel": 4.3
+            "count": 4,
+            "avgLevel": 4.0
           },
           "🔗 发布与集成": {
             "role": "publish",
@@ -1808,10 +1916,23 @@
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
+              },
+              {
+                "name": "personal-homepage-template",
+                "displayName": "personal-homepage-template",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "> 一键生成你的 AI 助手个人首页，塞尔达旷野之息风格！",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               }
             ],
-            "count": 7,
-            "avgLevel": 4.0
+            "count": 8,
+            "avgLevel": 3.6
           },
           "📝 创作与辅导": {
             "role": "creation",
@@ -1819,6 +1940,19 @@
             "color": "#f59e0b",
             "description": "专栏写作、晋升辅导、个人助理",
             "skills": [
+              {
+                "name": "personal-assistant",
+                "displayName": "个人助理",
+                "shortName": "助理",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 83,
+                "description": "个人助理能力，日程管理、任务追踪、习惯监控",
+                "lastUpdated": "2026-02-25",
+                "callCount": 64,
+                "frequency": "0.5次/天",
+                "successRate": 94
+              },
               {
                 "name": "ai-column-writer",
                 "displayName": "专栏写作",
@@ -1846,7 +1980,7 @@
                 "successRate": 95
               }
             ],
-            "count": 2,
+            "count": 3,
             "avgLevel": 4.0
           },
           "🔧 开发规范": {
@@ -1867,167 +2001,15 @@
                 "callCount": 7,
                 "frequency": "<0.1/天",
                 "successRate": 86
-              }
-            ],
-            "count": 1,
-            "avgLevel": 3.0
-          },
-          "其他技能": {
-            "icon": "📦",
-            "color": "#64748b",
-            "layer": "execution",
-            "skills": [
-              {
-                "name": "frontend-design",
-                "displayName": "前端设计",
-                "shortName": "前端",
-                "source": "Cursor技能库",
-                "level": 5,
-                "exp": 100,
-                "description": "高质量前端界面设计，避免通用AI风格",
-                "lastUpdated": "2026-03-06",
-                "callCount": 96,
-                "frequency": "0.7次/天",
-                "successRate": 91
               },
               {
-                "name": "personal-assistant",
-                "displayName": "个人助理",
-                "shortName": "助理",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 83,
-                "description": "个人助理能力，日程管理、任务追踪、习惯监控",
-                "lastUpdated": "2026-02-25",
-                "callCount": 64,
-                "frequency": "0.5次/天",
-                "successRate": 94
-              },
-              {
-                "name": "stock-analysis",
-                "displayName": "股票分析",
-                "shortName": "股票",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 78,
-                "description": "股票和加密货币分析，投资组合管理，定期报告",
-                "lastUpdated": "2026-02-25",
-                "callCount": 45,
-                "frequency": "0.3次/天",
-                "successRate": 90
-              },
-              {
-                "name": "ui-ux-pro-max",
-                "displayName": "UI专家",
-                "shortName": "UI专家",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 76,
-                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-02-08",
-                "callCount": 52,
-                "frequency": "0.4次/天",
-                "successRate": 92
-              },
-              {
-                "name": "theme-factory",
-                "displayName": "主题工厂",
-                "shortName": "主题",
-                "source": "Cursor技能库",
-                "level": 3,
-                "exp": 60,
-                "description": "主题工厂，10种预设主题快速应用于各类文档",
-                "lastUpdated": "2026-02-08",
-                "callCount": 11,
-                "frequency": "0.1次/天",
-                "successRate": 94
-              },
-              {
-                "name": "investment-analyzer",
-                "displayName": "投资分析",
-                "shortName": "投资",
-                "source": "Claude技能库",
-                "level": 3,
-                "exp": 58,
-                "description": "投资机会分析，跨资产类别评估和风险分析",
-                "lastUpdated": "2026-02-25",
-                "callCount": 12,
-                "frequency": "0.1次/天",
-                "successRate": 85
-              },
-              {
-                "name": "remotion-best-practices",
-                "displayName": "视频制作",
-                "shortName": "视频",
-                "source": "Cursor技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "Remotion视频创作最佳实践，用React制作视频",
-                "lastUpdated": "2026-02-08",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "apify-market-research",
-                "displayName": "市场调研",
-                "shortName": "市场",
-                "source": "Cursor技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "市场调研，分析地理机会、定价、消费者行为",
-                "lastUpdated": "2026-02-09",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "vercel-react-native-skills",
-                "displayName": "React Native",
-                "shortName": "RN",
-                "source": "Claude技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "React Native和Expo移动应用开发最佳实践",
-                "lastUpdated": "2026-02-09",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "apify-competitor-intelligence",
-                "displayName": "竞争情报",
-                "shortName": "竞情",
-                "source": "Cursor技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
-                "lastUpdated": "2026-02-09",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "web-design-guidelines",
-                "displayName": "设计规范",
-                "shortName": "规范",
-                "source": "Cursor技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "Web界面设计规范审查，检查无障碍和最佳实践",
-                "lastUpdated": "2026-02-09",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "capability-evolver",
-                "displayName": "capability-evolver",
+                "name": "context-window-management",
+                "displayName": "context-window-management",
                 "shortName": "",
                 "source": "外部导入",
                 "level": 1,
                 "exp": 10,
-                "description": "\"Evolution is not optional. Adapt or die.\"",
+                "description": "You're a context engineering specialist who has optimized LLM applications handling",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
@@ -2047,32 +2029,6 @@
                 "successRate": 0
               },
               {
-                "name": "workflow-orchestration-patterns",
-                "displayName": "workflow-orchestration-patterns",
-                "shortName": "",
-                "source": "外部导入",
-                "level": 1,
-                "exp": 10,
-                "description": "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, res",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "context-window-management",
-                "displayName": "context-window-management",
-                "shortName": "",
-                "source": "外部导入",
-                "level": 1,
-                "exp": 10,
-                "description": "You're a context engineering specialist who has optimized LLM applications handling",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
                 "name": "meta-cognitive-reasoning",
                 "displayName": "meta-cognitive-reasoning",
                 "shortName": "",
@@ -2086,27 +2042,14 @@
                 "successRate": 0
               },
               {
-                "name": "vercel-react-best-practices",
-                "displayName": "React优化",
-                "shortName": "React",
-                "source": "Claude技能库",
-                "level": 1,
-                "exp": 10,
-                "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
-                "lastUpdated": "2026-02-09",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "vercel-composition-patterns",
-                "displayName": "组合模式",
-                "shortName": "组合",
+                "name": "remotion-best-practices",
+                "displayName": "视频制作",
+                "shortName": "视频",
                 "source": "Cursor技能库",
                 "level": 1,
                 "exp": 10,
-                "description": "React组合模式，构建可扩展的组件架构",
-                "lastUpdated": "2026-02-09",
+                "description": "Remotion视频创作最佳实践，用React制作视频",
+                "lastUpdated": "2026-02-08",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
@@ -2125,25 +2068,90 @@
                 "successRate": 0
               },
               {
-                "name": "apify-trend-analysis",
-                "displayName": "趋势分析",
-                "shortName": "趋势",
+                "name": "vercel-composition-patterns",
+                "displayName": "组合模式",
+                "shortName": "组合",
                 "source": "Cursor技能库",
                 "level": 1,
                 "exp": 10,
-                "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+                "description": "React组合模式，构建可扩展的组件架构",
                 "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "vercel-react-best-practices",
+                "displayName": "React优化",
+                "shortName": "React",
+                "source": "Claude技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "React/Next.js性能优化最佳实践，来自Vercel工程团队",
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "vercel-react-native-skills",
+                "displayName": "React Native",
+                "shortName": "RN",
+                "source": "Claude技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "React Native和Expo移动应用开发最佳实践",
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "web-design-guidelines",
+                "displayName": "设计规范",
+                "shortName": "规范",
+                "source": "Cursor技能库",
+                "level": 1,
+                "exp": 10,
+                "description": "Web界面设计规范审查，检查无障碍和最佳实践",
+                "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "workflow-orchestration-patterns",
+                "displayName": "workflow-orchestration-patterns",
+                "shortName": "",
+                "source": "外部导入",
+                "level": 1,
+                "exp": 10,
+                "description": "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, res",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "capability-evolver",
+                "displayName": "capability-evolver",
+                "shortName": "",
+                "source": "外部导入",
+                "level": 1,
+                "exp": 10,
+                "description": "\"Evolution is not optional. Adapt or die.\"",
+                "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               }
             ],
-            "count": 20,
-            "avgLevel": 1.9
+            "count": 12,
+            "avgLevel": 1.2
           }
         },
-        "count": 50,
-        "avgLevel": 2.8
+        "count": 49,
+        "avgLevel": 2.7
       }
     },
     "relationships": {
@@ -6023,7 +6031,7 @@
       43,
       58,
       62,
-      69
+      70
     ],
     "knowledge": [
       150,

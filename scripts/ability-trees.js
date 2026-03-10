@@ -150,6 +150,7 @@ function renderSkillTechTree(container, skills) {
     
     var guideSkill = engineSkillMap['xiaowuxianggong'];
     var absorbSkill = engineSkillMap['xixingdafa'];
+    var exportSkill = engineSkillMap['beiming-shengong'];
     var coreSkill = engineSkillMap['daily-reflection-evolution'];
     var reviewSkill = engineSkillMap['learn-from-mistakes'];
     var cultivateSkill = engineSkillMap['neigong-cultivation'];
@@ -165,6 +166,7 @@ function renderSkillTechTree(container, skills) {
     if (guideSkill && coreSkill) {
         var guideNode = createEngineNode(guideSkill, '进化导航', 'guide');
         var absorbNode = absorbSkill ? createEngineNode(absorbSkill, '外部吸收', 'guide') : '';
+        var exportNode = exportSkill ? createEngineNode(exportSkill, '能力导出', 'guide') : '';
         var coreNode = createEngineNode(coreSkill, '每日驱动', 'core');
         var reviewNode = reviewSkill ? createEngineNode(reviewSkill, '即时复盘', 'core') : '';
         var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, '深度修炼', 'core') : '';
@@ -190,8 +192,9 @@ function renderSkillTechTree(container, skills) {
             '<div class="engine-title-bar"><span class="engine-title-icon">\uD83D\uDD04</span><span class="engine-title-text">自进化引擎</span><span class="engine-title-desc">驱动持续进化的完整闭环</span></div>' +
             '<div class="engine-diagram">' +
                 '<div class="engine-guide-row">' +
+                    (absorbNode ? '<div class="engine-absorb-node">' + absorbNode + '</div><div class="engine-absorb-link"><span class="absorb-arrow absorb-arrow--left"></span><span class="absorb-label">增强</span></div>' : '') +
                     '<div class="engine-tier engine-tier--guide">' + guideNode + '</div>' +
-                    (absorbNode ? '<div class="engine-absorb-link"><span class="absorb-arrow"></span><span class="absorb-label">增强</span></div><div class="engine-absorb-node">' + absorbNode + '</div>' : '') +
+                    (exportNode ? '<div class="engine-export-link"><span class="export-arrow"></span><span class="export-label">导出</span></div><div class="engine-export-node">' + exportNode + '</div>' : '') +
                 '</div>' +
                 '<div class="engine-connector engine-connector--vertical"><span class="connector-label">导航</span><div class="connector-line"></div></div>' +
                 '<div class="engine-tier engine-tier--core">' + coreNode +

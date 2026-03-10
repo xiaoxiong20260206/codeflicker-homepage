@@ -151,53 +151,17 @@
     width: 100%;
 }
 
-/* 引导行：小无相功居中 + 吸星大法侧面 + 增强箭头 */
+/* 引导行：吸星大法←小无相功→北冥神功 */
 .engine-guide-row {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     position: relative;
+    gap: 8px;
 }
-/* 吸星大法侧悬浮：绝对定位到右侧，不影响小无相功居中 */
-.engine-absorb-link {
-    position: absolute;
-    right: 50%;
-    margin-right: -170px;
-    display: flex;
-    align-items: center;
-    gap: 0;
-}
-.engine-absorb-link .absorb-arrow {
-    display: block;
-    width: 36px;
-    height: 2px;
-    background: linear-gradient(270deg, rgba(167,139,250,0.5), rgba(167,139,250,0.15));
-    position: relative;
-}
-.engine-absorb-link .absorb-arrow::before {
-    content: '';
-    position: absolute;
-    left: -1px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 5px solid transparent;
-    border-right-color: rgba(167,139,250,0.5);
-}
-.engine-absorb-link .absorb-label {
-    font-size: 10px;
-    color: rgba(167,139,250,0.7);
-    white-space: nowrap;
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    letter-spacing: 1px;
-}
+/* 吸星大法在左侧 */
 .engine-absorb-node {
-    position: absolute;
-    right: 50%;
-    margin-right: -310px;
     display: flex;
     align-items: center;
 }
@@ -210,6 +174,88 @@
 .engine-absorb-node .engine-node:hover {
     opacity: 1;
     border-color: rgba(167,139,250,0.5);
+    border-style: solid;
+}
+/* 增强箭头：从吸星大法指向小无相功（向右） */
+.engine-absorb-link {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+}
+.engine-absorb-link .absorb-arrow {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(167,139,250,0.15), rgba(167,139,250,0.5));
+    position: relative;
+}
+.engine-absorb-link .absorb-arrow--left::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: rgba(167,139,250,0.5);
+}
+.engine-absorb-link .absorb-label {
+    font-size: 10px;
+    color: rgba(167,139,250,0.7);
+    white-space: nowrap;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+}
+/* 导出箭头：从小无相功指向北冥神功（向右） */
+.engine-export-link {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: relative;
+}
+.engine-export-link .export-arrow {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(74,222,128,0.5), rgba(74,222,128,0.15));
+    position: relative;
+}
+.engine-export-link .export-arrow::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 5px solid transparent;
+    border-left-color: rgba(74,222,128,0.5);
+}
+.engine-export-link .export-label {
+    font-size: 10px;
+    color: rgba(74,222,128,0.7);
+    white-space: nowrap;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+}
+/* 北冥神功在右侧 */
+.engine-export-node {
+    display: flex;
+    align-items: center;
+}
+.engine-export-node .engine-node {
+    border-color: rgba(74,222,128,0.25);
+    background: rgba(74,222,128,0.06);
+    border-style: dashed;
+    opacity: 0.85;
+}
+.engine-export-node .engine-node:hover {
+    opacity: 1;
+    border-color: rgba(74,222,128,0.5);
     border-style: solid;
 }
 

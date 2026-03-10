@@ -1622,30 +1622,26 @@ function closeSkillDetailPanel() {
 window.showSkillDetailPanel = showSkillDetailPanel;
 window.closeSkillDetailPanel = closeSkillDetailPanel;
 
-// ==================== 通用二级导航切换 ====================
-function scrollToSubSection(targetId) {
-    const target = document.getElementById(targetId);
-    if (!target) {
-        console.warn('Sub-section not found:', targetId);
+// ==================== 通用二级导航切换（Tab模式） ====================
+function switchSubTab(sectionId, tabName) {
+    // 找到对应section下的所有sub-nav按钮和content
+    const section = document.getElementById('section-' + sectionId);
+    if (!section) {
+        console.warn('Section not found:', sectionId);
         return;
     }
     
-    // 获取所有sub-nav按钮，更新active状态
-    const allBtns = document.querySelectorAll('.sub-nav-btn');
-    allBtns.forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-target') === targetId);
+    // 切换按钮状态
+    section.querySelectorAll('.sub-nav-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tab') === tabName);
     });
     
-    // 平滑滚动到目标位置，考虑sticky导航高度
-    const navHeight = 120; // 顶部导航 + 二级导航高度
-    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
-    
-    window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+    // 切换内容显示
+    section.querySelectorAll('.sub-tab-content').forEach(content => {
+        content.classList.toggle('active', content.getAttribute('data-tab') === tabName);
     });
 }
-window.scrollToSubSection = scrollToSubSection;
+window.switchSubTab = switchSubTab;
 
 // ==================== 能力Tab切换 ====================
 function switchAbilityTab(tabName) {

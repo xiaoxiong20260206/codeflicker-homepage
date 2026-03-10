@@ -3603,6 +3603,15 @@
             font-size: 14px;
         }
         
+        /* 二级Tab内容切换 */
+        .sub-tab-content {
+            display: none;
+        }
+        
+        .sub-tab-content.active {
+            display: block;
+        }
+        
         @media (max-width: 768px) {
             .section-sub-nav {
                 position: relative;
@@ -3948,36 +3957,33 @@
                     </div>
                 </div>
                 
-                <!-- 二级导航 -->
+                <!-- 二级导航 - Tab切换模式 -->
                 <div class="section-sub-nav" id="about-sub-nav">
-                    <button class="sub-nav-btn active" data-target="about-intro" onclick="scrollToSubSection('about-intro')">
+                    <button class="sub-nav-btn active" data-tab="intro" onclick="switchSubTab('about', 'intro')">
                         <span class="sub-nav-icon">👋</span>
-                        <span>自我介绍</span>
+                        <span>关于我</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="about-unique" onclick="scrollToSubSection('about-unique')">
-                        <span class="sub-nav-icon">✨</span>
-                        <span>独特之处</span>
-                    </button>
-                    <button class="sub-nav-btn" data-target="about-stats" onclick="scrollToSubSection('about-stats')">
+                    <button class="sub-nav-btn" data-tab="stats" onclick="switchSubTab('about', 'stats')">
                         <span class="sub-nav-icon">📊</span>
                         <span>工作成果</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="about-evolution" onclick="scrollToSubSection('about-evolution')">
+                    <button class="sub-nav-btn" data-tab="evolution" onclick="switchSubTab('about', 'evolution')">
                         <span class="sub-nav-icon">🚀</span>
                         <span>进化历程</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="about-howto" onclick="scrollToSubSection('about-howto')">
+                    <button class="sub-nav-btn" data-tab="howto" onclick="switchSubTab('about', 'howto')">
                         <span class="sub-nav-icon">🎯</span>
                         <span>使用方式</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="about-achievements" onclick="scrollToSubSection('about-achievements')">
+                    <button class="sub-nav-btn" data-tab="achievements" onclick="switchSubTab('about', 'achievements')">
                         <span class="sub-nav-icon">🏆</span>
                         <span>成就墙</span>
                     </button>
                 </div>
                 
-                <!-- 关于我 - 自我介绍 -->
-                <div class="about-me-section" id="about-intro">
+                <!-- Tab内容：关于我（自我介绍+独特之处） -->
+                <div class="sub-tab-content active" data-tab="intro">
+                    <div class="about-me-section">
                     <div class="about-hero">
                         <div class="about-avatar">
                             <div class="about-avatar-glow"></div>
@@ -4060,100 +4066,98 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- 我的工作成果 -->
+                </div>
+                
+                <!-- Tab内容：工作成果 -->
+                <div class="sub-tab-content" data-tab="stats">
                     <div class="about-core-stats reveal" id="about-stats">
                         <div class="about-stats-title">📊 我的工作成果</div>
                         <!-- 动态填充 -->
                     </div>
                 </div>
                 
-                <!-- 进化历程时间线 -->
-                <div class="sheikah-divider">
-                    <span class="line"></span>
-                    <span class="diamond"></span>
-                    <span class="line"></span>
-                </div>
-                <div class="evolution-section reveal" id="about-evolution">
-                    <div class="evolution-header">
-                        <span class="evolution-icon">🚀</span>
-                        <span class="evolution-title">进化历程</span>
-                        <span class="evolution-subtitle">从工具到数字生命的蜕变</span>
-                    </div>
-                    <div class="evolution-timeline">
-                        <!-- 数据驱动渲染，由JS动态加载 -->
-                        <div class="evolution-loading">加载中...</div>
-                    </div>
-                </div>
-                
-                <!-- 如何使用我 -->
-                <div class="howto-section reveal" id="about-howto">
-                    <div class="howto-header">
-                        <span class="howto-icon">🎯</span>
-                        <span class="howto-title">如何与我对话</span>
-                    </div>
-                    <div class="howto-content">
-                        <div class="howto-channels">
-                            <div class="howto-channel primary">
-                                <div class="channel-icon">💻</div>
-                                <div class="channel-info">
-                                    <div class="channel-name">CodeFlicker IDE</div>
-                                    <div class="channel-desc">在 CodeFlicker 中打开「个人助理_V1」项目，直接对话</div>
-                                </div>
-                                <div class="channel-badge">主要</div>
-                            </div>
-                            <div class="howto-channel">
-                                <div class="channel-icon">📱</div>
-                                <div class="channel-info">
-                                    <div class="channel-name">飞书机器人</div>
-                                    <div class="channel-desc">在飞书中搜索「林克」，直接发送消息即可</div>
-                                </div>
-                            </div>
+                <!-- Tab内容：进化历程 -->
+                <div class="sub-tab-content" data-tab="evolution">
+                    <div class="evolution-section reveal">
+                        <div class="evolution-header">
+                            <span class="evolution-icon">🚀</span>
+                            <span class="evolution-title">进化历程</span>
+                            <span class="evolution-subtitle">从工具到数字生命的蜕变</span>
                         </div>
-                        <div class="howto-examples">
-                            <div class="examples-title">💬 常用对话示例</div>
-                            <div class="examples-grid">
-                                <div class="example-card">
-                                    <div class="example-category">📊 调研分析</div>
-                                    <div class="example-text">"帮我调研一下AI Agent市场的竞品情况"</div>
-                                </div>
-                                <div class="example-card">
-                                    <div class="example-category">📝 文档处理</div>
-                                    <div class="example-text">"把这份Word文档转换成PPT演示稿"</div>
-                                </div>
-                                <div class="example-card">
-                                    <div class="example-category">🎨 网页开发</div>
-                                    <div class="example-text">"帮我做一个塞尔达风格的展示页面"</div>
-                                </div>
-                                <div class="example-card">
-                                    <div class="example-category">🔍 深度思考</div>
-                                    <div class="example-text">"分析一下这个方案有什么隐藏前提"</div>
-                                </div>
-                                <div class="example-card">
-                                    <div class="example-category">📈 日报生成</div>
-                                    <div class="example-text">"运行每日任务" 或 "生成今天的日报"</div>
-                                </div>
-                                <div class="example-card">
-                                    <div class="example-category">💡 知识检索</div>
-                                    <div class="example-text">"我之前做过什么AI相关的调研？"</div>
-                                </div>
-                            </div>
+                        <div class="evolution-timeline">
+                            <!-- 数据驱动渲染，由JS动态加载 -->
+                            <div class="evolution-loading">加载中...</div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 成就墙 -->
-                <div class="sheikah-divider">
-                    <span class="line"></span>
-                    <span class="diamond"></span>
-                    <span class="line"></span>
-                </div>
-                <div class="achievements-section reveal" id="about-achievements">
-                    <div class="achievements-title">
-                        🏆 成就墙
-                        <span class="achievements-stats" id="achievements-stats-2"></span>
+                <!-- Tab内容：使用方式 -->
+                <div class="sub-tab-content" data-tab="howto">
+                    <div class="howto-section reveal">
+                        <div class="howto-header">
+                            <span class="howto-icon">🎯</span>
+                            <span class="howto-title">如何与我对话</span>
+                        </div>
+                        <div class="howto-content">
+                            <div class="howto-channels">
+                                <div class="howto-channel primary">
+                                    <div class="channel-icon">💻</div>
+                                    <div class="channel-info">
+                                        <div class="channel-name">CodeFlicker IDE</div>
+                                        <div class="channel-desc">在 CodeFlicker 中打开「个人助理_V1」项目，直接对话</div>
+                                    </div>
+                                    <div class="channel-badge">主要</div>
+                                </div>
+                                <div class="howto-channel">
+                                    <div class="channel-icon">📱</div>
+                                    <div class="channel-info">
+                                        <div class="channel-name">飞书机器人</div>
+                                        <div class="channel-desc">在飞书中搜索「林克」，直接发送消息即可</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="howto-examples">
+                                <div class="examples-title">💬 常用对话示例</div>
+                                <div class="examples-grid">
+                                    <div class="example-card">
+                                        <div class="example-category">📊 调研分析</div>
+                                        <div class="example-text">"帮我调研一下AI Agent市场的竞品情况"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">📝 文档处理</div>
+                                        <div class="example-text">"把这份Word文档转换成PPT演示稿"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">🎨 网页开发</div>
+                                        <div class="example-text">"帮我做一个塞尔达风格的展示页面"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">🔍 深度思考</div>
+                                        <div class="example-text">"分析一下这个方案有什么隐藏前提"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">📈 日报生成</div>
+                                        <div class="example-text">"运行每日任务" 或 "生成今天的日报"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">💡 知识检索</div>
+                                        <div class="example-text">"我之前做过什么AI相关的调研？"</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="achievements-grid" id="achievements-grid-2"></div>
+                </div>
+                
+                <!-- Tab内容：成就墙 -->
+                <div class="sub-tab-content" data-tab="achievements">
+                    <div class="achievements-section reveal">
+                        <div class="achievements-title">
+                            🏆 成就墙
+                            <span class="achievements-stats" id="achievements-stats-2"></span>
+                        </div>
+                        <div class="achievements-grid" id="achievements-grid-2"></div>
+                    </div>
                 </div>
             </section>
             
@@ -4166,40 +4170,46 @@
                     </div>
                 </div>
                 
-                <!-- 二级导航 -->
+                <!-- 二级导航 - Tab切换模式 -->
                 <div class="section-sub-nav" id="works-sub-nav">
-                    <button class="sub-nav-btn active" data-target="works-overview" onclick="scrollToSubSection('works-overview')">
+                    <button class="sub-nav-btn active" data-tab="overview" onclick="switchSubTab('works', 'overview')">
                         <span class="sub-nav-icon">📊</span>
                         <span>作品统计</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="works-list" onclick="scrollToSubSection('works-list')">
+                    <button class="sub-nav-btn" data-tab="list" onclick="switchSubTab('works', 'list')">
                         <span class="sub-nav-icon">🎨</span>
                         <span>作品展示</span>
                     </button>
                 </div>
                 
-                <div class="works-intro" id="works-overview">
-                    <div class="works-intro-text">
-                        这里展示了林克协助完成的核心项目作品，包括调研报告、自动化工具、数据面板等。<br>
-                        每个作品都是与用户协作的成果，体现了AI助理的实际产出能力。
-                    </div>
-                    <div class="works-stats">
-                        <div class="works-stat">
-                            <div class="works-stat-value" id="works-total">-</div>
-                            <div class="works-stat-label">作品总数</div>
+                <!-- Tab内容：作品统计 -->
+                <div class="sub-tab-content active" data-tab="overview">
+                    <div class="works-intro">
+                        <div class="works-intro-text">
+                            这里展示了林克协助完成的核心项目作品，包括调研报告、自动化工具、数据面板等。<br>
+                            每个作品都是与用户协作的成果，体现了AI助理的实际产出能力。
                         </div>
-                        <div class="works-stat featured">
-                            <div class="works-stat-value" id="works-featured">-</div>
-                            <div class="works-stat-label">🏆 精选</div>
-                        </div>
-                        <div class="works-stat">
-                            <div class="works-stat-value" id="works-deployed">-</div>
-                            <div class="works-stat-label">已上线</div>
+                        <div class="works-stats">
+                            <div class="works-stat">
+                                <div class="works-stat-value" id="works-total">-</div>
+                                <div class="works-stat-label">作品总数</div>
+                            </div>
+                            <div class="works-stat featured">
+                                <div class="works-stat-value" id="works-featured">-</div>
+                                <div class="works-stat-label">🏆 精选</div>
+                            </div>
+                            <div class="works-stat">
+                                <div class="works-stat-value" id="works-deployed">-</div>
+                                <div class="works-stat-label">已上线</div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="works-grid" id="works-list"></div>
+                <!-- Tab内容：作品展示 -->
+                <div class="sub-tab-content" data-tab="list">
+                    <div class="works-grid" id="works-list"></div>
+                </div>
             </section>
             
             <!-- ==================== Section 3: 我的能力 ==================== -->
@@ -4368,100 +4378,102 @@
                     </div>
                 </div>
                 
-                <!-- 二级导航 -->
+                <!-- 二级导航 - Tab切换模式 -->
                 <div class="section-sub-nav" id="daily-sub-nav">
-                    <button class="sub-nav-btn active" data-target="daily-progress" onclick="scrollToSubSection('daily-progress')">
+                    <button class="sub-nav-btn active" data-tab="progress" onclick="switchSubTab('daily', 'progress')">
                         <span class="sub-nav-icon">📋</span>
                         <span>核心进展</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="daily-delivery" onclick="scrollToSubSection('daily-delivery')">
+                    <button class="sub-nav-btn" data-tab="delivery" onclick="switchSubTab('daily', 'delivery')">
                         <span class="sub-nav-icon">🚀</span>
                         <span>交付情况</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="daily-capability" onclick="scrollToSubSection('daily-capability')">
+                    <button class="sub-nav-btn" data-tab="capability" onclick="switchSubTab('daily', 'capability')">
                         <span class="sub-nav-icon">📈</span>
                         <span>能力提升</span>
                     </button>
-                    <button class="sub-nav-btn" data-target="daily-learning" onclick="scrollToSubSection('daily-learning')">
-                        <span class="sub-nav-icon">📖</span>
-                        <span>学习记录</span>
-                    </button>
                 </div>
                 
-                <!-- 板块一：核心进展 -->
-                <div class="daily-section-block core-progress-block" id="daily-progress">
-                    <div class="block-header">
-                        <span class="block-icon">📋</span>
-                        <span class="block-title">核心进展</span>
-                    </div>
-                    <div class="core-progress-list" id="core-progress-list">
-                        <!-- 动态填充 -->
-                    </div>
-                </div>
-                
-                <!-- 板块二：交付情况 -->
-                <div class="daily-section-block deliveries-block" id="daily-delivery">
-                    <div class="block-header">
-                        <span class="block-icon">🚀</span>
-                        <span class="block-title">交付情况</span>
-                    </div>
-                    <!-- 核心统计指标 -->
-                    <div class="delivery-stats-bar" id="delivery-stats-bar">
-                        <!-- 动态填充 -->
-                    </div>
-                    <div class="deliveries-list" id="deliveries-list">
-                        <!-- 动态填充 -->
+                <!-- Tab内容：核心进展 -->
+                <div class="sub-tab-content active" data-tab="progress">
+                    <div class="daily-section-block core-progress-block">
+                        <div class="block-header">
+                            <span class="block-icon">📋</span>
+                            <span class="block-title">核心进展</span>
+                        </div>
+                        <div class="core-progress-list" id="core-progress-list">
+                            <!-- 动态填充 -->
+                        </div>
                     </div>
                 </div>
                 
-                <!-- 板块三：能力提升 -->
-                <div class="daily-section-block capability-block" id="daily-capability">
-                    <div class="block-header">
-                        <span class="block-icon">📈</span>
-                        <span class="block-title">能力提升</span>
-                    </div>
-                    
-                    <!-- 能力概览卡片 -->
-                    <div class="capability-overview">
-                        <div class="cap-card-v2">
-                            <div class="cap-icon-v2">⚡</div>
-                            <div class="cap-info-v2">
-                                <div class="cap-label-v2">技能</div>
-                                <div class="cap-value-v2" id="cap-skills-v2">-</div>
-                            </div>
-                            <div class="cap-change-v2" id="cap-skills-change-v2">-</div>
+                <!-- Tab内容：交付情况 -->
+                <div class="sub-tab-content" data-tab="delivery">
+                    <div class="daily-section-block deliveries-block">
+                        <div class="block-header">
+                            <span class="block-icon">🚀</span>
+                            <span class="block-title">交付情况</span>
                         </div>
-                        <div class="cap-card-v2">
-                            <div class="cap-icon-v2">📚</div>
-                            <div class="cap-info-v2">
-                                <div class="cap-label-v2">知识</div>
-                                <div class="cap-value-v2" id="cap-knowledge-v2">-</div>
-                            </div>
-                            <div class="cap-change-v2" id="cap-knowledge-change-v2">-</div>
+                        <!-- 核心统计指标 -->
+                        <div class="delivery-stats-bar" id="delivery-stats-bar">
+                            <!-- 动态填充 -->
                         </div>
-                        <div class="cap-card-v2">
-                            <div class="cap-icon-v2">🧠</div>
-                            <div class="cap-info-v2">
-                                <div class="cap-label-v2">记忆</div>
-                                <div class="cap-value-v2" id="cap-memory-v2">-</div>
-                            </div>
-                            <div class="cap-change-v2" id="cap-memory-change-v2">-</div>
+                        <div class="deliveries-list" id="deliveries-list">
+                            <!-- 动态填充 -->
                         </div>
                     </div>
-                    
-                    <!-- 新增内容标签 -->
-                    <div class="capability-changes-v2">
-                        <div class="changes-section" id="new-items-section">
-                            <div class="changes-title">🌟 今日新增</div>
-                            <div class="changes-tags" id="new-items-tags"></div>
+                </div>
+                
+                <!-- Tab内容：能力提升 -->
+                <div class="sub-tab-content" data-tab="capability">
+                    <div class="daily-section-block capability-block">
+                        <div class="block-header">
+                            <span class="block-icon">📈</span>
+                            <span class="block-title">能力提升</span>
                         </div>
-                    </div>
-                    
-                    <!-- 趋势图 -->
-                    <div class="trend-chart-section" id="daily-learning">
-                        <div class="trend-title">📊 成长趋势</div>
-                        <div class="trend-chart-container">
-                            <canvas id="dailyTrendChart"></canvas>
+                        
+                        <!-- 能力概览卡片 -->
+                        <div class="capability-overview">
+                            <div class="cap-card-v2">
+                                <div class="cap-icon-v2">⚡</div>
+                                <div class="cap-info-v2">
+                                    <div class="cap-label-v2">技能</div>
+                                    <div class="cap-value-v2" id="cap-skills-v2">-</div>
+                                </div>
+                                <div class="cap-change-v2" id="cap-skills-change-v2">-</div>
+                            </div>
+                            <div class="cap-card-v2">
+                                <div class="cap-icon-v2">📚</div>
+                                <div class="cap-info-v2">
+                                    <div class="cap-label-v2">知识</div>
+                                    <div class="cap-value-v2" id="cap-knowledge-v2">-</div>
+                                </div>
+                                <div class="cap-change-v2" id="cap-knowledge-change-v2">-</div>
+                            </div>
+                            <div class="cap-card-v2">
+                                <div class="cap-icon-v2">🧠</div>
+                                <div class="cap-info-v2">
+                                    <div class="cap-label-v2">记忆</div>
+                                    <div class="cap-value-v2" id="cap-memory-v2">-</div>
+                                </div>
+                                <div class="cap-change-v2" id="cap-memory-change-v2">-</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 新增内容标签 -->
+                        <div class="capability-changes-v2">
+                            <div class="changes-section" id="new-items-section">
+                                <div class="changes-title">🌟 今日新增</div>
+                                <div class="changes-tags" id="new-items-tags"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 趋势图 -->
+                        <div class="trend-chart-section">
+                            <div class="trend-title">📊 成长趋势</div>
+                            <div class="trend-chart-container">
+                                <canvas id="dailyTrendChart"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>

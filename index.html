@@ -303,16 +303,29 @@
         }
         
         .tier-item.passed {
-            opacity: 0.5;
+            opacity: 0.6;
+        }
+        
+        .tier-item.passed .tier-name {
+            color: #4ade80;  /* 绿色表示已达成 */
         }
         
         .tier-item.active {
-            background: rgba(0, 212, 255, 0.15);
-            border: 1px solid rgba(0, 212, 255, 0.3);
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+        
+        .tier-item.active .tier-name {
+            color: #ffd700;  /* 金色表示当前 */
+            font-weight: 700;
         }
         
         .tier-item.future {
-            opacity: 0.4;
+            opacity: 0.5;
+        }
+        
+        .tier-item.future .tier-name {
+            color: rgba(200, 220, 240, 0.7);  /* 浅色表示未达成 */
         }
         
         .tier-status {
@@ -330,6 +343,10 @@
             color: var(--zelda-gold);
         }
         
+        .tier-item.future .tier-status {
+            color: rgba(200, 220, 240, 0.4);
+        }
+        
         .tier-icon {
             font-size: 14px;
         }
@@ -337,12 +354,13 @@
         .tier-name {
             flex: 1;
             font-weight: 600;
+            color: var(--text-light);  /* 默认白色 */
         }
         
         .tier-range {
             font-family: var(--font-mono);
             font-size: 10px;
-            color: rgba(200, 220, 240, 0.5);
+            color: rgba(200, 220, 240, 0.6);
         }
         
         .tier-popup-footer {
@@ -2611,82 +2629,101 @@
         .dimension-bars-v2 {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
             margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 212, 255, 0.1);
         }
         
         .dim-row {
-            display: flex;
+            display: grid;
+            grid-template-columns: 100px 1fr 40px;
             align-items: center;
             gap: var(--spacing-md);
             position: relative;
         }
         
         .dim-row.weakest {
-            background: rgba(251, 191, 36, 0.08);
+            background: rgba(251, 191, 36, 0.1);
             border-radius: var(--radius-sm);
-            padding: 6px 8px;
-            margin: -6px -8px;
+            padding: 8px 10px;
+            margin: -8px -10px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
         }
         
         .dim-row-label {
             display: flex;
             align-items: center;
-            gap: 6px;
-            width: 110px;
-            flex-shrink: 0;
+            gap: 8px;
         }
         
         .dim-row-icon {
-            font-size: 16px;
+            font-size: 18px;
         }
         
         .dim-row-name {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-light);
             white-space: nowrap;
+            font-weight: 500;
         }
         
         .dim-row-bar-wrap {
-            flex: 1;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0;
         }
         
         .dim-row-bar {
             flex: 1;
-            height: 10px;
-            background: rgba(0, 0, 0, 0.4);
-            border-radius: 5px;
+            height: 12px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 6px;
             overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .dim-row-fill {
             height: 100%;
             border-radius: 5px;
             transition: width 0.5s ease;
+            box-shadow: 0 0 8px currentColor;
         }
         
         .dim-row-score {
             font-family: var(--font-mono);
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 700;
-            min-width: 30px;
             text-align: right;
         }
         
         .dim-weak-tag {
             position: absolute;
-            right: -8px;
+            right: -60px;
             top: 50%;
             transform: translateY(-50%);
             font-size: 10px;
             color: #fbbf24;
-            background: rgba(251, 191, 36, 0.2);
-            padding: 2px 6px;
-            border-radius: 8px;
+            background: rgba(251, 191, 36, 0.25);
+            padding: 3px 8px;
+            border-radius: 10px;
             white-space: nowrap;
+            border: 1px solid rgba(251, 191, 36, 0.4);
+        }
+        
+        @media (max-width: 600px) {
+            .dim-row {
+                grid-template-columns: 90px 1fr 35px;
+            }
+            .dim-row-name {
+                font-size: 11px;
+            }
+            .dim-weak-tag {
+                right: -50px;
+                font-size: 9px;
+            }
         }
         
         /* ==================== 核心数据统计网格 ==================== */

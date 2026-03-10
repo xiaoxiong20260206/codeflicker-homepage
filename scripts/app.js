@@ -399,28 +399,27 @@ function renderTierRoadmap(currentLevel) {
         { name: '神话', minLevel: 91, maxLevel: 100, color: '#ffd700', icon: '✨' }
     ];
     
-    // 统计已达成、当前、未达成
-    let passedCount = 0;
-    let currentTier = null;
-    let futureCount = 0;
-    
-    tiers.forEach(tier => {
-        if (currentLevel > tier.maxLevel) passedCount++;
-        else if (currentLevel >= tier.minLevel && currentLevel <= tier.maxLevel) currentTier = tier;
-        else futureCount++;
-    });
-    
     return tiers.map(tier => {
         const isActive = currentLevel >= tier.minLevel && currentLevel <= tier.maxLevel;
         const isPassed = currentLevel > tier.maxLevel;
         const statusClass = isActive ? 'active' : (isPassed ? 'passed' : 'future');
         const statusIcon = isPassed ? '✓' : (isActive ? '◆' : '○');
         
+        // 根据状态设置颜色：已达成绿色，当前金色，未达成灰色
+        let nameColor;
+        if (isPassed) {
+            nameColor = '#4ade80';  // 绿色
+        } else if (isActive) {
+            nameColor = '#ffd700';  // 金色
+        } else {
+            nameColor = 'rgba(200, 220, 240, 0.7)';  // 灰白色
+        }
+        
         return `
             <div class="tier-item ${statusClass}">
                 <span class="tier-status">${statusIcon}</span>
                 <span class="tier-icon">${tier.icon}</span>
-                <span class="tier-name" style="color: ${isActive ? tier.color : 'inherit'}">${tier.name}</span>
+                <span class="tier-name" style="color: ${nameColor}">${tier.name}</span>
                 <span class="tier-range">Lv.${tier.minLevel}-${tier.maxLevel}</span>
             </div>
         `;

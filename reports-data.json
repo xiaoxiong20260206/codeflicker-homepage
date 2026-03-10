@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T17:05:20.171650",
+  "generatedAt": "2026-03-10T18:56:46.791511",
   "summary": {
     "totalDays": 15,
     "latestDate": "2026-03-10",
@@ -76,15 +76,79 @@
       "date": "2026-03-10",
       "dayOfWeek": "周二",
       "activeProjects": 7,
-      "totalCommits": 23,
-      "conversationCount": 6,
+      "totalCommits": 31,
+      "conversationCount": 10,
       "coreProgress": [
-        "💬 完成 6 个任务: 优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作, 升级数字员工平台v2版本，实现通知系统过滤功能和技能步骤展示功能...",
+        "💬 完成 10 个任务: 分析并解决技能版本误报问题，确保版本检查机制的准确性, 解决KIM Docs导入Markdown文档时外部URL图片无法正确渲染的问题...",
         "📁 项目成果: 网页更新 2 个",
-        "⚡ 新增能力: nano-pdf、skill-management，扩展任务处理范围",
-        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等7条，规范化开发实践"
+        "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量",
+        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等10条，优化任务执行流程"
       ],
       "deliveries": [
+        {
+          "title": "Skill Version Mismatch Analysis and Debugging",
+          "type": "conversation",
+          "goal": "分析并解决技能版本误报问题，确保版本检查机制的准确性",
+          "deliverables": [],
+          "process": [
+            "诊断发现3个P0版本漂移问题均为误报：1) meta-execution实际版本v1.9.2匹配记忆版本；2) 技能分层同步规则v3为通用经验不应绑定zelda-style版本；3) learn-fr..."
+          ],
+          "tags": [
+            "skill-management",
+            "version-control",
+            "debugging",
+            "meta-execution",
+            "false-positive"
+          ]
+        },
+        {
+          "title": "KIM Docs Image Embedding Issue Resolution",
+          "type": "conversation",
+          "goal": "解决KIM Docs导入Markdown文档时外部URL图片无法正确渲染的问题",
+          "deliverables": [],
+          "process": [
+            "发现KIM Docs不支持直接引用外部URL图片，需将图片改为本地相对路径引用。push.py脚本支持自动上传本地图片到Docs服务器，解决方案是修改Markdown中的图片引用方式为相对路径。"
+          ],
+          "tags": [
+            "markdown",
+            "image-embedding",
+            "docs-integration",
+            "file-paths",
+            "automation"
+          ]
+        },
+        {
+          "title": "Skill Tooltip Metrics Display Fix",
+          "type": "conversation",
+          "goal": "修复技能浮窗中指标显示逻辑，确保无论是否有数据都显示调用数、频率和成功率三个指标",
+          "deliverables": [],
+          "process": [
+            "发现原代码中当callCount=0时会隐藏整个指标区域，修改为始终显示三个指标（调用数/频率/成功率），无数据时显示0值。通过浏览器测试验证了修改后效果，有数据时显示实际值，无数据时显示0。"
+          ],
+          "tags": [
+            "javascript",
+            "frontend",
+            "metrics",
+            "tooltip",
+            "bugfix"
+          ]
+        },
+        {
+          "title": "CodeFlicker Skill Transfer System Design",
+          "type": "conversation",
+          "goal": "完成用户任务",
+          "deliverables": [],
+          "process": [
+            "完成了技能导出脚本`beiming_export.py`的开发与测试，修复了3个关键问题（缺少依赖文件、路径解析错误和同名技能冲突）。系统已成功测试导出64项技能到临时目录，并通过了语法检查、依赖导入..."
+          ],
+          "tags": [
+            "skill-transfer",
+            "knowledge-base",
+            "automation",
+            "python",
+            "backup"
+          ]
+        },
         {
           "title": "Codeflicker homepage UI optimization and tab functionality",
           "type": "conversation",
@@ -140,104 +204,15 @@
             "UI-optimization",
             "git"
           ]
-        },
-        {
-          "title": "AI Daily Report System Enhancement for Real-time Updates",
-          "type": "conversation",
-          "goal": "优化AI日报系统以确保实时新闻的准确性和时效性",
-          "deliverables": [],
-          "process": [
-            "针对日报系统误用旧闻的问题，新增了Step 0.5实时热点探针和强制日期锚定规则，并制定了时效性锚定通用原则。核心措施包括先锚定再搜索、强制时间词、区分重要与新鲜、宁缺毋滥四条铁律，已更新到相关ski..."
-          ],
-          "tags": [
-            "ai-daily-report",
-            "real-time-updates",
-            "search-optimization",
-            "time-anchoring",
-            "skill-enhancement"
-          ]
-        },
-        {
-          "title": "AI-powered Promotion Defense Coaching",
-          "type": "conversation",
-          "goal": "帮助优化晋升答辩提纲，通过AI提效向非技术评委展示研发效能的价值",
-          "deliverables": [],
-          "process": [
-            "创建了包含5张配图的Markdown文档，覆盖诊断评分卡、叙事结构优化、时间分配建议等模块。文档已上传至KIM Docs，包含结构化展示框架和针对E10到E11晋升的答辩优化策略。"
-          ],
-          "tags": [
-            "promotion",
-            "defense",
-            "coaching",
-            "AI",
-            "narrative"
-          ]
-        },
-        {
-          "title": "ai-daily-report",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "index.html",
-              "type": "page",
-              "url": "https://my-ai-research-lab.github.io/ai-daily-report"
-            },
-            {
-              "name": "2026-03-03.md",
-              "type": "document",
-              "url": ""
-            },
-            {
-              "name": "2026-03-03.html",
-              "type": "page",
-              "url": "https://my-ai-research-lab.github.io/ai-daily-report"
-            }
-          ],
-          "process": [
-            "网页更新 2 个",
-            "文档完善 1 份"
-          ],
-          "commitCount": 0,
-          "fileChangeCount": 3,
-          "deployUrl": "https://my-ai-research-lab.github.io/ai-daily-report"
-        },
-        {
-          "title": "Knowledge",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "metrics-log.md",
-              "type": "document",
-              "url": ""
-            },
-            {
-              "name": "proactive-agent.md",
-              "type": "document",
-              "url": ""
-            },
-            {
-              "name": "xixingdafa-2026-03-10.md",
-              "type": "document",
-              "url": ""
-            }
-          ],
-          "process": [
-            "文档完善 3 份"
-          ],
-          "commitCount": 0,
-          "fileChangeCount": 3,
-          "deployUrl": null
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 68,
+        "skillCount": 71,
         "knowledgeCount": 176,
-        "memoryCount": 87,
-        "skillChange": 6,
+        "memoryCount": 90,
+        "skillChange": 9,
         "knowledgeChange": 2,
-        "memoryChange": 7,
+        "memoryChange": 10,
         "newSkills": [
           {
             "name": "nano-pdf",
@@ -248,8 +223,12 @@
             "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\""
           },
           {
+            "name": "beiming-shengong",
+            "description": "\"北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、"
+          },
+          {
             "name": "ai-image-generator",
-            "description": "This skill should be used when the user asks to \"generate im"
+            "description": "This skill should be used ONLY when the user explicitly asks"
           },
           {
             "name": "openai-whisper",
@@ -276,8 +255,16 @@
             "description": "This skill should be used when the user mentions \"小无相功\", \"自进"
           },
           {
+            "name": "onboarding-guide",
+            "description": "\"新手入门引导技能。当用户说'我该怎么用你'、'你能做什么'、'使用指南'、'帮助'、'新手入门'、'快速上手'、'ho"
+          },
+          {
             "name": "debug-pro",
             "description": "Systematic debugging methodology and language-specific debug"
+          },
+          {
+            "name": "personal-homepage-template",
+            "description": "\"个人首页模板技能。当用户说'生成我的首页'、'创建角色面板'、'我要一个像AI助手那样的首页'、'generate my "
           },
           {
             "name": "capability-evolver",
@@ -350,6 +337,10 @@
             "description": "知识库优化元能力（含执行）。当用户说\"知识优化\"、\"检查知识库\"、\"知识库健康度\"、\"整理知识\"、\"knowledge "
           },
           {
+            "name": "ks-kim-docs-shuttle",
+            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+          },
+          {
             "name": "knowledge-acquisition-meta",
             "description": "This skill should be used when the user wants to \"learn a ne"
           }
@@ -392,11 +383,23 @@
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "内功修炼P0跳过必须记录判断理由（v2：含误报识别）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "neigong_check.py 版本漂移检测逻辑存在三类误报",
+            "category": "common_pitfalls_experience"
+          },
+          {
             "title": "AI日报时效性锚点+时间窗口双重验证经验（v4.0）",
             "category": "common_pitfalls_experience"
           },
           {
             "title": "核心任务完成≠流程完成陷阱（深度调研/日报/周报通用）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM Doc图片嵌入：必须用本地路径，外部URL不渲染",
             "category": "common_pitfalls_experience"
           }
         ],
@@ -412,16 +415,16 @@
         ],
         "trend": "growing"
       },
-      "skillCount": 68,
+      "skillCount": 71,
       "knowledgeCount": 176,
-      "memoryCount": 87,
-      "skillChange": 6,
+      "memoryCount": 90,
+      "skillChange": 9,
       "knowledgeChange": 2,
-      "memoryChange": 7,
+      "memoryChange": 10,
       "highlights": [
-        "💬 完成 6 个任务: 优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作, 升级数字员工平台v2版本，实现通知系统过滤功能和技能步骤展示功能...",
+        "💬 完成 10 个任务: 分析并解决技能版本误报问题，确保版本检查机制的准确性, 解决KIM Docs导入Markdown文档时外部URL图片无法正确渲染的问题...",
         "📁 项目成果: 网页更新 2 个",
-        "⚡ 新增能力: nano-pdf、skill-management，扩展任务处理范围"
+        "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量"
       ]
     },
     {

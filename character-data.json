@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T18:50:10.934837",
+  "generatedAt": "2026-03-10T18:57:29.564307",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,20 +15,20 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 368020,
-    "expProgress": 55.4,
+    "totalExp": 368620,
+    "expProgress": 57.2,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
       "understanding": 59.0,
-      "execution": 74.5,
+      "execution": 75.1,
       "skillDepth": 80.6,
       "thinkingDepth": 63.8,
       "knowledgeBreadth": 89.4
     },
     "debug": {
       "metrics": {
-        "ftr": 71.2,
+        "ftr": 72.5,
         "sdr": 72.0,
         "thi": 83.6,
         "mdv": 0.61,
@@ -39,7 +39,7 @@
       "skillTotalValue": 4810.6,
       "expBreakdown": {
         "understanding": 59000,
-        "execution": 74500,
+        "execution": 75099,
         "skill": 120899,
         "thinking": 51040,
         "knowledge": 62580
@@ -2396,7 +2396,7 @@
           "thinking_pattern"
         ],
         "fileCount": 10,
-        "sizeKB": 116.4,
+        "sizeKB": 116.5,
         "heatLevel": 5,
         "recentCount": 10
       },
@@ -2501,13 +2501,13 @@
               "thinking_pattern"
             ],
             "fileCount": 10,
-            "sizeKB": 116.4,
+            "sizeKB": 116.5,
             "heatLevel": 5,
             "recentCount": 10
           }
         },
         "totalFiles": 141,
-        "totalSizeKB": 979.2
+        "totalSizeKB": 979.3
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -2641,7 +2641,7 @@
       }
     },
     "totalFiles": 233,
-    "totalSizeKB": 2467.0
+    "totalSizeKB": 2467.1
   },
   "memories": {
     "items": [
@@ -2852,6 +2852,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-06",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "KIM Doc图片嵌入：必须用本地路径，外部URL不渲染",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "问题现象 KIM Doc导入Markdown后，图片显示为文本链接而非图片。 根因 KIM Doc导入时不会拉取外部URL图片，只会把...",
+        "keywords": [
+          "KIM Doc",
+          "图片",
+          "嵌入",
+          "外部URL",
+          "本地路径"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-10",
         "source": "用户显式记录"
       },
       {
@@ -4328,7 +4347,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 82,
+    "total": 83,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -4373,7 +4392,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 47,
+        "count": 48,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -5750,9 +5769,28 @@
                 "importance": 5,
                 "updatedAt": "2026-03-10",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "KIM Doc图片嵌入：必须用本地路径，外部URL不渲染",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "问题现象 KIM Doc导入Markdown后，图片显示为文本链接而非图片。 根因 KIM Doc导入时不会拉取外部URL图片，只会把...",
+                "keywords": [
+                  "KIM Doc",
+                  "图片",
+                  "嵌入",
+                  "外部URL",
+                  "本地路径"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-10",
+                "source": "用户显式记录"
               }
             ],
-            "count": 8
+            "count": 9
           },
           "文档处理": {
             "icon": "📄",
@@ -6080,7 +6118,7 @@
             "count": 2
           }
         },
-        "count": 49
+        "count": 50
       }
     }
   },
@@ -6143,7 +6181,7 @@
       69,
       123,
       86,
-      89
+      90
     ]
   },
   "achievements": [
@@ -6301,8 +6339,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 93,
-      "progressText": "执行效率 74/80",
+      "progress": 94,
+      "progressText": "执行效率 75/80",
       "date": "???"
     },
     {

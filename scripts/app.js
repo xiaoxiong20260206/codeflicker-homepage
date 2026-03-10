@@ -1201,7 +1201,9 @@ function formatChange(change) {
     return { text: '-', class: 'none' };
 }
 
-// ==================== 我的作品Section ====================
+// ==================== 我的作品Section v2.0 (按分类二级Tab) ====================
+let currentWorksTab = 'all';
+
 function renderWorksSection() {
     const projects = AppState.projectsData;
     
@@ -1210,18 +1212,133 @@ function renderWorksSection() {
         return;
     }
     
-    // 统计数据
+    // 更新顶部统计
     const worksTotal = document.getElementById('works-total');
     const worksDeployed = document.getElementById('works-deployed');
     const worksFeatured = document.getElementById('works-featured');
+    const worksTotalInline = document.getElementById('works-total-inline');
+    const worksDeployedInline = document.getElementById('works-deployed-inline');
+    const worksFeaturedInline = document.getElementById('works-featured-inline');
     
     if (worksTotal) worksTotal.textContent = projects.summary.total;
     if (worksDeployed) worksDeployed.textContent = projects.summary.deployed;
     if (worksFeatured) worksFeatured.textContent = projects.summary.featured || 0;
+    if (worksTotalInline) worksTotalInline.textContent = projects.summary.total;
+    if (worksDeployedInline) worksDeployedInline.textContent = projects.summary.deployed;
+    if (worksFeaturedInline) worksFeaturedInline.textContent = projects.summary.featured || 0;
     
-    // 作品树形分类展示
-    renderWorksTree(projects);
+    // 更新分类Tab计数
+    const categories = projects.categories || {};
+    for (const [catId, catInfo] of Object.entries(categories)) {
+        const countEl = document.getElementById('works-count-' + catId);
+        if (countEl) countEl.textContent = catInfo.count || 0;
+    }
+    
+    // 渲染当前选中的Tab内容
+    renderWorksByCategory(projects, currentWorksTab);
 }
+
+// 按分类渲染作品
+function renderWorksByCategory(projects, category) {
+    const container = document.getElementById('works-list');
+    if (!container) return;
+    
+    if (!projects?.projects || projects.projects.length === 0) {
+        container.innerHTML = '<div class="no-data">暂无作品数据</div>';
+        return;
+    }
+    
+    let allProjects = projects.projects;
+    
+    // 过滤分类
+    if (category !== 'all') {
+        allProjects = allProjects.filter(p => p.category === category);
+    }
+    
+    if (allProjects.length === 0) {
+        container.innerHTML = '<div class="no-data">该分类暂无作品</div>';
+        return;
+    }
+    
+    // 精选项目排前
+    allProjects = [...allProjects].sort((a, b) => {
+        const aFeatured = a.quality?.level === 'featured' ? 1 : 0;
+        const bFeatured = b.quality?.level === 'featured' ? 1 : 0;
+        return bFeatured - aFeatured;
+    });
+    
+    // 将项目数据存入dataMap供tooltip使用
+    allProjects.forEach((p, idx) => {
+        const projectId = 'project-' + idx;
+        AppState.dataMap[projectId] = { ...p, type: 'project' };
+    });
+    
+    // 计算相对时间
+    const getRelativeTime = (dateStr) => {
+        if (!dateStr) return '';
+        const date = new Date(dateStr);
+        const now = new Date();
+        const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+        if (diff === 0) return '今天更新';
+        if (diff === 1) return '昨天更新';
+        if (diff < 7) return `${diff}天前更新`;
+        if (diff < 30) return `${Math.floor(diff / 7)}周前更新`;
+        return `${Math.floor(diff / 30)}月前更新`;
+    };
+    
+    // 生成作品卡片网格
+    const cardsHtml = allProjects.map((p, idx) => {
+        const projectId = 'project-' + idx;
+        const si = getStatusInfo(p.status);
+        const statusClass = si.cls;
+        const statusText = si.text;
+        const quality = p.quality || {};
+        const qualityLevel = quality.level || 'basic';
+        const qualityBadgeHtml = getQualityBadgeHtml(qualityLevel);
+        const relativeTime = getRelativeTime(p.completedAt);
+        const updateTimeHtml = relativeTime ? `<span class="work-update-time">${relativeTime}</span>` : '';
+        const linkHtml = p.url ? `<a href="${p.url}" target="_blank" class="work-link">🔗 访问</a>` : '';
+        
+        return `
+            <div class="work-card-mini ${statusClass} ${qualityLevel === 'featured' ? 'featured' : ''}" 
+                 onmouseenter="showProjectTooltip(event, '${projectId}')" 
+                 onmouseleave="hideTooltip()">
+                ${qualityBadgeHtml}
+                <div class="work-card-content">
+                    <span class="work-icon-mini">${p.icon}</span>
+                    <div class="work-info-mini">
+                        <div class="work-name-mini">${p.name}</div>
+                        <div class="work-meta-mini">
+                            <span class="work-status-mini ${statusClass}">${statusText}</span>
+                            ${updateTimeHtml}
+                        </div>
+                    </div>
+                    ${linkHtml}
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    container.innerHTML = `<div class="works-cards-grid">${cardsHtml}</div>`;
+    console.log('Works rendered:', allProjects.length, 'projects in category:', category);
+}
+
+// 作品分类Tab切换
+function switchWorksTab(category) {
+    currentWorksTab = category;
+    
+    // 更新Tab按钮状态
+    document.querySelectorAll('.works-category-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-works-tab') === category);
+    });
+    
+    // 重新渲染作品
+    const projects = AppState.projectsData;
+    if (projects) {
+        renderWorksByCategory(projects, category);
+    }
+}
+window.switchWorksTab = switchWorksTab;
 
 // P0/P1优化: 作品树形分类展示
 function renderWorksTree(projects) {

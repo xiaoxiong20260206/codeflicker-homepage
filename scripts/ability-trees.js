@@ -154,7 +154,7 @@ function renderSkillTechTree(container, skills) {
     var reviewSkill = engineSkillMap['learn-from-mistakes'];
     var cultivateSkill = engineSkillMap['neigong-cultivation'];
     var metaExecSkill = engineSkillMap['meta-execution'];
-    var toolNames = ['memory-hygiene', 'skill-architecture', 'knowledge-curator'];
+    var toolNames = ['memory-hygiene', 'skill-management', 'knowledge-curator'];
     var toolSkills = [];
     for (var t = 0; t < toolNames.length; t++) {
         if (engineSkillMap[toolNames[t]]) toolSkills.push(engineSkillMap[toolNames[t]]);

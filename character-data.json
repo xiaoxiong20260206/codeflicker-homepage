@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T17:28:18.741918",
+  "generatedAt": "2026-03-10T17:35:02.023236",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,14 +15,14 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 365170,
-    "expProgress": 46.8,
+    "totalExp": 367720,
+    "expProgress": 54.5,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
       "understanding": 59.0,
       "execution": 74.5,
-      "skillDepth": 78.7,
+      "skillDepth": 80.4,
       "thinkingDepth": 63.8,
       "knowledgeBreadth": 89.4
     },
@@ -34,13 +34,13 @@
         "mdv": 0.61,
         "ctr": 2.2
       },
-      "activeSkills": 45,
-      "highLevelSkills": 36,
-      "skillTotalValue": 4709.2,
+      "activeSkills": 46,
+      "highLevelSkills": 37,
+      "skillTotalValue": 4759.9,
       "expBreakdown": {
         "understanding": 59000,
         "execution": 74500,
-        "skill": 118050,
+        "skill": 120600,
         "thinking": 51040,
         "knowledge": 62580
       }
@@ -148,6 +148,19 @@
             "successRate": 95
           },
           {
+            "name": "skill-management",
+            "displayName": "技能优化",
+            "shortName": "技能优化",
+            "source": "AI核心能力",
+            "level": 4,
+            "exp": 70,
+            "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
+            "lastUpdated": "2026-03-10",
+            "callCount": 18,
+            "frequency": "0.1次/天",
+            "successRate": 94
+          },
+          {
             "name": "xixingdafa",
             "displayName": "吸星大法",
             "shortName": "吸星大法",
@@ -155,19 +168,6 @@
             "level": 1,
             "exp": 10,
             "description": "外部精华吸收：搜索→评估→研读→提取→融入→清理，化他人内功为己用",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
-            "name": "skill-management",
-            "displayName": "skill-management",
-            "shortName": "",
-            "source": "codeflicker",
-            "level": 1,
-            "exp": 10,
-            "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1: 全量扫描+深度分析+架构重构+批量优化）。",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
@@ -188,7 +188,7 @@
           }
         ],
         "count": 10,
-        "avgLevel": 3.7
+        "avgLevel": 4.0
       },
       "🧠 思维方法": {
         "role": "cognitive",
@@ -1193,6 +1193,19 @@
                 "successRate": 95
               },
               {
+                "name": "skill-management",
+                "displayName": "技能优化",
+                "shortName": "技能优化",
+                "source": "AI核心能力",
+                "level": 4,
+                "exp": 70,
+                "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
+                "lastUpdated": "2026-03-10",
+                "callCount": 18,
+                "frequency": "0.1次/天",
+                "successRate": 94
+              },
+              {
                 "name": "xixingdafa",
                 "displayName": "吸星大法",
                 "shortName": "吸星大法",
@@ -1200,19 +1213,6 @@
                 "level": 1,
                 "exp": 10,
                 "description": "外部精华吸收：搜索→评估→研读→提取→融入→清理，化他人内功为己用",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
-                "name": "skill-management",
-                "displayName": "skill-management",
-                "shortName": "",
-                "source": "codeflicker",
-                "level": 1,
-                "exp": 10,
-                "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1: 全量扫描+深度分析+架构重构+批量优化）。",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
@@ -1233,7 +1233,7 @@
               }
             ],
             "count": 10,
-            "avgLevel": 3.7
+            "avgLevel": 4.0
           },
           "🧠 思维方法": {
             "role": "cognitive",
@@ -1348,7 +1348,7 @@
           }
         },
         "count": 17,
-        "avgLevel": 3.7
+        "avgLevel": 3.9
       },
       "domain_pack": {
         "name": "🎯 领域能力层",
@@ -2180,7 +2180,7 @@
         },
         {
           "from": "neigong-cultivation",
-          "to": "skill-architecture",
+          "to": "skill-management",
           "label": "深度优化",
           "type": "delegate"
         },
@@ -2222,7 +2222,7 @@
           "role": "深度工具",
           "tier": "tool"
         },
-        "skill-architecture": {
+        "skill-management": {
           "role": "深度工具",
           "tier": "tool"
         },
@@ -6088,7 +6088,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 36/10",
+      "progressText": "4星+技能 37/10",
       "date": "2026-03-10"
     },
     {

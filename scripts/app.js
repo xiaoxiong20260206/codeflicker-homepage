@@ -299,7 +299,7 @@ function renderAboutSection() {
 
 // 了解我 - 核心统计指标面板 v3.1（五维能力简洁版）
 function renderAboutCoreStats(data) {
-    const container = document.getElementById('about-core-stats');
+    const container = document.getElementById('about-stats');
     if (!container) return;
     
     const { character: char, skills, knowledge, memories, projects, runDays, achievements } = data;
@@ -1321,47 +1321,33 @@ function renderWorksTree(projects) {
         `;
     };
     
-    // 生成树形结构HTML
+    // 生成树形结构HTML（所有项目按分类，精选不单独分组）
     let treeHtml = '<div class="works-tree">';
     
-    // P0: 精选置顶区域
-    const featuredProjects = allProjects.filter(p => p.quality?.level === 'featured');
-    if (featuredProjects.length > 0) {
-        treeHtml += `
-            <div class="works-tree-section featured-section">
-                <div class="tree-branch-header featured">
-                    <span class="branch-icon">🏆</span>
-                    <span class="branch-name">精选作品</span>
-                    <span class="branch-count">${featuredProjects.length}</span>
-                </div>
-                <div class="tree-branch-content featured-content">
-                    ${featuredProjects.map((p, idx) => renderProjectCard(p, allProjects.indexOf(p))).join('')}
-                </div>
-            </div>
-        `;
-    }
-    
-    // 按分类展示（横向树形）
+    // 按分类展示（所有项目包括精选都放入对应分类）
     categoryOrder.forEach(catId => {
         const catProjects = grouped[catId];
         if (!catProjects || catProjects.length === 0) return;
         
         const config = categoryConfig[catId] || { name: catId, color: '#64748b', desc: '' };
         
-        // 排除已在精选区域显示的
-        const nonFeatured = catProjects.filter(p => p.quality?.level !== 'featured');
-        if (nonFeatured.length === 0) return;
+        // 精选项目排在前面
+        const sortedProjects = [...catProjects].sort((a, b) => {
+            const aFeatured = a.quality?.level === 'featured' ? 1 : 0;
+            const bFeatured = b.quality?.level === 'featured' ? 1 : 0;
+            return bFeatured - aFeatured;
+        });
         
         treeHtml += `
             <div class="works-tree-section">
                 <div class="tree-branch-header" style="--branch-color: ${config.color}">
                     <span class="branch-icon">${config.name.split(' ')[0]}</span>
                     <span class="branch-name">${config.name.split(' ').slice(1).join(' ')}</span>
-                    <span class="branch-count">${nonFeatured.length}</span>
+                    <span class="branch-count">${sortedProjects.length}</span>
                     <span class="branch-desc">${config.desc}</span>
                 </div>
                 <div class="tree-branch-content">
-                    ${nonFeatured.map((p) => renderProjectCard(p, allProjects.indexOf(p))).join('')}
+                    ${sortedProjects.map((p) => renderProjectCard(p, allProjects.indexOf(p))).join('')}
                 </div>
             </div>
         `;
@@ -1387,21 +1373,28 @@ function renderWorksGrid(projects) {
         return;
     }
     
-    // 按质量分数排序（精选优先），然后按部署状态
-    const sortedProjects = [...projects.projects].sort((a, b) => {
-        // 优先按质量分数排序
-        const scoreA = a.quality?.score || 0;
-        const scoreB = b.quality?.score || 0;
-        if (scoreA !== scoreB) return scoreB - scoreA;
-        
-        // 然后按部署状态
-        if (a.status === 'deployed' && b.status !== 'deployed') return -1;
-        if (a.status !== 'deployed' && b.status === 'deployed') return 1;
-        return 0;
+    // 按类型分组
+    const typeMap = {
+        'research': { icon: '🔬', name: '调研类', projects: [] },
+        'tool': { icon: '🛠️', name: '工具类', projects: [] },
+        'document': { icon: '📝', name: '文档类', projects: [] },
+        'website': { icon: '🌐', name: '网页类', projects: [] },
+        'automation': { icon: '⚡', name: '自动化', projects: [] },
+        'other': { icon: '📦', name: '其他', projects: [] }
+    };
+    
+    // 分组项目
+    projects.projects.forEach(p => {
+        const type = p.type || 'other';
+        if (typeMap[type]) {
+            typeMap[type].projects.push(p);
+        } else {
+            typeMap['other'].projects.push(p);
+        }
     });
     
     // 将项目数据存入dataMap供tooltip使用
-    sortedProjects.forEach((p, idx) => {
+    projects.projects.forEach((p, idx) => {
         const projectId = 'project-' + idx;
         AppState.dataMap[projectId] = {
             ...p,
@@ -1409,78 +1402,52 @@ function renderWorksGrid(projects) {
         };
     });
     
-    // 只展示前12个作品（精选优先）
-    const displayProjects = sortedProjects.slice(0, 12);
-    
-    container.innerHTML = displayProjects.map((p, idx) => {
-        const projectId = 'project-' + idx;
-        const si = getStatusInfo(p.status);
-        const statusClass = si.cls;
-        const statusText = si.text;
-        
-        const techTags = (p.techStack || []).slice(0, 4).map(t => `<span class="tech-tag">${t}</span>`).join('');
-        
-        const linkHtml = p.url 
-            ? `<a href="${p.url}" target="_blank" class="work-link">🔗 访问作品</a>`
-            : '';
-        
-        // 质量标签
-        const quality = p.quality || {};
-        const qualityLevel = quality.level || 'basic';
-        const qualityScore = quality.score || 0;
-        const qualityTags = quality.tags || [];
-        
-        // 精选标记
-        let qualityBadgeHtml = getQualityBadgeHtml(qualityLevel);
-        
-        // 特征标签（最多显示3个）
-        const featureTags = qualityTags.filter(t => !t.includes('精选') && !t.includes('优秀')).slice(0, 3);
-        const featureTagsHtml = featureTags.map(t => `<span class="feature-tag">${t}</span>`).join('');
-        
-        // 截图预览
-        let screenshotHtml = '';
-        if (p.screenshot) {
-            screenshotHtml = `
-                <div class="work-screenshot">
-                    <img src="${p.screenshot}" alt="${p.name} 预览" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\\'work-screenshot-placeholder\\'><span class=\\'icon\\'>${p.icon}</span><span>暂无预览</span></div>'">
-                </div>
-            `;
-        } else {
-            screenshotHtml = `
-                <div class="work-screenshot">
-                    <div class="work-screenshot-placeholder">
-                        <span class="icon">${p.icon}</span>
-                        <span>暂无预览</span>
-                    </div>
-                </div>
-            `;
-        }
-        
-        return `
-            <div class="work-card ${statusClass} ${qualityLevel === 'featured' ? 'featured' : ''}" 
-                 onmouseenter="showProjectTooltip(event, '${projectId}')" 
-                 onmouseleave="hideTooltip()">
-                ${qualityBadgeHtml}
-                ${screenshotHtml}
-                <div class="work-body">
-                    <div class="work-header">
+    // 生成分类HTML
+    let projectIdx = 0;
+    const categoriesHtml = Object.entries(typeMap)
+        .filter(([_, cat]) => cat.projects.length > 0)
+        .map(([typeKey, cat]) => {
+            const projectsHtml = cat.projects.map(p => {
+                const projectId = 'project-' + projectIdx++;
+                const si = getStatusInfo(p.status);
+                const statusClass = si.cls;
+                const statusText = si.text;
+                
+                const quality = p.quality || {};
+                const qualityLevel = quality.level || 'basic';
+                let qualityBadgeHtml = getQualityBadgeHtml(qualityLevel);
+                
+                return `
+                    <div class="work-card-mini ${statusClass}" 
+                         onmouseenter="showProjectTooltip(event, '${projectId}')" 
+                         onmouseleave="hideTooltip()">
+                        ${qualityLevel === 'featured' ? qualityBadgeHtml : ''}
                         <span class="work-icon">${p.icon}</span>
-                        <div class="work-info">
-                            <div class="work-name">${p.name}</div>
-                            <div class="work-subtitle">${p.subtitle || ''}</div>
+                        <div class="work-info-mini">
+                            <div class="work-name-mini">${p.name}</div>
+                            <div class="work-subtitle-mini">${p.subtitle || ''}</div>
                         </div>
-                        <span class="work-status ${statusClass}">${statusText}</span>
+                        <span class="work-status-mini ${statusClass}">${statusText}</span>
+                        ${p.url ? `<a href="${p.url}" target="_blank" class="work-link-mini">🔗</a>` : ''}
                     </div>
-                    <div class="work-desc">${p.goal || ''}</div>
-                    ${featureTagsHtml ? `<div class="work-features">${featureTagsHtml}</div>` : ''}
-                    <div class="work-footer">
-                        <div class="work-tech">${techTags}</div>
-                        ${linkHtml}
+                `;
+            }).join('');
+            
+            return `
+                <div class="works-category">
+                    <div class="works-category-header">
+                        <span class="category-icon">${cat.icon}</span>
+                        <span class="category-name">${cat.name}</span>
+                        <span class="category-count">${cat.projects.length}</span>
+                    </div>
+                    <div class="works-category-list">
+                        ${projectsHtml}
                     </div>
                 </div>
-            </div>
-        `;
-    }).join('');
+            `;
+        }).join('');
+    
+    container.innerHTML = categoriesHtml || '<div class="no-data">暂无作品数据</div>';
 }
 
 // ==================== 我的能力Section（合并技能树+关于我） ====================

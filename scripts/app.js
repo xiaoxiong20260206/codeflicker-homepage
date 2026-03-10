@@ -2376,11 +2376,11 @@ function showTreeTooltip(event, id, type) {
         var metricLabels = tooltip.querySelectorAll('.tip-metric-label');
         var hasMetrics = false;
         
-        if (type === 'skill' && data.callCount > 0) {
-            // 技能：调用 | 频率 | 成功率
-            tooltip.querySelector('.tip-call-count').textContent = data.callCount;
-            tooltip.querySelector('.tip-frequency').textContent = data.frequency || '-';
-            tooltip.querySelector('.tip-success-rate').textContent = data.successRate ? data.successRate + '%' : '-';
+        if (type === 'skill') {
+            // 技能：调用 | 频率 | 成功率 — 始终显示，无数据时显示默认值
+            tooltip.querySelector('.tip-call-count').textContent = data.callCount || 0;
+            tooltip.querySelector('.tip-frequency').textContent = data.frequency || '0次/周';
+            tooltip.querySelector('.tip-success-rate').textContent = (data.successRate !== undefined && data.successRate !== null) ? data.successRate + '%' : '0%';
             if (metricLabels[0]) metricLabels[0].textContent = '调用';
             if (metricLabels[1]) metricLabels[1].textContent = '频率';
             if (metricLabels[2]) metricLabels[2].textContent = '成功率';

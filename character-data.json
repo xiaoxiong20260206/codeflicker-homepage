@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T18:27:37.156408",
+  "generatedAt": "2026-03-10T18:50:10.934837",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -2912,6 +2912,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "neigong_check.py 版本漂移检测逻辑存在三类误报",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "neigong_check.py 版本漂移检测逻辑错误 问题 neigong_check.py v4.0 的版本漂移检测存在三个逻辑错误，导...",
+        "keywords": [
+          "neigong_check",
+          "版本漂移",
+          "误报",
+          "检测逻辑",
+          "P0"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-10",
+        "source": "用户显式记录"
+      },
+      {
         "title": "pathlib rglob/glob 不跟踪软链接（symlinks）导致数据丢失",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -3099,6 +3118,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-09",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "内功修炼P0跳过必须记录判断理由（v2：含误报识别）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "内功修炼P0问题跳过必须记录理由（v2：含误报识别） 问题 neigong_check.py 报告的P0问题被跳过，但没有记录判断理由，导致...",
+        "keywords": [
+          "P0跳过",
+          "判断理由",
+          "内功修炼",
+          "neigong_check",
+          "版本漂移"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-10",
         "source": "用户显式记录"
       },
       {
@@ -3914,25 +3952,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "内功修炼P0跳过必须记录判断理由",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "内功修炼P0问题跳过必须记录理由 问题 neigong_check.py 报告的P0问题被跳过，但没有记录判断理由，导致： 1. 无法区分\"...",
-        "keywords": [
-          "P0跳过",
-          "判断理由",
-          "内功修炼",
-          "neigong_check",
-          "版本漂移"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-10",
-        "source": "用户显式记录"
-      },
-      {
         "title": "创作类任务的前置确认原则",
         "category": "task_flow_experience",
         "categoryLabel": "做事方法",
@@ -4309,7 +4328,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 81,
+    "total": 82,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -4354,7 +4373,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 46,
+        "count": 47,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -5693,9 +5712,47 @@
                 "importance": 5,
                 "updatedAt": "2026-03-10",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "内功修炼P0跳过必须记录判断理由（v2：含误报识别）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "内功修炼P0问题跳过必须记录理由（v2：含误报识别） 问题 neigong_check.py 报告的P0问题被跳过，但没有记录判断理由，导致...",
+                "keywords": [
+                  "P0跳过",
+                  "判断理由",
+                  "内功修炼",
+                  "neigong_check",
+                  "版本漂移"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-10",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "neigong_check.py 版本漂移检测逻辑存在三类误报",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "发布部署",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🚀",
+                "color": "#4ade80",
+                "description": "neigong_check.py 版本漂移检测逻辑错误 问题 neigong_check.py v4.0 的版本漂移检测存在三个逻辑错误，导...",
+                "keywords": [
+                  "neigong_check",
+                  "版本漂移",
+                  "误报",
+                  "检测逻辑",
+                  "P0"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-10",
+                "source": "用户显式记录"
               }
             ],
-            "count": 6
+            "count": 8
           },
           "文档处理": {
             "icon": "📄",
@@ -5936,25 +5993,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "内功修炼P0跳过必须记录判断理由",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "内功修炼P0问题跳过必须记录理由 问题 neigong_check.py 报告的P0问题被跳过，但没有记录判断理由，导致： 1. 无法区分\"...",
-                "keywords": [
-                  "P0跳过",
-                  "判断理由",
-                  "内功修炼",
-                  "neigong_check",
-                  "版本漂移"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-10",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "链接时效性陷阱v2：含领域知识过期+修正流程偷懒双重问题",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
@@ -5993,7 +6031,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 3
           },
           "项目知识": {
             "icon": "📋",
@@ -6042,7 +6080,7 @@
             "count": 2
           }
         },
-        "count": 48
+        "count": 49
       }
     }
   },
@@ -6105,7 +6143,7 @@
       69,
       123,
       86,
-      88
+      89
     ]
   },
   "achievements": [

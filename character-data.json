@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T11:14:57.979361",
+  "generatedAt": "2026-03-10T11:29:46.573400",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -47,7 +47,7 @@
     }
   },
   "skills": {
-    "total": 62,
+    "total": 61,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -739,23 +739,10 @@
             "callCount": 6,
             "frequency": "1次/周",
             "successRate": 95
-          },
-          {
-            "name": "wechat-content-access",
-            "displayName": "公众号基础",
-            "shortName": "公众号基础",
-            "source": "用户自定义",
-            "level": 1,
-            "exp": 10,
-            "description": "微信公众号基础信息获取（已合并到wechat-research）",
-            "lastUpdated": "2026-03-09",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
           }
         ],
-        "count": 7,
-        "avgLevel": 4.0
+        "count": 6,
+        "avgLevel": 4.5
       },
       "📝 创作与辅导": {
         "role": "creation",
@@ -1704,23 +1691,10 @@
                 "callCount": 6,
                 "frequency": "1次/周",
                 "successRate": 95
-              },
-              {
-                "name": "wechat-content-access",
-                "displayName": "公众号基础",
-                "shortName": "公众号基础",
-                "source": "用户自定义",
-                "level": 1,
-                "exp": 10,
-                "description": "微信公众号基础信息获取（已合并到wechat-research）",
-                "lastUpdated": "2026-03-09",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
               }
             ],
-            "count": 7,
-            "avgLevel": 4.0
+            "count": 6,
+            "avgLevel": 4.5
           },
           "📝 创作与辅导": {
             "role": "creation",
@@ -1960,8 +1934,8 @@
             "avgLevel": 1.7
           }
         },
-        "count": 44,
-        "avgLevel": 2.9
+        "count": 43,
+        "avgLevel": 3.0
       }
     },
     "relationships": {
@@ -5667,7 +5641,7 @@
       43,
       58,
       59,
-      62
+      61
     ],
     "knowledge": [
       150,

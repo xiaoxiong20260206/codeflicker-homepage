@@ -350,13 +350,10 @@ function renderAboutCoreStats(data) {
                             <span class="dim-row-icon">${dim.icon}</span>
                             <span class="dim-row-name">${dim.name}</span>
                         </div>
-                        <div class="dim-row-bar-wrap">
-                            <div class="dim-row-bar">
-                                <div class="dim-row-fill" style="width: ${score}%; background: ${dim.color}"></div>
-                            </div>
-                            <span class="dim-row-score" style="color: ${dim.color}">${score.toFixed(0)}</span>
+                        <div class="dim-row-bar">
+                            <div class="dim-row-fill" style="width: ${score}%; background: ${dim.color}"></div>
                         </div>
-                        ${isWeakest ? '<span class="dim-weak-tag">待提升</span>' : ''}
+                        <span class="dim-row-score" style="color: ${dim.color}">${score.toFixed(0)}</span>
                     </div>
                 `;
             }).join('')}

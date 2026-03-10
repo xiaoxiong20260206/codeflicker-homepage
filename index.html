@@ -2569,9 +2569,7 @@
         
         /* ==================== 核心统计指标面板（了解我） ==================== */
         .about-core-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-            gap: var(--spacing-md);
+            display: block;
             margin-bottom: var(--spacing-lg);
             padding: var(--spacing-lg);
             background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
@@ -2625,32 +2623,33 @@
             margin-bottom: var(--spacing-md);
         }
         
-        /* ==================== 五维能力条形图 v2 ==================== */
+        /* ==================== 五维能力条形图 v3 ==================== */
         .dimension-bars-v2 {
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 16px;
             margin-bottom: var(--spacing-lg);
             padding: var(--spacing-md);
-            background: rgba(0, 0, 0, 0.2);
+            background: rgba(0, 0, 0, 0.25);
             border-radius: var(--radius-md);
-            border: 1px solid rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.15);
         }
         
         .dim-row {
             display: grid;
-            grid-template-columns: 100px 1fr 40px;
+            grid-template-columns: 100px 1fr 45px;
             align-items: center;
-            gap: var(--spacing-md);
-            position: relative;
+            gap: 12px;
+            height: 24px;
         }
         
         .dim-row.weakest {
-            background: rgba(251, 191, 36, 0.1);
+            background: rgba(251, 191, 36, 0.12);
             border-radius: var(--radius-sm);
-            padding: 8px 10px;
-            margin: -8px -10px;
+            padding: 6px 10px;
+            margin: -6px -10px;
             border: 1px solid rgba(251, 191, 36, 0.3);
+            height: auto;
         }
         
         .dim-row-label {
@@ -2661,35 +2660,28 @@
         
         .dim-row-icon {
             font-size: 18px;
+            flex-shrink: 0;
         }
         
         .dim-row-name {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-light);
             white-space: nowrap;
             font-weight: 500;
         }
         
-        .dim-row-bar-wrap {
-            display: flex;
-            align-items: center;
-            gap: 0;
-        }
-        
         .dim-row-bar {
-            flex: 1;
-            height: 12px;
+            height: 14px;
             background: rgba(0, 0, 0, 0.5);
-            border-radius: 6px;
+            border-radius: 7px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .dim-row-fill {
             height: 100%;
-            border-radius: 5px;
+            border-radius: 6px;
             transition: width 0.5s ease;
-            box-shadow: 0 0 8px currentColor;
         }
         
         .dim-row-score {
@@ -2697,33 +2689,6 @@
             font-size: 16px;
             font-weight: 700;
             text-align: right;
-        }
-        
-        .dim-weak-tag {
-            position: absolute;
-            right: -60px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 10px;
-            color: #fbbf24;
-            background: rgba(251, 191, 36, 0.25);
-            padding: 3px 8px;
-            border-radius: 10px;
-            white-space: nowrap;
-            border: 1px solid rgba(251, 191, 36, 0.4);
-        }
-        
-        @media (max-width: 600px) {
-            .dim-row {
-                grid-template-columns: 90px 1fr 35px;
-            }
-            .dim-row-name {
-                font-size: 11px;
-            }
-            .dim-weak-tag {
-                right: -50px;
-                font-size: 9px;
-            }
         }
         
         /* ==================== 核心数据统计网格 ==================== */

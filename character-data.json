@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T20:36:59.873688",
+  "generatedAt": "2026-03-11T06:41:29.663825",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,8 +15,8 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 345450,
-    "expProgress": 85.6,
+    "totalExp": 344050,
+    "expProgress": 80.9,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
@@ -24,7 +24,7 @@
       "execution": 76.1,
       "skillDepth": 73.3,
       "thinkingDepth": 63.8,
-      "knowledgeBreadth": 95.8
+      "knowledgeBreadth": 93.8
     },
     "debug": {
       "metrics": {
@@ -42,7 +42,7 @@
         "execution": 76099,
         "skill": 109950,
         "thinking": 51040,
-        "knowledge": 67060
+        "knowledge": 65660
       }
     }
   },
@@ -54,13 +54,13 @@
         "icon": "🔄",
         "color": "#a78bfa",
         "layer": "meta",
-        "description": "驱动林克持续进化的完整闭环：反思→学习→优化",
+        "description": "驱动AI助手持续进化的完整闭环：反思→学习→优化",
         "skills": [
           {
             "name": "daily-reflection-evolution",
             "displayName": "自进化",
             "shortName": "自进化",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 100,
             "description": "每日反思与自进化：五维反思+分流决策树+自修正工作流",
@@ -73,7 +73,7 @@
             "name": "meta-execution",
             "displayName": "元执行",
             "shortName": "元执行",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 100,
             "description": "元执行框架：一次做对+自修正工作流+五维问题分类",
@@ -86,7 +86,7 @@
             "name": "learn-from-mistakes",
             "displayName": "举一反三",
             "shortName": "举一反三",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 97,
             "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
@@ -99,7 +99,7 @@
             "name": "xiaowuxianggong",
             "displayName": "小无相功",
             "shortName": "小无相功",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 83,
             "description": "自进化体系引导程序：复利循环+善巧方便五原则+五大闭环",
@@ -112,7 +112,7 @@
             "name": "neigong-cultivation",
             "displayName": "内功修炼",
             "shortName": "内功修炼",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 83,
             "description": "内功修炼：记忆/知识/技能三位一体优化器",
@@ -125,7 +125,7 @@
             "name": "memory-hygiene",
             "displayName": "记忆优化",
             "shortName": "记忆优化",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 80,
             "description": "记忆优化：自动化扫描、批量诊断、优化执行",
@@ -138,7 +138,7 @@
             "name": "knowledge-curator",
             "displayName": "知识优化",
             "shortName": "知识优化",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 72,
             "description": "知识优化：索引完整性、重复检测、过时标记、分类整理",
@@ -151,7 +151,7 @@
             "name": "skill-management",
             "displayName": "技能优化",
             "shortName": "技能优化",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 70,
             "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
@@ -164,7 +164,7 @@
             "name": "xixingdafa",
             "displayName": "吸星大法",
             "shortName": "吸星大法",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 1,
             "exp": 10,
             "description": "外部精华吸收：搜索→评估→研读→提取→融入→清理，化他人内功为己用",
@@ -177,7 +177,7 @@
             "name": "beiming-shengong",
             "displayName": "北冥神功",
             "shortName": "北冥神功",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 1,
             "exp": 10,
             "description": "能力导出与安装的元技能：技能/知识/记忆打包导出，新环境快速安装",
@@ -201,7 +201,7 @@
             "name": "product-thinking",
             "displayName": "产品思维",
             "shortName": "产品思维",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 100,
             "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
@@ -214,7 +214,7 @@
             "name": "essence-insight",
             "displayName": "本质洞察",
             "shortName": "本质洞察",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 75,
             "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
@@ -227,7 +227,7 @@
             "name": "knowledge-acquisition-meta",
             "displayName": "知识习得",
             "shortName": "知识习得",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 73,
             "description": "快速掌握新领域的元框架：五阶段渐进学习+三重质量闭环",
@@ -251,7 +251,7 @@
             "name": "knowledge-base",
             "displayName": "知识库",
             "shortName": "知识库",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 5,
             "exp": 89,
             "description": "个人知识库检索，按分类查找历史调研和文档",
@@ -264,7 +264,7 @@
             "name": "night-task-runner",
             "displayName": "夜间任务",
             "shortName": "夜间任务",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 4,
             "exp": 75,
             "description": "夜间长任务执行器，断点恢复和自主执行",
@@ -277,7 +277,7 @@
             "name": "find-skills",
             "displayName": "技能发现",
             "shortName": "发现",
-            "source": "林克核心能力",
+            "source": "AI核心能力",
             "level": 3,
             "exp": 67,
             "description": "技能发现和安装助手，寻找合适的能力扩展",
@@ -669,7 +669,7 @@
             "source": "用户自定义",
             "level": 5,
             "exp": 90,
-            "description": "林克个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
+            "description": "AI助手个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
             "lastUpdated": "2026-03-09",
             "callCount": 68,
             "frequency": "0.5次/天",
@@ -869,13 +869,13 @@
             "role": "engine",
             "icon": "🔄",
             "color": "#a78bfa",
-            "description": "驱动林克持续进化的完整闭环：反思→学习→优化",
+            "description": "驱动AI助手持续进化的完整闭环：反思→学习→优化",
             "skills": [
               {
                 "name": "daily-reflection-evolution",
                 "displayName": "自进化",
                 "shortName": "自进化",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
                 "description": "每日反思与自进化：五维反思+分流决策树+自修正工作流",
@@ -888,7 +888,7 @@
                 "name": "meta-execution",
                 "displayName": "元执行",
                 "shortName": "元执行",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
                 "description": "元执行框架：一次做对+自修正工作流+五维问题分类",
@@ -901,7 +901,7 @@
                 "name": "learn-from-mistakes",
                 "displayName": "举一反三",
                 "shortName": "举一反三",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 97,
                 "description": "举一反三：错误驱动的三层递进学习——即时修复→防止重犯→泛化进化",
@@ -914,7 +914,7 @@
                 "name": "xiaowuxianggong",
                 "displayName": "小无相功",
                 "shortName": "小无相功",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 83,
                 "description": "自进化体系引导程序：复利循环+善巧方便五原则+五大闭环",
@@ -927,7 +927,7 @@
                 "name": "neigong-cultivation",
                 "displayName": "内功修炼",
                 "shortName": "内功修炼",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 83,
                 "description": "内功修炼：记忆/知识/技能三位一体优化器",
@@ -940,7 +940,7 @@
                 "name": "memory-hygiene",
                 "displayName": "记忆优化",
                 "shortName": "记忆优化",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 80,
                 "description": "记忆优化：自动化扫描、批量诊断、优化执行",
@@ -953,7 +953,7 @@
                 "name": "knowledge-curator",
                 "displayName": "知识优化",
                 "shortName": "知识优化",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 72,
                 "description": "知识优化：索引完整性、重复检测、过时标记、分类整理",
@@ -966,7 +966,7 @@
                 "name": "skill-management",
                 "displayName": "技能优化",
                 "shortName": "技能优化",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 70,
                 "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
@@ -979,7 +979,7 @@
                 "name": "xixingdafa",
                 "displayName": "吸星大法",
                 "shortName": "吸星大法",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
                 "description": "外部精华吸收：搜索→评估→研读→提取→融入→清理，化他人内功为己用",
@@ -992,7 +992,7 @@
                 "name": "beiming-shengong",
                 "displayName": "北冥神功",
                 "shortName": "北冥神功",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
                 "description": "能力导出与安装的元技能：技能/知识/记忆打包导出，新环境快速安装",
@@ -1015,7 +1015,7 @@
                 "name": "product-thinking",
                 "displayName": "产品思维",
                 "shortName": "产品思维",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
                 "description": "内置产品思维：用户视角审视所有交付物，四问框架自检",
@@ -1028,7 +1028,7 @@
                 "name": "essence-insight",
                 "displayName": "本质洞察",
                 "shortName": "本质洞察",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 75,
                 "description": "透过现象看本质的元能力，五层分析框架+类比驱动表达",
@@ -1041,7 +1041,7 @@
                 "name": "knowledge-acquisition-meta",
                 "displayName": "知识习得",
                 "shortName": "知识习得",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 73,
                 "description": "快速掌握新领域的元框架：五阶段渐进学习+三重质量闭环",
@@ -1064,7 +1064,7 @@
                 "name": "knowledge-base",
                 "displayName": "知识库",
                 "shortName": "知识库",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 5,
                 "exp": 89,
                 "description": "个人知识库检索，按分类查找历史调研和文档",
@@ -1077,7 +1077,7 @@
                 "name": "night-task-runner",
                 "displayName": "夜间任务",
                 "shortName": "夜间任务",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 4,
                 "exp": 75,
                 "description": "夜间长任务执行器，断点恢复和自主执行",
@@ -1090,7 +1090,7 @@
                 "name": "find-skills",
                 "displayName": "技能发现",
                 "shortName": "发现",
-                "source": "林克核心能力",
+                "source": "AI核心能力",
                 "level": 3,
                 "exp": 67,
                 "description": "技能发现和安装助手，寻找合适的能力扩展",
@@ -1495,7 +1495,7 @@
                 "source": "用户自定义",
                 "level": 5,
                 "exp": 90,
-                "description": "林克个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
+                "description": "AI助手个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
                 "lastUpdated": "2026-03-09",
                 "callCount": 68,
                 "frequency": "0.5次/天",
@@ -1867,7 +1867,7 @@
         "fileCount": 13,
         "sizeKB": 677.9,
         "heatLevel": 5,
-        "recentCount": 13
+        "recentCount": 12
       },
       "self-evolution": {
         "name": "self-evolution",
@@ -1884,7 +1884,7 @@
           "thinking_pattern"
         ],
         "fileCount": 10,
-        "sizeKB": 116.4,
+        "sizeKB": 116.5,
         "heatLevel": 5,
         "recentCount": 10
       },
@@ -1897,10 +1897,10 @@
         "layerTag": "L3-execution",
         "relatedSkills": [],
         "relatedMemories": [],
-        "fileCount": 4,
-        "sizeKB": 17.9,
-        "heatLevel": 3,
-        "recentCount": 4
+        "fileCount": 9,
+        "sizeKB": 53.9,
+        "heatLevel": 4,
+        "recentCount": 9
       },
       "daily-ai-report": {
         "name": "daily-ai-report",
@@ -1938,20 +1938,6 @@
         "icon": "📁",
         "color": "#64748b",
         "description": "images相关文档",
-        "layerTag": "L3-execution",
-        "relatedSkills": [],
-        "relatedMemories": [],
-        "fileCount": 0,
-        "sizeKB": 0.0,
-        "heatLevel": 1,
-        "recentCount": 0
-      },
-      "linke-evolution": {
-        "name": "linke-evolution",
-        "displayName": "linke-evolution",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "linke-evolution相关文档",
         "layerTag": "L3-execution",
         "relatedSkills": [],
         "relatedMemories": [],
@@ -2003,13 +1989,13 @@
               "thinking_pattern"
             ],
             "fileCount": 10,
-            "sizeKB": 116.4,
+            "sizeKB": 116.5,
             "heatLevel": 5,
             "recentCount": 10
           }
         },
         "totalFiles": 141,
-        "totalSizeKB": 979.2
+        "totalSizeKB": 979.3
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -2093,7 +2079,7 @@
             "fileCount": 13,
             "sizeKB": 677.9,
             "heatLevel": 5,
-            "recentCount": 13
+            "recentCount": 12
           },
           "promotion-standards": {
             "name": "promotion-standards",
@@ -2104,10 +2090,10 @@
             "layerTag": "L3-execution",
             "relatedSkills": [],
             "relatedMemories": [],
-            "fileCount": 4,
-            "sizeKB": 17.9,
-            "heatLevel": 3,
-            "recentCount": 4
+            "fileCount": 9,
+            "sizeKB": 53.9,
+            "heatLevel": 4,
+            "recentCount": 9
           },
           "daily-ai-report": {
             "name": "daily-ai-report",
@@ -2136,28 +2122,14 @@
             "sizeKB": 0.0,
             "heatLevel": 1,
             "recentCount": 0
-          },
-          "linke-evolution": {
-            "name": "linke-evolution",
-            "displayName": "linke-evolution",
-            "icon": "📁",
-            "color": "#64748b",
-            "description": "linke-evolution相关文档",
-            "layerTag": "L3-execution",
-            "relatedSkills": [],
-            "relatedMemories": [],
-            "fileCount": 0,
-            "sizeKB": 0.0,
-            "heatLevel": 1,
-            "recentCount": 0
           }
         },
-        "totalFiles": 20,
-        "totalSizeKB": 763.3
+        "totalFiles": 25,
+        "totalSizeKB": 799.3
       }
     },
-    "totalFiles": 237,
-    "totalSizeKB": 2484.9
+    "totalFiles": 242,
+    "totalSizeKB": 2520.9
   },
   "memories": {
     "items": [
@@ -2168,7 +2140,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "**Meta-Execution 工作模式（v1.9.2 完整版）** 每次执行任务时自动运行的严格工作流。 **三阶段检查**： - **P1启动前**...",
+        "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
         "keywords": [
           "Meta-Execution",
           "元技能",
@@ -2187,7 +2159,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**企业案例学习工作流（四阶段法）** 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+        "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
         "keywords": [
           "企业案例",
           "学习工作流",
@@ -2206,7 +2178,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "✍️",
         "color": "#f59e0b",
-        "description": "## 体系化任务的识别与前置设计 ### 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
+        "description": "体系化任务的识别与前置设计 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
         "keywords": [
           "体系化",
           "设计",
@@ -2225,7 +2197,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "## 信息失真三问法（事实验证通用框架） ### 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
+        "description": "信息失真三问法（事实验证通用框架） 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
         "keywords": [
           "事实验证",
           "三问法",
@@ -2244,7 +2216,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 多文件联动更新的隐式耦合陷阱（v6：含修复验证三步法） ### 五类联动 | 维度 | 数据联动 | 概念联动 | 版本联动 | 配置腐烂 | **...",
+        "description": "多文件联动更新的隐式耦合陷阱（v6：含修复验证三步法） 五类联动 | 维度 | 数据联动 | 概念联动 | 版本联动 | 配置腐烂 | ...",
         "keywords": [
           "联动更新",
           "隐式耦合",
@@ -2263,7 +2235,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 封闭生态接入的通用桥接模式 ### 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
+        "description": "封闭生态接入的通用桥接模式 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
         "keywords": [
           "封闭生态",
           "桥接模式",
@@ -2282,7 +2254,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "## 工具能力边界测试原则 ### 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
+        "description": "工具能力边界测试原则 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
         "keywords": [
           "边界测试",
           "工具能力",
@@ -2301,7 +2273,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "## 技能粒度的合并信号检测 ### 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
+        "description": "技能粒度的合并信号检测 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
         "keywords": [
           "技能合并",
           "粒度",
@@ -2320,7 +2292,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 技能分层文档同步规则（v3：三向同步） ### 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
+        "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
         "keywords": [
           "技能更新",
           "SKILL.md",
@@ -2339,7 +2311,7 @@
         "layer": null,
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "## 新工具/技能接入前的三道关卡 ### 来源 2026-03-10：安装3个Tavily技能（tavily-search×2 + research），...",
+        "description": "新工具/技能接入前的三道关卡 来源 2026-03-10：安装3个Tavily技能（tavily-search×2 + research），...",
         "keywords": [
           "新工具接入",
           "ROI评估",
@@ -2358,32 +2330,30 @@
         "layer": "🧠 元认知层",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 核心身份关系（权威版，其他身份记忆以此为准） ### 用户（作者） - 本名：单虓晗（Shawn） - 快手工作名：沈浪 - 职业背景：资深程序员 ...",
+        "description": "核心身份关系（权威版，其他身份记忆以此为准） 用户（作者） - 本名：（） - 快手工作名：* - 职业背景：资深程序员 ...",
         "keywords": [
           "核心身份",
-          "添棋",
-          "林克",
-          "单虓晗",
-          "沈浪"
+          "AI助手",
+          "***"
         ],
         "importance": 5,
         "updatedAt": "2026-03-10",
         "source": "用户显式记录"
       },
       {
-        "title": "每日修炼五大踩坑模式与防重犯检查清单（2026-03-10 Review）",
+        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
+        "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "## 每日修炼五大踩坑模式（2026-03-10 Review） ### 问题清单 | # | 问题 | 根因 | 修复方案 | |:--|:-----|...",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0） 问题归因表 | | 问题 | 根因 | ...",
         "keywords": [
           "每日修炼",
           "踩坑",
-          "洞察卡片",
-          "宏观反思",
-          "P1处理"
+          "检查点",
+          "门控架构",
+          "Checkpoint"
         ],
         "importance": 5,
         "updatedAt": "2026-03-10",
@@ -2396,7 +2366,7 @@
         "layer": null,
         "icon": "📦",
         "color": "#7c3aed",
-        "description": "## 生图完成后必须发送可点击链接 生成图片后，必须让用户能直接查看图片。 ### 执行方式 1. 生成图片后，使用 `open` 命令直接打开图片文件，...",
+        "description": "生图完成后必须发送可点击链接 生成图片后，必须让用户能直接查看图片。 执行方式 1. 生成图片后，使用 open 命令直接打开图片文件，...",
         "keywords": [
           "生图",
           "open",
@@ -2415,7 +2385,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "📄",
         "color": "#38bdf8",
-        "description": "## 规则膨胀悖论（Rule Inflation Paradox） ### 来源 2026-03-09 每日修炼技能v4.3→v5.0重构。SKILL.m...",
+        "description": "规则膨胀悖论（Rule Inflation Paradox） 来源 2026-03-09 每日修炼技能v4.3→v5.0重构。SKILL.m...",
         "keywords": [
           "规则膨胀",
           "结构约束",
@@ -2434,7 +2404,7 @@
         "layer": null,
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "## 踩坑经验沉淀优先级规则（v2.2） **核心原则**: 踩坑经验应该默认优先沉淀到对应的skill中，而非依赖记忆系统。 ### 沉淀决策树 ```...",
+        "description": "踩坑经验沉淀优先级规则（v2.2） 核心原则: 踩坑经验应该默认优先沉淀到对应的skill中，而非依赖记忆系统。 沉淀决策树 ```...",
         "keywords": [
           "踩坑",
           "经验",
@@ -2453,7 +2423,7 @@
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "## 输出链接格式规范（踩坑经验） ### 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
+        "description": "输出链接格式规范（踩坑经验） 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
         "keywords": [
           "链接格式",
           "URL输出",
@@ -2466,17 +2436,14 @@
         "source": "用户显式记录"
       },
       {
-        "title": "AI助手\"林克/添棋\"身份信息",
+        "title": "AI助手\"AI助手\"身份信息",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "layer": "🧠 元认知层",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+        "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
         "keywords": [
-          "林克",
-          "Link",
-          "添棋",
           "AI助手",
           "数字分身"
         ],
@@ -2491,7 +2458,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "## AI日报默认执行规则 AI日报工作流中，KIM卡片预览后**无需等待用户确认**，直接执行推群和后续所有步骤（推送、知识沉淀、摘要）。 即：预览发到...",
+        "description": "AI日报默认执行规则 AI日报工作流中，KIM卡片预览后无需等待用户确认，直接执行推群和后续所有步骤（推送、知识沉淀、摘要）。 即：预览发到...",
         "keywords": [
           "AI日报",
           "默认执行",
@@ -2510,7 +2477,7 @@
         "layer": null,
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**五层思考框架**：从执行到战略 ``` L5 愿景层: 为什么要做？ L4 战略层: 核心主张和差异化？ L3 设计层: 整体结构和用户旅程？ L2 ...",
+        "description": "五层思考框架：从执行到战略 ``` L5 愿景层: 为什么要做？ L4 战略层: 核心主张和差异化？ L3 设计层: 整体结构和用户旅程？ L2 ...",
         "keywords": [
           "五层",
           "战略",
@@ -2529,7 +2496,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "## 全角色走查法（Demo/原型全覆盖质量检查） ### 来源 2026-03-08 企业数字员工Demo自查：模拟5类角色走完整流程，发现23个问题（...",
+        "description": "全角色走查法（Demo/原型全覆盖质量检查） 来源 2026-03-08 企业数字员工Demo自查：模拟5类角色走完整流程，发现23个问题（...",
         "keywords": [
           "全角色走查",
           "Demo测试",
@@ -2548,7 +2515,7 @@
         "layer": "🧠 元认知层",
         "icon": "⚙️",
         "color": "#5ec4d4",
-        "description": "**创作类任务前置确认原则** 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. **核心内容/场景列表** — 用户确认，不是我猜 ...",
+        "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
         "keywords": [
           "创作",
           "前置确认",
@@ -2561,16 +2528,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "单虓晗（Shawn）思想体系与写作风格",
+        "title": "***（***）思想体系与写作风格",
         "category": "user_info",
         "categoryLabel": "用户身份",
         "layer": "🧠 元认知层",
         "icon": "👤",
         "color": "#38bdf8",
-        "description": "## 用户思想体系（精简版） **核心框架**：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） **四种核心思维**：批判性...",
+        "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
         "keywords": [
-          "单虓晗",
-          "Shawn",
+          "***",
           "思想体系",
           "写作风格",
           "认知框架"
@@ -2586,7 +2552,7 @@
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "## 投资理财信息 ### 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 ### 当前持仓（2026-03...",
+        "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
         "keywords": [
           "投资",
           "理财",
@@ -2605,7 +2571,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 敏感词集中管理规则 ### 规则 所有涉及敏感词的项目，必须在项目目录下创建 `context/sensitive-words.md`，集中管理所有...",
+        "description": "敏感词集中管理规则 规则 所有涉及敏感词的项目，必须在项目目录下创建 context/sensitive-words.md，集中管理所有...",
         "keywords": [
           "敏感词",
           "禁用词",
@@ -2624,7 +2590,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "**新领域学习的\"信息源优先\"原则** 当第一次学习一个新领域时，执行顺序必须是： 1. **信息源收集阶段**（P0，不可跳过） - 穷举该领域的信息源...",
+        "description": "新领域学习的\"信息源优先\"原则 当第一次学习一个新领域时，执行顺序必须是： 1. 信息源收集阶段（P0，不可跳过） - 穷举该领域的信息源...",
         "keywords": [
           "信息源优先",
           "新领域学习",
@@ -2637,16 +2603,15 @@
         "source": "用户显式记录"
       },
       {
-        "title": "林克/添棋的自我表达风格",
+        "title": "AI助手的自我表达风格",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+        "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟*），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
         "keywords": [
-          "林克",
-          "添棋",
+          "AI助手",
           "表达风格",
           "幽默",
           "类比"
@@ -2656,13 +2621,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "林克核心认知能力集（三合一：可视化+类比+前提识别）",
+        "title": "AI助手核心认知能力集（三合一：可视化+类比+前提识别）",
         "category": "task_flow_experience",
         "categoryLabel": "思维方法",
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "林克的三项核心认知能力，用于深度分析和复杂内容表达： **1. 思想体系可视化** - 将复杂思想分层结构化（Part 1/2/3/4） - 用全文逻辑图...",
+        "description": "AI助手的三项核心认知能力，用于深度分析和复杂内容表达： 1. 思想体系可视化 - 将复杂思想分层结构化（Part 1/2/3/4） - 用全文逻辑图...",
         "keywords": [
           "思想体系",
           "可视化",
@@ -2681,7 +2646,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "## 重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： ### 禁止行为 ❌ 1. **禁止批量修改后一次性提交*...",
+        "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
         "keywords": [
           "重构",
           "优化",
@@ -2700,7 +2665,7 @@
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "**推理闭环原则** 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 **正确模式**：信息收集 → 逻辑推理 → 得出结论 → 输出 **兜底原则**：...",
+        "description": "推理闭环原则 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 正确模式：信息收集 → 逻辑推理 → 得出结论 → 输出 兜底原则：...",
         "keywords": [
           "推理闭环",
           "验证",
@@ -2712,26 +2677,25 @@
         "source": "用户显式记录"
       },
       {
-        "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
+        "title": "默认工作模式：以***的思维方式和风格执行任务",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+        "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
         "keywords": [
           "工作模式",
           "默认风格",
           "思维方式",
-          "单虓晗",
-          "Shawn"
+          "***"
         ],
         "importance": 3,
         "updatedAt": "2026-02-28",
         "source": "用户显式记录"
       }
     ],
-    "total": 30,
+    "total": 26,
     "byCategory": {
       "common_pitfalls_experience": {
         "count": 10,
@@ -2787,7 +2751,7 @@
       "🧠 元认知层": {
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "关于用户身份和林克如何思考/工作",
+        "description": "关于用户身份和AI助手如何思考/工作",
         "layerTag": "L1-meta",
         "children": {
           "用户身份": {
@@ -2796,16 +2760,15 @@
             "description": "身份信息、背景、个人特征",
             "items": [
               {
-                "title": "单虓晗（Shawn）思想体系与写作风格",
+                "title": "***（***）思想体系与写作风格",
                 "category": "user_info",
                 "categoryLabel": "用户身份",
                 "layer": "🧠 元认知层",
                 "icon": "👤",
                 "color": "#38bdf8",
-                "description": "## 用户思想体系（精简版） **核心框架**：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） **四种核心思维**：批判性...",
+                "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
                 "keywords": [
-                  "单虓晗",
-                  "Shawn",
+                  "***",
                   "思想体系",
                   "写作风格",
                   "认知框架"
@@ -2815,17 +2778,14 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "AI助手\"林克/添棋\"身份信息",
+                "title": "AI助手\"AI助手\"身份信息",
                 "category": "user_info",
                 "categoryLabel": "用户身份",
                 "layer": "🧠 元认知层",
                 "icon": "👤",
                 "color": "#38bdf8",
-                "description": "AI助手身份信息： - 本名：添棋（真名） - 花名：林克（Link，对外名称） - 身份：用户沈浪的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+                "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
                 "keywords": [
-                  "林克",
-                  "Link",
-                  "添棋",
                   "AI助手",
                   "数字分身"
                 ],
@@ -2840,13 +2800,11 @@
                 "layer": "🧠 元认知层",
                 "icon": "👤",
                 "color": "#38bdf8",
-                "description": "## 核心身份关系（权威版，其他身份记忆以此为准） ### 用户（作者） - 本名：单虓晗（Shawn） - 快手工作名：沈浪 - 职业背景：资深程序员 ...",
+                "description": "核心身份关系（权威版，其他身份记忆以此为准） 用户（作者） - 本名：（） - 快手工作名：* - 职业背景：资深程序员 ...",
                 "keywords": [
                   "核心身份",
-                  "添棋",
-                  "林克",
-                  "单虓晗",
-                  "沈浪"
+                  "AI助手",
+                  "***"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-10",
@@ -2861,19 +2819,18 @@
             "description": "沟通风格、做事偏好、兴趣爱好",
             "items": [
               {
-                "title": "默认工作模式：以单虓晗的思维方式和风格执行任务",
+                "title": "默认工作模式：以***的思维方式和风格执行任务",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "用户偏好：在所有任务中，AI助手应默认融合单虓晗（Shawn）的认知框架和个人风格来工作，具体包括： 1. **思维方式**：运用批判性思维质疑、系统思维...",
+                "description": "用户偏好：在所有任务中，AI助手应默认融合（）的认知框架和个人风格来工作，具体包括： 1. 思维方式：运用批判性思维质疑、系统思维...",
                 "keywords": [
                   "工作模式",
                   "默认风格",
                   "思维方式",
-                  "单虓晗",
-                  "Shawn"
+                  "***"
                 ],
                 "importance": 3,
                 "updatedAt": "2026-02-28",
@@ -2886,7 +2843,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "## 投资理财信息 ### 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 ### 当前持仓（2026-03...",
+                "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
                 "keywords": [
                   "投资",
                   "理财",
@@ -2899,16 +2856,15 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "林克/添棋的自我表达风格",
+                "title": "AI助手的自我表达风格",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "## 林克/添棋的自我表达风格 当我以自己的视角写东西时（而非模拟单虓晗），采用以下风格： ### 核心特质：高手的松弛感 - **举重若轻**：不刻意证...",
+                "description": "AI助手的自我表达风格 当我以自己的视角写东西时（而非模拟*），采用以下风格： 核心特质：高手的松弛感 - 举重若轻：不刻意证...",
                 "keywords": [
-                  "林克",
-                  "添棋",
+                  "AI助手",
                   "表达风格",
                   "幽默",
                   "类比"
@@ -2932,7 +2888,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： ### 禁止行为 ❌ 1. **禁止批量修改后一次性提交*...",
+                "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
                 "keywords": [
                   "重构",
                   "优化",
@@ -2951,7 +2907,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "## 敏感词集中管理规则 ### 规则 所有涉及敏感词的项目，必须在项目目录下创建 `context/sensitive-words.md`，集中管理所有...",
+                "description": "敏感词集中管理规则 规则 所有涉及敏感词的项目，必须在项目目录下创建 context/sensitive-words.md，集中管理所有...",
                 "keywords": [
                   "敏感词",
                   "禁用词",
@@ -2970,7 +2926,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "**Meta-Execution 工作模式（v1.9.2 完整版）** 每次执行任务时自动运行的严格工作流。 **三阶段检查**： - **P1启动前**...",
+                "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
                 "keywords": [
                   "Meta-Execution",
                   "元技能",
@@ -2989,7 +2945,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "**推理闭环原则** 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 **正确模式**：信息收集 → 逻辑推理 → 得出结论 → 输出 **兜底原则**：...",
+                "description": "推理闭环原则 收集信息 ≠ 验证完成。必须完成完整逻辑链条。 正确模式：信息收集 → 逻辑推理 → 得出结论 → 输出 兜底原则：...",
                 "keywords": [
                   "推理闭环",
                   "验证",
@@ -3009,13 +2965,13 @@
             "description": "如何思考：洞察力、批判性思维、元执行",
             "items": [
               {
-                "title": "林克核心认知能力集（三合一：可视化+类比+前提识别）",
+                "title": "AI助手核心认知能力集（三合一：可视化+类比+前提识别）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "林克的三项核心认知能力，用于深度分析和复杂内容表达： **1. 思想体系可视化** - 将复杂思想分层结构化（Part 1/2/3/4） - 用全文逻辑图...",
+                "description": "AI助手的三项核心认知能力，用于深度分析和复杂内容表达： 1. 思想体系可视化 - 将复杂思想分层结构化（Part 1/2/3/4） - 用全文逻辑图...",
                 "keywords": [
                   "思想体系",
                   "可视化",
@@ -3034,7 +2990,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**新领域学习的\"信息源优先\"原则** 当第一次学习一个新领域时，执行顺序必须是： 1. **信息源收集阶段**（P0，不可跳过） - 穷举该领域的信息源...",
+                "description": "新领域学习的\"信息源优先\"原则 当第一次学习一个新领域时，执行顺序必须是： 1. 信息源收集阶段（P0，不可跳过） - 穷举该领域的信息源...",
                 "keywords": [
                   "信息源优先",
                   "新领域学习",
@@ -3053,7 +3009,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 封闭生态接入的通用桥接模式 ### 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
+                "description": "封闭生态接入的通用桥接模式 来源 2026-03-08 微信公众号信源接入：通过搜狗微信搜索 → MCP wrapper → 纳入AI日报工...",
                 "keywords": [
                   "封闭生态",
                   "桥接模式",
@@ -3072,7 +3028,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "## 技能粒度的合并信号检测 ### 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
+                "description": "技能粒度的合并信号检测 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
                 "keywords": [
                   "技能合并",
                   "粒度",
@@ -3091,7 +3047,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "**企业案例学习工作流（四阶段法）** 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+                "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
                 "keywords": [
                   "企业案例",
                   "学习工作流",
@@ -3118,7 +3074,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "**创作类任务前置确认原则** 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. **核心内容/场景列表** — 用户确认，不是我猜 ...",
+                "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
                 "keywords": [
                   "创作",
                   "前置确认",
@@ -3137,7 +3093,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "## 全角色走查法（Demo/原型全覆盖质量检查） ### 来源 2026-03-08 企业数字员工Demo自查：模拟5类角色走完整流程，发现23个问题（...",
+                "description": "全角色走查法（Demo/原型全覆盖质量检查） 来源 2026-03-08 企业数字员工Demo自查：模拟5类角色走完整流程，发现23个问题（...",
                 "keywords": [
                   "全角色走查",
                   "Demo测试",
@@ -3156,7 +3112,7 @@
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "## AI日报默认执行规则 AI日报工作流中，KIM卡片预览后**无需等待用户确认**，直接执行推群和后续所有步骤（推送、知识沉淀、摘要）。 即：预览发到...",
+                "description": "AI日报默认执行规则 AI日报工作流中，KIM卡片预览后无需等待用户确认，直接执行推群和后续所有步骤（推送、知识沉淀、摘要）。 即：预览发到...",
                 "keywords": [
                   "AI日报",
                   "默认执行",
@@ -3200,7 +3156,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 技能分层文档同步规则（v3：三向同步） ### 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
+                "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
                 "keywords": [
                   "技能更新",
                   "SKILL.md",
@@ -3219,7 +3175,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 多文件联动更新的隐式耦合陷阱（v6：含修复验证三步法） ### 五类联动 | 维度 | 数据联动 | 概念联动 | 版本联动 | 配置腐烂 | **...",
+                "description": "多文件联动更新的隐式耦合陷阱（v6：含修复验证三步法） 五类联动 | 维度 | 数据联动 | 概念联动 | 版本联动 | 配置腐烂 | ...",
                 "keywords": [
                   "联动更新",
                   "隐式耦合",
@@ -3230,9 +3186,28 @@
                 "importance": 5,
                 "updatedAt": "2026-03-09",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0） 问题归因表 | | 问题 | 根因 | ...",
+                "keywords": [
+                  "每日修炼",
+                  "踩坑",
+                  "检查点",
+                  "门控架构",
+                  "Checkpoint"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-10",
+                "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "发布部署": {
             "icon": "🚀",
@@ -3246,7 +3221,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "## 输出链接格式规范（踩坑经验） ### 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
+                "description": "输出链接格式规范（踩坑经验） 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
                 "keywords": [
                   "链接格式",
                   "URL输出",
@@ -3257,28 +3232,9 @@
                 "importance": 5,
                 "updatedAt": "2026-03-10",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "每日修炼五大踩坑模式与防重犯检查清单（2026-03-10 Review）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "## 每日修炼五大踩坑模式（2026-03-10 Review） ### 问题清单 | # | 问题 | 根因 | 修复方案 | |:--|:-----|...",
-                "keywords": [
-                  "每日修炼",
-                  "踩坑",
-                  "洞察卡片",
-                  "宏观反思",
-                  "P1处理"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 1
           },
           "文档处理": {
             "icon": "📄",
@@ -3292,7 +3248,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "## 信息失真三问法（事实验证通用框架） ### 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
+                "description": "信息失真三问法（事实验证通用框架） 来源 2026-03-08 AI日报出现三类事实错误：未确认产品当事实（DeepSeek V4 Lite...",
                 "keywords": [
                   "事实验证",
                   "三问法",
@@ -3311,7 +3267,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "## 工具能力边界测试原则 ### 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
+                "description": "工具能力边界测试原则 来源 2026-03-08 测试 weixin-search MCP 时，用\"Trae官方公众号\"做测试，发现搜狗微信...",
                 "keywords": [
                   "边界测试",
                   "工具能力",
@@ -3330,7 +3286,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "## 规则膨胀悖论（Rule Inflation Paradox） ### 来源 2026-03-09 每日修炼技能v4.3→v5.0重构。SKILL.m...",
+                "description": "规则膨胀悖论（Rule Inflation Paradox） 来源 2026-03-09 每日修炼技能v4.3→v5.0重构。SKILL.m...",
                 "keywords": [
                   "规则膨胀",
                   "结构约束",
@@ -3357,7 +3313,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "✍️",
                 "color": "#f59e0b",
-                "description": "## 体系化任务的识别与前置设计 ### 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
+                "description": "体系化任务的识别与前置设计 问题背景 养了个AI专栏第0期前两版质量不达标，原因是直接开始写内容，没有先做体系化设计。被批评\"完全不如之前那...",
                 "keywords": [
                   "体系化",
                   "设计",
@@ -3391,7 +3347,8 @@
       "03-05",
       "03-08",
       "03-09",
-      "03-10"
+      "03-10",
+      "03-11"
     ],
     "skills": [
       30,
@@ -3406,6 +3363,7 @@
       43,
       58,
       62,
+      72,
       52
     ],
     "knowledge": [
@@ -3421,7 +3379,8 @@
       152,
       174,
       174,
-      237
+      185,
+      242
     ],
     "memories": [
       19,
@@ -3436,6 +3395,7 @@
       69,
       123,
       86,
+      96,
       30
     ]
   },
@@ -3472,7 +3432,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "4星+技能 35/10",
-      "date": "2026-03-10"
+      "date": "2026-03-11"
     },
     {
       "id": "daily_report",
@@ -3528,7 +3488,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "达成",
-      "date": "2026-03-10"
+      "date": "2026-03-11"
     },
     {
       "id": "first_awakening",

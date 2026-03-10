@@ -282,8 +282,9 @@ function renderAboutSection() {
     const today = new Date();
     const runDays = Math.max(30, Math.floor((today - firstDate) / (1000 * 60 * 60 * 24)));
     
-    // 渲染核心统计指标面板
+    // 渲染核心统计指标面板 — v3.0 五维能力展示
     renderAboutCoreStats({
+        character: char,
         skills: skills,
         knowledge: knowledge,
         memories: memories,
@@ -296,48 +297,117 @@ function renderAboutSection() {
     renderAchievements(achievements);
 }
 
-// 了解我 - 核心统计指标面板
+// 了解我 - 核心统计指标面板 v3.0（五维能力 + EXP构成 + 段位进阶）
 function renderAboutCoreStats(data) {
     const container = document.getElementById('about-core-stats');
     if (!container) return;
     
-    const { skills, knowledge, memories, projects, runDays, achievements } = data;
+    const { character: char, skills, knowledge, memories, projects, runDays, achievements } = data;
     
-    // 计算核心指标
-    const totalSkills = skills?.total || 0;
-    const totalKnowledge = knowledge?.totalFiles || 0;
-    const totalMemories = memories?.total || 0;
-    const totalProjects = projects?.summary?.total || 0;
-    const deployedProjects = projects?.summary?.deployed || 0;
-    const unlockedAchievements = (achievements || []).filter(a => a.unlocked).length;
-    const totalAchievements = (achievements || []).length;
+    // 五维能力数据
+    const stats = char?.stats || {};
+    const tier = char?.tier || { name: '青铜', color: '#cd7f32', icon: '🥉', minLevel: 1, maxLevel: 10 };
+    const expBreakdown = char?.debug?.expBreakdown || {};
     
-    // 计算技能类别数
-    const skillCategories = skills?.categories ? Object.keys(skills.categories).length : 0;
-    
-    // 计算知识目录数
-    const knowledgeDirs = knowledge?.directories?.length || 
-                          (knowledge?.categories ? Object.keys(knowledge.categories).length : 0);
-    
-    const stats = [
-        { icon: '⚡', value: totalSkills, label: '项技能', sub: `${skillCategories}大类` },
-        { icon: '📚', value: totalKnowledge, label: '篇知识', sub: `${knowledgeDirs}个领域` },
-        { icon: '🧠', value: totalMemories, label: '条记忆', sub: '持续积累' },
-        { icon: '🎨', value: totalProjects, label: '个作品', sub: `${deployedProjects}已上线` },
-        { icon: '🏆', value: unlockedAchievements, label: '项成就', sub: `共${totalAchievements}项` },
-        { icon: '📅', value: runDays > 0 ? runDays : 30, label: '天运行', sub: '持续进化' },
+    // 五维能力定义
+    const dimensions = [
+        { key: 'understanding', icon: '🤝', name: '懂你程度', color: '#00d4ff', desc: '越来越不用纠正' },
+        { key: 'execution', icon: '🎯', name: '执行效率', color: '#4ade80', desc: '一次就做对' },
+        { key: 'skillDepth', icon: '⚡', name: '技能深度', color: '#fbbf24', desc: '技能越来越厉害' },
+        { key: 'thinkingDepth', icon: '💭', name: '思考深度', color: '#a78bfa', desc: '分析越来越深刻' },
+        { key: 'knowledgeBreadth', icon: '📚', name: '知识丰富度', color: '#f472b6', desc: '知道的越来越多' }
     ];
     
+    // 找出最弱维度
+    let weakestDim = dimensions[0];
+    dimensions.forEach(dim => {
+        if ((stats[dim.key] || 0) < (stats[weakestDim.key] || 0)) {
+            weakestDim = dim;
+        }
+    });
+    
+    // EXP总量
+    const totalExp = char?.totalExp || 0;
+    
     container.innerHTML = `
-        <div class="about-stats-title">📊 我的工作成果</div>
-        ${stats.map(s => `
-            <div class="stat-card">
-                <div class="stat-card-icon">${s.icon}</div>
-                <div class="stat-card-value">${s.value}</div>
-                <div class="stat-card-label">${s.label}</div>
+        <div class="about-stats-title">📊 五维能力雷达</div>
+        
+        <!-- 五维能力卡片 -->
+        <div class="dimension-cards">
+            ${dimensions.map(dim => {
+                const score = stats[dim.key] || 0;
+                const exp = expBreakdown[dim.key] || expBreakdown[dim.key.toLowerCase()] || 0;
+                const isWeakest = dim.key === weakestDim.key;
+                return `
+                    <div class="dimension-card ${isWeakest ? 'weakest' : ''}" style="--dim-color: ${dim.color}">
+                        <div class="dim-header">
+                            <span class="dim-icon">${dim.icon}</span>
+                            <span class="dim-name">${dim.name}</span>
+                            ${isWeakest ? '<span class="dim-weak-badge">📈 待提升</span>' : ''}
+                        </div>
+                        <div class="dim-score">${score.toFixed(0)}</div>
+                        <div class="dim-bar">
+                            <div class="dim-bar-fill" style="width: ${score}%; background: ${dim.color}"></div>
+                        </div>
+                        <div class="dim-exp">+${exp.toLocaleString()} EXP</div>
+                    </div>
+                `;
+            }).join('')}
+        </div>
+        
+        <!-- 段位进阶路径 -->
+        <div class="tier-progress-section">
+            <div class="tier-progress-header">
+                <span class="tier-icon">${tier.icon}</span>
+                <span class="tier-name" style="color: ${tier.color}">${tier.name}段位</span>
+                <span class="tier-level">Lv.${char?.level || 1} / ${tier.maxLevel}</span>
             </div>
-        `).join('')}
+            <div class="tier-roadmap">
+                ${renderTierRoadmap(char?.level || 1)}
+            </div>
+        </div>
+        
+        <!-- 总EXP和升级建议 -->
+        <div class="exp-summary">
+            <div class="exp-total">
+                <span class="exp-label">总经验值</span>
+                <span class="exp-value">${totalExp.toLocaleString()} EXP</span>
+            </div>
+            <div class="upgrade-hint">
+                <span class="hint-icon">💡</span>
+                <span class="hint-text">提升「${weakestDim.name}」最能加速升级：${weakestDim.desc}</span>
+            </div>
+        </div>
     `;
+}
+
+// 渲染段位进阶路径
+function renderTierRoadmap(currentLevel) {
+    const tiers = [
+        { name: '青铜', minLevel: 1, maxLevel: 10, color: '#cd7f32', icon: '🥉' },
+        { name: '白银', minLevel: 11, maxLevel: 20, color: '#c0c0c0', icon: '🥈' },
+        { name: '黄金', minLevel: 21, maxLevel: 30, color: '#ffd700', icon: '🥇' },
+        { name: '铂金', minLevel: 31, maxLevel: 40, color: '#e5e4e2', icon: '💎' },
+        { name: '钻石', minLevel: 41, maxLevel: 50, color: '#b9f2ff', icon: '💠' },
+        { name: '大师', minLevel: 51, maxLevel: 70, color: '#9370db', icon: '🏆' },
+        { name: '宗师', minLevel: 71, maxLevel: 80, color: '#ff6347', icon: '👑' },
+        { name: '传说', minLevel: 81, maxLevel: 90, color: '#ff4500', icon: '🌟' },
+        { name: '神话', minLevel: 91, maxLevel: 100, color: '#ffd700', icon: '✨' }
+    ];
+    
+    return tiers.slice(0, 6).map(tier => {
+        const isActive = currentLevel >= tier.minLevel && currentLevel <= tier.maxLevel;
+        const isPassed = currentLevel > tier.maxLevel;
+        const statusClass = isActive ? 'active' : (isPassed ? 'passed' : 'future');
+        
+        return `
+            <div class="tier-node ${statusClass}" style="--tier-color: ${tier.color}">
+                <span class="tier-node-icon">${tier.icon}</span>
+                <span class="tier-node-name">${tier.name}</span>
+                <span class="tier-node-range">Lv.${tier.minLevel}-${tier.maxLevel}</span>
+            </div>
+        `;
+    }).join('<div class="tier-connector"></div>');
 }
 
 // ==================== 侧边栏渲染 ====================

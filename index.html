@@ -2463,7 +2463,240 @@
             font-family: var(--font-title);
             font-size: 16px;
             color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* ==================== 五维能力卡片 v3.0 ==================== */
+        .dimension-cards {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        @media (max-width: 900px) {
+            .dimension-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .dimension-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .dimension-card {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        
+        .dimension-card:hover {
+            border-color: var(--dim-color, var(--sheikah-blue));
+            box-shadow: 0 0 20px color-mix(in srgb, var(--dim-color, var(--sheikah-blue)) 30%, transparent);
+            transform: translateY(-3px);
+        }
+        
+        .dimension-card.weakest {
+            border-color: rgba(251, 191, 36, 0.4);
+            background: rgba(251, 191, 36, 0.05);
+        }
+        
+        .dim-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
             margin-bottom: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        .dim-icon {
+            font-size: 16px;
+        }
+        
+        .dim-name {
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.8);
+        }
+        
+        .dim-weak-badge {
+            font-size: 9px;
+            background: rgba(251, 191, 36, 0.3);
+            color: #fbbf24;
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+        
+        .dim-score {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dim-color, var(--sheikah-blue-light));
+            line-height: 1.2;
+        }
+        
+        .dim-bar {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            margin: var(--spacing-sm) 0;
+            overflow: hidden;
+        }
+        
+        .dim-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+        
+        .dim-exp {
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.5);
+        }
+        
+        /* ==================== 段位进阶路径 ==================== */
+        .tier-progress-section {
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .tier-progress-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .tier-icon {
+            font-size: 24px;
+        }
+        
+        .tier-name {
+            font-family: var(--font-title);
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .tier-level {
+            margin-left: auto;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: rgba(200, 220, 240, 0.7);
+        }
+        
+        .tier-roadmap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
+            overflow-x: auto;
+            padding: var(--spacing-sm) 0;
+        }
+        
+        .tier-node {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            min-width: 60px;
+            transition: all var(--transition-normal);
+        }
+        
+        .tier-node.active {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid var(--tier-color, var(--sheikah-blue));
+            box-shadow: 0 0 15px color-mix(in srgb, var(--tier-color, var(--sheikah-blue)) 40%, transparent);
+        }
+        
+        .tier-node.passed {
+            opacity: 0.5;
+        }
+        
+        .tier-node.future {
+            opacity: 0.3;
+        }
+        
+        .tier-node-icon {
+            font-size: 20px;
+        }
+        
+        .tier-node-name {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--tier-color, var(--text-light));
+        }
+        
+        .tier-node-range {
+            font-size: 9px;
+            color: rgba(200, 220, 240, 0.5);
+        }
+        
+        .tier-connector {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0, 212, 255, 0.3) 0%, rgba(0, 212, 255, 0.1) 100%);
+            min-width: 10px;
+        }
+        
+        /* ==================== EXP总览 ==================== */
+        .exp-summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .exp-total {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        
+        .exp-label {
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        .exp-value {
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--zelda-gold-light);
+        }
+        
+        .upgrade-hint {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+        }
+        
+        .hint-icon {
+            font-size: 16px;
+        }
+        
+        .hint-text {
+            font-size: 12px;
+            color: #fbbf24;
         }
         
         /* ==================== 核心价值主张样式 ==================== */

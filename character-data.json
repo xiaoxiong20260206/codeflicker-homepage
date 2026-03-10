@@ -1,45 +1,53 @@
 {
-  "generatedAt": "2026-03-10T08:24:39.923800",
+  "generatedAt": "2026-03-10T09:15:51.437290",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "7.0",
-    "level": 7,
-    "levelTitle": "右臂",
-    "totalExp": 12788,
-    "expProgress": 15.8,
-    "currentThreshold": 12000,
-    "nextThreshold": 17000,
+    "level": 74,
+    "levelTitle": "传说",
+    "tier": {
+      "name": "宗师",
+      "minLevel": 71,
+      "maxLevel": 80,
+      "color": "#ff6347",
+      "icon": "👑",
+      "description": "炉火纯青，宗师风范"
+    },
+    "totalExp": 383520,
+    "expProgress": 1.9,
+    "currentThreshold": 382801,
+    "nextThreshold": 420009,
     "stats": {
       "understanding": 75.0,
-      "execution": 52.5,
+      "execution": 74.0,
       "skillDepth": 80.6,
-      "thinkingDepth": 46.0,
+      "thinkingDepth": 63.8,
       "knowledgeBreadth": 89.4
     },
     "debug": {
       "metrics": {
-        "ftr": 70,
-        "sdr": 0,
-        "thi": 70,
-        "mdv": 0.5,
-        "ctr": 0
+        "ftr": 70.0,
+        "sdr": 72.0,
+        "thi": 83.8,
+        "mdv": 0.61,
+        "ctr": 2.2
       },
-      "activeSkills": 47,
+      "activeSkills": 46,
       "highLevelSkills": 37,
-      "skillTotalValue": 4837.0,
+      "skillTotalValue": 4800.4,
       "expBreakdown": {
-        "understanding": 2250,
-        "execution": 2100,
-        "skill": 4836,
-        "thinking": 920,
-        "knowledge": 2682
+        "understanding": 75000,
+        "execution": 74000,
+        "skill": 120899,
+        "thinking": 51040,
+        "knowledge": 62580
       }
     }
   },
   "skills": {
-    "total": 64,
+    "total": 62,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -56,7 +64,7 @@
             "level": 5,
             "exp": 100,
             "description": "每日反思与自进化：五维反思+分流决策树+自修正工作流",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-10",
             "callCount": 156,
             "frequency": "1.2次/天",
             "successRate": 94
@@ -351,19 +359,6 @@
             "successRate": 88
           },
           {
-            "name": "research",
-            "displayName": "通用调研",
-            "shortName": "调研",
-            "source": "Claude技能库",
-            "level": 3,
-            "exp": 70,
-            "description": "AI驱动的通用研究能力，带引用的综合调研",
-            "lastUpdated": "2026-02-09",
-            "callCount": 42,
-            "frequency": "0.3次/天",
-            "successRate": 87
-          },
-          {
             "name": "wechat-research",
             "displayName": "公众号调研",
             "shortName": "公众号",
@@ -416,8 +411,8 @@
             "successRate": 0
           }
         ],
-        "count": 6,
-        "avgLevel": 2.2
+        "count": 5,
+        "avgLevel": 2.0
       },
       "📄 文档处理": {
         "role": "document",
@@ -946,19 +941,6 @@
             "successRate": 0
           },
           {
-            "name": "tavily-search",
-            "displayName": "tavily-search",
-            "shortName": "",
-            "source": "外部导入",
-            "level": 1,
-            "exp": 10,
-            "description": "Web search optimized for AI agents using Tavily API.",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "",
-            "successRate": 0
-          },
-          {
             "name": "openai-whisper",
             "displayName": "openai-whisper",
             "shortName": "",
@@ -1011,8 +993,8 @@
             "successRate": 0
           }
         ],
-        "count": 8,
-        "avgLevel": 1.6
+        "count": 7,
+        "avgLevel": 1.7
       }
     },
     "tree": {
@@ -1036,7 +1018,7 @@
                 "level": 5,
                 "exp": 100,
                 "description": "每日反思与自进化：五维反思+分流决策树+自修正工作流",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-10",
                 "callCount": 156,
                 "frequency": "1.2次/天",
                 "successRate": 94
@@ -1346,19 +1328,6 @@
                 "successRate": 88
               },
               {
-                "name": "research",
-                "displayName": "通用调研",
-                "shortName": "调研",
-                "source": "Claude技能库",
-                "level": 3,
-                "exp": 70,
-                "description": "AI驱动的通用研究能力，带引用的综合调研",
-                "lastUpdated": "2026-02-09",
-                "callCount": 42,
-                "frequency": "0.3次/天",
-                "successRate": 87
-              },
-              {
                 "name": "wechat-research",
                 "displayName": "公众号调研",
                 "shortName": "公众号",
@@ -1411,8 +1380,8 @@
                 "successRate": 0
               }
             ],
-            "count": 6,
-            "avgLevel": 2.2
+            "count": 5,
+            "avgLevel": 2.0
           },
           "📄 文档处理": {
             "role": "document",
@@ -1935,19 +1904,6 @@
                 "successRate": 0
               },
               {
-                "name": "tavily-search",
-                "displayName": "tavily-search",
-                "shortName": "",
-                "source": "外部导入",
-                "level": 1,
-                "exp": 10,
-                "description": "Web search optimized for AI agents using Tavily API.",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "",
-                "successRate": 0
-              },
-              {
                 "name": "openai-whisper",
                 "displayName": "openai-whisper",
                 "shortName": "",
@@ -2000,11 +1956,11 @@
                 "successRate": 0
               }
             ],
-            "count": 8,
-            "avgLevel": 1.6
+            "count": 7,
+            "avgLevel": 1.7
           }
         },
-        "count": 46,
+        "count": 44,
         "avgLevel": 2.9
       }
     },
@@ -3156,6 +3112,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-07",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "新工具/技能接入前的三道关卡（基础设施→ROI→最小验证）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "领域踩坑",
+        "layer": null,
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 新工具/技能接入前的三道关卡 ### 来源 2026-03-10：安装3个Tavily技能（tavily-search×2 + research），...",
+        "keywords": [
+          "新工具接入",
+          "ROI评估",
+          "基础设施验证",
+          "API Key",
+          "技能合并"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-10",
         "source": "用户显式记录"
       },
       {
@@ -4678,7 +4653,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 117,
+    "total": 118,
     "byCategory": {
       "development_practice_specification": {
         "count": 14,
@@ -4723,7 +4698,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "common_pitfalls_experience": {
-        "count": 55,
+        "count": 56,
         "label": "发布部署",
         "icon": "🚀",
         "color": "#4ade80",
@@ -7003,7 +6978,7 @@
       43,
       58,
       59,
-      64
+      62
     ],
     "knowledge": [
       150,
@@ -7033,7 +7008,7 @@
       69,
       123,
       117,
-      117
+      118
     ]
   },
   "achievements": [
@@ -7191,8 +7166,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 66,
-      "progressText": "执行效率 52/80",
+      "progress": 92,
+      "progressText": "执行效率 74/80",
       "date": "???"
     },
     {
@@ -7203,8 +7178,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 57,
-      "progressText": "思考深度 46/80",
+      "progress": 80,
+      "progressText": "思考深度 64/80",
       "date": "???"
     }
   ]

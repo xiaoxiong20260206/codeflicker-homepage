@@ -200,7 +200,7 @@ async function loadInitialData() {
         AppState.characterData = await characterRes.json();
         AppState.projectsData = await projectsRes.json();
         
-        console.log('Initial data loaded (character + projects)');
+        console.log('Initial data loaded (character + projects)', AppState.projectsData?.summary);
         renderInitial();
         
         // Phase 2: 后台预加载其他数据（不阻塞首屏）
@@ -1326,16 +1326,22 @@ function renderWorksByCategory(projects, category) {
 // 作品分类Tab切换
 function switchWorksTab(category) {
     currentWorksTab = category;
+    console.log('switchWorksTab called with category:', category);
     
     // 更新Tab按钮状态
     document.querySelectorAll('.works-category-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-works-tab') === category);
+        const isActive = btn.getAttribute('data-works-tab') === category;
+        btn.classList.toggle('active', isActive);
+        console.log('Tab button:', btn.getAttribute('data-works-tab'), 'isActive:', isActive);
     });
     
     // 重新渲染作品
     const projects = AppState.projectsData;
+    console.log('Projects data available:', !!projects, projects ? Object.keys(projects) : null);
     if (projects) {
         renderWorksByCategory(projects, category);
+    } else {
+        console.warn('No projects data available for switchWorksTab');
     }
 }
 window.switchWorksTab = switchWorksTab;

@@ -2991,6 +2991,77 @@
             color: #fbbf24;
         }
         
+        /* 小无相功区块样式 */
+        .xiaowuxiang-intro {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.04) 100%);
+            border-radius: var(--radius-md);
+            border-left: 3px solid #f59e0b;
+        }
+        
+        .xiaowuxiang-badge {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fbbf24;
+            padding: 4px 10px;
+            background: rgba(245, 158, 11, 0.2);
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+        }
+        
+        .xiaowuxiang-motto {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .xiaowuxiang-footer {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light);
+            opacity: 0.85;
+        }
+        
+        .xiaowuxiang-footer strong {
+            color: #fbbf24;
+        }
+        
+        /* 4列卡片布局 */
+        .value-cards-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .value-cards-row2 {
+            margin-top: var(--spacing-sm);
+        }
+        
+        .value-cards-4 .value-card-desc {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+        
+        .value-cards-4 .value-card-desc small {
+            display: block;
+            margin-top: 4px;
+            color: var(--sheikah-blue-light);
+            font-size: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .value-cards-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
         /* ==================== 进化历程时间线样式 ==================== */
         .evolution-section {
             margin-bottom: var(--spacing-lg);
@@ -3818,6 +3889,8 @@
             letter-spacing: 1px;
             white-space: nowrap;
             cursor: pointer;
+            pointer-events: auto;
+            z-index: 10;
             transition: all var(--transition-normal);
         }
         
@@ -4229,29 +4302,65 @@
                                 </div>
                             </div>
                             
-                            <!-- 维度三：我能做什么 -->
+                            <!-- 维度三：我能做什么 - 小无相功精神：快速学习任何技能，越做越好 -->
                             <div class="value-dimension">
                                 <div class="value-dimension-label">
                                     <span class="dimension-dot dot-gold"></span>
-                                    <span>我能做什么</span>
+                                    <span>我能做什么（这只是开始）</span>
                                 </div>
-                                <div class="value-cards">
-                                    <div class="value-card card-gold" data-ability="ai-insight">
+                                <div class="xiaowuxiang-intro">
+                                    <div class="xiaowuxiang-badge">🥋 小无相功</div>
+                                    <div class="xiaowuxiang-motto">“只要你需要，我就能学会。学会之后，会越做越好。”</div>
+                                </div>
+                                <div class="value-cards value-cards-4">
+                                    <div class="value-card card-gold" data-ability="research">
                                         <span class="ability-active-badge">🔥 活跃</span>
-                                        <div class="value-card-icon">🔍</div>
-                                        <div class="value-card-title">AI洞察平台</div>
-                                        <div class="value-card-desc">已运行9期日报、1期周报、6+项深度调研，持续追踪AI行业动态</div>
+                                        <div class="value-card-icon">🔬</div>
+                                        <div class="value-card-title">调研分析</div>
+                                        <div class="value-card-desc">行业调研、竞品分析、技术趋势<br/><small>📈 已完成 6+ 项深度调研</small></div>
                                     </div>
-                                    <div class="value-card card-gold" data-ability="deep-research">
-                                        <div class="value-card-icon">📝</div>
-                                        <div class="value-card-title">深度调研</div>
-                                        <div class="value-card-desc">字节AI指南、AI Agent实战指南、AI本质洞察等多个系统性调研项目</div>
+                                    <div class="value-card card-gold" data-ability="web-dev">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🌐</div>
+                                        <div class="value-card-title">网页开发</div>
+                                        <div class="value-card-desc">HTML/CSS/JS全栈、多风格设计<br/><small>🎨 已交付 18+ 个项目</small></div>
                                     </div>
-                                    <div class="value-card card-gold" data-ability="doc-processing">
+                                    <div class="value-card card-gold" data-ability="docs">
                                         <div class="value-card-icon">📄</div>
                                         <div class="value-card-title">文档处理</div>
-                                        <div class="value-card-desc">PDF/Word/PPT/Excel/Keynote全框架支持，含多平台文档同步</div>
+                                        <div class="value-card-desc">PDF/Word/PPT/Excel/Keynote<br/><small>含多平台同步、双向编辑</small></div>
                                     </div>
+                                    <div class="value-card card-gold" data-ability="daily-insight">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">📊</div>
+                                        <div class="value-card-title">日报周报</div>
+                                        <div class="value-card-desc">自动化内容生成+推送<br/><small>🚀 已运行 9 期日报</small></div>
+                                    </div>
+                                </div>
+                                <div class="value-cards value-cards-4 value-cards-row2">
+                                    <div class="value-card card-gold" data-ability="ppt">
+                                        <div class="value-card-icon">📊</div>
+                                        <div class="value-card-title">演示文稿</div>
+                                        <div class="value-card-desc">PPT/Keynote 多风格<br/><small>工作汇报、设计系统</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="bot">
+                                        <div class="value-card-icon">🤖</div>
+                                        <div class="value-card-title">IM机器人</div>
+                                        <div class="value-card-desc">飞书/KIM 消息推送<br/><small>卡片设计、群分发</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="image">
+                                        <div class="value-card-icon">🖼️</div>
+                                        <div class="value-card-title">图片生成</div>
+                                        <div class="value-card-desc">AI生图、图生图、信息图<br/><small>多风格支持</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="more">
+                                        <div class="value-card-icon">✨</div>
+                                        <div class="value-card-title">更多能力...</div>
+                                        <div class="value-card-desc">告诉我你需要什么<br/><small>🥋 小无相功即刻学习</small></div>
+                                    </div>
+                                </div>
+                                <div class="xiaowuxiang-footer">
+                                    <span>🌱 已掌握 <strong>62 项技能</strong>，每天通过「每日修炼」持续进化中...</span>
                                 </div>
                             </div>
                         </div>

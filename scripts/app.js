@@ -1225,10 +1225,10 @@ function renderWorksSection() {
 
 // P0/P1优化: 作品树形分类展示
 function renderWorksTree(projects) {
-    const container = document.getElementById('works-grid');
+    const container = document.getElementById('works-list');
     
     if (!container) {
-        console.warn('works-grid container not found');
+        console.warn('works-list container not found');
         return;
     }
     
@@ -1375,10 +1375,10 @@ function renderWorksTree(projects) {
 }
 
 function renderWorksGrid(projects) {
-    const container = document.getElementById('works-grid');
+    const container = document.getElementById('works-list');
     
     if (!container) {
-        console.warn('works-grid container not found');
+        console.warn('works-list container not found');
         return;
     }
     
@@ -1621,6 +1621,31 @@ function closeSkillDetailPanel() {
 
 window.showSkillDetailPanel = showSkillDetailPanel;
 window.closeSkillDetailPanel = closeSkillDetailPanel;
+
+// ==================== 通用二级导航切换 ====================
+function scrollToSubSection(targetId) {
+    const target = document.getElementById(targetId);
+    if (!target) {
+        console.warn('Sub-section not found:', targetId);
+        return;
+    }
+    
+    // 获取所有sub-nav按钮，更新active状态
+    const allBtns = document.querySelectorAll('.sub-nav-btn');
+    allBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-target') === targetId);
+    });
+    
+    // 平滑滚动到目标位置，考虑sticky导航高度
+    const navHeight = 120; // 顶部导航 + 二级导航高度
+    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+    
+    window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+    });
+}
+window.scrollToSubSection = scrollToSubSection;
 
 // ==================== 能力Tab切换 ====================
 function switchAbilityTab(tabName) {

@@ -3556,6 +3556,64 @@
             transform: translateX(3px);
         }
         
+        /* ==================== 通用二级导航样式 ==================== */
+        .section-sub-nav {
+            display: flex;
+            gap: 4px;
+            margin-bottom: var(--spacing-lg);
+            padding: 4px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            position: sticky;
+            top: 60px;
+            z-index: 10;
+        }
+        
+        .sub-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 14px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            color: rgba(200, 220, 240, 0.6);
+            font-family: var(--font-title);
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .sub-nav-btn:hover {
+            color: rgba(200, 220, 240, 0.9);
+            background: rgba(0, 212, 255, 0.08);
+        }
+        
+        .sub-nav-btn.active {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.3);
+            color: var(--sheikah-blue-light);
+        }
+        
+        .sub-nav-btn .sub-nav-icon {
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .section-sub-nav {
+                position: relative;
+                top: 0;
+            }
+            .sub-nav-btn {
+                padding: 8px 10px;
+                font-size: 11px;
+            }
+        }
+        
         /* ==================== 能力Tab切换样式 ==================== */
         .ability-tabs {
             display: flex;
@@ -3890,8 +3948,36 @@
                     </div>
                 </div>
                 
+                <!-- 二级导航 -->
+                <div class="section-sub-nav" id="about-sub-nav">
+                    <button class="sub-nav-btn active" data-target="about-intro" onclick="scrollToSubSection('about-intro')">
+                        <span class="sub-nav-icon">👋</span>
+                        <span>自我介绍</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="about-unique" onclick="scrollToSubSection('about-unique')">
+                        <span class="sub-nav-icon">✨</span>
+                        <span>独特之处</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="about-stats" onclick="scrollToSubSection('about-stats')">
+                        <span class="sub-nav-icon">📊</span>
+                        <span>工作成果</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="about-evolution" onclick="scrollToSubSection('about-evolution')">
+                        <span class="sub-nav-icon">🚀</span>
+                        <span>进化历程</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="about-howto" onclick="scrollToSubSection('about-howto')">
+                        <span class="sub-nav-icon">🎯</span>
+                        <span>使用方式</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="about-achievements" onclick="scrollToSubSection('about-achievements')">
+                        <span class="sub-nav-icon">🏆</span>
+                        <span>成就墙</span>
+                    </button>
+                </div>
+                
                 <!-- 关于我 - 自我介绍 -->
-                <div class="about-me-section">
+                <div class="about-me-section" id="about-intro">
                     <div class="about-hero">
                         <div class="about-avatar">
                             <div class="about-avatar-glow"></div>
@@ -3915,7 +4001,7 @@
                     </div>
                     
                     <!-- 核心价值主张 -->
-                    <div class="value-proposition">
+                    <div class="value-proposition" id="about-unique">
                         <div class="value-header">
                             <span class="value-icon">💡</span>
                             <span class="value-title">我的独特之处</span>
@@ -3976,7 +4062,7 @@
                     </div>
                     
                     <!-- 我的工作成果 -->
-                    <div class="about-core-stats reveal" id="about-core-stats">
+                    <div class="about-core-stats reveal" id="about-stats">
                         <div class="about-stats-title">📊 我的工作成果</div>
                         <!-- 动态填充 -->
                     </div>
@@ -3988,7 +4074,7 @@
                     <span class="diamond"></span>
                     <span class="line"></span>
                 </div>
-                <div class="evolution-section reveal">
+                <div class="evolution-section reveal" id="about-evolution">
                     <div class="evolution-header">
                         <span class="evolution-icon">🚀</span>
                         <span class="evolution-title">进化历程</span>
@@ -4001,7 +4087,7 @@
                 </div>
                 
                 <!-- 如何使用我 -->
-                <div class="howto-section reveal">
+                <div class="howto-section reveal" id="about-howto">
                     <div class="howto-header">
                         <span class="howto-icon">🎯</span>
                         <span class="howto-title">如何与我对话</span>
@@ -4062,7 +4148,7 @@
                     <span class="diamond"></span>
                     <span class="line"></span>
                 </div>
-                <div class="achievements-section reveal">
+                <div class="achievements-section reveal" id="about-achievements">
                     <div class="achievements-title">
                         🏆 成就墙
                         <span class="achievements-stats" id="achievements-stats-2"></span>
@@ -4080,7 +4166,19 @@
                     </div>
                 </div>
                 
-                <div class="works-intro">
+                <!-- 二级导航 -->
+                <div class="section-sub-nav" id="works-sub-nav">
+                    <button class="sub-nav-btn active" data-target="works-overview" onclick="scrollToSubSection('works-overview')">
+                        <span class="sub-nav-icon">📊</span>
+                        <span>作品统计</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="works-list" onclick="scrollToSubSection('works-list')">
+                        <span class="sub-nav-icon">🎨</span>
+                        <span>作品展示</span>
+                    </button>
+                </div>
+                
+                <div class="works-intro" id="works-overview">
                     <div class="works-intro-text">
                         这里展示了林克协助完成的核心项目作品，包括调研报告、自动化工具、数据面板等。<br>
                         每个作品都是与用户协作的成果，体现了AI助理的实际产出能力。
@@ -4101,7 +4199,7 @@
                     </div>
                 </div>
                 
-                <div class="works-grid" id="works-grid"></div>
+                <div class="works-grid" id="works-list"></div>
             </section>
             
             <!-- ==================== Section 3: 我的能力 ==================== -->
@@ -4270,8 +4368,28 @@
                     </div>
                 </div>
                 
+                <!-- 二级导航 -->
+                <div class="section-sub-nav" id="daily-sub-nav">
+                    <button class="sub-nav-btn active" data-target="daily-progress" onclick="scrollToSubSection('daily-progress')">
+                        <span class="sub-nav-icon">📋</span>
+                        <span>核心进展</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="daily-delivery" onclick="scrollToSubSection('daily-delivery')">
+                        <span class="sub-nav-icon">🚀</span>
+                        <span>交付情况</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="daily-capability" onclick="scrollToSubSection('daily-capability')">
+                        <span class="sub-nav-icon">📈</span>
+                        <span>能力提升</span>
+                    </button>
+                    <button class="sub-nav-btn" data-target="daily-learning" onclick="scrollToSubSection('daily-learning')">
+                        <span class="sub-nav-icon">📖</span>
+                        <span>学习记录</span>
+                    </button>
+                </div>
+                
                 <!-- 板块一：核心进展 -->
-                <div class="daily-section-block core-progress-block">
+                <div class="daily-section-block core-progress-block" id="daily-progress">
                     <div class="block-header">
                         <span class="block-icon">📋</span>
                         <span class="block-title">核心进展</span>
@@ -4282,7 +4400,7 @@
                 </div>
                 
                 <!-- 板块二：交付情况 -->
-                <div class="daily-section-block deliveries-block">
+                <div class="daily-section-block deliveries-block" id="daily-delivery">
                     <div class="block-header">
                         <span class="block-icon">🚀</span>
                         <span class="block-title">交付情况</span>
@@ -4297,7 +4415,7 @@
                 </div>
                 
                 <!-- 板块三：能力提升 -->
-                <div class="daily-section-block capability-block">
+                <div class="daily-section-block capability-block" id="daily-capability">
                     <div class="block-header">
                         <span class="block-icon">📈</span>
                         <span class="block-title">能力提升</span>
@@ -4340,7 +4458,7 @@
                     </div>
                     
                     <!-- 趋势图 -->
-                    <div class="trend-chart-section">
+                    <div class="trend-chart-section" id="daily-learning">
                         <div class="trend-title">📊 成长趋势</div>
                         <div class="trend-chart-container">
                             <canvas id="dailyTrendChart"></canvas>

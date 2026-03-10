@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T14:04:02.856822",
+  "generatedAt": "2026-03-10T17:06:02.656366",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,39 +15,39 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 367420,
-    "expProgress": 53.6,
+    "totalExp": 365470,
+    "expProgress": 47.7,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
       "understanding": 59.0,
-      "execution": 73.9,
-      "skillDepth": 80.6,
+      "execution": 74.5,
+      "skillDepth": 78.9,
       "thinkingDepth": 63.8,
       "knowledgeBreadth": 89.4
     },
     "debug": {
       "metrics": {
-        "ftr": 70.2,
-        "sdr": 70.8,
-        "thi": 84.2,
+        "ftr": 71.2,
+        "sdr": 72.0,
+        "thi": 83.6,
         "mdv": 0.61,
         "ctr": 2.2
       },
-      "activeSkills": 46,
-      "highLevelSkills": 37,
-      "skillTotalValue": 4800.4,
+      "activeSkills": 45,
+      "highLevelSkills": 36,
+      "skillTotalValue": 4759.9,
       "expBreakdown": {
         "understanding": 59000,
-        "execution": 73900,
-        "skill": 120899,
+        "execution": 74500,
+        "skill": 118350,
         "thinking": 51040,
         "knowledge": 62580
       }
     }
   },
   "skills": {
-    "total": 62,
+    "total": 68,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -103,7 +103,7 @@
             "level": 5,
             "exp": 83,
             "description": "自进化体系引导程序：复利循环+善巧方便五原则+五大闭环",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-10",
             "callCount": 48,
             "frequency": "0.4次/天",
             "successRate": 96
@@ -148,19 +148,6 @@
             "successRate": 95
           },
           {
-            "name": "skill-architecture",
-            "displayName": "技能架构",
-            "shortName": "技能架构",
-            "source": "AI核心能力",
-            "level": 4,
-            "exp": 70,
-            "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-            "lastUpdated": "2026-03-10",
-            "callCount": 18,
-            "frequency": "0.1次/天",
-            "successRate": 94
-          },
-          {
             "name": "xixingdafa",
             "displayName": "吸星大法",
             "shortName": "吸星大法",
@@ -168,14 +155,27 @@
             "level": 1,
             "exp": 10,
             "description": "外部精华吸收：搜索→评估→研读→提取→融入→清理，化他人内功为己用",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "skill-management",
+            "displayName": "skill-management",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1: 全量扫描+深度分析+架构重构+批量优化）。",
+            "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           }
         ],
         "count": 9,
-        "avgLevel": 4.3
+        "avgLevel": 4.0
       },
       "🧠 思维方法": {
         "role": "cognitive",
@@ -272,10 +272,23 @@
             "callCount": 15,
             "frequency": "0.1次/天",
             "successRate": 87
+          },
+          {
+            "name": "debug-pro",
+            "displayName": "debug-pro",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "Systematic debugging methodology and language-specific debugging commands.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           }
         ],
-        "count": 3,
-        "avgLevel": 4.0
+        "count": 4,
+        "avgLevel": 3.2
       },
       "AI领域洞察": {
         "role": "ai-insight",
@@ -333,10 +346,23 @@
             "callCount": 38,
             "frequency": "0.3次/天",
             "successRate": 92
+          },
+          {
+            "name": "investment-analyzer",
+            "displayName": "投资分析",
+            "shortName": "投资",
+            "source": "Claude技能库",
+            "level": 3,
+            "exp": 58,
+            "description": "投资机会分析，跨资产类别评估和风险分析",
+            "lastUpdated": "2026-02-25",
+            "callCount": 12,
+            "frequency": "0.1次/天",
+            "successRate": 85
           }
         ],
-        "count": 2,
-        "avgLevel": 4.0
+        "count": 3,
+        "avgLevel": 3.7
       },
       "📊 调研分析": {
         "role": "research",
@@ -372,13 +398,13 @@
             "successRate": 85
           },
           {
-            "name": "apify-trend-analysis",
-            "displayName": "趋势分析",
-            "shortName": "趋势",
+            "name": "apify-competitor-intelligence",
+            "displayName": "竞争情报",
+            "shortName": "竞情",
             "source": "Cursor技能库",
             "level": 1,
             "exp": 10,
-            "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+            "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
             "lastUpdated": "2026-02-09",
             "callCount": 0,
             "frequency": "",
@@ -398,21 +424,34 @@
             "successRate": 0
           },
           {
-            "name": "apify-competitor-intelligence",
-            "displayName": "竞争情报",
-            "shortName": "竞情",
+            "name": "apify-trend-analysis",
+            "displayName": "趋势分析",
+            "shortName": "趋势",
             "source": "Cursor技能库",
             "level": 1,
             "exp": 10,
-            "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
+            "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
             "lastUpdated": "2026-02-09",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "summarize",
+            "displayName": "summarize",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+            "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           }
         ],
-        "count": 5,
-        "avgLevel": 2.0
+        "count": 6,
+        "avgLevel": 1.8
       },
       "📄 文档处理": {
         "role": "document",
@@ -498,10 +537,36 @@
             "callCount": 24,
             "frequency": "0.2次/天",
             "successRate": 91
+          },
+          {
+            "name": "nano-pdf",
+            "displayName": "nano-pdf",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "Use nano-pdf to apply edits to a specific page in a PDF using a natural-language instruction.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "openai-whisper",
+            "displayName": "openai-whisper",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "Use whisper to transcribe audio locally.",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           }
         ],
-        "count": 6,
-        "avgLevel": 3.8
+        "count": 8,
+        "avgLevel": 3.1
       },
       "🎨 前端开发": {
         "role": "frontend",
@@ -510,6 +575,19 @@
         "layer": "execution",
         "description": "页面开发与设计：UI/UX、组件、工作流",
         "skills": [
+          {
+            "name": "frontend-design",
+            "displayName": "前端设计",
+            "shortName": "前端",
+            "source": "Cursor技能库",
+            "level": 5,
+            "exp": 100,
+            "description": "高质量前端界面设计，避免通用AI风格",
+            "lastUpdated": "2026-03-06",
+            "callCount": 96,
+            "frequency": "0.7次/天",
+            "successRate": 91
+          },
           {
             "name": "web-dev-workflow",
             "displayName": "网页开发",
@@ -524,17 +602,17 @@
             "successRate": 93
           },
           {
-            "name": "frontend-design",
-            "displayName": "前端设计",
-            "shortName": "前端",
-            "source": "Cursor技能库",
-            "level": 5,
-            "exp": 100,
-            "description": "高质量前端界面设计，避免通用AI风格",
-            "lastUpdated": "2026-03-06",
-            "callCount": 96,
-            "frequency": "0.7次/天",
-            "successRate": 91
+            "name": "ui-ux-pro-max",
+            "displayName": "UI专家",
+            "shortName": "UI专家",
+            "source": "Claude技能库",
+            "level": 4,
+            "exp": 76,
+            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+            "lastUpdated": "2026-02-08",
+            "callCount": 52,
+            "frequency": "0.4次/天",
+            "successRate": 92
           },
           {
             "name": "ai-image-generator",
@@ -589,8 +667,8 @@
             "successRate": 0
           }
         ],
-        "count": 6,
-        "avgLevel": 3.5
+        "count": 7,
+        "avgLevel": 3.6
       },
       "🎭 风格模板": {
         "role": "style",
@@ -663,19 +741,6 @@
         "description": "部署发布、消息推送、平台对接",
         "skills": [
           {
-            "name": "github-deploy-publisher",
-            "displayName": "GitHub部署",
-            "shortName": "GitHub",
-            "source": "用户自定义",
-            "level": 5,
-            "exp": 90,
-            "description": "自动化GitHub仓库创建、代码提交、Pages部署",
-            "lastUpdated": "2026-03-09",
-            "callCount": 72,
-            "frequency": "0.6次/天",
-            "successRate": 88
-          },
-          {
             "name": "codeflicker-homepage",
             "displayName": "个人首页",
             "shortName": "首页",
@@ -687,6 +752,19 @@
             "callCount": 68,
             "frequency": "0.5次/天",
             "successRate": 93
+          },
+          {
+            "name": "github-deploy-publisher",
+            "displayName": "GitHub部署",
+            "shortName": "GitHub",
+            "source": "用户自定义",
+            "level": 5,
+            "exp": 90,
+            "description": "自动化GitHub仓库创建、代码提交、Pages部署",
+            "lastUpdated": "2026-03-09",
+            "callCount": 72,
+            "frequency": "0.6次/天",
+            "successRate": 88
           },
           {
             "name": "linke-kim-message",
@@ -739,10 +817,23 @@
             "callCount": 6,
             "frequency": "1次/周",
             "successRate": 95
+          },
+          {
+            "name": "github",
+            "displayName": "github",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "Use the gh CLI to interact with GitHub. Always specify --repo owner/repo when not in a git direc",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
           }
         ],
-        "count": 6,
-        "avgLevel": 4.5
+        "count": 7,
+        "avgLevel": 4.0
       },
       "📝 创作与辅导": {
         "role": "creation",
@@ -889,112 +980,99 @@
         "layer": "execution",
         "skills": [
           {
-            "name": "ui-ux-pro-max",
-            "displayName": "UI专家",
-            "shortName": "UI专家",
-            "source": "Claude技能库",
-            "level": 4,
-            "exp": 76,
-            "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-            "lastUpdated": "2026-02-08",
-            "callCount": 52,
-            "frequency": "0.4次/天",
-            "successRate": 92
-          },
-          {
-            "name": "investment-analyzer",
-            "displayName": "投资分析",
-            "shortName": "投资",
-            "source": "Claude技能库",
-            "level": 3,
-            "exp": 58,
-            "description": "投资机会分析，跨资产类别评估和风险分析",
-            "lastUpdated": "2026-02-25",
-            "callCount": 12,
-            "frequency": "0.1次/天",
-            "successRate": 85
-          },
-          {
-            "name": "nano-pdf",
-            "displayName": "nano-pdf",
+            "name": "proactive-agent",
+            "displayName": "proactive-agent",
             "shortName": "",
             "source": "codeflicker",
             "level": 1,
             "exp": 10,
-            "description": "Use nano-pdf to apply edits to a specific page in a PDF using a natural-language instruction.",
+            "description": "By Hal Labs — Part of the Hal Stack",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           },
           {
-            "name": "ai-image-generator.bak.20260310_133512",
-            "displayName": "ai-image-generator.bak.20260310_133512",
+            "name": "capability-evolver",
+            "displayName": "capability-evolver",
             "shortName": "",
-            "source": "codeflicker",
+            "source": "外部导入",
             "level": 1,
             "exp": 10,
-            "description": "AI 图像生成器是一个通用的图像生成工具，可以根据用户的文字描述或结构化文档生成各种类型的图片。支持多种现代设计风格，适用于技术文档、商业演示、知识分享等场景。",
+            "description": "\"Evolution is not optional. Adapt or die.\"",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           },
           {
-            "name": "openai-whisper",
-            "displayName": "openai-whisper",
+            "name": "error-handling-patterns",
+            "displayName": "error-handling-patterns",
             "shortName": "",
-            "source": "codeflicker",
+            "source": "外部导入",
             "level": 1,
             "exp": 10,
-            "description": "Use whisper to transcribe audio locally.",
+            "description": "Build resilient applications with robust error handling strategies that gracefully handle failures a",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           },
           {
-            "name": "summarize",
-            "displayName": "summarize",
+            "name": "workflow-orchestration-patterns",
+            "displayName": "workflow-orchestration-patterns",
             "shortName": "",
-            "source": "codeflicker",
+            "source": "外部导入",
             "level": 1,
             "exp": 10,
-            "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+            "description": "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, res",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           },
           {
-            "name": "github",
-            "displayName": "github",
+            "name": "context-window-management",
+            "displayName": "context-window-management",
             "shortName": "",
-            "source": "codeflicker",
+            "source": "外部导入",
             "level": 1,
             "exp": 10,
-            "description": "Use the gh CLI to interact with GitHub. Always specify --repo owner/repo when not in a git direc",
+            "description": "You're a context engineering specialist who has optimized LLM applications handling",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           },
           {
-            "name": "debug-pro",
-            "displayName": "debug-pro",
+            "name": "meta-cognitive-reasoning",
+            "displayName": "meta-cognitive-reasoning",
             "shortName": "",
-            "source": "codeflicker",
+            "source": "外部导入",
             "level": 1,
             "exp": 10,
-            "description": "Systematic debugging methodology and language-specific debugging commands.",
+            "description": "This skill provides disciplined reasoning frameworks for avoiding cognitive failures in analysis, re",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          },
+          {
+            "name": "task-decomposition",
+            "displayName": "task-decomposition",
+            "shortName": "",
+            "source": "外部导入",
+            "level": 1,
+            "exp": 10,
+            "description": "Transform overwhelming development tasks into manageable units by respecting cognitive limits, creat",
             "lastUpdated": "2026-03-10",
             "callCount": 0,
             "frequency": "",
             "successRate": 0
           }
         ],
-        "count": 8,
-        "avgLevel": 1.6
+        "count": 7,
+        "avgLevel": 1.0
       }
     },
     "tree": {
@@ -1057,7 +1135,7 @@
                 "level": 5,
                 "exp": 83,
                 "description": "自进化体系引导程序：复利循环+善巧方便五原则+五大闭环",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-10",
                 "callCount": 48,
                 "frequency": "0.4次/天",
                 "successRate": 96
@@ -1102,19 +1180,6 @@
                 "successRate": 95
               },
               {
-                "name": "skill-architecture",
-                "displayName": "技能架构",
-                "shortName": "技能架构",
-                "source": "AI核心能力",
-                "level": 4,
-                "exp": 70,
-                "description": "技能体系架构优化：健康度诊断、复用检测、关系梳理",
-                "lastUpdated": "2026-03-10",
-                "callCount": 18,
-                "frequency": "0.1次/天",
-                "successRate": 94
-              },
-              {
                 "name": "xixingdafa",
                 "displayName": "吸星大法",
                 "shortName": "吸星大法",
@@ -1122,14 +1187,27 @@
                 "level": 1,
                 "exp": 10,
                 "description": "外部精华吸收：搜索→评估→研读→提取→融入→清理，化他人内功为己用",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "skill-management",
+                "displayName": "skill-management",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "> ⚠️ META-EXECUTION REQUIRED — 本技能已启用强制质量保障（C1: 全量扫描+深度分析+架构重构+批量优化）。",
+                "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               }
             ],
             "count": 9,
-            "avgLevel": 4.3
+            "avgLevel": 4.0
           },
           "🧠 思维方法": {
             "role": "cognitive",
@@ -1224,14 +1302,27 @@
                 "callCount": 15,
                 "frequency": "0.1次/天",
                 "successRate": 87
+              },
+              {
+                "name": "debug-pro",
+                "displayName": "debug-pro",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "Systematic debugging methodology and language-specific debugging commands.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               }
             ],
-            "count": 3,
-            "avgLevel": 4.0
+            "count": 4,
+            "avgLevel": 3.2
           }
         },
-        "count": 15,
-        "avgLevel": 4.2
+        "count": 16,
+        "avgLevel": 3.9
       },
       "domain_pack": {
         "name": "🎯 领域能力层",
@@ -1293,14 +1384,27 @@
                 "callCount": 38,
                 "frequency": "0.3次/天",
                 "successRate": 92
+              },
+              {
+                "name": "investment-analyzer",
+                "displayName": "投资分析",
+                "shortName": "投资",
+                "source": "Claude技能库",
+                "level": 3,
+                "exp": 58,
+                "description": "投资机会分析，跨资产类别评估和风险分析",
+                "lastUpdated": "2026-02-25",
+                "callCount": 12,
+                "frequency": "0.1次/天",
+                "successRate": 85
               }
             ],
-            "count": 2,
-            "avgLevel": 4.0
+            "count": 3,
+            "avgLevel": 3.7
           }
         },
-        "count": 3,
-        "avgLevel": 4.3
+        "count": 4,
+        "avgLevel": 4.0
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -1341,13 +1445,13 @@
                 "successRate": 85
               },
               {
-                "name": "apify-trend-analysis",
-                "displayName": "趋势分析",
-                "shortName": "趋势",
+                "name": "apify-competitor-intelligence",
+                "displayName": "竞争情报",
+                "shortName": "竞情",
                 "source": "Cursor技能库",
                 "level": 1,
                 "exp": 10,
-                "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
+                "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
                 "lastUpdated": "2026-02-09",
                 "callCount": 0,
                 "frequency": "",
@@ -1367,21 +1471,34 @@
                 "successRate": 0
               },
               {
-                "name": "apify-competitor-intelligence",
-                "displayName": "竞争情报",
-                "shortName": "竞情",
+                "name": "apify-trend-analysis",
+                "displayName": "趋势分析",
+                "shortName": "趋势",
                 "source": "Cursor技能库",
                 "level": 1,
                 "exp": 10,
-                "description": "竞争对手情报分析，追踪策略、内容、定价、广告",
+                "description": "跨平台趋势分析，监控Google/YouTube/TikTok等热点",
                 "lastUpdated": "2026-02-09",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "summarize",
+                "displayName": "summarize",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+                "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               }
             ],
-            "count": 5,
-            "avgLevel": 2.0
+            "count": 6,
+            "avgLevel": 1.8
           },
           "📄 文档处理": {
             "role": "document",
@@ -1466,10 +1583,36 @@
                 "callCount": 24,
                 "frequency": "0.2次/天",
                 "successRate": 91
+              },
+              {
+                "name": "nano-pdf",
+                "displayName": "nano-pdf",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "Use nano-pdf to apply edits to a specific page in a PDF using a natural-language instruction.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "openai-whisper",
+                "displayName": "openai-whisper",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "Use whisper to transcribe audio locally.",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               }
             ],
-            "count": 6,
-            "avgLevel": 3.8
+            "count": 8,
+            "avgLevel": 3.1
           },
           "🎨 前端开发": {
             "role": "frontend",
@@ -1477,6 +1620,19 @@
             "color": "#f472b6",
             "description": "页面开发与设计：UI/UX、组件、工作流",
             "skills": [
+              {
+                "name": "frontend-design",
+                "displayName": "前端设计",
+                "shortName": "前端",
+                "source": "Cursor技能库",
+                "level": 5,
+                "exp": 100,
+                "description": "高质量前端界面设计，避免通用AI风格",
+                "lastUpdated": "2026-03-06",
+                "callCount": 96,
+                "frequency": "0.7次/天",
+                "successRate": 91
+              },
               {
                 "name": "web-dev-workflow",
                 "displayName": "网页开发",
@@ -1491,17 +1647,17 @@
                 "successRate": 93
               },
               {
-                "name": "frontend-design",
-                "displayName": "前端设计",
-                "shortName": "前端",
-                "source": "Cursor技能库",
-                "level": 5,
-                "exp": 100,
-                "description": "高质量前端界面设计，避免通用AI风格",
-                "lastUpdated": "2026-03-06",
-                "callCount": 96,
-                "frequency": "0.7次/天",
-                "successRate": 91
+                "name": "ui-ux-pro-max",
+                "displayName": "UI专家",
+                "shortName": "UI专家",
+                "source": "Claude技能库",
+                "level": 4,
+                "exp": 76,
+                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
+                "lastUpdated": "2026-02-08",
+                "callCount": 52,
+                "frequency": "0.4次/天",
+                "successRate": 92
               },
               {
                 "name": "ai-image-generator",
@@ -1556,8 +1712,8 @@
                 "successRate": 0
               }
             ],
-            "count": 6,
-            "avgLevel": 3.5
+            "count": 7,
+            "avgLevel": 3.6
           },
           "🎭 风格模板": {
             "role": "style",
@@ -1628,19 +1784,6 @@
             "description": "部署发布、消息推送、平台对接",
             "skills": [
               {
-                "name": "github-deploy-publisher",
-                "displayName": "GitHub部署",
-                "shortName": "GitHub",
-                "source": "用户自定义",
-                "level": 5,
-                "exp": 90,
-                "description": "自动化GitHub仓库创建、代码提交、Pages部署",
-                "lastUpdated": "2026-03-09",
-                "callCount": 72,
-                "frequency": "0.6次/天",
-                "successRate": 88
-              },
-              {
                 "name": "codeflicker-homepage",
                 "displayName": "个人首页",
                 "shortName": "首页",
@@ -1652,6 +1795,19 @@
                 "callCount": 68,
                 "frequency": "0.5次/天",
                 "successRate": 93
+              },
+              {
+                "name": "github-deploy-publisher",
+                "displayName": "GitHub部署",
+                "shortName": "GitHub",
+                "source": "用户自定义",
+                "level": 5,
+                "exp": 90,
+                "description": "自动化GitHub仓库创建、代码提交、Pages部署",
+                "lastUpdated": "2026-03-09",
+                "callCount": 72,
+                "frequency": "0.6次/天",
+                "successRate": 88
               },
               {
                 "name": "linke-kim-message",
@@ -1704,10 +1860,23 @@
                 "callCount": 6,
                 "frequency": "1次/周",
                 "successRate": 95
+              },
+              {
+                "name": "github",
+                "displayName": "github",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "Use the gh CLI to interact with GitHub. Always specify --repo owner/repo when not in a git direc",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
               }
             ],
-            "count": 6,
-            "avgLevel": 4.5
+            "count": 7,
+            "avgLevel": 4.0
           },
           "📝 创作与辅导": {
             "role": "creation",
@@ -1852,116 +2021,103 @@
             "layer": "execution",
             "skills": [
               {
-                "name": "ui-ux-pro-max",
-                "displayName": "UI专家",
-                "shortName": "UI专家",
-                "source": "Claude技能库",
-                "level": 4,
-                "exp": 76,
-                "description": "UI/UX设计智能，50种风格、21种配色、20种图表",
-                "lastUpdated": "2026-02-08",
-                "callCount": 52,
-                "frequency": "0.4次/天",
-                "successRate": 92
-              },
-              {
-                "name": "investment-analyzer",
-                "displayName": "投资分析",
-                "shortName": "投资",
-                "source": "Claude技能库",
-                "level": 3,
-                "exp": 58,
-                "description": "投资机会分析，跨资产类别评估和风险分析",
-                "lastUpdated": "2026-02-25",
-                "callCount": 12,
-                "frequency": "0.1次/天",
-                "successRate": 85
-              },
-              {
-                "name": "nano-pdf",
-                "displayName": "nano-pdf",
+                "name": "proactive-agent",
+                "displayName": "proactive-agent",
                 "shortName": "",
                 "source": "codeflicker",
                 "level": 1,
                 "exp": 10,
-                "description": "Use nano-pdf to apply edits to a specific page in a PDF using a natural-language instruction.",
+                "description": "By Hal Labs — Part of the Hal Stack",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               },
               {
-                "name": "ai-image-generator.bak.20260310_133512",
-                "displayName": "ai-image-generator.bak.20260310_133512",
+                "name": "capability-evolver",
+                "displayName": "capability-evolver",
                 "shortName": "",
-                "source": "codeflicker",
+                "source": "外部导入",
                 "level": 1,
                 "exp": 10,
-                "description": "AI 图像生成器是一个通用的图像生成工具，可以根据用户的文字描述或结构化文档生成各种类型的图片。支持多种现代设计风格，适用于技术文档、商业演示、知识分享等场景。",
+                "description": "\"Evolution is not optional. Adapt or die.\"",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               },
               {
-                "name": "openai-whisper",
-                "displayName": "openai-whisper",
+                "name": "error-handling-patterns",
+                "displayName": "error-handling-patterns",
                 "shortName": "",
-                "source": "codeflicker",
+                "source": "外部导入",
                 "level": 1,
                 "exp": 10,
-                "description": "Use whisper to transcribe audio locally.",
+                "description": "Build resilient applications with robust error handling strategies that gracefully handle failures a",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               },
               {
-                "name": "summarize",
-                "displayName": "summarize",
+                "name": "workflow-orchestration-patterns",
+                "displayName": "workflow-orchestration-patterns",
                 "shortName": "",
-                "source": "codeflicker",
+                "source": "外部导入",
                 "level": 1,
                 "exp": 10,
-                "description": "Fast CLI to summarize URLs, local files, and YouTube links.",
+                "description": "Master workflow orchestration architecture with Temporal, covering fundamental design decisions, res",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               },
               {
-                "name": "github",
-                "displayName": "github",
+                "name": "context-window-management",
+                "displayName": "context-window-management",
                 "shortName": "",
-                "source": "codeflicker",
+                "source": "外部导入",
                 "level": 1,
                 "exp": 10,
-                "description": "Use the gh CLI to interact with GitHub. Always specify --repo owner/repo when not in a git direc",
+                "description": "You're a context engineering specialist who has optimized LLM applications handling",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               },
               {
-                "name": "debug-pro",
-                "displayName": "debug-pro",
+                "name": "meta-cognitive-reasoning",
+                "displayName": "meta-cognitive-reasoning",
                 "shortName": "",
-                "source": "codeflicker",
+                "source": "外部导入",
                 "level": 1,
                 "exp": 10,
-                "description": "Systematic debugging methodology and language-specific debugging commands.",
+                "description": "This skill provides disciplined reasoning frameworks for avoiding cognitive failures in analysis, re",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              },
+              {
+                "name": "task-decomposition",
+                "displayName": "task-decomposition",
+                "shortName": "",
+                "source": "外部导入",
+                "level": 1,
+                "exp": 10,
+                "description": "Transform overwhelming development tasks into manageable units by respecting cognitive limits, creat",
                 "lastUpdated": "2026-03-10",
                 "callCount": 0,
                 "frequency": "",
                 "successRate": 0
               }
             ],
-            "count": 8,
-            "avgLevel": 1.6
+            "count": 7,
+            "avgLevel": 1.0
           }
         },
-        "count": 44,
-        "avgLevel": 2.9
+        "count": 48,
+        "avgLevel": 2.7
       }
     },
     "relationships": {
@@ -2161,10 +2317,10 @@
         "relatedMemories": [
           "thinking_pattern"
         ],
-        "fileCount": 8,
-        "sizeKB": 103.0,
-        "heatLevel": 4,
-        "recentCount": 8
+        "fileCount": 10,
+        "sizeKB": 116.4,
+        "heatLevel": 5,
+        "recentCount": 10
       },
       "daily-ai-report": {
         "name": "daily-ai-report",
@@ -2266,14 +2422,14 @@
             "relatedMemories": [
               "thinking_pattern"
             ],
-            "fileCount": 8,
-            "sizeKB": 103.0,
-            "heatLevel": 4,
-            "recentCount": 8
+            "fileCount": 10,
+            "sizeKB": 116.4,
+            "heatLevel": 5,
+            "recentCount": 10
           }
         },
-        "totalFiles": 139,
-        "totalSizeKB": 965.8
+        "totalFiles": 141,
+        "totalSizeKB": 979.2
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -2406,8 +2562,8 @@
         "totalSizeKB": 745.4
       }
     },
-    "totalFiles": 231,
-    "totalSizeKB": 2453.6
+    "totalFiles": 233,
+    "totalSizeKB": 2467.0
   },
   "memories": {
     "items": [
@@ -2640,13 +2796,13 @@
         "source": "用户显式记录"
       },
       {
-        "title": "Meta-Execution 工作模式（v1.9.1 完整版）",
+        "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
         "layer": "🧠 元认知层",
         "icon": "🚫",
         "color": "#dc2626",
-        "description": "Meta-Execution 工作模式（v1.9.1 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
+        "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
         "keywords": [
           "Meta-Execution",
           "元技能",
@@ -3131,6 +3287,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-09",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "核心任务完成≠流程完成陷阱（深度调研/日报/周报通用）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题模式 名称：核心任务完成≠流程完成陷阱 症状：完成了核心内容（如调研结果、日报内容），但遗漏了技能规定的配套步骤（如生成页面、部...",
+        "keywords": [
+          "深度调研",
+          "AI日报",
+          "周报",
+          "流程完备性",
+          "遗漏步骤"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-10",
         "source": "用户显式记录"
       },
       {
@@ -4037,7 +4212,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 79,
+    "total": 80,
     "byCategory": {
       "development_practice_specification": {
         "count": 8,
@@ -4082,7 +4257,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 44,
+        "count": 45,
         "label": "前端开发",
         "icon": "🎨",
         "color": "#f472b6",
@@ -4302,13 +4477,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "Meta-Execution 工作模式（v1.9.1 完整版）",
+                "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "🧠 元认知层",
                 "icon": "🚫",
                 "color": "#dc2626",
-                "description": "Meta-Execution 工作模式（v1.9.1 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
+                "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
                 "keywords": [
                   "Meta-Execution",
                   "元技能",
@@ -5263,6 +5438,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "核心任务完成≠流程完成陷阱（深度调研/日报/周报通用）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题模式 名称：核心任务完成≠流程完成陷阱 症状：完成了核心内容（如调研结果、日报内容），但遗漏了技能规定的配套步骤（如生成页面、部...",
+                "keywords": [
+                  "深度调研",
+                  "AI日报",
+                  "周报",
+                  "流程完备性",
+                  "遗漏步骤"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-10",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "清爽调研报告风格页面的渐进式开发规则",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -5282,7 +5476,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 25
+            "count": 26
           },
           "发布部署": {
             "icon": "🚀",
@@ -5732,7 +5926,7 @@
             "count": 2
           }
         },
-        "count": 46
+        "count": 47
       }
     }
   },
@@ -5765,7 +5959,7 @@
       43,
       58,
       62,
-      62
+      68
     ],
     "knowledge": [
       150,
@@ -5780,7 +5974,7 @@
       152,
       174,
       174,
-      231
+      233
     ],
     "memories": [
       19,
@@ -5795,7 +5989,7 @@
       69,
       123,
       86,
-      86
+      87
     ]
   },
   "achievements": [
@@ -5830,7 +6024,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 37/10",
+      "progressText": "4星+技能 36/10",
       "date": "2026-03-10"
     },
     {
@@ -5953,7 +6147,7 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 92,
+      "progress": 93,
       "progressText": "执行效率 74/80",
       "date": "???"
     },

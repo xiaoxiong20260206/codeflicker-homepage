@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T14:04:04.230491",
+  "generatedAt": "2026-03-10T17:06:04.525180",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -147,6 +147,12 @@
         "description": "完成字节AI调研项目"
       },
       {
+        "date": "2026-02-20",
+        "type": "project_complete",
+        "name": "字节AI开挂指南",
+        "description": "完成字节AI开挂指南项目"
+      },
+      {
         "date": "2026-02-25",
         "type": "system_unlock",
         "name": "日报自动生成",
@@ -231,6 +237,18 @@
         "description": "完成AI持续洞察项目"
       },
       {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI Agent实战指南",
+        "description": "完成AI Agent实战指南项目"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI-Studio产品方案",
+        "description": "完成AI-Studio产品方案项目"
+      },
+      {
         "date": "2026-03-05",
         "type": "system_unlock",
         "name": "AI持续洞察",
@@ -315,6 +333,12 @@
         "description": "IM开放能力集成"
       },
       {
+        "date": "2026-03-07",
+        "type": "project_complete",
+        "name": "AI大神深度分享",
+        "description": "完成AI大神深度分享项目"
+      },
+      {
         "date": "2026-03-08",
         "type": "system_unlock",
         "name": "AI持续洞察",
@@ -361,6 +385,12 @@
         "type": "integration",
         "name": "飞书集成",
         "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "project_complete",
+        "name": "AI本质洞察",
+        "description": "完成AI本质洞察项目"
       },
       {
         "date": "2026-03-09",
@@ -423,6 +453,12 @@
         "description": "飞书机器人消息处理能力"
       },
       {
+        "date": "2026-03-09",
+        "type": "project_complete",
+        "name": "OpenClaw深度调研",
+        "description": "完成OpenClaw深度调研项目"
+      },
+      {
         "date": "2026-03-10",
         "type": "meta_skill",
         "name": "内功修炼",
@@ -451,6 +487,24 @@
         "type": "meta_skill",
         "name": "一次做对",
         "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "project_complete",
+        "name": "AI-Insight 洞察平台",
+        "description": "完成AI-Insight 洞察平台项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "project_complete",
+        "name": "林克首页",
+        "description": "完成林克首页项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "project_complete",
+        "name": "AI日报系统",
+        "description": "完成AI日报系统项目"
       }
     ]
   },

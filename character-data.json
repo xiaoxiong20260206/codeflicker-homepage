@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T18:05:00.248386",
+  "generatedAt": "2026-03-10T18:27:37.156408",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -47,7 +47,7 @@
     }
   },
   "skills": {
-    "total": 70,
+    "total": 71,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -1090,6 +1090,28 @@
         ],
         "count": 12,
         "avgLevel": 1.2
+      },
+      "其他技能": {
+        "icon": "📦",
+        "color": "#64748b",
+        "layer": "execution",
+        "skills": [
+          {
+            "name": "onboarding-guide",
+            "displayName": "onboarding-guide",
+            "shortName": "",
+            "source": "codeflicker",
+            "level": 1,
+            "exp": 10,
+            "description": "> 帮助新用户快速了解 AI 助手的能力和最佳使用方式",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "",
+            "successRate": 0
+          }
+        ],
+        "count": 1,
+        "avgLevel": 1.0
       }
     },
     "tree": {
@@ -2148,9 +2170,31 @@
             ],
             "count": 12,
             "avgLevel": 1.2
+          },
+          "其他技能": {
+            "icon": "📦",
+            "color": "#64748b",
+            "layer": "execution",
+            "skills": [
+              {
+                "name": "onboarding-guide",
+                "displayName": "onboarding-guide",
+                "shortName": "",
+                "source": "codeflicker",
+                "level": 1,
+                "exp": 10,
+                "description": "> 帮助新用户快速了解 AI 助手的能力和最佳使用方式",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "",
+                "successRate": 0
+              }
+            ],
+            "count": 1,
+            "avgLevel": 1.0
           }
         },
-        "count": 49,
+        "count": 50,
         "avgLevel": 2.7
       }
     },
@@ -6031,7 +6075,7 @@
       43,
       58,
       62,
-      70
+      71
     ],
     "knowledge": [
       150,

@@ -164,12 +164,15 @@
 .engine-absorb-node {
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* 防止被压缩 */
 }
 .engine-absorb-node .engine-node {
     border-color: rgba(167,139,250,0.25);
     background: rgba(167,139,250,0.06);
     border-style: dashed;
     opacity: 0.85;
+    min-width: 105px; /* 确保有足够宽度显示横排文字 */
+    flex-shrink: 0;
 }
 .engine-absorb-node .engine-node:hover {
     opacity: 1;
@@ -246,12 +249,15 @@
 .engine-export-node {
     display: flex;
     align-items: center;
+    flex-shrink: 0; /* 防止被压缩 */
 }
 .engine-export-node .engine-node {
     border-color: rgba(74,222,128,0.25);
     background: rgba(74,222,128,0.06);
     border-style: dashed;
     opacity: 0.85;
+    min-width: 105px; /* 确保有足够宽度显示横排文字 */
+    flex-shrink: 0;
 }
 .engine-export-node .engine-node:hover {
     opacity: 1;

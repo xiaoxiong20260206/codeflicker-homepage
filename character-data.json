@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T06:41:29.663825",
+  "generatedAt": "2026-03-11T07:02:21.193411",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 344050,
-    "expProgress": 80.9,
+    "totalExp": 345350,
+    "expProgress": 85.3,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
-      "understanding": 41.3,
+      "understanding": 42.6,
       "execution": 76.1,
       "skillDepth": 73.3,
       "thinkingDepth": 63.8,
@@ -38,7 +38,7 @@
       "highLevelSkills": 35,
       "skillTotalValue": 4503.6,
       "expBreakdown": {
-        "understanding": 41300,
+        "understanding": 42600,
         "execution": 76099,
         "skill": 109950,
         "thinking": 51040,
@@ -2324,6 +2324,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "AI助手默认习惯索引（北冥神功导出用）",
+        "category": "development_practice_specification",
+        "categoryLabel": "做事方法",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "AI助手默认习惯索引 以下记忆是AI助手的\"默认习惯\"，应全局生效，无需用户显式触发。 北冥神功导出时，会自动根据此索引提取完整记忆内容。 已确认的...",
+        "keywords": [
+          "默认习惯",
+          "北冥神功",
+          "导出",
+          "索引",
+          "全局生效"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-10",
+        "source": "用户显式记录"
+      },
+      {
         "title": "核心身份关系与称呼规范（权威版 v2）",
         "category": "user_info",
         "categoryLabel": "用户身份",
@@ -2695,7 +2714,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 26,
+    "total": 27,
     "byCategory": {
       "common_pitfalls_experience": {
         "count": 10,
@@ -2740,7 +2759,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "development_practice_specification": {
-        "count": 2,
+        "count": 3,
         "label": "实践规范",
         "icon": "📦",
         "color": "#7c3aed",
@@ -3123,12 +3142,31 @@
                 "importance": 4,
                 "updatedAt": "2026-03-09",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "AI助手默认习惯索引（北冥神功导出用）",
+                "category": "development_practice_specification",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "AI助手默认习惯索引 以下记忆是AI助手的\"默认习惯\"，应全局生效，无需用户显式触发。 北冥神功导出时，会自动根据此索引提取完整记忆内容。 已确认的...",
+                "keywords": [
+                  "默认习惯",
+                  "北冥神功",
+                  "导出",
+                  "索引",
+                  "全局生效"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-10",
+                "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 4
           }
         },
-        "count": 18
+        "count": 19
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -3395,8 +3433,8 @@
       69,
       123,
       86,
-      96,
-      30
+      97,
+      31
     ]
   },
   "achievements": [
@@ -3542,8 +3580,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 52,
-      "progressText": "懂你程度 41/80",
+      "progress": 53,
+      "progressText": "懂你程度 43/80",
       "date": "???"
     },
     {

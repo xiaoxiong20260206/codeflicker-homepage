@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T06:41:08.638704",
+  "generatedAt": "2026-03-11T07:02:00.594735",
   "summary": {
     "totalDays": 15,
     "latestDate": "2026-03-10",
@@ -67,8 +67,8 @@
       87,
       123,
       86,
-      96,
-      30
+      97,
+      31
     ]
   },
   "reports": [
@@ -82,7 +82,7 @@
         "💬 完成 5 个任务: 解决KIM Doc中图片无法正确显示的问题，并总结相关经验教训, 优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作...",
         "📁 项目成果: 网页更新 2 个",
         "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量",
-        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等16条，规范化开发实践"
+        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等17条，避免常见错误"
       ],
       "deliveries": [
         {
@@ -246,10 +246,10 @@
       "capabilityGrowth": {
         "skillCount": 72,
         "knowledgeCount": 185,
-        "memoryCount": 96,
+        "memoryCount": 97,
         "skillChange": 10,
         "knowledgeChange": 11,
-        "memoryChange": 16,
+        "memoryChange": 17,
         "newSkills": [
           {
             "name": "nano-pdf",
@@ -362,10 +362,6 @@
             "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收"
           },
           {
-            "name": "daily-reflection-evolution",
-            "description": "This skill should be used when the user mentions \"每日修炼\", \"每日"
-          },
-          {
             "name": "memory-hygiene",
             "description": "记忆优化元能力（含执行）。当用户说\"记忆优化\"、\"检查记忆健康度\"、\"优化记忆\"、\"记忆清理\"、\"memory opti"
           },
@@ -455,6 +451,10 @@
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "AI助手默认习惯索引（北冥神功导出用）",
+            "category": "development_practice_specification"
+          },
+          {
             "title": "技能间复用原则：委托而非重复定义",
             "category": "development_practice_specification"
           },
@@ -529,10 +529,10 @@
       },
       "skillCount": 72,
       "knowledgeCount": 185,
-      "memoryCount": 96,
+      "memoryCount": 97,
       "skillChange": 10,
       "knowledgeChange": 11,
-      "memoryChange": 16,
+      "memoryChange": 17,
       "highlights": [
         "💬 完成 5 个任务: 解决KIM Doc中图片无法正确显示的问题，并总结相关经验教训, 优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作...",
         "📁 项目成果: 网页更新 2 个",

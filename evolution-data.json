@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T18:57:31.492722",
+  "generatedAt": "2026-03-10T19:59:47.043932",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -505,6 +505,12 @@
         "type": "project_complete",
         "name": "AI日报系统",
         "description": "完成AI日报系统项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "integration",
+        "name": "飞书集成",
+        "description": "飞书机器人消息处理能力"
       }
     ]
   },

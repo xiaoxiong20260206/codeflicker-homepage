@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-10T18:56:46.791511",
+  "generatedAt": "2026-03-10T19:58:23.506160",
   "summary": {
     "totalDays": 15,
     "latestDate": "2026-03-10",
@@ -36,7 +36,7 @@
       50,
       58,
       62,
-      68
+      71
     ],
     "knowledge": [
       150,
@@ -68,69 +68,129 @@
       87,
       123,
       86,
-      87
+      90
     ]
   },
   "reports": [
     {
       "date": "2026-03-10",
       "dayOfWeek": "周二",
-      "activeProjects": 7,
+      "activeProjects": 9,
       "totalCommits": 31,
-      "conversationCount": 10,
+      "conversationCount": 14,
       "coreProgress": [
-        "💬 完成 10 个任务: 分析并解决技能版本误报问题，确保版本检查机制的准确性, 解决KIM Docs导入Markdown文档时外部URL图片无法正确渲染的问题...",
+        "💬 完成 14 个任务: 优化记忆系统分类规则并更新关键记忆内容，包括KIM Doc图片嵌入规则和踩坑经验..., 用户想要通过北冥神功技能实现能力打包导出，并在新环境中快速安装复制能力。...",
         "📁 项目成果: 网页更新 2 个",
         "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量",
-        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等10条，优化任务执行流程"
+        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等15条，避免常见错误"
       ],
       "deliveries": [
         {
-          "title": "Skill Version Mismatch Analysis and Debugging",
+          "title": "Memory System Optimization and Rule Updates",
           "type": "conversation",
-          "goal": "分析并解决技能版本误报问题，确保版本检查机制的准确性",
+          "goal": "优化记忆系统分类规则并更新关键记忆内容，包括KIM Doc图片嵌入规则和踩坑经验沉淀优先级",
           "deliverables": [],
           "process": [
-            "诊断发现3个P0版本漂移问题均为误报：1) meta-execution实际版本v1.9.2匹配记忆版本；2) 技能分层同步规则v3为通用经验不应绑定zelda-style版本；3) learn-fr..."
+            "1. 诊断并处理了14个P1分类问题，确认大部分分类建议基于简单规则匹配不准确；2. 创建了KIM Doc图片必须使用本地路径的强制规则记忆；3. 更新了踩坑经验沉淀优先级规则至v2.2版本，包含改进..."
           ],
           "tags": [
-            "skill-management",
-            "version-control",
-            "debugging",
-            "meta-execution",
-            "false-positive"
+            "memory-system",
+            "classification-rules",
+            "knowledge-management",
+            "pitfall-experience",
+            "task-flow"
           ]
         },
         {
-          "title": "KIM Docs Image Embedding Issue Resolution",
+          "title": "Beiming Skill Export Process with Sanitization Fix",
           "type": "conversation",
-          "goal": "解决KIM Docs导入Markdown文档时外部URL图片无法正确渲染的问题",
+          "goal": "用户想要通过北冥神功技能实现能力打包导出，并在新环境中快速安装复制能力。",
           "deliverables": [],
           "process": [
-            "发现KIM Docs不支持直接引用外部URL图片，需将图片改为本地相对路径引用。push.py脚本支持自动上传本地图片到Docs服务器，解决方案是修改Markdown中的图片引用方式为相对路径。"
+            "执行了北冥神功导出脚本，发现路径模式中的`\\U`导致正则表达式转义错误。修复了`beiming_sanitize.py`中的路径模式处理逻辑，使用`re.escape()`正确转义路径模式后重新运行导..."
           ],
           "tags": [
+            "skill-export",
+            "sanitization",
+            "python-script",
+            "configuration",
+            "error-fix"
+          ]
+        },
+        {
+          "title": "Kuaishou Internal Promotion Standards Learning Task",
+          "type": "conversation",
+          "goal": "用户要求完整学习8个快手内部晋升标准文档，确保无遗漏地获取所有内容。",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "promotion-standards",
+            "documentation",
+            "internal-knowledge",
+            "learning-task",
+            "browser-agent"
+          ]
+        },
+        {
+          "title": "Locating and installing promotion-review skill package",
+          "type": "conversation",
+          "goal": "用户想要安装项目中的 promotion-review-sabcd-v1.0.0.tar.gz 技能包",
+          "deliverables": [],
+          "process": [
+            "在项目根目录和CodeFlicker系统目录中多次搜索后，最终在项目根目录找到该技能包。已确认文件存在并准备安装，需要切换到plan模式执行安装操作。"
+          ],
+          "tags": [
+            "skill-installation",
+            "file-search",
+            "codeflicker",
+            "package-management"
+          ]
+        },
+        {
+          "title": "KIM Docs Link Recognition and Content Retrieval",
+          "type": "conversation",
+          "goal": "用户想知道当发送KIM Docs链接时，助手是否能自动识别并触发文档内容读取",
+          "deliverables": [],
+          "process": [
+            "助手确认了KIM Docs链接识别规则（docs.corp.kuaishou.com格式），并展示了如何使用ks-kim-docs-shuttle技能通过CDP方式拉取文档内容，提供了具体的pull_..."
+          ],
+          "tags": [
+            "kim-docs",
+            "link-parsing",
+            "document-retrieval",
+            "internal-tools"
+          ]
+        },
+        {
+          "title": "KIM Doc Image Embedding Issue and Solution",
+          "type": "conversation",
+          "goal": "解决KIM Doc中图片无法正确显示的问题，并总结相关经验教训",
+          "deliverables": [],
+          "process": [
+            "发现KIM Doc不支持直接渲染外部URL图片，改为使用本地相对路径后通过push.py自动上传图片到共享库。总结出文档系统与Web页面图片引用的差异，并创建了相关检查清单。"
+          ],
+          "tags": [
+            "KIM Doc",
             "markdown",
-            "image-embedding",
-            "docs-integration",
-            "file-paths",
-            "automation"
+            "image embedding",
+            "documentation",
+            "troubleshooting"
           ]
         },
         {
-          "title": "Skill Tooltip Metrics Display Fix",
+          "title": "Skill Configuration and Layout Issues Analysis",
           "type": "conversation",
-          "goal": "修复技能浮窗中指标显示逻辑，确保无论是否有数据都显示调用数、频率和成功率三个指标",
+          "goal": "回顾并总结本次对话中处理的技能配置检查、布局压缩和指标显示问题，提炼可复用的经验模式",
           "deliverables": [],
           "process": [
-            "发现原代码中当callCount=0时会隐藏整个指标区域，修改为始终显示三个指标（调用数/频率/成功率），无数据时显示0值。通过浏览器测试验证了修改后效果，有数据时显示实际值，无数据时显示0。"
+            "修复了技能中文配置漏检问题（新增`check_display_name_config()`函数）、flex布局压缩导致的文字竖排问题（添加`flex-shrink:0`和`min-width`）、以及..."
           ],
           "tags": [
-            "javascript",
-            "frontend",
-            "metrics",
-            "tooltip",
-            "bugfix"
+            "configuration-check",
+            "flex-layout",
+            "metrics-display",
+            "skill-management",
+            "css-troubleshooting"
           ]
         },
         {
@@ -148,71 +208,15 @@
             "python",
             "backup"
           ]
-        },
-        {
-          "title": "Codeflicker homepage UI optimization and tab functionality",
-          "type": "conversation",
-          "goal": "优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作",
-          "deliverables": [],
-          "process": [
-            "移除了tab名称和空行以增加紧凑性，调整了内容间距。检查了作品分类Tab切换功能，发现需要修复`currentWorksTab`变量管理问题。遗留问题是确保分类切换时内容正确渲染。"
-          ],
-          "tags": [
-            "ui-optimization",
-            "tab-navigation",
-            "javascript",
-            "homepage",
-            "layout"
-          ]
-        },
-        {
-          "title": "Digital Employee Web v2 UI Enhancement",
-          "type": "conversation",
-          "goal": "升级数字员工平台v2版本，实现通知系统过滤功能和技能步骤展示功能",
-          "deliverables": [],
-          "process": [
-            "在digital_employee_web_v2.html中添加了通知页面的过滤功能（全部/HIL/完成/告警/建议）和标记已读功能；为技能页面添加了步骤展示功能；最终代码通过lint检查无报错，但用..."
-          ],
-          "tags": [
-            "react",
-            "notification-system",
-            "skill-management",
-            "UI-components",
-            "state-management"
-          ]
-        },
-        {
-          "title": "上传图片超过 5MB，请调整后重新上传。",
-          "type": "conversation",
-          "goal": "上传图片超过 5MB，请调整后重新上传。",
-          "deliverables": [],
-          "process": [],
-          "tags": []
-        },
-        {
-          "title": "CodeFlicker Homepage Tab Structure Optimization",
-          "type": "conversation",
-          "goal": "优化AI助手首页的Tab结构，包括新增能力成长趋势Tab和重新组织作品分类Tab",
-          "deliverables": [],
-          "process": [
-            "完成了「我的能力」Tab新增成长趋势二级Tab，将「我的作品」Tab改为按类型（调研/工具/文档等）直接分类展示，并部署到GitHub Pages。修改涉及2个文件共284行变更，包括CSS样式和JS..."
-          ],
-          "tags": [
-            "homepage",
-            "tab-structure",
-            "react",
-            "UI-optimization",
-            "git"
-          ]
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 71,
+        "skillCount": 72,
         "knowledgeCount": 176,
-        "memoryCount": 90,
-        "skillChange": 9,
+        "memoryCount": 95,
+        "skillChange": 10,
         "knowledgeChange": 2,
-        "memoryChange": 10,
+        "memoryChange": 15,
         "newSkills": [
           {
             "name": "nano-pdf",
@@ -249,6 +253,10 @@
           {
             "name": "proactive-agent",
             "description": "\"Transform AI agents from task-followers into proactive part"
+          },
+          {
+            "name": "promotion-review-sabcd",
+            "description": "This skill should be used when the user mentions \"晋升评审\", \"晋升"
           },
           {
             "name": "xiaowuxianggong",
@@ -301,12 +309,28 @@
             "description": "This skill should be used when the user says \"复盘\", \"举一反三\", \""
           },
           {
+            "name": "ai-column-writer",
+            "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
+          },
+          {
+            "name": "feishu-assistant",
+            "description": "当用户说\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\"、\"检查飞书\"时使用此技能。实现飞书机器人与CodeFlicke"
+          },
+          {
             "name": "essence-insight",
             "description": "This skill should be used when the user asks about \"本质\", \"为什"
           },
           {
             "name": "meta-execution",
             "description": "This skill should be used automatically when receiving any t"
+          },
+          {
+            "name": "codeflicker-homepage",
+            "description": "|"
+          },
+          {
+            "name": "yuque-publisher",
+            "description": "语雀知识库双向同步技能。支持发布文档、读取文档、删除文档、获取列表等操作。当用户说\"发布到语雀\"、\"读取语雀文档\"、\"打"
           },
           {
             "name": "xixingdafa",
@@ -329,8 +353,16 @@
             "description": "This skill should be used when the user mentions \"AI洞察\", \"AI"
           },
           {
+            "name": "codeflicker-weekly-report",
+            "description": "This skill should be used when the user mentions \"CodeFlicke"
+          },
+          {
             "name": "neigong-cultivation",
             "description": "This skill should be used when the user mentions \"内功修炼\", \"三位"
+          },
+          {
+            "name": "investment-tracker",
+            "description": "\"This skill should be used when the user mentions '投资', '理财'"
           },
           {
             "name": "knowledge-curator",
@@ -367,8 +399,8 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "踩坑经验沉淀优先级：Skill优先，记忆补充（v2.1 含沉淀决策树）",
-            "category": "task_flow_experience"
+            "title": "踩坑经验沉淀优先级：Skill优先，记忆补充（v2.2 含沉淀决策树+分类修正）",
+            "category": "common_pitfalls_experience"
           },
           {
             "title": "技能间复用原则：委托而非重复定义",
@@ -391,6 +423,26 @@
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "Flex布局边缘元素被压缩成竖排的防御模式",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "条件渲染不应隐藏0值（指标类数据始终展示原则）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "多处配置检查必须覆盖所有配置位置（防漏检原则）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM Doc 图片嵌入规则（必须用本地路径）",
+            "category": "development_practice_specification"
+          },
+          {
             "title": "AI日报时效性锚点+时间窗口双重验证经验（v4.0）",
             "category": "common_pitfalls_experience"
           },
@@ -405,8 +457,16 @@
         ],
         "updatedMemory": [
           {
+            "title": "输出链接格式规范（踩坑经验）",
+            "category": "common_pitfalls_experience"
+          },
+          {
             "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
             "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "体系化任务的识别与前置设计（踩坑经验）",
+            "category": "common_pitfalls_experience"
           },
           {
             "title": "核心身份关系与称呼规范（权威版 v2）",
@@ -415,14 +475,14 @@
         ],
         "trend": "growing"
       },
-      "skillCount": 71,
+      "skillCount": 72,
       "knowledgeCount": 176,
-      "memoryCount": 90,
-      "skillChange": 9,
+      "memoryCount": 95,
+      "skillChange": 10,
       "knowledgeChange": 2,
-      "memoryChange": 10,
+      "memoryChange": 15,
       "highlights": [
-        "💬 完成 10 个任务: 分析并解决技能版本误报问题，确保版本检查机制的准确性, 解决KIM Docs导入Markdown文档时外部URL图片无法正确渲染的问题...",
+        "💬 完成 14 个任务: 优化记忆系统分类规则并更新关键记忆内容，包括KIM Doc图片嵌入规则和踩坑经验..., 用户想要通过北冥神功技能实现能力打包导出，并在新环境中快速安装复制能力。...",
         "📁 项目成果: 网页更新 2 个",
         "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量"
       ]

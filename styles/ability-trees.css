@@ -729,6 +729,27 @@
     color: rgba(200, 220, 240, 0.85);
     white-space: nowrap;
 }
+/* 快手内部标记 */
+.skill-chip-ks {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 600;
+    color: #fb923c;
+    background: rgba(251, 146, 60, 0.15);
+    padding: 1px 3px;
+    border-radius: 2px;
+    margin-left: 2px;
+}
+/* 技能规模标签 */
+.skill-chip-size {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    color: rgba(200, 220, 240, 0.5);
+    background: rgba(200, 220, 240, 0.08);
+    padding: 1px 3px;
+    border-radius: 2px;
+    margin-left: 2px;
+}
 
 /* === 层间过渡 === */
 .layer-transition {

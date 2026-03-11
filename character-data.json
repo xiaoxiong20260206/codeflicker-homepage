@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T11:08:38.059684",
+  "generatedAt": "2026-03-11T11:37:47.104753",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -69,8 +69,8 @@
             "frequency": "1.2次/天",
             "successRate": 94,
             "sourceType": "自定义",
-            "skillSize": 52640,
-            "skillSizeLabel": "52K字 · 巨型",
+            "skillSize": 53708,
+            "skillSizeLabel": "53K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1504,8 +1504,8 @@
                 "frequency": "1.2次/天",
                 "successRate": 94,
                 "sourceType": "自定义",
-                "skillSize": 52640,
-                "skillSizeLabel": "52K字 · 巨型",
+                "skillSize": 53708,
+                "skillSizeLabel": "53K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -3907,11 +3907,11 @@
       },
       {
         "title": "企业案例学习工作流（四阶段法）",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
+        "category": "development_practice_specification",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
         "keywords": [
           "企业案例",
@@ -4398,13 +4398,13 @@
         "source": "系统自动提取"
       },
       {
-        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3）",
+        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3） 问题归因表 | | 问题 | 根因 | ...",
+        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4） 问题归因表 | | 问题 | 根因 | ...",
         "keywords": [
           "每日修炼",
           "踩坑",
@@ -4756,12 +4756,31 @@
         "source": "系统自动提取"
       },
       {
+        "title": "AI日报时效性锚定规则（强制日期验证）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "AI日报时效性锚定规则 问题描述 2026-03-10日报出现3月5日旧闻作为头条，时效性验证机制失效。 根因 1. 搜索时未强制带...",
+        "keywords": [
+          "日报",
+          "时效性",
+          "锚定",
+          "新闻",
+          "日期验证"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "AI日报默认执行规则：预览后直接推送，不等确认",
-        "category": "user_communication",
-        "categoryLabel": "用户偏好",
+        "category": "task_flow_experience",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
-        "icon": "💬",
-        "color": "#0ea5e9",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 工作流 1. 生成日报内容（网页+...",
         "keywords": [
           "AI日报",
@@ -5097,6 +5116,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "晋升辅导完整交付规范（Markdown+配图+KIM Docs）",
+        "category": "development_practice_specification",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "晋升辅导完整交付规范 交付物清单 1. Markdown文档：结构化的优化建议，含诊断评分卡、叙事结构、时间分配等模块 2. 配...",
+        "keywords": [
+          "晋升辅导",
+          "答辩",
+          "配图",
+          "KIM Docs",
+          "Markdown"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "AI助手的自我表达风格",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -5341,7 +5379,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 103,
+    "total": 105,
     "byCategory": {
       "development_code_specification": {
         "count": 1,
@@ -5358,7 +5396,7 @@
         "description": "身份信息、背景、个人特征"
       },
       "user_communication": {
-        "count": 4,
+        "count": 3,
         "label": "用户偏好",
         "icon": "💬",
         "color": "#0ea5e9",
@@ -5393,14 +5431,14 @@
         "description": "专栏写作/截图踩坑"
       },
       "development_practice_specification": {
-        "count": 4,
+        "count": 5,
         "label": "做事方法",
         "icon": "⚙️",
         "color": "#5ec4d4",
         "description": "如何做事：工作流程、执行方法"
       },
       "system_generated": {
-        "count": 72,
+        "count": 74,
         "label": "系统生成",
         "icon": "⚙️",
         "color": "#64748b",
@@ -5551,28 +5589,9 @@
                 "importance": 4,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "AI日报默认执行规则：预览后直接推送，不等确认",
-                "category": "user_communication",
-                "categoryLabel": "用户偏好",
-                "layer": "🧠 元认知层",
-                "icon": "💬",
-                "color": "#0ea5e9",
-                "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 工作流 1. 生成日报内容（网页+...",
-                "keywords": [
-                  "AI日报",
-                  "默认执行",
-                  "不用确认",
-                  "直接推送",
-                  "KIM卡片"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-11",
-                "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 4
           },
           "用户约束": {
             "icon": "🚫",
@@ -5680,28 +5699,9 @@
                 "importance": 5,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "企业案例学习工作流（四阶段法）",
-                "category": "task_flow_experience",
-                "categoryLabel": "思维方法",
-                "layer": "🧠 元认知层",
-                "icon": "🧠",
-                "color": "#a78bfa",
-                "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
-                "keywords": [
-                  "企业案例",
-                  "学习工作流",
-                  "文档学习",
-                  "四阶段",
-                  "知识合成"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-11",
-                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 3
           },
           "做事方法": {
             "icon": "⚙️",
@@ -5747,6 +5747,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "企业案例学习工作流（四阶段法）",
+                "category": "development_practice_specification",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
+                "keywords": [
+                  "企业案例",
+                  "学习工作流",
+                  "文档学习",
+                  "四阶段",
+                  "知识合成"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
                 "category": "task_flow_experience",
                 "categoryLabel": "做事方法",
@@ -5763,6 +5782,25 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-08",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "AI日报默认执行规则：预览后直接推送，不等确认",
+                "category": "task_flow_experience",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 工作流 1. 生成日报内容（网页+...",
+                "keywords": [
+                  "AI日报",
+                  "默认执行",
+                  "不用确认",
+                  "直接推送",
+                  "KIM卡片"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               },
               {
@@ -5804,7 +5842,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 7
           }
         },
         "count": 19
@@ -5859,13 +5897,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3）",
+                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3） 问题归因表 | | 问题 | 根因 | ...",
+                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4） 问题归因表 | | 问题 | 根因 | ...",
                 "keywords": [
                   "每日修炼",
                   "踩坑",
@@ -6831,6 +6869,44 @@
                 "source": "系统自动提取"
               },
               {
+                "title": "AI日报时效性锚定规则（强制日期验证）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "AI日报时效性锚定规则 问题描述 2026-03-10日报出现3月5日旧闻作为头条，时效性验证机制失效。 根因 1. 搜索时未强制带...",
+                "keywords": [
+                  "日报",
+                  "时效性",
+                  "锚定",
+                  "新闻",
+                  "日期验证"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
+                "title": "晋升辅导完整交付规范（Markdown+配图+KIM Docs）",
+                "category": "development_practice_specification",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "晋升辅导完整交付规范 交付物清单 1. Markdown文档：结构化的优化建议，含诊断评分卡、叙事结构、时间分配等模块 2. 配...",
+                "keywords": [
+                  "晋升辅导",
+                  "答辩",
+                  "配图",
+                  "KIM Docs",
+                  "Markdown"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "背景约束",
@@ -7458,10 +7534,10 @@
                 "source": "系统自动提取"
               }
             ],
-            "count": 72
+            "count": 74
           }
         },
-        "count": 72
+        "count": 74
       }
     }
   },
@@ -7527,8 +7603,8 @@
       35,
       75,
       85,
-      104,
-      104
+      106,
+      106
     ]
   },
   "achievements": [

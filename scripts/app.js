@@ -2418,7 +2418,14 @@ function showTreeTooltip(event, id, type) {
         metricsSection.style.display = 'none';
     }
     
-    descEl.textContent = data.description || '暂无描述';
+    // 描述区：添加项目标记前缀
+    var descText = data.description || '暂无描述';
+    if (data.cfProject) {
+        descText = '🔧 CodeFlicker项目 | ' + descText;
+    } else if (data.ksInternal) {
+        descText = '🏢 快手内部 | ' + descText;
+    }
+    descEl.textContent = descText;
     descEl.style.whiteSpace = 'normal';
     
     // 来源区块：技能tooltip中隐藏（统一用顶部 sourceBadge 标签）

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T07:47:31.357838",
+  "generatedAt": "2026-03-11T08:00:13.285485",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -71,7 +71,8 @@
             "sourceType": "自定义",
             "skillSize": 50602,
             "skillSizeLabel": "50K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "meta-execution",
@@ -88,7 +89,8 @@
             "sourceType": "自定义",
             "skillSize": 16553,
             "skillSizeLabel": "16K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "learn-from-mistakes",
@@ -105,7 +107,8 @@
             "sourceType": "自定义",
             "skillSize": 13714,
             "skillSizeLabel": "13K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "xiaowuxianggong",
@@ -122,7 +125,8 @@
             "sourceType": "自定义",
             "skillSize": 23979,
             "skillSizeLabel": "23K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "neigong-cultivation",
@@ -139,7 +143,8 @@
             "sourceType": "自定义",
             "skillSize": 42403,
             "skillSizeLabel": "42K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "memory-hygiene",
@@ -156,7 +161,8 @@
             "sourceType": "自定义",
             "skillSize": 13897,
             "skillSizeLabel": "13K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "knowledge-curator",
@@ -173,7 +179,8 @@
             "sourceType": "自定义",
             "skillSize": 13659,
             "skillSizeLabel": "13K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "skill-management",
@@ -190,7 +197,8 @@
             "sourceType": "自定义",
             "skillSize": 22323,
             "skillSizeLabel": "22K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "xixingdafa",
@@ -207,7 +215,8 @@
             "sourceType": "自定义",
             "skillSize": 11073,
             "skillSizeLabel": "11K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "beiming-shengong",
@@ -224,7 +233,8 @@
             "sourceType": "自定义",
             "skillSize": 191744,
             "skillSizeLabel": "191K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 10,
@@ -252,7 +262,8 @@
             "sourceType": "自定义",
             "skillSize": 15362,
             "skillSizeLabel": "15K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "essence-insight",
@@ -269,7 +280,8 @@
             "sourceType": "自定义",
             "skillSize": 25699,
             "skillSizeLabel": "25K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "knowledge-acquisition-meta",
@@ -286,7 +298,8 @@
             "sourceType": "自定义",
             "skillSize": 18514,
             "skillSizeLabel": "18K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 3,
@@ -314,7 +327,8 @@
             "sourceType": "自定义",
             "skillSize": 6178,
             "skillSizeLabel": "6K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "night-task-runner",
@@ -331,7 +345,8 @@
             "sourceType": "自定义",
             "skillSize": 22244,
             "skillSizeLabel": "22K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "find-skills",
@@ -348,7 +363,8 @@
             "sourceType": "自定义",
             "skillSize": 6376,
             "skillSizeLabel": "6K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "debug-pro",
@@ -365,7 +381,8 @@
             "sourceType": "自定义",
             "skillSize": 3744,
             "skillSizeLabel": "3K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 4,
@@ -393,7 +410,8 @@
             "sourceType": "自定义",
             "skillSize": 111008,
             "skillSizeLabel": "111K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 1,
@@ -421,7 +439,8 @@
             "sourceType": "平台预装",
             "skillSize": 143984,
             "skillSizeLabel": "143K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "investment-tracker",
@@ -438,7 +457,8 @@
             "sourceType": "自定义",
             "skillSize": 7547,
             "skillSizeLabel": "7K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "investment-analyzer",
@@ -455,7 +475,8 @@
             "sourceType": "平台预装",
             "skillSize": 14520,
             "skillSizeLabel": "14K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 3,
@@ -483,7 +504,8 @@
             "sourceType": "自定义",
             "skillSize": 14244,
             "skillSizeLabel": "14K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "wechat-research",
@@ -500,7 +522,8 @@
             "sourceType": "自定义",
             "skillSize": 14938,
             "skillSizeLabel": "14K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "apify-competitor-intelligence",
@@ -517,7 +540,8 @@
             "sourceType": "平台预装",
             "skillSize": 17041,
             "skillSizeLabel": "17K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "apify-market-research",
@@ -534,7 +558,8 @@
             "sourceType": "平台预装",
             "skillSize": 15804,
             "skillSizeLabel": "15K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "apify-trend-analysis",
@@ -551,7 +576,8 @@
             "sourceType": "平台预装",
             "skillSize": 15992,
             "skillSizeLabel": "15K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "summarize",
@@ -568,7 +594,8 @@
             "sourceType": "自定义",
             "skillSize": 1758,
             "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 6,
@@ -596,7 +623,8 @@
             "sourceType": "自定义",
             "skillSize": 58669,
             "skillSizeLabel": "58K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "pptx",
@@ -613,7 +641,8 @@
             "sourceType": "自定义",
             "skillSize": 159584,
             "skillSizeLabel": "159K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "docx",
@@ -630,7 +659,8 @@
             "sourceType": "自定义",
             "skillSize": 130766,
             "skillSizeLabel": "130K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "xlsx",
@@ -647,16 +677,17 @@
             "sourceType": "自定义",
             "skillSize": 116144,
             "skillSizeLabel": "116K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "ks-kim-docs-shuttle",
-            "displayName": "KIM文档",
-            "shortName": "IM文档",
+            "displayName": "KS Docs",
+            "shortName": "KS Docs",
             "source": "用户自定义",
             "level": 4,
             "exp": 70,
-            "description": "快手内网Docs文档与本地Markdown双向同步",
+            "description": "快手内部的Docs文档系统双向同步工具",
             "lastUpdated": "2026-03-09",
             "callCount": 16,
             "frequency": "0.1次/天",
@@ -664,7 +695,8 @@
             "sourceType": "自定义",
             "skillSize": 132435,
             "skillSizeLabel": "132K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": true,
+            "cfProject": false
           },
           {
             "name": "keynote",
@@ -681,7 +713,8 @@
             "sourceType": "自定义",
             "skillSize": 89463,
             "skillSizeLabel": "89K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "nano-pdf",
@@ -698,7 +731,8 @@
             "sourceType": "自定义",
             "skillSize": 1045,
             "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "openai-whisper",
@@ -715,7 +749,8 @@
             "sourceType": "自定义",
             "skillSize": 1017,
             "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 8,
@@ -743,7 +778,8 @@
             "sourceType": "平台预装",
             "skillSize": 45171,
             "skillSizeLabel": "45K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "web-dev-workflow",
@@ -760,7 +796,8 @@
             "sourceType": "自定义",
             "skillSize": 30740,
             "skillSizeLabel": "30K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "ui-ux-pro-max",
@@ -777,7 +814,8 @@
             "sourceType": "平台预装",
             "skillSize": 73522,
             "skillSizeLabel": "73K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "ai-image-generator",
@@ -794,7 +832,8 @@
             "sourceType": "自定义",
             "skillSize": 87909,
             "skillSizeLabel": "87K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "canvas-design",
@@ -811,7 +850,8 @@
             "sourceType": "自定义",
             "skillSize": 141923,
             "skillSizeLabel": "141K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "pixel-action-game",
@@ -828,7 +868,8 @@
             "sourceType": "自定义",
             "skillSize": 93142,
             "skillSizeLabel": "93K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "proactive-agent",
@@ -845,7 +886,8 @@
             "sourceType": "自定义",
             "skillSize": 16666,
             "skillSizeLabel": "16K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "ui-ux-pro-max-skill",
@@ -862,7 +904,8 @@
             "sourceType": "自定义",
             "skillSize": 259762,
             "skillSizeLabel": "259K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 8,
@@ -890,7 +933,8 @@
             "sourceType": "自定义",
             "skillSize": 65373,
             "skillSizeLabel": "65K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "qingshuang-research-style",
@@ -907,7 +951,8 @@
             "sourceType": "自定义",
             "skillSize": 25622,
             "skillSizeLabel": "25K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "work-report-ppt",
@@ -924,7 +969,8 @@
             "sourceType": "自定义",
             "skillSize": 28793,
             "skillSizeLabel": "28K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "theme-factory",
@@ -941,7 +987,8 @@
             "sourceType": "平台预装",
             "skillSize": 19796,
             "skillSizeLabel": "19K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 4,
@@ -956,20 +1003,21 @@
         "skills": [
           {
             "name": "codeflicker-homepage",
-            "displayName": "个人首页",
-            "shortName": "首页",
+            "displayName": "CF首页",
+            "shortName": "CF首页",
             "source": "用户自定义",
             "level": 5,
             "exp": 90,
-            "description": "AI助手个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
+            "description": "CodeFlicker个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
             "lastUpdated": "2026-03-09",
             "callCount": 68,
             "frequency": "0.5次/天",
             "successRate": 93,
             "sourceType": "自定义",
-            "skillSize": 17989,
-            "skillSizeLabel": "17K字 · 大型",
-            "ksInternal": false
+            "skillSize": 18083,
+            "skillSizeLabel": "18K字 · 大型",
+            "ksInternal": false,
+            "cfProject": true
           },
           {
             "name": "github-deploy-publisher",
@@ -986,16 +1034,17 @@
             "sourceType": "自定义",
             "skillSize": 17878,
             "skillSizeLabel": "17K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "linke-kim-message",
-            "displayName": "KIM消息",
-            "shortName": "IM消息",
+            "displayName": "KS消息",
+            "shortName": "KS消息",
             "source": "用户自定义",
             "level": 5,
             "exp": 85,
-            "description": "KIM消息推送，支持MixCard卡片和群消息",
+            "description": "快手内部的KIM消息推送，支持MixCard卡片和群消息",
             "lastUpdated": "2026-03-09",
             "callCount": 56,
             "frequency": "0.4次/天",
@@ -1003,7 +1052,8 @@
             "sourceType": "自定义",
             "skillSize": 42083,
             "skillSizeLabel": "42K字 · 大型",
-            "ksInternal": false
+            "ksInternal": true,
+            "cfProject": false
           },
           {
             "name": "yuque-publisher",
@@ -1020,7 +1070,8 @@
             "sourceType": "自定义",
             "skillSize": 7152,
             "skillSizeLabel": "7K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "feishu-assistant",
@@ -1037,24 +1088,26 @@
             "sourceType": "自定义",
             "skillSize": 2502,
             "skillSizeLabel": "2K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "codeflicker-weekly-report",
-            "displayName": "项目周报",
-            "shortName": "周报",
+            "displayName": "CF项目周报",
+            "shortName": "CF周报",
             "source": "用户自定义",
             "level": 4,
             "exp": 65,
-            "description": "CodeFlicker项目周报生成与KIM推送",
+            "description": "CodeFlicker项目周报生成与快手内部KIM推送",
             "lastUpdated": "2026-03-09",
             "callCount": 6,
             "frequency": "1次/周",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 11254,
+            "skillSize": 11397,
             "skillSizeLabel": "11K字 · 中型",
-            "ksInternal": false
+            "ksInternal": true,
+            "cfProject": true
           },
           {
             "name": "github",
@@ -1071,7 +1124,8 @@
             "sourceType": "自定义",
             "skillSize": 1423,
             "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "personal-homepage-template",
@@ -1088,7 +1142,8 @@
             "sourceType": "自定义",
             "skillSize": 157949,
             "skillSizeLabel": "157K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 8,
@@ -1116,24 +1171,26 @@
             "sourceType": "平台预装",
             "skillSize": 48398,
             "skillSizeLabel": "48K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "ai-column-writer",
-            "displayName": "专栏写作",
-            "shortName": "专栏",
+            "displayName": "CF专栏",
+            "shortName": "CF专栏",
             "source": "用户自定义",
             "level": 4,
             "exp": 71,
-            "description": "「养了个AI」专栏写作和发布管理",
+            "description": "CodeFlicker「养了个AI」教程专栏写作和发布管理",
             "lastUpdated": "2026-03-09",
             "callCount": 22,
             "frequency": "0.2次/天",
             "successRate": 93,
             "sourceType": "自定义",
-            "skillSize": 18374,
+            "skillSize": 18472,
             "skillSizeLabel": "18K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": true
           },
           {
             "name": "promotion-coaching",
@@ -1150,7 +1207,8 @@
             "sourceType": "自定义",
             "skillSize": 11645,
             "skillSizeLabel": "11K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "promotion-review-sabcd",
@@ -1167,7 +1225,8 @@
             "sourceType": "自定义",
             "skillSize": 45960,
             "skillSizeLabel": "45K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "onboarding-guide",
@@ -1184,7 +1243,8 @@
             "sourceType": "自定义",
             "skillSize": 5269,
             "skillSizeLabel": "5K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 5,
@@ -1212,7 +1272,8 @@
             "sourceType": "自定义",
             "skillSize": 120454,
             "skillSizeLabel": "120K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "context-window-management",
@@ -1229,7 +1290,8 @@
             "sourceType": "平台预装",
             "skillSize": 1569,
             "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "error-handling-patterns",
@@ -1246,7 +1308,8 @@
             "sourceType": "平台预装",
             "skillSize": 16361,
             "skillSizeLabel": "16K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "meta-cognitive-reasoning",
@@ -1263,7 +1326,8 @@
             "sourceType": "平台预装",
             "skillSize": 32993,
             "skillSizeLabel": "32K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "remotion-best-practices",
@@ -1280,7 +1344,8 @@
             "sourceType": "平台预装",
             "skillSize": 95569,
             "skillSizeLabel": "95K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "task-decomposition",
@@ -1297,7 +1362,8 @@
             "sourceType": "平台预装",
             "skillSize": 6044,
             "skillSizeLabel": "6K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "vercel-composition-patterns",
@@ -1314,7 +1380,8 @@
             "sourceType": "平台预装",
             "skillSize": 46469,
             "skillSizeLabel": "46K字 · 大型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "vercel-react-best-practices",
@@ -1331,7 +1398,8 @@
             "sourceType": "平台预装",
             "skillSize": 168718,
             "skillSizeLabel": "168K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "vercel-react-native-skills",
@@ -1348,7 +1416,8 @@
             "sourceType": "平台预装",
             "skillSize": 150023,
             "skillSizeLabel": "150K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "web-design-guidelines",
@@ -1365,7 +1434,8 @@
             "sourceType": "平台预装",
             "skillSize": 1231,
             "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "workflow-orchestration-patterns",
@@ -1382,7 +1452,8 @@
             "sourceType": "平台预装",
             "skillSize": 9135,
             "skillSizeLabel": "9K字 · 中型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           },
           {
             "name": "capability-evolver",
@@ -1399,7 +1470,8 @@
             "sourceType": "平台预装",
             "skillSize": 620371,
             "skillSizeLabel": "620K字 · 巨型",
-            "ksInternal": false
+            "ksInternal": false,
+            "cfProject": false
           }
         ],
         "count": 12,
@@ -1434,7 +1506,8 @@
                 "sourceType": "自定义",
                 "skillSize": 50602,
                 "skillSizeLabel": "50K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "meta-execution",
@@ -1451,7 +1524,8 @@
                 "sourceType": "自定义",
                 "skillSize": 16553,
                 "skillSizeLabel": "16K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "learn-from-mistakes",
@@ -1468,7 +1542,8 @@
                 "sourceType": "自定义",
                 "skillSize": 13714,
                 "skillSizeLabel": "13K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "xiaowuxianggong",
@@ -1485,7 +1560,8 @@
                 "sourceType": "自定义",
                 "skillSize": 23979,
                 "skillSizeLabel": "23K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "neigong-cultivation",
@@ -1502,7 +1578,8 @@
                 "sourceType": "自定义",
                 "skillSize": 42403,
                 "skillSizeLabel": "42K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "memory-hygiene",
@@ -1519,7 +1596,8 @@
                 "sourceType": "自定义",
                 "skillSize": 13897,
                 "skillSizeLabel": "13K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "knowledge-curator",
@@ -1536,7 +1614,8 @@
                 "sourceType": "自定义",
                 "skillSize": 13659,
                 "skillSizeLabel": "13K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "skill-management",
@@ -1553,7 +1632,8 @@
                 "sourceType": "自定义",
                 "skillSize": 22323,
                 "skillSizeLabel": "22K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "xixingdafa",
@@ -1570,7 +1650,8 @@
                 "sourceType": "自定义",
                 "skillSize": 11073,
                 "skillSizeLabel": "11K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "beiming-shengong",
@@ -1587,7 +1668,8 @@
                 "sourceType": "自定义",
                 "skillSize": 191744,
                 "skillSizeLabel": "191K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 10,
@@ -1614,7 +1696,8 @@
                 "sourceType": "自定义",
                 "skillSize": 15362,
                 "skillSizeLabel": "15K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "essence-insight",
@@ -1631,7 +1714,8 @@
                 "sourceType": "自定义",
                 "skillSize": 25699,
                 "skillSizeLabel": "25K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "knowledge-acquisition-meta",
@@ -1648,7 +1732,8 @@
                 "sourceType": "自定义",
                 "skillSize": 18514,
                 "skillSizeLabel": "18K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 3,
@@ -1675,7 +1760,8 @@
                 "sourceType": "自定义",
                 "skillSize": 6178,
                 "skillSizeLabel": "6K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "night-task-runner",
@@ -1692,7 +1778,8 @@
                 "sourceType": "自定义",
                 "skillSize": 22244,
                 "skillSizeLabel": "22K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "find-skills",
@@ -1709,7 +1796,8 @@
                 "sourceType": "自定义",
                 "skillSize": 6376,
                 "skillSizeLabel": "6K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "debug-pro",
@@ -1726,7 +1814,8 @@
                 "sourceType": "自定义",
                 "skillSize": 3744,
                 "skillSizeLabel": "3K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 4,
@@ -1763,7 +1852,8 @@
                 "sourceType": "自定义",
                 "skillSize": 111008,
                 "skillSizeLabel": "111K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 1,
@@ -1790,7 +1880,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 143984,
                 "skillSizeLabel": "143K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "investment-tracker",
@@ -1807,7 +1898,8 @@
                 "sourceType": "自定义",
                 "skillSize": 7547,
                 "skillSizeLabel": "7K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "investment-analyzer",
@@ -1824,7 +1916,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 14520,
                 "skillSizeLabel": "14K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 3,
@@ -1861,7 +1954,8 @@
                 "sourceType": "自定义",
                 "skillSize": 14244,
                 "skillSizeLabel": "14K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "wechat-research",
@@ -1878,7 +1972,8 @@
                 "sourceType": "自定义",
                 "skillSize": 14938,
                 "skillSizeLabel": "14K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "apify-competitor-intelligence",
@@ -1895,7 +1990,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 17041,
                 "skillSizeLabel": "17K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "apify-market-research",
@@ -1912,7 +2008,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 15804,
                 "skillSizeLabel": "15K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "apify-trend-analysis",
@@ -1929,7 +2026,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 15992,
                 "skillSizeLabel": "15K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "summarize",
@@ -1946,7 +2044,8 @@
                 "sourceType": "自定义",
                 "skillSize": 1758,
                 "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 6,
@@ -1973,7 +2072,8 @@
                 "sourceType": "自定义",
                 "skillSize": 58669,
                 "skillSizeLabel": "58K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "pptx",
@@ -1990,7 +2090,8 @@
                 "sourceType": "自定义",
                 "skillSize": 159584,
                 "skillSizeLabel": "159K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "docx",
@@ -2007,7 +2108,8 @@
                 "sourceType": "自定义",
                 "skillSize": 130766,
                 "skillSizeLabel": "130K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "xlsx",
@@ -2024,16 +2126,17 @@
                 "sourceType": "自定义",
                 "skillSize": 116144,
                 "skillSizeLabel": "116K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "ks-kim-docs-shuttle",
-                "displayName": "KIM文档",
-                "shortName": "IM文档",
+                "displayName": "KS Docs",
+                "shortName": "KS Docs",
                 "source": "用户自定义",
                 "level": 4,
                 "exp": 70,
-                "description": "快手内网Docs文档与本地Markdown双向同步",
+                "description": "快手内部的Docs文档系统双向同步工具",
                 "lastUpdated": "2026-03-09",
                 "callCount": 16,
                 "frequency": "0.1次/天",
@@ -2041,7 +2144,8 @@
                 "sourceType": "自定义",
                 "skillSize": 132435,
                 "skillSizeLabel": "132K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": true,
+                "cfProject": false
               },
               {
                 "name": "keynote",
@@ -2058,7 +2162,8 @@
                 "sourceType": "自定义",
                 "skillSize": 89463,
                 "skillSizeLabel": "89K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "nano-pdf",
@@ -2075,7 +2180,8 @@
                 "sourceType": "自定义",
                 "skillSize": 1045,
                 "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "openai-whisper",
@@ -2092,7 +2198,8 @@
                 "sourceType": "自定义",
                 "skillSize": 1017,
                 "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 8,
@@ -2119,7 +2226,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 45171,
                 "skillSizeLabel": "45K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "web-dev-workflow",
@@ -2136,7 +2244,8 @@
                 "sourceType": "自定义",
                 "skillSize": 30740,
                 "skillSizeLabel": "30K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "ui-ux-pro-max",
@@ -2153,7 +2262,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 73522,
                 "skillSizeLabel": "73K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "ai-image-generator",
@@ -2170,7 +2280,8 @@
                 "sourceType": "自定义",
                 "skillSize": 87909,
                 "skillSizeLabel": "87K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "canvas-design",
@@ -2187,7 +2298,8 @@
                 "sourceType": "自定义",
                 "skillSize": 141923,
                 "skillSizeLabel": "141K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "pixel-action-game",
@@ -2204,7 +2316,8 @@
                 "sourceType": "自定义",
                 "skillSize": 93142,
                 "skillSizeLabel": "93K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "proactive-agent",
@@ -2221,7 +2334,8 @@
                 "sourceType": "自定义",
                 "skillSize": 16666,
                 "skillSizeLabel": "16K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "ui-ux-pro-max-skill",
@@ -2238,7 +2352,8 @@
                 "sourceType": "自定义",
                 "skillSize": 259762,
                 "skillSizeLabel": "259K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 8,
@@ -2265,7 +2380,8 @@
                 "sourceType": "自定义",
                 "skillSize": 65373,
                 "skillSizeLabel": "65K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "qingshuang-research-style",
@@ -2282,7 +2398,8 @@
                 "sourceType": "自定义",
                 "skillSize": 25622,
                 "skillSizeLabel": "25K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "work-report-ppt",
@@ -2299,7 +2416,8 @@
                 "sourceType": "自定义",
                 "skillSize": 28793,
                 "skillSizeLabel": "28K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "theme-factory",
@@ -2316,7 +2434,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 19796,
                 "skillSizeLabel": "19K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 4,
@@ -2330,20 +2449,21 @@
             "skills": [
               {
                 "name": "codeflicker-homepage",
-                "displayName": "个人首页",
-                "shortName": "首页",
+                "displayName": "CF首页",
+                "shortName": "CF首页",
                 "source": "用户自定义",
                 "level": 5,
                 "exp": 90,
-                "description": "AI助手个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
+                "description": "CodeFlicker个人首页管理：数据管道、前端渲染、脱敏安全、部署发布",
                 "lastUpdated": "2026-03-09",
                 "callCount": 68,
                 "frequency": "0.5次/天",
                 "successRate": 93,
                 "sourceType": "自定义",
-                "skillSize": 17989,
-                "skillSizeLabel": "17K字 · 大型",
-                "ksInternal": false
+                "skillSize": 18083,
+                "skillSizeLabel": "18K字 · 大型",
+                "ksInternal": false,
+                "cfProject": true
               },
               {
                 "name": "github-deploy-publisher",
@@ -2360,16 +2480,17 @@
                 "sourceType": "自定义",
                 "skillSize": 17878,
                 "skillSizeLabel": "17K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "linke-kim-message",
-                "displayName": "KIM消息",
-                "shortName": "IM消息",
+                "displayName": "KS消息",
+                "shortName": "KS消息",
                 "source": "用户自定义",
                 "level": 5,
                 "exp": 85,
-                "description": "KIM消息推送，支持MixCard卡片和群消息",
+                "description": "快手内部的KIM消息推送，支持MixCard卡片和群消息",
                 "lastUpdated": "2026-03-09",
                 "callCount": 56,
                 "frequency": "0.4次/天",
@@ -2377,7 +2498,8 @@
                 "sourceType": "自定义",
                 "skillSize": 42083,
                 "skillSizeLabel": "42K字 · 大型",
-                "ksInternal": false
+                "ksInternal": true,
+                "cfProject": false
               },
               {
                 "name": "yuque-publisher",
@@ -2394,7 +2516,8 @@
                 "sourceType": "自定义",
                 "skillSize": 7152,
                 "skillSizeLabel": "7K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "feishu-assistant",
@@ -2411,24 +2534,26 @@
                 "sourceType": "自定义",
                 "skillSize": 2502,
                 "skillSizeLabel": "2K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "codeflicker-weekly-report",
-                "displayName": "项目周报",
-                "shortName": "周报",
+                "displayName": "CF项目周报",
+                "shortName": "CF周报",
                 "source": "用户自定义",
                 "level": 4,
                 "exp": 65,
-                "description": "CodeFlicker项目周报生成与KIM推送",
+                "description": "CodeFlicker项目周报生成与快手内部KIM推送",
                 "lastUpdated": "2026-03-09",
                 "callCount": 6,
                 "frequency": "1次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 11254,
+                "skillSize": 11397,
                 "skillSizeLabel": "11K字 · 中型",
-                "ksInternal": false
+                "ksInternal": true,
+                "cfProject": true
               },
               {
                 "name": "github",
@@ -2445,7 +2570,8 @@
                 "sourceType": "自定义",
                 "skillSize": 1423,
                 "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "personal-homepage-template",
@@ -2462,7 +2588,8 @@
                 "sourceType": "自定义",
                 "skillSize": 157949,
                 "skillSizeLabel": "157K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 8,
@@ -2489,24 +2616,26 @@
                 "sourceType": "平台预装",
                 "skillSize": 48398,
                 "skillSizeLabel": "48K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "ai-column-writer",
-                "displayName": "专栏写作",
-                "shortName": "专栏",
+                "displayName": "CF专栏",
+                "shortName": "CF专栏",
                 "source": "用户自定义",
                 "level": 4,
                 "exp": 71,
-                "description": "「养了个AI」专栏写作和发布管理",
+                "description": "CodeFlicker「养了个AI」教程专栏写作和发布管理",
                 "lastUpdated": "2026-03-09",
                 "callCount": 22,
                 "frequency": "0.2次/天",
                 "successRate": 93,
                 "sourceType": "自定义",
-                "skillSize": 18374,
+                "skillSize": 18472,
                 "skillSizeLabel": "18K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": true
               },
               {
                 "name": "promotion-coaching",
@@ -2523,7 +2652,8 @@
                 "sourceType": "自定义",
                 "skillSize": 11645,
                 "skillSizeLabel": "11K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "promotion-review-sabcd",
@@ -2540,7 +2670,8 @@
                 "sourceType": "自定义",
                 "skillSize": 45960,
                 "skillSizeLabel": "45K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "onboarding-guide",
@@ -2557,7 +2688,8 @@
                 "sourceType": "自定义",
                 "skillSize": 5269,
                 "skillSizeLabel": "5K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 5,
@@ -2584,7 +2716,8 @@
                 "sourceType": "自定义",
                 "skillSize": 120454,
                 "skillSizeLabel": "120K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "context-window-management",
@@ -2601,7 +2734,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 1569,
                 "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "error-handling-patterns",
@@ -2618,7 +2752,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 16361,
                 "skillSizeLabel": "16K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "meta-cognitive-reasoning",
@@ -2635,7 +2770,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 32993,
                 "skillSizeLabel": "32K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "remotion-best-practices",
@@ -2652,7 +2788,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 95569,
                 "skillSizeLabel": "95K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "task-decomposition",
@@ -2669,7 +2806,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 6044,
                 "skillSizeLabel": "6K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "vercel-composition-patterns",
@@ -2686,7 +2824,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 46469,
                 "skillSizeLabel": "46K字 · 大型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "vercel-react-best-practices",
@@ -2703,7 +2842,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 168718,
                 "skillSizeLabel": "168K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "vercel-react-native-skills",
@@ -2720,7 +2860,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 150023,
                 "skillSizeLabel": "150K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "web-design-guidelines",
@@ -2737,7 +2878,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 1231,
                 "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "workflow-orchestration-patterns",
@@ -2754,7 +2896,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 9135,
                 "skillSizeLabel": "9K字 · 中型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               },
               {
                 "name": "capability-evolver",
@@ -2771,7 +2914,8 @@
                 "sourceType": "平台预装",
                 "skillSize": 620371,
                 "skillSizeLabel": "620K字 · 巨型",
-                "ksInternal": false
+                "ksInternal": false,
+                "cfProject": false
               }
             ],
             "count": 12,

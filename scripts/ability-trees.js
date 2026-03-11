@@ -53,7 +53,11 @@ function renderSkillTechTree(container, skills) {
             exp: skill.exp || 0, lastUpdated: skill.lastUpdated,
             callCount: skill.callCount || 0,
             frequency: skill.frequency || '',
-            successRate: skill.successRate || 0
+            successRate: skill.successRate || 0,
+            skillSize: skill.skillSize || 0,
+            skillSizeLabel: skill.skillSizeLabel || '',
+            ksInternal: skill.ksInternal || false,
+            cfProject: skill.cfProject || false
         };
         return id;
     }
@@ -114,7 +118,11 @@ function renderSkillTechTree(container, skills) {
         var level = skill.level || 1;
         var color = getLevelColor(level);
         var sourceColor = getSourceColor(skill.source);
-        return '<div class="skill-chip" style="--chip-color:' + color + ';--chip-source-color:' + sourceColor + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="skill-chip-level">' + level + '</span><span class="skill-chip-name">' + name + '</span></div>';
+        // 添加 CF项目标记、快手内部标记和技能大小标签
+        var cfTag = skill.cfProject ? '<span class="skill-chip-cf">CF</span>' : '';
+        var ksTag = (skill.ksInternal && !skill.cfProject) ? '<span class="skill-chip-ks">KS</span>' : '';
+        var sizeTag = skill.skillSizeLabel ? '<span class="skill-chip-size">' + (skill.skillSize > 10000 ? Math.round(skill.skillSize / 1000) + 'K' : Math.round(skill.skillSize / 1000) + 'K') + '</span>' : '';
+        return '<div class="skill-chip" style="--chip-color:' + color + ';--chip-source-color:' + sourceColor + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="skill-chip-level">' + level + '</span><span class="skill-chip-name">' + name + '</span>' + cfTag + ksTag + sizeTag + '</div>';
     }
     
     // ========== 渲染 ==========

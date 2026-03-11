@@ -740,6 +740,17 @@
     border-radius: 2px;
     margin-left: 2px;
 }
+/* CodeFlicker项目标记 */
+.skill-chip-cf {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 600;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.15);
+    padding: 1px 3px;
+    border-radius: 2px;
+    margin-left: 2px;
+}
 /* 技能规模标签 */
 .skill-chip-size {
     font-family: var(--font-mono);

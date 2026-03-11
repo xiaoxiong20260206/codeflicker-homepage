@@ -289,6 +289,10 @@ function renderAboutSection() {
     const xiaowuxiangSkillCount = document.getElementById('xiaowuxiang-skill-count');
     if (xiaowuxiangSkillCount) xiaowuxiangSkillCount.textContent = (skills.total || 0) + ' 项技能';
     
+    // 更新tagline中的等级显示（同源）
+    const aboutTaglineLevel = document.getElementById('about-tagline-level');
+    if (aboutTaglineLevel) aboutTaglineLevel.textContent = 'Lv.' + char.level + ' ' + (char.levelTitle || '');
+    
     // 计算运行天数
     const firstDate = new Date('2026-02-01'); // AI助手诞生日
     const today = new Date();

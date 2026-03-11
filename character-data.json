@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T08:30:24.120339",
+  "generatedAt": "2026-03-11T08:48:10.065933",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -408,8 +408,8 @@
             "frequency": "1.0次/天",
             "successRate": 91,
             "sourceType": "自定义",
-            "skillSize": 111008,
-            "skillSizeLabel": "111K字 · 巨型",
+            "skillSize": 116989,
+            "skillSizeLabel": "116K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1050,8 +1050,8 @@
             "frequency": "0.4次/天",
             "successRate": 92,
             "sourceType": "自定义",
-            "skillSize": 42998,
-            "skillSizeLabel": "42K字 · 大型",
+            "skillSize": 45044,
+            "skillSizeLabel": "45K字 · 大型",
             "ksInternal": true,
             "cfProject": false
           },
@@ -1850,8 +1850,8 @@
                 "frequency": "1.0次/天",
                 "successRate": 91,
                 "sourceType": "自定义",
-                "skillSize": 111008,
-                "skillSizeLabel": "111K字 · 巨型",
+                "skillSize": 116989,
+                "skillSizeLabel": "116K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -2496,8 +2496,8 @@
                 "frequency": "0.4次/天",
                 "successRate": 92,
                 "sourceType": "自定义",
-                "skillSize": 42998,
-                "skillSizeLabel": "42K字 · 大型",
+                "skillSize": 45044,
+                "skillSizeLabel": "45K字 · 大型",
                 "ksInternal": true,
                 "cfProject": false
               },
@@ -3390,6 +3390,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-04",
+        "source": "系统自动提取"
+      },
+      {
+        "title": "AI日报KIM推送空卡片问题（JSON数据源断裂 v3.5）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "AI日报KIM推送空卡片问题（JSON数据源断裂） 问题 2026-03-11 AI日报KIM推送预览完全空白——只有5个板块标题框架，没有...",
+        "keywords": [
+          "AI日报",
+          "KIM推送",
+          "空卡片",
+          "JSON",
+          "数据源"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
         "source": "系统自动提取"
       },
       {
@@ -5246,7 +5265,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 99,
+    "total": 100,
     "byCategory": {
       "common_pitfalls_experience": {
         "count": 10,
@@ -5298,7 +5317,7 @@
         "description": "通用踩坑经验和最佳实践"
       },
       "system_generated": {
-        "count": 67,
+        "count": 68,
         "label": "系统生成",
         "icon": "⚙️",
         "color": "#64748b",
@@ -7174,6 +7193,25 @@
                 "source": "系统自动提取"
               },
               {
+                "title": "AI日报KIM推送空卡片问题（JSON数据源断裂 v3.5）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "AI日报KIM推送空卡片问题（JSON数据源断裂） 问题 2026-03-11 AI日报KIM推送预览完全空白——只有5个板块标题框架，没有...",
+                "keywords": [
+                  "AI日报",
+                  "KIM推送",
+                  "空卡片",
+                  "JSON",
+                  "数据源"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
                 "title": "企业数字员工平台 — 项目概览与产品定位",
                 "category": "project_introduction",
                 "categoryLabel": "背景约束",
@@ -7288,10 +7326,10 @@
                 "source": "系统自动提取"
               }
             ],
-            "count": 67
+            "count": 68
           }
         },
-        "count": 67
+        "count": 68
       }
     }
   },
@@ -7358,7 +7396,7 @@
       75,
       85,
       97,
-      99
+      100
     ]
   },
   "achievements": [

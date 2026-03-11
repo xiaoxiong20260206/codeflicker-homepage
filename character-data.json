@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T13:02:43.775481",
+  "generatedAt": "2026-03-11T13:41:57.853079",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -47,7 +47,7 @@
     }
   },
   "skills": {
-    "total": 72,
+    "total": 78,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -69,8 +69,8 @@
             "frequency": "1.2次/天",
             "successRate": 94,
             "sourceType": "自定义",
-            "skillSize": 54417,
-            "skillSizeLabel": "54K字 · 巨型",
+            "skillSize": 56218,
+            "skillSizeLabel": "56K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1504,8 +1504,8 @@
                 "frequency": "1.2次/天",
                 "successRate": 94,
                 "sourceType": "自定义",
-                "skillSize": 54417,
-                "skillSizeLabel": "54K字 · 巨型",
+                "skillSize": 56218,
+                "skillSizeLabel": "56K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -4115,6 +4115,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth） 问题 首页不同位置（角色卡片、趋势图、历史记录）显示的...",
+        "keywords": [
+          "统一度量",
+          "Single Source of Truth",
+          "函数去重",
+          "统计一致性",
+          "constants.py"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "大文件编辑的Context节约策略（含sed vs replace_in_file选择）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "背景约束",
@@ -4417,13 +4436,13 @@
         "source": "系统自动提取"
       },
       {
-        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4）",
+        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.6）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4） 问题归因表 | | 问题 | 根因 | ...",
+        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.6） 问题归因表 | | 问题 | 根因 | ...",
         "keywords": [
           "每日修炼",
           "踩坑",
@@ -5417,7 +5436,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 107,
+    "total": 108,
     "byCategory": {
       "development_code_specification": {
         "count": 1,
@@ -5476,7 +5495,7 @@
         "description": "如何做事：工作流程、执行方法"
       },
       "system_generated": {
-        "count": 75,
+        "count": 76,
         "label": "系统生成",
         "icon": "⚙️",
         "color": "#64748b",
@@ -5935,13 +5954,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4）",
+                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.6）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.4） 问题归因表 | | 问题 | 根因 | ...",
+                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.6） 问题归因表 | | 问题 | 根因 | ...",
                 "keywords": [
                   "每日修炼",
                   "踩坑",
@@ -6991,6 +7010,25 @@
                 "source": "系统自动提取"
               },
               {
+                "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth） 问题 首页不同位置（角色卡片、趋势图、历史记录）显示的...",
+                "keywords": [
+                  "统一度量",
+                  "Single Source of Truth",
+                  "函数去重",
+                  "统计一致性",
+                  "constants.py"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "背景约束",
@@ -7618,10 +7656,10 @@
                 "source": "系统自动提取"
               }
             ],
-            "count": 75
+            "count": 76
           }
         },
-        "count": 75
+        "count": 76
       }
     }
   },
@@ -7656,7 +7694,7 @@
       58,
       62,
       72,
-      72
+      78
     ],
     "knowledge": [
       150,
@@ -7688,7 +7726,7 @@
       75,
       85,
       106,
-      108
+      109
     ]
   },
   "achievements": [

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-11T11:37:47.104753",
+  "generatedAt": "2026-03-11T13:02:43.775481",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "7.0",
-    "level": 73,
+    "level": 74,
     "levelTitle": "宗师",
     "tier": {
       "name": "宗师",
@@ -15,33 +15,33 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 377150,
-    "expProgress": 83.0,
-    "currentThreshold": 349649,
-    "nextThreshold": 382801,
+    "totalExp": 383090,
+    "expProgress": 0.8,
+    "currentThreshold": 382801,
+    "nextThreshold": 420009,
     "stats": {
-      "understanding": 61.2,
-      "execution": 76.1,
+      "understanding": 61.8,
+      "execution": 80.0,
       "skillDepth": 82.1,
-      "thinkingDepth": 63.8,
+      "thinkingDepth": 65.6,
       "knowledgeBreadth": 93.8
     },
     "debug": {
       "metrics": {
-        "ftr": 73.8,
-        "sdr": 73.2,
-        "thi": 83.6,
-        "mdv": 0.61,
-        "ctr": 2.2
+        "ftr": 79.0,
+        "sdr": 78.6,
+        "thi": 83.3,
+        "mdv": 0.6,
+        "ctr": 2.6
       },
       "activeSkills": 46,
       "highLevelSkills": 39,
       "skillTotalValue": 4810.6,
       "expBreakdown": {
-        "understanding": 61200,
-        "execution": 76099,
+        "understanding": 61800,
+        "execution": 80000,
         "skill": 123150,
-        "thinking": 51040,
+        "thinking": 52479,
         "knowledge": 65660
       }
     }
@@ -69,8 +69,8 @@
             "frequency": "1.2次/天",
             "successRate": 94,
             "sourceType": "自定义",
-            "skillSize": 53708,
-            "skillSizeLabel": "53K字 · 巨型",
+            "skillSize": 54417,
+            "skillSizeLabel": "54K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1504,8 +1504,8 @@
                 "frequency": "1.2次/天",
                 "successRate": 94,
                 "sourceType": "自定义",
-                "skillSize": 53708,
-                "skillSizeLabel": "53K字 · 巨型",
+                "skillSize": 54417,
+                "skillSizeLabel": "54K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -3124,7 +3124,7 @@
           "thinking_pattern"
         ],
         "fileCount": 10,
-        "sizeKB": 116.6,
+        "sizeKB": 117.0,
         "heatLevel": 5,
         "recentCount": 10
       },
@@ -3229,13 +3229,13 @@
               "thinking_pattern"
             ],
             "fileCount": 10,
-            "sizeKB": 116.6,
+            "sizeKB": 117.0,
             "heatLevel": 5,
             "recentCount": 10
           }
         },
         "totalFiles": 141,
-        "totalSizeKB": 979.4
+        "totalSizeKB": 979.8
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -3369,7 +3369,7 @@
       }
     },
     "totalFiles": 242,
-    "totalSizeKB": 2521.1
+    "totalSizeKB": 2521.5
   },
   "memories": {
     "items": [
@@ -4001,6 +4001,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "双渠道发布规范（Web + 企业文档图片处理）",
+        "category": "development_practice_specification",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "双渠道发布规范（Web + 企业文档） 当内容需要同时发布到Web页面和企业文档平台（如KIM Doc）时，必须注意两个渠道的差异处理： 图...",
+        "keywords": [
+          "双渠道发布",
+          "KIM Doc",
+          "Web",
+          "图片",
+          "本地路径"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "同步脚本脱敏闸门不完善（文件泄漏+凭证硬编码双漏洞）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "背景约束",
@@ -4325,7 +4344,7 @@
       },
       {
         "title": "AI助手默认习惯索引（北冥神功导出用）",
-        "category": "development_practice_specification",
+        "category": "task_flow_experience",
         "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
         "icon": "⚙️",
@@ -4339,7 +4358,7 @@
           "全局生效"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4681,6 +4700,25 @@
         "importance": 5,
         "updatedAt": "2026-03-09",
         "source": "系统自动提取"
+      },
+      {
+        "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "门控机制取代自觉性依赖 问题背景 每日修炼中反复出现的问题： - P0/P1问题处理不完整 - 操作数勉强达标 - 用\"时间不足\"作为跳过理...",
+        "keywords": [
+          "门控机制",
+          "脚本门控",
+          "结构性约束",
+          "自觉性",
+          "程序性执行"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "用户显式记录"
       },
       {
         "title": "风格技能升级的 Flagship-then-Replicate 工作流",
@@ -5379,7 +5417,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 105,
+    "total": 107,
     "byCategory": {
       "development_code_specification": {
         "count": 1,
@@ -5403,7 +5441,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 9,
+        "count": 10,
         "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -5424,21 +5462,21 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 8,
+        "count": 9,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
         "description": "专栏写作/截图踩坑"
       },
       "development_practice_specification": {
-        "count": 5,
+        "count": 4,
         "label": "做事方法",
         "icon": "⚙️",
         "color": "#5ec4d4",
         "description": "如何做事：工作流程、执行方法"
       },
       "system_generated": {
-        "count": 74,
+        "count": 75,
         "label": "系统生成",
         "icon": "⚙️",
         "color": "#64748b",
@@ -5805,7 +5843,7 @@
               },
               {
                 "title": "AI助手默认习惯索引（北冥神功导出用）",
-                "category": "development_practice_specification",
+                "category": "task_flow_experience",
                 "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
@@ -5819,7 +5857,7 @@
                   "全局生效"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-10",
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               },
               {
@@ -5991,6 +6029,33 @@
             ],
             "count": 1
           },
+          "脚本自动化": {
+            "icon": "⚡",
+            "color": "#64748b",
+            "description": "脚本参数/文件时间踩坑",
+            "items": [
+              {
+                "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "脚本自动化",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚡",
+                "color": "#64748b",
+                "description": "门控机制取代自觉性依赖 问题背景 每日修炼中反复出现的问题： - P0/P1问题处理不完整 - 操作数勉强达标 - 用\"时间不足\"作为跳过理...",
+                "keywords": [
+                  "门控机制",
+                  "脚本门控",
+                  "结构性约束",
+                  "自觉性",
+                  "程序性执行"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
+              }
+            ],
+            "count": 1
+          },
           "通用踩坑": {
             "icon": "⚠️",
             "color": "#ef4444",
@@ -6114,7 +6179,7 @@
             "count": 6
           }
         },
-        "count": 12
+        "count": 13
       },
       "系统约束": {
         "icon": "⚙️",
@@ -6907,6 +6972,25 @@
                 "source": "系统自动提取"
               },
               {
+                "title": "双渠道发布规范（Web + 企业文档图片处理）",
+                "category": "development_practice_specification",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "双渠道发布规范（Web + 企业文档） 当内容需要同时发布到Web页面和企业文档平台（如KIM Doc）时，必须注意两个渠道的差异处理： 图...",
+                "keywords": [
+                  "双渠道发布",
+                  "KIM Doc",
+                  "Web",
+                  "图片",
+                  "本地路径"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "背景约束",
@@ -7534,10 +7618,10 @@
                 "source": "系统自动提取"
               }
             ],
-            "count": 74
+            "count": 75
           }
         },
-        "count": 74
+        "count": 75
       }
     }
   },
@@ -7604,7 +7688,7 @@
       75,
       85,
       106,
-      106
+      108
     ]
   },
   "achievements": [
@@ -7687,6 +7771,18 @@
       "progress": 100
     },
     {
+      "id": "first_shot",
+      "name": "百步穿杨",
+      "desc": "执行效率达到80分以上",
+      "icon": "🎯",
+      "rarity": "rare",
+      "category": "growth",
+      "unlocked": true,
+      "progress": 100,
+      "progressText": "执行效率 80/80",
+      "date": "2026-03-11"
+    },
+    {
       "id": "sharpshooter",
       "name": "一击必杀",
       "desc": "单技能成功率≥95%且调用≥50次",
@@ -7750,20 +7846,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 76,
-      "progressText": "懂你程度 61/80",
-      "date": "???"
-    },
-    {
-      "id": "first_shot",
-      "name": "百步穿杨",
-      "desc": "执行效率达到80分以上",
-      "icon": "🎯",
-      "rarity": "rare",
-      "category": "growth",
-      "unlocked": false,
-      "progress": 95,
-      "progressText": "执行效率 76/80",
+      "progress": 77,
+      "progressText": "懂你程度 62/80",
       "date": "???"
     },
     {
@@ -7774,8 +7858,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 80,
-      "progressText": "思考深度 64/80",
+      "progress": 82,
+      "progressText": "思考深度 66/80",
       "date": "???"
     }
   ]

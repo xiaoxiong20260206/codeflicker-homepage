@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T10:00:20.911071",
+  "generatedAt": "2026-03-11T10:26:54.353362",
   "summary": {
     "totalDays": 2,
     "latestDate": "2026-03-10",
@@ -239,7 +239,7 @@
             "优化: 深度优化：纳瓦尔AI深度解读升级为单页Tab导航"
           ],
           "commitCount": 22,
-          "fileChangeCount": 144,
+          "fileChangeCount": 45,
           "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
         }
       ],
@@ -431,7 +431,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
+            "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1）",
             "category": "common_pitfalls_experience"
           },
           {

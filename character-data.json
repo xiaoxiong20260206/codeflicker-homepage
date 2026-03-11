@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T10:00:41.193407",
+  "generatedAt": "2026-03-11T10:27:13.921081",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 377750,
-    "expProgress": 84.8,
+    "totalExp": 376550,
+    "expProgress": 81.1,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
-      "understanding": 61.8,
+      "understanding": 60.6,
       "execution": 76.1,
       "skillDepth": 82.1,
       "thinkingDepth": 63.8,
@@ -38,7 +38,7 @@
       "highLevelSkills": 39,
       "skillTotalValue": 4810.6,
       "expBreakdown": {
-        "understanding": 61800,
+        "understanding": 60600,
         "execution": 76099,
         "skill": 123150,
         "thinking": 51040,
@@ -69,8 +69,8 @@
             "frequency": "1.2次/天",
             "successRate": 94,
             "sourceType": "自定义",
-            "skillSize": 46960,
-            "skillSizeLabel": "46K字 · 大型",
+            "skillSize": 49520,
+            "skillSizeLabel": "49K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -408,8 +408,8 @@
             "frequency": "1.0次/天",
             "successRate": 91,
             "sourceType": "自定义",
-            "skillSize": 117891,
-            "skillSizeLabel": "117K字 · 巨型",
+            "skillSize": 119208,
+            "skillSizeLabel": "119K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1504,8 +1504,8 @@
                 "frequency": "1.2次/天",
                 "successRate": 94,
                 "sourceType": "自定义",
-                "skillSize": 46960,
-                "skillSizeLabel": "46K字 · 大型",
+                "skillSize": 49520,
+                "skillSizeLabel": "49K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1850,8 +1850,8 @@
                 "frequency": "1.0次/天",
                 "successRate": 91,
                 "sourceType": "自定义",
-                "skillSize": 117891,
-                "skillSizeLabel": "117K字 · 巨型",
+                "skillSize": 119208,
+                "skillSizeLabel": "119K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -4417,13 +4417,13 @@
         "source": "系统自动提取"
       },
       {
-        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
+        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0） 问题归因表 | | 问题 | 根因 | ...",
+        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1） 问题归因表 | | 问题 | 根因 | ...",
         "keywords": [
           "每日修炼",
           "踩坑",
@@ -4432,7 +4432,7 @@
           "Checkpoint"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4550,19 +4550,19 @@
         "source": "系统自动提取"
       },
       {
-        "title": "规则膨胀悖论：结构性约束 > 文字规则",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "🧠 元认知层",
-        "icon": "🚫",
-        "color": "#dc2626",
+        "title": "规则膨胀悖论：结构性约束 > 文字规则（踩坑经验）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
         "description": "规则膨胀悖论（Rule Inflation Paradox） 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LL...",
         "keywords": [
           "规则膨胀",
           "结构约束",
           "注意力衰减",
           "LLM设计",
-          "Prompt设计"
+          "脚本门控"
         ],
         "importance": 5,
         "updatedAt": "2026-03-11",
@@ -5021,6 +5021,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "投资理财：基金持仓追踪",
+        "category": "user_hobby",
+        "categoryLabel": "用户偏好",
+        "layer": "🧠 元认知层",
+        "icon": "💬",
+        "color": "#0ea5e9",
+        "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
+        "keywords": [
+          "投资",
+          "理财",
+          "基金",
+          "ETF",
+          "人工智能"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-11",
+        "source": "用户显式记录"
+      },
+      {
         "title": "敏感词集中管理规则",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -5248,25 +5267,6 @@
         "source": "系统自动提取"
       },
       {
-        "title": "投资理财：基金持仓追踪",
-        "category": "user_hobby",
-        "categoryLabel": "用户偏好",
-        "layer": "🧠 元认知层",
-        "icon": "💬",
-        "color": "#0ea5e9",
-        "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
-        "keywords": [
-          "投资",
-          "理财",
-          "基金",
-          "ETF",
-          "人工智能"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
-      },
-      {
         "title": "推理闭环原则",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -5379,14 +5379,14 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "constraint_or_forbidden_rule": {
-        "count": 3,
+        "count": 2,
         "label": "用户约束",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 7,
+        "count": 8,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
@@ -5511,8 +5511,8 @@
                   "ETF",
                   "人工智能"
                 ],
-                "importance": 3,
-                "updatedAt": "2026-03-03",
+                "importance": 4,
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               },
               {
@@ -5596,28 +5596,9 @@
                 "importance": 3,
                 "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "规则膨胀悖论：结构性约束 > 文字规则",
-                "category": "constraint_or_forbidden_rule",
-                "categoryLabel": "用户约束",
-                "layer": "🧠 元认知层",
-                "icon": "🚫",
-                "color": "#dc2626",
-                "description": "规则膨胀悖论（Rule Inflation Paradox） 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LL...",
-                "keywords": [
-                  "规则膨胀",
-                  "结构约束",
-                  "注意力衰减",
-                  "LLM设计",
-                  "Prompt设计"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-11",
-                "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 2
           },
           "思维方法": {
             "icon": "🧠",
@@ -5845,7 +5826,7 @@
             "count": 6
           }
         },
-        "count": 21
+        "count": 20
       },
       "🛠️ 实践记忆层": {
         "icon": "🛠️",
@@ -5878,13 +5859,32 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
+                "title": "规则膨胀悖论：结构性约束 > 文字规则（踩坑经验）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0） 问题归因表 | | 问题 | 根因 | ...",
+                "description": "规则膨胀悖论（Rule Inflation Paradox） 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LL...",
+                "keywords": [
+                  "规则膨胀",
+                  "结构约束",
+                  "注意力衰减",
+                  "LLM设计",
+                  "脚本门控"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1） 问题归因表 | | 问题 | 根因 | ...",
                 "keywords": [
                   "每日修炼",
                   "踩坑",
@@ -5893,11 +5893,11 @@
                   "Checkpoint"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-10",
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "文档处理": {
             "icon": "📄",
@@ -6076,7 +6076,7 @@
             "count": 5
           }
         },
-        "count": 10
+        "count": 11
       },
       "系统约束": {
         "icon": "⚙️",
@@ -7674,8 +7674,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 77,
-      "progressText": "懂你程度 62/80",
+      "progress": 76,
+      "progressText": "懂你程度 61/80",
       "date": "???"
     },
     {

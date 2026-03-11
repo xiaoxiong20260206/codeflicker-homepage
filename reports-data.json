@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T06:27:21.993213",
+  "generatedAt": "2026-03-12T07:35:35.389008",
   "summary": {
     "totalDays": 16,
     "latestDate": "2026-03-11",
@@ -77,12 +77,12 @@
       "dayOfWeek": "周三",
       "activeProjects": 4,
       "totalCommits": 10,
-      "conversationCount": 13,
+      "conversationCount": 8,
       "coreProgress": [
-        "💬 完成 13 个任务: 用户要求验证记忆统计数据的准确性并同步更新到林克首页, 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技......",
+        "💬 完成 8 个任务: 用户要求验证记忆统计数据的准确性并同步更新到林克首页, 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技......",
         "📁 项目成果: 网页更新 7 个",
-        "⚡ 新增能力: ks-project-panorama、skill-architecture，扩展任务处理范围",
-        "🧠 新增记忆: 用户技能命名偏好：前缀规范等15条，避免常见错误"
+        "⚡ 新增能力: ks-project-panorama，扩展任务处理范围",
+        "🧠 新增记忆: 用户技能命名偏好：前缀规范等16条，更精准地理解用户需求"
       ],
       "deliveries": [
         {
@@ -131,22 +131,6 @@
             "validation",
             "github-pages",
             "json"
-          ]
-        },
-        {
-          "title": "Daily Practice Execution Issues and System Constraint Optimization",
-          "type": "conversation",
-          "goal": "分析每日修炼执行中的问题并优化系统约束层的记忆分类",
-          "deliverables": [],
-          "process": [
-            "诊断发现P1跳过率门控设计缺陷导致误报记忆被强制重分类，同时发现系统约束层(constraint_or_forbidden_rule)中有两条被误迁的记忆（林克默认习惯索引和工具边界测试）。建议将这两..."
-          ],
-          "tags": [
-            "daily-practice",
-            "system-constraints",
-            "classification",
-            "optimization",
-            "process-improvement"
           ]
         },
         {
@@ -207,23 +191,35 @@
             "product-comparison",
             "skill-market"
           ]
+        },
+        {
+          "title": "Naval AI Interview Research and Publication Process",
+          "type": "conversation",
+          "goal": "用户希望系统地复盘从创建到发布Naval AI深度调研的完整流程，总结经验教训并提炼可复用模式",
+          "deliverables": [],
+          "process": [
+            "完成了7专题深度分析并发布到Web版和KIM Doc版，解决了KIM Doc图片嵌入和卡片按钮一致性问题。沉淀了使用本地相对路径图片和企业文档发布规范的经验。"
+          ],
+          "tags": [
+            "AI research",
+            "content publication",
+            "KIM Doc",
+            "internal tools",
+            "process optimization"
+          ]
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 74,
+        "skillCount": 72,
         "knowledgeCount": 184,
-        "memoryCount": 112,
-        "skillChange": 2,
+        "memoryCount": 113,
+        "skillChange": 0,
         "knowledgeChange": 4,
-        "memoryChange": 15,
+        "memoryChange": 16,
         "newSkills": [
           {
             "name": "ks-project-panorama",
             "description": "This skill should be used when the user mentions \"项目全景图\", \"总"
-          },
-          {
-            "name": "skill-architecture",
-            "description": "技能管理元能力。当用户说\"技能管理\"、\"优化技能体系\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能分类\"、\"skill"
           }
         ],
         "updatedSkills": [
@@ -232,28 +228,12 @@
             "description": "清爽调研报告风格的**纯样式规范**。当用户提到\"清爽调研报告风格\"时使用此技能。本技能**仅提供CSS样式和视觉设计规"
           },
           {
-            "name": "learn-from-mistakes",
-            "description": "This skill should be used when the user says \"复盘\", \"举一反三\", \""
-          },
-          {
-            "name": "skill-management",
-            "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\""
-          },
-          {
             "name": "ai-column-writer",
             "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
           },
           {
             "name": "beiming-shengong",
             "description": "\"北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、"
-          },
-          {
-            "name": "codeflicker-homepage",
-            "description": "|"
-          },
-          {
-            "name": "daily-reflection-evolution",
-            "description": "This skill should be used when the user mentions \"每日修炼\", \"每日"
           },
           {
             "name": "linke-kim-message",
@@ -272,16 +252,8 @@
             "description": "This skill should be used when the user mentions \"CodeFlicke"
           },
           {
-            "name": "neigong-cultivation",
-            "description": "This skill should be used when the user mentions \"内功修炼\", \"三位"
-          },
-          {
             "name": "promotion-review-sabcd",
             "description": "This skill should be used when the user mentions \"晋升评审\", \"晋升"
-          },
-          {
-            "name": "xiaowuxianggong",
-            "description": "This skill should be used when the user mentions \"小无相功\", \"自进"
           },
           {
             "name": "onboarding-guide",
@@ -333,6 +305,10 @@
           },
           {
             "title": "neigong_check.py 分类建议误报模式（v1）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "skill_optimization.py P0检测存在多类误报",
             "category": "common_pitfalls_experience"
           },
           {
@@ -420,16 +396,16 @@
         ],
         "trend": "growing"
       },
-      "skillCount": 74,
+      "skillCount": 72,
       "knowledgeCount": 184,
-      "memoryCount": 112,
-      "skillChange": 2,
+      "memoryCount": 113,
+      "skillChange": 0,
       "knowledgeChange": 4,
-      "memoryChange": 15,
+      "memoryChange": 16,
       "highlights": [
-        "💬 完成 13 个任务: 用户要求验证记忆统计数据的准确性并同步更新到林克首页, 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技......",
+        "💬 完成 8 个任务: 用户要求验证记忆统计数据的准确性并同步更新到林克首页, 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技......",
         "📁 项目成果: 网页更新 7 个",
-        "⚡ 新增能力: ks-project-panorama、skill-architecture，扩展任务处理范围"
+        "⚡ 新增能力: ks-project-panorama，扩展任务处理范围"
       ]
     },
     {

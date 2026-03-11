@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T10:27:13.921081",
+  "generatedAt": "2026-03-11T11:08:38.059684",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 376550,
-    "expProgress": 81.1,
+    "totalExp": 377150,
+    "expProgress": 83.0,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
-      "understanding": 60.6,
+      "understanding": 61.2,
       "execution": 76.1,
       "skillDepth": 82.1,
       "thinkingDepth": 63.8,
@@ -38,7 +38,7 @@
       "highLevelSkills": 39,
       "skillTotalValue": 4810.6,
       "expBreakdown": {
-        "understanding": 60600,
+        "understanding": 61200,
         "execution": 76099,
         "skill": 123150,
         "thinking": 51040,
@@ -69,8 +69,8 @@
             "frequency": "1.2次/天",
             "successRate": 94,
             "sourceType": "自定义",
-            "skillSize": 49520,
-            "skillSizeLabel": "49K字 · 大型",
+            "skillSize": 52640,
+            "skillSizeLabel": "52K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1504,8 +1504,8 @@
                 "frequency": "1.2次/天",
                 "successRate": 94,
                 "sourceType": "自定义",
-                "skillSize": 49520,
-                "skillSizeLabel": "49K字 · 大型",
+                "skillSize": 52640,
+                "skillSizeLabel": "52K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -3912,7 +3912,7 @@
         "layer": "🧠 元认知层",
         "icon": "🧠",
         "color": "#a78bfa",
-        "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+        "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
         "keywords": [
           "企业案例",
           "学习工作流",
@@ -3921,7 +3921,7 @@
           "知识合成"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-08",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4172,25 +4172,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能/模块粒度的合并信号检测（四信号法）",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#a78bfa",
-        "description": "技能粒度的合并信号检测 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
-        "keywords": [
-          "技能合并",
-          "粒度",
-          "拆分信号",
-          "模块化",
-          "微服务"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
-        "source": "用户显式记录"
-      },
-      {
         "title": "技能分层文档的同步规则（v4：三向同步）",
         "category": "development_practice_specification",
         "categoryLabel": "做事方法",
@@ -4417,13 +4398,13 @@
         "source": "系统自动提取"
       },
       {
-        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1）",
+        "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1） 问题归因表 | | 问题 | 根因 | ...",
+        "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3） 问题归因表 | | 问题 | 根因 | ...",
         "keywords": [
           "每日修炼",
           "踩坑",
@@ -4776,12 +4757,12 @@
       },
       {
         "title": "AI日报默认执行规则：预览后直接推送，不等确认",
-        "category": "development_practice_specification",
-        "categoryLabel": "做事方法",
+        "category": "user_communication",
+        "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "AI日报默认执行规则 AI日报工作流中，KIM卡片预览后无需等待用户确认，直接执行推群和后续所有步骤（推送、知识沉淀、摘要）。 即：预览发到...",
+        "icon": "💬",
+        "color": "#0ea5e9",
+        "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 工作流 1. 生成日报内容（网页+...",
         "keywords": [
           "AI日报",
           "默认执行",
@@ -4790,7 +4771,7 @@
           "KIM卡片"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-09",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -5019,6 +5000,25 @@
         "importance": 4,
         "updatedAt": "2026-03-07",
         "source": "系统自动提取"
+      },
+      {
+        "title": "技能/模块粒度的合并信号检测（四信号法）",
+        "category": "task_flow_experience",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "技能/模块粒度的合并信号检测（四信号法） 核心问题 技能/模块应该多细？什么时候该合并？ 四信号法检测 | | 信号 | 检测方...",
+        "keywords": [
+          "技能合并",
+          "粒度",
+          "拆分信号",
+          "模块化",
+          "微服务"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-11",
+        "source": "用户显式记录"
       },
       {
         "title": "投资理财：基金持仓追踪",
@@ -5358,7 +5358,7 @@
         "description": "身份信息、背景、个人特征"
       },
       "user_communication": {
-        "count": 3,
+        "count": 4,
         "label": "用户偏好",
         "icon": "💬",
         "color": "#0ea5e9",
@@ -5393,7 +5393,7 @@
         "description": "专栏写作/截图踩坑"
       },
       "development_practice_specification": {
-        "count": 5,
+        "count": 4,
         "label": "做事方法",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -5551,9 +5551,28 @@
                 "importance": 4,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "AI日报默认执行规则：预览后直接推送，不等确认",
+                "category": "user_communication",
+                "categoryLabel": "用户偏好",
+                "layer": "🧠 元认知层",
+                "icon": "💬",
+                "color": "#0ea5e9",
+                "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 工作流 1. 生成日报内容（网页+...",
+                "keywords": [
+                  "AI日报",
+                  "默认执行",
+                  "不用确认",
+                  "直接推送",
+                  "KIM卡片"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 5
           },
           "用户约束": {
             "icon": "🚫",
@@ -5663,32 +5682,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "技能/模块粒度的合并信号检测（四信号法）",
-                "category": "task_flow_experience",
-                "categoryLabel": "思维方法",
-                "layer": "🧠 元认知层",
-                "icon": "🧠",
-                "color": "#a78bfa",
-                "description": "技能粒度的合并信号检测 来源 2026-03-08 先把\"公众号接入\"拆成独立skill wechat-content-access，随后发...",
-                "keywords": [
-                  "技能合并",
-                  "粒度",
-                  "拆分信号",
-                  "模块化",
-                  "微服务"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "企业案例学习工作流（四阶段法）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维方法",
                 "layer": "🧠 元认知层",
                 "icon": "🧠",
                 "color": "#a78bfa",
-                "description": "企业案例学习工作流（四阶段法） 来源：快手研发效能19篇文档系统学习实战（2026-03-08） 当用户提供一个企业的内部文档要求系统学习时，执行...",
+                "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
                 "keywords": [
                   "企业案例",
                   "学习工作流",
@@ -5697,11 +5697,11 @@
                   "知识合成"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-08",
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 4
           },
           "做事方法": {
             "icon": "⚙️",
@@ -5766,25 +5766,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "AI日报默认执行规则：预览后直接推送，不等确认",
-                "category": "development_practice_specification",
-                "categoryLabel": "做事方法",
-                "layer": "🧠 元认知层",
-                "icon": "⚙️",
-                "color": "#5ec4d4",
-                "description": "AI日报默认执行规则 AI日报工作流中，KIM卡片预览后无需等待用户确认，直接执行推群和后续所有步骤（推送、知识沉淀、摘要）。 即：预览发到...",
-                "keywords": [
-                  "AI日报",
-                  "默认执行",
-                  "不用确认",
-                  "直接推送",
-                  "KIM卡片"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-09",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "AI助手默认习惯索引（北冥神功导出用）",
                 "category": "development_practice_specification",
                 "categoryLabel": "做事方法",
@@ -5823,10 +5804,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 6
+            "count": 5
           }
         },
-        "count": 20
+        "count": 19
       },
       "🛠️ 实践记忆层": {
         "icon": "🛠️",
@@ -5878,13 +5859,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1）",
+                "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.1） 问题归因表 | | 问题 | 根因 | ...",
+                "description": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v7.3） 问题归因表 | | 问题 | 根因 | ...",
                 "keywords": [
                   "每日修炼",
                   "踩坑",
@@ -6016,6 +5997,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "技能/模块粒度的合并信号检测（四信号法）",
+                "category": "task_flow_experience",
+                "categoryLabel": "通用踩坑",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚠️",
+                "color": "#ef4444",
+                "description": "技能/模块粒度的合并信号检测（四信号法） 核心问题 技能/模块应该多细？什么时候该合并？ 四信号法检测 | | 信号 | 检测方...",
+                "keywords": [
+                  "技能合并",
+                  "粒度",
+                  "拆分信号",
+                  "模块化",
+                  "微服务"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "生图完成后必须发送可点击链接",
                 "category": "development_practice_specification",
                 "categoryLabel": "通用踩坑",
@@ -6073,10 +6073,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 6
           }
         },
-        "count": 11
+        "count": 12
       },
       "系统约束": {
         "icon": "⚙️",

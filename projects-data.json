@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T10:27:14.512251",
+  "generatedAt": "2026-03-11T11:08:38.649805",
   "summary": {
     "total": 18,
     "deployed": 17,
@@ -231,7 +231,7 @@
       "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/reports",
       "highlights": [],
       "metrics": {
-        "fileCount": 25
+        "fileCount": 26
       },
       "quality": {
         "score": 60,

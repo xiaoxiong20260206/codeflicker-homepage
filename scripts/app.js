@@ -2385,14 +2385,13 @@ function showTreeTooltip(event, id, type) {
         var hasMetrics = false;
         
         if (type === 'skill') {
-            // 技能：调用 | 频率 | 规模 — 始终显示，无数据时显示默认值
+            // 技能：调用 | 频率 | 成功率（规模在气泡标签上显示）
             tooltip.querySelector('.tip-call-count').textContent = data.callCount || 0;
             tooltip.querySelector('.tip-frequency').textContent = data.frequency || '0次/周';
-            // 第三个指标改为技能规模
-            tooltip.querySelector('.tip-success-rate').textContent = data.skillSizeLabel || '-';
+            tooltip.querySelector('.tip-success-rate').textContent = (data.successRate !== undefined && data.successRate !== null) ? data.successRate + '%' : '0%';
             if (metricLabels[0]) metricLabels[0].textContent = '调用';
             if (metricLabels[1]) metricLabels[1].textContent = '频率';
-            if (metricLabels[2]) metricLabels[2].textContent = '规模';
+            if (metricLabels[2]) metricLabels[2].textContent = '成功率';
             hasMetrics = true;
         } else if (type === 'knowledge' && data.callCount > 0) {
             // 知识：文档数 | 热度 | 关联数
@@ -2419,12 +2418,16 @@ function showTreeTooltip(event, id, type) {
         metricsSection.style.display = 'none';
     }
     
-    // 描述区：添加项目标记前缀
+    // 描述区：添加项目标记前缀和技能规模
     var descText = data.description || '暂无描述';
     if (data.cfProject) {
         descText = '🔧 CodeFlicker项目 | ' + descText;
     } else if (data.ksInternal) {
         descText = '🏢 快手内部 | ' + descText;
+    }
+    // 对技能类型，在描述末尾追加规模信息
+    if (type === 'skill' && data.skillSizeLabel) {
+        descText = descText + ' | 📐 ' + data.skillSizeLabel;
     }
     descEl.textContent = descText;
     descEl.style.whiteSpace = 'normal';

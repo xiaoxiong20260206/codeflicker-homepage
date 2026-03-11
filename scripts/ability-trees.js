@@ -432,11 +432,13 @@ function renderMemoryNeuralNetwork(container, memories) {
     var tree = memories.tree;
     var total = memories.total || 0;
     
-    // 记忆树三层定义 — 按 layerTag 稳定标识符匹配（不依赖中文 key）
+    // 记忆树四层定义 — 按 layerTag 稳定标识符匹配（不依赖中文 key）
+    // v4.0: 增加系统约束层，确保所有记忆都能被正确展示
     var memLayerDef = [
         { layerTag: 'L1-meta', icon: '\uD83E\uDDE0', label: '元认知层', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(167,139,250,0.06)', desc: '用户身份、思维方法、做事方法', align: '↔ 元能力层 · 基座知识层' },
         { layerTag: 'L2-domain', icon: '\uD83C\uDFAF', label: '领域记忆层', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(139,92,246,0.06)', desc: '特定领域的完整经验沉淀', align: '↔ 领域能力层 · 领域知识层' },
-        { layerTag: 'L3-execution', icon: '\uD83D\uDEE0\uFE0F', label: '实践记忆层', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '具体领域的踩坑经验和项目知识', align: '↔ 执行技能层 · 实践知识层' }
+        { layerTag: 'L3-execution', icon: '\uD83D\uDEE0\uFE0F', label: '实践记忆层', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(74,222,128,0.06)', desc: '具体领域的踩坑经验和项目知识', align: '↔ 执行技能层 · 实践知识层' },
+        { layerTag: 'SYSTEM', icon: '\u2699\uFE0F', label: '系统约束层', color: '#64748b', border: 'rgba(100,116,139,0.25)', bg: 'rgba(100,116,139,0.06)', desc: '系统自动提取的背景约束', align: '↔ 自动化学习' }
     ];
     
     // 按 layerTag 匹配树数据
@@ -453,7 +455,14 @@ function renderMemoryNeuralNetwork(container, memories) {
         return;
     }
     
-    var html = '<div class="memory-arch"><div class="arch-header"><div class="arch-title"><span class="arch-icon">\uD83E\uDDE0</span>\u8bb0\u5fc6\u5e93 \u00b7 \u4e09\u5c42\u67b6\u6784</div><div class="arch-stats"><span>' + total + ' \u6761\u8bb0\u5fc6</span><span class="arch-stat-sep">\u00b7</span><span>3 \u5c42\u67b6\u6784</span></div></div>';
+    // 计算实际显示的层数（有数据的层）
+    var visibleLayerCount = 0;
+    for (var lci = 0; lci < memLayerDef.length; lci++) {
+        var layerData = findMemLayerData(memLayerDef[lci].layerTag);
+        if (layerData && layerData.count > 0) visibleLayerCount++;
+    }
+    
+    var html = '<div class="memory-arch"><div class="arch-header"><div class="arch-title"><span class="arch-icon">\uD83E\uDDE0</span>\u8bb0\u5fc6\u5e93 \u00b7 \u591a\u5c42\u67b6\u6784</div><div class="arch-stats"><span>' + total + ' \u6761\u8bb0\u5fc6</span><span class="arch-stat-sep">\u00b7</span><span>' + visibleLayerCount + ' \u5c42\u67b6\u6784</span></div></div>';
     
     for (var li = 0; li < memLayerDef.length; li++) {
         var ld = memLayerDef[li];
@@ -504,12 +513,20 @@ function renderMemoryNeuralNetwork(container, memories) {
         }
         html += '</div></div></div>';
         
-        // Layer transition
+        // Layer transition - 动态适应层数
         if (li < memLayerDef.length - 1) {
             var nextLayer = findMemLayerData(memLayerDef[li+1].layerTag);
             if (nextLayer && nextLayer.count > 0) {
-                var transLabels = ['\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u9886\u57df\u4e13\u7cbe', '\u9886\u57df\u7ecf\u9a8c \u2192 \u5b9e\u8df5\u6307\u5bfc'];
-                html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabels[li] + '</div><div class="transition-arrow">\u25BC</div></div>';
+                var transLabels = {
+                    'L1-meta_L2-domain': '\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u9886\u57df\u4e13\u7cbe',
+                    'L2-domain_L3-execution': '\u9886\u57df\u7ecf\u9a8c \u2192 \u5b9e\u8df5\u6307\u5bfc',
+                    'L3-execution_SYSTEM': '\u5b9e\u8df5\u7ecf\u9a8c \u2192 \u7cfb\u7edf\u7ea6\u675f',
+                    'L1-meta_L3-execution': '\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u5b9e\u8df5\u6307\u5bfc',
+                    'L1-meta_SYSTEM': '\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u7cfb\u7edf\u7ea6\u675f'
+                };
+                var transKey = ld.layerTag + '_' + memLayerDef[li+1].layerTag;
+                var transLabel = transLabels[transKey] || '\u2193';
+                html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabel + '</div><div class="transition-arrow">\u25BC</div></div>';
             }
         }
     }

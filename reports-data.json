@@ -3796,7 +3796,7 @@
         ],
         "updatedMemory": [
           {
-            "title": "默认工作模式：以***的思维方式和风格执行任务",
+            "title": "默认工作模式：以用户的思维方式和风格执行任务",
             "category": "user_communication"
           }
         ],
@@ -4121,7 +4121,7 @@
         "updatedKnowledge": [],
         "newMemory": [
           {
-            "title": "默认工作模式：以***的思维方式和风格执行任务",
+            "title": "默认工作模式：以用户的思维方式和风格执行任务",
             "category": "user_communication"
           },
           {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T09:15:49.663870",
+  "generatedAt": "2026-03-11T10:00:20.911071",
   "summary": {
     "totalDays": 2,
     "latestDate": "2026-03-10",
@@ -67,8 +67,8 @@
       35,
       75,
       85,
-      100,
-      100
+      104,
+      104
     ]
   },
   "reports": [
@@ -246,7 +246,7 @@
       "capabilityGrowth": {
         "skillCount": 72,
         "knowledgeCount": 185,
-        "memoryCount": 100,
+        "memoryCount": 104,
         "skillChange": -6,
         "knowledgeChange": -57,
         "memoryChange": 17,
@@ -493,14 +493,6 @@
         ],
         "updatedMemory": [
           {
-            "title": "输出链接格式规范（踩坑经验）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
-            "category": "constraint_or_forbidden_rule"
-          },
-          {
             "title": "体系化任务的识别与前置设计（踩坑经验）",
             "category": "common_pitfalls_experience"
           },
@@ -513,7 +505,7 @@
       },
       "skillCount": 72,
       "knowledgeCount": 185,
-      "memoryCount": 100,
+      "memoryCount": 104,
       "skillChange": -6,
       "knowledgeChange": -57,
       "memoryChange": 17,

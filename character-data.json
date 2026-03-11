@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T09:16:10.680802",
+  "generatedAt": "2026-03-11T10:00:41.193407",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 374950,
-    "expProgress": 76.3,
+    "totalExp": 377750,
+    "expProgress": 84.8,
     "currentThreshold": 349649,
     "nextThreshold": 382801,
     "stats": {
-      "understanding": 59.0,
+      "understanding": 61.8,
       "execution": 76.1,
       "skillDepth": 82.1,
       "thinkingDepth": 63.8,
@@ -38,7 +38,7 @@
       "highLevelSkills": 39,
       "skillTotalValue": 4810.6,
       "expBreakdown": {
-        "understanding": 59000,
+        "understanding": 61800,
         "execution": 76099,
         "skill": 123150,
         "thinking": 51040,
@@ -69,8 +69,8 @@
             "frequency": "1.2次/天",
             "successRate": 94,
             "sourceType": "自定义",
-            "skillSize": 50602,
-            "skillSizeLabel": "50K字 · 巨型",
+            "skillSize": 46960,
+            "skillSizeLabel": "46K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -408,8 +408,8 @@
             "frequency": "1.0次/天",
             "successRate": 91,
             "sourceType": "自定义",
-            "skillSize": 114293,
-            "skillSizeLabel": "114K字 · 巨型",
+            "skillSize": 117891,
+            "skillSizeLabel": "117K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1050,8 +1050,8 @@
             "frequency": "0.4次/天",
             "successRate": 92,
             "sourceType": "自定义",
-            "skillSize": 45044,
-            "skillSizeLabel": "45K字 · 大型",
+            "skillSize": 46207,
+            "skillSizeLabel": "46K字 · 大型",
             "ksInternal": true,
             "cfProject": false
           },
@@ -1504,8 +1504,8 @@
                 "frequency": "1.2次/天",
                 "successRate": 94,
                 "sourceType": "自定义",
-                "skillSize": 50602,
-                "skillSizeLabel": "50K字 · 巨型",
+                "skillSize": 46960,
+                "skillSizeLabel": "46K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1850,8 +1850,8 @@
                 "frequency": "1.0次/天",
                 "successRate": 91,
                 "sourceType": "自定义",
-                "skillSize": 114293,
-                "skillSizeLabel": "114K字 · 巨型",
+                "skillSize": 117891,
+                "skillSizeLabel": "117K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -2496,8 +2496,8 @@
                 "frequency": "0.4次/天",
                 "successRate": 92,
                 "sourceType": "自定义",
-                "skillSize": 45044,
-                "skillSizeLabel": "45K字 · 大型",
+                "skillSize": 46207,
+                "skillSizeLabel": "46K字 · 大型",
                 "ksInternal": true,
                 "cfProject": false
               },
@@ -3393,6 +3393,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "AI日报KIM卡片能力更新模块（capability_update字段）",
+        "category": "development_practice_specification",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "功能描述 AI日报KIM卡片末尾新增\"AI助手能力更新\"模块，在有新增能力时向群里汇报日报能力的迭代进展。 使用方法 在 `data/daily-...",
+        "keywords": [
+          "AI日报",
+          "KIM",
+          "能力更新",
+          "capability_update",
+          "AI助手"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "AI日报KIM推送空卡片问题（JSON数据源断裂 v3.5）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "背景约束",
@@ -3602,6 +3621,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "HTML链接必须target=_blank且禁止href=#占位符",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "问题现象 (2026-03-11) 1. 网页版新闻链接点击后在当前页跳转，而非新开窗口 2. 国内新闻链接使用 href=\"#\" 占位符，点击...",
+        "keywords": [
+          "HTML",
+          "链接",
+          "target",
+          "_blank",
+          "href"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "KIM Doc 图片嵌入规则（必须用本地路径）",
         "category": "development_practice_specification",
         "categoryLabel": "背景约束",
@@ -3640,6 +3678,25 @@
         "source": "系统自动提取"
       },
       {
+        "title": "KIM卡片按钮点击无效排查：URL必须指向内容页而非跳转页",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "问题现象 (2026-03-11) AI日报KIM卡片双按钮点击无反应，但简单测试卡片的按钮可以正常点击。 根因 1. URL指向跳转页*...",
+        "keywords": [
+          "KIM卡片",
+          "按钮",
+          "点击无效",
+          "跳转页",
+          "URL"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "KIM卡片视觉层次优化经验（v3.4 列表缩进+block分隔 + v1.1格式一致性）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "背景约束",
@@ -3660,11 +3717,11 @@
       },
       {
         "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
+        "category": "task_flow_experience",
+        "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
-        "icon": "🚫",
-        "color": "#dc2626",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
         "keywords": [
           "Meta-Execution",
@@ -3674,7 +3731,7 @@
           "P2"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4134,12 +4191,12 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能分层文档的同步规则（v3：三向同步）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
+        "title": "技能分层文档的同步规则（v4：三向同步）",
+        "category": "development_practice_specification",
+        "categoryLabel": "做事方法",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
         "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
         "keywords": [
           "技能更新",
@@ -4149,7 +4206,7 @@
           "分层同步"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-09",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4341,6 +4398,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "每日修炼内功修炼步骤必须强制执行操作",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "背景约束",
+        "layer": "系统约束",
+        "icon": "📋",
+        "color": "#94a3b8",
+        "description": "每日修炼内功修炼步骤必须强制执行操作 问题描述 2026-03-10 每日修炼时，内功修炼步骤声称\"零操作已验证，P0为脚本误报\"，但实际上...",
+        "keywords": [
+          "每日修炼",
+          "内功修炼",
+          "强制执行",
+          "操作计数",
+          "零操作"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-11",
+        "source": "系统自动提取"
+      },
+      {
         "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -4474,13 +4550,13 @@
         "source": "系统自动提取"
       },
       {
-        "title": "规则膨胀悖论：结构性约束 > 文字规则（LLM Prompt/Skill设计通用原则）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "规则膨胀悖论（Rule Inflation Paradox） 来源 2026-03-09 每日修炼技能v4.3→v5.0重构。SKILL.m...",
+        "title": "规则膨胀悖论：结构性约束 > 文字规则",
+        "category": "constraint_or_forbidden_rule",
+        "categoryLabel": "用户约束",
+        "layer": "🧠 元认知层",
+        "icon": "🚫",
+        "color": "#dc2626",
+        "description": "规则膨胀悖论（Rule Inflation Paradox） 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LL...",
         "keywords": [
           "规则膨胀",
           "结构约束",
@@ -4489,7 +4565,7 @@
           "Prompt设计"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-08",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4569,11 +4645,11 @@
         "source": "系统自动提取"
       },
       {
-        "title": "输出链接格式规范（踩坑经验）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
+        "title": "输出链接格式规范（代码规范）",
+        "category": "development_code_specification",
+        "categoryLabel": "代码规范",
+        "layer": null,
+        "icon": "📝",
         "color": "#4ade80",
         "description": "输出链接格式规范（踩坑经验） 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
         "keywords": [
@@ -4584,7 +4660,7 @@
           "括号"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4890,11 +4966,11 @@
       },
       {
         "title": "创作类任务的前置确认原则",
-        "category": "task_flow_experience",
-        "categoryLabel": "做事方法",
+        "category": "user_communication",
+        "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
+        "icon": "💬",
+        "color": "#0ea5e9",
         "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
         "keywords": [
           "创作",
@@ -4904,7 +4980,7 @@
           "设计"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-06",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -4943,25 +5019,6 @@
         "importance": 4,
         "updatedAt": "2026-03-07",
         "source": "系统自动提取"
-      },
-      {
-        "title": "投资理财：基金持仓追踪",
-        "category": "user_hobby",
-        "categoryLabel": "用户偏好",
-        "layer": "🧠 元认知层",
-        "icon": "💬",
-        "color": "#0ea5e9",
-        "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
-        "keywords": [
-          "投资",
-          "理财",
-          "基金",
-          "ETF",
-          "人工智能"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-03",
-        "source": "用户显式记录"
       },
       {
         "title": "敏感词集中管理规则",
@@ -5154,21 +5211,21 @@
       },
       {
         "title": "重构/优化任务的强制约束规则",
-        "category": "constraint_or_forbidden_rule",
-        "categoryLabel": "用户约束",
-        "layer": "🧠 元认知层",
-        "icon": "🚫",
-        "color": "#dc2626",
+        "category": "task_flow_experience",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
         "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
         "keywords": [
           "重构",
           "优化",
-          "约束",
-          "禁止",
-          "分步提交"
+          "分步提交",
+          "验证流程",
+          "SOP"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-03",
+        "updatedAt": "2026-03-11",
         "source": "用户显式记录"
       },
       {
@@ -5189,6 +5246,25 @@
         "importance": 4,
         "updatedAt": "2026-03-05",
         "source": "系统自动提取"
+      },
+      {
+        "title": "投资理财：基金持仓追踪",
+        "category": "user_hobby",
+        "categoryLabel": "用户偏好",
+        "layer": "🧠 元认知层",
+        "icon": "💬",
+        "color": "#0ea5e9",
+        "description": "投资理财信息 风险投资专项资金 - 总计划投入：30万人民币（专款专用，风险投资金） - 投资平台：支付宝 当前持仓（2026-03...",
+        "keywords": [
+          "投资",
+          "理财",
+          "基金",
+          "ETF",
+          "人工智能"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-03",
+        "source": "用户显式记录"
       },
       {
         "title": "推理闭环原则",
@@ -5265,14 +5341,14 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 100,
+    "total": 103,
     "byCategory": {
-      "common_pitfalls_experience": {
-        "count": 10,
-        "label": "发布部署",
-        "icon": "🚀",
+      "development_code_specification": {
+        "count": 1,
+        "label": "代码规范",
+        "icon": "📝",
         "color": "#4ade80",
-        "description": "GitHub Pages/部署踩坑"
+        "description": "代码风格、命名规范、格式标准"
       },
       "user_info": {
         "count": 3,
@@ -5282,14 +5358,14 @@
         "description": "身份信息、背景、个人特征"
       },
       "user_communication": {
-        "count": 2,
+        "count": 3,
         "label": "用户偏好",
         "icon": "💬",
         "color": "#0ea5e9",
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 8,
+        "count": 9,
         "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -5303,21 +5379,28 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "constraint_or_forbidden_rule": {
-        "count": 4,
+        "count": 3,
         "label": "用户约束",
         "icon": "🚫",
         "color": "#dc2626",
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
+      "common_pitfalls_experience": {
+        "count": 7,
+        "label": "内容创作",
+        "icon": "✍️",
+        "color": "#f59e0b",
+        "description": "专栏写作/截图踩坑"
+      },
       "development_practice_specification": {
-        "count": 4,
-        "label": "通用踩坑",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "通用踩坑经验和最佳实践"
+        "count": 5,
+        "label": "做事方法",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "如何做事：工作流程、执行方法"
       },
       "system_generated": {
-        "count": 68,
+        "count": 72,
         "label": "系统生成",
         "icon": "⚙️",
         "color": "#64748b",
@@ -5428,8 +5511,27 @@
                   "ETF",
                   "人工智能"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-03-03",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "创作类任务的前置确认原则",
+                "category": "user_communication",
+                "categoryLabel": "用户偏好",
+                "layer": "🧠 元认知层",
+                "icon": "💬",
+                "color": "#0ea5e9",
+                "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
+                "keywords": [
+                  "创作",
+                  "前置确认",
+                  "写作",
+                  "PPT",
+                  "设计"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               },
               {
@@ -5451,32 +5553,13 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 4
           },
           "用户约束": {
             "icon": "🚫",
             "color": "#dc2626",
             "description": "保密规则、禁止事项、必须遵守的约束",
             "items": [
-              {
-                "title": "重构/优化任务的强制约束规则",
-                "category": "constraint_or_forbidden_rule",
-                "categoryLabel": "用户约束",
-                "layer": "🧠 元认知层",
-                "icon": "🚫",
-                "color": "#dc2626",
-                "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
-                "keywords": [
-                  "重构",
-                  "优化",
-                  "约束",
-                  "禁止",
-                  "分步提交"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-03",
-                "source": "用户显式记录"
-              },
               {
                 "title": "敏感词集中管理规则",
                 "category": "constraint_or_forbidden_rule",
@@ -5497,25 +5580,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
-                "category": "constraint_or_forbidden_rule",
-                "categoryLabel": "用户约束",
-                "layer": "🧠 元认知层",
-                "icon": "🚫",
-                "color": "#dc2626",
-                "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
-                "keywords": [
-                  "Meta-Execution",
-                  "元技能",
-                  "P0",
-                  "P1",
-                  "P2"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "推理闭环原则",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
@@ -5532,9 +5596,28 @@
                 "importance": 3,
                 "updatedAt": "2026-03-06",
                 "source": "用户显式记录"
+              },
+              {
+                "title": "规则膨胀悖论：结构性约束 > 文字规则",
+                "category": "constraint_or_forbidden_rule",
+                "categoryLabel": "用户约束",
+                "layer": "🧠 元认知层",
+                "icon": "🚫",
+                "color": "#dc2626",
+                "description": "规则膨胀悖论（Rule Inflation Paradox） 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LL...",
+                "keywords": [
+                  "规则膨胀",
+                  "结构约束",
+                  "注意力衰减",
+                  "LLM设计",
+                  "Prompt设计"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 3
           },
           "思维方法": {
             "icon": "🧠",
@@ -5645,22 +5728,41 @@
             "description": "如何做事：工作流程、执行方法",
             "items": [
               {
-                "title": "创作类任务的前置确认原则",
+                "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
                 "category": "task_flow_experience",
                 "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
                 "icon": "⚙️",
                 "color": "#5ec4d4",
-                "description": "创作类任务前置确认原则 所有创作类任务（写文章、做PPT、设计页面）在动手前必须确认： 1. 核心内容/场景列表 — 用户确认，不是我猜 ...",
+                "description": "Meta-Execution 工作模式（v1.9.2 完整版） 每次执行任务时自动运行的严格工作流。 三阶段检查： - P1启动前...",
                 "keywords": [
-                  "创作",
-                  "前置确认",
-                  "写作",
-                  "PPT",
-                  "设计"
+                  "Meta-Execution",
+                  "元技能",
+                  "P0",
+                  "P1",
+                  "P2"
                 ],
-                "importance": 4,
-                "updatedAt": "2026-03-06",
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
+              },
+              {
+                "title": "技能分层文档的同步规则（v4：三向同步）",
+                "category": "development_practice_specification",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
+                "keywords": [
+                  "技能更新",
+                  "SKILL.md",
+                  "references",
+                  "examples",
+                  "分层同步"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
                 "source": "用户显式记录"
               },
               {
@@ -5740,10 +5842,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 5
+            "count": 6
           }
         },
-        "count": 20
+        "count": 21
       },
       "🛠️ 实践记忆层": {
         "icon": "🛠️",
@@ -5756,25 +5858,6 @@
             "color": "#f472b6",
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
-              {
-                "title": "技能分层文档的同步规则（v3：三向同步）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "技能分层文档同步规则（v3：三向同步） 问题 技能体系是分层的：SKILL.md是概述入口，references/是详细规范，example...",
-                "keywords": [
-                  "技能更新",
-                  "SKILL.md",
-                  "references",
-                  "examples",
-                  "分层同步"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-09",
-                "source": "用户显式记录"
-              },
               {
                 "title": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖）",
                 "category": "common_pitfalls_experience",
@@ -5814,34 +5897,7 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 3
-          },
-          "发布部署": {
-            "icon": "🚀",
-            "color": "#4ade80",
-            "description": "GitHub Pages/部署踩坑",
-            "items": [
-              {
-                "title": "输出链接格式规范（踩坑经验）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "输出链接格式规范（踩坑经验） 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
-                "keywords": [
-                  "链接格式",
-                  "URL输出",
-                  "文本分隔",
-                  "输出规范",
-                  "括号"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "用户显式记录"
-              }
-            ],
-            "count": 1
+            "count": 2
           },
           "文档处理": {
             "icon": "📄",
@@ -5885,28 +5941,9 @@
                 "importance": 5,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "规则膨胀悖论：结构性约束 > 文字规则（LLM Prompt/Skill设计通用原则）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "文档处理",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "📄",
-                "color": "#38bdf8",
-                "description": "规则膨胀悖论（Rule Inflation Paradox） 来源 2026-03-09 每日修炼技能v4.3→v5.0重构。SKILL.m...",
-                "keywords": [
-                  "规则膨胀",
-                  "结构约束",
-                  "注意力衰减",
-                  "LLM设计",
-                  "Prompt设计"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "用户显式记录"
               }
             ],
-            "count": 3
+            "count": 2
           },
           "内容创作": {
             "icon": "✍️",
@@ -5940,6 +5977,25 @@
             "color": "#ef4444",
             "description": "通用踩坑经验和最佳实践",
             "items": [
+              {
+                "title": "重构/优化任务的强制约束规则",
+                "category": "task_flow_experience",
+                "categoryLabel": "通用踩坑",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚠️",
+                "color": "#ef4444",
+                "description": "重构/优化强制约束 当执行涉及多文件或多维度的重构、优化、架构调整时，必须遵循以下约束： 禁止行为 ❌ 1. 禁止批量修改后一次性提交*...",
+                "keywords": [
+                  "重构",
+                  "优化",
+                  "分步提交",
+                  "验证流程",
+                  "SOP"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-11",
+                "source": "用户显式记录"
+              },
               {
                 "title": "五层思考框架：从执行到战略",
                 "category": "task_flow_experience",
@@ -6017,10 +6073,10 @@
                 "source": "用户显式记录"
               }
             ],
-            "count": 4
+            "count": 5
           }
         },
-        "count": 12
+        "count": 10
       },
       "系统约束": {
         "icon": "⚙️",
@@ -6756,6 +6812,25 @@
                 "source": "系统自动提取"
               },
               {
+                "title": "每日修炼内功修炼步骤必须强制执行操作",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "每日修炼内功修炼步骤必须强制执行操作 问题描述 2026-03-10 每日修炼时，内功修炼步骤声称\"零操作已验证，P0为脚本误报\"，但实际上...",
+                "keywords": [
+                  "每日修炼",
+                  "内功修炼",
+                  "强制执行",
+                  "操作计数",
+                  "零操作"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "背景约束",
@@ -7212,6 +7287,63 @@
                 "source": "系统自动提取"
               },
               {
+                "title": "KIM卡片按钮点击无效排查：URL必须指向内容页而非跳转页",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "问题现象 (2026-03-11) AI日报KIM卡片双按钮点击无反应，但简单测试卡片的按钮可以正常点击。 根因 1. URL指向跳转页*...",
+                "keywords": [
+                  "KIM卡片",
+                  "按钮",
+                  "点击无效",
+                  "跳转页",
+                  "URL"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
+                "title": "HTML链接必须target=_blank且禁止href=#占位符",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "问题现象 (2026-03-11) 1. 网页版新闻链接点击后在当前页跳转，而非新开窗口 2. 国内新闻链接使用 href=\"#\" 占位符，点击...",
+                "keywords": [
+                  "HTML",
+                  "链接",
+                  "target",
+                  "_blank",
+                  "href"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
+                "title": "AI日报KIM卡片能力更新模块（capability_update字段）",
+                "category": "development_practice_specification",
+                "categoryLabel": "背景约束",
+                "layer": "系统约束",
+                "icon": "📋",
+                "color": "#94a3b8",
+                "description": "功能描述 AI日报KIM卡片末尾新增\"AI助手能力更新\"模块，在有新增能力时向群里汇报日报能力的迭代进展。 使用方法 在 `data/daily-...",
+                "keywords": [
+                  "AI日报",
+                  "KIM",
+                  "能力更新",
+                  "capability_update",
+                  "AI助手"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-11",
+                "source": "系统自动提取"
+              },
+              {
                 "title": "企业数字员工平台 — 项目概览与产品定位",
                 "category": "project_introduction",
                 "categoryLabel": "背景约束",
@@ -7326,10 +7458,10 @@
                 "source": "系统自动提取"
               }
             ],
-            "count": 68
+            "count": 72
           }
         },
-        "count": 68
+        "count": 72
       }
     }
   },
@@ -7395,8 +7527,8 @@
       35,
       75,
       85,
-      100,
-      100
+      104,
+      104
     ]
   },
   "achievements": [
@@ -7542,8 +7674,8 @@
       "rarity": "epic",
       "category": "growth",
       "unlocked": false,
-      "progress": 74,
-      "progressText": "懂你程度 59/80",
+      "progress": 77,
+      "progressText": "懂你程度 62/80",
       "date": "???"
     },
     {

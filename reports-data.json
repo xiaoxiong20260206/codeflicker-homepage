@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-03-11T08:47:20.516435",
-  "version": "2.0",
+  "generatedAt": "2026-03-11T09:15:49.663870",
   "summary": {
-    "totalDays": 1,
-    "latestDate": "2026-03-03",
+    "totalDays": 2,
+    "latestDate": "2026-03-10",
     "earliestDate": "2026-03-03"
   },
   "trend": {
@@ -37,7 +36,7 @@
       58,
       62,
       72,
-      78
+      72
     ],
     "knowledge": [
       150,
@@ -68,24 +67,462 @@
       35,
       75,
       85,
-      97,
-      99
+      100,
+      100
     ]
   },
-  "capabilitySnapshots": {
-    "2026-03-03": {
-      "reasoning": 85,
-      "memory": 80,
-      "execution": 90,
-      "learning": 88,
-      "insight": 82,
-      "creativity": 78,
-      "skillCount": 42,
-      "knowledgeCount": 152,
-      "memoryCount": 28
-    }
-  },
   "reports": [
+    {
+      "date": "2026-03-10",
+      "dayOfWeek": "周二",
+      "activeProjects": 15,
+      "totalCommits": 31,
+      "conversationCount": 5,
+      "coreProgress": [
+        "💬 完成 5 个任务: 用户希望系统地复盘从创建到发布Naval AI深度调研的完整流程，总结经验教训并..., 优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作...",
+        "📁 项目成果: 网页更新 2 个",
+        "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量",
+        "🧠 新增记忆: 新工具/技能接入前的三道关卡（基础设施→等17条，避免常见错误"
+      ],
+      "deliveries": [
+        {
+          "title": "Naval AI Interview Research and Publication Process",
+          "type": "conversation",
+          "goal": "用户希望系统地复盘从创建到发布Naval AI深度调研的完整流程，总结经验教训并提炼可复用模式",
+          "deliverables": [],
+          "process": [
+            "完成了7专题深度分析并发布到Web版和KIM Doc版，解决了KIM Doc图片嵌入和卡片按钮一致性问题。沉淀了使用本地相对路径图片和企业文档发布规范的经验。"
+          ],
+          "tags": [
+            "AI research",
+            "content publication",
+            "KIM Doc",
+            "internal tools",
+            "process optimization"
+          ]
+        },
+        {
+          "title": "Codeflicker homepage UI optimization and tab functionality",
+          "type": "conversation",
+          "goal": "优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作",
+          "deliverables": [],
+          "process": [
+            "移除了tab名称和空行以增加紧凑性，调整了内容间距。检查了作品分类Tab切换功能，发现需要修复`currentWorksTab`变量管理问题。遗留问题是确保分类切换时内容正确渲染。"
+          ],
+          "tags": [
+            "ui-optimization",
+            "tab-navigation",
+            "javascript",
+            "homepage",
+            "layout"
+          ]
+        },
+        {
+          "title": "Digital Employee Web v2 UI Enhancement",
+          "type": "conversation",
+          "goal": "升级数字员工平台v2版本，实现通知系统过滤功能和技能步骤展示功能",
+          "deliverables": [],
+          "process": [
+            "在digital_employee_web_v2.html中添加了通知页面的过滤功能（全部/HIL/完成/告警/建议）和标记已读功能；为技能页面添加了步骤展示功能；最终代码通过lint检查无报错，但用..."
+          ],
+          "tags": [
+            "react",
+            "notification-system",
+            "skill-management",
+            "UI-components",
+            "state-management"
+          ]
+        },
+        {
+          "title": "AI Daily Report System Enhancement for Real-time Updates",
+          "type": "conversation",
+          "goal": "优化AI日报系统以确保实时新闻的准确性和时效性",
+          "deliverables": [],
+          "process": [
+            "针对日报系统误用旧闻的问题，新增了Step 0.5实时热点探针和强制日期锚定规则，并制定了时效性锚定通用原则。核心措施包括先锚定再搜索、强制时间词、区分重要与新鲜、宁缺毋滥四条铁律，已更新到相关ski..."
+          ],
+          "tags": [
+            "ai-daily-report",
+            "real-time-updates",
+            "search-optimization",
+            "time-anchoring",
+            "skill-enhancement"
+          ]
+        },
+        {
+          "title": "AI-powered Promotion Defense Coaching",
+          "type": "conversation",
+          "goal": "帮助优化晋升答辩提纲，通过AI提效向非技术评委展示研发效能的价值",
+          "deliverables": [],
+          "process": [
+            "创建了包含5张配图的Markdown文档，覆盖诊断评分卡、叙事结构优化、时间分配建议等模块。文档已上传至KIM Docs，包含结构化展示框架和针对E10到E11晋升的答辩优化策略。"
+          ],
+          "tags": [
+            "promotion",
+            "defense",
+            "coaching",
+            "AI",
+            "narrative"
+          ]
+        },
+        {
+          "title": "ai-daily-report",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "index.html",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-daily-report"
+            },
+            {
+              "name": "2026-03-03.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "2026-03-03.html",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-daily-report"
+            }
+          ],
+          "process": [
+            "网页更新 2 个",
+            "文档完善 1 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 3,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-daily-report"
+        },
+        {
+          "title": "Knowledge",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "proactive-agent.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "xixingdafa-2026-03-10.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "quality-v4.1.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "文档完善 11 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 15,
+          "deployUrl": null
+        },
+        {
+          "title": "AI-Insight",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-insight"
+            }
+          ],
+          "process": [
+            "优化: 优化KIM Doc：更吸引人的标题+Web版入口+图片嵌入章节",
+            "新增: 新增：纳瓦尔AI观点深度解读KIM Doc版本",
+            "优化: 深度优化：纳瓦尔AI深度解读升级为单页Tab导航"
+          ],
+          "commitCount": 22,
+          "fileChangeCount": 144,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 72,
+        "knowledgeCount": 185,
+        "memoryCount": 100,
+        "skillChange": -6,
+        "knowledgeChange": -57,
+        "memoryChange": 17,
+        "newSkills": [
+          {
+            "name": "nano-pdf",
+            "description": "Edit PDFs with natural-language instructions using the nano-"
+          },
+          {
+            "name": "skill-management",
+            "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\""
+          },
+          {
+            "name": "beiming-shengong",
+            "description": "\"北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、"
+          },
+          {
+            "name": "ai-image-generator",
+            "description": "This skill should be used ONLY when the user explicitly asks"
+          },
+          {
+            "name": "openai-whisper",
+            "description": "Local speech-to-text with the Whisper CLI (no API key)."
+          },
+          {
+            "name": "summarize",
+            "description": "Summarize URLs or files with the summarize CLI (web, PDFs, i"
+          },
+          {
+            "name": "find-skills",
+            "description": "\"This skill should be used when the user asks to find, searc"
+          },
+          {
+            "name": "github",
+            "description": "\"Interact with GitHub using the `gh` CLI. Use `gh issue`, `g"
+          },
+          {
+            "name": "proactive-agent",
+            "description": "\"Transform AI agents from task-followers into proactive part"
+          },
+          {
+            "name": "promotion-review-sabcd",
+            "description": "This skill should be used when the user mentions \"晋升评审\", \"晋升"
+          },
+          {
+            "name": "xiaowuxianggong",
+            "description": "This skill should be used when the user mentions \"小无相功\", \"自进"
+          },
+          {
+            "name": "onboarding-guide",
+            "description": "\"新手入门引导技能。当用户说'我该怎么用你'、'你能做什么'、'使用指南'、'帮助'、'新手入门'、'快速上手'、'初次"
+          },
+          {
+            "name": "debug-pro",
+            "description": "Systematic debugging methodology and language-specific debug"
+          },
+          {
+            "name": "personal-homepage-template",
+            "description": "\"个人首页模板技能。当用户说'生成我的首页'、'创建角色面板'、'我要一个像AI助手那样的首页'、'generate my "
+          },
+          {
+            "name": "capability-evolver",
+            "description": "A self-evolution engine for AI agents. Analyzes runtime hist"
+          },
+          {
+            "name": "error-handling-patterns",
+            "description": "Master error handling patterns across languages including ex"
+          },
+          {
+            "name": "workflow-orchestration-patterns",
+            "description": "Design durable workflows with Temporal for distributed syste"
+          },
+          {
+            "name": "context-window-management",
+            "description": "\"Strategies for managing LLM context windows including summa"
+          },
+          {
+            "name": "meta-cognitive-reasoning",
+            "description": "Meta-cognitive reasoning specialist for evidence-based analy"
+          },
+          {
+            "name": "task-decomposition",
+            "description": "\"Transform overwhelming development tasks into manageable un"
+          }
+        ],
+        "updatedSkills": [
+          {
+            "name": "feishu-assistant",
+            "description": "当用户说\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\"、\"检查飞书\"时使用此技能。实现飞书机器人与CodeFlicke"
+          },
+          {
+            "name": "essence-insight",
+            "description": "This skill should be used when the user asks about \"本质\", \"为什"
+          },
+          {
+            "name": "meta-execution",
+            "description": "This skill should be used automatically when receiving any t"
+          },
+          {
+            "name": "yuque-publisher",
+            "description": "语雀知识库双向同步技能。支持发布文档、读取文档、删除文档、获取列表等操作。当用户说\"发布到语雀\"、\"读取语雀文档\"、\"打"
+          },
+          {
+            "name": "xixingdafa",
+            "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收"
+          },
+          {
+            "name": "memory-hygiene",
+            "description": "记忆优化元能力（含执行）。当用户说\"记忆优化\"、\"检查记忆健康度\"、\"优化记忆\"、\"记忆清理\"、\"memory opti"
+          },
+          {
+            "name": "investment-tracker",
+            "description": "\"This skill should be used when the user mentions '投资', '理财'"
+          },
+          {
+            "name": "knowledge-curator",
+            "description": "知识库优化元能力（含执行）。当用户说\"知识优化\"、\"检查知识库\"、\"知识库健康度\"、\"整理知识\"、\"knowledge "
+          },
+          {
+            "name": "ks-kim-docs-shuttle",
+            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+          },
+          {
+            "name": "knowledge-acquisition-meta",
+            "description": "This skill should be used when the user wants to \"learn a ne"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "proactive-agent",
+            "category": "self-evolution"
+          },
+          {
+            "name": "xixingdafa-2026-03-10",
+            "category": "self-evolution"
+          },
+          {
+            "name": "quality-v4.1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "user-frontend-v1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "tech-operation-v4",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "backend-development-v3.1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "strategy-development-v4",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "data-development-v4",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "README",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "operation-frontend-v1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "operation-development-v5",
+            "category": "promotion-standards"
+          }
+        ],
+        "updatedKnowledge": [],
+        "newMemory": [
+          {
+            "title": "新工具/技能接入前的三道关卡（基础设施→ROI→最小验证）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "踩坑经验沉淀优先级：Skill优先，记忆补充（v2.2 含沉淀决策树+分类修正）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "每日修炼踩坑总结与防重犯架构（daily-reflection-evolution v6.0）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "AI助手默认习惯索引（北冥神功导出用）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "技能间复用原则：委托而非重复定义",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "版本号漂移根治方案：单一数据源 + 自动化同步",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "共享UI元素删除陷阱（隐藏优先于删除）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "内功修炼P0跳过必须记录判断理由（v2：含误报识别）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "neigong_check.py 版本漂移检测逻辑存在三类误报",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "Flex布局边缘元素被压缩成竖排的防御模式",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "条件渲染不应隐藏0值（指标类数据始终展示原则）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "多处配置检查必须覆盖所有配置位置（防漏检原则）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM Doc 图片嵌入规则（必须用本地路径）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "AI日报时效性锚点+时间窗口双重验证经验（v4.0）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "核心任务完成≠流程完成陷阱（深度调研/日报/周报通用）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "KIM Doc图片嵌入：必须用本地路径，外部URL不渲染",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "updatedMemory": [
+          {
+            "title": "输出链接格式规范（踩坑经验）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "Meta-Execution 工作模式（v1.9.2 完整版）",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "体系化任务的识别与前置设计（踩坑经验）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "核心身份关系与称呼规范（权威版 v2）",
+            "category": "user_info"
+          }
+        ],
+        "trend": "growing"
+      },
+      "skillCount": 72,
+      "knowledgeCount": 185,
+      "memoryCount": 100,
+      "skillChange": -6,
+      "knowledgeChange": -57,
+      "memoryChange": 17,
+      "highlights": [
+        "💬 完成 5 个任务: 用户希望系统地复盘从创建到发布Naval AI深度调研的完整流程，总结经验教训并..., 优化AI助手首页的UI布局并确保作品分类Tab切换功能正常工作...",
+        "📁 项目成果: 网页更新 2 个",
+        "⚡ 新增能力: nano-pdf、skill-management，提升UI/设计输出质量"
+      ]
+    },
     {
       "date": "2026-03-03",
       "dayOfWeek": "周二",

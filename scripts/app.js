@@ -281,9 +281,11 @@ function renderAboutSection() {
     const aboutSkillCount = document.getElementById('about-skill-count');
     const aboutMemoryCount = document.getElementById('about-memory-count');
     const aboutKnowledgeCount = document.getElementById('about-knowledge-count');
+    const xiaowuxiangSkillCount = document.getElementById('xiaowuxiang-skill-count');
     if (aboutSkillCount) aboutSkillCount.textContent = (skills.total || 0) + '项技能';
     if (aboutMemoryCount) aboutMemoryCount.textContent = (memories?.total || 0) + '条记忆';
     if (aboutKnowledgeCount) aboutKnowledgeCount.textContent = (knowledge.totalFiles || 0) + '份知识文档';
+    if (xiaowuxiangSkillCount) xiaowuxiangSkillCount.textContent = skills.total || 0;
     
     // 计算运行天数
     const firstDate = new Date('2026-02-01'); // AI助手诞生日

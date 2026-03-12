@@ -311,7 +311,7 @@
           },
           {
             "name": "personal-homepage-template",
-            "description": "\"个人首页模板技能。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'generate my "
+            "description": "\"个人首页模板技能。当用户说'生成我的首页'、'创建角色面板'、'我要一个像AI助手那样的首页'、'generate my "
           }
         ],
         "newKnowledge": [],
@@ -568,7 +568,7 @@
           },
           {
             "name": "linke-kim-message",
-            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
+            "description": "This skill should be used when the user mentions \"AI助手发消息\", \"林"
           },
           {
             "name": "zelda-style",
@@ -709,7 +709,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "林克默认习惯索引（北冥神功导出必须遵循）",
+            "title": "AI助手默认习惯索引（北冥神功导出必须遵循）",
             "category": "constraint_or_forbidden_rule"
           },
           {

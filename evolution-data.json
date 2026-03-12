@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T21:52:01.700688",
+  "generatedAt": "2026-03-12T12:17:05.775437",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -535,6 +535,30 @@
         "type": "system_unlock",
         "name": "AI持续洞察",
         "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
       }
     ]
   },
@@ -544,6 +568,6 @@
       "重大版本变化时需要更新 stages 中的当前阶段",
       "每日任务检查时自动对比是否有新的里程碑事件"
     ],
-    "lastAutoCheck": "2026-03-11"
+    "lastAutoCheck": "2026-03-12"
   }
 }

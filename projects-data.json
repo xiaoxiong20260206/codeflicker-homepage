@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-11T21:52:00.714133",
+  "generatedAt": "2026-03-12T12:16:57.662693",
   "summary": {
     "total": 18,
     "deployed": 17,
@@ -164,7 +164,7 @@
       "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight",
       "highlights": [],
       "metrics": {
-        "fileCount": 400
+        "fileCount": 407
       },
       "quality": {
         "score": 80,
@@ -231,7 +231,7 @@
       "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/reports",
       "highlights": [],
       "metrics": {
-        "fileCount": 28
+        "fileCount": 30
       },
       "quality": {
         "score": 60,

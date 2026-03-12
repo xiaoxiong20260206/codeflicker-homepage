@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-03-12T16:05:28.050982",
+  "generatedAt": "2026-03-12T22:08:15.343592",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
     "description": "融合主人的认知框架与思维方式，具备独立洞察能力。通过「小无相功」持续学习，目标是「三千世界」——能理解和模拟任何人的思维方式。",
     "version": "7.0",
-    "level": 72,
+    "level": 73,
     "levelTitle": "宗师",
     "tier": {
       "name": "宗师",
@@ -15,14 +15,14 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 349600,
-    "expProgress": 99.8,
-    "currentThreshold": 320393,
-    "nextThreshold": 349649,
+    "totalExp": 350250,
+    "expProgress": 1.8,
+    "currentThreshold": 349649,
+    "nextThreshold": 382801,
     "stats": {
-      "understanding": 81.3,
+      "understanding": 83.3,
       "execution": 81.7,
-      "skillDepth": 61.9,
+      "skillDepth": 61.0,
       "thinkingDepth": 40.8,
       "knowledgeBreadth": 87.3
     },
@@ -34,15 +34,15 @@
         "mdv": 0.6,
         "ctr": 2.8
       },
-      "activeSkills": 27,
-      "highLevelSkills": 26,
-      "skillTotalValue": 116.1,
+      "activeSkills": 28,
+      "highLevelSkills": 27,
+      "skillTotalValue": 108.0,
       "cultivationExp": 0,
-      "baseExp": 349600,
+      "baseExp": 350250,
       "expBreakdown": {
-        "understanding": 81300,
+        "understanding": 83300,
         "execution": 81700,
-        "skill": 92850,
+        "skill": 91500,
         "thinking": 32639,
         "knowledge": 61110,
         "cultivation": 0
@@ -50,7 +50,7 @@
     }
   },
   "skills": {
-    "total": 73,
+    "total": 72,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -67,12 +67,12 @@
             "level": 3,
             "exp": 64,
             "description": "This skill should be used when the user mentions \"每日修炼\", \"每日反思\", \"自主学习\", \"小无相功\", \"自进化\", \"内功修炼\", \"补跑日报\", \"运行每日任务\", \"daily routine\", \"self-learning\", \"self-evolution\", or when triggering daily reflectio",
-            "lastUpdated": "2026-03-10",
+            "lastUpdated": "2026-03-12",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 69019,
+            "skillSize": 69187,
             "skillSizeLabel": "69K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
@@ -103,12 +103,12 @@
             "level": 3,
             "exp": 63,
             "description": "任务执行元技能。自动运行的质量保障框架：启动前检查→交付前自审→出错后复盘",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-12",
             "callCount": 3,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 16548,
+            "skillSize": 16692,
             "skillSizeLabel": "16K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -139,12 +139,12 @@
             "level": 3,
             "exp": 62,
             "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\"、\"技能分类\"、\"skill optimization\"时使用此技能。提供技能健康度诊断、复用检测、关系梳理、分类同步、架构优化的完整能力，支持诊断→决策→执行完整闭环。",
-            "lastUpdated": "2026-03-10",
+            "lastUpdated": "2026-03-12",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 22232,
+            "skillSize": 22390,
             "skillSizeLabel": "22K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -157,13 +157,13 @@
             "level": 3,
             "exp": 62,
             "description": "知识库优化元能力（含执行）。当用户说\"知识优化\"、\"检查知识库\"、\"知识库健康度\"、\"整理知识\"、\"knowledge optimization\"时使用此技能。提供知识库索引完整性检查、重复检测、过时标记、分类整理的完整能力，支持诊断→决策→执行完整闭环。",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-12",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 13917,
-            "skillSizeLabel": "13K字 · 中型",
+            "skillSize": 14662,
+            "skillSizeLabel": "14K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -198,8 +198,8 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 11073,
-            "skillSizeLabel": "11K字 · 中型",
+            "skillSize": 13129,
+            "skillSizeLabel": "13K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -234,8 +234,8 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 210603,
-            "skillSizeLabel": "210K字 · 巨型",
+            "skillSize": 243398,
+            "skillSizeLabel": "243K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -406,12 +406,12 @@
             "level": 3,
             "exp": 62,
             "description": "This skill should be used when the user mentions \"AI洞察\", \"AI日报\", \"AI周报\", \"AI调研\", \"AI深度研究\", \"跑一下AI日报\", \"生成周报\", \"更新首页\", \"AI-Insight\", \"添加追踪\", \"信息源管理\", \"探查信息源\", \"发现新信息源\", \"补充信息源\", \"沉淀知识\", \"更新知识库\", \"学习这篇文",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-12",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 121903,
+            "skillSize": 121568,
             "skillSizeLabel": "121K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
@@ -619,12 +619,12 @@
             "level": 4,
             "exp": 67,
             "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD 文件、拉取文档内容、按项目组织文件夹。",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-12",
             "callCount": 9,
             "frequency": "3次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 132435,
+            "skillSize": 132596,
             "skillSizeLabel": "132K字 · 巨型",
             "ksInternal": true,
             "cfProject": false
@@ -684,42 +684,6 @@
             "cfProject": false
           },
           {
-            "name": "keynote",
-            "displayName": "Keynote",
-            "shortName": "Keynote",
-            "source": "AI核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "Keynote演示文稿。通过JXA脚本创建/编辑Apple Keynote",
-            "lastUpdated": "2026-03-09",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 89463,
-            "skillSizeLabel": "89K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "nano-pdf",
-            "displayName": "PDF编辑",
-            "shortName": "PDF编辑",
-            "source": "AI核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "PDF编辑。用自然语言指令编辑PDF文件",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 1045,
-            "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
             "name": "pdf",
             "displayName": "PDF处理",
             "shortName": "PDF",
@@ -756,8 +720,8 @@
             "cfProject": false
           }
         ],
-        "count": 8,
-        "avgLevel": 2.1
+        "count": 6,
+        "avgLevel": 2.5
       },
       "🎨 前端开发": {
         "role": "frontend",
@@ -774,13 +738,13 @@
             "level": 3,
             "exp": 64,
             "description": "This skill should be used ONLY when the user explicitly asks for \"AI生图\", \"用AI生成图片\", \"AI画图\", \"AI image generation\", \"图生图\", \"以图生图\", \"基于这张图生成\", \"修改这张图\", \"根据图片生成\", or \"image to image\". This skill calls ex",
-            "lastUpdated": "2026-03-10",
+            "lastUpdated": "2026-03-12",
             "callCount": 7,
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 87909,
-            "skillSizeLabel": "87K字 · 巨型",
+            "skillSize": 88069,
+            "skillSizeLabel": "88K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -803,6 +767,24 @@
             "cfProject": false
           },
           {
+            "name": "web-dev-workflow",
+            "displayName": "网页开发",
+            "shortName": "网页",
+            "source": "AI核心能力",
+            "level": 3,
+            "exp": 63,
+            "description": "当涉及任何网页文件（HTML/CSS/JS）的创建或修改时，必须使用此技能。\n触发词包括：网页开发、部署、发布、预览、deploy、publish、修复页面、更新页面、\n调整样式、修改HTML、编辑CSS、fix bug、首页、index.html、styles.css、\ncodeflicker-homepage、knowledge目录下的HTML文件。\n提供标准化的本地预览、部署、验证和质量保证",
+            "lastUpdated": "2026-03-09",
+            "callCount": 3,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 30740,
+            "skillSizeLabel": "30K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
             "name": "canvas-design",
             "displayName": "Canvas设计",
             "shortName": "Canvas",
@@ -817,24 +799,6 @@
             "sourceType": "自定义",
             "skillSize": 141923,
             "skillSizeLabel": "141K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "web-dev-workflow",
-            "displayName": "网页开发",
-            "shortName": "网页",
-            "source": "AI核心能力",
-            "level": 3,
-            "exp": 62,
-            "description": "当涉及任何网页文件（HTML/CSS/JS）的创建或修改时，必须使用此技能。\n触发词包括：网页开发、部署、发布、预览、deploy、publish、修复页面、更新页面、\n调整样式、修改HTML、编辑CSS、fix bug、首页、index.html、styles.css、\ncodeflicker-homepage、knowledge目录下的HTML文件。\n提供标准化的本地预览、部署、验证和质量保证",
-            "lastUpdated": "2026-03-09",
-            "callCount": 2,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 30740,
-            "skillSizeLabel": "30K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -854,24 +818,6 @@
             "skillSize": 73522,
             "skillSizeLabel": "73K字 · 巨型",
             "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "ks-project-panorama",
-            "displayName": "项目全景图绘制技能 (KS Project Panorama)",
-            "shortName": "项目全景",
-            "source": "AI核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "This skill should be used when the user mentions \"项目全景图\", \"总体方案图\", \"AI提效方案\", \"研发效能全景\", \"泳道图\", \"多域对比图\", \"商业体系方案图\", \"project panorama\", \"overall plan diagram\", or when creating enterprise-level project",
-            "lastUpdated": "2026-03-11",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 9903,
-            "skillSizeLabel": "9K字 · 中型",
-            "ksInternal": true,
             "cfProject": false
           },
           {
@@ -911,8 +857,8 @@
             "cfProject": false
           }
         ],
-        "count": 8,
-        "avgLevel": 2.1
+        "count": 7,
+        "avgLevel": 2.3
       },
       "🎭 风格模板": {
         "role": "style",
@@ -921,24 +867,6 @@
         "layer": "execution",
         "description": "视觉风格模板库：塞尔达、清爽调研、工作汇报、艺术风格",
         "skills": [
-          {
-            "name": "qingshuang-research-style",
-            "displayName": "清爽调研风格",
-            "shortName": "清爽",
-            "source": "AI核心能力",
-            "level": 4,
-            "exp": 66,
-            "description": "清爽调研报告风格的纯样式规范。当用户提到\"清爽调研报告风格\"时使用此技能。本技能仅提供CSS样式和视觉设计规范，不影响页面内容、数据或功能逻辑。适用于任何需要应用此风格的网页项目。",
-            "lastUpdated": "2026-03-09",
-            "callCount": 12,
-            "frequency": "4次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 25622,
-            "skillSizeLabel": "25K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false
-          },
           {
             "name": "work-report-ppt",
             "displayName": "工作汇报PPT",
@@ -1012,8 +940,8 @@
             "cfProject": false
           }
         ],
-        "count": 5,
-        "avgLevel": 2.0
+        "count": 4,
+        "avgLevel": 1.5
       },
       "🔗 发布与集成": {
         "role": "publish",
@@ -1048,12 +976,12 @@
             "level": 3,
             "exp": 62,
             "description": "This skill should be used when the user mentions \"AI助手发消息\", \"AI助手推送\", \"KIM消息\", \"Kim机器人\", \"MixCard\", \"群消息推送\", \"KIM OpenAPI\", \"发送卡片消息\", \"消息号\", \"Kim开放平台\", or needs to send messages through KIM using Link (AI助手",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-12",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 46207,
+            "skillSize": 46366,
             "skillSizeLabel": "46K字 · 大型",
             "ksInternal": true,
             "cfProject": false
@@ -1333,24 +1261,6 @@
             "cfProject": false
           },
           {
-            "name": "meta-cognitive-reasoning",
-            "displayName": "元认知推理",
-            "shortName": "推理",
-            "source": "平台预装技能",
-            "level": 1,
-            "exp": 10,
-            "description": "元认知推理。基于证据的分析、假设检验和认知偏差防范",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "平台预装",
-            "skillSize": 32993,
-            "skillSizeLabel": "32K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
             "name": "remotion-best-practices",
             "displayName": "Remotion视频",
             "shortName": "视频",
@@ -1365,24 +1275,6 @@
             "sourceType": "平台预装",
             "skillSize": 95569,
             "skillSizeLabel": "95K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "task-decomposition",
-            "displayName": "任务分解",
-            "shortName": "分解",
-            "source": "平台预装技能",
-            "level": 1,
-            "exp": 10,
-            "description": "任务分解。将复杂开发任务拆解为可管理的小单元",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "平台预装",
-            "skillSize": 6044,
-            "skillSizeLabel": "6K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1475,28 +1367,127 @@
             "skillSizeLabel": "9K字 · 中型",
             "ksInternal": false,
             "cfProject": false
+          }
+        ],
+        "count": 9,
+        "avgLevel": 1.0
+      },
+      "其他技能": {
+        "icon": "📦",
+        "color": "#64748b",
+        "layer": "execution",
+        "skills": [
+          {
+            "name": "skill-creator",
+            "displayName": "skill-creator",
+            "shortName": "skil",
+            "source": "未知来源",
+            "level": 3,
+            "exp": 62,
+            "description": "skill-creator 技能",
+            "lastUpdated": "2026-03-12",
+            "callCount": 1,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 172528,
+            "skillSizeLabel": "172K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false
           },
           {
-            "name": "capability-evolver",
-            "displayName": "能力进化",
-            "shortName": "进化",
-            "source": "平台预装技能",
+            "name": "skill-evaluator",
+            "displayName": "skill-evaluator",
+            "shortName": "skil",
+            "source": "未知来源",
+            "level": 3,
+            "exp": 62,
+            "description": "skill-evaluator 技能",
+            "lastUpdated": "2026-03-12",
+            "callCount": 1,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "平台预装",
+            "skillSize": 47152,
+            "skillSizeLabel": "47K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "agent-capability-discovery",
+            "displayName": "agent-capability-discovery",
+            "shortName": "agen",
+            "source": "未知来源",
             "level": 1,
             "exp": 10,
-            "description": "能力进化引擎。分析运行历史，识别改进点并应用协议约束的进化",
-            "lastUpdated": "2026-03-10",
+            "description": "agent-capability-discovery 技能",
+            "lastUpdated": "2026-03-12",
             "callCount": 0,
             "frequency": "<0.1/天",
             "successRate": 90,
-            "sourceType": "平台预装",
-            "skillSize": 620371,
-            "skillSizeLabel": "620K字 · 巨型",
+            "sourceType": "自定义",
+            "skillSize": 3544,
+            "skillSizeLabel": "3K字 · 小型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "critical-thinking-logical-reasoning",
+            "displayName": "critical-thinking-logical-reasoning",
+            "shortName": "crit",
+            "source": "未知来源",
+            "level": 1,
+            "exp": 10,
+            "description": "critical-thinking-logical-reasoning 技能",
+            "lastUpdated": "2026-03-12",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 3550,
+            "skillSizeLabel": "3K字 · 小型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "agent-native-architecture",
+            "displayName": "agent-native-architecture",
+            "shortName": "agen",
+            "source": "未知来源",
+            "level": 1,
+            "exp": 10,
+            "description": "agent-native-architecture 技能",
+            "lastUpdated": "2026-03-12",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 207741,
+            "skillSizeLabel": "207K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "skill-quality-assessment",
+            "displayName": "skill-quality-assessment",
+            "shortName": "skil",
+            "source": "未知来源",
+            "level": 1,
+            "exp": 10,
+            "description": "skill-quality-assessment 技能",
+            "lastUpdated": "2026-03-12",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 4510,
+            "skillSizeLabel": "4K字 · 小型",
             "ksInternal": false,
             "cfProject": false
           }
         ],
-        "count": 12,
-        "avgLevel": 1.0
+        "count": 6,
+        "avgLevel": 1.7
       }
     },
     "tree": {
@@ -1520,12 +1511,12 @@
                 "level": 3,
                 "exp": 64,
                 "description": "This skill should be used when the user mentions \"每日修炼\", \"每日反思\", \"自主学习\", \"小无相功\", \"自进化\", \"内功修炼\", \"补跑日报\", \"运行每日任务\", \"daily routine\", \"self-learning\", \"self-evolution\", or when triggering daily reflectio",
-                "lastUpdated": "2026-03-10",
+                "lastUpdated": "2026-03-12",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 69019,
+                "skillSize": 69187,
                 "skillSizeLabel": "69K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1556,12 +1547,12 @@
                 "level": 3,
                 "exp": 63,
                 "description": "任务执行元技能。自动运行的质量保障框架：启动前检查→交付前自审→出错后复盘",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-12",
                 "callCount": 3,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 16548,
+                "skillSize": 16692,
                 "skillSizeLabel": "16K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1592,12 +1583,12 @@
                 "level": 3,
                 "exp": 62,
                 "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\"、\"技能分类\"、\"skill optimization\"时使用此技能。提供技能健康度诊断、复用检测、关系梳理、分类同步、架构优化的完整能力，支持诊断→决策→执行完整闭环。",
-                "lastUpdated": "2026-03-10",
+                "lastUpdated": "2026-03-12",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 22232,
+                "skillSize": 22390,
                 "skillSizeLabel": "22K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1610,13 +1601,13 @@
                 "level": 3,
                 "exp": 62,
                 "description": "知识库优化元能力（含执行）。当用户说\"知识优化\"、\"检查知识库\"、\"知识库健康度\"、\"整理知识\"、\"knowledge optimization\"时使用此技能。提供知识库索引完整性检查、重复检测、过时标记、分类整理的完整能力，支持诊断→决策→执行完整闭环。",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-12",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 13917,
-                "skillSizeLabel": "13K字 · 中型",
+                "skillSize": 14662,
+                "skillSizeLabel": "14K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1651,8 +1642,8 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 11073,
-                "skillSizeLabel": "11K字 · 中型",
+                "skillSize": 13129,
+                "skillSizeLabel": "13K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1687,8 +1678,8 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 210603,
-                "skillSizeLabel": "210K字 · 巨型",
+                "skillSize": 243398,
+                "skillSizeLabel": "243K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -1866,12 +1857,12 @@
                 "level": 3,
                 "exp": 62,
                 "description": "This skill should be used when the user mentions \"AI洞察\", \"AI日报\", \"AI周报\", \"AI调研\", \"AI深度研究\", \"跑一下AI日报\", \"生成周报\", \"更新首页\", \"AI-Insight\", \"添加追踪\", \"信息源管理\", \"探查信息源\", \"发现新信息源\", \"补充信息源\", \"沉淀知识\", \"更新知识库\", \"学习这篇文",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-12",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 121903,
+                "skillSize": 121568,
                 "skillSizeLabel": "121K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
@@ -2086,12 +2077,12 @@
                 "level": 4,
                 "exp": 67,
                 "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD 文件、拉取文档内容、按项目组织文件夹。",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-12",
                 "callCount": 9,
                 "frequency": "3次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 132435,
+                "skillSize": 132596,
                 "skillSizeLabel": "132K字 · 巨型",
                 "ksInternal": true,
                 "cfProject": false
@@ -2151,42 +2142,6 @@
                 "cfProject": false
               },
               {
-                "name": "keynote",
-                "displayName": "Keynote",
-                "shortName": "Keynote",
-                "source": "AI核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "Keynote演示文稿。通过JXA脚本创建/编辑Apple Keynote",
-                "lastUpdated": "2026-03-09",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 89463,
-                "skillSizeLabel": "89K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "nano-pdf",
-                "displayName": "PDF编辑",
-                "shortName": "PDF编辑",
-                "source": "AI核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "PDF编辑。用自然语言指令编辑PDF文件",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 1045,
-                "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
                 "name": "pdf",
                 "displayName": "PDF处理",
                 "shortName": "PDF",
@@ -2223,8 +2178,8 @@
                 "cfProject": false
               }
             ],
-            "count": 8,
-            "avgLevel": 2.1
+            "count": 6,
+            "avgLevel": 2.5
           },
           "🎨 前端开发": {
             "role": "frontend",
@@ -2240,13 +2195,13 @@
                 "level": 3,
                 "exp": 64,
                 "description": "This skill should be used ONLY when the user explicitly asks for \"AI生图\", \"用AI生成图片\", \"AI画图\", \"AI image generation\", \"图生图\", \"以图生图\", \"基于这张图生成\", \"修改这张图\", \"根据图片生成\", or \"image to image\". This skill calls ex",
-                "lastUpdated": "2026-03-10",
+                "lastUpdated": "2026-03-12",
                 "callCount": 7,
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 87909,
-                "skillSizeLabel": "87K字 · 巨型",
+                "skillSize": 88069,
+                "skillSizeLabel": "88K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -2269,6 +2224,24 @@
                 "cfProject": false
               },
               {
+                "name": "web-dev-workflow",
+                "displayName": "网页开发",
+                "shortName": "网页",
+                "source": "AI核心能力",
+                "level": 3,
+                "exp": 63,
+                "description": "当涉及任何网页文件（HTML/CSS/JS）的创建或修改时，必须使用此技能。\n触发词包括：网页开发、部署、发布、预览、deploy、publish、修复页面、更新页面、\n调整样式、修改HTML、编辑CSS、fix bug、首页、index.html、styles.css、\ncodeflicker-homepage、knowledge目录下的HTML文件。\n提供标准化的本地预览、部署、验证和质量保证",
+                "lastUpdated": "2026-03-09",
+                "callCount": 3,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 30740,
+                "skillSizeLabel": "30K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
                 "name": "canvas-design",
                 "displayName": "Canvas设计",
                 "shortName": "Canvas",
@@ -2283,24 +2256,6 @@
                 "sourceType": "自定义",
                 "skillSize": 141923,
                 "skillSizeLabel": "141K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "web-dev-workflow",
-                "displayName": "网页开发",
-                "shortName": "网页",
-                "source": "AI核心能力",
-                "level": 3,
-                "exp": 62,
-                "description": "当涉及任何网页文件（HTML/CSS/JS）的创建或修改时，必须使用此技能。\n触发词包括：网页开发、部署、发布、预览、deploy、publish、修复页面、更新页面、\n调整样式、修改HTML、编辑CSS、fix bug、首页、index.html、styles.css、\ncodeflicker-homepage、knowledge目录下的HTML文件。\n提供标准化的本地预览、部署、验证和质量保证",
-                "lastUpdated": "2026-03-09",
-                "callCount": 2,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 30740,
-                "skillSizeLabel": "30K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -2320,24 +2275,6 @@
                 "skillSize": 73522,
                 "skillSizeLabel": "73K字 · 巨型",
                 "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "ks-project-panorama",
-                "displayName": "项目全景图绘制技能 (KS Project Panorama)",
-                "shortName": "项目全景",
-                "source": "AI核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "This skill should be used when the user mentions \"项目全景图\", \"总体方案图\", \"AI提效方案\", \"研发效能全景\", \"泳道图\", \"多域对比图\", \"商业体系方案图\", \"project panorama\", \"overall plan diagram\", or when creating enterprise-level project",
-                "lastUpdated": "2026-03-11",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 9903,
-                "skillSizeLabel": "9K字 · 中型",
-                "ksInternal": true,
                 "cfProject": false
               },
               {
@@ -2377,8 +2314,8 @@
                 "cfProject": false
               }
             ],
-            "count": 8,
-            "avgLevel": 2.1
+            "count": 7,
+            "avgLevel": 2.3
           },
           "🎭 风格模板": {
             "role": "style",
@@ -2386,24 +2323,6 @@
             "color": "#ec4899",
             "description": "视觉风格模板库：塞尔达、清爽调研、工作汇报、艺术风格",
             "skills": [
-              {
-                "name": "qingshuang-research-style",
-                "displayName": "清爽调研风格",
-                "shortName": "清爽",
-                "source": "AI核心能力",
-                "level": 4,
-                "exp": 66,
-                "description": "清爽调研报告风格的纯样式规范。当用户提到\"清爽调研报告风格\"时使用此技能。本技能仅提供CSS样式和视觉设计规范，不影响页面内容、数据或功能逻辑。适用于任何需要应用此风格的网页项目。",
-                "lastUpdated": "2026-03-09",
-                "callCount": 12,
-                "frequency": "4次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 25622,
-                "skillSizeLabel": "25K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false
-              },
               {
                 "name": "work-report-ppt",
                 "displayName": "工作汇报PPT",
@@ -2477,8 +2396,8 @@
                 "cfProject": false
               }
             ],
-            "count": 5,
-            "avgLevel": 2.0
+            "count": 4,
+            "avgLevel": 1.5
           },
           "🔗 发布与集成": {
             "role": "publish",
@@ -2512,12 +2431,12 @@
                 "level": 3,
                 "exp": 62,
                 "description": "This skill should be used when the user mentions \"AI助手发消息\", \"AI助手推送\", \"KIM消息\", \"Kim机器人\", \"MixCard\", \"群消息推送\", \"KIM OpenAPI\", \"发送卡片消息\", \"消息号\", \"Kim开放平台\", or needs to send messages through KIM using Link (AI助手",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-12",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 46207,
+                "skillSize": 46366,
                 "skillSizeLabel": "46K字 · 大型",
                 "ksInternal": true,
                 "cfProject": false
@@ -2795,24 +2714,6 @@
                 "cfProject": false
               },
               {
-                "name": "meta-cognitive-reasoning",
-                "displayName": "元认知推理",
-                "shortName": "推理",
-                "source": "平台预装技能",
-                "level": 1,
-                "exp": 10,
-                "description": "元认知推理。基于证据的分析、假设检验和认知偏差防范",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "平台预装",
-                "skillSize": 32993,
-                "skillSizeLabel": "32K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
                 "name": "remotion-best-practices",
                 "displayName": "Remotion视频",
                 "shortName": "视频",
@@ -2827,24 +2728,6 @@
                 "sourceType": "平台预装",
                 "skillSize": 95569,
                 "skillSizeLabel": "95K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "task-decomposition",
-                "displayName": "任务分解",
-                "shortName": "分解",
-                "source": "平台预装技能",
-                "level": 1,
-                "exp": 10,
-                "description": "任务分解。将复杂开发任务拆解为可管理的小单元",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "平台预装",
-                "skillSize": 6044,
-                "skillSizeLabel": "6K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -2937,32 +2820,131 @@
                 "skillSizeLabel": "9K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
+              }
+            ],
+            "count": 9,
+            "avgLevel": 1.0
+          },
+          "其他技能": {
+            "icon": "📦",
+            "color": "#64748b",
+            "layer": "execution",
+            "skills": [
+              {
+                "name": "skill-creator",
+                "displayName": "skill-creator",
+                "shortName": "skil",
+                "source": "未知来源",
+                "level": 3,
+                "exp": 62,
+                "description": "skill-creator 技能",
+                "lastUpdated": "2026-03-12",
+                "callCount": 1,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 172528,
+                "skillSizeLabel": "172K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false
               },
               {
-                "name": "capability-evolver",
-                "displayName": "能力进化",
-                "shortName": "进化",
-                "source": "平台预装技能",
+                "name": "skill-evaluator",
+                "displayName": "skill-evaluator",
+                "shortName": "skil",
+                "source": "未知来源",
+                "level": 3,
+                "exp": 62,
+                "description": "skill-evaluator 技能",
+                "lastUpdated": "2026-03-12",
+                "callCount": 1,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "平台预装",
+                "skillSize": 47152,
+                "skillSizeLabel": "47K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "agent-capability-discovery",
+                "displayName": "agent-capability-discovery",
+                "shortName": "agen",
+                "source": "未知来源",
                 "level": 1,
                 "exp": 10,
-                "description": "能力进化引擎。分析运行历史，识别改进点并应用协议约束的进化",
-                "lastUpdated": "2026-03-10",
+                "description": "agent-capability-discovery 技能",
+                "lastUpdated": "2026-03-12",
                 "callCount": 0,
                 "frequency": "<0.1/天",
                 "successRate": 90,
-                "sourceType": "平台预装",
-                "skillSize": 620371,
-                "skillSizeLabel": "620K字 · 巨型",
+                "sourceType": "自定义",
+                "skillSize": 3544,
+                "skillSizeLabel": "3K字 · 小型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "critical-thinking-logical-reasoning",
+                "displayName": "critical-thinking-logical-reasoning",
+                "shortName": "crit",
+                "source": "未知来源",
+                "level": 1,
+                "exp": 10,
+                "description": "critical-thinking-logical-reasoning 技能",
+                "lastUpdated": "2026-03-12",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 3550,
+                "skillSizeLabel": "3K字 · 小型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "agent-native-architecture",
+                "displayName": "agent-native-architecture",
+                "shortName": "agen",
+                "source": "未知来源",
+                "level": 1,
+                "exp": 10,
+                "description": "agent-native-architecture 技能",
+                "lastUpdated": "2026-03-12",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 207741,
+                "skillSizeLabel": "207K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "skill-quality-assessment",
+                "displayName": "skill-quality-assessment",
+                "shortName": "skil",
+                "source": "未知来源",
+                "level": 1,
+                "exp": 10,
+                "description": "skill-quality-assessment 技能",
+                "lastUpdated": "2026-03-12",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 4510,
+                "skillSizeLabel": "4K字 · 小型",
                 "ksInternal": false,
                 "cfProject": false
               }
             ],
-            "count": 12,
-            "avgLevel": 1.0
+            "count": 6,
+            "avgLevel": 1.7
           }
         },
-        "count": 52,
-        "avgLevel": 1.6
+        "count": 51,
+        "avgLevel": 1.7
       }
     },
     "relationships": {
@@ -3165,7 +3147,7 @@
         "fileCount": 10,
         "sizeKB": 117.6,
         "heatLevel": 5,
-        "recentCount": 10
+        "recentCount": 9
       },
       "promotion-standards": {
         "name": "promotion-standards",
@@ -3256,7 +3238,7 @@
             "fileCount": 10,
             "sizeKB": 117.6,
             "heatLevel": 5,
-            "recentCount": 10
+            "recentCount": 9
           }
         },
         "totalFiles": 141,
@@ -3746,19 +3728,19 @@
         "source": "项目记忆"
       },
       {
-        "title": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议）",
+        "title": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议） 类型1：版本漂移检测误报（3种） | 误报类型 | 识别方...",
+        "description": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除） 类型1：版本漂移检测误报（3种） | 误报类...",
         "keywords": [
           "neigong_check",
           "误报",
           "版本漂移",
           "分类建议",
-          "检测逻辑"
+          "P2"
         ],
         "importance": 5,
         "updatedAt": "2026-03-12",
@@ -4202,6 +4184,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "工具调用前的参数完整性自检规范",
+        "category": "task_flow_experience",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "工具调用前的参数完整性自检规范 问题背景 2026-03-12 每日修炼执行时，连续3次调用 write_todo 工具失败，原因是只提供了...",
+        "keywords": [
+          "工具调用",
+          "参数检查",
+          "required",
+          "必需参数",
+          "validation error"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-12",
+        "source": "项目记忆"
+      },
+      {
         "title": "成功模式提炼：高效执行的关键条件（含任务多样性验证 v3）",
         "category": "task_flow_experience",
         "categoryLabel": "做事方法",
@@ -4574,6 +4575,44 @@
           "目录",
           "知识库",
           "工作区"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-12",
+        "source": "项目记忆"
+      },
+      {
+        "title": "网页开发完成后必须提供可直接访问的在线链接",
+        "category": "development_practice_specification",
+        "categoryLabel": "做事方法",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "核心规则：所有网页开发任务完成后，必须提供一个可直接点击访问的在线链接，不能只给本地文件路径或GitHub仓库地址。 执行标准： 1. 页...",
+        "keywords": [
+          "网页开发",
+          "部署",
+          "在线链接",
+          "GitHub Pages",
+          "交付规范"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-12",
+        "source": "项目记忆"
+      },
+      {
+        "title": "网页开发完成后必须提供在线访问链接",
+        "category": "development_practice_specification",
+        "categoryLabel": "做事方法",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "网页开发完成后必须提供在线访问链接 问题背景 2026-03-12 网页开发任务完成后，只提供了本地文件路径或GitHub仓库地址，用户无法...",
+        "keywords": [
+          "网页开发",
+          "部署",
+          "在线链接",
+          "URL",
+          "GitHub Pages"
         ],
         "importance": 5,
         "updatedAt": "2026-03-12",
@@ -5149,6 +5188,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "批量操作任务的成功模式（2026-03-12提炼）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维方法",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "批量操作任务的成功模式 触发条件 当任务涉及\"批量X\"、\"全量Y\"、\"多个Z\"时（如批量验证、批量导出、多项目门户） 成功四要素 |...",
+        "keywords": [
+          "批量操作",
+          "成功模式",
+          "自动化",
+          "工具辅助",
+          "流程标准化"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-12",
+        "source": "用户显式记录"
+      },
+      {
         "title": "技能/模块粒度的合并信号检测（四信号法）",
         "category": "task_flow_experience",
         "categoryLabel": "通用踩坑",
@@ -5542,7 +5600,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 111,
+    "total": 115,
     "byCategory": {
       "development_code_specification": {
         "count": 1,
@@ -5566,7 +5624,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 18,
+        "count": 20,
         "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -5587,7 +5645,7 @@
         "description": "专栏写作/截图踩坑"
       },
       "development_practice_specification": {
-        "count": 11,
+        "count": 13,
         "label": "做事方法",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -5966,6 +6024,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "批量操作任务的成功模式（2026-03-12提炼）",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维方法",
+                "layer": "🧠 元认知层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "批量操作任务的成功模式 触发条件 当任务涉及\"批量X\"、\"全量Y\"、\"多个Z\"时（如批量验证、批量导出、多项目门户） 成功四要素 |...",
+                "keywords": [
+                  "批量操作",
+                  "成功模式",
+                  "自动化",
+                  "工具辅助",
+                  "流程标准化"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-12",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "个人助理目录结构与项目索引 (v2.0)",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维方法",
@@ -6061,7 +6138,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 8
+            "count": 9
           },
           "做事方法": {
             "icon": "⚙️",
@@ -6259,6 +6336,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "网页开发完成后必须提供在线访问链接",
+                "category": "development_practice_specification",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "网页开发完成后必须提供在线访问链接 问题背景 2026-03-12 网页开发任务完成后，只提供了本地文件路径或GitHub仓库地址，用户无法...",
+                "keywords": [
+                  "网页开发",
+                  "部署",
+                  "在线链接",
+                  "URL",
+                  "GitHub Pages"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-12",
+                "source": "项目记忆"
+              },
+              {
                 "title": "深度调研报告格式规范",
                 "category": "development_practice_specification",
                 "categoryLabel": "做事方法",
@@ -6276,12 +6372,31 @@
                 "importance": 5,
                 "updatedAt": "2026-03-05",
                 "source": "项目记忆"
+              },
+              {
+                "title": "网页开发完成后必须提供可直接访问的在线链接",
+                "category": "development_practice_specification",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "核心规则：所有网页开发任务完成后，必须提供一个可直接点击访问的在线链接，不能只给本地文件路径或GitHub仓库地址。 执行标准： 1. 页...",
+                "keywords": [
+                  "网页开发",
+                  "部署",
+                  "在线链接",
+                  "GitHub Pages",
+                  "交付规范"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-12",
+                "source": "项目记忆"
               }
             ],
-            "count": 11
+            "count": 13
           }
         },
-        "count": 33
+        "count": 36
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -7137,19 +7252,19 @@
                 "source": "项目记忆"
               },
               {
-                "title": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议）",
+                "title": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议） 类型1：版本漂移检测误报（3种） | 误报类型 | 识别方...",
+                "description": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除） 类型1：版本漂移检测误报（3种） | 误报类...",
                 "keywords": [
                   "neigong_check",
                   "误报",
                   "版本漂移",
                   "分类建议",
-                  "检测逻辑"
+                  "P2"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-12",
@@ -7785,6 +7900,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "工具调用前的参数完整性自检规范",
+                "category": "task_flow_experience",
+                "categoryLabel": "通用踩坑",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚠️",
+                "color": "#ef4444",
+                "description": "工具调用前的参数完整性自检规范 问题背景 2026-03-12 每日修炼执行时，连续3次调用 write_todo 工具失败，原因是只提供了...",
+                "keywords": [
+                  "工具调用",
+                  "参数检查",
+                  "required",
+                  "必需参数",
+                  "validation error"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-12",
+                "source": "项目记忆"
+              },
+              {
                 "title": "AI日报KIM卡片能力更新模块（capability_update字段）",
                 "category": "development_practice_specification",
                 "categoryLabel": "通用踩坑",
@@ -7804,7 +7938,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 11
+            "count": 12
           },
           "项目知识": {
             "icon": "📋",
@@ -7853,7 +7987,7 @@
             "count": 2
           }
         },
-        "count": 77
+        "count": 78
       }
     }
   },
@@ -7890,7 +8024,7 @@
       62,
       72,
       80,
-      73
+      72
     ],
     "knowledge": [
       150,
@@ -7924,7 +8058,7 @@
       85,
       106,
       112,
-      114
+      118
     ]
   },
   "achievements": [
@@ -7959,7 +8093,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "懂你程度 81/80",
+      "progressText": "懂你程度 83/80",
       "date": "2026-03-12"
     },
     {
@@ -7971,7 +8105,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 26/10",
+      "progressText": "4星+技能 27/10",
       "date": "2026-03-12"
     },
     {

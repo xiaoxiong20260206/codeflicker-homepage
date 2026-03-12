@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T08:35:23.637113",
+  "generatedAt": "2026-03-12T09:31:02.393686",
   "summary": {
     "totalDays": 17,
     "latestDate": "2026-03-12",
@@ -23,52 +23,52 @@
       "03-12"
     ],
     "skills": [
-      73,
-      73,
-      74,
-      74,
-      75,
-      75,
-      76,
+      30,
+      30,
+      32,
+      42,
+      42,
+      42,
+      43,
       76,
       77,
-      77,
-      78,
-      78,
-      78,
-      72
+      58,
+      62,
+      72,
+      80,
+      78
     ],
     "knowledge": [
-      192,
-      196,
-      200,
-      204,
-      208,
-      212,
-      216,
+      150,
+      150,
+      150,
+      152,
+      152,
+      152,
+      152,
       220,
       224,
-      228,
-      232,
-      236,
+      174,
+      174,
+      185,
       240,
-      184
+      240
     ],
     "memory": [
-      97,
-      98,
-      99,
-      100,
-      101,
-      102,
-      103,
+      19,
+      19,
+      20,
+      25,
+      28,
+      30,
+      35,
       104,
       105,
+      75,
+      85,
       106,
-      107,
-      108,
-      113,
-      112
+      112,
+      113
     ]
   },
   "reports": [
@@ -318,30 +318,14 @@
       "dayOfWeek": "周三",
       "activeProjects": 4,
       "totalCommits": 10,
-      "conversationCount": 8,
+      "conversationCount": 6,
       "coreProgress": [
-        "💬 完成 8 个任务: 用户要求验证记忆统计数据的准确性并同步更新到林克首页, 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技......",
+        "💬 完成 6 个任务: 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技..., 验证并确保本地和线上记忆数据统计的一致性...",
         "📁 项目成果: 网页更新 7 个",
         "⚡ 新增能力: ks-project-panorama，扩展任务处理范围",
-        "🧠 新增记忆: 用户技能命名偏好：前缀规范等16条，更精准地理解用户需求"
+        "🧠 新增记忆: 用户技能命名偏好：前缀规范等15条，避免常见错误"
       ],
       "deliveries": [
-        {
-          "title": "Homepage Statistics Update and Synchronization",
-          "type": "conversation",
-          "goal": "用户要求验证记忆统计数据的准确性并同步更新到林克首页",
-          "deliverables": [],
-          "process": [
-            "执行了首页更新脚本，将记忆统计口径从v4.0升级到v5.0（合并user+repos两个维度并去重），最终统计显示112条记忆数据。更新内容包括技能数80、知识文档184，并通过自动化流程完成部署验证..."
-          ],
-          "tags": [
-            "homepage",
-            "statistics",
-            "deployment",
-            "codeflicker",
-            "data-pipeline"
-          ]
-        },
         {
           "title": "Beiming Shenggong Package Export and Installation Issues",
           "type": "conversation",
@@ -404,20 +388,6 @@
           ]
         },
         {
-          "title": "AI Column Writing Strategy for CodeFlicker",
-          "type": "conversation",
-          "goal": "用户希望创建一个关于如何将CodeFlicker改造为个人AI助手的专栏系列，既能在快手公司内部吸引技术/非技术人员，又能展示产品差异化优势",
-          "deliverables": [],
-          "process": [],
-          "tags": [
-            "content-strategy",
-            "competitive-positioning",
-            "technical-writing",
-            "ai-productivity",
-            "internal-communication"
-          ]
-        },
-        {
           "title": "Kuaishou Lobster AI Products Research Report",
           "type": "conversation",
           "goal": "创建一份快手内部龙虾类AI产品的建设进展报告，并补充国内外同类产品调研情况",
@@ -448,15 +418,65 @@
             "internal tools",
             "process optimization"
           ]
+        },
+        {
+          "title": "养了个AI专栏",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "prompt-ep0-link-intro.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "prompt-ep0-easter-egg.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "prompt-column-promo.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 7 个",
+            "文档完善 6 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 26,
+          "deployUrl": null
+        },
+        {
+          "title": "AI-Insight",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-insight"
+            }
+          ],
+          "process": [
+            "修复: AI日报网页版修复: 时效性内容+链接target=_blank+真实URL替换",
+            "新增: AI日报 2026-03-11: 修复链接+新增能力更新模块",
+            "优化: 🔧 AI日报效率优化: 预检增强+质量门脚本+JSON生成工具"
+          ],
+          "commitCount": 5,
+          "fileChangeCount": 7,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
         }
       ],
       "capabilityGrowth": {
         "skillCount": 72,
         "knowledgeCount": 184,
-        "memoryCount": 113,
+        "memoryCount": 114,
         "skillChange": 0,
-        "knowledgeChange": 4,
-        "memoryChange": 16,
+        "knowledgeChange": 0,
+        "memoryChange": 15,
         "newSkills": [
           {
             "name": "ks-project-panorama",
@@ -467,10 +487,6 @@
           {
             "name": "qingshuang-research-style",
             "description": "清爽调研报告风格的**纯样式规范**。当用户提到\"清爽调研报告风格\"时使用此技能。本技能**仅提供CSS样式和视觉设计规"
-          },
-          {
-            "name": "ai-column-writer",
-            "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
           },
           {
             "name": "beiming-shengong",
@@ -517,7 +533,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "成功模式提炼：高效执行的关键条件（含数据统计模式）",
+            "title": "成功模式提炼：高效执行的关键条件（含数据统计模式+基础设施复利）",
             "category": "task_flow_experience"
           },
           {
@@ -537,10 +553,6 @@
             "category": "development_practice_specification"
           },
           {
-            "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
-            "category": "common_pitfalls_experience"
-          },
-          {
             "title": "日报趋势数据必须使用统一数据源（Single Source of Truth）",
             "category": "common_pitfalls_experience"
           },
@@ -549,7 +561,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "skill_optimization.py P0检测存在多类误报",
+            "title": "skill_optimization.py P0检测存在多类误报（v2）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -611,10 +623,6 @@
             "category": "development_practice_specification"
           },
           {
-            "title": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖）",
-            "category": "common_pitfalls_experience"
-          },
-          {
             "title": "规则膨胀悖论：结构性约束 > 文字规则（踩坑经验）",
             "category": "common_pitfalls_experience"
           },
@@ -639,12 +647,12 @@
       },
       "skillCount": 72,
       "knowledgeCount": 184,
-      "memoryCount": 113,
+      "memoryCount": 114,
       "skillChange": 0,
-      "knowledgeChange": 4,
-      "memoryChange": 16,
+      "knowledgeChange": 0,
+      "memoryChange": 15,
       "highlights": [
-        "💬 完成 8 个任务: 用户要求验证记忆统计数据的准确性并同步更新到林克首页, 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技......",
+        "💬 完成 6 个任务: 解决北冥神功压缩包在新电脑上安装后出现的头像无法显示、数据统计不展示以及知识/技..., 验证并确保本地和线上记忆数据统计的一致性...",
         "📁 项目成果: 网页更新 7 个",
         "⚡ 新增能力: ks-project-panorama，扩展任务处理范围"
       ]

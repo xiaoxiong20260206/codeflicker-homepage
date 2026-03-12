@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T12:16:51.663197",
+  "generatedAt": "2026-03-12T16:05:28.050982",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,14 +15,14 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 349300,
-    "expProgress": 98.8,
+    "totalExp": 349600,
+    "expProgress": 99.8,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
       "understanding": 81.3,
       "execution": 81.7,
-      "skillDepth": 61.7,
+      "skillDepth": 61.9,
       "thinkingDepth": 40.8,
       "knowledgeBreadth": 87.3
     },
@@ -34,15 +34,15 @@
         "mdv": 0.6,
         "ctr": 2.8
       },
-      "activeSkills": 29,
-      "highLevelSkills": 28,
-      "skillTotalValue": 122.4,
+      "activeSkills": 27,
+      "highLevelSkills": 26,
+      "skillTotalValue": 116.1,
       "cultivationExp": 0,
-      "baseExp": 349300,
+      "baseExp": 349600,
       "expBreakdown": {
         "understanding": 81300,
         "execution": 81700,
-        "skill": 92550,
+        "skill": 92850,
         "thinking": 32639,
         "knowledge": 61110,
         "cultivation": 0
@@ -86,7 +86,7 @@
             "exp": 63,
             "description": "复盘与举一反三。四层渐进学习：项目复盘→即时修复→预防复发→泛化进化",
             "lastUpdated": "2026-03-09",
-            "callCount": 3,
+            "callCount": 4,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -126,8 +126,8 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 13907,
-            "skillSizeLabel": "13K字 · 中型",
+            "skillSize": 14171,
+            "skillSizeLabel": "14K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -140,11 +140,11 @@
             "exp": 62,
             "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\"、\"技能分类\"、\"skill optimization\"时使用此技能。提供技能健康度诊断、复用检测、关系梳理、分类同步、架构优化的完整能力，支持诊断→决策→执行完整闭环。",
             "lastUpdated": "2026-03-10",
-            "callCount": 2,
+            "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 22133,
+            "skillSize": 22232,
             "skillSizeLabel": "22K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -158,30 +158,12 @@
             "exp": 62,
             "description": "知识库优化元能力（含执行）。当用户说\"知识优化\"、\"检查知识库\"、\"知识库健康度\"、\"整理知识\"、\"knowledge optimization\"时使用此技能。提供知识库索引完整性检查、重复检测、过时标记、分类整理的完整能力，支持诊断→决策→执行完整闭环。",
             "lastUpdated": "2026-03-09",
-            "callCount": 2,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 13654,
-            "skillSizeLabel": "13K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "beiming-shengong",
-            "displayName": "北冥神功",
-            "shortName": "北冥神功",
-            "source": "AI核心能力",
-            "level": 3,
-            "exp": 62,
-            "description": "北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、'复制能力到新电脑'、'安装能力包'、'安装技能包'、'解压这个压缩包'、'安装这个zip'、'帮我安装这个能力包'、'install abilities'、'export abilities'、'create ability pack'、'install this zip'时使用",
-            "lastUpdated": "2026-03-10",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 210603,
-            "skillSizeLabel": "210K字 · 巨型",
+            "skillSize": 13917,
+            "skillSizeLabel": "13K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -198,7 +180,7 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 24174,
+            "skillSize": 24218,
             "skillSizeLabel": "24K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -234,14 +216,32 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 43055,
-            "skillSizeLabel": "43K字 · 大型",
+            "skillSize": 28435,
+            "skillSizeLabel": "28K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "beiming-shengong",
+            "displayName": "北冥神功",
+            "shortName": "北冥神功",
+            "source": "AI核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、'复制能力到新电脑'、'安装能力包'、'安装技能包'、'解压这个压缩包'、'安装这个zip'、'帮我安装这个能力包'、'install abilities'、'export abilities'、'create ability pack'、'install this zip'时使用",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 210603,
+            "skillSizeLabel": "210K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
         ],
         "count": 10,
-        "avgLevel": 2.4
+        "avgLevel": 2.2
       },
       "🧠 思维方法": {
         "role": "cognitive",
@@ -635,33 +635,15 @@
             "shortName": "PPT",
             "source": "平台预装技能",
             "level": 3,
-            "exp": 67,
+            "exp": 66,
             "description": "PPT演示文稿。创建、读取、编辑、合并PowerPoint文件",
             "lastUpdated": "2026-03-09",
-            "callCount": 3,
+            "callCount": 2,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 159584,
             "skillSizeLabel": "159K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "pdf",
-            "displayName": "PDF处理",
-            "shortName": "PDF",
-            "source": "平台预装技能",
-            "level": 3,
-            "exp": 66,
-            "description": "PDF文件处理。读取、合并、拆分、加水印、OCR、加密解密等全功能PDF操作",
-            "lastUpdated": "2026-03-09",
-            "callCount": 1,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 58669,
-            "skillSizeLabel": "58K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -738,6 +720,24 @@
             "cfProject": false
           },
           {
+            "name": "pdf",
+            "displayName": "PDF处理",
+            "shortName": "PDF",
+            "source": "平台预装技能",
+            "level": 1,
+            "exp": 10,
+            "description": "PDF文件处理。读取、合并、拆分、加水印、OCR、加密解密等全功能PDF操作",
+            "lastUpdated": "2026-03-09",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 58669,
+            "skillSizeLabel": "58K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
             "name": "xlsx",
             "displayName": "Excel处理",
             "shortName": "Excel",
@@ -757,7 +757,7 @@
           }
         ],
         "count": 8,
-        "avgLevel": 2.4
+        "avgLevel": 2.1
       },
       "🎨 前端开发": {
         "role": "frontend",
@@ -930,7 +930,7 @@
             "exp": 66,
             "description": "清爽调研报告风格的纯样式规范。当用户提到\"清爽调研报告风格\"时使用此技能。本技能仅提供CSS样式和视觉设计规范，不影响页面内容、数据或功能逻辑。适用于任何需要应用此风格的网页项目。",
             "lastUpdated": "2026-03-09",
-            "callCount": 11,
+            "callCount": 12,
             "frequency": "4次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -1539,7 +1539,7 @@
                 "exp": 63,
                 "description": "复盘与举一反三。四层渐进学习：项目复盘→即时修复→预防复发→泛化进化",
                 "lastUpdated": "2026-03-09",
-                "callCount": 3,
+                "callCount": 4,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -1579,8 +1579,8 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 13907,
-                "skillSizeLabel": "13K字 · 中型",
+                "skillSize": 14171,
+                "skillSizeLabel": "14K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1593,11 +1593,11 @@
                 "exp": 62,
                 "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\"、\"技能分类\"、\"skill optimization\"时使用此技能。提供技能健康度诊断、复用检测、关系梳理、分类同步、架构优化的完整能力，支持诊断→决策→执行完整闭环。",
                 "lastUpdated": "2026-03-10",
-                "callCount": 2,
+                "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 22133,
+                "skillSize": 22232,
                 "skillSizeLabel": "22K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1611,30 +1611,12 @@
                 "exp": 62,
                 "description": "知识库优化元能力（含执行）。当用户说\"知识优化\"、\"检查知识库\"、\"知识库健康度\"、\"整理知识\"、\"knowledge optimization\"时使用此技能。提供知识库索引完整性检查、重复检测、过时标记、分类整理的完整能力，支持诊断→决策→执行完整闭环。",
                 "lastUpdated": "2026-03-09",
-                "callCount": 2,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 13654,
-                "skillSizeLabel": "13K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "beiming-shengong",
-                "displayName": "北冥神功",
-                "shortName": "北冥神功",
-                "source": "AI核心能力",
-                "level": 3,
-                "exp": 62,
-                "description": "北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、'复制能力到新电脑'、'安装能力包'、'安装技能包'、'解压这个压缩包'、'安装这个zip'、'帮我安装这个能力包'、'install abilities'、'export abilities'、'create ability pack'、'install this zip'时使用",
-                "lastUpdated": "2026-03-10",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 210603,
-                "skillSizeLabel": "210K字 · 巨型",
+                "skillSize": 13917,
+                "skillSizeLabel": "13K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1651,7 +1633,7 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 24174,
+                "skillSize": 24218,
                 "skillSizeLabel": "24K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1687,14 +1669,32 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 43055,
-                "skillSizeLabel": "43K字 · 大型",
+                "skillSize": 28435,
+                "skillSizeLabel": "28K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "beiming-shengong",
+                "displayName": "北冥神功",
+                "shortName": "北冥神功",
+                "source": "AI核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "北冥神功 - 能力导出与安装的元技能。当用户说'北冥神功'、'导出能力'、'能力打包'、'生成安装包'、'分享能力'、'复制能力到新电脑'、'安装能力包'、'安装技能包'、'解压这个压缩包'、'安装这个zip'、'帮我安装这个能力包'、'install abilities'、'export abilities'、'create ability pack'、'install this zip'时使用",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 210603,
+                "skillSizeLabel": "210K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
             ],
             "count": 10,
-            "avgLevel": 2.4
+            "avgLevel": 2.2
           },
           "🧠 思维方法": {
             "role": "cognitive",
@@ -1844,7 +1844,7 @@
           }
         },
         "count": 17,
-        "avgLevel": 2.1
+        "avgLevel": 1.9
       },
       "domain_pack": {
         "name": "🎯 领域能力层",
@@ -2102,33 +2102,15 @@
                 "shortName": "PPT",
                 "source": "平台预装技能",
                 "level": 3,
-                "exp": 67,
+                "exp": 66,
                 "description": "PPT演示文稿。创建、读取、编辑、合并PowerPoint文件",
                 "lastUpdated": "2026-03-09",
-                "callCount": 3,
+                "callCount": 2,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 159584,
                 "skillSizeLabel": "159K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "pdf",
-                "displayName": "PDF处理",
-                "shortName": "PDF",
-                "source": "平台预装技能",
-                "level": 3,
-                "exp": 66,
-                "description": "PDF文件处理。读取、合并、拆分、加水印、OCR、加密解密等全功能PDF操作",
-                "lastUpdated": "2026-03-09",
-                "callCount": 1,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 58669,
-                "skillSizeLabel": "58K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -2205,6 +2187,24 @@
                 "cfProject": false
               },
               {
+                "name": "pdf",
+                "displayName": "PDF处理",
+                "shortName": "PDF",
+                "source": "平台预装技能",
+                "level": 1,
+                "exp": 10,
+                "description": "PDF文件处理。读取、合并、拆分、加水印、OCR、加密解密等全功能PDF操作",
+                "lastUpdated": "2026-03-09",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 58669,
+                "skillSizeLabel": "58K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
                 "name": "xlsx",
                 "displayName": "Excel处理",
                 "shortName": "Excel",
@@ -2224,7 +2224,7 @@
               }
             ],
             "count": 8,
-            "avgLevel": 2.4
+            "avgLevel": 2.1
           },
           "🎨 前端开发": {
             "role": "frontend",
@@ -2395,7 +2395,7 @@
                 "exp": 66,
                 "description": "清爽调研报告风格的纯样式规范。当用户提到\"清爽调研报告风格\"时使用此技能。本技能仅提供CSS样式和视觉设计规范，不影响页面内容、数据或功能逻辑。适用于任何需要应用此风格的网页项目。",
                 "lastUpdated": "2026-03-09",
-                "callCount": 11,
+                "callCount": 12,
                 "frequency": "4次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -2962,7 +2962,7 @@
           }
         },
         "count": 52,
-        "avgLevel": 1.7
+        "avgLevel": 1.6
       }
     },
     "relationships": {
@@ -3746,41 +3746,22 @@
         "source": "项目记忆"
       },
       {
-        "title": "neigong_check.py 分类建议误报模式（v1）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "neigong_check.py 分类建议误报模式 来源 2026-03-11每日修炼：4个P1分类建议全部为误报，记录模式以便后续修复脚本...",
-        "keywords": [
-          "neigong_check",
-          "误报",
-          "分类建议",
-          "诊断脚本",
-          "记忆分类"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-11",
-        "source": "项目记忆"
-      },
-      {
-        "title": "neigong_check.py 版本漂移检测逻辑存在三类误报",
+        "title": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
         "layer": "🛠️ 实践记忆层",
         "icon": "🚀",
         "color": "#4ade80",
-        "description": "neigong_check.py 版本漂移检测逻辑错误 问题 neigong_check.py v4.0 的版本漂移检测存在三个逻辑错误，导...",
+        "description": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议） 类型1：版本漂移检测误报（3种） | 误报类型 | 识别方...",
         "keywords": [
           "neigong_check",
-          "版本漂移",
           "误报",
-          "检测逻辑",
-          "P0"
+          "版本漂移",
+          "分类建议",
+          "检测逻辑"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-12",
         "source": "项目记忆"
       },
       {
@@ -4221,7 +4202,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "成功模式提炼：高效执行的关键条件（含数据统计模式+基础设施复利）",
+        "title": "成功模式提炼：高效执行的关键条件（含任务多样性验证 v3）",
         "category": "task_flow_experience",
         "categoryLabel": "做事方法",
         "layer": "🧠 元认知层",
@@ -4233,7 +4214,7 @@
           "高效执行",
           "任务边界",
           "流程复用",
-          "数据统计"
+          "结构化分解"
         ],
         "importance": 5,
         "updatedAt": "2026-03-12",
@@ -4884,22 +4865,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "AI助手\"AI助手\"身份信息",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "🧠 元认知层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
-        "keywords": [
-          "AI助手",
-          "数字分身"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-04",
-        "source": "用户显式记录"
-      },
-      {
         "title": "AI日报KIM卡片链接错误排查经验（含时效性验证）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
@@ -5431,6 +5396,22 @@
         "source": "项目记忆"
       },
       {
+        "title": "AI助手\"AI助手\"身份信息",
+        "category": "user_info",
+        "categoryLabel": "用户身份",
+        "layer": "🧠 元认知层",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "AI助手身份信息： - 本名：AI助手（真名） - 花名：AI助手（对外名称） - 身份：用户*的AI数字分身/个人助理 - 与用户关系：三位一体架构...",
+        "keywords": [
+          "AI助手",
+          "数字分身"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-04",
+        "source": "用户显式记录"
+      },
+      {
         "title": "pptxgenjs阴影溢出问题",
         "category": "common_pitfalls_experience",
         "categoryLabel": "文档处理",
@@ -5561,7 +5542,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 112,
+    "total": 111,
     "byCategory": {
       "development_code_specification": {
         "count": 1,
@@ -5599,7 +5580,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 66,
+        "count": 65,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
@@ -5676,7 +5657,7 @@
                   "AI助手",
                   "数字分身"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-03-04",
                 "source": "用户显式记录"
               },
@@ -6183,7 +6164,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "成功模式提炼：高效执行的关键条件（含数据统计模式+基础设施复利）",
+                "title": "成功模式提炼：高效执行的关键条件（含任务多样性验证 v3）",
                 "category": "task_flow_experience",
                 "categoryLabel": "做事方法",
                 "layer": "🧠 元认知层",
@@ -6195,7 +6176,7 @@
                   "高效执行",
                   "任务边界",
                   "流程复用",
-                  "数据统计"
+                  "结构化分解"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-12",
@@ -7156,22 +7137,22 @@
                 "source": "项目记忆"
               },
               {
-                "title": "neigong_check.py 版本漂移检测逻辑存在三类误报",
+                "title": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "neigong_check.py 版本漂移检测逻辑错误 问题 neigong_check.py v4.0 的版本漂移检测存在三个逻辑错误，导...",
+                "description": "neigong_check.py 已知误报模式汇总（v3：含版本漂移+分类建议） 类型1：版本漂移检测误报（3种） | 误报类型 | 识别方...",
                 "keywords": [
                   "neigong_check",
-                  "版本漂移",
                   "误报",
-                  "检测逻辑",
-                  "P0"
+                  "版本漂移",
+                  "分类建议",
+                  "检测逻辑"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-10",
+                "updatedAt": "2026-03-12",
                 "source": "项目记忆"
               },
               {
@@ -7549,25 +7530,6 @@
                 "source": "项目记忆"
               },
               {
-                "title": "neigong_check.py 分类建议误报模式（v1）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "neigong_check.py 分类建议误报模式 来源 2026-03-11每日修炼：4个P1分类建议全部为误报，记录模式以便后续修复脚本...",
-                "keywords": [
-                  "neigong_check",
-                  "误报",
-                  "分类建议",
-                  "诊断脚本",
-                  "记忆分类"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-11",
-                "source": "项目记忆"
-              },
-              {
                 "title": "链接时效性陷阱v2：含领域知识过期+修正流程偷懒双重问题",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
@@ -7625,7 +7587,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 8
+            "count": 7
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -7891,7 +7853,7 @@
             "count": 2
           }
         },
-        "count": 78
+        "count": 77
       }
     }
   },
@@ -7962,7 +7924,7 @@
       85,
       106,
       112,
-      115
+      114
     ]
   },
   "achievements": [
@@ -8009,7 +7971,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 28/10",
+      "progressText": "4星+技能 26/10",
       "date": "2026-03-12"
     },
     {

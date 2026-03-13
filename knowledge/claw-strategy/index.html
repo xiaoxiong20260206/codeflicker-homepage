@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=35">
+<link rel="stylesheet" href="styles.css?v=36">
 </head>
 <body>
 
@@ -1300,11 +1300,11 @@
     <div class="arch-legend">
         <div class="arch-legend-title">📊 产品 ↔ 技术 映射关系</div>
         <div class="arch-legend-items">
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#2563EB;"></span> 触点层 → T1 接入层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#7C3AED;"></span> Agent能力层 → T3 计算层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#D97706;"></span> 服务层 → T2 网关层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#059669;"></span> AgentCore → T4 推理层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#E11D48;"></span> Memory → T5 存储层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#2563EB;"></span> 触点层 → T1 接入层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#7C3AED;"></span> Agent能力层 → T3 计算层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#D97706;"></span> 服务层 → T2 网关层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#059669;"></span> AgentCore → T4 推理层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#E11D48;"></span> Memory → T5 存储层</div>
         </div>
     </div>
 
@@ -1528,7 +1528,10 @@ function drawArchLines() {
         svg.appendChild(path);
     });
 }
-window.addEventListener('resize', () => { drawUserArrows(); drawArchLines(); });
+window.addEventListener('resize', (() => {
+    let t;
+    return () => { clearTimeout(t); t = setTimeout(() => { drawUserArrows(); drawArchLines(); }, 120); };
+})());
 
 /* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {

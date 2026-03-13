@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>⚡</text></svg>">
-<link rel="stylesheet" href="styles.css?v=15">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
+<link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
 
@@ -814,11 +814,31 @@
 <section class="chapter" id="ch6">
     <div class="chapter-label violet">ARCHITECTURE</div>
     <h2>快手AI员工 · 完整架构图</h2>
-    <p class="chapter-lead">产品架构 ↔ 技术架构（逻辑+物理合一），鼠标悬停模块查看详细说明。</p>
+    <p class="chapter-lead">两类用户 · 两个产品 · 一套基础设施 — 鼠标悬停模块查看详细说明。</p>
 
-    <!-- 泳道架构图 -->
     <div id="archPage">
 
+    <!-- 用户分层 -->
+    <div class="user-segments">
+        <div class="user-seg user-seg-eng">
+            <div class="user-seg-icon">🔧</div>
+            <div class="user-seg-info">
+                <div class="user-seg-title">工程师</div>
+                <div class="user-seg-desc">研发 · 测试 · 运维 · 数据</div>
+            </div>
+            <div class="user-seg-arrow">▼</div>
+        </div>
+        <div class="user-seg user-seg-all">
+            <div class="user-seg-icon">👥</div>
+            <div class="user-seg-info">
+                <div class="user-seg-title">所有员工</div>
+                <div class="user-seg-desc">产品 · 运营 · 市场 · 管理 · HR · 财务 …</div>
+            </div>
+            <div class="user-seg-arrow">▼</div>
+        </div>
+    </div>
+
+    <!-- 泳道架构图 -->
     <div class="arch-swimlanes" id="archSwim">
         <svg id="archSvg"></svg>
 
@@ -829,74 +849,124 @@
                 <div class="arch-lane-sub">用户视角的功能与价值</div>
             </div>
             <div class="arch-lane-bd">
-                <!-- 用户触点层（横排） -->
+
+                <!-- 用户触点层：CodeFlicker + KAvatar -->
                 <div class="arch-lv" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">🌍 用户触点层</div>
-                    <div class="arch-mods arch-mods-row">
-                        <div class="arch-mod arch-mod-mini" data-n="p-kim">
-                            <div class="arch-mod-nm"><span>💬</span> KIM 对话</div>
-                            <div class="arch-mod-ds">企业IM · 卡瓦</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">💬 KIM 对话</div>
-                                <div class="arch-tip-bd">
-                                    <p>企业IM即时交互入口，消息号「卡瓦」</p>
-                                    <ul>
-                                        <li>用户在KIM中直接与AI对话，无需切换工具</li>
-                                        <li>与Kim侧边栏、本地客户端共同构成多入口体系</li>
-                                        <li>覆盖日常办公、IM场景、深度任务三大场景</li>
-                                    </ul>
+
+                    <!-- 两个产品子区域 -->
+                    <div class="touch-products">
+                        <!-- CodeFlicker -->
+                        <div class="touch-product touch-cf">
+                            <div class="touch-product-hd cf">
+                                <span>💻</span> CodeFlicker
+                                <div class="touch-product-sub">AI 编码助手 → AI 工程师</div>
+                            </div>
+                            <div class="arch-mods">
+                                <div class="arch-mod arch-mod-mini" data-n="p-cf-ide">
+                                    <div class="arch-mod-nm"><span>⌨️</span> IDE 集成</div>
+                                    <div class="arch-mod-ds">代码补全 · Review · Debug</div>
+                                    <div class="arch-tip">
+                                        <div class="arch-tip-hd">⌨️ CodeFlicker IDE 集成</div>
+                                        <div class="arch-tip-bd">
+                                            <p>深度嵌入开发者日常 IDE 工作流</p>
+                                            <ul>
+                                                <li><strong>智能补全</strong>：上下文感知的代码补全</li>
+                                                <li><strong>Code Review</strong>：AI 辅助代码审查</li>
+                                                <li><strong>Debug 助手</strong>：错误分析和修复建议</li>
+                                                <li><strong>架构分析</strong>：代码理解和重构建议</li>
+                                            </ul>
+                                        </div>
+                                        <div class="arch-tip-ft">面向工程师的本地 IDE 插件</div>
+                                    </div>
                                 </div>
-                                <div class="arch-tip-ft">产品形态：云端 + 端侧的多入口体系</div>
+                                <div class="arch-mod arch-mod-mini" data-n="p-cf-cloud">
+                                    <div class="arch-mod-nm"><span>☁️</span> 云端 Agent</div>
+                                    <div class="arch-mod-ds">合盖继续工作</div>
+                                    <div class="arch-tip">
+                                        <div class="arch-tip-hd">☁️ 云端 AI 工程师（核心进化）</div>
+                                        <div class="arch-tip-bd">
+                                            <p>CodeFlicker 的关键进化：从本地 IDE 工具升级为云端 AI 工程师</p>
+                                            <ul>
+                                                <li><strong>合盖工作</strong>：电脑合上，Agent 在云端继续执行任务</li>
+                                                <li><strong>自动 PR</strong>：自主提交代码 + 跑测试 + 修 Bug</li>
+                                                <li><strong>CI/CD 集成</strong>：嵌入完整研发流程</li>
+                                                <li><strong>多任务并行</strong>：同时处理多个代码任务</li>
+                                            </ul>
+                                        </div>
+                                        <div class="arch-tip-ft">从「编码助手」到「AI 工程师」的关键一步</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="arch-mod arch-mod-mini" data-n="p-web">
-                            <div class="arch-mod-nm"><span>🌐</span> Web 管理</div>
-                            <div class="arch-mod-ds">激活部署 · 监控</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🌐 Web 管理平台</div>
-                                <div class="arch-tip-bd">
-                                    <p>一键激活部署和可视化监控能力</p>
-                                    <ul>
-                                        <li>Skill管理、系统配置、监控仪表盘</li>
-                                        <li>域名: kp.corp，管理员可视化操作</li>
-                                        <li>支持Skills市场入口、用户激活流程</li>
-                                    </ul>
-                                </div>
+
+                        <!-- KAvatar -->
+                        <div class="touch-product touch-ka">
+                            <div class="touch-product-hd ka">
+                                <span>🤖</span> KAvatar
+                                <div class="touch-product-sub">AI 员工</div>
                             </div>
-                        </div>
-                        <div class="arch-mod arch-mod-mini" data-n="p-local">
-                            <div class="arch-mod-nm"><span>🖥️</span> 本地端</div>
-                            <div class="arch-mod-ds">沙箱 · 深度任务</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🖥️ 本地客户端</div>
-                                <div class="arch-tip-bd">
-                                    <p>面向深度任务处理场景</p>
-                                    <ul>
-                                        <li>独立沙箱运行环境，数据更安全</li>
-                                        <li>云端↔本地实时增量同步</li>
-                                        <li>换设备无缝衔接，数据不丢失</li>
-                                    </ul>
+                            <div class="arch-mods">
+                                <div class="arch-mod arch-mod-mini" data-n="p-kim">
+                                    <div class="arch-mod-nm"><span>💬</span> KIM 对话</div>
+                                    <div class="arch-mod-ds">企业IM · 卡瓦</div>
+                                    <div class="arch-tip">
+                                        <div class="arch-tip-hd">💬 KIM 对话</div>
+                                        <div class="arch-tip-bd">
+                                            <p>企业IM即时交互入口，消息号「卡瓦」</p>
+                                            <ul>
+                                                <li>用户在KIM中直接与AI对话，无需切换工具</li>
+                                                <li>覆盖日常办公、IM场景</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="arch-tip-ft">适合大量本地计算或敏感数据的工作场景</div>
-                            </div>
-                        </div>
-                        <div class="arch-mod arch-mod-mini" data-n="p-market">
-                            <div class="arch-mod-nm"><span>🏪</span> 技能市场</div>
-                            <div class="arch-mod-ds">Skills浏览选购</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🏪 全局知识 & 技能市场</div>
-                                <div class="arch-tip-bd">
-                                    <p>独立的Web平台产品形态</p>
-                                    <ul>
-                                        <li>Skills/知识包的发现、试用、安装</li>
-                                        <li>类似App Store的浏览选购体验</li>
-                                        <li>支持三层生态全部技能的统一展示</li>
-                                    </ul>
+                                <div class="arch-mod arch-mod-mini" data-n="p-web">
+                                    <div class="arch-mod-nm"><span>🌐</span> Web 管理</div>
+                                    <div class="arch-mod-ds">激活部署 · 监控</div>
+                                    <div class="arch-tip">
+                                        <div class="arch-tip-hd">🌐 Web 管理平台</div>
+                                        <div class="arch-tip-bd">
+                                            <p>一键激活部署和可视化监控</p>
+                                            <ul>
+                                                <li>Skill管理、系统配置、监控仪表盘</li>
+                                                <li>支持Skills市场入口、用户激活流程</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="arch-mod arch-mod-mini" data-n="p-local">
+                                    <div class="arch-mod-nm"><span>🖥️</span> 本地端</div>
+                                    <div class="arch-mod-ds">沙箱 · 深度任务</div>
+                                    <div class="arch-tip">
+                                        <div class="arch-tip-hd">🖥️ 本地客户端</div>
+                                        <div class="arch-tip-bd">
+                                            <p>面向深度任务处理场景</p>
+                                            <ul>
+                                                <li>独立沙箱运行环境，数据更安全</li>
+                                                <li>云端↔本地实时增量同步</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="arch-mod arch-mod-mini" data-n="p-market">
+                                    <div class="arch-mod-nm"><span>🏪</span> 技能市场</div>
+                                    <div class="arch-mod-ds">Skills浏览选购</div>
+                                    <div class="arch-tip">
+                                        <div class="arch-tip-hd">🏪 全局知识 & 技能市场</div>
+                                        <div class="arch-tip-bd">
+                                            <ul>
+                                                <li>Skills/知识包的发现、试用、安装</li>
+                                                <li>类似App Store的浏览选购体验</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- Skills 能力层 -->
                 <div class="arch-lv" style="--lv-color: var(--violet);">
                     <div class="arch-lv-label">📚 Skills 能力层</div>
@@ -926,10 +996,8 @@
                                     <ul>
                                         <li>电商场景：商品分析、选品助手</li>
                                         <li>客服场景：话术助手、工单处理</li>
-                                        <li>内容场景：审核辅助、创意生成</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">类比：行业定制应用（企业微信、专业工具）</div>
                             </div>
                         </div>
                         <div class="arch-mod arch-mod-mini" data-n="p-skills-personal">
@@ -941,15 +1009,14 @@
                                     <p>开放平台，每个人都可以建自己的Skill</p>
                                     <ul>
                                         <li>个性化工作流自动化</li>
-                                        <li>团队内部工具快速搭建</li>
                                         <li>社区分享与评分机制</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">类比：个人下载的App（自由选择安装）</div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- 服务层 -->
                 <div class="arch-lv" style="--lv-color: var(--amber);">
                     <div class="arch-lv-label">🛡️ 服务层</div>
@@ -967,7 +1034,6 @@
                                         <li><strong>简单对话</strong> → 万擎小杯</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">预期成本优化50%+</div>
                             </div>
                         </div>
                         <div class="arch-mod arch-mod-mini" data-n="p-security">
@@ -982,11 +1048,11 @@
                                         <li>统一日志 + 异常检测 + <strong>事件追溯</strong></li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">网关层 JWT鉴权 + 路由</div>
                             </div>
                         </div>
                     </div>
                 </div>
+
                 <!-- AgentCore 核心能力层 -->
                 <div class="arch-lv arch-lv-agentcore" style="--lv-color: var(--emerald);">
                     <div class="arch-lv-label">🤖 AgentCore · 能力内核</div>
@@ -1018,7 +1084,6 @@
                                         <li><strong>决策支持</strong>：在多方案中选最优解</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">由万擎/Claude等大模型提供底层推理能力</div>
                             </div>
                         </div>
                         <div class="arch-mod" data-n="p-planning">
@@ -1030,10 +1095,8 @@
                                     <ul>
                                         <li><strong>任务分解</strong>：复杂目标拆解为子任务</li>
                                         <li><strong>步骤规划</strong>：确定最优执行路径</li>
-                                        <li><strong>依赖分析</strong>：识别任务间前后依赖</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">基于CoT、ReAct等框架实现</div>
                             </div>
                         </div>
                         <div class="arch-mod" data-n="p-orchestration">
@@ -1045,10 +1108,8 @@
                                     <ul>
                                         <li><strong>Skill选择</strong>：按任务自动匹配最优技能</li>
                                         <li><strong>执行编排</strong>：串行/并行任务协调</li>
-                                        <li><strong>并行协调</strong>：多Skill协同工作</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">类比大脑的执行力——调度身体完成动作</div>
                             </div>
                         </div>
                         <div class="arch-mod" data-n="p-reflection">
@@ -1059,11 +1120,9 @@
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li><strong>执行评估</strong>：完成后自我检查质量</li>
-                                        <li><strong>策略优化</strong>：发现更优执行路径</li>
                                         <li><strong>经验沉淀</strong>：将教训转化为能力提升</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">自进化的核心驱动力——从经验中学习</div>
                             </div>
                         </div>
                         <div class="arch-mod" data-n="p-integration">
@@ -1074,15 +1133,12 @@
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li><strong>外部系统</strong>：对接企业内部各类平台</li>
-                                        <li><strong>数据源</strong>：数据库、API、文件系统</li>
                                         <li><strong>MCP协议</strong>：标准化工具调用接口</li>
                                     </ul>
                                 </div>
-                                <div class="arch-tip-ft">基于MCP协议 + Function Calling</div>
                             </div>
                         </div>
                     </div>
-                    <!-- 自进化引擎横条 -->
                     <div class="arch-evolution" data-n="p-evolution">
                         <div class="arch-evolution-icon">🚀</div>
                         <div class="arch-evolution-text">
@@ -1095,12 +1151,9 @@
                                 <p>Code Agent 是能力天花板最高的 Agent 类型</p>
                                 <ul>
                                     <li><strong>自主编程</strong>：缺什么能力，写代码补上</li>
-                                    <li><strong>Reflection驱动</strong>：反思→发现不足→自动优化</li>
-                                    <li><strong>Memory积累</strong>：经验越多，能力越强</li>
                                     <li><strong>Skill自创建</strong>：自动将成功经验沉淀为新Skill</li>
                                 </ul>
                             </div>
-                            <div class="arch-tip-ft">类比：普通Agent=功能机，自进化Agent=iPhone（持续OTA升级）</div>
                         </div>
                     </div>
                 </div>
@@ -1114,32 +1167,19 @@
                 <div class="arch-lane-sub">实现逻辑 + 部署拓扑</div>
             </div>
             <div class="arch-lane-bd">
-                <!-- T1 接入层 -->
                 <div class="arch-lv" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">📥 T1 接入层</div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-access">
                             <div class="arch-mod-nm"><span>📨</span> 多端请求接入</div>
-                            <div class="arch-mod-ds">接收KIM/Web/本地三端请求，统一协议</div>
+                            <div class="arch-mod-ds">接收 IDE/KIM/Web/本地 四端请求，统一协议</div>
                             <div class="arch-mod-tags">
                                 <span class="arch-tag logic">逻辑: HTTP/WebSocket</span>
                                 <span class="arch-tag phys">物理: KIM平台 + Nginx</span>
                             </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">📨 多端请求接入</div>
-                                <div class="arch-tip-bd">
-                                    <p>统一接收三端用户请求</p>
-                                    <ul>
-                                        <li>KIM对话 / Web管理 / 本地客户端</li>
-                                        <li>HTTP/WebSocket协议接入，统一JSON格式</li>
-                                        <li>物理：KIM消息平台 + Nginx + React SPA</li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- T2 网关层 -->
                 <div class="arch-lv" style="--lv-color: var(--amber);">
                     <div class="arch-lv-label">🚪 T2 网关层</div>
                     <div class="arch-mods">
@@ -1150,21 +1190,9 @@
                                 <span class="arch-tag logic">逻辑: JWT鉴权 + 路由</span>
                                 <span class="arch-tag phys">物理: Node.js | 18789</span>
                             </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🛡️ 小K Gateway</div>
-                                <div class="arch-tip-bd">
-                                    <p>KIM与OpenClaw之间的协议桥接服务</p>
-                                    <ul>
-                                        <li>JWT Token验证 + 消息格式转换</li>
-                                        <li>路由分发 + 会话状态管理</li>
-                                        <li>物理：Node.js服务，端口18789，Redis缓存</li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- T3 计算层 -->
                 <div class="arch-lv" style="--lv-color: var(--emerald);">
                     <div class="arch-lv-label">⚙️ T3 计算层</div>
                     <div class="arch-mods">
@@ -1175,18 +1203,6 @@
                                 <span class="arch-tag logic">逻辑: Agent + Skills调度</span>
                                 <span class="arch-tag phys">物理: K8S Pod | 4C8G</span>
                             </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">📦 OpenClaw Pod池</div>
-                                <div class="arch-tip-bd">
-                                    <p>AI员工的核心计算引擎</p>
-                                    <ul>
-                                        <li>K8S StatefulSet管理，每用户1个Pod</li>
-                                        <li>规格 4C8G，支持自动扩缩容</li>
-                                        <li>沙箱执行代码生成、Skills调用、记忆访问</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">支持万级用户并发，水平弹性扩展</div>
-                            </div>
                         </div>
                         <div class="arch-mod" data-n="t-hub">
                             <div class="arch-mod-nm"><span>🏪</span> Skills Hub 技能中心</div>
@@ -1195,21 +1211,9 @@
                                 <span class="arch-tag logic">逻辑: 注册+审核+版本</span>
                                 <span class="arch-tag phys">物理: S3 + CDN</span>
                             </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🏪 Skills Hub 技能中心</div>
-                                <div class="arch-tip-bd">
-                                    <p>技能的中心化管理平台</p>
-                                    <ul>
-                                        <li>Schema定义 + 版本控制 + 安全审核</li>
-                                        <li>分发推送，确保可靠加载</li>
-                                        <li>物理：S3存储 + CDN加速 + Git版本</li>
-                                    </ul>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- T4 推理层 -->
                 <div class="arch-lv" style="--lv-color: var(--violet);">
                     <div class="arch-lv-label">🧠 T4 推理层</div>
                     <div class="arch-mods">
@@ -1220,23 +1224,9 @@
                                 <span class="arch-tag logic">逻辑: 复杂度评估+路由</span>
                                 <span class="arch-tag phys">物理: 万擎+Claude | MAAS</span>
                             </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🎯 万擎平台（MAAS）</div>
-                                <div class="arch-tip-bd">
-                                    <p>公司模型服务基础设施</p>
-                                    <ul>
-                                        <li>统一模型调用：万擎大中小杯 + Claude</li>
-                                        <li>算力资源：推理节点、GPU调度</li>
-                                        <li>安全：租户级数据隔离、审计日志</li>
-                                        <li>智能路由降本 50%+</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">类比 iPhone 的自研芯片（A系列）</div>
-                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- T5 存储层 -->
                 <div class="arch-lv" style="--lv-color: var(--rose);">
                     <div class="arch-lv-label">💾 T5 存储层</div>
                     <div class="arch-mods">
@@ -1247,36 +1237,12 @@
                                 <span class="arch-tag logic">逻辑: 流式返回+增量同步</span>
                                 <span class="arch-tag phys">物理: KFS卷 | /home/node/.openclaw</span>
                             </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🗄️ KFS 分布式存储</div>
-                                <div class="arch-tip-bd">
-                                    <p>整个系统的数据基座</p>
-                                    <ul>
-                                        <li>挂载路径: /home/node/.openclaw</li>
-                                        <li>独立存储不依赖单Pod，云↔本地增量同步</li>
-                                        <li>秒级Failover：Pod故障数据自动迁移</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">跨Pod数据迁移，历史完整保留</div>
-                            </div>
                         </div>
                         <div class="arch-mod" data-n="t-monitor">
                             <div class="arch-mod-nm"><span>📊</span> 监控 + 日志</div>
                             <div class="arch-mod-ds">任务统计 · 成本追踪 · 异常告警</div>
                             <div class="arch-mod-tags">
                                 <span class="arch-tag phys">物理: Prometheus + Grafana</span>
-                            </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">📊 监控与日志</div>
-                                <div class="arch-tip-bd">
-                                    <ul>
-                                        <li>任务执行统计 + Token成本追踪</li>
-                                        <li>异常告警 + 并发监控</li>
-                                        <li>按团队/场景维度清晰归因</li>
-                                        <li>配额管理 + 超额预警机制</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">基于 Prometheus + Grafana</div>
                             </div>
                         </div>
                     </div>
@@ -1286,14 +1252,13 @@
     </div>
 
     <!-- 存储基础 -->
-    <div class="arch-storage" style="padding:0 !important; overflow:visible !important; background:#D1FAE5 !important; background-image:linear-gradient(135deg,#D1FAE5 0%,#A7F3D0 50%,#6EE7B7 100%) !important; border:2px solid rgba(5,150,105,.35); border-radius:24px; position:relative; z-index:2;">
+    <div class="arch-storage" style="padding:0 !important; overflow:visible !important; background:#D1FAE5 !important; background-image:linear-gradient(135deg,#D1FAE5 0%,#A7F3D0 50%,#6EE7B7 100%) !important; border:2px solid rgba(5,150,105,.35); border-radius:24px;">
         <div class="arch-storage-hd" style="display:flex !important; background-color:#059669 !important; background-image:linear-gradient(135deg,#059669 0%,#10B981 100%) !important; color:#fff !important; padding:14px 24px !important; border-radius:22px 22px 0 0; font-size:15px; font-weight:800; margin:0 !important;">💾 存储架构基础 — 支撑所有功能层</div>
         <div class="arch-storage-bd" style="padding:18px 24px;">
             <div class="arch-storage-feats">
                 <div class="arch-storage-feat">✓ <strong>独立KFS存储</strong> · 配置/会话/记忆中心化</div>
                 <div class="arch-storage-feat">✓ <strong>云端↔本地同步</strong> · 实时增量，换设备无缝</div>
                 <div class="arch-storage-feat">✓ <strong>秒级Failover</strong> · Pod故障数据自动迁移</div>
-                <div class="arch-storage-feat">✓ <strong>跨Pod迁移</strong> · 历史数据完整保留</div>
             </div>
             <div class="arch-storage-sync">
                 <div class="arch-sync-node"><span>☁️</span><br>云端KFS</div>
@@ -1303,17 +1268,15 @@
         </div>
     </div>
 
-    <!-- 映射图例 -->
+    <!-- 图例 -->
     <div class="arch-legend">
-        <div class="arch-legend-title">📊 模块映射关系（连线说明）</div>
+        <div class="arch-legend-title">📊 模块映射关系</div>
         <div class="arch-legend-items">
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--blue);"></span> 用户触点 → 接入层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--blue);"></span> CodeFlicker → 接入/计算层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--violet);"></span> KAvatar → 接入/技能中心</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--amber);"></span> 服务层 → 网关层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--emerald);"></span> 核心能力 → 计算层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--violet);"></span> 智能路由 → 推理层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--rose);"></span> 记忆系统 → 存储层</div>
-            <div class="arch-legend-item"><span class="arch-legend-dot logic"></span> 逻辑标签</div>
-            <div class="arch-legend-item"><span class="arch-legend-dot phys"></span> 物理标签</div>
         </div>
     </div>
 
@@ -1328,35 +1291,22 @@
 
 <script>
 function go(id) {
-    // hide all chapters
     document.querySelectorAll('.chapter').forEach(ch => ch.style.display = 'none');
-    // show selected
     document.getElementById(id).style.display = 'block';
-    // update nav
     document.querySelectorAll('.nav-btn').forEach(b => {
         b.classList.remove('active');
         if (b.getAttribute('onclick') && b.getAttribute('onclick').includes(id)) {
             b.classList.add('active');
         }
     });
-    // scroll to top of content
-    window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
-    // draw arch lines if switching to architecture tab
-    if (id === 'ch6') setTimeout(drawArchLines, 80);
-}
-
-// init: show only ch0
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.chapter').forEach((ch, i) => {
-        ch.style.display = i === 0 ? 'block' : 'none';
-    });
-});
 
 // === Architecture connection lines ===
 const archMappings = [
-    { from: 'p-kim', to: 't-access', color: '#2563EB' },
-    { from: 'p-web', to: 't-access', color: '#2563EB' },
-    { from: 'p-local', to: 't-access', color: '#2563EB' },
+    { from: 'p-cf-ide', to: 't-access', color: '#2563EB' },
+    { from: 'p-cf-cloud', to: 't-agent', color: '#2563EB' },
+    { from: 'p-kim', to: 't-access', color: '#7C3AED' },
+    { from: 'p-web', to: 't-access', color: '#7C3AED' },
+    { from: 'p-local', to: 't-access', color: '#7C3AED' },
     { from: 'p-market', to: 't-hub', color: '#7C3AED' },
     { from: 'p-skills', to: 't-hub', color: '#7C3AED' },
     { from: 'p-security', to: 't-gateway', color: '#D97706' },
@@ -1376,28 +1326,20 @@ function drawArchLines() {
     svg.setAttribute('height', rc.height);
     svg.setAttribute('viewBox', `0 0 ${rc.width} ${rc.height}`);
     svg.innerHTML = '';
-
-    /* ---- arrowhead markers ---- */
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
     ['2563EB','7C3AED','D97706','059669','E11D48'].forEach(hex => {
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `ah-${hex}`);
         mk.setAttribute('viewBox', '0 0 8 6');
-        mk.setAttribute('refX', '7');
-        mk.setAttribute('refY', '3');
-        mk.setAttribute('markerWidth', '6');
-        mk.setAttribute('markerHeight', '4.5');
+        mk.setAttribute('refX', '7'); mk.setAttribute('refY', '3');
+        mk.setAttribute('markerWidth', '6'); mk.setAttribute('markerHeight', '4.5');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         pg.setAttribute('points', '0 0.5, 8 3, 0 5.5');
-        pg.setAttribute('fill', `#${hex}`);
-        pg.setAttribute('opacity', '0.6');
-        mk.appendChild(pg);
-        defs.appendChild(mk);
+        pg.setAttribute('fill', `#${hex}`); pg.setAttribute('opacity', '0.6');
+        mk.appendChild(pg); defs.appendChild(mk);
     });
     svg.appendChild(defs);
-
-    /* ---- lane gap geometry ---- */
     const lanes = box.querySelectorAll('.arch-lane');
     if (lanes.length < 2) return;
     const lL = lanes[0].getBoundingClientRect();
@@ -1405,35 +1347,23 @@ function drawArchLines() {
     const gapL = lL.right - rc.left;
     const gapR = lR.left - rc.left;
     const gapW = gapR - gapL;
-
-    const R = 8;                        // corner rounding radius
+    const R = 8;
     const total = archMappings.length;
-
     archMappings.forEach((m, i) => {
         const elA = document.querySelector(`[data-n="${m.from}"]`);
         const elB = document.querySelector(`[data-n="${m.to}"]`);
         if (!elA || !elB) return;
         const a = elA.getBoundingClientRect();
         const b = elB.getBoundingClientRect();
-
-        /* start: bottom-center of left module */
         const x1 = a.left + a.width / 2 - rc.left;
         const y1 = a.bottom - rc.top;
-        /* end: left-center of right module */
         const x2 = b.left - rc.left;
         const y2 = b.top + b.height / 2 - rc.top;
-
-        /* distribute vertical channels across the gap */
         const slot = total > 1 ? i / (total - 1) : 0.5;
         const cx = gapL + gapW * (0.15 + slot * 0.7);
-
-        /* stagger drop distance per line */
         const drop = 8 + (i % 5) * 4;
         const midY = y1 + drop;
-
         const dy = y2 >= midY ? 1 : -1;
-
-        /* clamp radii so they never exceed half of any segment */
         const segV1 = Math.abs(midY - y1);
         const segH  = Math.abs(cx - x1);
         const segV2 = Math.abs(y2 - midY);
@@ -1441,18 +1371,11 @@ function drawArchLines() {
         const r1 = Math.min(R, segV1 / 2, segH / 2);
         const r2 = Math.min(R, segH / 2, segV2 / 2);
         const r3 = Math.min(R, segV2 / 2, segH2 / 2);
-
-        /* path with rounded corners at each bend */
         const d =
-            `M ${x1} ${y1} ` +
-            `L ${x1} ${midY - r1} ` +
-            `Q ${x1} ${midY} ${x1 + r1} ${midY} ` +
-            `L ${cx - r2} ${midY} ` +
-            `Q ${cx} ${midY} ${cx} ${midY + r2 * dy} ` +
-            `L ${cx} ${y2 - r3 * dy} ` +
-            `Q ${cx} ${y2} ${cx + r3} ${y2} ` +
-            `L ${x2} ${y2}`;
-
+            `M ${x1} ${y1} L ${x1} ${midY - r1} ` +
+            `Q ${x1} ${midY} ${x1 + r1} ${midY} L ${cx - r2} ${midY} ` +
+            `Q ${cx} ${midY} ${cx} ${midY + r2 * dy} L ${cx} ${y2 - r3 * dy} ` +
+            `Q ${cx} ${y2} ${cx + r3} ${y2} L ${x2} ${y2}`;
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', m.color);
@@ -1466,35 +1389,36 @@ function drawArchLines() {
         svg.appendChild(path);
     });
 }
-
 window.addEventListener('resize', drawArchLines);
 
-/* ---- tooltip viewport-aware repositioning ---- */
+/* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {
-    const mod = e.target.closest('.arch-mod, .arch-evolution');
+    const mod = e.target.closest('.arch-mod, .arch-evolution, .eco-infra-card');
     if (!mod) return;
     const tip = mod.querySelector('.arch-tip');
     if (!tip) return;
-    // reset before measuring
-    tip.style.left = '';
-    tip.style.right = '';
-    tip.style.transform = '';
-    // measure
+    tip.style.left = ''; tip.style.right = ''; tip.style.transform = '';
     requestAnimationFrame(() => {
         const tr = tip.getBoundingClientRect();
         const vw = document.documentElement.clientWidth;
-        const pad = 12; // viewport padding
+        const pad = 12;
         if (tr.right > vw - pad) {
-            // overflow right → shift left
-            const shift = tr.right - vw + pad;
-            tip.style.left = `${-shift}px`;
+            tip.style.left = `${-(tr.right - vw + pad)}px`;
             tip.style.right = 'auto';
         }
         if (tr.left < pad) {
-            // overflow left → shift right
             tip.style.left = `${pad - tr.left}px`;
             tip.style.right = 'auto';
         }
+    });
+});
+    window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
+    if (id === 'ch6') setTimeout(drawArchLines, 80);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.chapter').forEach((ch, i) => {
+        ch.style.display = i === 0 ? 'block' : 'none';
     });
 });
 </script>

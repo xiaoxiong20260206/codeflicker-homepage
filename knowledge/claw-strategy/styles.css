@@ -970,7 +970,6 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane-bd {
     padding: 16px;
     background: linear-gradient(180deg, #FCFCFC 0%, #F8F8F7 100%);
-    min-height: 100%;
 }
 .arch-lane:first-child .arch-lane-bd {
     border-right: 1px dashed rgba(0,0,0,.08);

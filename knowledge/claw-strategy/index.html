@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=20">
+<link rel="stylesheet" href="styles.css?v=22">
 </head>
 <body>
 
@@ -816,7 +816,9 @@
     <h2>快手AI员工 · 完整架构图</h2>
     <p class="chapter-lead">两类用户 · 两个产品 · 一套基础设施 — 鼠标悬停模块查看详细说明。</p>
 
-    <div id="archPage">
+    <div id="archPage" style="position:relative;">
+    <!-- 用户→产品连线 SVG（全局覆盖层） -->
+    <svg id="userArrowsSvg" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:50;"></svg>
 
     <!-- 用户分层 -->
     <div class="user-segments">
@@ -836,11 +838,6 @@
         </div>
     </div>
 
-    <!-- 用户→产品连线 SVG -->
-    <div class="user-arrows-wrap" id="userArrowsWrap">
-        <svg id="userArrowsSvg"></svg>
-    </div>
-
     <!-- 泳道架构图 -->
     <div class="arch-swimlanes" id="archSwim">
         <svg id="archSvg"></svg>
@@ -853,7 +850,7 @@
             </div>
             <div class="arch-lane-bd">
 
-                <!-- 用户触点层：CodeFlicker + KAvatar -->
+                <!-- 用户触点层：CodeFlicker + AIme -->
                 <div class="arch-lv" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">🌍 用户触点层</div>
 
@@ -903,10 +900,10 @@
                             </div>
                         </div>
 
-                        <!-- KAvatar -->
+                        <!-- AIme -->
                         <div class="touch-product touch-ka" id="touchKa">
                             <div class="touch-product-hd ka">
-                                <span>🤖</span> KAvatar
+                                <span>🤖</span> AIme
                                 <div class="touch-product-sub">AI 员工</div>
                             </div>
                             <div class="arch-mods">
@@ -1276,7 +1273,7 @@
         <div class="arch-legend-title">📊 模块映射关系</div>
         <div class="arch-legend-items">
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--blue);"></span> CodeFlicker → 接入/计算层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--violet);"></span> KAvatar → 接入/技能中心</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#E85D3A;"></span> AIme → 接入/技能中心</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--amber);"></span> 服务层 → 网关层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--emerald);"></span> 核心能力 → 计算层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--rose);"></span> 记忆系统 → 存储层</div>
@@ -1306,24 +1303,24 @@ function go(id) {
 // === User → Product arrow lines ===
 function drawUserArrows() {
     const svg = document.getElementById('userArrowsSvg');
-    const wrap = document.getElementById('userArrowsWrap');
-    if (!svg || !wrap) return;
-    const wrapR = wrap.getBoundingClientRect();
-    svg.setAttribute('width', wrapR.width);
-    svg.setAttribute('height', wrapR.height);
-    svg.setAttribute('viewBox', `0 0 ${wrapR.width} ${wrapR.height}`);
+    const page = document.getElementById('archPage');
+    if (!svg || !page) return;
+    const pageR = page.getBoundingClientRect();
+    svg.setAttribute('width', pageR.width);
+    svg.setAttribute('height', pageR.height);
+    svg.setAttribute('viewBox', `0 0 ${pageR.width} ${pageR.height}`);
     svg.innerHTML = '';
 
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    [['blue','#2563EB'],['violet','#7C3AED']].forEach(([id, hex]) => {
+    [['blue','#2563EB'],['red','#E85D3A']].forEach(([id, hex]) => {
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `ua-${id}`);
-        mk.setAttribute('viewBox', '0 0 10 8');
-        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
-        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
+        mk.setAttribute('viewBox', '0 0 12 10');
+        mk.setAttribute('refX', '11'); mk.setAttribute('refY', '5');
+        mk.setAttribute('markerWidth', '10'); mk.setAttribute('markerHeight', '8');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 0.5, 10 4, 0 7.5');
+        pg.setAttribute('points', '0 1, 12 5, 0 9');
         pg.setAttribute('fill', hex);
         mk.appendChild(pg); defs.appendChild(mk);
     });
@@ -1331,7 +1328,7 @@ function drawUserArrows() {
 
     const pairs = [
         { from: 'userSegEng', to: 'touchCf', color: '#2563EB', marker: 'blue' },
-        { from: 'userSegAll', to: 'touchKa', color: '#7C3AED', marker: 'violet' }
+        { from: 'userSegAll', to: 'touchKa', color: '#E85D3A', marker: 'red' }
     ];
 
     pairs.forEach(({ from, to, color, marker }) => {
@@ -1340,32 +1337,20 @@ function drawUserArrows() {
         if (!elFrom || !elTo) return;
         const fR = elFrom.getBoundingClientRect();
         const tR = elTo.getBoundingClientRect();
-        const x1 = fR.left + fR.width / 2 - wrapR.left;
-        const y1 = 0;
-        const x2 = tR.left + tR.width / 2 - wrapR.left;
-        const y2 = wrapR.height;
-        const midY = wrapR.height / 2;
-        const R = 10;
-        const dx = x2 - x1;
-        const absDx = Math.abs(dx);
-
-        let d;
-        if (absDx < 4) {
-            d = `M ${x1} ${y1} L ${x2} ${y2}`;
-        } else {
-            const dir = dx > 0 ? 1 : -1;
-            const r = Math.min(R, absDx / 2, midY / 2);
-            d = `M ${x1} ${y1} L ${x1} ${midY - r} Q ${x1} ${midY} ${x1 + r * dir} ${midY} L ${x2 - r * dir} ${midY} Q ${x2} ${midY} ${x2} ${midY + r} L ${x2} ${y2}`;
-        }
+        // start from bottom-center of user card
+        const x1 = fR.left + fR.width / 2 - pageR.left;
+        const y1 = fR.bottom - pageR.top;
+        // end at top-center of product header
+        const x2 = tR.left + tR.width / 2 - pageR.left;
+        const y2 = tR.top - pageR.top;
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', d);
+        path.setAttribute('d', `M ${x1} ${y1} L ${x2} ${y2}`);
         path.setAttribute('stroke', color);
         path.setAttribute('stroke-width', '2.5');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.7');
+        path.setAttribute('opacity', '0.75');
         path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('marker-end', `url(#ua-${marker})`);
         svg.appendChild(path);
     });

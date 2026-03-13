@@ -952,7 +952,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     margin-bottom: 0;
     border: 2px solid var(--border);
     border-radius: 20px;
-    overflow: hidden;
+    overflow: visible;
     box-shadow:
         0 2px 8px rgba(0,0,0,.03),
         0 12px 40px rgba(0,0,0,.06);
@@ -969,6 +969,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane { position: relative; z-index: 1; }
 .arch-lane:hover { z-index: 10; }
 .arch-lane-hd { color: #fff; padding: 18px 24px; text-align: center; }
+.arch-lane:first-child .arch-lane-hd { border-radius: 18px 0 0 0; }
+.arch-lane:last-child .arch-lane-hd { border-radius: 0 18px 0 0; }
 .arch-lane-title { font-size: 20px; font-weight: 800; letter-spacing: -.01em; }
 .arch-lane-sub { font-size: 13px; opacity: .85; margin-top: 3px; }
 .arch-lane-bd {
@@ -990,7 +992,6 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
     transition: box-shadow .3s;
     position: relative;
-    z-index: 1;
 }
 .arch-lv:last-child { margin-bottom: 0; }
 .arch-lv:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); z-index: 100; }
@@ -1070,6 +1071,57 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* AgentCore special */
 .arch-lv-agentcore { border-left-width: 5px; background: linear-gradient(135deg, #ECFDF5 0%, #fff 100%); }
 
+/* Agent能力层 special */
+.arch-lv-agent {
+    border-left-width: 5px;
+    background: linear-gradient(135deg, #F5F3FF 0%, #fff 100%);
+    padding: 20px 22px;
+}
+
+/* Agent sub-layers */
+.agent-sub-layer {
+    background: rgba(124,58,237,.04);
+    border: 1px solid rgba(124,58,237,.12);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+.agent-sub-layer:last-child { margin-bottom: 0; }
+.agent-sub-label {
+    font-size: 13px; font-weight: 700;
+    color: var(--violet);
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(124,58,237,.15);
+}
+
+/* Scene tags */
+.scene-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.scene-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+    border: 1px solid rgba(124,58,237,.15);
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--violet);
+    transition: all .2s ease;
+    cursor: default;
+}
+.scene-tag:hover {
+    background: linear-gradient(135deg, #EDE9FE 0%, #DDD6FE 100%);
+    border-color: rgba(124,58,237,.3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(124,58,237,.12);
+}
+
 /* self-evolution engine bar */
 .arch-evolution {
     display: flex; align-items: center; gap: 14px;
@@ -1080,7 +1132,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     transition: all .25s cubic-bezier(.4,0,.2,1);
     animation: pulse-glow 3s infinite;
 }
-.arch-evolution:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(5,150,105,.3); }
+.arch-evolution:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(5,150,105,.3); z-index: 9990; }
 .arch-evolution-icon { font-size: 24px; flex-shrink: 0; }
 .arch-evolution-title { font-size: 14px; font-weight: 800; color: #fff; }
 .arch-evolution-desc { font-size: 11px; color: rgba(255,255,255,.85); margin-top: 2px; }
@@ -1107,7 +1159,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 12px 14px;
-    cursor: pointer; position: relative; z-index: 1;
+    cursor: pointer; position: relative;
     transition: all .25s cubic-bezier(.4,0,.2,1);
 }
 .arch-mod:hover {

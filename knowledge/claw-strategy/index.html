@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=25">
+<link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body>
 
@@ -949,68 +949,89 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="arch-mod arch-mod-mini" data-n="p-market">
-                                    <div class="arch-mod-nm"><span>🏪</span> 技能市场</div>
-                                    <div class="arch-mod-ds">Skills浏览选购</div>
-                                    <div class="arch-tip">
-                                        <div class="arch-tip-hd">🏪 全局知识 & 技能市场</div>
-                                        <div class="arch-tip-bd">
-                                            <ul>
-                                                <li>Skills/知识包的发现、试用、安装</li>
-                                                <li>类似App Store的浏览选购体验</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Skills 能力层 -->
-                <div class="arch-lv" style="--lv-color: var(--violet);">
-                    <div class="arch-lv-label">📚 Skills 能力层</div>
-                    <div class="arch-mods arch-mods-row">
-                        <div class="arch-mod arch-mod-mini" data-n="p-skills">
-                            <div class="arch-mod-nm"><span>🏢</span> 公司级</div>
-                            <div class="arch-mod-ds">默认生效 · 评测驱动</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">📚 Skills 三层生态</div>
-                                <div class="arch-tip-bd">
-                                    <ul>
-                                        <li><strong>公司级</strong>（默认生效）— 评测驱动，人人用最优方案</li>
-                                        <li><strong>业务级</strong>（合作共建）— 如电商分析、客服话术</li>
-                                        <li><strong>个人级</strong>（开放生态）— 每个人都能建自己的Skill</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">类比 App Store：预装应用 + 行业定制 + 个人下载</div>
-                            </div>
+                <!-- Agent 能力层 -->
+                <div class="arch-lv arch-lv-agent" style="--lv-color: var(--violet);">
+                    <div class="arch-lv-label">🤖 Agent 能力层</div>
+
+                    <!-- 子层1：场景层 -->
+                    <div class="agent-sub-layer">
+                        <div class="agent-sub-label">🎯 场景层</div>
+                        <div class="scene-tags">
+                            <span class="scene-tag" data-n="p-scene-dev">💻 开发</span>
+                            <span class="scene-tag" data-n="p-scene-office">📋 办公</span>
+                            <span class="scene-tag" data-n="p-scene-doc">📄 文档</span>
+                            <span class="scene-tag" data-n="p-scene-research">🔍 调研</span>
+                            <span class="scene-tag" data-n="p-scene-ops">📊 运营</span>
+                            <span class="scene-tag" data-n="p-scene-cs">🎧 客服</span>
+                            <span class="scene-tag" data-n="p-scene-data">📈 数据</span>
+                            <span class="scene-tag" data-n="p-scene-more">⋯ 更多</span>
                         </div>
-                        <div class="arch-mod arch-mod-mini" data-n="p-skills-biz">
-                            <div class="arch-mod-nm"><span>🏭</span> 业务级</div>
-                            <div class="arch-mod-ds">合作共建 · 场景专属</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🏭 业务级 Skills</div>
-                                <div class="arch-tip-bd">
-                                    <p>研发线与各业务线合作共建</p>
-                                    <ul>
-                                        <li>电商场景：商品分析、选品助手</li>
-                                        <li>客服场景：话术助手、工单处理</li>
-                                    </ul>
+                    </div>
+
+                    <!-- 子层2：Skill & 知识市场 -->
+                    <div class="agent-sub-layer">
+                        <div class="agent-sub-label">🏪 Skill & 知识市场</div>
+                        <div class="arch-mods arch-mods-row">
+                            <div class="arch-mod arch-mod-mini" data-n="p-skills">
+                                <div class="arch-mod-nm"><span>🏢</span> 公司级</div>
+                                <div class="arch-mod-ds">默认生效 · 评测驱动</div>
+                                <div class="arch-tip">
+                                    <div class="arch-tip-hd">🏢 公司级 Skills</div>
+                                    <div class="arch-tip-bd">
+                                        <ul>
+                                            <li><strong>默认预装</strong> — 评测驱动，人人用最优方案</li>
+                                            <li>代码补全、Review、翻译、日报等通用技能</li>
+                                        </ul>
+                                    </div>
+                                    <div class="arch-tip-ft">类比：手机预装应用</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="arch-mod arch-mod-mini" data-n="p-skills-personal">
-                            <div class="arch-mod-nm"><span>👤</span> 个人级</div>
-                            <div class="arch-mod-ds">开放生态 · 自由创建</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">👤 个人级 Skills</div>
-                                <div class="arch-tip-bd">
-                                    <p>开放平台，每个人都可以建自己的Skill</p>
-                                    <ul>
-                                        <li>个性化工作流自动化</li>
-                                        <li>社区分享与评分机制</li>
-                                    </ul>
+                            <div class="arch-mod arch-mod-mini" data-n="p-skills-biz">
+                                <div class="arch-mod-nm"><span>🏭</span> 业务级</div>
+                                <div class="arch-mod-ds">合作共建 · 场景专属</div>
+                                <div class="arch-tip">
+                                    <div class="arch-tip-hd">🏭 业务级 Skills</div>
+                                    <div class="arch-tip-bd">
+                                        <p>与各业务线合作共建</p>
+                                        <ul>
+                                            <li>电商场景：商品分析、选品助手</li>
+                                            <li>客服场景：话术助手、工单处理</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arch-mod arch-mod-mini" data-n="p-skills-personal">
+                                <div class="arch-mod-nm"><span>👤</span> 个人级</div>
+                                <div class="arch-mod-ds">开放生态 · 自由创建</div>
+                                <div class="arch-tip">
+                                    <div class="arch-tip-hd">👤 个人级 Skills</div>
+                                    <div class="arch-tip-bd">
+                                        <p>开放平台，每个人都能创建自己的 Skill</p>
+                                        <ul>
+                                            <li>个性化工作流自动化</li>
+                                            <li>社区分享与评分机制</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="arch-mod arch-mod-mini" data-n="p-market">
+                                <div class="arch-mod-nm"><span>🏪</span> 技能市场</div>
+                                <div class="arch-mod-ds">发现 · 试用 · 安装</div>
+                                <div class="arch-tip">
+                                    <div class="arch-tip-hd">🏪 Skill & 知识市场</div>
+                                    <div class="arch-tip-bd">
+                                        <ul>
+                                            <li>Skills/知识包的发现、试用、安装</li>
+                                            <li>类似 App Store 的浏览选购体验</li>
+                                            <li>支持公司级、业务级、个人级三层分发</li>
+                                        </ul>
+                                    </div>
+                                    <div class="arch-tip-ft">让能力可共享、可流通、可进化</div>
                                 </div>
                             </div>
                         </div>

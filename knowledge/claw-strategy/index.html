@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>⚡</text></svg>">
-<link rel="stylesheet" href="styles.css?v=11">
+<link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
 
@@ -1371,55 +1371,99 @@ function drawArchLines() {
     const svg = document.getElementById('archSvg');
     const box = document.getElementById('archSwim');
     if (!svg || !box) return;
-    const r = box.getBoundingClientRect();
-    svg.setAttribute('width', r.width);
-    svg.setAttribute('height', r.height);
-    svg.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
+    const rc = box.getBoundingClientRect();
+    svg.setAttribute('width', rc.width);
+    svg.setAttribute('height', rc.height);
+    svg.setAttribute('viewBox', `0 0 ${rc.width} ${rc.height}`);
     svg.innerHTML = '';
 
-    // gap between the two lanes (center x of the gap)
+    /* ---- arrowhead markers ---- */
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    ['2563EB','7C3AED','D97706','059669','E11D48'].forEach(hex => {
+        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+        mk.setAttribute('id', `ah-${hex}`);
+        mk.setAttribute('viewBox', '0 0 8 6');
+        mk.setAttribute('refX', '7');
+        mk.setAttribute('refY', '3');
+        mk.setAttribute('markerWidth', '6');
+        mk.setAttribute('markerHeight', '4.5');
+        mk.setAttribute('orient', 'auto');
+        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        pg.setAttribute('points', '0 0.5, 8 3, 0 5.5');
+        pg.setAttribute('fill', `#${hex}`);
+        pg.setAttribute('opacity', '0.6');
+        mk.appendChild(pg);
+        defs.appendChild(mk);
+    });
+    svg.appendChild(defs);
+
+    /* ---- lane gap geometry ---- */
     const lanes = box.querySelectorAll('.arch-lane');
     if (lanes.length < 2) return;
-    const laneL = lanes[0].getBoundingClientRect();
-    const laneR = lanes[1].getBoundingClientRect();
-    const gapX = (laneL.right + laneR.left) / 2 - r.left;
+    const lL = lanes[0].getBoundingClientRect();
+    const lR = lanes[1].getBoundingClientRect();
+    const gapL = lL.right - rc.left;
+    const gapR = lR.left - rc.left;
+    const gapW = gapR - gapL;
 
-    archMappings.forEach(m => {
-        const a = document.querySelector(`[data-n="${m.from}"]`);
-        const b = document.querySelector(`[data-n="${m.to}"]`);
-        if (!a || !b) return;
-        const ar = a.getBoundingClientRect();
-        const br = b.getBoundingClientRect();
+    const R = 8;                        // corner rounding radius
+    const total = archMappings.length;
 
-        // start: bottom-center of left module
-        const x1 = ar.left + ar.width / 2 - r.left;
-        const y1 = ar.bottom - r.top;
-        // end: left-center of right module
-        const x2 = br.left - r.left;
-        const y2 = br.top + br.height / 2 - r.top;
+    archMappings.forEach((m, i) => {
+        const elA = document.querySelector(`[data-n="${m.from}"]`);
+        const elB = document.querySelector(`[data-n="${m.to}"]`);
+        if (!elA || !elB) return;
+        const a = elA.getBoundingClientRect();
+        const b = elB.getBoundingClientRect();
 
-        // orthogonal path: down → right to gap → up/down to target y → right to target
-        const dropY = y1 + 6; // small drop below the module
+        /* start: bottom-center of left module */
+        const x1 = a.left + a.width / 2 - rc.left;
+        const y1 = a.bottom - rc.top;
+        /* end: left-center of right module */
+        const x2 = b.left - rc.left;
+        const y2 = b.top + b.height / 2 - rc.top;
+
+        /* distribute vertical channels across the gap */
+        const slot = total > 1 ? i / (total - 1) : 0.5;
+        const cx = gapL + gapW * (0.15 + slot * 0.7);
+
+        /* stagger drop distance per line */
+        const drop = 8 + (i % 5) * 4;
+        const midY = y1 + drop;
+
+        const dy = y2 >= midY ? 1 : -1;
+
+        /* clamp radii so they never exceed half of any segment */
+        const segV1 = Math.abs(midY - y1);
+        const segH  = Math.abs(cx - x1);
+        const segV2 = Math.abs(y2 - midY);
+        const segH2 = Math.abs(x2 - cx);
+        const r1 = Math.min(R, segV1 / 2, segH / 2);
+        const r2 = Math.min(R, segH / 2, segV2 / 2);
+        const r3 = Math.min(R, segV2 / 2, segH2 / 2);
+
+        /* path with rounded corners at each bend */
+        const d =
+            `M ${x1} ${y1} ` +
+            `L ${x1} ${midY - r1} ` +
+            `Q ${x1} ${midY} ${x1 + r1} ${midY} ` +
+            `L ${cx - r2} ${midY} ` +
+            `Q ${cx} ${midY} ${cx} ${midY + r2 * dy} ` +
+            `L ${cx} ${y2 - r3 * dy} ` +
+            `Q ${cx} ${y2} ${cx + r3} ${y2} ` +
+            `L ${x2} ${y2}`;
+
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d',
-            `M ${x1} ${y1} L ${x1} ${dropY} L ${gapX} ${dropY} L ${gapX} ${y2} L ${x2} ${y2}`
-        );
+        path.setAttribute('d', d);
         path.setAttribute('stroke', m.color);
         path.setAttribute('stroke-width', '1.5');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.35');
-        path.setAttribute('stroke-dasharray', '4,3');
-
-        // arrow circle at the end
-        const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        c.setAttribute('cx', x2);
-        c.setAttribute('cy', y2);
-        c.setAttribute('r', '3');
-        c.setAttribute('fill', m.color);
-        c.setAttribute('opacity', '0.5');
-
+        path.setAttribute('opacity', '0.4');
+        path.setAttribute('stroke-dasharray', '6,4');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
+        path.setAttribute('marker-end', `url(#ah-${m.color.slice(1)})`);
         svg.appendChild(path);
-        svg.appendChild(c);
     });
 }
 

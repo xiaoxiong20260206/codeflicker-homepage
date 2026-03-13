@@ -1057,11 +1057,11 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* AIme horizontal layout */
 .arch-mods-horizontal {
     flex-direction: row !important;
-    flex-wrap: wrap;
+    flex-wrap: nowrap !important;
 }
 .arch-mods-horizontal .arch-mod-mini {
     flex: 1 1 0;
-    min-width: 80px;
+    min-width: 0;
     text-align: center;
 }
 .arch-mods-horizontal .arch-mod-mini .arch-mod-nm {

@@ -1160,33 +1160,25 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 
 /* --- storage bar --- */
 .arch-storage {
-    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 50%, #A7F3D0 100%);
-    border: 2px solid rgba(5,150,105,.3);
+    background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 50%, #6EE7B7 100%);
+    border: 2px solid rgba(5,150,105,.35);
     border-radius: var(--r-xl);
-    padding: 22px 28px;
+    padding: 0;
     margin-top: 12px;
     margin-bottom: 12px;
     position: relative;
-    overflow: hidden;
-}
-.arch-storage::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--emerald), #10B981, #34D399);
 }
 
 .arch-storage-hd {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 800;
-    color: #065F46;
-    margin-bottom: 16px;
+    color: #fff;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+    border-radius: var(--r-xl) var(--r-xl) 0 0;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(5,150,105,.2);
 }
 
 .arch-storage-bd {
@@ -1194,6 +1186,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     grid-template-columns: 1fr auto;
     gap: 24px;
     align-items: center;
+    padding: 18px 24px;
 }
 
 .arch-storage-feat {

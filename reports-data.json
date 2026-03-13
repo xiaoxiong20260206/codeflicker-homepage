@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T08:58:25.184404",
+  "generatedAt": "2026-03-13T11:42:09.236150",
   "summary": {
     "totalDays": 17,
     "latestDate": "2026-03-12",
@@ -52,7 +52,7 @@
       185,
       240,
       240,
-      244
+      271
     ],
     "memory": [
       19,
@@ -68,7 +68,7 @@
       106,
       112,
       118,
-      127
+      129
     ]
   },
   "reports": [
@@ -77,30 +77,14 @@
       "dayOfWeek": "周四",
       "activeProjects": 6,
       "totalCommits": 25,
-      "conversationCount": 4,
+      "conversationCount": 3,
       "coreProgress": [
-        "💬 完成 4 个任务: 用户希望每次网页开发完成后都能直接获得一个可点击访问的在线链接，而不仅仅是本地文..., 创建一个外部网页落地页，用于集中展示多个AI项目的入口链接，包括AI洞察首页、A......",
+        "💬 完成 3 个任务: 创建一个外部网页落地页，用于集中展示多个AI项目的入口链接，包括AI洞察首页、A..., 为快手的AI企业员工产品套件确定官方名称，要求以K开头且符合AI产品命名特征...",
         "📁 项目成果: 新增: 添加AI分身（AI助手首页）入口",
         "⚡ 新增能力: agent-capability-discovery、critical-thinking-logical-reasoning，扩展任务处理范围",
-        "🧠 新增记忆: 中文全角引号导致JavaScript/N等14条，规范化开发实践"
+        "🧠 新增记忆: 中文全角引号导致JavaScript/N等14条，避免常见错误"
       ],
       "deliveries": [
-        {
-          "title": "Web Development Workflow Enhancement for Direct Access Links",
-          "type": "conversation",
-          "goal": "用户希望每次网页开发完成后都能直接获得一个可点击访问的在线链接，而不仅仅是本地文件路径或GitHub仓库地址。",
-          "deliverables": [],
-          "process": [
-            "已创建记忆规则要求所有网页开发任务完成后必须提供可直接访问的在线链接，并制定了详细执行标准。当前AI洞察项目展示页面已推送到GitHub但需配置GitHub Pages才能在线访问，提供了三种部署方案..."
-          ],
-          "tags": [
-            "web-development",
-            "deployment",
-            "workflow",
-            "GitHub-Pages",
-            "accessibility"
-          ]
-        },
         {
           "title": "AI Project Portal Landing Page Implementation",
           "type": "conversation",
@@ -213,7 +197,7 @@
             "新增: fix(daily-3/12): 修正分类+时效+去重问题; 新增板块分类/跨天"
           ],
           "commitCount": 5,
-          "fileChangeCount": 7,
+          "fileChangeCount": 6,
           "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
         },
         {
@@ -225,16 +209,36 @@
             "daily: 2026-03-12 每日修炼完成（6对话/5首次正确/记忆-2+1/三剑客全调用/门"
           ],
           "commitCount": 1,
-          "fileChangeCount": 682,
+          "fileChangeCount": 679,
           "deployUrl": null
+        },
+        {
+          "title": "ai-insight-public",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-insight-public"
+            }
+          ],
+          "process": [
+            "修复: 修复hero-sub: max-width 560→800, font-size",
+            "修复: 修复hero副标题折行：加宽max-width+精简文案",
+            "修复: Visual v5: 增强阴影层次/类比框蓝色升级/表格紧凑化/间距优化/修复O"
+          ],
+          "commitCount": 14,
+          "fileChangeCount": 2,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-insight-public"
         }
       ],
       "capabilityGrowth": {
         "skillCount": 71,
         "knowledgeCount": 185,
-        "memoryCount": 125,
+        "memoryCount": 129,
         "skillChange": 0,
-        "knowledgeChange": 0,
+        "knowledgeChange": 1,
         "memoryChange": 14,
         "newSkills": [
           {
@@ -276,10 +280,6 @@
             "description": "'This skill should be used when the user says \"复盘\", \"举一反三\", "
           },
           {
-            "name": "skill-management",
-            "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\""
-          },
-          {
             "name": "ai-column-writer",
             "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
           },
@@ -296,10 +296,6 @@
             "description": "|"
           },
           {
-            "name": "xixingdafa",
-            "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收"
-          },
-          {
             "name": "memory-hygiene",
             "description": "记忆优化元能力（含执行）。当用户说\"记忆优化\"、\"检查记忆健康度\"、\"优化记忆\"、\"记忆清理\"、\"memory opti"
           },
@@ -314,10 +310,6 @@
           {
             "name": "neigong-cultivation",
             "description": "This skill should be used when the user mentions \"内功修炼\", \"三位"
-          },
-          {
-            "name": "xiaowuxianggong",
-            "description": "This skill should be used when the user mentions \"小无相功\", \"自进"
           },
           {
             "name": "knowledge-curator",
@@ -388,7 +380,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "AI日报分类+去重门控经验（v5.0 含板块关键词+跨天对比）",
+            "title": "AI日报分类+去重+地区门控经验（v6.0 含地区分类+板块分类+跨天去重）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -412,10 +404,6 @@
           {
             "title": "生图完成后必须发送可点击链接",
             "category": "development_practice_specification"
-          },
-          {
-            "title": "成功模式提炼：高效执行的关键条件（含任务多样性验证 v3）",
-            "category": "task_flow_experience"
           },
           {
             "title": "个人助理目录结构与项目索引 (v2.0)",
@@ -458,12 +446,12 @@
       },
       "skillCount": 71,
       "knowledgeCount": 185,
-      "memoryCount": 125,
+      "memoryCount": 129,
       "skillChange": 0,
-      "knowledgeChange": 0,
+      "knowledgeChange": 1,
       "memoryChange": 14,
       "highlights": [
-        "💬 完成 4 个任务: 用户希望每次网页开发完成后都能直接获得一个可点击访问的在线链接，而不仅仅是本地文..., 创建一个外部网页落地页，用于集中展示多个AI项目的入口链接，包括AI洞察首页、A......",
+        "💬 完成 3 个任务: 创建一个外部网页落地页，用于集中展示多个AI项目的入口链接，包括AI洞察首页、A..., 为快手的AI企业员工产品套件确定官方名称，要求以K开头且符合AI产品命名特征...",
         "📁 项目成果: 新增: 添加AI分身（AI助手首页）入口",
         "⚡ 新增能力: agent-capability-discovery、critical-thinking-logical-reasoning，扩展任务处理范围"
       ]

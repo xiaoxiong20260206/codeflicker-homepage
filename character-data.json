@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T11:17:05.941959",
+  "generatedAt": "2026-03-13T11:42:56.038409",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -207,7 +207,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "平台预装",
-            "skillSize": 62465,
+            "skillSize": 62424,
             "skillSizeLabel": "62K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
@@ -1553,7 +1553,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "平台预装",
-                "skillSize": 62465,
+                "skillSize": 62424,
                 "skillSizeLabel": "62K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
@@ -2887,10 +2887,10 @@
         "relatedMemories": [
           "ai_insight"
         ],
-        "fileCount": 68,
-        "sizeKB": 510.8,
+        "fileCount": 80,
+        "sizeKB": 539.5,
         "heatLevel": 5,
-        "recentCount": 68
+        "recentCount": 80
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -3057,10 +3057,10 @@
             "relatedMemories": [
               "ai_insight"
             ],
-            "fileCount": 68,
-            "sizeKB": 510.8,
+            "fileCount": 80,
+            "sizeKB": 539.5,
             "heatLevel": 5,
-            "recentCount": 68
+            "recentCount": 80
           },
           "rd-efficiency": {
             "name": "rd-efficiency",
@@ -3079,8 +3079,8 @@
             "recentCount": 26
           }
         },
-        "totalFiles": 94,
-        "totalSizeKB": 792.9
+        "totalFiles": 106,
+        "totalSizeKB": 821.6
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3153,8 +3153,8 @@
         "totalSizeKB": 753.1
       }
     },
-    "totalFiles": 259,
-    "totalSizeKB": 2535.5
+    "totalFiles": 271,
+    "totalSizeKB": 2564.2
   },
   "memories": {
     "items": [
@@ -4090,7 +4090,7 @@
         "source": "项目记忆"
       },
       {
-        "title": "成功模式提炼：高效执行的关键条件（含任务多样性验证 v3）",
+        "title": "成功模式提炼：高效执行的关键条件（含主动预判维度 v4）",
         "category": "task_flow_experience",
         "categoryLabel": "通用踩坑",
         "layer": "🛠️ 实践记忆层",
@@ -4105,7 +4105,7 @@
           "结构化分解"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-12",
+        "updatedAt": "2026-03-13",
         "source": "用户显式记录"
       },
       {
@@ -4447,25 +4447,6 @@
         "importance": 5,
         "updatedAt": "2026-03-11",
         "source": "用户显式记录"
-      },
-      {
-        "title": "深度调研报告格式规范",
-        "category": "development_practice_specification",
-        "categoryLabel": "做事方法",
-        "layer": "🧠 元认知层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
-        "keywords": [
-          "深度调研",
-          "报告格式",
-          "彩蛋",
-          "了解更多",
-          "AI洞察"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-05",
-        "source": "项目记忆"
       },
       {
         "title": "清爽调研报告风格：Tab导航是强制组件，不是TOC",
@@ -5300,6 +5281,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-06",
+        "source": "项目记忆"
+      },
+      {
+        "title": "深度调研报告格式规范",
+        "category": "development_practice_specification",
+        "categoryLabel": "做事方法",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "深度调研报告格式规范 后续所有深度调研报告都应遵循以下格式标准： 1. 参考模板 - 格式参考: https://xiaoxiong2026...",
+        "keywords": [
+          "深度调研",
+          "报告格式",
+          "彩蛋",
+          "了解更多",
+          "AI洞察"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-05",
         "source": "项目记忆"
       },
       {
@@ -6275,7 +6275,7 @@
                   "了解更多",
                   "AI洞察"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-05",
                 "source": "项目记忆"
               },
@@ -7958,7 +7958,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "成功模式提炼：高效执行的关键条件（含任务多样性验证 v3）",
+                "title": "成功模式提炼：高效执行的关键条件（含主动预判维度 v4）",
                 "category": "task_flow_experience",
                 "categoryLabel": "通用踩坑",
                 "layer": "🛠️ 实践记忆层",
@@ -7973,7 +7973,7 @@
                   "结构化分解"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-13",
                 "source": "用户显式记录"
               },
               {
@@ -8216,7 +8216,7 @@
       185,
       240,
       240,
-      259
+      271
     ],
     "memories": [
       19,

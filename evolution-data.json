@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T11:42:57.364722",
+  "generatedAt": "2026-03-14T06:34:14.998323",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -613,6 +613,12 @@
         "type": "skill_unlock",
         "name": "网页开发工作流",
         "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-13",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
       }
     ]
   },
@@ -622,6 +628,6 @@
       "重大版本变化时需要更新 stages 中的当前阶段",
       "每日任务检查时自动对比是否有新的里程碑事件"
     ],
-    "lastAutoCheck": "2026-03-13"
+    "lastAutoCheck": "2026-03-14"
   }
 }

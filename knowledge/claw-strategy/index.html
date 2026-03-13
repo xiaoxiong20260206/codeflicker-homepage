@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>⚡</text></svg>">
-<link rel="stylesheet" href="styles.css?v=10">
+<link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
 
@@ -950,6 +950,43 @@
                         </div>
                     </div>
                 </div>
+                <!-- 服务层 -->
+                <div class="arch-lv" style="--lv-color: var(--amber);">
+                    <div class="arch-lv-label">🛡️ 服务层</div>
+                    <div class="arch-mods arch-mods-row">
+                        <div class="arch-mod arch-mod-mini" data-n="p-routing">
+                            <div class="arch-mod-nm"><span>🎯</span> 智能路由</div>
+                            <div class="arch-mod-ds">成本优化50%+</div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd">🎯 智能模型路由</div>
+                                <div class="arch-tip-bd">
+                                    <p>按任务复杂度自动选最优模型</p>
+                                    <ul>
+                                        <li><strong>复杂推理</strong> → Claude / 万擎大杯</li>
+                                        <li><strong>常规分析</strong> → 万擎中杯</li>
+                                        <li><strong>简单对话</strong> → 万擎小杯</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">预期成本优化50%+</div>
+                            </div>
+                        </div>
+                        <div class="arch-mod arch-mod-mini" data-n="p-security">
+                            <div class="arch-mod-nm"><span>🔐</span> 安全审计</div>
+                            <div class="arch-mod-ds">全链路追溯</div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd">🔐 安全审计体系</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>万擎平台租户级<strong>数据隔离</strong></li>
+                                        <li>统一Skill审核，上架前<strong>安全检查</strong></li>
+                                        <li>统一日志 + 异常检测 + <strong>事件追溯</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">网关层 JWT鉴权 + 路由</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!-- AgentCore 核心能力层 -->
                 <div class="arch-lv arch-lv-agentcore" style="--lv-color: var(--emerald);">
                     <div class="arch-lv-label">🤖 AgentCore · 能力内核</div>
@@ -1064,43 +1101,6 @@
                                 </ul>
                             </div>
                             <div class="arch-tip-ft">类比：普通Agent=功能机，自进化Agent=iPhone（持续OTA升级）</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- 增值服务层 -->
-                <div class="arch-lv" style="--lv-color: var(--amber);">
-                    <div class="arch-lv-label">🛡️ 增值服务层</div>
-                    <div class="arch-mods arch-mods-row">
-                        <div class="arch-mod arch-mod-mini" data-n="p-routing">
-                            <div class="arch-mod-nm"><span>🎯</span> 智能路由</div>
-                            <div class="arch-mod-ds">成本优化50%+</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🎯 智能模型路由</div>
-                                <div class="arch-tip-bd">
-                                    <p>按任务复杂度自动选最优模型</p>
-                                    <ul>
-                                        <li><strong>复杂推理</strong> → Claude / 万擎大杯</li>
-                                        <li><strong>常规分析</strong> → 万擎中杯</li>
-                                        <li><strong>简单对话</strong> → 万擎小杯</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">预期成本优化50%+</div>
-                            </div>
-                        </div>
-                        <div class="arch-mod arch-mod-mini" data-n="p-security">
-                            <div class="arch-mod-nm"><span>🔐</span> 安全审计</div>
-                            <div class="arch-mod-ds">全链路追溯</div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd">🔐 安全审计体系</div>
-                                <div class="arch-tip-bd">
-                                    <ul>
-                                        <li>万擎平台租户级<strong>数据隔离</strong></li>
-                                        <li>统一Skill审核，上架前<strong>安全检查</strong></li>
-                                        <li>统一日志 + 异常检测 + <strong>事件追溯</strong></li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">网关层 JWT鉴权 + 路由</div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1308,7 +1308,7 @@
         <div class="arch-legend-title">📊 模块映射关系（连线说明）</div>
         <div class="arch-legend-items">
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--blue);"></span> 用户触点 → 接入层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--amber);"></span> 安全审计 → 网关层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--amber);"></span> 服务层 → 网关层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--emerald);"></span> 核心能力 → 计算层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--violet);"></span> 智能路由 → 推理层</div>
             <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--rose);"></span> 记忆系统 → 存储层</div>

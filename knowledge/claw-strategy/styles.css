@@ -933,6 +933,10 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* --- lane --- */
 .arch-lane {
     position: relative;
+    z-index: 1;
+}
+.arch-lane:hover {
+    z-index: 10;
 }
 
 .arch-lane-hd {
@@ -963,10 +967,15 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     padding: 14px 16px;
     border-left: 5px solid var(--lv-color);
     box-shadow: 0 2px 8px rgba(0,0,0,.04);
-    transition: box-shadow .3s;
+    transition: box-shadow .3s, z-index 0s;
+    position: relative;
+    z-index: 1;
 }
 .arch-lv:last-child { margin-bottom: 0; }
-.arch-lv:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+.arch-lv:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    z-index: 30;
+}
 
 .arch-lv-label {
     font-size: 13px;
@@ -1070,7 +1079,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-evolution .arch-tip {
     display: none;
     position: absolute;
-    z-index: 50;
+    z-index: 999;
     bottom: calc(100% + 10px);
     left: 0;
     width: 360px;
@@ -1270,10 +1279,17 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-legend-dot.phys  { background: var(--amber-50); border: 1px solid rgba(217,119,6,.3); }
 
 /* --- tooltip (structured) --- */
+.arch-mod {
+    position: relative;
+    z-index: 1;
+}
+.arch-mod:hover {
+    z-index: 40;
+}
 .arch-mod .arch-tip {
     display: none;
     position: absolute;
-    z-index: 50;
+    z-index: 999;
     bottom: calc(100% + 10px);
     width: 360px;
     max-width: 90vw;
@@ -1344,17 +1360,17 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane:first-child .arch-mod .arch-tip::after {
     left: 30px;
 }
-/* left lane row items: center tooltip */
+/* left lane row items: left-align tooltip (avoid overflow to right lane) */
 .arch-lane:first-child .arch-mods-row .arch-mod .arch-tip,
 .arch-lane:first-child .arch-mods-grid .arch-mod .arch-tip {
-    left: 50%;
+    left: 0;
     right: auto;
-    transform: translateX(-50%);
+    transform: none;
 }
 .arch-lane:first-child .arch-mods-row .arch-mod .arch-tip::after,
 .arch-lane:first-child .arch-mods-grid .arch-mod .arch-tip::after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 30px;
+    transform: none;
 }
 /* tooltip position: right lane → align right */
 .arch-lane:last-child .arch-mod .arch-tip {

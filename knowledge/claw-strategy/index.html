@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=22">
+<link rel="stylesheet" href="styles.css?v=23">
 </head>
 <body>
 
@@ -1300,7 +1300,7 @@ function go(id) {
         }
     });
 
-// === User → Product arrow lines ===
+// === User → Product arrow lines (smooth polyline) ===
 function drawUserArrows() {
     const svg = document.getElementById('userArrowsSvg');
     const page = document.getElementById('archPage');
@@ -1316,12 +1316,12 @@ function drawUserArrows() {
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `ua-${id}`);
         mk.setAttribute('viewBox', '0 0 12 10');
-        mk.setAttribute('refX', '11'); mk.setAttribute('refY', '5');
-        mk.setAttribute('markerWidth', '10'); mk.setAttribute('markerHeight', '8');
+        mk.setAttribute('refX', '10'); mk.setAttribute('refY', '5');
+        mk.setAttribute('markerWidth', '9'); mk.setAttribute('markerHeight', '7');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         pg.setAttribute('points', '0 1, 12 5, 0 9');
-        pg.setAttribute('fill', hex);
+        pg.setAttribute('fill', hex); pg.setAttribute('opacity', '0.8');
         mk.appendChild(pg); defs.appendChild(mk);
     });
     svg.appendChild(defs);
@@ -1337,20 +1337,39 @@ function drawUserArrows() {
         if (!elFrom || !elTo) return;
         const fR = elFrom.getBoundingClientRect();
         const tR = elTo.getBoundingClientRect();
-        // start from bottom-center of user card
         const x1 = fR.left + fR.width / 2 - pageR.left;
         const y1 = fR.bottom - pageR.top;
-        // end at top-center of product header
         const x2 = tR.left + tR.width / 2 - pageR.left;
         const y2 = tR.top - pageR.top;
 
+        // Smooth polyline: down → horizontal turn → down
+        const midY = y1 + (y2 - y1) * 0.45;
+        const dx = x2 - x1;
+        const absDx = Math.abs(dx);
+        const R = 16; // corner radius
+
+        let d;
+        if (absDx < 4) {
+            d = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+            const dir = dx > 0 ? 1 : -1;
+            const r = Math.min(R, absDx / 2, Math.abs(midY - y1) / 2, Math.abs(y2 - midY) / 2);
+            d = `M ${x1} ${y1} ` +
+                `L ${x1} ${midY - r} ` +
+                `Q ${x1} ${midY} ${x1 + r * dir} ${midY} ` +
+                `L ${x2 - r * dir} ${midY} ` +
+                `Q ${x2} ${midY} ${x2} ${midY + r} ` +
+                `L ${x2} ${y2}`;
+        }
+
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', `M ${x1} ${y1} L ${x2} ${y2}`);
+        path.setAttribute('d', d);
         path.setAttribute('stroke', color);
         path.setAttribute('stroke-width', '2.5');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.75');
+        path.setAttribute('opacity', '0.65');
         path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('marker-end', `url(#ua-${marker})`);
         svg.appendChild(path);
     });
@@ -1386,13 +1405,13 @@ function drawArchLines() {
     ['2563EB','7C3AED','D97706','059669','E11D48'].forEach(hex => {
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `ah-${hex}`);
-        mk.setAttribute('viewBox', '0 0 8 6');
-        mk.setAttribute('refX', '7'); mk.setAttribute('refY', '3');
-        mk.setAttribute('markerWidth', '6'); mk.setAttribute('markerHeight', '4.5');
+        mk.setAttribute('viewBox', '0 0 10 8');
+        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
+        mk.setAttribute('markerWidth', '7'); mk.setAttribute('markerHeight', '5.5');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 0.5, 8 3, 0 5.5');
-        pg.setAttribute('fill', `#${hex}`); pg.setAttribute('opacity', '0.6');
+        pg.setAttribute('points', '0 0.5, 10 4, 0 7.5');
+        pg.setAttribute('fill', `#${hex}`); pg.setAttribute('opacity', '0.7');
         mk.appendChild(pg); defs.appendChild(mk);
     });
     svg.appendChild(defs);
@@ -1403,7 +1422,7 @@ function drawArchLines() {
     const gapL = lL.right - rc.left;
     const gapR = lR.left - rc.left;
     const gapW = gapR - gapL;
-    const R = 8;
+    const R = 14;
     const total = archMappings.length;
     archMappings.forEach((m, i) => {
         const elA = document.querySelector(`[data-n="${m.from}"]`);
@@ -1416,8 +1435,8 @@ function drawArchLines() {
         const x2 = b.left - rc.left;
         const y2 = b.top + b.height / 2 - rc.top;
         const slot = total > 1 ? i / (total - 1) : 0.5;
-        const cx = gapL + gapW * (0.15 + slot * 0.7);
-        const drop = 8 + (i % 5) * 4;
+        const cx = gapL + gapW * (0.12 + slot * 0.76);
+        const drop = 10 + (i % 5) * 5;
         const midY = y1 + drop;
         const dy = y2 >= midY ? 1 : -1;
         const segV1 = Math.abs(midY - y1);
@@ -1427,18 +1446,19 @@ function drawArchLines() {
         const r1 = Math.min(R, segV1 / 2, segH / 2);
         const r2 = Math.min(R, segH / 2, segV2 / 2);
         const r3 = Math.min(R, segV2 / 2, segH2 / 2);
+        const dirH1 = cx > x1 ? 1 : -1;
         const d =
             `M ${x1} ${y1} L ${x1} ${midY - r1} ` +
-            `Q ${x1} ${midY} ${x1 + r1} ${midY} L ${cx - r2} ${midY} ` +
+            `Q ${x1} ${midY} ${x1 + r1 * dirH1} ${midY} L ${cx - r2 * dirH1} ${midY} ` +
             `Q ${cx} ${midY} ${cx} ${midY + r2 * dy} L ${cx} ${y2 - r3 * dy} ` +
             `Q ${cx} ${y2} ${cx + r3} ${y2} L ${x2} ${y2}`;
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', m.color);
-        path.setAttribute('stroke-width', '1.5');
+        path.setAttribute('stroke-width', '1.8');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.4');
-        path.setAttribute('stroke-dasharray', '6,4');
+        path.setAttribute('opacity', '0.45');
+        path.setAttribute('stroke-dasharray', '8,5');
         path.setAttribute('stroke-linecap', 'round');
         path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('marker-end', `url(#ah-${m.color.slice(1)})`);

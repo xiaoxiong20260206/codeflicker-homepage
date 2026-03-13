@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=34">
+<link rel="stylesheet" href="styles.css?v=35">
 </head>
 <body>
 
@@ -1532,15 +1532,22 @@ window.addEventListener('resize', () => { drawUserArrows(); drawArchLines(); });
 
 /* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {
-    const mod = e.target.closest('.arch-mod, .arch-evolution, .eco-infra-card');
+    const mod = e.target.closest('.arch-mod, .arch-evolution, .cloud-agent-bar, .eco-infra-card');
     if (!mod) return;
     const tip = mod.querySelector('.arch-tip');
     if (!tip) return;
+    // Reset positioning
     tip.style.left = ''; tip.style.right = ''; tip.style.transform = '';
+    tip.style.bottom = ''; tip.style.top = '';
+    const arrow = tip.querySelector(':scope::after') || null;
+
     requestAnimationFrame(() => {
         const tr = tip.getBoundingClientRect();
         const vw = document.documentElement.clientWidth;
+        const vh = window.innerHeight;
         const pad = 12;
+
+        // Horizontal: prevent overflow left/right
         if (tr.right > vw - pad) {
             tip.style.left = `${-(tr.right - vw + pad)}px`;
             tip.style.right = 'auto';
@@ -1548,6 +1555,12 @@ document.addEventListener('mouseover', e => {
         if (tr.left < pad) {
             tip.style.left = `${pad - tr.left}px`;
             tip.style.right = 'auto';
+        }
+
+        // Vertical: if tooltip goes above viewport, flip to below
+        if (tr.top < pad) {
+            tip.style.bottom = 'auto';
+            tip.style.top = 'calc(100% + 10px)';
         }
     });
 });

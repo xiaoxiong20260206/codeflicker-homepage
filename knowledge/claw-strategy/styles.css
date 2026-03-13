@@ -994,7 +994,14 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     position: relative;
 }
 .arch-lv:last-child { margin-bottom: 0; }
-.arch-lv:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); z-index: 100; }
+.arch-lv:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); }
+/* Escalate z-index through parent chain when any tooltip is active */
+.arch-lv:has(.arch-mod:hover),
+.arch-lv:has(.arch-evolution:hover),
+.arch-lv:has(.cloud-agent-bar:hover) { z-index: 9000 !important; }
+.arch-lane:has(.arch-mod:hover),
+.arch-lane:has(.arch-evolution:hover),
+.arch-lane:has(.cloud-agent-bar:hover) { z-index: 9000 !important; }
 .arch-lv-label {
     font-size: 13px; font-weight: 700; color: var(--lv-color);
     margin-bottom: 10px; padding-bottom: 8px;
@@ -1011,7 +1018,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .touch-product {
     border: 1px solid var(--border);
     border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
     background: #fff;
     transition: all .25s;
 }
@@ -1028,9 +1035,11 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 }
 .touch-product-hd.cf {
     background: linear-gradient(150deg, var(--blue) 0%, var(--blue-l) 100%);
+    border-radius: 12px 12px 0 0;
 }
 .touch-product-hd.ka {
     background: linear-gradient(150deg, var(--violet) 0%, #8B5CF6 100%);
+    border-radius: 12px 12px 0 0;
 }
 .touch-product-sub {
     font-size: 11px;
@@ -1105,16 +1114,16 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .cloud-agent-bar .arch-tip {
     display: none;
     position: absolute;
-    z-index: 9999;
+    z-index: 99999;
     bottom: calc(100% + 10px);
     left: 0;
     width: 400px;
     max-width: 90vw;
     background: #fff;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(0,0,0,.12);
     border-radius: var(--r-lg);
     overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,.18);
+    box-shadow: 0 8px 30px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
     pointer-events: none;
 }
 .cloud-agent-bar .arch-tip::after {
@@ -1206,19 +1215,20 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     transition: all .25s cubic-bezier(.4,0,.2,1);
     animation: pulse-glow 3s infinite;
 }
-.arch-evolution:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(5,150,105,.3); z-index: 9990; }
+.arch-evolution:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(5,150,105,.3); z-index: 9990 !important; }
 .arch-evolution-icon { font-size: 22px; flex-shrink: 0; }
 .arch-evolution-title { font-size: 13px; font-weight: 800; color: #fff; }
 .arch-evolution-desc { font-size: 10.5px; color: rgba(255,255,255,.85); margin-top: 1px; }
 
 /* evolution tooltip */
 .arch-evolution .arch-tip {
-    display: none; position: absolute; z-index: 9999;
+    display: none; position: absolute; z-index: 99999;
     bottom: calc(100% + 10px); left: 0;
     width: 360px; max-width: 90vw;
-    background: #fff; border: 1px solid var(--border);
+    background: #fff; border: 1px solid rgba(0,0,0,.12);
     border-radius: var(--r-lg); overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,.18); pointer-events: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+    pointer-events: none;
 }
 .arch-evolution .arch-tip::after {
     content: ''; position: absolute; top: 100%; left: 30px;
@@ -1237,7 +1247,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     transition: all .25s cubic-bezier(.4,0,.2,1);
 }
 .arch-mod:hover {
-    border-color: var(--lv-color); z-index: 9990;
+    border-color: var(--lv-color); z-index: 9990 !important;
     transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,.07);
 }
 .arch-mod-nm { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
@@ -1250,11 +1260,13 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 
 /* --- tooltip --- */
 .arch-mod .arch-tip {
-    display: none; position: absolute; z-index: 9999;
+    display: none; position: absolute; z-index: 99999;
     bottom: calc(100% + 10px); width: 360px; max-width: 90vw;
-    background: #fff; border: 1px solid var(--border);
+    background: #fff; border: 1px solid rgba(0,0,0,.12);
     border-radius: var(--r-lg); overflow: hidden;
-    box-shadow: 0 12px 40px rgba(0,0,0,.18); pointer-events: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+    pointer-events: none;
+    backdrop-filter: blur(2px);
 }
 .arch-mod .arch-tip::after {
     content: ''; position: absolute; top: 100%;
@@ -1294,7 +1306,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     padding: 0; margin-top: 16px; margin-bottom: 16px;
     box-shadow: 0 2px 12px rgba(5,150,105,.08);
     position: relative;
-    z-index: 10;
+    z-index: 5;
 }
 .arch-storage-hd {
     font-size: 15px; font-weight: 800; color: #fff;

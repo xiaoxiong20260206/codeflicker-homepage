@@ -437,38 +437,41 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 280px;
-}
-
-.coming-soon-overlay {
-  text-align: center;
-  max-width: 480px;
   padding: 40px 20px;
 }
 
+.coming-soon-card {
+  text-align: center;
+  max-width: 440px;
+  padding: 36px 28px;
+  background: rgba(180, 170, 150, 0.06);
+  border: 1.5px dashed rgba(180, 170, 150, 0.2);
+  border-radius: var(--radius-md);
+}
+
 .coming-soon-icon {
-  font-size: 40px;
-  opacity: 0.4;
-  margin-bottom: 12px;
+  font-size: 32px;
+  opacity: 0.35;
+  margin-bottom: 10px;
 }
 
 .coming-soon-title {
   font-family: var(--font-title);
-  font-size: 20px;
-  color: var(--text-muted);
+  font-size: 18px;
+  color: var(--zelda-brown);
+  opacity: 0.7;
   letter-spacing: 1px;
   margin-bottom: 6px;
 }
 
 .coming-soon-subtitle {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(180, 170, 150, 0.6);
-  margin-bottom: 16px;
-  padding: 4px 16px;
-  border: 1px dashed rgba(180, 170, 150, 0.3);
+  color: rgba(107, 83, 68, 0.45);
+  margin-bottom: 14px;
+  padding: 3px 14px;
+  border: 1px dashed rgba(107, 83, 68, 0.2);
   border-radius: 20px;
   display: inline-block;
 }
@@ -476,9 +479,9 @@
 .coming-soon-desc {
   font-size: 12px;
   line-height: 1.8;
-  color: var(--text-muted);
-  opacity: 0.7;
-  margin-bottom: 16px;
+  color: var(--zelda-brown);
+  opacity: 0.5;
+  margin-bottom: 14px;
 }
 
 .coming-soon-tags {
@@ -489,12 +492,12 @@
 }
 
 .coming-soon-tag {
-  padding: 3px 12px;
+  padding: 3px 10px;
   border-radius: 14px;
   font-size: 11px;
-  background: rgba(180, 170, 150, 0.08);
-  color: rgba(180, 170, 150, 0.5);
-  border: 1px solid rgba(180, 170, 150, 0.15);
+  background: rgba(107, 83, 68, 0.06);
+  color: rgba(107, 83, 68, 0.4);
+  border: 1px solid rgba(107, 83, 68, 0.1);
 }
 
 /* --- Tab Badge (Coming Soon) --- */

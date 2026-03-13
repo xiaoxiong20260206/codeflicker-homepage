@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width: 1200px; height: 1540px; overflow: hidden; background: #fff; }
+
+.white-border { width: 1200px; height: 1540px; padding: 20px; background: #fff; }
+
+.outer {
+    width: 1160px;
+    height: 1500px;
+    background: linear-gradient(160deg, #f0fdf4 0%, #eff6ff 40%, #f5f3ff 80%, #fafafa 100%);
+    border-radius: 20px;
+    padding: 32px 36px;
+    font-family: -apple-system, 'SF Pro Display', 'PingFang SC', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+/* decorative */
+.outer::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(5,150,105,.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.outer::after {
+    content: '';
+    position: absolute; bottom: -60px; left: -60px;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(37,99,235,.07) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+/* ---- header ---- */
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+    flex-shrink: 0;
+}
+.header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #059669 0%, #2563EB 55%, #7C3AED 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+    letter-spacing: -.02em;
+}
+.header-conclusion {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #059669, #10B981);
+    color: #fff;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 3px 12px rgba(5,150,105,.25);
+}
+
+/* ---- section title ---- */
+.sec-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.sec-num {
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #fff;
+    flex-shrink: 0;
+}
+.sec-num.green  { background: linear-gradient(135deg, #059669, #10B981); }
+.sec-num.red    { background: linear-gradient(135deg, #E11D48, #F43F5E); }
+.sec-num.blue   { background: linear-gradient(135deg, #2563EB, #3B82F6); }
+.sec-num.purple { background: linear-gradient(135deg, #7C3AED, #8B5CF6); }
+.sec-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1C1917;
+}
+
+/* ---- stat cards ---- */
+.stat-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.stat-card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #E7E5E4;
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.stat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.stat-card:nth-child(1)::before { background: #D97706; }
+.stat-card:nth-child(2)::before { background: #E11D48; }
+.stat-card:nth-child(3)::before { background: #E11D48; }
+.stat-card:nth-child(4)::before { background: #2563EB; }
+.stat-num { font-size: 26px; font-weight: 800; line-height: 1.2; }
+.stat-num.amber  { color: #D97706; }
+.stat-num.rose   { color: #E11D48; }
+.stat-num.blue   { color: #2563EB; }
+.stat-unit { font-size: 11px; font-weight: 600; color: #78716C; margin-top: 2px; }
+
+/* ---- risk row ---- */
+.risk-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.risk-box {
+    flex: 1;
+    background: #FFF1F2;
+    border: 1px solid rgba(225,29,72,.15);
+    border-radius: 14px;
+    padding: 14px 16px;
+}
+.risk-head {
+    font-size: 14px;
+    font-weight: 700;
+    color: #E11D48;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.risk-box ul {
+    list-style: none;
+    font-size: 12px;
+    color: #44403C;
+}
+.risk-box li {
+    padding: 2px 0 2px 14px;
+    position: relative;
+}
+.risk-box li::before {
+    content: '';
+    position: absolute; left: 0; top: 9px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #E11D48;
+}
+
+/* ---- compare table ---- */
+.cmp-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #E7E5E4;
+    background: #fff;
+}
+.cmp-table th, .cmp-table td {
+    padding: 10px 14px;
+    font-size: 12.5px;
+    text-align: center;
+    border-bottom: 1px solid #F5F5F4;
+}
+.cmp-table thead th {
+    padding: 12px 14px;
+    font-weight: 700;
+    font-size: 13px;
+    border-bottom: 2px solid #E7E5E4;
+}
+.cmp-table thead th:first-child {
+    background: #FAFAF9;
+    text-align: left;
+    color: #78716C;
+    width: 90px;
+}
+.cmp-table thead th.col-a {
+    background: #FAFAF9;
+    color: #78716C;
+}
+.cmp-table thead th.col-b {
+    background: #FFFBEB;
+    color: #D97706;
+}
+.cmp-table thead th.col-c {
+    background: linear-gradient(135deg, #ECFDF5, #EFF6FF);
+    color: #059669;
+    position: relative;
+}
+.cmp-table tbody td:first-child {
+    text-align: left;
+    font-weight: 600;
+    color: #57534E;
+    background: #FAFAF9;
+}
+.cmp-table tbody td.col-a { color: #78716C; }
+.cmp-table tbody td.col-b { color: #92400E; }
+.cmp-table tbody td.col-c {
+    background: rgba(5,150,105,.04);
+    color: #059669;
+    font-weight: 600;
+}
+.cmp-table tbody tr:last-child td { border-bottom: none; }
+.cmp-table tbody tr:hover td { background: rgba(5,150,105,.03); }
+.cmp-table tbody tr:hover td:first-child { background: #F5F5F4; }
+
+.tag-sm {
+    display: inline-flex;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.tag-sm.g { background: rgba(5,150,105,.12); color: #059669; }
+.tag-sm.r { background: rgba(225,29,72,.1); color: #E11D48; }
+.tag-sm.a { background: rgba(217,119,6,.1); color: #D97706; }
+.badge-rec {
+    display: inline-flex;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 700;
+    background: #059669;
+    color: #fff;
+    margin-left: 4px;
+}
+
+/* ---- arch + advantages ---- */
+.bottom-row {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+    min-height: 0;
+}
+
+.arch-col {
+    width: 440px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.arch-card {
+    background: #fff;
+    border: 1px solid #E7E5E4;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.arch-layer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+}
+.arch-layer + .arch-layer { border-top: 1px dashed #E7E5E4; }
+.arch-icon {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 800; color: #fff;
+    flex-shrink: 0;
+}
+.arch-icon.i1 { background: linear-gradient(135deg, #2563EB, #3B82F6); }
+.arch-icon.i2 { background: linear-gradient(135deg, #059669, #10B981); }
+.arch-icon.i3 { background: linear-gradient(135deg, #7C3AED, #8B5CF6); }
+.arch-title { font-size: 13px; font-weight: 700; color: #1C1917; }
+.arch-desc  { font-size: 11px; color: #78716C; margin-top: 1px; }
+
+/* skill ecosystem */
+.skill-card {
+    background: #fff;
+    border: 1px solid #E7E5E4;
+    border-radius: 14px;
+    padding: 14px 16px;
+    flex: 1;
+}
+.skill-layer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+}
+.skill-layer + .skill-layer { border-top: 1px dashed #F5F5F4; }
+.skill-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.skill-dot.s1 { background: #059669; }
+.skill-dot.s2 { background: #2563EB; }
+.skill-dot.s3 { background: #7C3AED; }
+.skill-name { font-size: 12px; font-weight: 600; color: #1C1917; }
+.skill-desc { font-size: 11px; color: #78716C; }
+
+/* advantages */
+.adv-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.adv-card {
+    background: #fff;
+    border: 1px solid #E7E5E4;
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.adv-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+.adv-icon.gi { background: #F5F3FF; }
+.adv-icon.gc { background: #ECFDF5; }
+.adv-icon.gb { background: #EFF6FF; }
+.adv-icon.ga { background: #FFFBEB; }
+.adv-title { font-size: 13px; font-weight: 700; color: #1C1917; margin-bottom: 3px; }
+.adv-desc  { font-size: 11px; color: #57534E; line-height: 1.5; }
+
+/* ---- bottom decision ---- */
+.decision-bar {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-shrink: 0;
+}
+.decision-item {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #E7E5E4;
+    border-radius: 14px;
+    padding: 12px 14px;
+    text-align: center;
+}
+.decision-q { font-size: 11px; color: #78716C; margin-bottom: 4px; }
+.decision-a { font-size: 16px; font-weight: 800; color: #059669; }
+.decision-r { font-size: 10.5px; color: #A8A29E; margin-top: 3px; }
+
+/* arrow */
+.arrow-down {
+    text-align: center;
+    color: #A8A29E;
+    font-size: 18px;
+    margin: 4px 0;
+    flex-shrink: 0;
+}
+
+/* analogy bar */
+.analogy-bar {
+    background: #FFFBEB;
+    border: 1px solid rgba(217,119,6,.15);
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: #44403C;
+    margin-bottom: 16px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.analogy-bar strong { color: #1C1917; }
+.analogy-emoji { font-size: 16px; }
+
+/* footer */
+.footer {
+    text-align: center;
+    font-size: 10px;
+    color: #A8A29E;
+    margin-top: auto;
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+</style>
+</head>
+<body>
+<div class="white-border">
+<div class="outer">
+
+<!-- Header -->
+<div class="header">
+    <h1>全员养虾时代，我们怎么接</h1>
+    <div class="header-conclusion">📌 结论：统一建设，研发线主导，Code Agent 为核心，万擎平台为底座</div>
+</div>
+
+<!-- 1. 现状 -->
+<div class="sec-title">
+    <div class="sec-num green">1</div>
+    <div class="sec-label">现状：4个团队各自建设，资源分散</div>
+</div>
+<div class="stat-row">
+    <div class="stat-card">
+        <div class="stat-num amber">4+</div>
+        <div class="stat-unit">团队各自建设</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num rose">114亿</div>
+        <div class="stat-unit">日 Token 消耗</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num rose">~2.5万</div>
+        <div class="stat-unit">元/日成本</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-num blue">1.5万+</div>
+        <div class="stat-unit">用户群人数</div>
+    </div>
+</div>
+
+<!-- 2. 三大隐患 -->
+<div class="sec-title">
+    <div class="sec-num red">2</div>
+    <div class="sec-label">分散建设的三大隐患</div>
+</div>
+<div class="risk-row">
+    <div class="risk-box">
+        <div class="risk-head">🔒 安全失控</div>
+        <ul>
+            <li>各团队安全标准不一</li>
+            <li>Skill 审核机制缺失</li>
+            <li>数据泄露难以追溯</li>
+        </ul>
+    </div>
+    <div class="risk-box">
+        <div class="risk-head">🔑 权限割裂</div>
+        <ul>
+            <li>AI 无法继承用户权限</li>
+            <li>内部系统各自对接</li>
+            <li>"四处圈地"体验差</li>
+        </ul>
+    </div>
+    <div class="risk-box">
+        <div class="risk-head">💰 费用失控</div>
+        <ul>
+            <li>Token 消耗无法统一核算</li>
+            <li>固定模型，无法降本</li>
+            <li>分散采购，议价力弱</li>
+        </ul>
+    </div>
+</div>
+
+<!-- 3. 方案对比 -->
+<div class="sec-title">
+    <div class="sec-num blue">3</div>
+    <div class="sec-label">三种方案对比</div>
+</div>
+<div class="analogy-bar">
+    <span class="analogy-emoji">💡</span>
+    <span>方案A = 各部门用自己的 Excel 记账 · 方案B = 选某个模板统一用 · <strong>方案C = 上专业 ERP 系统</strong></span>
+</div>
+<table class="cmp-table">
+    <thead>
+        <tr>
+            <th>对比维度</th>
+            <th class="col-a">❌ 方案A：维持现状</th>
+            <th class="col-b">⚠️ 方案B：选一个产品统一</th>
+            <th class="col-c">✅ 方案C：研发线统一建设 <span class="badge-rec">推荐</span></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>安全保障</td>
+            <td class="col-a"><span class="tag-sm r">各自把控</span></td>
+            <td class="col-b"><span class="tag-sm a">取决于产品</span></td>
+            <td class="col-c"><span class="tag-sm g">万擎统一保障</span></td>
+        </tr>
+        <tr>
+            <td>成本优化</td>
+            <td class="col-a"><span class="tag-sm r">无法优化</span></td>
+            <td class="col-b"><span class="tag-sm a">有限优化</span></td>
+            <td class="col-c"><span class="tag-sm g">智能路由降本</span></td>
+        </tr>
+        <tr>
+            <td>Agent 能力</td>
+            <td class="col-a">参差不齐</td>
+            <td class="col-b">受限于天花板</td>
+            <td class="col-c" style="font-weight:700;">Code Agent 无上限</td>
+        </tr>
+        <tr>
+            <td>扩展性</td>
+            <td class="col-a">各自为政</td>
+            <td class="col-b">依赖人工开发</td>
+            <td class="col-c"><span class="tag-sm g">编程扩展一切</span></td>
+        </tr>
+        <tr>
+            <td>Skill 生态</td>
+            <td class="col-a">碎片化</td>
+            <td class="col-b">单一平台</td>
+            <td class="col-c"><span class="tag-sm g">三层生态</span></td>
+        </tr>
+        <tr>
+            <td>长期风险</td>
+            <td class="col-a"><span class="tag-sm r">不可控</span></td>
+            <td class="col-b"><span class="tag-sm a">能力受限</span></td>
+            <td class="col-c"><span class="tag-sm g">体系最完整</span></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- 4. 架构 + 优势 -->
+<div class="sec-title">
+    <div class="sec-num purple">4</div>
+    <div class="sec-label">推荐方案：三层架构 + 五大优势</div>
+</div>
+<div class="bottom-row">
+    <!-- 左列：架构 + Skill生态 -->
+    <div class="arch-col">
+        <div class="arch-card">
+            <div class="arch-layer" style="background:#EFF6FF;">
+                <div class="arch-icon i1">1</div>
+                <div>
+                    <div class="arch-title">入口层：云端 + 端侧</div>
+                    <div class="arch-desc">Kim 侧边栏 · KIM 机器人 · 本地客户端</div>
+                </div>
+            </div>
+            <div class="arch-layer" style="background:#ECFDF5;">
+                <div class="arch-icon i2">2</div>
+                <div>
+                    <div class="arch-title">核心层：Code Agent 运行时</div>
+                    <div class="arch-desc">代码生成/理解/修复 · 统一 Skill 市场</div>
+                </div>
+            </div>
+            <div class="arch-layer" style="background:#F5F3FF;">
+                <div class="arch-icon i3">3</div>
+                <div>
+                    <div class="arch-title">基础层：万擎平台（MAAS）</div>
+                    <div class="arch-desc">模型调用 · 智能路由 · 安全保障</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skill 生态 -->
+        <div class="skill-card">
+            <div style="font-size:13px; font-weight:700; color:#1C1917; margin-bottom:8px;">🏪 三层 Skill & 知识生态</div>
+            <div style="font-size:11px; color:#78716C; margin-bottom:8px;">Agent = 操作系统，Skill = AI 时代的 App</div>
+            <div class="skill-layer">
+                <div class="skill-dot s1"></div>
+                <div>
+                    <div class="skill-name">公司级（默认生效）</div>
+                    <div class="skill-desc">评测驱动，人人用上最优方案</div>
+                </div>
+            </div>
+            <div class="skill-layer">
+                <div class="skill-dot s2"></div>
+                <div>
+                    <div class="skill-name">业务级（合作共建）</div>
+                    <div class="skill-desc">研发线与业务线共建专属 Skill</div>
+                </div>
+            </div>
+            <div class="skill-layer">
+                <div class="skill-dot s3"></div>
+                <div>
+                    <div class="skill-name">个人级（开放生态）</div>
+                    <div class="skill-desc">每个人都可以建自己的 Skill</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 右列：五大优势 -->
+    <div class="adv-col">
+        <div class="adv-card">
+            <div class="adv-icon gi">⚙️</div>
+            <div>
+                <div class="adv-title">万擎平台（MAAS）</div>
+                <div class="adv-desc">底层模型调用、算力资源、安全保障，一站式基础设施支撑</div>
+            </div>
+        </div>
+        <div class="adv-card">
+            <div class="adv-icon gc">🧠</div>
+            <div>
+                <div class="adv-title">Code Agent 最强能力</div>
+                <div class="adv-desc">能力无上限，缺什么写代码补。普通Agent=计算器，Code Agent=会编程的人</div>
+            </div>
+        </div>
+        <div class="adv-card">
+            <div class="adv-icon gb">📊</div>
+            <div>
+                <div class="adv-title">智能路由降成本</div>
+                <div class="adv-desc">按任务复杂度选模型：复杂→旗舰模型，简单→轻量模型，持续优化</div>
+            </div>
+        </div>
+        <div class="adv-card">
+            <div class="adv-icon ga">🏪</div>
+            <div>
+                <div class="adv-title">三层 Skill 生态</div>
+                <div class="adv-desc">公司级默认最优 + 业务级合作共建 + 个人级开放生态，评测驱动持续进化</div>
+            </div>
+        </div>
+        <div class="adv-card">
+            <div class="adv-icon gc">🔒</div>
+            <div>
+                <div class="adv-title">安全保障最可靠</div>
+                <div class="adv-desc">统一安全基线 + 租户级数据隔离 + Skill 审核 + 审计追溯，一处管控全局</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 决策矩阵 -->
+<div class="decision-bar">
+    <div class="decision-item">
+        <div class="decision-q">是否统一建设？</div>
+        <div class="decision-a">✅ 是</div>
+        <div class="decision-r">安全/成本/体验不可控</div>
+    </div>
+    <div class="decision-item">
+        <div class="decision-q">谁来主导？</div>
+        <div class="decision-a">研发线</div>
+        <div class="decision-r">万擎 + Code Agent 全栈</div>
+    </div>
+    <div class="decision-item">
+        <div class="decision-q">产品形态？</div>
+        <div class="decision-a">云端 + 端侧</div>
+        <div class="decision-r">Kim侧边栏 + KIM机器人 + 本地客户端</div>
+    </div>
+    <div class="decision-item">
+        <div class="decision-q">核心架构？</div>
+        <div class="decision-a">Code Agent</div>
+        <div class="decision-r">能力无上限，编程扩展一切</div>
+    </div>
+</div>
+
+<div class="footer">研发线 · 研发效能中心 · 2026年3月</div>
+
+</div>
+</div>
+</body>
+</html>

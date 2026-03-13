@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T09:49:44.335653",
+  "generatedAt": "2026-03-13T09:58:01.641727",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -36,7 +36,7 @@
       },
       "activeSkills": 47,
       "highLevelSkills": 47,
-      "skillTotalValue": 5035.0,
+      "skillTotalValue": 5036.8,
       "cultivationExp": 0,
       "baseExp": 420950,
       "expBreakdown": {
@@ -186,6 +186,60 @@
             "cfProject": false
           },
           {
+            "name": "find-skills",
+            "displayName": "技能发现",
+            "shortName": "发现",
+            "source": "AI核心能力",
+            "level": 4,
+            "exp": 69,
+            "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
+            "lastUpdated": "2026-03-10",
+            "callCount": 18,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 6376,
+            "skillSizeLabel": "6K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "skill-evaluator",
+            "displayName": "技能评估",
+            "shortName": "评估",
+            "source": "平台预装技能",
+            "level": 3,
+            "exp": 64,
+            "description": "Comprehensive skill quality evaluation and management. Use when \"检查技能健康度\", \"优化技能库\", \"评估技能质量\", \"skill health check\", \"skill optimization\", or reviewing skill quality. Includes automated validation, bat",
+            "lastUpdated": "2026-03-13",
+            "callCount": 1,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "平台预装",
+            "skillSize": 62465,
+            "skillSizeLabel": "62K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "skill-creator",
+            "displayName": "技能创建",
+            "shortName": "创建",
+            "source": "AI核心能力",
+            "level": 3,
+            "exp": 62,
+            "description": "技能创建器。创建新技能、修改现有技能、运行评估测试和性能基准",
+            "lastUpdated": "2026-03-12",
+            "callCount": 1,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 172528,
+            "skillSizeLabel": "172K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
             "name": "xixingdafa",
             "displayName": "吸星大法",
             "shortName": "吸星大法",
@@ -222,8 +276,8 @@
             "cfProject": false
           }
         ],
-        "count": 9,
-        "avgLevel": 3.6
+        "count": 12,
+        "avgLevel": 3.5
       },
       "🧠 思维方法": {
         "role": "cognitive",
@@ -424,42 +478,6 @@
             "cfProject": false
           },
           {
-            "name": "find-skills",
-            "displayName": "技能发现",
-            "shortName": "发现",
-            "source": "AI核心能力",
-            "level": 4,
-            "exp": 69,
-            "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
-            "lastUpdated": "2026-03-10",
-            "callCount": 18,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 6376,
-            "skillSizeLabel": "6K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "skill-evaluator",
-            "displayName": "技能评估",
-            "shortName": "评估",
-            "source": "平台预装技能",
-            "level": 3,
-            "exp": 64,
-            "description": "Comprehensive skill quality evaluation and management. Use when \"检查技能健康度\", \"优化技能库\", \"评估技能质量\", \"skill health check\", \"skill optimization\", or reviewing skill quality. Includes automated validation, bat",
-            "lastUpdated": "2026-03-13",
-            "callCount": 1,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "平台预装",
-            "skillSize": 62465,
-            "skillSizeLabel": "62K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
             "name": "debug-pro",
             "displayName": "调试专家",
             "shortName": "调试",
@@ -496,8 +514,8 @@
             "cfProject": false
           }
         ],
-        "count": 7,
-        "avgLevel": 3.3
+        "count": 5,
+        "avgLevel": 3.2
       },
       "AI领域洞察": {
         "role": "ai-insight",
@@ -519,8 +537,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 124345,
-            "skillSizeLabel": "124K字 · 巨型",
+            "skillSize": 126379,
+            "skillSizeLabel": "126K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1161,8 +1179,8 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 157871,
-            "skillSizeLabel": "157K字 · 巨型",
+            "skillSize": 158318,
+            "skillSizeLabel": "158K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1443,33 +1461,6 @@
         ],
         "count": 9,
         "avgLevel": 1.2
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "layer": "execution",
-        "skills": [
-          {
-            "name": "skill-creator",
-            "displayName": "技能创建",
-            "shortName": "创建",
-            "source": "AI核心能力",
-            "level": 3,
-            "exp": 62,
-            "description": "技能创建器。创建新技能、修改现有技能、运行评估测试和性能基准",
-            "lastUpdated": "2026-03-12",
-            "callCount": 1,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 172528,
-            "skillSizeLabel": "172K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false
-          }
-        ],
-        "count": 1,
-        "avgLevel": 3.0
       }
     },
     "tree": {
@@ -1612,6 +1603,60 @@
                 "cfProject": false
               },
               {
+                "name": "find-skills",
+                "displayName": "技能发现",
+                "shortName": "发现",
+                "source": "AI核心能力",
+                "level": 4,
+                "exp": 69,
+                "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
+                "lastUpdated": "2026-03-10",
+                "callCount": 18,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 6376,
+                "skillSizeLabel": "6K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "skill-evaluator",
+                "displayName": "技能评估",
+                "shortName": "评估",
+                "source": "平台预装技能",
+                "level": 3,
+                "exp": 64,
+                "description": "Comprehensive skill quality evaluation and management. Use when \"检查技能健康度\", \"优化技能库\", \"评估技能质量\", \"skill health check\", \"skill optimization\", or reviewing skill quality. Includes automated validation, bat",
+                "lastUpdated": "2026-03-13",
+                "callCount": 1,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "平台预装",
+                "skillSize": 62465,
+                "skillSizeLabel": "62K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "skill-creator",
+                "displayName": "技能创建",
+                "shortName": "创建",
+                "source": "AI核心能力",
+                "level": 3,
+                "exp": 62,
+                "description": "技能创建器。创建新技能、修改现有技能、运行评估测试和性能基准",
+                "lastUpdated": "2026-03-12",
+                "callCount": 1,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 172528,
+                "skillSizeLabel": "172K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
                 "name": "xixingdafa",
                 "displayName": "吸星大法",
                 "shortName": "吸星大法",
@@ -1648,8 +1693,8 @@
                 "cfProject": false
               }
             ],
-            "count": 9,
-            "avgLevel": 3.6
+            "count": 12,
+            "avgLevel": 3.5
           },
           "🧠 思维方法": {
             "role": "cognitive",
@@ -1848,42 +1893,6 @@
                 "cfProject": false
               },
               {
-                "name": "find-skills",
-                "displayName": "技能发现",
-                "shortName": "发现",
-                "source": "AI核心能力",
-                "level": 4,
-                "exp": 69,
-                "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
-                "lastUpdated": "2026-03-10",
-                "callCount": 18,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 6376,
-                "skillSizeLabel": "6K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "skill-evaluator",
-                "displayName": "技能评估",
-                "shortName": "评估",
-                "source": "平台预装技能",
-                "level": 3,
-                "exp": 64,
-                "description": "Comprehensive skill quality evaluation and management. Use when \"检查技能健康度\", \"优化技能库\", \"评估技能质量\", \"skill health check\", \"skill optimization\", or reviewing skill quality. Includes automated validation, bat",
-                "lastUpdated": "2026-03-13",
-                "callCount": 1,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "平台预装",
-                "skillSize": 62465,
-                "skillSizeLabel": "62K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
                 "name": "debug-pro",
                 "displayName": "调试专家",
                 "shortName": "调试",
@@ -1920,11 +1929,11 @@
                 "cfProject": false
               }
             ],
-            "count": 7,
-            "avgLevel": 3.3
+            "count": 5,
+            "avgLevel": 3.2
           }
         },
-        "count": 23,
+        "count": 24,
         "avgLevel": 3.3
       },
       "domain_pack": {
@@ -1952,8 +1961,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 124345,
-                "skillSizeLabel": "124K字 · 巨型",
+                "skillSize": 126379,
+                "skillSizeLabel": "126K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -2598,8 +2607,8 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 157871,
-                "skillSizeLabel": "157K字 · 巨型",
+                "skillSize": 158318,
+                "skillSizeLabel": "158K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -2878,36 +2887,9 @@
             ],
             "count": 9,
             "avgLevel": 1.2
-          },
-          "其他技能": {
-            "icon": "📦",
-            "color": "#64748b",
-            "layer": "execution",
-            "skills": [
-              {
-                "name": "skill-creator",
-                "displayName": "技能创建",
-                "shortName": "创建",
-                "source": "AI核心能力",
-                "level": 3,
-                "exp": 62,
-                "description": "技能创建器。创建新技能、修改现有技能、运行评估测试和性能基准",
-                "lastUpdated": "2026-03-12",
-                "callCount": 1,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 172528,
-                "skillSizeLabel": "172K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false
-              }
-            ],
-            "count": 1,
-            "avgLevel": 3.0
           }
         },
-        "count": 44,
+        "count": 43,
         "avgLevel": 2.9
       }
     },
@@ -2948,6 +2930,24 @@
           "to": "knowledge-curator",
           "label": "深度优化",
           "type": "delegate"
+        },
+        {
+          "from": "daily-reflection-evolution",
+          "to": "find-skills",
+          "label": "招式学习",
+          "type": "call"
+        },
+        {
+          "from": "find-skills",
+          "to": "skill-creator",
+          "label": "创建/优化",
+          "type": "delegate"
+        },
+        {
+          "from": "skill-creator",
+          "to": "skill-evaluator",
+          "label": "质量评估",
+          "type": "delegate"
         }
       ],
       "engine_roles": {
@@ -2978,6 +2978,18 @@
         "knowledge-curator": {
           "role": "深度工具",
           "tier": "tool"
+        },
+        "find-skills": {
+          "role": "技能发现",
+          "tier": "technique"
+        },
+        "skill-creator": {
+          "role": "技能创建",
+          "tier": "technique"
+        },
+        "skill-evaluator": {
+          "role": "技能评估",
+          "tier": "technique"
         }
       },
       "loops": [

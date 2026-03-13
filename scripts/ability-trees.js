@@ -162,11 +162,15 @@ function renderSkillTechTree(container, skills) {
     var coreSkill = engineSkillMap['daily-reflection-evolution'];
     var reviewSkill = engineSkillMap['learn-from-mistakes'];
     var cultivateSkill = engineSkillMap['neigong-cultivation'];
-    var metaExecSkill = engineSkillMap['meta-execution'];
     var toolNames = ['memory-hygiene', 'skill-management', 'knowledge-curator'];
     var toolSkills = [];
     for (var t = 0; t < toolNames.length; t++) {
         if (engineSkillMap[toolNames[t]]) toolSkills.push(engineSkillMap[toolNames[t]]);
+    }
+    var techniqueNames = ['find-skills', 'skill-creator', 'skill-evaluator'];
+    var techniqueSkills = [];
+    for (var tt = 0; tt < techniqueNames.length; tt++) {
+        if (engineSkillMap[techniqueNames[tt]]) techniqueSkills.push(engineSkillMap[techniqueNames[tt]]);
     }
     
     // === 引擎区域 ===
@@ -178,7 +182,6 @@ function renderSkillTechTree(container, skills) {
         var coreNode = createEngineNode(coreSkill, '每日驱动', 'core');
         var reviewNode = reviewSkill ? createEngineNode(reviewSkill, '即时复盘', 'core') : '';
         var cultivateNode = cultivateSkill ? createEngineNode(cultivateSkill, '深度修炼', 'core') : '';
-        var metaExecNode = metaExecSkill ? createEngineNode(metaExecSkill, '质量保障', 'core') : '';
         var toolNodes = '';
         for (var ti = 0; ti < toolSkills.length; ti++) {
             var r = engineRoles[toolSkills[ti].name];
@@ -209,11 +212,11 @@ function renderSkillTechTree(container, skills) {
                     '<div class="engine-core-branches">' +
                         '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">复盘</span></div>' + reviewNode + '</div>' +
                         '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">修炼</span></div>' + cultivateNode + '</div>' +
-                        '<div class="engine-branch"><div class="branch-connector"><span class="branch-label">保障</span></div>' + metaExecNode + '</div>' +
                     '</div>' +
                 '</div>' +
                 '<div class="engine-feedback-line"><span class="feedback-label">P2 反馈</span></div>' +
                 '<div class="engine-tier engine-tier--tools"><div class="engine-tools-connector"><span class="tools-connector-label">基座工具</span></div><div class="engine-tools-grid">' + toolNodes + '</div></div>' +
+                (techniqueSkills.length > 0 ? '<div class="engine-tier engine-tier--tools" style="margin-top:6px;"><div class="engine-tools-connector"><span class="tools-connector-label">技能学习和提升</span></div><div class="engine-tools-grid">' + (function(){ var tn=''; for(var ti2=0;ti2<techniqueSkills.length;ti2++){var r2=engineRoles[techniqueSkills[ti2].name]; tn+=createEngineNode(techniqueSkills[ti2],(r2&&r2.role)||'招式','technique');} return tn; })() + '</div></div>' : '') +
             '</div>' +
             loopsHtml +
         '</div>';

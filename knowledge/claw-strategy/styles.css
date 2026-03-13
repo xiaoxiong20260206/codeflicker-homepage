@@ -1219,6 +1219,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     border: 2px solid rgba(5,150,105,.25); border-radius: 20px;
     padding: 0; margin-top: 16px; margin-bottom: 16px;
     box-shadow: 0 2px 12px rgba(5,150,105,.08);
+    position: relative;
+    z-index: 10;
 }
 .arch-storage-hd {
     font-size: 15px; font-weight: 800; color: #fff;

@@ -984,6 +984,122 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     gap: 8px;
 }
 
+/* horizontal row layout for touchpoint / skills / services */
+.arch-mods-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.arch-mods-row .arch-mod-mini {
+    flex: 1 1 0;
+    min-width: 90px;
+    text-align: center;
+}
+.arch-mods-row .arch-mod-mini .arch-mod-nm {
+    justify-content: center;
+    font-size: 13px;
+    gap: 4px;
+    margin-bottom: 2px;
+}
+.arch-mods-row .arch-mod-mini .arch-mod-nm span { font-size: 14px; }
+.arch-mods-row .arch-mod-mini .arch-mod-ds {
+    font-size: 10px;
+    text-align: center;
+}
+
+/* 2x3 grid layout for AgentCore 6 components */
+.arch-mods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+.arch-mods-grid .arch-mod {
+    text-align: center;
+}
+.arch-mods-grid .arch-mod .arch-mod-nm {
+    justify-content: center;
+    font-size: 13px;
+    gap: 4px;
+    margin-bottom: 2px;
+}
+.arch-mods-grid .arch-mod .arch-mod-nm span { font-size: 15px; }
+.arch-mods-grid .arch-mod .arch-mod-ds {
+    font-size: 10px;
+    text-align: center;
+    color: var(--ink-4);
+}
+
+/* AgentCore special container */
+.arch-lv-agentcore {
+    border-left-width: 5px;
+    position: relative;
+    background: linear-gradient(135deg, #ECFDF5 0%, #fff 100%);
+}
+
+/* self-evolution engine bar */
+.arch-evolution {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: linear-gradient(135deg, var(--emerald) 0%, #10B981 50%, #059669 100%);
+    border-radius: var(--r-md);
+    cursor: pointer;
+    position: relative;
+    transition: all .25s cubic-bezier(.4,0,.2,1);
+    animation: pulse-glow 3s infinite;
+}
+.arch-evolution:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5,150,105,.3);
+}
+.arch-evolution-icon { font-size: 22px; flex-shrink: 0; }
+.arch-evolution-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: .02em;
+}
+.arch-evolution-desc {
+    font-size: 10px;
+    color: rgba(255,255,255,.85);
+    margin-top: 1px;
+}
+
+/* evolution tooltip: inherit from arch-tip but special positioning */
+.arch-evolution .arch-tip {
+    display: none;
+    position: absolute;
+    z-index: 50;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 360px;
+    max-width: 90vw;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,.15), 0 4px 12px rgba(0,0,0,.06);
+    pointer-events: none;
+}
+.arch-evolution .arch-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    border: 7px solid transparent;
+    border-top-color: #fff;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.08));
+}
+.arch-evolution:hover .arch-tip { display: block; }
+.arch-evolution .arch-tip .arch-tip-hd {
+    background: var(--emerald);
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
 .arch-mod {
     background: linear-gradient(135deg, #FAFAF9 0%, #fff 100%);
     border: 1px solid var(--border);
@@ -1201,6 +1317,18 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 }
 .arch-lane:first-child .arch-mod .arch-tip::after {
     left: 30px;
+}
+/* left lane row items: center tooltip */
+.arch-lane:first-child .arch-mods-row .arch-mod .arch-tip,
+.arch-lane:first-child .arch-mods-grid .arch-mod .arch-tip {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+}
+.arch-lane:first-child .arch-mods-row .arch-mod .arch-tip::after,
+.arch-lane:first-child .arch-mods-grid .arch-mod .arch-tip::after {
+    left: 50%;
+    transform: translateX(-50%);
 }
 /* tooltip position: right lane → align right */
 .arch-lane:last-child .arch-mod .arch-tip {

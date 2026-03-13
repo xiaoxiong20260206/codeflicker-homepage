@@ -433,7 +433,7 @@
 }
 
 /* --- R&D Efficiency Coming Soon --- */
-.rd-coming-soon {
+.rd-coming-soon.active {
   display: flex;
   align-items: center;
   justify-content: center;

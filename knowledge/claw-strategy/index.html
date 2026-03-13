@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=36">
+<link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
 
@@ -969,13 +969,91 @@
                     <div class="agent-sub-layer">
                         <div class="agent-sub-label">🎯 场景层</div>
                         <div class="scene-tags">
-                            <span class="scene-tag" data-n="p-scene-dev">💻 开发</span>
-                            <span class="scene-tag" data-n="p-scene-office">📋 办公</span>
-                            <span class="scene-tag" data-n="p-scene-doc">📄 文档</span>
-                            <span class="scene-tag" data-n="p-scene-research">🔍 调研</span>
-                            <span class="scene-tag" data-n="p-scene-ops">📊 运营</span>
-                            <span class="scene-tag" data-n="p-scene-cs">🎧 客服</span>
-                            <span class="scene-tag" data-n="p-scene-data">📈 数据</span>
+                            <span class="scene-tag" data-n="p-scene-dev">💻 开发
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">💻 开发场景</div>
+                                    <ul>
+                                        <li>代码生成 / 智能补全</li>
+                                        <li>Code Review · 代码审查</li>
+                                        <li>Bug 定位 · 修复建议</li>
+                                        <li>架构设计 · 重构优化</li>
+                                        <li>单元测试 · 自动化测试</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
+                            <span class="scene-tag" data-n="p-scene-office">📋 办公
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">📋 办公场景</div>
+                                    <ul>
+                                        <li>日报 / 周报撰写</li>
+                                        <li>会议纪要 · 总结提炼</li>
+                                        <li>邮件撰写 · 翻译</li>
+                                        <li>PPT / 汇报材料</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
+                            <span class="scene-tag" data-n="p-scene-doc">📄 文档
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">📄 文档场景</div>
+                                    <ul>
+                                        <li>技术文档 · API 文档</li>
+                                        <li>需求文档 · PRD</li>
+                                        <li>知识库维护 · 整理</li>
+                                        <li>文档翻译 · 格式转换</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
+                            <span class="scene-tag" data-n="p-scene-research">🔍 调研
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">🔍 调研场景</div>
+                                    <ul>
+                                        <li>竞品分析 · 产品对比</li>
+                                        <li>技术选型 · 方案评估</li>
+                                        <li>行业趋势 · 信息收集</li>
+                                        <li>用户调研 · 数据洞察</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
+                            <span class="scene-tag" data-n="p-scene-ops">📊 运营
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">📊 运营场景</div>
+                                    <ul>
+                                        <li>活动策划 · 方案输出</li>
+                                        <li>内容审核 · 合规检查</li>
+                                        <li>用户增长 · 策略分析</li>
+                                        <li>渠道管理 · 效果评估</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
+                            <span class="scene-tag" data-n="p-scene-cs">🎧 客服
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">🎧 客服场景</div>
+                                    <ul>
+                                        <li>智能问答 · 自动回复</li>
+                                        <li>工单处理 · 分类流转</li>
+                                        <li>话术推荐 · 知识辅助</li>
+                                        <li>情感分析 · 满意度监控</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
+                            <span class="scene-tag" data-n="p-scene-data">📈 数据
+                                <div class="scene-tip">
+                                    <div class="scene-tip-title">📈 数据场景</div>
+                                    <ul>
+                                        <li>SQL 生成 · 数据查询</li>
+                                        <li>报表生成 · 自动化</li>
+                                        <li>数据清洗 · ETL</li>
+                                        <li>可视化 · 看板搭建</li>
+                                        <li class="more">…</li>
+                                    </ul>
+                                </div>
+                            </span>
                             <span class="scene-tag" data-n="p-scene-more">⋯ 更多</span>
                         </div>
                     </div>
@@ -1535,9 +1613,9 @@ window.addEventListener('resize', (() => {
 
 /* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {
-    const mod = e.target.closest('.arch-mod, .arch-evolution, .cloud-agent-bar, .eco-infra-card');
+    const mod = e.target.closest('.arch-mod, .arch-evolution, .cloud-agent-bar, .scene-tag, .eco-infra-card');
     if (!mod) return;
-    const tip = mod.querySelector('.arch-tip');
+    const tip = mod.querySelector('.arch-tip') || mod.querySelector('.scene-tip');
     if (!tip) return;
     // Reset positioning
     tip.style.left = ''; tip.style.right = ''; tip.style.transform = '';

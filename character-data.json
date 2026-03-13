@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T10:29:03.560583",
+  "generatedAt": "2026-03-13T11:17:05.941959",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 420950,
-    "expProgress": 2.3,
+    "totalExp": 421450,
+    "expProgress": 3.5,
     "currentThreshold": 420009,
     "nextThreshold": 461426,
     "stats": {
-      "understanding": 85.2,
+      "understanding": 85.7,
       "execution": 81.7,
       "skillDepth": 93.0,
       "thinkingDepth": 66.8,
@@ -38,9 +38,9 @@
       "highLevelSkills": 47,
       "skillTotalValue": 5036.8,
       "cultivationExp": 0,
-      "baseExp": 420950,
+      "baseExp": 421450,
       "expBreakdown": {
-        "understanding": 85200,
+        "understanding": 85700,
         "execution": 81700,
         "skill": 139500,
         "thinking": 53439,
@@ -62,7 +62,6 @@
           {
             "name": "daily-reflection-evolution",
             "displayName": "自进化",
-            "shortName": "自进化",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -80,7 +79,6 @@
           {
             "name": "learn-from-mistakes",
             "displayName": "举一反三",
-            "shortName": "举一反三",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -98,7 +96,6 @@
           {
             "name": "neigong-cultivation",
             "displayName": "内功修炼",
-            "shortName": "内功修炼",
             "source": "AI核心能力",
             "level": 4,
             "exp": 82,
@@ -116,7 +113,6 @@
           {
             "name": "xiaowuxianggong",
             "displayName": "小无相功",
-            "shortName": "小无相功",
             "source": "AI核心能力",
             "level": 4,
             "exp": 81,
@@ -134,7 +130,6 @@
           {
             "name": "memory-hygiene",
             "displayName": "记忆优化",
-            "shortName": "记忆优化",
             "source": "AI核心能力",
             "level": 4,
             "exp": 79,
@@ -152,7 +147,6 @@
           {
             "name": "knowledge-curator",
             "displayName": "知识优化",
-            "shortName": "知识优化",
             "source": "AI核心能力",
             "level": 4,
             "exp": 72,
@@ -170,7 +164,6 @@
           {
             "name": "skill-management",
             "displayName": "技能优化",
-            "shortName": "技能优化",
             "source": "AI核心能力",
             "level": 4,
             "exp": 69,
@@ -180,7 +173,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 22390,
+            "skillSize": 22268,
             "skillSizeLabel": "22K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -188,7 +181,6 @@
           {
             "name": "find-skills",
             "displayName": "技能发现",
-            "shortName": "发现",
             "source": "AI核心能力",
             "level": 4,
             "exp": 69,
@@ -206,11 +198,10 @@
           {
             "name": "skill-evaluator",
             "displayName": "技能评估",
-            "shortName": "评估",
             "source": "平台预装技能",
             "level": 3,
             "exp": 64,
-            "description": "Comprehensive skill quality evaluation and management. Use when \"检查技能健康度\", \"优化技能库\", \"评估技能质量\", \"skill health check\", \"skill optimization\", or reviewing skill quality. Includes automated validation, bat",
+            "description": "技能质量评估。自动化验证、批量扫描、优化工作流和效果对比，按最佳实践评估技能质量",
             "lastUpdated": "2026-03-13",
             "callCount": 1,
             "frequency": "1次/月",
@@ -224,7 +215,6 @@
           {
             "name": "skill-creator",
             "displayName": "技能创建",
-            "shortName": "创建",
             "source": "AI核心能力",
             "level": 3,
             "exp": 62,
@@ -242,7 +232,6 @@
           {
             "name": "xixingdafa",
             "displayName": "吸星大法",
-            "shortName": "吸星大法",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -260,7 +249,6 @@
           {
             "name": "beiming-shengong",
             "displayName": "北冥神功",
-            "shortName": "北冥神功",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -289,7 +277,6 @@
           {
             "name": "product-thinking",
             "displayName": "产品思维",
-            "shortName": "产品思维",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -307,7 +294,6 @@
           {
             "name": "frontend-design",
             "displayName": "前端设计",
-            "shortName": "前端",
             "source": "平台预装技能",
             "level": 5,
             "exp": 100,
@@ -325,7 +311,6 @@
           {
             "name": "essence-insight",
             "displayName": "本质洞察",
-            "shortName": "本质洞察",
             "source": "AI核心能力",
             "level": 4,
             "exp": 75,
@@ -343,7 +328,6 @@
           {
             "name": "knowledge-acquisition-meta",
             "displayName": "知识习得",
-            "shortName": "知识习得",
             "source": "AI核心能力",
             "level": 4,
             "exp": 72,
@@ -361,7 +345,6 @@
           {
             "name": "critical-thinking-logical-reasoning",
             "displayName": "批判性思维",
-            "shortName": "批判",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -379,7 +362,6 @@
           {
             "name": "proactive-agent",
             "displayName": "主动Agent",
-            "shortName": "主动",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -397,7 +379,6 @@
           {
             "name": "agent-native-architecture",
             "displayName": "Agent架构",
-            "shortName": "架构",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -426,7 +407,6 @@
           {
             "name": "meta-execution",
             "displayName": "元执行",
-            "shortName": "元执行",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -444,7 +424,6 @@
           {
             "name": "knowledge-base",
             "displayName": "知识库",
-            "shortName": "知识库",
             "source": "AI核心能力",
             "level": 5,
             "exp": 91,
@@ -462,7 +441,6 @@
           {
             "name": "night-task-runner",
             "displayName": "夜间任务",
-            "shortName": "夜间任务",
             "source": "AI核心能力",
             "level": 4,
             "exp": 76,
@@ -480,7 +458,6 @@
           {
             "name": "debug-pro",
             "displayName": "调试专家",
-            "shortName": "调试",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -498,7 +475,6 @@
           {
             "name": "agent-capability-discovery",
             "displayName": "能力发现",
-            "shortName": "能力发现",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -527,7 +503,6 @@
           {
             "name": "ai-insight",
             "displayName": "AI洞察",
-            "shortName": "AI洞察",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -537,8 +512,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 126379,
-            "skillSizeLabel": "126K字 · 巨型",
+            "skillSize": 128816,
+            "skillSizeLabel": "128K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -556,7 +531,6 @@
           {
             "name": "stock-analysis",
             "displayName": "股票分析",
-            "shortName": "股票",
             "source": "平台预装技能",
             "level": 4,
             "exp": 79,
@@ -574,7 +548,6 @@
           {
             "name": "investment-tracker",
             "displayName": "投资追踪",
-            "shortName": "投资",
             "source": "AI核心能力",
             "level": 4,
             "exp": 78,
@@ -591,8 +564,7 @@
           },
           {
             "name": "investment-analyzer",
-            "displayName": "Analyzing Investments",
-            "shortName": "Anal",
+            "displayName": "投资分析",
             "source": "平台预装技能",
             "level": 3,
             "exp": 59,
@@ -621,7 +593,6 @@
           {
             "name": "industry-research",
             "displayName": "行业调研",
-            "shortName": "调研",
             "source": "AI核心能力",
             "level": 4,
             "exp": 69,
@@ -639,7 +610,6 @@
           {
             "name": "wechat-research",
             "displayName": "微信调研",
-            "shortName": "微信",
             "source": "AI核心能力",
             "level": 4,
             "exp": 67,
@@ -657,7 +627,6 @@
           {
             "name": "apify-competitor-intelligence",
             "displayName": "竞品分析",
-            "shortName": "竞品",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -675,7 +644,6 @@
           {
             "name": "apify-market-research",
             "displayName": "市场调研",
-            "shortName": "市场",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -693,7 +661,6 @@
           {
             "name": "apify-trend-analysis",
             "displayName": "趋势分析",
-            "shortName": "趋势",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -711,7 +678,6 @@
           {
             "name": "summarize",
             "displayName": "内容摘要",
-            "shortName": "摘要",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -740,7 +706,6 @@
           {
             "name": "pdf",
             "displayName": "PDF处理",
-            "shortName": "PDF",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -758,7 +723,6 @@
           {
             "name": "pptx",
             "displayName": "PPT处理",
-            "shortName": "PPT",
             "source": "AI核心能力",
             "level": 5,
             "exp": 86,
@@ -776,7 +740,6 @@
           {
             "name": "docx",
             "displayName": "Word处理",
-            "shortName": "Word",
             "source": "AI核心能力",
             "level": 4,
             "exp": 79,
@@ -794,7 +757,6 @@
           {
             "name": "ks-kim-docs-shuttle",
             "displayName": "文档同步",
-            "shortName": "文档",
             "source": "AI核心能力",
             "level": 4,
             "exp": 74,
@@ -812,7 +774,6 @@
           {
             "name": "xlsx",
             "displayName": "Excel处理",
-            "shortName": "Excel",
             "source": "AI核心能力",
             "level": 4,
             "exp": 71,
@@ -830,7 +791,6 @@
           {
             "name": "openai-whisper",
             "displayName": "语音转文字",
-            "shortName": "语音",
             "source": "AI核心能力",
             "level": 3,
             "exp": 64,
@@ -859,7 +819,6 @@
           {
             "name": "web-dev-workflow",
             "displayName": "网页开发",
-            "shortName": "网页",
             "source": "AI核心能力",
             "level": 5,
             "exp": 100,
@@ -877,7 +836,6 @@
           {
             "name": "ai-image-generator",
             "displayName": "AI生图",
-            "shortName": "生图",
             "source": "AI核心能力",
             "level": 4,
             "exp": 78,
@@ -895,7 +853,6 @@
           {
             "name": "canvas-design",
             "displayName": "Canvas设计",
-            "shortName": "Canvas",
             "source": "AI核心能力",
             "level": 4,
             "exp": 76,
@@ -913,7 +870,6 @@
           {
             "name": "ui-ux-pro-max",
             "displayName": "UI/UX设计",
-            "shortName": "UI/UX",
             "source": "平台预装技能",
             "level": 4,
             "exp": 70,
@@ -931,7 +887,6 @@
           {
             "name": "pixel-action-game",
             "displayName": "像素游戏",
-            "shortName": "游戏",
             "source": "AI核心能力",
             "level": 3,
             "exp": 64,
@@ -960,7 +915,6 @@
           {
             "name": "zelda-style",
             "displayName": "塞尔达风格",
-            "shortName": "塞尔达",
             "source": "AI核心能力",
             "level": 4,
             "exp": 78,
@@ -978,7 +932,6 @@
           {
             "name": "work-report-ppt",
             "displayName": "工作汇报PPT",
-            "shortName": "汇报",
             "source": "AI核心能力",
             "level": 4,
             "exp": 69,
@@ -996,7 +949,6 @@
           {
             "name": "theme-factory",
             "displayName": "主题工厂",
-            "shortName": "主题",
             "source": "平台预装技能",
             "level": 3,
             "exp": 51,
@@ -1014,7 +966,6 @@
           {
             "name": "artistic-ppt",
             "displayName": "艺术风格PPT",
-            "shortName": "艺术",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1043,7 +994,6 @@
           {
             "name": "github-deploy-publisher",
             "displayName": "GitHub发布",
-            "shortName": "发布",
             "source": "AI核心能力",
             "level": 5,
             "exp": 95,
@@ -1061,7 +1011,6 @@
           {
             "name": "codeflicker-homepage",
             "displayName": "AI助手首页",
-            "shortName": "首页",
             "source": "AI核心能力",
             "level": 5,
             "exp": 89,
@@ -1079,7 +1028,6 @@
           {
             "name": "linke-kim-message",
             "displayName": "KIM消息",
-            "shortName": "KIM",
             "source": "AI核心能力",
             "level": 5,
             "exp": 86,
@@ -1097,7 +1045,6 @@
           {
             "name": "yuque-publisher",
             "displayName": "语雀发布",
-            "shortName": "语雀",
             "source": "AI核心能力",
             "level": 4,
             "exp": 74,
@@ -1115,7 +1062,6 @@
           {
             "name": "feishu-assistant",
             "displayName": "飞书助手",
-            "shortName": "飞书",
             "source": "AI核心能力",
             "level": 4,
             "exp": 73,
@@ -1133,7 +1079,6 @@
           {
             "name": "codeflicker-weekly-report",
             "displayName": "CF周报",
-            "shortName": "周报",
             "source": "AI核心能力",
             "level": 3,
             "exp": 64,
@@ -1151,7 +1096,6 @@
           {
             "name": "github",
             "displayName": "GitHub",
-            "shortName": "GitHub",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1169,7 +1113,6 @@
           {
             "name": "personal-homepage-template",
             "displayName": "首页模板",
-            "shortName": "模板",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1198,7 +1141,6 @@
           {
             "name": "personal-assistant",
             "displayName": "个人助手",
-            "shortName": "助手",
             "source": "平台预装技能",
             "level": 5,
             "exp": 89,
@@ -1216,7 +1158,6 @@
           {
             "name": "ai-column-writer",
             "displayName": "专栏写作",
-            "shortName": "专栏",
             "source": "AI核心能力",
             "level": 4,
             "exp": 73,
@@ -1234,7 +1175,6 @@
           {
             "name": "promotion-coaching",
             "displayName": "晋升辅导",
-            "shortName": "晋升",
             "source": "AI核心能力",
             "level": 4,
             "exp": 66,
@@ -1252,7 +1192,6 @@
           {
             "name": "promotion-review-sabcd",
             "displayName": "晋升评审",
-            "shortName": "评审",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1270,7 +1209,6 @@
           {
             "name": "onboarding-guide",
             "displayName": "新手引导",
-            "shortName": "引导",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1299,7 +1237,6 @@
           {
             "name": "mcp-builder",
             "displayName": "MCP开发",
-            "shortName": "MCP",
             "source": "AI核心能力",
             "level": 3,
             "exp": 64,
@@ -1317,7 +1254,6 @@
           {
             "name": "context-window-management",
             "displayName": "上下文管理",
-            "shortName": "上下文",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1335,7 +1271,6 @@
           {
             "name": "error-handling-patterns",
             "displayName": "错误处理",
-            "shortName": "错误",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1353,7 +1288,6 @@
           {
             "name": "remotion-best-practices",
             "displayName": "Remotion视频",
-            "shortName": "视频",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1371,7 +1305,6 @@
           {
             "name": "vercel-composition-patterns",
             "displayName": "组合模式",
-            "shortName": "组合",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1389,7 +1322,6 @@
           {
             "name": "vercel-react-best-practices",
             "displayName": "React最佳实践",
-            "shortName": "React",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1407,7 +1339,6 @@
           {
             "name": "vercel-react-native-skills",
             "displayName": "React Native",
-            "shortName": "RN",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1425,7 +1356,6 @@
           {
             "name": "web-design-guidelines",
             "displayName": "Web设计规范",
-            "shortName": "设计",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1443,7 +1373,6 @@
           {
             "name": "workflow-orchestration-patterns",
             "displayName": "工作流编排",
-            "shortName": "编排",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1479,7 +1408,6 @@
               {
                 "name": "daily-reflection-evolution",
                 "displayName": "自进化",
-                "shortName": "自进化",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -1497,7 +1425,6 @@
               {
                 "name": "learn-from-mistakes",
                 "displayName": "举一反三",
-                "shortName": "举一反三",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -1515,7 +1442,6 @@
               {
                 "name": "neigong-cultivation",
                 "displayName": "内功修炼",
-                "shortName": "内功修炼",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 82,
@@ -1533,7 +1459,6 @@
               {
                 "name": "xiaowuxianggong",
                 "displayName": "小无相功",
-                "shortName": "小无相功",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 81,
@@ -1551,7 +1476,6 @@
               {
                 "name": "memory-hygiene",
                 "displayName": "记忆优化",
-                "shortName": "记忆优化",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 79,
@@ -1569,7 +1493,6 @@
               {
                 "name": "knowledge-curator",
                 "displayName": "知识优化",
-                "shortName": "知识优化",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 72,
@@ -1587,7 +1510,6 @@
               {
                 "name": "skill-management",
                 "displayName": "技能优化",
-                "shortName": "技能优化",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 69,
@@ -1597,7 +1519,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 22390,
+                "skillSize": 22268,
                 "skillSizeLabel": "22K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1605,7 +1527,6 @@
               {
                 "name": "find-skills",
                 "displayName": "技能发现",
-                "shortName": "发现",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 69,
@@ -1623,11 +1544,10 @@
               {
                 "name": "skill-evaluator",
                 "displayName": "技能评估",
-                "shortName": "评估",
                 "source": "平台预装技能",
                 "level": 3,
                 "exp": 64,
-                "description": "Comprehensive skill quality evaluation and management. Use when \"检查技能健康度\", \"优化技能库\", \"评估技能质量\", \"skill health check\", \"skill optimization\", or reviewing skill quality. Includes automated validation, bat",
+                "description": "技能质量评估。自动化验证、批量扫描、优化工作流和效果对比，按最佳实践评估技能质量",
                 "lastUpdated": "2026-03-13",
                 "callCount": 1,
                 "frequency": "1次/月",
@@ -1641,7 +1561,6 @@
               {
                 "name": "skill-creator",
                 "displayName": "技能创建",
-                "shortName": "创建",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 62,
@@ -1659,7 +1578,6 @@
               {
                 "name": "xixingdafa",
                 "displayName": "吸星大法",
-                "shortName": "吸星大法",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -1677,7 +1595,6 @@
               {
                 "name": "beiming-shengong",
                 "displayName": "北冥神功",
-                "shortName": "北冥神功",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -1705,7 +1622,6 @@
               {
                 "name": "product-thinking",
                 "displayName": "产品思维",
-                "shortName": "产品思维",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -1723,7 +1639,6 @@
               {
                 "name": "frontend-design",
                 "displayName": "前端设计",
-                "shortName": "前端",
                 "source": "平台预装技能",
                 "level": 5,
                 "exp": 100,
@@ -1741,7 +1656,6 @@
               {
                 "name": "essence-insight",
                 "displayName": "本质洞察",
-                "shortName": "本质洞察",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 75,
@@ -1759,7 +1673,6 @@
               {
                 "name": "knowledge-acquisition-meta",
                 "displayName": "知识习得",
-                "shortName": "知识习得",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 72,
@@ -1777,7 +1690,6 @@
               {
                 "name": "critical-thinking-logical-reasoning",
                 "displayName": "批判性思维",
-                "shortName": "批判",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -1795,7 +1707,6 @@
               {
                 "name": "proactive-agent",
                 "displayName": "主动Agent",
-                "shortName": "主动",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -1813,7 +1724,6 @@
               {
                 "name": "agent-native-architecture",
                 "displayName": "Agent架构",
-                "shortName": "架构",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -1841,7 +1751,6 @@
               {
                 "name": "meta-execution",
                 "displayName": "元执行",
-                "shortName": "元执行",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -1859,7 +1768,6 @@
               {
                 "name": "knowledge-base",
                 "displayName": "知识库",
-                "shortName": "知识库",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 91,
@@ -1877,7 +1785,6 @@
               {
                 "name": "night-task-runner",
                 "displayName": "夜间任务",
-                "shortName": "夜间任务",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 76,
@@ -1895,7 +1802,6 @@
               {
                 "name": "debug-pro",
                 "displayName": "调试专家",
-                "shortName": "调试",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -1913,7 +1819,6 @@
               {
                 "name": "agent-capability-discovery",
                 "displayName": "能力发现",
-                "shortName": "能力发现",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -1951,7 +1856,6 @@
               {
                 "name": "ai-insight",
                 "displayName": "AI洞察",
-                "shortName": "AI洞察",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -1961,8 +1865,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 126379,
-                "skillSizeLabel": "126K字 · 巨型",
+                "skillSize": 128816,
+                "skillSizeLabel": "128K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -1979,7 +1883,6 @@
               {
                 "name": "stock-analysis",
                 "displayName": "股票分析",
-                "shortName": "股票",
                 "source": "平台预装技能",
                 "level": 4,
                 "exp": 79,
@@ -1997,7 +1900,6 @@
               {
                 "name": "investment-tracker",
                 "displayName": "投资追踪",
-                "shortName": "投资",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 78,
@@ -2014,8 +1916,7 @@
               },
               {
                 "name": "investment-analyzer",
-                "displayName": "Analyzing Investments",
-                "shortName": "Anal",
+                "displayName": "投资分析",
                 "source": "平台预装技能",
                 "level": 3,
                 "exp": 59,
@@ -2053,7 +1954,6 @@
               {
                 "name": "industry-research",
                 "displayName": "行业调研",
-                "shortName": "调研",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 69,
@@ -2071,7 +1971,6 @@
               {
                 "name": "wechat-research",
                 "displayName": "微信调研",
-                "shortName": "微信",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 67,
@@ -2089,7 +1988,6 @@
               {
                 "name": "apify-competitor-intelligence",
                 "displayName": "竞品分析",
-                "shortName": "竞品",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2107,7 +2005,6 @@
               {
                 "name": "apify-market-research",
                 "displayName": "市场调研",
-                "shortName": "市场",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2125,7 +2022,6 @@
               {
                 "name": "apify-trend-analysis",
                 "displayName": "趋势分析",
-                "shortName": "趋势",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2143,7 +2039,6 @@
               {
                 "name": "summarize",
                 "displayName": "内容摘要",
-                "shortName": "摘要",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2171,7 +2066,6 @@
               {
                 "name": "pdf",
                 "displayName": "PDF处理",
-                "shortName": "PDF",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -2189,7 +2083,6 @@
               {
                 "name": "pptx",
                 "displayName": "PPT处理",
-                "shortName": "PPT",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 86,
@@ -2207,7 +2100,6 @@
               {
                 "name": "docx",
                 "displayName": "Word处理",
-                "shortName": "Word",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 79,
@@ -2225,7 +2117,6 @@
               {
                 "name": "ks-kim-docs-shuttle",
                 "displayName": "文档同步",
-                "shortName": "文档",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 74,
@@ -2243,7 +2134,6 @@
               {
                 "name": "xlsx",
                 "displayName": "Excel处理",
-                "shortName": "Excel",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 71,
@@ -2261,7 +2151,6 @@
               {
                 "name": "openai-whisper",
                 "displayName": "语音转文字",
-                "shortName": "语音",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
@@ -2289,7 +2178,6 @@
               {
                 "name": "web-dev-workflow",
                 "displayName": "网页开发",
-                "shortName": "网页",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 100,
@@ -2307,7 +2195,6 @@
               {
                 "name": "ai-image-generator",
                 "displayName": "AI生图",
-                "shortName": "生图",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 78,
@@ -2325,7 +2212,6 @@
               {
                 "name": "canvas-design",
                 "displayName": "Canvas设计",
-                "shortName": "Canvas",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 76,
@@ -2343,7 +2229,6 @@
               {
                 "name": "ui-ux-pro-max",
                 "displayName": "UI/UX设计",
-                "shortName": "UI/UX",
                 "source": "平台预装技能",
                 "level": 4,
                 "exp": 70,
@@ -2361,7 +2246,6 @@
               {
                 "name": "pixel-action-game",
                 "displayName": "像素游戏",
-                "shortName": "游戏",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
@@ -2389,7 +2273,6 @@
               {
                 "name": "zelda-style",
                 "displayName": "塞尔达风格",
-                "shortName": "塞尔达",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 78,
@@ -2407,7 +2290,6 @@
               {
                 "name": "work-report-ppt",
                 "displayName": "工作汇报PPT",
-                "shortName": "汇报",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 69,
@@ -2425,7 +2307,6 @@
               {
                 "name": "theme-factory",
                 "displayName": "主题工厂",
-                "shortName": "主题",
                 "source": "平台预装技能",
                 "level": 3,
                 "exp": 51,
@@ -2443,7 +2324,6 @@
               {
                 "name": "artistic-ppt",
                 "displayName": "艺术风格PPT",
-                "shortName": "艺术",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2471,7 +2351,6 @@
               {
                 "name": "github-deploy-publisher",
                 "displayName": "GitHub发布",
-                "shortName": "发布",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 95,
@@ -2489,7 +2368,6 @@
               {
                 "name": "codeflicker-homepage",
                 "displayName": "AI助手首页",
-                "shortName": "首页",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 89,
@@ -2507,7 +2385,6 @@
               {
                 "name": "linke-kim-message",
                 "displayName": "KIM消息",
-                "shortName": "KIM",
                 "source": "AI核心能力",
                 "level": 5,
                 "exp": 86,
@@ -2525,7 +2402,6 @@
               {
                 "name": "yuque-publisher",
                 "displayName": "语雀发布",
-                "shortName": "语雀",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 74,
@@ -2543,7 +2419,6 @@
               {
                 "name": "feishu-assistant",
                 "displayName": "飞书助手",
-                "shortName": "飞书",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 73,
@@ -2561,7 +2436,6 @@
               {
                 "name": "codeflicker-weekly-report",
                 "displayName": "CF周报",
-                "shortName": "周报",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
@@ -2579,7 +2453,6 @@
               {
                 "name": "github",
                 "displayName": "GitHub",
-                "shortName": "GitHub",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2597,7 +2470,6 @@
               {
                 "name": "personal-homepage-template",
                 "displayName": "首页模板",
-                "shortName": "模板",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2625,7 +2497,6 @@
               {
                 "name": "personal-assistant",
                 "displayName": "个人助手",
-                "shortName": "助手",
                 "source": "平台预装技能",
                 "level": 5,
                 "exp": 89,
@@ -2643,7 +2514,6 @@
               {
                 "name": "ai-column-writer",
                 "displayName": "专栏写作",
-                "shortName": "专栏",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 73,
@@ -2661,7 +2531,6 @@
               {
                 "name": "promotion-coaching",
                 "displayName": "晋升辅导",
-                "shortName": "晋升",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 66,
@@ -2679,7 +2548,6 @@
               {
                 "name": "promotion-review-sabcd",
                 "displayName": "晋升评审",
-                "shortName": "评审",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2697,7 +2565,6 @@
               {
                 "name": "onboarding-guide",
                 "displayName": "新手引导",
-                "shortName": "引导",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2725,7 +2592,6 @@
               {
                 "name": "mcp-builder",
                 "displayName": "MCP开发",
-                "shortName": "MCP",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
@@ -2743,7 +2609,6 @@
               {
                 "name": "context-window-management",
                 "displayName": "上下文管理",
-                "shortName": "上下文",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2761,7 +2626,6 @@
               {
                 "name": "error-handling-patterns",
                 "displayName": "错误处理",
-                "shortName": "错误",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2779,7 +2643,6 @@
               {
                 "name": "remotion-best-practices",
                 "displayName": "Remotion视频",
-                "shortName": "视频",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2797,7 +2660,6 @@
               {
                 "name": "vercel-composition-patterns",
                 "displayName": "组合模式",
-                "shortName": "组合",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2815,7 +2677,6 @@
               {
                 "name": "vercel-react-best-practices",
                 "displayName": "React最佳实践",
-                "shortName": "React",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2833,7 +2694,6 @@
               {
                 "name": "vercel-react-native-skills",
                 "displayName": "React Native",
-                "shortName": "RN",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2851,7 +2711,6 @@
               {
                 "name": "web-design-guidelines",
                 "displayName": "Web设计规范",
-                "shortName": "设计",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -2869,7 +2728,6 @@
               {
                 "name": "workflow-orchestration-patterns",
                 "displayName": "工作流编排",
-                "shortName": "编排",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -3029,10 +2887,10 @@
         "relatedMemories": [
           "ai_insight"
         ],
-        "fileCount": 53,
-        "sizeKB": 481.6,
+        "fileCount": 68,
+        "sizeKB": 510.8,
         "heatLevel": 5,
-        "recentCount": 53
+        "recentCount": 68
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -3199,10 +3057,10 @@
             "relatedMemories": [
               "ai_insight"
             ],
-            "fileCount": 53,
-            "sizeKB": 481.6,
+            "fileCount": 68,
+            "sizeKB": 510.8,
             "heatLevel": 5,
-            "recentCount": 53
+            "recentCount": 68
           },
           "rd-efficiency": {
             "name": "rd-efficiency",
@@ -3221,8 +3079,8 @@
             "recentCount": 26
           }
         },
-        "totalFiles": 79,
-        "totalSizeKB": 763.7
+        "totalFiles": 94,
+        "totalSizeKB": 792.9
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3295,8 +3153,8 @@
         "totalSizeKB": 753.1
       }
     },
-    "totalFiles": 244,
-    "totalSizeKB": 2506.3
+    "totalFiles": 259,
+    "totalSizeKB": 2535.5
   },
   "memories": {
     "items": [
@@ -3358,6 +3216,44 @@
         "source": "项目记忆"
       },
       {
+        "title": "AI日报交付前强制三层自检（读者视角 > 脚本门控）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维方法",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#a78bfa",
+        "description": "AI日报交付前强制自检规则（v1.0） 来源 2026-03-13 用户反馈：\"我希望你能持续反思和优化，后续尽量少让我提醒\"。 统计3/5...",
+        "keywords": [
+          "AI日报",
+          "自检",
+          "读者视角",
+          "交付前检查",
+          "主动发现"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-13",
+        "source": "项目记忆"
+      },
+      {
+        "title": "AI日报分类+去重+地区门控经验（v6.0 含地区分类+板块分类+跨天去重）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "AI日报分类+去重门控经验（v6.0 含地区分类+板块分类+跨天去重） 问题演化 - v5.0 (2026-03-12): 板块分类...",
+        "keywords": [
+          "AI日报",
+          "分类验证",
+          "去重",
+          "门控脚本",
+          "质量检查"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-13",
+        "source": "项目记忆"
+      },
+      {
         "title": "AI日报分类+去重+链接验证门控经验（v5.0 含微信源收录+JSON契约+首页同步）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -3374,25 +3270,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-13",
-        "source": "项目记忆"
-      },
-      {
-        "title": "AI日报分类+去重门控经验（v5.0 含板块关键词+跨天对比）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "AI日报分类+去重门控经验（v5.0） 问题 2026-03-12日报出现3类质量问题： 1. 分类错误: 3DThinker（CV...",
-        "keywords": [
-          "AI日报",
-          "分类验证",
-          "去重",
-          "门控脚本",
-          "质量检查"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-12",
         "source": "项目记忆"
       },
       {
@@ -5142,6 +5019,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "write_todo_anthropic必须传todos参数（14次重复错误教训）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "write_todo_anthropic工具的todos参数是required（必填），即使merge=true也必须传入todos数组。错误模式：习惯性...",
+        "keywords": [
+          "write_todo",
+          "todos",
+          "required",
+          "validation",
+          "参数必填"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-13",
+        "source": "项目记忆"
+      },
+      {
         "title": "五层思考框架：从执行到战略",
         "category": "task_flow_experience",
         "categoryLabel": "通用踩坑",
@@ -5705,7 +5601,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 122,
+    "total": 124,
     "byCategory": {
       "development_code_specification": {
         "count": 2,
@@ -5729,7 +5625,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 12,
+        "count": 13,
         "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -5743,7 +5639,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 71,
+        "count": 72,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
@@ -6203,9 +6099,28 @@
                 "importance": 5,
                 "updatedAt": "2026-03-07",
                 "source": "项目记忆"
+              },
+              {
+                "title": "AI日报交付前强制三层自检（读者视角 > 脚本门控）",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维方法",
+                "layer": "🧠 元认知层",
+                "icon": "🧠",
+                "color": "#a78bfa",
+                "description": "AI日报交付前强制自检规则（v1.0） 来源 2026-03-13 用户反馈：\"我希望你能持续反思和优化，后续尽量少让我提醒\"。 统计3/5...",
+                "keywords": [
+                  "AI日报",
+                  "自检",
+                  "读者视角",
+                  "交付前检查",
+                  "主动发现"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-13",
+                "source": "项目记忆"
               }
             ],
-            "count": 5
+            "count": 6
           },
           "做事方法": {
             "icon": "⚙️",
@@ -6406,7 +6321,7 @@
             "count": 10
           }
         },
-        "count": 31
+        "count": 32
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -7883,13 +7798,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "AI日报分类+去重门控经验（v5.0 含板块关键词+跨天对比）",
+                "title": "AI日报分类+去重+地区门控经验（v6.0 含地区分类+板块分类+跨天去重）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "AI日报分类+去重门控经验（v5.0） 问题 2026-03-12日报出现3类质量问题： 1. 分类错误: 3DThinker（CV...",
+                "description": "AI日报分类+去重门控经验（v6.0 含地区分类+板块分类+跨天去重） 问题演化 - v5.0 (2026-03-12): 板块分类...",
                 "keywords": [
                   "AI日报",
                   "分类验证",
@@ -7898,11 +7813,30 @@
                   "质量检查"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-13",
+                "source": "项目记忆"
+              },
+              {
+                "title": "write_todo_anthropic必须传todos参数（14次重复错误教训）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "脚本自动化",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚡",
+                "color": "#64748b",
+                "description": "write_todo_anthropic工具的todos参数是required（必填），即使merge=true也必须传入todos数组。错误模式：习惯性...",
+                "keywords": [
+                  "write_todo",
+                  "todos",
+                  "required",
+                  "validation",
+                  "参数必填"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-13",
                 "source": "项目记忆"
               }
             ],
-            "count": 10
+            "count": 11
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -8225,7 +8159,7 @@
             "count": 2
           }
         },
-        "count": 90
+        "count": 91
       }
     }
   },
@@ -8282,7 +8216,7 @@
       185,
       240,
       240,
-      244
+      259
     ],
     "memories": [
       19,
@@ -8300,7 +8234,7 @@
       106,
       112,
       118,
-      127
+      129
     ]
   },
   "achievements": [
@@ -8335,7 +8269,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "懂你程度 85/80",
+      "progressText": "懂你程度 86/80",
       "date": "2026-03-13"
     },
     {

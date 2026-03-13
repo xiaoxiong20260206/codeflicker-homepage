@@ -4,7 +4,7 @@
  * 核心原则：
  * - 所有分类名、技能名从 JSON 数据读取，不再硬编码中文
  * - 通过 role/layerTag 稳定标识符匹配分类，改名无需修改 JS
- * - shortName/displayName 从数据中读取，消除 skillNameMap 双重维护
+ * - displayName 从数据中读取，消除 skillNameMap 双重维护
  */
 
 // ==================== 技能树 - 系统架构图 ====================
@@ -16,9 +16,9 @@ function renderSkillTechTree(container, skills) {
     var relationships = skills.relationships || {};
     
     // 技能名称全部从数据读取（v4.0 — 消除 skillNameMap 硬编码）
-    // shortName: 2-4字芯片标签, displayName: 完整中文名, name: 英文标识符
+    // displayName: 统一中文名（所有展示场景使用同一名称）, name: 英文标识符
     function getName(skill) {
-        return skill.shortName || skill.displayName || skill.name;
+        return skill.displayName || skill.name;
     }
     function getLevelColor(level) {
         var colors = { 1: '#fb923c', 2: '#fbbf24', 3: '#4ade80', 4: '#38bdf8', 5: '#a78bfa' };
@@ -78,7 +78,7 @@ function renderSkillTechTree(container, skills) {
             if (!cats) return;
             Object.values(cats).forEach(function(cat) {
                 (cat.skills || []).forEach(function(s) {
-                    if (s.name) window.SKILL_NAME_MAP[s.name] = s.shortName || s.displayName || s.name;
+                    if (s.name) window.SKILL_NAME_MAP[s.name] = s.displayName || s.name;
                 });
             });
         }

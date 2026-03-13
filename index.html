@@ -169,6 +169,41 @@
             border: 1px solid var(--sheikah-blue);
         }
         
+        /* 内容基地入口按钮 */
+        .content-hub-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(201, 162, 39, 0.10));
+            border: 1px solid rgba(0, 212, 255, 0.35);
+            border-radius: 20px;
+            color: var(--sheikah-blue-light, #a8e6ff);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .content-hub-btn:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.22), rgba(201, 162, 39, 0.18));
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        .content-hub-icon { font-size: 14px; }
+        .content-hub-text { white-space: nowrap; }
+        .content-hub-arrow {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+        .content-hub-btn:hover .content-hub-arrow {
+            transform: translateX(3px);
+        }
+        
         /* ==================== 等级进度面板 ==================== */
         .level-progress-panel {
             background: rgba(0, 0, 0, 0.15);
@@ -4027,6 +4062,13 @@
                     <span class="tag tag-gold">小无相功</span>
                     <span class="tag tag-green">洞察觉醒</span>
                 </div>
+                
+                <!-- 内容基地入口 -->
+                <a href="hub.html" class="content-hub-btn" title="查看林克的文章、日报和深度调研">
+                    <span class="content-hub-icon">📡</span>
+                    <span class="content-hub-text">内容基地</span>
+                    <span class="content-hub-arrow">→</span>
+                </a>
             </div>
             
             <!-- 等级进度面板 -->

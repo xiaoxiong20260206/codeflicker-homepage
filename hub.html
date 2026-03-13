@@ -64,7 +64,7 @@
         <span class="hub-tab-icon">📡</span> AI 洞察
       </button>
       <button class="hub-tab" role="tab" data-tab="rd-efficiency" aria-selected="false">
-        <span class="hub-tab-icon">⚡</span> 研发效能
+        <span class="hub-tab-icon">⚡</span> 研发效能 <span class="tab-badge-coming">学习中</span>
       </button>
       <button class="hub-tab" role="tab" data-tab="column" aria-selected="false">
         <span class="hub-tab-icon">📝</span> 专栏
@@ -104,21 +104,61 @@
     <!-- ==================== Panel: AI Insight ==================== -->
     <section class="hub-panel zonai-panel" id="panel-ai-insight" role="tabpanel">
 
-      <!-- Daily Report Banner -->
-      <div class="daily-banner">
-        <div class="daily-banner-info">
-          <div class="daily-banner-label">📅 AI 日报</div>
-          <div class="daily-banner-title" id="daily-report-title">加载中...</div>
-          <div class="daily-banner-meta" id="daily-report-meta">工作日每日更新</div>
+      <!-- ---- 日报 ---- -->
+      <div class="insight-section">
+        <div class="insight-section-header">
+          <span class="insight-section-title">📅 AI 日报</span>
+          <span class="insight-section-badge badge-live">每日更新</span>
         </div>
-        <a id="daily-report-link" href="https://xiaoxiong20260206.github.io/ai-insight/" class="zonai-btn primary" target="_blank">
-          查看今日日报 →
-        </a>
+        <div class="daily-banner">
+          <div class="daily-banner-info">
+            <div class="daily-banner-title" id="daily-report-title">加载中...</div>
+            <div class="daily-banner-meta" id="daily-report-meta">工作日每日一篇，覆盖全球 AI 动态</div>
+          </div>
+          <a id="daily-report-link" href="https://xiaoxiong20260206.github.io/ai-insight/" class="zonai-btn primary" target="_blank">
+            查看最新日报 →
+          </a>
+        </div>
       </div>
 
-      <!-- Research Project Cards -->
-      <div class="projects-grid" id="projects-grid">
-        <!-- Dynamically loaded -->
+      <!-- ---- 周报 ---- -->
+      <div class="insight-section">
+        <div class="insight-section-header">
+          <span class="insight-section-title">📊 AI 周报</span>
+          <span class="insight-section-badge badge-live">每周更新</span>
+        </div>
+        <div class="daily-banner" style="border-color: rgba(212,168,42,0.25); background: linear-gradient(135deg, rgba(212,168,42,0.06) 0%, rgba(212,168,42,0.02) 100%);">
+          <div class="daily-banner-info">
+            <div class="daily-banner-title">一周 AI 大事全景回顾</div>
+            <div class="daily-banner-meta">每周末发布，整合本周最重要的 AI 进展与趋势</div>
+          </div>
+          <a href="https://xiaoxiong20260206.github.io/ai-insight/" class="zonai-btn gold" target="_blank">
+            查看最新周报 →
+          </a>
+        </div>
+      </div>
+
+      <!-- ---- 深度洞察 ---- -->
+      <div class="insight-section">
+        <div class="insight-section-header">
+          <span class="insight-section-title">🔬 深度洞察</span>
+          <span class="insight-section-badge badge-count" id="deep-insight-count">--</span>
+        </div>
+        <p class="insight-section-desc">针对特定领域/话题的系统性深度调研报告</p>
+        <div class="projects-grid" id="deep-insights-grid">
+          <!-- Dynamically loaded -->
+        </div>
+      </div>
+
+      <!-- ---- 本质洞察 ---- -->
+      <div class="insight-section">
+        <div class="insight-section-header">
+          <span class="insight-section-title">🔮 本质洞察</span>
+        </div>
+        <p class="insight-section-desc">透过现象看本质，用规律解释世界、预测未来</p>
+        <div class="projects-grid" id="essence-insights-grid">
+          <!-- Dynamically loaded -->
+        </div>
       </div>
 
       <div class="ai-platform-link">
@@ -128,62 +168,22 @@
       </div>
     </section>
 
-    <!-- ==================== Panel: R&D Efficiency ==================== -->
-    <section class="hub-panel zonai-panel" id="panel-rd-efficiency" role="tabpanel">
-      <p class="rd-desc">
-        系统化学习研发效能知识体系，从度量框架到 AI 编码工具，从平台工程到大厂实践案例。
-        目前已整理 35+ 篇文档，覆盖 100+ 个信息源。
-      </p>
-
-      <div class="knowledge-grid">
-        <div class="knowledge-card">
-          <div class="knowledge-card-title">📊 效能度量框架</div>
-          <div class="knowledge-card-count">4 docs</div>
-          <div class="knowledge-card-desc">DORA / SPACE / DevEx / DX4 四大度量框架全景对比。效能度量"九阴真经"方法论。</div>
-        </div>
-        <div class="knowledge-card">
-          <div class="knowledge-card-title">🤖 AI + 研发效能</div>
-          <div class="knowledge-card-count">4 docs</div>
-          <div class="knowledge-card-desc">L1-L5 编码工具分层、五层阻力模型、字节跳动实践（标准化→数字化→智能化）。</div>
-        </div>
-        <div class="knowledge-card">
-          <div class="knowledge-card-title">⌨️ 智能编码工具</div>
-          <div class="knowledge-card-count">4 docs</div>
-          <div class="knowledge-card-desc">Cursor / Devin / Coding Agent 深度指南。系统提示词揭秘、Vibe Coding。</div>
-        </div>
-        <div class="knowledge-card">
-          <div class="knowledge-card-title">🏗️ DevOps 与平台工程</div>
-          <div class="knowledge-card-count">2 docs</div>
-          <div class="knowledge-card-desc">DORA 2025 / 腾讯 2025 / DevData 2025 三份报告深度对比。</div>
-        </div>
-        <div class="knowledge-card">
-          <div class="knowledge-card-title">💡 核心洞察</div>
-          <div class="knowledge-card-count">3 insights</div>
-          <div class="knowledge-card-desc">AI 研发成熟度模型（L1/L2/L3），快手/字节/阿里/腾讯四大厂实践。</div>
-        </div>
-        <div class="knowledge-card">
-          <div class="knowledge-card-title">🏢 行业案例</div>
-          <div class="knowledge-card-count">multi-cases</div>
-          <div class="knowledge-card-desc">大厂研发效能实践深度对比。从组织设计到工具选型，从度量到改进。</div>
-        </div>
-      </div>
-
-      <div class="knowledge-stats">
-        <div class="knowledge-stat">
-          <div class="knowledge-stat-value">35+</div>
-          <div class="knowledge-stat-label">篇文档</div>
-        </div>
-        <div class="knowledge-stat">
-          <div class="knowledge-stat-value">100+</div>
-          <div class="knowledge-stat-label">个信息源</div>
-        </div>
-        <div class="knowledge-stat">
-          <div class="knowledge-stat-value">6</div>
-          <div class="knowledge-stat-label">个知识领域</div>
-        </div>
-        <div class="knowledge-stat">
-          <div class="knowledge-stat-value">7</div>
-          <div class="knowledge-stat-label">层知识架构</div>
+    <!-- ==================== Panel: R&D Efficiency (Coming Soon) ==================== -->
+    <section class="hub-panel zonai-panel rd-coming-soon" id="panel-rd-efficiency" role="tabpanel">
+      <div class="coming-soon-overlay">
+        <div class="coming-soon-icon">⚡</div>
+        <div class="coming-soon-title">研发效能洞察</div>
+        <div class="coming-soon-subtitle">学习中，敬请期待</div>
+        <p class="coming-soon-desc">
+          正在系统学习研发效能知识体系，涵盖效能度量框架、AI+DevOps、平台工程、智能编码工具、大厂实践案例等方向。
+          已整理 35+ 篇文档，覆盖 100+ 个信息源。内容整理完成后将在此分享。
+        </p>
+        <div class="coming-soon-tags">
+          <span class="coming-soon-tag">效能度量</span>
+          <span class="coming-soon-tag">AI+DevOps</span>
+          <span class="coming-soon-tag">平台工程</span>
+          <span class="coming-soon-tag">智能编码</span>
+          <span class="coming-soon-tag">大厂案例</span>
         </div>
       </div>
     </section>
@@ -294,7 +294,9 @@
     });
   });
 
-  // --- Load AI Research Projects ---
+  // --- Load AI Research Projects (split into deep vs essence) ---
+  const ESSENCE_IDS = ['ai-essence-insight'];
+
   fetch('projects-data.json')
     .then(r => r.json())
     .then(data => {
@@ -302,17 +304,20 @@
       const el = document.getElementById('stat-research');
       if (el) el.textContent = researchProjects.length;
 
-      const display = data.projects
+      const allProjects = data.projects
         .filter(p => p.id !== 'ai-insight')
         .sort((a, b) => {
           const order = { featured: 3, excellent: 2, normal: 1 };
           return (order[b.quality?.level] || 0) - (order[a.quality?.level] || 0);
-        })
-        .slice(0, 8);
+        });
 
-      const grid = document.getElementById('projects-grid');
-      if (grid) {
-        grid.innerHTML = display.map(p => {
+      const essenceProjects = allProjects.filter(p => ESSENCE_IDS.includes(p.id));
+      const deepProjects = allProjects.filter(p => !ESSENCE_IDS.includes(p.id));
+
+      function renderCards(projects, gridId) {
+        const grid = document.getElementById(gridId);
+        if (!grid) return;
+        grid.innerHTML = projects.map(p => {
           const featured = p.quality?.level === 'featured' || p.quality?.level === 'excellent';
           return '<a href="' + p.url + '" target="_blank" class="project-card">' +
             '<div class="project-card-header">' +
@@ -330,6 +335,12 @@
           '</a>';
         }).join('');
       }
+
+      renderCards(deepProjects, 'deep-insights-grid');
+      renderCards(essenceProjects, 'essence-insights-grid');
+
+      const countEl = document.getElementById('deep-insight-count');
+      if (countEl) countEl.textContent = deepProjects.length + ' 篇';
     })
     .catch(e => console.warn('Projects load failed:', e));
 

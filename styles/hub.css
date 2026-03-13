@@ -384,80 +384,132 @@
   margin-top: 16px;
 }
 
-/* --- R&D Efficiency Panel --- */
-.rd-desc {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--text-light);
-  opacity: 0.85;
-  margin-bottom: 20px;
+/* --- Insight Section Headers (AI Insight Panel) --- */
+.insight-section {
+  margin-bottom: 24px;
 }
 
-.knowledge-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+.insight-section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
-.knowledge-card {
-  background: rgba(93, 138, 74, 0.04);
-  border: 1px solid rgba(93, 138, 74, 0.15);
-  border-left: 3px solid var(--zelda-green);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  transition: all var(--transition-normal);
-}
-
-.knowledge-card:hover {
-  border-color: rgba(93, 138, 74, 0.35);
-  box-shadow: 0 4px 24px rgba(93, 138, 74, 0.15);
-}
-
-.knowledge-card-title {
+.insight-section-title {
   font-family: var(--font-title);
-  font-size: 13px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
   color: var(--text-light);
-  margin-bottom: 3px;
 }
 
-.knowledge-card-count {
+.insight-section-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 12px;
   font-size: 10px;
-  color: var(--text-muted);
-  font-family: var(--font-mono);
-  margin-bottom: 6px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.knowledge-card-desc {
-  font-size: 11px;
+.badge-live {
+  background: rgba(0, 212, 255, 0.12);
+  color: var(--sheikah-blue);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.badge-count {
+  background: rgba(212, 168, 42, 0.1);
+  color: var(--zelda-gold);
+  border: 1px solid rgba(212, 168, 42, 0.25);
+}
+
+.insight-section-desc {
+  font-size: 12px;
   color: var(--text-muted);
+  margin-bottom: 12px;
   line-height: 1.6;
 }
 
-.knowledge-stats {
+/* --- R&D Efficiency Coming Soon --- */
+.rd-coming-soon {
   display: flex;
-  gap: 16px;
-  margin-top: 16px;
-  padding: 14px 16px;
-  background: rgba(93, 138, 74, 0.06);
-  border: 1px solid rgba(93, 138, 74, 0.2);
-  border-radius: var(--radius-md);
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
 }
 
-.knowledge-stat {
+.coming-soon-overlay {
   text-align: center;
+  max-width: 480px;
+  padding: 40px 20px;
 }
 
-.knowledge-stat-value {
-  font-family: var(--font-mono);
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--zelda-green);
+.coming-soon-icon {
+  font-size: 40px;
+  opacity: 0.4;
+  margin-bottom: 12px;
 }
 
-.knowledge-stat-label {
-  font-size: 10px;
+.coming-soon-title {
+  font-family: var(--font-title);
+  font-size: 20px;
   color: var(--text-muted);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.coming-soon-subtitle {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(180, 170, 150, 0.6);
+  margin-bottom: 16px;
+  padding: 4px 16px;
+  border: 1px dashed rgba(180, 170, 150, 0.3);
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.coming-soon-desc {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+.coming-soon-tags {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.coming-soon-tag {
+  padding: 3px 12px;
+  border-radius: 14px;
+  font-size: 11px;
+  background: rgba(180, 170, 150, 0.08);
+  color: rgba(180, 170, 150, 0.5);
+  border: 1px solid rgba(180, 170, 150, 0.15);
+}
+
+/* --- Tab Badge (Coming Soon) --- */
+.tab-badge-coming {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: 8px;
+  font-size: 9px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+  background: rgba(180, 170, 150, 0.15);
+  color: rgba(180, 170, 150, 0.7);
+  border: 1px solid rgba(180, 170, 150, 0.2);
+  margin-left: 4px;
 }
 
 /* --- Column Panel --- */

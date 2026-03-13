@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>⚡</text></svg>">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -1376,31 +1376,49 @@ function drawArchLines() {
     svg.setAttribute('height', r.height);
     svg.setAttribute('viewBox', `0 0 ${r.width} ${r.height}`);
     svg.innerHTML = '';
+
+    // gap between the two lanes (center x of the gap)
+    const lanes = box.querySelectorAll('.arch-lane');
+    if (lanes.length < 2) return;
+    const laneL = lanes[0].getBoundingClientRect();
+    const laneR = lanes[1].getBoundingClientRect();
+    const gapX = (laneL.right + laneR.left) / 2 - r.left;
+
     archMappings.forEach(m => {
         const a = document.querySelector(`[data-n="${m.from}"]`);
         const b = document.querySelector(`[data-n="${m.to}"]`);
         if (!a || !b) return;
         const ar = a.getBoundingClientRect();
         const br = b.getBoundingClientRect();
-        const x1 = ar.right - r.left;
-        const y1 = ar.top + ar.height / 2 - r.top;
+
+        // start: bottom-center of left module
+        const x1 = ar.left + ar.width / 2 - r.left;
+        const y1 = ar.bottom - r.top;
+        // end: left-center of right module
         const x2 = br.left - r.left;
         const y2 = br.top + br.height / 2 - r.top;
-        const mx = (x1 + x2) / 2;
-        const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        p.setAttribute('d', `M ${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}`);
-        p.setAttribute('stroke', m.color);
-        p.setAttribute('stroke-width', '2');
-        p.setAttribute('fill', 'none');
-        p.setAttribute('opacity', '0.45');
-        p.setAttribute('stroke-dasharray', '5,3');
+
+        // orthogonal path: down → right to gap → up/down to target y → right to target
+        const dropY = y1 + 6; // small drop below the module
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d',
+            `M ${x1} ${y1} L ${x1} ${dropY} L ${gapX} ${dropY} L ${gapX} ${y2} L ${x2} ${y2}`
+        );
+        path.setAttribute('stroke', m.color);
+        path.setAttribute('stroke-width', '1.5');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('opacity', '0.35');
+        path.setAttribute('stroke-dasharray', '4,3');
+
+        // arrow circle at the end
         const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
         c.setAttribute('cx', x2);
         c.setAttribute('cy', y2);
-        c.setAttribute('r', '3.5');
+        c.setAttribute('r', '3');
         c.setAttribute('fill', m.color);
-        c.setAttribute('opacity', '0.6');
-        svg.appendChild(p);
+        c.setAttribute('opacity', '0.5');
+
+        svg.appendChild(path);
         svg.appendChild(c);
     });
 }

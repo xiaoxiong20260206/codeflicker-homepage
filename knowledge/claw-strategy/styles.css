@@ -1151,33 +1151,52 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 
 /* --- storage bar --- */
 .arch-storage {
-    background: linear-gradient(135deg, var(--emerald-50) 0%, rgba(236,253,245,.6) 100%);
-    border: 2px solid rgba(5,150,105,.25);
-    border-radius: var(--r-lg);
-    padding: 18px 24px;
+    background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 50%, #A7F3D0 100%);
+    border: 2px solid rgba(5,150,105,.3);
+    border-radius: var(--r-xl);
+    padding: 22px 28px;
     margin-top: 12px;
     margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+}
+.arch-storage::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--emerald), #10B981, #34D399);
 }
 
 .arch-storage-hd {
-    font-size: 17px;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 800;
     color: #065F46;
     margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(5,150,105,.2);
 }
 
 .arch-storage-bd {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
     gap: 24px;
     align-items: center;
 }
 
 .arch-storage-feat {
-    font-size: 13px;
+    font-size: 12.5px;
     color: #047857;
-    padding: 5px 0;
+    padding: 6px 12px;
     line-height: 1.6;
+    background: rgba(255,255,255,.6);
+    border-radius: 8px;
+    border-left: 3px solid var(--emerald);
+    margin-bottom: 6px;
+    backdrop-filter: blur(4px);
 }
 .arch-storage-feat strong { color: #065F46; }
 
@@ -1185,7 +1204,11 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
+    background: rgba(255,255,255,.7);
+    border-radius: 16px;
+    padding: 16px 24px;
+    border: 1px solid rgba(5,150,105,.15);
 }
 
 .arch-sync-node {
@@ -1193,9 +1216,12 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     font-size: 12px;
     font-weight: 700;
     color: #065F46;
+    padding: 8px 12px;
+    background: rgba(16,185,129,.1);
+    border-radius: 12px;
 }
-.arch-sync-node span { font-size: 36px; display: block; margin-bottom: 4px; }
-.arch-sync-arrow { font-size: 28px; color: var(--emerald); font-weight: 700; }
+.arch-sync-node span { font-size: 32px; display: block; margin-bottom: 4px; }
+.arch-sync-arrow { font-size: 24px; color: var(--emerald); font-weight: 700; }
 
 /* --- legend --- */
 .arch-legend {

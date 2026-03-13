@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=32">
+<link rel="stylesheet" href="styles.css?v=34">
 </head>
 <body>
 
@@ -1298,13 +1298,13 @@
 
     <!-- 图例 -->
     <div class="arch-legend">
-        <div class="arch-legend-title">📊 模块映射关系</div>
+        <div class="arch-legend-title">📊 产品 ↔ 技术 映射关系</div>
         <div class="arch-legend-items">
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--blue);"></span> CodeFlicker → 接入/计算层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#E85D3A;"></span> AIme → 接入/技能中心</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--amber);"></span> 服务层 → 网关层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--emerald);"></span> 核心能力 → 计算层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="background:var(--rose);"></span> 记忆系统 → 存储层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#2563EB;"></span> 触点层 → T1 接入层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#7C3AED;"></span> Agent能力层 → T3 计算层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#D97706;"></span> 服务层 → T2 网关层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#059669;"></span> AgentCore → T4 推理层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="background:#E11D48;"></span> Memory → T5 存储层</div>
         </div>
     </div>
 
@@ -1421,21 +1421,13 @@ function drawUserArrows() {
     });
 }
 
-// === Architecture connection lines ===
+// === Architecture connection lines (layer-to-layer, simplified) ===
 const archMappings = [
-    { from: 'p-cf-ide', to: 't-access', color: '#2563EB' },
-    { from: 'p-cf-cloud', to: 't-agent', color: '#2563EB' },
-    { from: 'p-kim', to: 't-access', color: '#7C3AED' },
-    { from: 'p-web', to: 't-access', color: '#7C3AED' },
-    { from: 'p-local', to: 't-access', color: '#7C3AED' },
-    { from: 'p-market', to: 't-hub', color: '#7C3AED' },
-    { from: 'p-skills', to: 't-hub', color: '#7C3AED' },
-    { from: 'p-security', to: 't-gateway', color: '#D97706' },
-    { from: 'p-orchestration', to: 't-agent', color: '#059669' },
-    { from: 'p-integration', to: 't-agent', color: '#059669' },
-    { from: 'p-reasoning', to: 't-model', color: '#7C3AED' },
-    { from: 'p-routing', to: 't-model', color: '#D97706' },
-    { from: 'p-memory', to: 't-storage', color: '#E11D48' }
+    { fromLayer: 0, toLayer: 0, color: '#2563EB', label: '触点→接入' },   // 用户触点层 → T1 接入层
+    { fromLayer: 1, toLayer: 2, color: '#7C3AED', label: '能力→计算' },   // Agent能力层 → T3 计算层
+    { fromLayer: 2, toLayer: 1, color: '#D97706', label: '服务→网关' },   // 服务层 → T2 网关层
+    { fromLayer: 3, toLayer: 3, color: '#059669', label: '内核→推理' },   // AgentCore → T4 推理层
+    { fromLayer: 3, toLayer: 4, color: '#E11D48', label: '记忆→存储', sub: true }  // Memory → T5 存储层
 ];
 
 function drawArchLines() {
@@ -1448,74 +1440,88 @@ function drawArchLines() {
     svg.setAttribute('viewBox', `0 0 ${rc.width} ${rc.height}`);
     svg.innerHTML = '';
 
-    // Check if lanes are side by side (skip drawing if stacked)
     const lanes = box.querySelectorAll('.arch-lane');
     if (lanes.length < 2) return;
     const lL = lanes[0].getBoundingClientRect();
     const lR = lanes[1].getBoundingClientRect();
-    if (lR.top > lL.bottom - 10) return; // lanes stacked vertically
+    if (lR.top > lL.bottom - 10) return;
 
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    ['2563EB','7C3AED','D97706','059669','E11D48'].forEach(hex => {
-        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-        mk.setAttribute('id', `ah-${hex}`);
-        mk.setAttribute('viewBox', '0 0 10 8');
-        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
-        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
-        mk.setAttribute('orient', 'auto');
-        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 1, 10 4, 0 7');
-        pg.setAttribute('fill', `#${hex}`); pg.setAttribute('opacity', '0.85');
-        mk.appendChild(pg); defs.appendChild(mk);
-    });
-    svg.appendChild(defs);
+    // Gather left/right layer elements
+    const leftLayers = lanes[0].querySelectorAll('.arch-lv');
+    const rightLayers = lanes[1].querySelectorAll('.arch-lv');
+    if (!leftLayers.length || !rightLayers.length) return;
 
     const gapL = lL.right - rc.left;
     const gapR = lR.left - rc.left;
     const gapW = gapR - gapL;
-    const R = 16;
+    const R = 14;
     const total = archMappings.length;
+
+    // Defs: markers
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const colors = ['2563EB','7C3AED','D97706','059669','E11D48'];
+    colors.forEach(hex => {
+        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+        mk.setAttribute('id', `ah-${hex}`);
+        mk.setAttribute('viewBox', '0 0 10 8');
+        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
+        mk.setAttribute('markerWidth', '9'); mk.setAttribute('markerHeight', '7');
+        mk.setAttribute('orient', 'auto');
+        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        pg.setAttribute('points', '0 1, 10 4, 0 7');
+        pg.setAttribute('fill', `#${hex}`);
+        mk.appendChild(pg); defs.appendChild(mk);
+    });
+    svg.appendChild(defs);
+
     archMappings.forEach((m, i) => {
-        const elA = document.querySelector(`[data-n="${m.from}"]`);
-        const elB = document.querySelector(`[data-n="${m.to}"]`);
-        if (!elA || !elB) return;
-        const a = elA.getBoundingClientRect();
-        const b = elB.getBoundingClientRect();
-        // Start from right edge center of left module
-        const x1 = a.right - rc.left;
-        const y1 = a.top + a.height / 2 - rc.top;
-        // End at left edge center of right module
-        const x2 = b.left - rc.left;
-        const y2 = b.top + b.height / 2 - rc.top;
-        // Route through the gap
+        const srcEl = leftLayers[m.fromLayer];
+        const dstEl = rightLayers[m.toLayer];
+        if (!srcEl || !dstEl) return;
+
+        const srcR = srcEl.getBoundingClientRect();
+        const dstR = dstEl.getBoundingClientRect();
+
+        // Start: right edge, vertical center of source layer
+        const x1 = srcR.right - rc.left - 2;
+        let y1 = srcR.top + srcR.height / 2 - rc.top;
+        // If this is the "sub" line (Memory→Storage), offset down
+        if (m.sub) y1 = srcR.top + srcR.height * 0.8 - rc.top;
+
+        // End: left edge, vertical center of destination layer
+        const x2 = dstR.left - rc.left + 2;
+        const y2 = dstR.top + dstR.height / 2 - rc.top;
+
+        const dy = y2 - y1;
+        const absDy = Math.abs(dy);
+        const dir = dy > 0 ? 1 : (dy < 0 ? -1 : 0);
+
+        // Spread each line to a different x slot in the gap to avoid overlap
         const slot = total > 1 ? i / (total - 1) : 0.5;
         const cx = gapL + gapW * (0.15 + slot * 0.70);
-        const dy = y2 > y1 ? 1 : (y2 < y1 ? -1 : 0);
-        const segH1 = Math.abs(cx - x1);
-        const segV  = Math.abs(y2 - y1);
-        const segH2 = Math.abs(x2 - cx);
-        const r1 = Math.min(R, segH1 / 2, segV / 2 || R);
-        const r2 = Math.min(R, segV / 2 || R, segH2 / 2);
 
         let d;
-        if (segV < 3) {
-            // Nearly horizontal — straight line through gap
+        if (absDy < 6) {
+            // Nearly horizontal — straight line
             d = `M ${x1} ${y1} L ${x2} ${y2}`;
         } else {
-            d = `M ${x1} ${y1} L ${cx - r1} ${y1} ` +
-                `Q ${cx} ${y1} ${cx} ${y1 + r1 * dy} ` +
-                `L ${cx} ${y2 - r2 * dy} ` +
-                `Q ${cx} ${y2} ${cx + r2} ${y2} ` +
+            // Polyline: horizontal → vertical → horizontal, each at unique cx
+            const r = Math.min(R, Math.abs(cx - x1) / 2, absDy / 2, Math.abs(x2 - cx) / 2);
+            d = `M ${x1} ${y1} ` +
+                `L ${cx - r} ${y1} ` +
+                `Q ${cx} ${y1} ${cx} ${y1 + r * dir} ` +
+                `L ${cx} ${y2 - r * dir} ` +
+                `Q ${cx} ${y2} ${cx + r} ${y2} ` +
                 `L ${x2} ${y2}`;
         }
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', m.color);
-        path.setAttribute('stroke-width', '2');
+        path.setAttribute('stroke-width', '2.2');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.55');
-        path.setAttribute('stroke-dasharray', '10,6');
+        path.setAttribute('opacity', '0.6');
+        path.setAttribute('stroke-dasharray', '8,5');
         path.setAttribute('stroke-linecap', 'round');
         path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('marker-end', `url(#ah-${m.color.slice(1)})`);

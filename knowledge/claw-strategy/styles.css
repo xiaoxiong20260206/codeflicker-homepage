@@ -957,13 +957,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
         0 2px 8px rgba(0,0,0,.03),
         0 12px 40px rgba(0,0,0,.06);
 }
-#archSvg {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 5;
-}
+#archSvg { display: none; }
 
 /* --- lane --- */
 .arch-lane { position: relative; z-index: 1; }
@@ -1404,6 +1398,26 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-sync-node { text-align: center; font-size: 12px; font-weight: 700; color: #065F46; padding: 8px 12px; background: rgba(16,185,129,.1); border-radius: 12px; }
 .arch-sync-node span { font-size: 32px; display: block; margin-bottom: 4px; }
 .arch-sync-arrow { font-size: 24px; color: var(--emerald); font-weight: 700; }
+
+/* --- mapping badges (产品↔技术 layer correspondence) --- */
+.map-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    vertical-align: middle;
+    margin-left: 6px;
+    white-space: nowrap;
+}
+.map-badge.blue    { background: rgba(37,99,235,.12); color: #2563EB; }
+.map-badge.violet  { background: rgba(124,58,237,.1); color: #7C3AED; }
+.map-badge.amber   { background: rgba(217,119,6,.1); color: #D97706; }
+.map-badge.emerald { background: rgba(5,150,105,.1); color: #059669; }
+.map-badge.rose    { background: rgba(225,29,72,.1); color: #E11D48; }
 
 /* --- legend --- */
 .arch-legend {

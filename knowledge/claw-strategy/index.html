@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=38">
+<link rel="stylesheet" href="styles.css?v=39">
 </head>
 <body>
 
@@ -816,14 +816,10 @@
     <h2>快手AI员工 · 完整架构图</h2>
     <p class="chapter-lead">两类用户 · 两个产品 · 一套基础设施 — 鼠标悬停模块查看详细说明。</p>
 
-    <div id="archPage" style="position:relative;">
-    <!-- 用户→产品连线 SVG（全局覆盖层） -->
-    <svg id="userArrowsSvg" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:50;"></svg>
+    <div id="archPage">
 
     <!-- 泳道架构图 -->
     <div class="arch-swimlanes" id="archSwim">
-        <svg id="archSvg"></svg>
-
         <!-- 左泳道：产品架构 -->
         <div class="arch-lane">
             <div class="arch-lane-hd" style="background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-l) 100%);">
@@ -834,7 +830,7 @@
 
                 <!-- 用户触点层：用户分层 + CodeFlicker + AIme -->
                 <div class="arch-lv" style="--lv-color: var(--blue);">
-                    <div class="arch-lv-label">🌍 用户触点层</div>
+                    <div class="arch-lv-label">🌍 用户触点层 <span class="map-badge blue">→ T1 接入层</span></div>
 
                     <!-- 两类用户 -->
                     <div class="user-segments">
@@ -962,7 +958,7 @@
 
                 <!-- Agent 能力层 -->
                 <div class="arch-lv arch-lv-agent" style="--lv-color: var(--violet);">
-                    <div class="arch-lv-label">🤖 Agent 能力层</div>
+                    <div class="arch-lv-label">🤖 Agent 能力层 <span class="map-badge violet">→ T3 计算层</span></div>
 
                     <!-- 子层1：场景层 -->
                     <div class="agent-sub-layer">
@@ -1124,7 +1120,7 @@
 
                 <!-- 服务层 -->
                 <div class="arch-lv" style="--lv-color: var(--amber);">
-                    <div class="arch-lv-label">🛡️ 服务层</div>
+                    <div class="arch-lv-label">🛡️ 服务层 <span class="map-badge amber">→ T2 网关层</span></div>
                     <div class="arch-mods arch-mods-row">
                         <div class="arch-mod arch-mod-mini" data-n="p-routing">
                             <div class="arch-mod-nm"><span>🎯</span> 智能路由</div>
@@ -1160,7 +1156,7 @@
 
                 <!-- AgentCore 核心能力层 -->
                 <div class="arch-lv arch-lv-agentcore" style="--lv-color: var(--emerald);">
-                    <div class="arch-lv-label">🤖 AgentCore · 能力内核</div>
+                    <div class="arch-lv-label">🤖 AgentCore · 能力内核 <span class="map-badge emerald">→ T4 推理层</span> <span class="map-badge rose">→ T5 存储层</span></div>
                     <div class="arch-mods arch-mods-grid">
                         <div class="arch-mod" data-n="p-memory">
                             <div class="arch-mod-nm"><span>🧠</span> Memory</div>
@@ -1273,7 +1269,7 @@
             </div>
             <div class="arch-lane-bd">
                 <div class="arch-lv" style="--lv-color: var(--blue);">
-                    <div class="arch-lv-label">📥 T1 接入层</div>
+                    <div class="arch-lv-label">📥 T1 接入层 <span class="map-badge blue">← 触点层</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-access">
                             <div class="arch-mod-nm"><span>📨</span> 多端请求接入</div>
@@ -1286,7 +1282,7 @@
                     </div>
                 </div>
                 <div class="arch-lv" style="--lv-color: var(--amber);">
-                    <div class="arch-lv-label">🚪 T2 网关层</div>
+                    <div class="arch-lv-label">🚪 T2 网关层 <span class="map-badge amber">← 服务层</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-gateway">
                             <div class="arch-mod-nm"><span>🛡️</span> Gateway 鉴权路由</div>
@@ -1299,7 +1295,7 @@
                     </div>
                 </div>
                 <div class="arch-lv" style="--lv-color: var(--emerald);">
-                    <div class="arch-lv-label">⚙️ T3 计算层</div>
+                    <div class="arch-lv-label">⚙️ T3 计算层 <span class="map-badge violet">← Agent能力层</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-agent">
                             <div class="arch-mod-nm"><span>📦</span> OpenClaw Agent 处理</div>
@@ -1320,7 +1316,7 @@
                     </div>
                 </div>
                 <div class="arch-lv" style="--lv-color: var(--violet);">
-                    <div class="arch-lv-label">🧠 T4 推理层</div>
+                    <div class="arch-lv-label">🧠 T4 推理层 <span class="map-badge emerald">← AgentCore</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-model">
                             <div class="arch-mod-nm"><span>🎯</span> 智能模型路由 + 推理</div>
@@ -1333,7 +1329,7 @@
                     </div>
                 </div>
                 <div class="arch-lv" style="--lv-color: var(--rose);">
-                    <div class="arch-lv-label">💾 T5 存储层</div>
+                    <div class="arch-lv-label">💾 T5 存储层 <span class="map-badge rose">← Memory</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-storage">
                             <div class="arch-mod-nm"><span>🗄️</span> KFS 存储 + 同步</div>
@@ -1373,15 +1369,15 @@
         </div>
     </div>
 
-    <!-- 图例 -->
+    <!-- 映射关系图例 -->
     <div class="arch-legend">
-        <div class="arch-legend-title">📊 产品 ↔ 技术 映射关系</div>
+        <div class="arch-legend-title">📊 产品架构 ↔ 技术架构 映射关系</div>
         <div class="arch-legend-items">
-            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#2563EB;"></span> 触点层 → T1 接入层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#7C3AED;"></span> Agent能力层 → T3 计算层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#D97706;"></span> 服务层 → T2 网关层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#059669;"></span> AgentCore → T4 推理层</div>
-            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#E11D48;"></span> Memory → T5 存储层</div>
+            <div class="arch-legend-item"><span class="map-badge blue" style="position:static;">①</span> 用户触点层 ↔ T1 接入层</div>
+            <div class="arch-legend-item"><span class="map-badge violet" style="position:static;">②</span> Agent能力层 ↔ T3 计算层</div>
+            <div class="arch-legend-item"><span class="map-badge amber" style="position:static;">③</span> 服务层 ↔ T2 网关层</div>
+            <div class="arch-legend-item"><span class="map-badge emerald" style="position:static;">④</span> AgentCore ↔ T4 推理层</div>
+            <div class="arch-legend-item"><span class="map-badge rose" style="position:static;">⑤</span> Memory ↔ T5 存储层</div>
         </div>
     </div>
 
@@ -1405,210 +1401,6 @@ function go(id) {
         }
     });
 
-// === User → Product arrow lines (smooth polyline) ===
-function drawUserArrows() {
-    const svg = document.getElementById('userArrowsSvg');
-    const page = document.getElementById('archPage');
-    if (!svg || !page) return;
-    const pageR = page.getBoundingClientRect();
-    svg.setAttribute('width', pageR.width);
-    svg.setAttribute('height', pageR.height);
-    svg.setAttribute('viewBox', `0 0 ${pageR.width} ${pageR.height}`);
-    svg.innerHTML = '';
-
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-
-    // Arrow markers + glow filter
-    [['blue','#2563EB'],['red','#E85D3A']].forEach(([id, hex]) => {
-        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-        mk.setAttribute('id', `ua-${id}`);
-        mk.setAttribute('viewBox', '0 0 12 10');
-        mk.setAttribute('refX', '10'); mk.setAttribute('refY', '5');
-        mk.setAttribute('markerWidth', '10'); mk.setAttribute('markerHeight', '8');
-        mk.setAttribute('orient', 'auto');
-        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 1.5, 12 5, 0 8.5');
-        pg.setAttribute('fill', hex);
-        mk.appendChild(pg); defs.appendChild(mk);
-
-        // Glow filter for each color
-        const f = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
-        f.setAttribute('id', `glow-${id}`);
-        f.setAttribute('x', '-20%'); f.setAttribute('y', '-20%');
-        f.setAttribute('width', '140%'); f.setAttribute('height', '140%');
-        const blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
-        blur.setAttribute('stdDeviation', '2'); blur.setAttribute('result', 'blur');
-        const merge = document.createElementNS('http://www.w3.org/2000/svg', 'feMerge');
-        const n1 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
-        n1.setAttribute('in', 'blur');
-        const n2 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
-        n2.setAttribute('in', 'SourceGraphic');
-        merge.appendChild(n1); merge.appendChild(n2);
-        f.appendChild(blur); f.appendChild(merge);
-        defs.appendChild(f);
-    });
-    svg.appendChild(defs);
-
-    const pairs = [
-        { from: 'userSegEng', to: 'touchCf', color: '#2563EB', marker: 'blue' },
-        { from: 'userSegAll', to: 'touchKa', color: '#E85D3A', marker: 'red' }
-    ];
-
-    pairs.forEach(({ from, to, color, marker }) => {
-        const elFrom = document.getElementById(from);
-        const elTo = document.getElementById(to);
-        if (!elFrom || !elTo) return;
-        const fR = elFrom.getBoundingClientRect();
-        const tR = elTo.getBoundingClientRect();
-        const x1 = fR.left + fR.width / 2 - pageR.left;
-        const y1 = fR.bottom - pageR.top;
-        const x2 = tR.left + tR.width / 2 - pageR.left;
-        const y2 = tR.top - pageR.top;
-
-        const midY = y1 + (y2 - y1) * 0.45;
-        const dx = x2 - x1;
-        const absDx = Math.abs(dx);
-        const R = 18;
-
-        let d;
-        if (absDx < 4) {
-            d = `M ${x1} ${y1} L ${x2} ${y2}`;
-        } else {
-            const dir = dx > 0 ? 1 : -1;
-            const r = Math.min(R, absDx / 2, Math.abs(midY - y1) / 2, Math.abs(y2 - midY) / 2);
-            d = `M ${x1} ${y1} ` +
-                `L ${x1} ${midY - r} ` +
-                `Q ${x1} ${midY} ${x1 + r * dir} ${midY} ` +
-                `L ${x2 - r * dir} ${midY} ` +
-                `Q ${x2} ${midY} ${x2} ${midY + r} ` +
-                `L ${x2} ${y2}`;
-        }
-
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', d);
-        path.setAttribute('stroke', color);
-        path.setAttribute('stroke-width', '2.5');
-        path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.85');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('stroke-linejoin', 'round');
-        path.setAttribute('marker-end', `url(#ua-${marker})`);
-        path.setAttribute('filter', `url(#glow-${marker})`);
-        svg.appendChild(path);
-    });
-}
-
-// === Architecture connection lines (layer-to-layer, simplified) ===
-const archMappings = [
-    { fromLayer: 0, toLayer: 0, color: '#2563EB', label: '触点→接入' },   // 用户触点层 → T1 接入层
-    { fromLayer: 1, toLayer: 2, color: '#7C3AED', label: '能力→计算' },   // Agent能力层 → T3 计算层
-    { fromLayer: 2, toLayer: 1, color: '#D97706', label: '服务→网关' },   // 服务层 → T2 网关层
-    { fromLayer: 3, toLayer: 3, color: '#059669', label: '内核→推理' },   // AgentCore → T4 推理层
-    { fromLayer: 3, toLayer: 4, color: '#E11D48', label: '记忆→存储', sub: true }  // Memory → T5 存储层
-];
-
-function drawArchLines() {
-    const svg = document.getElementById('archSvg');
-    const box = document.getElementById('archSwim');
-    if (!svg || !box) return;
-    const rc = box.getBoundingClientRect();
-    svg.setAttribute('width', rc.width);
-    svg.setAttribute('height', rc.height);
-    svg.setAttribute('viewBox', `0 0 ${rc.width} ${rc.height}`);
-    svg.innerHTML = '';
-
-    const lanes = box.querySelectorAll('.arch-lane');
-    if (lanes.length < 2) return;
-    const lL = lanes[0].getBoundingClientRect();
-    const lR = lanes[1].getBoundingClientRect();
-    if (lR.top > lL.bottom - 10) return;
-
-    // Gather left/right layer elements
-    const leftLayers = lanes[0].querySelectorAll('.arch-lv');
-    const rightLayers = lanes[1].querySelectorAll('.arch-lv');
-    if (!leftLayers.length || !rightLayers.length) return;
-
-    const gapL = lL.right - rc.left;
-    const gapR = lR.left - rc.left;
-    const gapW = gapR - gapL;
-    const R = 14;
-    const total = archMappings.length;
-
-    // Defs: markers
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const colors = ['2563EB','7C3AED','D97706','059669','E11D48'];
-    colors.forEach(hex => {
-        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-        mk.setAttribute('id', `ah-${hex}`);
-        mk.setAttribute('viewBox', '0 0 10 8');
-        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
-        mk.setAttribute('markerWidth', '9'); mk.setAttribute('markerHeight', '7');
-        mk.setAttribute('orient', 'auto');
-        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 1, 10 4, 0 7');
-        pg.setAttribute('fill', `#${hex}`);
-        mk.appendChild(pg); defs.appendChild(mk);
-    });
-    svg.appendChild(defs);
-
-    archMappings.forEach((m, i) => {
-        const srcEl = leftLayers[m.fromLayer];
-        const dstEl = rightLayers[m.toLayer];
-        if (!srcEl || !dstEl) return;
-
-        const srcR = srcEl.getBoundingClientRect();
-        const dstR = dstEl.getBoundingClientRect();
-
-        // Start: right edge, vertical center of source layer
-        const x1 = srcR.right - rc.left - 2;
-        let y1 = srcR.top + srcR.height / 2 - rc.top;
-        // If this is the "sub" line (Memory→Storage), offset down
-        if (m.sub) y1 = srcR.top + srcR.height * 0.8 - rc.top;
-
-        // End: left edge, vertical center of destination layer
-        const x2 = dstR.left - rc.left + 2;
-        const y2 = dstR.top + dstR.height / 2 - rc.top;
-
-        const dy = y2 - y1;
-        const absDy = Math.abs(dy);
-        const dir = dy > 0 ? 1 : (dy < 0 ? -1 : 0);
-
-        // Spread each line to a different x slot in the gap to avoid overlap
-        const slot = total > 1 ? i / (total - 1) : 0.5;
-        const cx = gapL + gapW * (0.15 + slot * 0.70);
-
-        let d;
-        if (absDy < 6) {
-            // Nearly horizontal — straight line
-            d = `M ${x1} ${y1} L ${x2} ${y2}`;
-        } else {
-            // Polyline: horizontal → vertical → horizontal, each at unique cx
-            const r = Math.min(R, Math.abs(cx - x1) / 2, absDy / 2, Math.abs(x2 - cx) / 2);
-            d = `M ${x1} ${y1} ` +
-                `L ${cx - r} ${y1} ` +
-                `Q ${cx} ${y1} ${cx} ${y1 + r * dir} ` +
-                `L ${cx} ${y2 - r * dir} ` +
-                `Q ${cx} ${y2} ${cx + r} ${y2} ` +
-                `L ${x2} ${y2}`;
-        }
-
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', d);
-        path.setAttribute('stroke', m.color);
-        path.setAttribute('stroke-width', '2.2');
-        path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.6');
-        path.setAttribute('stroke-dasharray', '8,5');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('stroke-linejoin', 'round');
-        path.setAttribute('marker-end', `url(#ah-${m.color.slice(1)})`);
-        svg.appendChild(path);
-    });
-}
-window.addEventListener('resize', (() => {
-    let t;
-    return () => { clearTimeout(t); t = setTimeout(() => { drawUserArrows(); drawArchLines(); }, 120); };
-})());
 
 /* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {
@@ -1645,7 +1437,6 @@ document.addEventListener('mouseover', e => {
     });
 });
     window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
-    if (id === 'ch6') setTimeout(() => { drawUserArrows(); drawArchLines(); }, 80);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

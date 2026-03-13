@@ -820,22 +820,25 @@
 
     <!-- 用户分层 -->
     <div class="user-segments">
-        <div class="user-seg user-seg-eng">
+        <div class="user-seg user-seg-eng" id="userSegEng">
             <div class="user-seg-icon">🔧</div>
             <div class="user-seg-info">
                 <div class="user-seg-title">工程师</div>
                 <div class="user-seg-desc">研发 · 测试 · 运维 · 数据</div>
             </div>
-            <div class="user-seg-arrow">▼</div>
         </div>
-        <div class="user-seg user-seg-all">
+        <div class="user-seg user-seg-all" id="userSegAll">
             <div class="user-seg-icon">👥</div>
             <div class="user-seg-info">
                 <div class="user-seg-title">所有员工</div>
                 <div class="user-seg-desc">产品 · 运营 · 市场 · 管理 · HR · 财务 …</div>
             </div>
-            <div class="user-seg-arrow">▼</div>
         </div>
+    </div>
+
+    <!-- 用户→产品连线 SVG -->
+    <div class="user-arrows-wrap" id="userArrowsWrap">
+        <svg id="userArrowsSvg"></svg>
     </div>
 
     <!-- 泳道架构图 -->
@@ -857,7 +860,7 @@
                     <!-- 两个产品子区域 -->
                     <div class="touch-products">
                         <!-- CodeFlicker -->
-                        <div class="touch-product touch-cf">
+                        <div class="touch-product touch-cf" id="touchCf">
                             <div class="touch-product-hd cf">
                                 <span>💻</span> CodeFlicker
                                 <div class="touch-product-sub">AI 编码助手 → AI 工程师</div>
@@ -901,7 +904,7 @@
                         </div>
 
                         <!-- KAvatar -->
-                        <div class="touch-product touch-ka">
+                        <div class="touch-product touch-ka" id="touchKa">
                             <div class="touch-product-hd ka">
                                 <span>🤖</span> KAvatar
                                 <div class="touch-product-sub">AI 员工</div>
@@ -1300,6 +1303,74 @@ function go(id) {
         }
     });
 
+// === User → Product arrow lines ===
+function drawUserArrows() {
+    const svg = document.getElementById('userArrowsSvg');
+    const wrap = document.getElementById('userArrowsWrap');
+    if (!svg || !wrap) return;
+    const wrapR = wrap.getBoundingClientRect();
+    svg.setAttribute('width', wrapR.width);
+    svg.setAttribute('height', wrapR.height);
+    svg.setAttribute('viewBox', `0 0 ${wrapR.width} ${wrapR.height}`);
+    svg.innerHTML = '';
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    [['blue','#2563EB'],['violet','#7C3AED']].forEach(([id, hex]) => {
+        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+        mk.setAttribute('id', `ua-${id}`);
+        mk.setAttribute('viewBox', '0 0 10 8');
+        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
+        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
+        mk.setAttribute('orient', 'auto');
+        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        pg.setAttribute('points', '0 0.5, 10 4, 0 7.5');
+        pg.setAttribute('fill', hex);
+        mk.appendChild(pg); defs.appendChild(mk);
+    });
+    svg.appendChild(defs);
+
+    const pairs = [
+        { from: 'userSegEng', to: 'touchCf', color: '#2563EB', marker: 'blue' },
+        { from: 'userSegAll', to: 'touchKa', color: '#7C3AED', marker: 'violet' }
+    ];
+
+    pairs.forEach(({ from, to, color, marker }) => {
+        const elFrom = document.getElementById(from);
+        const elTo = document.getElementById(to);
+        if (!elFrom || !elTo) return;
+        const fR = elFrom.getBoundingClientRect();
+        const tR = elTo.getBoundingClientRect();
+        const x1 = fR.left + fR.width / 2 - wrapR.left;
+        const y1 = 0;
+        const x2 = tR.left + tR.width / 2 - wrapR.left;
+        const y2 = wrapR.height;
+        const midY = wrapR.height / 2;
+        const R = 10;
+        const dx = x2 - x1;
+        const absDx = Math.abs(dx);
+
+        let d;
+        if (absDx < 4) {
+            d = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+            const dir = dx > 0 ? 1 : -1;
+            const r = Math.min(R, absDx / 2, midY / 2);
+            d = `M ${x1} ${y1} L ${x1} ${midY - r} Q ${x1} ${midY} ${x1 + r * dir} ${midY} L ${x2 - r * dir} ${midY} Q ${x2} ${midY} ${x2} ${midY + r} L ${x2} ${y2}`;
+        }
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('stroke', color);
+        path.setAttribute('stroke-width', '2.5');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('opacity', '0.7');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('stroke-linejoin', 'round');
+        path.setAttribute('marker-end', `url(#ua-${marker})`);
+        svg.appendChild(path);
+    });
+}
+
 // === Architecture connection lines ===
 const archMappings = [
     { from: 'p-cf-ide', to: 't-access', color: '#2563EB' },
@@ -1389,7 +1460,7 @@ function drawArchLines() {
         svg.appendChild(path);
     });
 }
-window.addEventListener('resize', drawArchLines);
+window.addEventListener('resize', () => { drawUserArrows(); drawArchLines(); });
 
 /* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {
@@ -1413,7 +1484,7 @@ document.addEventListener('mouseover', e => {
     });
 });
     window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
-    if (id === 'ch6') setTimeout(drawArchLines, 80);
+    if (id === 'ch6') setTimeout(() => { drawUserArrows(); drawArchLines(); }, 80);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -905,43 +905,49 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 #archPage { max-width: 100%; margin: 0 auto; }
 #ch6 { max-width: 100%; }
 
-/* --- user segments bar --- */
+/* --- user segments --- */
 .user-segments {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
+    gap: 24px;
     margin-bottom: 0;
-    border-radius: var(--r-lg) var(--r-lg) 0 0;
-    overflow: hidden;
-    border: 2px solid var(--border);
-    border-bottom: none;
 }
 .user-seg {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 18px 24px;
+    padding: 20px 28px;
     position: relative;
+    border-radius: var(--r-lg);
+    border: 2px solid transparent;
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+    transition: all .3s cubic-bezier(.4,0,.2,1);
+    cursor: default;
 }
+.user-seg:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.1); }
 .user-seg-eng {
     background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
-    border-right: 1px dashed var(--border);
+    border-color: var(--blue);
 }
 .user-seg-all {
     background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
+    border-color: var(--violet);
 }
-.user-seg-icon { font-size: 32px; flex-shrink: 0; }
-.user-seg-title { font-size: 18px; font-weight: 800; color: var(--ink); }
+.user-seg-icon { font-size: 36px; flex-shrink: 0; }
+.user-seg-title { font-size: 20px; font-weight: 800; color: var(--ink); }
 .user-seg-desc { font-size: 12px; color: var(--ink-3); margin-top: 2px; }
-.user-seg-arrow {
-    margin-left: auto;
-    font-size: 18px;
-    color: var(--ink-4);
-    animation: bounce-down 1.5s ease-in-out infinite;
+
+/* --- user-to-product arrow SVG wrapper --- */
+.user-arrows-wrap {
+    position: relative;
+    height: 48px;
+    margin-bottom: 0;
 }
-@keyframes bounce-down {
-    0%, 100% { transform: translateY(0); opacity: .4; }
-    50% { transform: translateY(4px); opacity: .8; }
+#userArrowsSvg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
 }
 
 /* --- swimlane container --- */
@@ -952,8 +958,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     position: relative;
     margin-bottom: 0;
     border: 2px solid var(--border);
-    border-top: none;
-    border-radius: 0 0 var(--r-lg) var(--r-lg);
+    border-radius: var(--r-lg);
 }
 #archSvg {
     position: absolute;
@@ -1199,8 +1204,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 
 /* --- responsive for arch --- */
 @media (max-width: 768px) {
-    .user-segments { grid-template-columns: 1fr; }
-    .user-seg-eng { border-right: none; border-bottom: 1px dashed var(--border); }
+    .user-segments { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .user-arrows-wrap { height: 36px; }
     .arch-swimlanes { grid-template-columns: 1fr; }
     .arch-lane:first-child .arch-lane-bd { border-right: none; border-bottom: 2px dashed var(--border); }
     .arch-storage-bd { grid-template-columns: 1fr; }

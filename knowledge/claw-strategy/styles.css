@@ -1336,6 +1336,6 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     .arch-swimlanes { grid-template-columns: 1fr; }
     .arch-lane:first-child .arch-lane-bd { border-right: none; border-bottom: 2px dashed var(--border); }
     .arch-storage-bd { grid-template-columns: 1fr; }
-    #archSvg { display: none; }
+    #archSvg { /* hidden via JS when lanes stack */ }
     .touch-products { grid-template-columns: 1fr; }
 }

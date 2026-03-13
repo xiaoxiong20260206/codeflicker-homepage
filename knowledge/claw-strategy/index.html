@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=29">
+<link rel="stylesheet" href="styles.css?v=30">
 </head>
 <body>
 
@@ -1340,17 +1340,35 @@ function drawUserArrows() {
     svg.innerHTML = '';
 
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+
+    // Arrow markers + glow filter
     [['blue','#2563EB'],['red','#E85D3A']].forEach(([id, hex]) => {
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `ua-${id}`);
         mk.setAttribute('viewBox', '0 0 12 10');
         mk.setAttribute('refX', '10'); mk.setAttribute('refY', '5');
-        mk.setAttribute('markerWidth', '9'); mk.setAttribute('markerHeight', '7');
+        mk.setAttribute('markerWidth', '10'); mk.setAttribute('markerHeight', '8');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 1, 12 5, 0 9');
-        pg.setAttribute('fill', hex); pg.setAttribute('opacity', '0.8');
+        pg.setAttribute('points', '0 1.5, 12 5, 0 8.5');
+        pg.setAttribute('fill', hex);
         mk.appendChild(pg); defs.appendChild(mk);
+
+        // Glow filter for each color
+        const f = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+        f.setAttribute('id', `glow-${id}`);
+        f.setAttribute('x', '-20%'); f.setAttribute('y', '-20%');
+        f.setAttribute('width', '140%'); f.setAttribute('height', '140%');
+        const blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
+        blur.setAttribute('stdDeviation', '2'); blur.setAttribute('result', 'blur');
+        const merge = document.createElementNS('http://www.w3.org/2000/svg', 'feMerge');
+        const n1 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+        n1.setAttribute('in', 'blur');
+        const n2 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+        n2.setAttribute('in', 'SourceGraphic');
+        merge.appendChild(n1); merge.appendChild(n2);
+        f.appendChild(blur); f.appendChild(merge);
+        defs.appendChild(f);
     });
     svg.appendChild(defs);
 
@@ -1370,11 +1388,10 @@ function drawUserArrows() {
         const x2 = tR.left + tR.width / 2 - pageR.left;
         const y2 = tR.top - pageR.top;
 
-        // Smooth polyline: down → horizontal turn → down
         const midY = y1 + (y2 - y1) * 0.45;
         const dx = x2 - x1;
         const absDx = Math.abs(dx);
-        const R = 16; // corner radius
+        const R = 18;
 
         let d;
         if (absDx < 4) {
@@ -1395,10 +1412,11 @@ function drawUserArrows() {
         path.setAttribute('stroke', color);
         path.setAttribute('stroke-width', '2.5');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.65');
+        path.setAttribute('opacity', '0.85');
         path.setAttribute('stroke-linecap', 'round');
         path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('marker-end', `url(#ua-${marker})`);
+        path.setAttribute('filter', `url(#glow-${marker})`);
         svg.appendChild(path);
     });
 }
@@ -1429,28 +1447,33 @@ function drawArchLines() {
     svg.setAttribute('height', rc.height);
     svg.setAttribute('viewBox', `0 0 ${rc.width} ${rc.height}`);
     svg.innerHTML = '';
+
+    // Check if lanes are side by side (skip drawing if stacked)
+    const lanes = box.querySelectorAll('.arch-lane');
+    if (lanes.length < 2) return;
+    const lL = lanes[0].getBoundingClientRect();
+    const lR = lanes[1].getBoundingClientRect();
+    if (lR.top > lL.bottom - 10) return; // lanes stacked vertically
+
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
     ['2563EB','7C3AED','D97706','059669','E11D48'].forEach(hex => {
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `ah-${hex}`);
         mk.setAttribute('viewBox', '0 0 10 8');
         mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
-        mk.setAttribute('markerWidth', '7'); mk.setAttribute('markerHeight', '5.5');
+        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 0.5, 10 4, 0 7.5');
-        pg.setAttribute('fill', `#${hex}`); pg.setAttribute('opacity', '0.7');
+        pg.setAttribute('points', '0 1, 10 4, 0 7');
+        pg.setAttribute('fill', `#${hex}`); pg.setAttribute('opacity', '0.85');
         mk.appendChild(pg); defs.appendChild(mk);
     });
     svg.appendChild(defs);
-    const lanes = box.querySelectorAll('.arch-lane');
-    if (lanes.length < 2) return;
-    const lL = lanes[0].getBoundingClientRect();
-    const lR = lanes[1].getBoundingClientRect();
+
     const gapL = lL.right - rc.left;
     const gapR = lR.left - rc.left;
     const gapW = gapR - gapL;
-    const R = 14;
+    const R = 16;
     const total = archMappings.length;
     archMappings.forEach((m, i) => {
         const elA = document.querySelector(`[data-n="${m.from}"]`);
@@ -1458,35 +1481,41 @@ function drawArchLines() {
         if (!elA || !elB) return;
         const a = elA.getBoundingClientRect();
         const b = elB.getBoundingClientRect();
-        const x1 = a.left + a.width / 2 - rc.left;
-        const y1 = a.bottom - rc.top;
+        // Start from right edge center of left module
+        const x1 = a.right - rc.left;
+        const y1 = a.top + a.height / 2 - rc.top;
+        // End at left edge center of right module
         const x2 = b.left - rc.left;
         const y2 = b.top + b.height / 2 - rc.top;
+        // Route through the gap
         const slot = total > 1 ? i / (total - 1) : 0.5;
-        const cx = gapL + gapW * (0.12 + slot * 0.76);
-        const drop = 10 + (i % 5) * 5;
-        const midY = y1 + drop;
-        const dy = y2 >= midY ? 1 : -1;
-        const segV1 = Math.abs(midY - y1);
-        const segH  = Math.abs(cx - x1);
-        const segV2 = Math.abs(y2 - midY);
+        const cx = gapL + gapW * (0.15 + slot * 0.70);
+        const dy = y2 > y1 ? 1 : (y2 < y1 ? -1 : 0);
+        const segH1 = Math.abs(cx - x1);
+        const segV  = Math.abs(y2 - y1);
         const segH2 = Math.abs(x2 - cx);
-        const r1 = Math.min(R, segV1 / 2, segH / 2);
-        const r2 = Math.min(R, segH / 2, segV2 / 2);
-        const r3 = Math.min(R, segV2 / 2, segH2 / 2);
-        const dirH1 = cx > x1 ? 1 : -1;
-        const d =
-            `M ${x1} ${y1} L ${x1} ${midY - r1} ` +
-            `Q ${x1} ${midY} ${x1 + r1 * dirH1} ${midY} L ${cx - r2 * dirH1} ${midY} ` +
-            `Q ${cx} ${midY} ${cx} ${midY + r2 * dy} L ${cx} ${y2 - r3 * dy} ` +
-            `Q ${cx} ${y2} ${cx + r3} ${y2} L ${x2} ${y2}`;
+        const r1 = Math.min(R, segH1 / 2, segV / 2 || R);
+        const r2 = Math.min(R, segV / 2 || R, segH2 / 2);
+
+        let d;
+        if (segV < 3) {
+            // Nearly horizontal — straight line through gap
+            d = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+            d = `M ${x1} ${y1} L ${cx - r1} ${y1} ` +
+                `Q ${cx} ${y1} ${cx} ${y1 + r1 * dy} ` +
+                `L ${cx} ${y2 - r2 * dy} ` +
+                `Q ${cx} ${y2} ${cx + r2} ${y2} ` +
+                `L ${x2} ${y2}`;
+        }
+
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', m.color);
-        path.setAttribute('stroke-width', '1.8');
+        path.setAttribute('stroke-width', '2');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.45');
-        path.setAttribute('stroke-dasharray', '8,5');
+        path.setAttribute('opacity', '0.55');
+        path.setAttribute('stroke-dasharray', '10,6');
         path.setAttribute('stroke-linecap', 'round');
         path.setAttribute('stroke-linejoin', 'round');
         path.setAttribute('marker-end', `url(#ah-${m.color.slice(1)})`);

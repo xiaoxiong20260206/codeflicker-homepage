@@ -1054,6 +1054,80 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .touch-product .arch-mod-mini .arch-mod-nm span { font-size: 14px; }
 .touch-product .arch-mod-mini .arch-mod-ds { font-size: 11px; }
 
+/* AIme horizontal layout */
+.arch-mods-horizontal {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+}
+.arch-mods-horizontal .arch-mod-mini {
+    flex: 1 1 0;
+    min-width: 80px;
+    text-align: center;
+}
+.arch-mods-horizontal .arch-mod-mini .arch-mod-nm {
+    justify-content: center;
+}
+
+/* Cloud Code Agent bar (full-width at bottom of touchpoint layer) */
+.cloud-agent-bar {
+    margin-top: 12px;
+    padding: 14px 18px !important;
+    background: linear-gradient(150deg, #EFF6FF 0%, #DBEAFE 50%, #BFDBFE 100%) !important;
+    border: 2px solid rgba(37,99,235,.25) !important;
+    border-radius: 14px !important;
+    cursor: pointer;
+    position: relative;
+}
+.cloud-agent-bar:hover {
+    border-color: var(--blue) !important;
+    box-shadow: 0 4px 16px rgba(37,99,235,.12) !important;
+    transform: translateY(-2px) !important;
+}
+.cloud-agent-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.cloud-agent-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+}
+.cloud-agent-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--blue);
+}
+.cloud-agent-desc {
+    font-size: 11.5px;
+    color: var(--ink-3);
+    margin-top: 2px;
+}
+.cloud-agent-bar .arch-tip {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    bottom: calc(100% + 10px);
+    left: 0;
+    width: 400px;
+    max-width: 90vw;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,.18);
+    pointer-events: none;
+}
+.cloud-agent-bar .arch-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    border: 7px solid transparent;
+    border-top-color: #fff;
+}
+.cloud-agent-bar:hover .arch-tip { display: block; }
+.cloud-agent-bar .arch-tip .arch-tip-hd { background: var(--blue); }
+
 /* --- module cards --- */
 .arch-mods { display: flex; flex-direction: column; gap: 9px; }
 .arch-mods-row { flex-direction: row; flex-wrap: wrap; }

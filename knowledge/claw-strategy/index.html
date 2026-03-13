@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>⚡</text></svg>">
-<link rel="stylesheet" href="styles.css?v=13">
+<link rel="stylesheet" href="styles.css?v=14">
 </head>
 <body>
 
@@ -1468,6 +1468,35 @@ function drawArchLines() {
 }
 
 window.addEventListener('resize', drawArchLines);
+
+/* ---- tooltip viewport-aware repositioning ---- */
+document.addEventListener('mouseover', e => {
+    const mod = e.target.closest('.arch-mod, .arch-evolution');
+    if (!mod) return;
+    const tip = mod.querySelector('.arch-tip');
+    if (!tip) return;
+    // reset before measuring
+    tip.style.left = '';
+    tip.style.right = '';
+    tip.style.transform = '';
+    // measure
+    requestAnimationFrame(() => {
+        const tr = tip.getBoundingClientRect();
+        const vw = document.documentElement.clientWidth;
+        const pad = 12; // viewport padding
+        if (tr.right > vw - pad) {
+            // overflow right → shift left
+            const shift = tr.right - vw + pad;
+            tip.style.left = `${-shift}px`;
+            tip.style.right = 'auto';
+        }
+        if (tr.left < pad) {
+            // overflow left → shift right
+            tip.style.left = `${pad - tr.left}px`;
+            tip.style.right = 'auto';
+        }
+    });
+});
 </script>
 
 </body>

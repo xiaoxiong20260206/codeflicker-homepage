@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T09:58:01.641727",
+  "generatedAt": "2026-03-13T10:29:03.560583",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -57,7 +57,7 @@
         "icon": "🔄",
         "color": "#a78bfa",
         "layer": "meta",
-        "description": "驱动AI助手持续进化的完整闭环：反思→学习→优化",
+        "description": "驱动AI助手持续进化的核心引擎：反思→学习→优化",
         "skills": [
           {
             "name": "daily-reflection-evolution",
@@ -126,8 +126,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 24599,
-            "skillSizeLabel": "24K字 · 大型",
+            "skillSize": 22049,
+            "skillSizeLabel": "22K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -252,7 +252,7 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 13129,
+            "skillSize": 13103,
             "skillSizeLabel": "13K字 · 中型",
             "ksInternal": false,
             "cfProject": false
@@ -1179,8 +1179,8 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 158318,
-            "skillSizeLabel": "158K字 · 巨型",
+            "skillSize": 157590,
+            "skillSizeLabel": "157K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1474,7 +1474,7 @@
             "role": "engine",
             "icon": "🔄",
             "color": "#a78bfa",
-            "description": "驱动AI助手持续进化的完整闭环：反思→学习→优化",
+            "description": "驱动AI助手持续进化的核心引擎：反思→学习→优化",
             "skills": [
               {
                 "name": "daily-reflection-evolution",
@@ -1543,8 +1543,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 24599,
-                "skillSizeLabel": "24K字 · 大型",
+                "skillSize": 22049,
+                "skillSizeLabel": "22K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1669,7 +1669,7 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 13129,
+                "skillSize": 13103,
                 "skillSizeLabel": "13K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
@@ -2607,8 +2607,8 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 158318,
-                "skillSizeLabel": "158K字 · 巨型",
+                "skillSize": 157590,
+                "skillSizeLabel": "157K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -2992,32 +2992,6 @@
           "tier": "technique"
         }
       },
-      "loops": [
-        {
-          "name": "执行质量环",
-          "level": "秒级",
-          "icon": "⚡",
-          "desc": "每次执行任务时自动触发：先自审方案是否完备，执行中发现问题立即修正，完成后总结经验避免下次再犯。确保每件事都「一次做对」。"
-        },
-        {
-          "name": "每日进化环",
-          "level": "天级",
-          "icon": "🔄",
-          "desc": "每天自动复盘当日工作：回顾做了什么、哪里做得好、哪里可以改进，然后把改进点同步到记忆/技能/知识库中，第二天自然变得更强。"
-        },
-        {
-          "name": "四树互养环",
-          "level": "跨域",
-          "icon": "🌀",
-          "desc": "记忆、技能、知识、思维四棵能力树相互滋养：新知识触发技能优化，技能实践产生新记忆，记忆沉淀升级认知框架，形成正向循环。"
-        },
-        {
-          "name": "元元环",
-          "level": "月级",
-          "icon": "♻️",
-          "desc": "每月审视自进化体系本身是否过时：检查技能架构是否合理、工作流程是否高效、整个进化机制是否需要升级，确保进化能力本身也在进化。"
-        }
-      ],
       "cognitive_note": "独立的认知框架，贯穿所有任务",
       "system_note": "方法的方法：执行质量、资源调配、能力自省"
     }
@@ -3056,7 +3030,7 @@
           "ai_insight"
         ],
         "fileCount": 53,
-        "sizeKB": 479.8,
+        "sizeKB": 481.6,
         "heatLevel": 5,
         "recentCount": 53
       },
@@ -3226,7 +3200,7 @@
               "ai_insight"
             ],
             "fileCount": 53,
-            "sizeKB": 479.8,
+            "sizeKB": 481.6,
             "heatLevel": 5,
             "recentCount": 53
           },
@@ -3248,7 +3222,7 @@
           }
         },
         "totalFiles": 79,
-        "totalSizeKB": 761.9
+        "totalSizeKB": 763.7
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3322,7 +3296,7 @@
       }
     },
     "totalFiles": 244,
-    "totalSizeKB": 2504.5
+    "totalSizeKB": 2506.3
   },
   "memories": {
     "items": [

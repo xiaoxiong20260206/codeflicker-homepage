@@ -135,7 +135,6 @@ function renderSkillTechTree(container, skills) {
     var domainLayer = tree.domain_pack || {};
     var execLayer = tree.execution || {};
     var engineRoles = relationships.engine_roles || {};
-    var loops = relationships.loops || [];
     
     // 元能力层子分类 — 按 role 稳定标识符匹配（不依赖中文 key）
     var metaChildren = metaLayer.children || {};
@@ -188,19 +187,8 @@ function renderSkillTechTree(container, skills) {
             toolNodes += createEngineNode(toolSkills[ti], (r && r.role) || '深度工具', 'tool');
         }
         
-        var loopsHtml = '';
-        if (loops.length > 0) {
-            loopsHtml = '<div class="engine-loops">';
-            for (var li = 0; li < loops.length; li++) {
-                var l = loops[li];
-                var loopId = storeGeneric(l.icon, l.name, l.desc || '', l.level);
-                loopsHtml += '<div class="engine-loop-tag" onmouseenter="showTreeTooltip(event, \'' + loopId + '\', \'mechanism\')" onmouseleave="hideTooltip()"><span class="loop-icon">' + l.icon + '</span><span class="loop-name">' + l.name + '</span><span class="loop-level">' + l.level + '</span></div>';
-            }
-            loopsHtml += '</div>';
-        }
-        
         engineHtml = '<div class="engine-section">' +
-            '<div class="engine-title-bar"><span class="engine-title-icon">\uD83D\uDD04</span><span class="engine-title-text">自进化引擎</span><span class="engine-title-desc">驱动持续进化的完整闭环</span></div>' +
+            '<div class="engine-title-bar"><span class="engine-title-icon">\uD83D\uDD04</span><span class="engine-title-text">自进化引擎</span><span class="engine-title-desc">驱动持续进化的核心引擎</span></div>' +
             '<div class="engine-diagram">' +
                 '<div class="engine-guide-row">' +
                     (absorbNode ? '<div class="engine-absorb-node">' + absorbNode + '</div><div class="engine-absorb-link"><span class="absorb-arrow absorb-arrow--left"></span><span class="absorb-label">增强</span></div>' : '') +
@@ -218,7 +206,6 @@ function renderSkillTechTree(container, skills) {
                 '<div class="engine-tier engine-tier--tools"><div class="engine-tools-connector"><span class="tools-connector-label">基座工具</span></div><div class="engine-tools-grid">' + toolNodes + '</div></div>' +
                 (techniqueSkills.length > 0 ? '<div class="engine-tier engine-tier--tools" style="margin-top:6px;"><div class="engine-tools-connector"><span class="tools-connector-label">技能学习和提升</span></div><div class="engine-tools-grid">' + (function(){ var tn=''; for(var ti2=0;ti2<techniqueSkills.length;ti2++){var r2=engineRoles[techniqueSkills[ti2].name]; tn+=createEngineNode(techniqueSkills[ti2],(r2&&r2.role)||'招式','technique');} return tn; })() + '</div></div>' : '') +
             '</div>' +
-            loopsHtml +
         '</div>';
     }
     
@@ -298,7 +285,7 @@ function renderSkillTechTree(container, skills) {
     
     // ========== 组装 ==========
     container.innerHTML = '<div class="skill-architecture">' +
-        '<div class="arch-header"><div class="arch-title"><span class="arch-icon">\u26A1</span><span>技能体系</span></div><div class="arch-stats"><span class="arch-stat">' + (skills.total || 0) + ' 技能</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">5 闭环</span></div></div>' +
+        '<div class="arch-header"><div class="arch-title"><span class="arch-icon">\u26A1</span><span>技能体系</span></div><div class="arch-stats"><span class="arch-stat">' + (skills.total || 0) + ' 技能</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span><span class="arch-stat-sep">\u00B7</span><span class="arch-stat">3 层架构</span></div></div>' +
         '<div class="meta-layer"><div class="meta-layer-label"><span class="meta-label-icon">\uD83C\uDFDB\uFE0F</span><span class="meta-label-text">元能力层</span><span class="meta-label-desc">决定"我是谁"</span></div><div class="meta-layer-content">' + engineHtml + '<div class="meta-bottom-row">' + cognitiveHtml + systemHtml + '</div></div></div>' +
         renderLayerTransition('元能力驱动领域能力') +
         domainHtml +

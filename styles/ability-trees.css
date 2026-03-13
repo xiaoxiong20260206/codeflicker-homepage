@@ -536,48 +536,6 @@
     padding: 0 8px;
 }
 
-/* 四大闭环标签 */
-.engine-loops {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 8px 14px;
-    border-top: 1px solid rgba(167, 139, 250, 0.1);
-    background: rgba(0, 0, 0, 0.15);
-    justify-content: center;
-    border-radius: 0 0 12px 12px;
-}
-.engine-loop-tag {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 5px 12px;
-    background: rgba(167, 139, 250, 0.08);
-    border: 1px solid rgba(167, 139, 250, 0.15);
-    border-left: 3px solid rgba(167, 139, 250, 0.5);
-    border-radius: 4px 12px 12px 4px;
-    font-size: 11px;
-    color: rgba(200, 220, 240, 0.7);
-    cursor: help;
-    transition: all 0.2s ease;
-}
-.engine-loop-tag:hover {
-    background: rgba(167, 139, 250, 0.15);
-    border-color: rgba(167, 139, 250, 0.3);
-    border-left-color: rgba(167, 139, 250, 0.7);
-    color: rgba(200, 220, 240, 0.9);
-}
-.loop-icon { font-size: 14px; }
-.loop-name { font-weight: 500; }
-.loop-level {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    color: rgba(167, 139, 250, 0.5);
-    padding: 0 4px;
-    border-left: 1px solid rgba(167, 139, 250, 0.2);
-    margin-left: 2px;
-}
-
 /* === 认知框架 === */
 .cognitive-section {
     background: rgba(245, 158, 11, 0.05);

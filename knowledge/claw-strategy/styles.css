@@ -906,46 +906,42 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 #ch6 { max-width: 100%; }
 #ch6 .chapter-lead { max-width: 680px; }
 
-/* --- user segments --- */
+/* --- user segments (inside touchpoint layer) --- */
 .user-segments {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 32px;
-    margin-bottom: 16px;
+    gap: 12px;
+    margin-bottom: 14px;
 }
 .user-seg {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 22px 32px;
+    gap: 12px;
+    padding: 14px 18px;
     position: relative;
-    border-radius: 16px;
+    border-radius: 12px;
     border: 2px solid transparent;
-    box-shadow:
-        0 2px 8px rgba(0,0,0,.04),
-        0 8px 24px rgba(0,0,0,.04);
-    transition: all .35s cubic-bezier(.4,0,.2,1);
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    transition: all .3s cubic-bezier(.4,0,.2,1);
     cursor: default;
 }
 .user-seg:hover {
-    transform: translateY(-3px);
-    box-shadow:
-        0 4px 12px rgba(0,0,0,.06),
-        0 12px 36px rgba(0,0,0,.08);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
 }
 .user-seg-eng {
     background: linear-gradient(150deg, #F8FBFF 0%, #DBEAFE 100%);
-    border-color: rgba(37,99,235,.35);
+    border-color: rgba(37,99,235,.3);
 }
 .user-seg-all {
     background: linear-gradient(150deg, #FAF8FF 0%, #EDE9FE 100%);
-    border-color: rgba(124,58,237,.3);
+    border-color: rgba(124,58,237,.25);
 }
-.user-seg-icon { font-size: 40px; flex-shrink: 0; }
-.user-seg-title { font-size: 22px; font-weight: 800; color: var(--ink); letter-spacing: -.01em; }
-.user-seg-desc { font-size: 13px; color: var(--ink-3); margin-top: 3px; letter-spacing: .01em; }
+.user-seg-icon { font-size: 28px; flex-shrink: 0; }
+.user-seg-title { font-size: 17px; font-weight: 800; color: var(--ink); letter-spacing: -.01em; }
+.user-seg-desc { font-size: 11px; color: var(--ink-3); margin-top: 2px; }
 
-/* --- user-to-product arrow SVG is now position:absolute inside #archPage --- */
+/* --- user-to-product arrow SVG is position:absolute inside #archPage --- */
 
 /* --- swimlane container --- */
 .arch-swimlanes {

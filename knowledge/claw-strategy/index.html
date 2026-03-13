@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=23">
+<link rel="stylesheet" href="styles.css?v=25">
 </head>
 <body>
 
@@ -820,24 +820,6 @@
     <!-- 用户→产品连线 SVG（全局覆盖层） -->
     <svg id="userArrowsSvg" style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:50;"></svg>
 
-    <!-- 用户分层 -->
-    <div class="user-segments">
-        <div class="user-seg user-seg-eng" id="userSegEng">
-            <div class="user-seg-icon">🔧</div>
-            <div class="user-seg-info">
-                <div class="user-seg-title">工程师</div>
-                <div class="user-seg-desc">研发 · 测试 · 运维 · 数据</div>
-            </div>
-        </div>
-        <div class="user-seg user-seg-all" id="userSegAll">
-            <div class="user-seg-icon">👥</div>
-            <div class="user-seg-info">
-                <div class="user-seg-title">所有员工</div>
-                <div class="user-seg-desc">产品 · 运营 · 市场 · 管理 · HR · 财务 …</div>
-            </div>
-        </div>
-    </div>
-
     <!-- 泳道架构图 -->
     <div class="arch-swimlanes" id="archSwim">
         <svg id="archSvg"></svg>
@@ -850,9 +832,27 @@
             </div>
             <div class="arch-lane-bd">
 
-                <!-- 用户触点层：CodeFlicker + AIme -->
+                <!-- 用户触点层：用户分层 + CodeFlicker + AIme -->
                 <div class="arch-lv" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">🌍 用户触点层</div>
+
+                    <!-- 两类用户 -->
+                    <div class="user-segments">
+                        <div class="user-seg user-seg-eng" id="userSegEng">
+                            <div class="user-seg-icon">🔧</div>
+                            <div class="user-seg-info">
+                                <div class="user-seg-title">工程师</div>
+                                <div class="user-seg-desc">研发 · 测试 · 运维 · 数据</div>
+                            </div>
+                        </div>
+                        <div class="user-seg user-seg-all" id="userSegAll">
+                            <div class="user-seg-icon">👥</div>
+                            <div class="user-seg-info">
+                                <div class="user-seg-title">所有员工</div>
+                                <div class="user-seg-desc">产品 · 运营 · 市场 · 管理 · HR · 财务 …</div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- 两个产品子区域 -->
                     <div class="touch-products">

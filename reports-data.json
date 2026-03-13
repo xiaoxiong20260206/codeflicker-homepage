@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T22:08:00.212618",
+  "generatedAt": "2026-03-13T08:03:50.525058",
   "summary": {
     "totalDays": 17,
     "latestDate": "2026-03-12",
@@ -7,6 +7,7 @@
   },
   "trend": {
     "dates": [
+      "02-27",
       "02-28",
       "03-01",
       "03-02",
@@ -19,10 +20,10 @@
       "03-09",
       "03-10",
       "03-11",
-      "03-12",
-      "03-13"
+      "03-12"
     ],
     "skills": [
+      30,
       30,
       32,
       42,
@@ -35,10 +36,10 @@
       62,
       72,
       80,
-      72,
       72
     ],
     "knowledge": [
+      150,
       150,
       150,
       152,
@@ -51,10 +52,10 @@
       174,
       185,
       240,
-      240,
       240
     ],
     "memory": [
+      19,
       19,
       20,
       25,
@@ -67,68 +68,23 @@
       85,
       106,
       112,
-      118,
-      120
+      118
     ]
   },
   "reports": [
     {
       "date": "2026-03-12",
       "dayOfWeek": "周四",
-      "activeProjects": 9,
+      "activeProjects": 6,
       "totalCommits": 25,
-      "conversationCount": 8,
+      "conversationCount": 5,
       "coreProgress": [
-        "💬 完成 8 个任务: AI Self-Evolution Progress Rep..., 清理并标准化重复的技能文件，确保文件存储位置和命名规范...",
-        "📁 项目成果: 新增: 添加AI分身（AI助手首页）入口",
+        "💬 完成 5 个任务: 用户希望每次网页开发完成后都能直接获得一个可点击访问的在线链接，而不仅仅是本地文..., 创建一个外部网页落地页，用于集中展示多个AI项目的入口链接，包括AI洞察首页、A......",
+        "📁 项目成果: 新增: 添加AI分身（林克首页）入口",
         "⚡ 新增能力: agent-capability-discovery、critical-thinking-logical-reasoning，扩展任务处理范围",
-        "🧠 新增记忆: 中文全角引号导致JavaScript/N等9条，规范化开发实践"
+        "🧠 新增记忆: 中文全角引号导致JavaScript/N等14条，优化任务执行流程"
       ],
       "deliveries": [
-        {
-          "title": "AI Self-Evolution Progress Report",
-          "type": "conversation",
-          "goal": "完成用户任务",
-          "deliverables": [],
-          "process": [],
-          "tags": [
-            "ai-evolution",
-            "skill-growth",
-            "metrics-analysis",
-            "memory-system",
-            "performance-tracking"
-          ]
-        },
-        {
-          "title": "Duplicate skill file cleanup and standardization",
-          "type": "conversation",
-          "goal": "清理并标准化重复的技能文件，确保文件存储位置和命名规范",
-          "deliverables": [],
-          "process": [
-            "确认了~/.agents/skills/和~/.codeflicker/skills/目录下的SKILL.md文件内容完全相同，决定保留.codeflicker版本并删除.agents版本，同时进行文..."
-          ],
-          "tags": [
-            "skill-management",
-            "file-cleanup",
-            "automation"
-          ]
-        },
-        {
-          "title": "Neigong Check Script Execution and Optimization",
-          "type": "conversation",
-          "goal": "执行内功检查脚本并优化任务流程以满足质量门控要求",
-          "deliverables": [],
-          "process": [
-            "执行了neigong_check.py脚本检测出1个P0问题（任务流程超标1条），尝试合并记忆失败后输出Checkpoint-3报告，包含脚本执行结果和三剑客优化状态。"
-          ],
-          "tags": [
-            "scripting",
-            "optimization",
-            "task-flow",
-            "memory-management",
-            "quality-gate"
-          ]
-        },
         {
           "title": "Web Development Workflow Enhancement for Direct Access Links",
           "type": "conversation",
@@ -176,22 +132,6 @@
           ]
         },
         {
-          "title": "Analysis of Unified Claw Platform Strategy",
-          "type": "conversation",
-          "goal": "论证是否应该由研发线统一建设公司级小龙虾程序平台，并从多角度分析实施方案",
-          "deliverables": [],
-          "process": [
-            "识别了论证体系中的10个关键漏洞，包括公信力问题(V1)、方案选择偏差(V2)和现有生态优势(V3)。建立了三层架构方案(公司级→业务级→个人级)，但未解决迁移计划和集中化风险等实施问题。"
-          ],
-          "tags": [
-            "strategy",
-            "platform-architecture",
-            "decision-making",
-            "r&d",
-            "enterprise-solutions"
-          ]
-        },
-        {
           "title": "AI Column Writing Retrospective and Best Practices",
           "type": "conversation",
           "goal": "总结EP2专栏写作中的经验教训并提取可复用的写作模式",
@@ -206,15 +146,100 @@
             "audience-targeting",
             "content-formatting"
           ]
+        },
+        {
+          "title": "Agent Architecture Design Discussion",
+          "type": "conversation",
+          "goal": "论证并设计一个统一的小龙虾程序架构方案，包括产品形态选择和技术实现路径",
+          "deliverables": [],
+          "process": [
+            "经过多轮讨论确定了泳道式架构图方案：横向分为产品架构、技术架构(逻辑)、技术架构(物理)3条泳道，每条泳道纵向分层并通过连线表达模块关联关系。最终设计包含表现层/功能层/增值层(产品)、5层技术逻辑流..."
+          ],
+          "tags": [
+            "architecture",
+            "swimlane-diagram",
+            "agent-system",
+            "technical-design",
+            "product-planning"
+          ]
+        },
+        {
+          "title": "AI落地页",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-project-portal"
+            }
+          ],
+          "process": [
+            "新增: 添加AI分身（林克首页）入口",
+            "新增: ci: add GitHub Pages deployment workflow",
+            "新增: AI项目总览落地页"
+          ],
+          "commitCount": 4,
+          "fileChangeCount": 4,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-project-portal"
+        },
+        {
+          "title": "养了个AI专栏",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "article.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "ep2-ch02-effect.html",
+              "type": "page",
+              "url": null
+            },
+            {
+              "name": "prompt-ep2-cover.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 10 个",
+            "文档完善 3 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 25,
+          "deployUrl": null
+        },
+        {
+          "title": "AI-Insight",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-insight"
+            }
+          ],
+          "process": [
+            "新增: add AI Insight project showcase page",
+            "新增: 新增Pine AI创业实践与AI原生开发范式深度调研",
+            "新增: fix(daily-3/12): 修正分类+时效+去重问题; 新增板块分类/跨天"
+          ],
+          "commitCount": 5,
+          "fileChangeCount": 120,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 72,
-        "knowledgeCount": 184,
-        "memoryCount": 118,
-        "skillChange": -8,
+        "skillCount": 71,
+        "knowledgeCount": 185,
+        "memoryCount": 123,
+        "skillChange": 0,
         "knowledgeChange": 0,
-        "memoryChange": 9,
+        "memoryChange": 14,
         "newSkills": [
           {
             "name": "agent-capability-discovery",
@@ -245,12 +270,8 @@
             "description": "\"This skill should be used when the user asks to create an a"
           },
           {
-            "name": "skill-quality-assessment",
-            "description": "This skill should be used when the user mentions \"评估技能质量\", \""
-          },
-          {
             "name": "skill-evaluator",
-            "description": "Evaluates agent skills against Anthropic's best practices. U"
+            "description": "Comprehensive skill quality evaluation and management. Use w"
           }
         ],
         "updatedSkills": [
@@ -283,16 +304,12 @@
             "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收"
           },
           {
-            "name": "daily-reflection-evolution",
-            "description": "This skill should be used when the user mentions \"每日修炼\", \"每日"
-          },
-          {
             "name": "memory-hygiene",
             "description": "记忆优化元能力（含执行）。当用户说\"记忆优化\"、\"检查记忆健康度\"、\"优化记忆\"、\"记忆清理\"、\"memory opti"
           },
           {
             "name": "linke-kim-message",
-            "description": "This skill should be used when the user mentions \"AI助手发消息\", \"林"
+            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
           },
           {
             "name": "codeflicker-weekly-report",
@@ -320,20 +337,11 @@
           },
           {
             "name": "personal-homepage-template",
-            "description": "\"个人首页模板技能。当用户说'生成我的首页'、'创建角色面板'、'我要一个像AI助手那样的首页'、'generate my "
-          },
-          {
-            "name": "ks-kim-docs-shuttle",
-            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从"
+            "description": "\"个人首页模板技能。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'generate my "
           }
         ],
         "newKnowledge": [],
-        "updatedKnowledge": [
-          {
-            "name": "metrics-log",
-            "category": "self-evolution"
-          }
-        ],
+        "updatedKnowledge": [],
         "newMemory": [
           {
             "title": "中文全角引号导致JavaScript/Node代码语法错误",
@@ -344,8 +352,20 @@
             "category": "task_flow_experience"
           },
           {
+            "title": "Markdown加粗语法渲染兼容性规范",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "战略论证类任务必须包含完整的解决路径",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "禁止使用龙虾emoji",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
             "title": "北冥神功能力包完整生命周期成功模式（导出→安装→验证→修复→数据校准）",
-            "category": "task_flow_experience"
+            "category": "development_practice_specification"
           },
           {
             "title": "功能平权时代的对比维度升维（竞品有了就别比有没有）",
@@ -357,11 +377,19 @@
           },
           {
             "title": "工具调用前的参数完整性自检规范",
-            "category": "task_flow_experience"
+            "category": "development_practice_specification"
           },
           {
             "title": "网页开发完成后必须提供在线访问链接",
             "category": "development_practice_specification"
+          },
+          {
+            "title": "每日修炼三剑客调用失效：事后验证 vs 前置约束（v7.11修复）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "技能callCount骤降96%根因：统计系统切换缺少历史基线迁移",
+            "category": "common_pitfalls_experience"
           },
           {
             "title": "AI日报分类+去重门控经验（v5.0 含板块关键词+跨天对比）",
@@ -378,6 +406,10 @@
             "category": "task_flow_experience"
           },
           {
+            "title": "技能/模块粒度的合并信号检测（四信号法）",
+            "category": "development_practice_specification"
+          },
+          {
             "title": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖）",
             "category": "common_pitfalls_experience"
           },
@@ -390,12 +422,32 @@
             "category": "task_flow_experience"
           },
           {
+            "title": "个人助理目录结构与项目索引 (v2.0)",
+            "category": "project_configuration"
+          },
+          {
+            "title": "系统性全局替换流程",
+            "category": "development_practice_specification"
+          },
+          {
             "title": "Chrome Headless / Puppeteer 截图完整经验（含边距控制+缩放适配+自动裁剪）",
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "语雀文档读取优先使用API",
+            "category": "development_practice_specification"
+          },
+          {
             "title": "知识库路径映射 + 北冥神功输出目录（工作区内 2026-03-12）",
             "category": "project_configuration"
+          },
+          {
+            "title": "风格技能升级的 Flagship-then-Replicate 工作流",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式）",
+            "category": "development_practice_specification"
           },
           {
             "title": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除）",
@@ -408,15 +460,15 @@
         ],
         "trend": "growing"
       },
-      "skillCount": 72,
-      "knowledgeCount": 184,
-      "memoryCount": 118,
-      "skillChange": -8,
+      "skillCount": 71,
+      "knowledgeCount": 185,
+      "memoryCount": 123,
+      "skillChange": 0,
       "knowledgeChange": 0,
-      "memoryChange": 9,
+      "memoryChange": 14,
       "highlights": [
-        "💬 完成 8 个任务: AI Self-Evolution Progress Rep..., 清理并标准化重复的技能文件，确保文件存储位置和命名规范...",
-        "📁 项目成果: 新增: 添加AI分身（AI助手首页）入口",
+        "💬 完成 5 个任务: 用户希望每次网页开发完成后都能直接获得一个可点击访问的在线链接，而不仅仅是本地文..., 创建一个外部网页落地页，用于集中展示多个AI项目的入口链接，包括AI洞察首页、A......",
+        "📁 项目成果: 新增: 添加AI分身（林克首页）入口",
         "⚡ 新增能力: agent-capability-discovery、critical-thinking-logical-reasoning，扩展任务处理范围"
       ]
     },

@@ -1167,6 +1167,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     margin-top: 12px;
     margin-bottom: 12px;
     position: relative;
+    z-index: 2;
 }
 
 .arch-storage-hd {

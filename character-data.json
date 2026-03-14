@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T09:53:23.664432",
+  "generatedAt": "2026-03-14T12:18:56.777038",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 417400,
-    "expProgress": 93.0,
+    "totalExp": 417900,
+    "expProgress": 94.3,
     "currentThreshold": 382801,
     "nextThreshold": 420009,
     "stats": {
-      "understanding": 86.2,
+      "understanding": 86.7,
       "execution": 81.7,
       "skillDepth": 93.0,
       "thinkingDepth": 66.8,
@@ -38,9 +38,9 @@
       "highLevelSkills": 46,
       "skillTotalValue": 4997.0,
       "cultivationExp": 0,
-      "baseExp": 417400,
+      "baseExp": 417900,
       "expBreakdown": {
-        "understanding": 86200,
+        "understanding": 86700,
         "execution": 81700,
         "skill": 139500,
         "thinking": 53439,
@@ -521,6 +521,34 @@
         "count": 1,
         "avgLevel": 5.0
       },
+      "研发效能": {
+        "role": "rd-efficiency",
+        "icon": "📊",
+        "color": "#4ade80",
+        "layer": "domain_pack",
+        "description": "研发效能洞察：知识沉淀/追踪体系/深度调研/企业案例",
+        "skills": [
+          {
+            "name": "rd-efficiency-insight",
+            "displayName": "研效洞察",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "研发效能洞察。知识学习与沉淀、追踪体系管理、深度调研、企业案例研究",
+            "lastUpdated": "2026-03-14",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 9513,
+            "skillSizeLabel": "9K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false
+          }
+        ],
+        "count": 1,
+        "avgLevel": 1.0
+      },
       "投资理财": {
         "role": "investment",
         "icon": "💰",
@@ -760,14 +788,14 @@
             "source": "林克核心能力",
             "level": 4,
             "exp": 74,
-            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD 文件、拉取文档内容、按项目组织文件夹。",
+            "description": "快手内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」「上传 Excel 到 Docs」「拉取表格」「下载表格为 CSV」「上传 CSV 到表格」「更新表格数据」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD/Excel/CSV 文件、拉取",
             "lastUpdated": "2026-03-12",
             "callCount": 25,
             "frequency": "3次/月",
             "successRate": 93,
             "sourceType": "自定义",
-            "skillSize": 132602,
-            "skillSizeLabel": "132K字 · 巨型",
+            "skillSize": 208476,
+            "skillSizeLabel": "208K字 · 巨型",
             "ksInternal": true,
             "cfProject": false
           },
@@ -1088,8 +1116,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 11382,
-            "skillSizeLabel": "11K字 · 中型",
+            "skillSize": 13353,
+            "skillSizeLabel": "13K字 · 中型",
             "ksInternal": true,
             "cfProject": true
           },
@@ -1390,32 +1418,6 @@
         ],
         "count": 9,
         "avgLevel": 1.2
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "layer": "execution",
-        "skills": [
-          {
-            "name": "rd-efficiency-insight",
-            "displayName": "rd-efficiency-insight",
-            "source": "未知来源",
-            "level": 1,
-            "exp": 10,
-            "description": "rd-efficiency-insight 技能",
-            "lastUpdated": "2026-03-14",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 9513,
-            "skillSizeLabel": "9K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false
-          }
-        ],
-        "count": 1,
-        "avgLevel": 1.0
       }
     },
     "tree": {
@@ -1900,6 +1902,33 @@
             "count": 1,
             "avgLevel": 5.0
           },
+          "研发效能": {
+            "role": "rd-efficiency",
+            "icon": "📊",
+            "color": "#4ade80",
+            "description": "研发效能洞察：知识沉淀/追踪体系/深度调研/企业案例",
+            "skills": [
+              {
+                "name": "rd-efficiency-insight",
+                "displayName": "研效洞察",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "研发效能洞察。知识学习与沉淀、追踪体系管理、深度调研、企业案例研究",
+                "lastUpdated": "2026-03-14",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 9513,
+                "skillSizeLabel": "9K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false
+              }
+            ],
+            "count": 1,
+            "avgLevel": 1.0
+          },
           "投资理财": {
             "role": "investment",
             "icon": "💰",
@@ -1962,8 +1991,8 @@
             "avgLevel": 3.7
           }
         },
-        "count": 4,
-        "avgLevel": 4.0
+        "count": 5,
+        "avgLevel": 3.4
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -2146,14 +2175,14 @@
                 "source": "林克核心能力",
                 "level": 4,
                 "exp": 74,
-                "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD 文件、拉取文档内容、按项目组织文件夹。",
+                "description": "快手内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」「上传 Excel 到 Docs」「拉取表格」「下载表格为 CSV」「上传 CSV 到表格」「更新表格数据」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD/Excel/CSV 文件、拉取",
                 "lastUpdated": "2026-03-12",
                 "callCount": 25,
                 "frequency": "3次/月",
                 "successRate": 93,
                 "sourceType": "自定义",
-                "skillSize": 132602,
-                "skillSizeLabel": "132K字 · 巨型",
+                "skillSize": 208476,
+                "skillSizeLabel": "208K字 · 巨型",
                 "ksInternal": true,
                 "cfProject": false
               },
@@ -2471,8 +2500,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 11382,
-                "skillSizeLabel": "11K字 · 中型",
+                "skillSize": 13353,
+                "skillSizeLabel": "13K字 · 中型",
                 "ksInternal": true,
                 "cfProject": true
               },
@@ -2771,35 +2800,9 @@
             ],
             "count": 9,
             "avgLevel": 1.2
-          },
-          "其他技能": {
-            "icon": "📦",
-            "color": "#64748b",
-            "layer": "execution",
-            "skills": [
-              {
-                "name": "rd-efficiency-insight",
-                "displayName": "rd-efficiency-insight",
-                "source": "未知来源",
-                "level": 1,
-                "exp": 10,
-                "description": "rd-efficiency-insight 技能",
-                "lastUpdated": "2026-03-14",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 9513,
-                "skillSizeLabel": "9K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false
-              }
-            ],
-            "count": 1,
-            "avgLevel": 1.0
           }
         },
-        "count": 44,
+        "count": 43,
         "avgLevel": 2.8
       }
     },
@@ -2952,6 +2955,7 @@
         "description": "效能度量体系、AI+DevOps、行业实践案例",
         "layerTag": "L2-domain",
         "relatedSkills": [
+          "rd-efficiency-insight",
           "industry-research"
         ],
         "relatedMemories": [],
@@ -3106,6 +3110,7 @@
             "description": "效能度量体系、AI+DevOps、行业实践案例",
             "layerTag": "L2-domain",
             "relatedSkills": [
+              "rd-efficiency-insight",
               "industry-research"
             ],
             "relatedMemories": [],
@@ -3366,6 +3371,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-09",
+        "source": "项目记忆"
+      },
+      {
+        "title": "AI生图用于PPT/文档：企业场景默认走结构化信息图路线",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "## 问题 用户说\"AI生图\"时，默认走了\"艺术插画\"路线（蝴蝶、火箭、知识树等隐喻），结果被用户退回说\"太浮夸\"。改为HTML截图后又被退回说\"不是AI...",
+        "keywords": [
+          "AI生图",
+          "PPT",
+          "信息图",
+          "结构化",
+          "企业汇报"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-14",
         "source": "项目记忆"
       },
       {
@@ -4737,13 +4761,13 @@
         "source": "项目记忆"
       },
       {
-        "title": "输出介质决定格式选择（KIM Docs复杂表格渲染踩坑）",
+        "title": "输出介质决定格式选择（v2：含图表双重展示陷阱）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "## 输出介质决定格式选择 ### 问题 EP2专栏用4列+emoji的markdown表格展示对比数据，在KIM Docs中渲染为raw markdow...",
+        "description": "## 输出介质决定格式选择 ### 问题（v2：含图表双重展示陷阱） 1. **EP2**：4列+emoji的markdown表格在KIM Docs中渲染...",
         "keywords": [
           "输出介质",
           "渲染平台",
@@ -4752,7 +4776,7 @@
           "markdown"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-12",
+        "updatedAt": "2026-03-14",
         "source": "项目记忆"
       },
       {
@@ -5060,6 +5084,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "任务完成时自动沉淀经验到对应Skill（不需用户提醒）",
+        "category": "task_flow_experience",
+        "categoryLabel": "做事方法",
+        "layer": "🧠 元认知层",
+        "icon": "⚙️",
+        "color": "#5ec4d4",
+        "description": "## 任务完成后自动沉淀经验到Skill ### 触发条件 当用户对任务结果表示满意（如\"很好\"、\"不错\"、\"可以\"等肯定评价）且任务已完成时，必须**自...",
+        "keywords": [
+          "任务完成",
+          "自动沉淀",
+          "skill更新",
+          "经验提取",
+          "五问快检"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-14",
+        "source": "用户显式记录"
+      },
+      {
         "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
         "category": "task_flow_experience",
         "categoryLabel": "做事方法",
@@ -5304,25 +5347,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-13",
-        "source": "项目记忆"
-      },
-      {
-        "title": "深度调研启动前的目标确认检查",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "## 深度调研目标确认踩坑 ### 问题描述 OpenClaw深度调研时，初始调研了Crawl4AI而非用户指定的OpenClaw，导致整个调研内容需要删...",
-        "keywords": [
-          "调研",
-          "产品确认",
-          "目标验证",
-          "OpenClaw",
-          "Crawl4AI"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-06",
         "source": "项目记忆"
       },
       {
@@ -5611,6 +5635,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "深度调研启动前的目标确认检查",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "## 深度调研目标确认踩坑 ### 问题描述 OpenClaw深度调研时，初始调研了Crawl4AI而非用户指定的OpenClaw，导致整个调研内容需要删...",
+        "keywords": [
+          "调研",
+          "产品确认",
+          "目标验证",
+          "OpenClaw",
+          "Crawl4AI"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-03-06",
+        "source": "项目记忆"
+      },
+      {
         "title": "踩坑经验: 脚本参数格式（不要用--date）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "脚本自动化",
@@ -5686,7 +5729,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 132,
+    "total": 134,
     "byCategory": {
       "development_code_specification": {
         "count": 4,
@@ -5710,7 +5753,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 14,
+        "count": 15,
         "label": "思维方法",
         "icon": "🧠",
         "color": "#a78bfa",
@@ -5724,7 +5767,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 72,
+        "count": 73,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
@@ -6316,6 +6359,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "任务完成时自动沉淀经验到对应Skill（不需用户提醒）",
+                "category": "task_flow_experience",
+                "categoryLabel": "做事方法",
+                "layer": "🧠 元认知层",
+                "icon": "⚙️",
+                "color": "#5ec4d4",
+                "description": "## 任务完成后自动沉淀经验到Skill ### 触发条件 当用户对任务结果表示满意（如\"很好\"、\"不错\"、\"可以\"等肯定评价）且任务已完成时，必须**自...",
+                "keywords": [
+                  "任务完成",
+                  "自动沉淀",
+                  "skill更新",
+                  "经验提取",
+                  "五问快检"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-14",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "Skill触发词精确匹配原则（避免大词冲突）",
                 "category": "development_practice_specification",
                 "categoryLabel": "做事方法",
@@ -6430,10 +6492,10 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 10
+            "count": 11
           }
         },
-        "count": 33
+        "count": 34
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -6768,13 +6830,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "输出介质决定格式选择（KIM Docs复杂表格渲染踩坑）",
+                "title": "输出介质决定格式选择（v2：含图表双重展示陷阱）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "## 输出介质决定格式选择 ### 问题 EP2专栏用4列+emoji的markdown表格展示对比数据，在KIM Docs中渲染为raw markdow...",
+                "description": "## 输出介质决定格式选择 ### 问题（v2：含图表双重展示陷阱） 1. **EP2**：4列+emoji的markdown表格在KIM Docs中渲染...",
                 "keywords": [
                   "输出介质",
                   "渲染平台",
@@ -6783,7 +6845,7 @@
                   "markdown"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-14",
                 "source": "项目记忆"
               },
               {
@@ -6822,6 +6884,25 @@
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-13",
+                "source": "项目记忆"
+              },
+              {
+                "title": "AI生图用于PPT/文档：企业场景默认走结构化信息图路线",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "## 问题 用户说\"AI生图\"时，默认走了\"艺术插画\"路线（蝴蝶、火箭、知识树等隐喻），结果被用户退回说\"太浮夸\"。改为HTML截图后又被退回说\"不是AI...",
+                "keywords": [
+                  "AI生图",
+                  "PPT",
+                  "信息图",
+                  "结构化",
+                  "企业汇报"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-14",
                 "source": "项目记忆"
               },
               {
@@ -7224,7 +7305,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 39
+            "count": 40
           },
           "发布部署": {
             "icon": "🚀",
@@ -8103,7 +8184,7 @@
                   "OpenClaw",
                   "Crawl4AI"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-03-06",
                 "source": "项目记忆"
               },
@@ -8271,7 +8352,7 @@
             "count": 2
           }
         },
-        "count": 91
+        "count": 92
       }
     }
   },
@@ -8350,7 +8431,7 @@
       112,
       118,
       129,
-      132
+      134
     ]
   },
   "achievements": [
@@ -8385,7 +8466,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "懂你程度 86/80",
+      "progressText": "懂你程度 87/80",
       "date": "2026-03-14"
     },
     {

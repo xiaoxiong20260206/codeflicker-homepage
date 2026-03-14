@@ -4,1502 +4,2271 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>研发效能洞察 - 林克的研发效能知识体系</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='80'%3E📐%3C/text%3E%3C/svg%3E">
 <style>
 /* ============================================================
-   研发效能洞察首页 - 清爽调研风格 v1.0
-   参考 AI-Insight 首页设计模式
+   研发效能洞察首页 - 清爽调研风格 v2.0
+   严格对标 AI-Insight 首页设计系统
+   主色调：蓝色系（区别于 AI-Insight 的绿色系）
    ============================================================ */
 
 :root {
-  --primary: #2563EB;
-  --primary-light: #3B82F6;
-  --primary-dark: #1D4ED8;
-  --accent-green: #059669;
-  --accent-purple: #7C3AED;
-  --accent-orange: #D97706;
-  --accent-rose: #E11D48;
-  --accent-teal: #0D9488;
-  --bg: #F8FAFB;
-  --card-bg: #FFFFFF;
-  --text-primary: #1E293B;
-  --text-secondary: #64748B;
-  --text-muted: #94A3B8;
-  --border: #E2E8F0;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
-  --shadow-lg: 0 10px 25px -3px rgba(0,0,0,0.08), 0 4px 10px -2px rgba(0,0,0,0.04);
-  --shadow-glow: 0 0 20px rgba(37,99,235,0.15);
-  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --color-primary: #2563EB;
+    --color-primary-light: #3B82F6;
+    --color-primary-dark: #1D4ED8;
+    --color-primary-50: #EFF6FF;
+    --color-success: #059669;
+    --color-success-light: #10B981;
+    --color-success-dark: #047857;
+    --color-success-50: #ECFDF5;
+    --color-danger: #E11D48;
+    --color-danger-light: #F43F5E;
+    --color-warning: #D97706;
+    --color-warning-light: #F59E0B;
+    --color-info: #0EA5E9;
+    --color-info-light: #38BDF8;
+    --color-info-50: #F0F9FF;
+    --color-purple: #7C3AED;
+    --color-purple-light: #8B5CF6;
+    --color-purple-50: #F5F3FF;
+    --color-teal: #0D9488;
+
+    --color-text-primary: #1C1917;
+    --color-text-secondary: #57534E;
+    --color-text-muted: #78716C;
+    --color-border: #E7E5E4;
+    --color-border-light: #F5F5F4;
+    --color-bg: #F8FAFB;
+    --color-bg-card: #FFFFFF;
+    --color-bg-table-header: #FAFAF9;
+
+    --gradient-primary: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+    --gradient-hero: linear-gradient(135deg, #2563EB 0%, #7C3AED 50%, #059669 100%);
+    --gradient-badge: linear-gradient(135deg, #EFF6FF 0%, #F5F3FF 100%);
+    --gradient-highlight: linear-gradient(135deg, rgba(37,99,235,0.08) 0%, rgba(37,99,235,0.03) 100%);
+    --gradient-mesh:
+        radial-gradient(at 20% 20%, rgba(37,99,235,0.08) 0%, transparent 50%),
+        radial-gradient(at 80% 80%, rgba(124,58,237,0.06) 0%, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(5,150,105,0.04) 0%, transparent 50%);
+
+    --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-card: 0 2px 8px -2px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 12px -2px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.04);
+    --shadow-lg: 0 12px 28px -4px rgba(0,0,0,0.12), 0 4px 10px -4px rgba(0,0,0,0.04);
+    --shadow-xl: 0 20px 40px -8px rgba(0,0,0,0.15);
+    --shadow-glow-primary: 0 0 20px rgba(37,99,235,0.2);
+    --shadow-glow-info: 0 0 20px rgba(14,165,233,0.2);
+    --shadow-glow-purple: 0 0 20px rgba(124,58,237,0.2);
+    --shadow-hover: 0 8px 24px -4px rgba(0,0,0,0.15);
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 40px;
+    --spacing-3xl: 48px;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+
+    --font-family: -apple-system, "SF Pro Display", system-ui, "Segoe UI", "Noto Sans SC", Helvetica, Arial, sans-serif;
+    --font-mono: "SF Mono", "Fira Code", monospace;
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --content-max-width: 1100px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+::selection { background: rgba(37,99,235,0.15); }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text-primary);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+    font-family: var(--font-family);
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Mesh gradient background */
 body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background:
-    radial-gradient(ellipse at 20% 0%, rgba(37,99,235,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(124,58,237,0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 80%, rgba(5,150,105,0.04) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
+    content: "";
+    position: fixed; inset: 0;
+    background: var(--gradient-mesh);
+    pointer-events: none;
+    z-index: 0;
 }
+
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 1;
-}
-
-/* ============ TOP BAR ============ */
-.top-bar {
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary), var(--accent-purple), var(--accent-green));
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    position: relative;
+    z-index: 1;
 }
 
 /* ============ HEADER ============ */
 .header {
-  text-align: center;
-  padding: 60px 0 40px;
+    text-align: center;
+    padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-2xl);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(37,99,235,0.04) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.header::after {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gradient-hero);
 }
 
 .header-badge {
-  display: inline-block;
-  padding: 6px 16px;
-  background: linear-gradient(135deg, rgba(37,99,235,0.1), rgba(124,58,237,0.1));
-  border-radius: 20px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--primary);
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 6px 16px;
+    background: var(--gradient-badge);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-xs);
+    position: relative;
+    z-index: 1;
 }
 
 .header-title {
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 12px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 50%, var(--accent-green) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+    z-index: 1;
 }
 
 .header-subtitle {
-  font-size: 16px;
-  color: var(--text-secondary);
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.7;
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
 }
 
 /* ============ STATS GRID ============ */
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  margin-bottom: 32px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
 }
 
 .stat-card {
-  background: var(--card-bg);
-  border-radius: var(--radius-md);
-  padding: 20px 16px;
-  text-align: center;
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--border);
-  transition: var(--transition);
-  position: relative;
-  overflow: hidden;
-}
-
-.stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  opacity: 0;
-  transition: var(--transition);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .stat-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
 }
 
-.stat-card:hover::before { opacity: 1; }
-
-.stat-card:nth-child(1)::before { background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
-.stat-card:nth-child(2)::before { background: linear-gradient(90deg, var(--accent-green), #34D399); }
-.stat-card:nth-child(3)::before { background: linear-gradient(90deg, var(--accent-purple), #A78BFA); }
-.stat-card:nth-child(4)::before { background: linear-gradient(90deg, var(--accent-orange), #FBBF24); }
-.stat-card:nth-child(5)::before { background: linear-gradient(90deg, var(--accent-teal), #2DD4BF); }
-
-.stat-number {
-  font-size: 28px;
-  font-weight: 800;
-  margin-bottom: 4px;
+.stat-value {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 2px;
+    line-height: 1.2;
 }
 
-.stat-card:nth-child(1) .stat-number { color: var(--primary); }
-.stat-card:nth-child(2) .stat-number { color: var(--accent-green); }
-.stat-card:nth-child(3) .stat-number { color: var(--accent-purple); }
-.stat-card:nth-child(4) .stat-number { color: var(--accent-orange); }
-.stat-card:nth-child(5) .stat-number { color: var(--accent-teal); }
+.stat-value.blue { color: var(--color-primary); }
+.stat-value.green { color: var(--color-success); }
+.stat-value.purple { color: var(--color-purple); }
+.stat-value.orange { color: var(--color-warning); }
+.stat-value.teal { color: var(--color-teal); }
 
 .stat-label {
-  font-size: 12px;
-  color: var(--text-secondary);
-  font-weight: 500;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    font-weight: 500;
 }
 
 /* ============ ABOUT SECTION ============ */
-.about-toggle {
-  display: block;
-  width: 100%;
-  padding: 14px 20px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-primary);
-  cursor: pointer;
-  text-align: center;
-  transition: var(--transition);
-  margin-bottom: 24px;
+.about-section { margin-bottom: var(--spacing-lg); }
+.about-toggle-wrap { text-align: center; }
+
+.about-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 10px 24px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
 }
 
-.about-toggle:hover {
-  border-color: var(--primary);
-  color: var(--primary);
-  box-shadow: var(--shadow-md);
+.about-toggle-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    box-shadow: var(--shadow-glow-primary);
 }
 
-.about-toggle .arrow { transition: transform 0.3s; display: inline-block; margin-left: 8px; }
-.about-toggle.active .arrow { transform: rotate(180deg); }
+.about-toggle-arrow {
+    transition: transform 0.3s;
+    font-size: 12px;
+}
+
+.about-toggle-btn.expanded .about-toggle-arrow { transform: rotate(180deg); }
 
 .about-content {
-  display: none;
-  margin-bottom: 24px;
-  animation: fadeIn 0.3s ease;
+    display: none;
+    margin-top: var(--spacing-md);
+    animation: slideDown 0.3s ease;
 }
 
 .about-content.active { display: block; }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-8px); }
-  to { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Pain Points & Solution */
-.pain-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.pain-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  text-align: center;
+/* Pain Points */
+.pain-points-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
-.pain-card .icon { font-size: 28px; margin-bottom: 10px; }
-.pain-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--accent-rose); }
-.pain-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+.pain-point-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
+.pain-point-card::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--color-danger);
+}
+
+.pain-point-icon { font-size: 28px; margin-bottom: var(--spacing-sm); }
+.pain-point-title { font-size: 14px; font-weight: 700; margin-bottom: var(--spacing-xs); color: var(--color-danger); }
+.pain-point-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+
+/* Solution Flow */
 .solution-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px;
-  background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(5,150,105,0.04));
-  border-radius: var(--radius-md);
-  margin-bottom: 20px;
-  flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: var(--gradient-highlight);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
-.solution-step {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  text-align: center;
-  min-width: 130px;
+.flow-step {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-md);
+    text-align: center;
+    min-width: 130px;
+    box-shadow: var(--shadow-xs);
 }
 
-.solution-step .step-icon { font-size: 20px; margin-bottom: 4px; }
-.solution-step .step-title { font-size: 12px; font-weight: 600; color: var(--text-primary); }
-.solution-step .step-desc { font-size: 11px; color: var(--text-secondary); }
-.solution-arrow { font-size: 18px; color: var(--text-muted); }
+.flow-step-icon { font-size: 22px; margin-bottom: var(--spacing-xs); }
+.flow-step-title { font-size: 13px; font-weight: 700; }
+.flow-step-desc { font-size: 11px; color: var(--color-text-muted); }
+.flow-arrow { font-size: 18px; color: var(--color-text-muted); }
 
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+/* Highlights */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
 }
 
-.feature-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  text-align: center;
+.highlight-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
 }
 
-.feature-card .icon { font-size: 24px; margin-bottom: 8px; }
-.feature-card h4 { font-size: 13px; font-weight: 600; margin-bottom: 4px; color: var(--primary); }
-.feature-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+.highlight-icon { font-size: 24px; margin-bottom: var(--spacing-sm); }
+.highlight-title { font-size: 13px; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-xs); }
+.highlight-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
 
 /* ============ TAB NAVIGATION ============ */
 .tab-nav {
-  display: flex;
-  gap: 6px;
-  padding: 6px;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px) saturate(1.4);
-  -webkit-backdrop-filter: blur(10px) saturate(1.4);
-  border: 1px solid rgba(226,232,240,0.8);
-  border-radius: var(--radius-lg);
-  position: sticky;
-  top: 12px;
-  z-index: 100;
-  margin-bottom: 24px;
+    display: flex;
+    gap: 6px;
+    padding: 6px;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px) saturate(1.4);
+    -webkit-backdrop-filter: blur(10px) saturate(1.4);
+    border: 1px solid rgba(231,229,228,0.8);
+    border-radius: var(--radius-lg);
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+    margin-bottom: var(--spacing-lg);
+    will-change: backdrop-filter;
 }
 
 .tab-btn {
-  flex: 1;
-  padding: 11px 14px;
-  background: transparent;
-  border: none;
-  border-radius: var(--radius-md);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: var(--transition);
-  white-space: nowrap;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 11px 14px;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    white-space: nowrap;
 }
 
 .tab-btn:hover {
-  color: var(--text-primary);
-  background: rgba(37,99,235,0.06);
+    color: var(--color-text-primary);
+    background: rgba(37,99,235,0.06);
 }
 
 .tab-btn.active {
-  color: #fff;
-  background: linear-gradient(135deg, var(--primary), var(--accent-purple));
-  box-shadow: 0 2px 8px rgba(37,99,235,0.3);
+    color: #fff;
+    background: var(--gradient-primary);
+    box-shadow: 0 2px 8px rgba(37,99,235,0.35);
 }
+
+.tab-btn-icon { font-size: 16px; }
 
 /* ============ TAB PANELS ============ */
 .tab-panel {
-  display: none;
-  animation: fadeIn 0.3s ease;
+    display: none;
+    animation: fadeIn 0.3s ease;
 }
 
 .tab-panel.active { display: block; }
 
-.tab-panel:not(.active) { content-visibility: auto; }
-
-/* ============ SECTION STYLES ============ */
-.section-title {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.tab-panel:not(.active) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
 }
 
-.section-title .icon { font-size: 22px; }
+/* ============ SECTION CARD ============ */
+.section {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-badge);
+    border-radius: var(--radius-md);
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
 
 .section-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
-  line-height: 1.7;
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
 }
 
-/* ============ KNOWLEDGE ARCHITECTURE ============ */
+/* ============ CONTENT GRID ============ */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.content-card {
+    display: block;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    color: inherit;
+}
+
+.content-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-primary);
+    text-decoration: none;
+}
+
+.content-card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.content-card-icon { font-size: 18px; }
+
+.content-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    flex: 1;
+    min-width: 0;
+}
+
+.content-card-tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.content-card-tag.blue { background: rgba(37,99,235,0.1); color: var(--color-primary); }
+.content-card-tag.green { background: rgba(5,150,105,0.1); color: var(--color-success); }
+.content-card-tag.orange { background: rgba(217,119,6,0.1); color: var(--color-warning); }
+.content-card-tag.purple { background: rgba(124,58,237,0.1); color: var(--color-purple); }
+.content-card-tag.red { background: rgba(225,29,72,0.1); color: var(--color-danger); }
+
+.content-card-desc {
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.content-card-meta {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-sm);
+}
+
+.content-card.full-width { grid-column: 1 / -1; }
+
+/* ============ CATEGORY SECTION ============ */
+.category-section {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.category-section::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.category-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ============ ARCHITECTURE LAYERS ============ */
 .arch-container {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 24px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-sm);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .arch-layer {
-  display: flex;
-  align-items: stretch;
-  gap: 12px;
-  margin-bottom: 8px;
-  transition: var(--transition);
+    display: flex;
+    align-items: stretch;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    transition: transform var(--transition-normal);
 }
 
 .arch-layer:hover { transform: translateX(4px); }
-
 .arch-layer:last-child { margin-bottom: 0; }
 
 .arch-level {
-  width: 36px;
-  min-height: 56px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 800;
-  color: white;
-  flex-shrink: 0;
+    width: 36px;
+    min-height: 56px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: white;
+    flex-shrink: 0;
 }
 
 .arch-body {
-  flex: 1;
-  border-radius: var(--radius-sm);
-  padding: 12px 16px;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  background: #FAFBFC;
+    flex: 1;
+    border-radius: var(--radius-sm);
+    padding: 12px 16px;
+    border: 1px solid var(--color-border-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+    background: var(--color-bg-table-header);
 }
 
 .arch-body-info { flex: 1; }
 .arch-body-info h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
-.arch-body-info p { font-size: 12px; color: var(--text-secondary); }
+.arch-body-info p { font-size: 12px; color: var(--color-text-secondary); }
 
-.arch-coverage {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-shrink: 0;
-}
+.arch-coverage { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.coverage-bar { width: 60px; height: 6px; background: var(--color-border); border-radius: 3px; overflow: hidden; }
+.coverage-fill { height: 100%; border-radius: 3px; transition: width 0.8s ease; }
+.coverage-text { font-size: 12px; font-weight: 600; min-width: 32px; text-align: right; }
 
-.coverage-bar {
-  width: 60px;
-  height: 6px;
-  background: #E2E8F0;
-  border-radius: 3px;
-  overflow: hidden;
-}
+.layer-7 .arch-level { background: linear-gradient(135deg, #6366F1, #4F46E5); }
+.layer-6 .arch-level { background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark)); }
+.layer-5 .arch-level { background: linear-gradient(135deg, var(--color-info), #0284C7); }
+.layer-4 .arch-level { background: linear-gradient(135deg, var(--color-teal), #0F766E); }
+.layer-3 .arch-level { background: linear-gradient(135deg, var(--color-success), var(--color-success-dark)); }
+.layer-2 .arch-level { background: linear-gradient(135deg, var(--color-warning), #B45309); }
+.layer-1 .arch-level { background: linear-gradient(135deg, var(--color-purple), #6D28D9); }
 
-.coverage-fill {
-  height: 100%;
-  border-radius: 3px;
-  transition: width 0.8s ease;
-}
-
-.coverage-text {
-  font-size: 12px;
-  font-weight: 600;
-  min-width: 32px;
-  text-align: right;
-}
-
-/* Layer colors */
-.layer-1 .arch-level { background: linear-gradient(135deg, #6366F1, #4F46E5); }
-.layer-2 .arch-level { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
-.layer-3 .arch-level { background: linear-gradient(135deg, #0EA5E9, #0284C7); }
-.layer-4 .arch-level { background: linear-gradient(135deg, var(--accent-teal), #0F766E); }
-.layer-5 .arch-level { background: linear-gradient(135deg, var(--accent-green), #047857); }
-.layer-6 .arch-level { background: linear-gradient(135deg, var(--accent-orange), #B45309); }
-.layer-7 .arch-level { background: linear-gradient(135deg, var(--accent-purple), #6D28D9); }
-
-.layer-1 .coverage-fill { background: #6366F1; }
-.layer-2 .coverage-fill { background: var(--primary); }
-.layer-3 .coverage-fill { background: #0EA5E9; }
-.layer-4 .coverage-fill { background: var(--accent-teal); }
-.layer-5 .coverage-fill { background: var(--accent-green); }
-.layer-6 .coverage-fill { background: var(--accent-orange); }
-.layer-7 .coverage-fill { background: var(--accent-purple); }
-
-.layer-1 .coverage-text { color: #6366F1; }
-.layer-2 .coverage-text { color: var(--primary); }
-.layer-3 .coverage-text { color: #0EA5E9; }
-.layer-4 .coverage-text { color: var(--accent-teal); }
-.layer-5 .coverage-text { color: var(--accent-green); }
-.layer-6 .coverage-text { color: var(--accent-orange); }
-.layer-7 .coverage-text { color: var(--accent-purple); }
+.layer-7 .coverage-fill { background: #6366F1; }  .layer-7 .coverage-text { color: #6366F1; }
+.layer-6 .coverage-fill { background: var(--color-primary); }  .layer-6 .coverage-text { color: var(--color-primary); }
+.layer-5 .coverage-fill { background: var(--color-info); }  .layer-5 .coverage-text { color: var(--color-info); }
+.layer-4 .coverage-fill { background: var(--color-teal); }  .layer-4 .coverage-text { color: var(--color-teal); }
+.layer-3 .coverage-fill { background: var(--color-success); }  .layer-3 .coverage-text { color: var(--color-success); }
+.layer-2 .coverage-fill { background: var(--color-warning); }  .layer-2 .coverage-text { color: var(--color-warning); }
+.layer-1 .coverage-fill { background: var(--color-purple); }  .layer-1 .coverage-text { color: var(--color-purple); }
 
 /* Golden Triangle */
 .golden-triangle {
-  background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(124,58,237,0.04));
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 20px;
+    background: var(--gradient-highlight);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
 }
 
+.triangle-label { font-size: 13px; font-weight: 600; color: var(--color-text-secondary); }
+
 .triangle-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin: 16px 0;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    flex-wrap: wrap;
 }
 
 .triangle-node {
-  background: var(--card-bg);
-  border: 2px solid;
-  border-radius: var(--radius-md);
-  padding: 14px 20px;
-  font-size: 13px;
-  font-weight: 700;
-  min-width: 120px;
+    background: var(--color-bg-card);
+    border: 2px solid;
+    border-radius: var(--radius-md);
+    padding: 14px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    min-width: 120px;
 }
 
-.triangle-node:nth-child(1) { border-color: var(--primary); color: var(--primary); }
-.triangle-node:nth-child(2) { border-color: var(--accent-green); color: var(--accent-green); }
-.triangle-node:nth-child(3) { border-color: var(--accent-purple); color: var(--accent-purple); }
+.triangle-node:nth-child(1) { border-color: var(--color-primary); color: var(--color-primary); }
+.triangle-node:nth-child(3) { border-color: var(--color-success); color: var(--color-success); }
+.triangle-node:nth-child(5) { border-color: var(--color-purple); color: var(--color-purple); }
 
-.triangle-arrow {
-  font-size: 20px;
-  color: var(--text-muted);
-}
+.triangle-arrow { font-size: 20px; color: var(--color-text-muted); }
+.triangle-desc { font-size: 12px; color: var(--color-text-secondary); }
 
-.golden-triangle .subtitle {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-top: 8px;
-}
-
-/* ============ INSIGHT CARDS ============ */
-.insight-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.insight-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  transition: var(--transition);
-}
-
-.insight-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
-}
-
-.insight-card .tag {
-  display: inline-block;
-  padding: 3px 10px;
-  border-radius: 10px;
-  font-size: 11px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.tag-law { background: rgba(37,99,235,0.1); color: var(--primary); }
-.tag-pattern { background: rgba(5,150,105,0.1); color: var(--accent-green); }
-.tag-tension { background: rgba(217,119,6,0.1); color: var(--accent-orange); }
-.tag-leap { background: rgba(124,58,237,0.1); color: var(--accent-purple); }
-
-.insight-card h4 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.insight-card p {
-  font-size: 12px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* Special card - full width */
-.insight-card.full-width {
-  grid-column: 1 / -1;
-  background: linear-gradient(135deg, rgba(37,99,235,0.03), rgba(124,58,237,0.03));
-  border-color: rgba(37,99,235,0.2);
-}
-
-/* ============ CASE STUDY CARDS ============ */
-.case-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.case-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
-  transition: var(--transition);
-}
-
-.case-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-.case-card .company-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border-radius: 16px;
-  font-size: 12px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.badge-ks { background: rgba(255,85,0,0.1); color: #FF5500; }
-.badge-byte { background: rgba(37,99,235,0.1); color: var(--primary); }
-.badge-ali { background: rgba(255,106,0,0.1); color: #FF6A00; }
-.badge-tx { background: rgba(5,150,105,0.1); color: var(--accent-green); }
-
-.case-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
-.case-card p { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
-
-.case-card .metrics {
-  display: flex;
-  gap: 12px;
-  margin-top: 10px;
-  flex-wrap: wrap;
-}
-
-.case-card .metric {
-  font-size: 11px;
-  padding: 3px 8px;
-  background: #F1F5F9;
-  border-radius: 6px;
-  color: var(--text-secondary);
-  font-weight: 500;
-}
-
-/* ============ KNOWLEDGE BASE ============ */
-.kb-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.kb-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  transition: var(--transition);
-  cursor: pointer;
-}
-
-.kb-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--primary);
-}
-
-.kb-card .kb-icon {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-
-.kb-card h4 {
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.kb-card .kb-count {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.kb-card .kb-items {
-  display: none;
-  margin-top: 10px;
-  border-top: 1px solid var(--border);
-  padding-top: 10px;
-}
-
-.kb-card.expanded .kb-items { display: block; }
-
-.kb-item {
-  font-size: 12px;
-  padding: 6px 0;
-  color: var(--text-secondary);
-  border-bottom: 1px solid #F1F5F9;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.kb-item:last-child { border-bottom: none; }
-.kb-item .dot { width: 4px; height: 4px; border-radius: 50%; flex-shrink: 0; }
-
-/* ============ FRAMEWORKS SECTION ============ */
+/* Framework Grid */
 .framework-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
 }
 
 .framework-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 20px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
 }
 
-.framework-card h4 {
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.framework-card .source {
-  font-size: 11px;
-  color: var(--text-muted);
-  margin-bottom: 12px;
-}
-
-.framework-card .levels {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
+.framework-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+.framework-card .source { font-size: 11px; color: var(--color-text-muted); margin-bottom: var(--spacing-sm); }
+.framework-card .levels { display: flex; flex-direction: column; gap: 6px; }
 
 .level-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  font-size: 12px;
-  background: #F8FAFC;
-  border: 1px solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    background: var(--color-bg-table-header);
+    border: 1px solid var(--color-border-light);
 }
 
 .level-badge {
-  padding: 2px 8px;
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  color: white;
-  flex-shrink: 0;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
 }
 
-.level-desc { color: var(--text-secondary); }
+/* ============ COLLAPSIBLE / TRACKING ============ */
+.tracking-section { margin-bottom: var(--spacing-md); }
 
-/* ============ COVERAGE MAP ============ */
+.collapsible-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    user-select: none;
+}
+
+.collapsible-header:hover { border-color: var(--color-primary); background: rgba(37,99,235,0.02); }
+
+.collapsible-header.active {
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    border-bottom: none;
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.collapsible-header.active .coll-title { color: white; }
+.collapsible-header.active .coll-count { background: rgba(255,255,255,0.2); color: white; }
+.collapsible-header.active .coll-arrow { color: white; transform: rotate(180deg); }
+
+.coll-left { display: flex; align-items: center; gap: 10px; }
+.coll-emoji { font-size: 20px; }
+.coll-title { font-size: 15px; font-weight: 600; color: var(--color-text-primary); }
+.coll-count { font-size: 12px; padding: 2px 10px; background: rgba(37,99,235,0.08); color: var(--color-primary); border-radius: var(--radius-full); font-weight: 600; }
+.coll-arrow { font-size: 14px; color: var(--color-text-muted); transition: transform 0.3s; }
+
+.collapsible-body {
+    display: none;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    padding: var(--spacing-lg);
+    animation: slideDown 0.3s ease;
+}
+
+.collapsible-body.active { display: block; }
+
+.tracking-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+    padding-left: 4px;
+}
+
+.tracking-subtitle:first-child { margin-top: 0; }
+
+.track-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: var(--spacing-md);
+}
+
+.track-table th, .track-table td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.track-table th {
+    background: var(--color-bg-table-header);
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    font-size: 12px;
+}
+
+.track-table tbody tr:hover td { background: rgba(37,99,235,0.02); }
+
+.ai-score { display: inline-flex; padding: 2px 8px; border-radius: var(--radius-full); font-size: 11px; font-weight: 600; }
+.score-high { background: rgba(5,150,105,0.1); color: var(--color-success); }
+.score-mid { background: rgba(217,119,6,0.1); color: var(--color-warning); }
+.score-low { background: rgba(225,29,72,0.1); color: var(--color-danger); }
+
+.adjust-rules {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-md);
+    background: var(--gradient-highlight);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border-light);
+}
+
+.adjust-rules h4 { font-size: 13px; font-weight: 600; margin-bottom: var(--spacing-sm); }
+.adjust-rules ul { list-style: none; padding: 0; font-size: 12px; color: var(--color-text-secondary); }
+.adjust-rules li { padding: 4px 0; padding-left: 16px; position: relative; }
+.adjust-rules li::before { content: "\2192"; position: absolute; left: 0; color: var(--color-primary); }
+
+/* ============ KNOWLEDGE BASE ============ */
+.kb-dimensions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+}
+
+.kb-dimension {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.kb-dimension:hover { box-shadow: var(--shadow-md); }
+
+.kb-dim-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    user-select: none;
+}
+
+.kb-dim-icon { font-size: 22px; }
+.kb-dim-title { font-size: 14px; font-weight: 700; flex: 1; }
+.kb-dim-count { font-size: 12px; color: var(--color-text-muted); }
+.kb-dim-arrow { font-size: 12px; color: var(--color-text-muted); transition: transform 0.3s; }
+
+.kb-dimension[data-expanded="true"] .kb-dim-arrow { transform: rotate(180deg); }
+
+.kb-dim-content {
+    display: none;
+    padding: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.kb-dimension[data-expanded="true"] .kb-dim-content { display: block; }
+
+.kb-dim-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
+.kb-dim-item:last-child { border-bottom: none; }
+
+.kb-dim-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.kb-dim-tag {
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* KB Foundations */
+.kb-foundations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.kb-found-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+}
+
+.kb-found-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.kb-found-list {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    color: var(--color-text-secondary);
+}
+
+.kb-found-list li {
+    padding: 4px 0;
+    padding-left: 12px;
+    position: relative;
+}
+
+.kb-found-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    transform: translateY(-50%);
+}
+
+/* Coverage Grid */
 .coverage-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
 }
 
 .coverage-cell {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 12px 8px;
-  text-align: center;
-  transition: var(--transition);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-sm);
+    padding: 12px 8px;
+    text-align: center;
 }
-
-.coverage-cell:hover { box-shadow: var(--shadow-sm); }
 
 .coverage-cell .cell-icon { font-size: 20px; margin-bottom: 4px; }
 .coverage-cell .cell-name { font-size: 11px; font-weight: 600; margin-bottom: 4px; }
 .coverage-cell .cell-stars { font-size: 10px; letter-spacing: 1px; }
+.stars-full { color: var(--color-success); }
+.stars-good { color: var(--color-primary); }
+.stars-mid { color: var(--color-warning); }
+.stars-low { color: var(--color-danger); }
 
-.stars-full { color: var(--accent-green); }
-.stars-good { color: var(--primary); }
-.stars-mid { color: var(--accent-orange); }
-.stars-low { color: var(--accent-rose); }
+.tree-actions {
+    display: flex;
+    gap: var(--spacing-sm);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+.tree-action-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--color-bg-card);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.tree-action-btn:hover { border-color: var(--color-primary); color: var(--color-primary); }
+.tree-action-btn.primary { background: var(--gradient-primary); color: white; border-color: transparent; }
 
 /* ============ FOOTER ============ */
 .footer {
-  text-align: center;
-  padding: 40px 0;
-  font-size: 12px;
-  color: var(--text-muted);
-  border-top: 1px solid var(--border);
-  margin-top: 40px;
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+    font-size: 12px;
+    color: var(--color-text-muted);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--spacing-2xl);
 }
 
-.footer a {
-  color: var(--primary);
-  text-decoration: none;
+.footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 6px 16px;
+    background: var(--gradient-badge);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
 }
+
+.footer a { color: var(--color-primary); }
+.footer a:hover { text-decoration: underline; }
 
 /* ============ RESPONSIVE ============ */
-@media (max-width: 768px) {
-  .stats-grid { grid-template-columns: repeat(3, 1fr); }
-  .pain-grid, .feature-grid, .insight-grid, .case-grid, .framework-grid { grid-template-columns: 1fr; }
-  .kb-grid { grid-template-columns: repeat(2, 1fr); }
-  .coverage-grid { grid-template-columns: repeat(3, 1fr); }
-  .tab-btn { font-size: 12px; padding: 8px 6px; }
-  .header-title { font-size: 24px; }
-  .solution-flow { flex-direction: column; }
-  .solution-arrow { transform: rotate(90deg); }
+@media (max-width: 900px) {
+    .stats-grid { grid-template-columns: repeat(3, 1fr); }
+    .content-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 480px) {
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
-  .kb-grid { grid-template-columns: 1fr; }
-  .coverage-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 768px) {
+    .pain-points-grid, .highlights-grid, .framework-grid { grid-template-columns: 1fr; }
+    .kb-dimensions { grid-template-columns: 1fr; }
+    .kb-foundations { grid-template-columns: 1fr; }
+    .tab-btn { font-size: 12px; padding: 8px 6px; }
+    .tab-btn-text { display: none; }
+    .header { margin-top: var(--spacing-sm); }
+    .header-title { font-size: 24px; }
+    .solution-flow { flex-direction: column; }
+    .flow-arrow { transform: rotate(90deg); }
+}
+
+@media (max-width: 600px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .content-grid { grid-template-columns: 1fr; }
+    .coverage-grid { grid-template-columns: repeat(3, 1fr); }
 }
 </style>
 </head>
 <body>
 
-<div class="top-bar"></div>
-
 <div class="container">
 
-  <!-- ==================== HEADER ==================== -->
-  <header class="header">
-    <div class="header-badge">📐 林克的研发效能洞察</div>
-    <h1 class="header-title">研发效能知识体系 · 洞察平台</h1>
-    <p class="header-subtitle">
-      系统化学习研发效能领域知识，覆盖度量体系、工程实践、AI变革、组织管理等七大层次。<br>
-      从42篇文档跨源合成中提炼深层规律，构建可复用的认知框架。
-    </p>
-  </header>
+    <!-- ==================== HEADER ==================== -->
+    <header class="header">
+        <div class="header-badge">
+            <span>📐</span>
+            <span>林克的研发效能洞察</span>
+        </div>
+        <h1 class="header-title">研发效能知识体系 · 洞察平台</h1>
+        <p class="header-subtitle">
+            系统化追踪研发效能领域动态，覆盖度量体系、工程实践、AI变革、组织管理等七大层次。<br>
+            从42篇文档跨源合成中提炼深层规律，构建可复用的认知框架。
+        </p>
+    </header>
 
-  <!-- ==================== STATS GRID ==================== -->
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div class="stat-number">33+</div>
-      <div class="stat-label">知识文档</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">100+</div>
-      <div class="stat-label">信息源</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">15+</div>
-      <div class="stat-label">核心框架</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">6</div>
-      <div class="stat-label">跨源规律</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">7</div>
-      <div class="stat-label">知识层次</div>
-    </div>
-  </div>
-
-  <!-- ==================== ABOUT ==================== -->
-  <button class="about-toggle" onclick="toggleAbout(this)">
-    了解研发效能洞察：为什么做 &amp; 知识体系全景 <span class="arrow">▼</span>
-  </button>
-
-  <div class="about-content" id="aboutContent">
-    <div class="pain-grid">
-      <div class="pain-card">
-        <div class="icon">🌊</div>
-        <h4>知识碎片化</h4>
-        <p>DORA、DevEx、GSM、SPACE... 框架太多，缺乏系统性认知框架把它们串起来</p>
-      </div>
-      <div class="pain-card">
-        <div class="icon">🔍</div>
-        <h4>实践难对标</h4>
-        <p>各大厂的效能实践各说各话，缺少跨公司横向对比和深层规律提炼</p>
-      </div>
-      <div class="pain-card">
-        <div class="icon">🤖</div>
-        <h4>AI融合困惑</h4>
-        <p>AI代码生成率30%+但组织效率没变？个人提效不等于组织提效的根因是什么？</p>
-      </div>
+    <!-- ==================== STATS ==================== -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-value blue">47+</div>
+            <div class="stat-label">追踪人物</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value green">62+</div>
+            <div class="stat-label">追踪企业</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value purple">100+</div>
+            <div class="stat-label">信息源</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value orange">42</div>
+            <div class="stat-label">知识文档</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value teal">7</div>
+            <div class="stat-label">知识层次</div>
+        </div>
     </div>
 
-    <div class="solution-flow">
-      <div class="solution-step">
-        <div class="step-icon">📚</div>
-        <div class="step-title">系统学习</div>
-        <div class="step-desc">42篇文档全量吸收</div>
-      </div>
-      <div class="solution-arrow">→</div>
-      <div class="solution-step">
-        <div class="step-icon">🧩</div>
-        <div class="step-title">结构化整理</div>
-        <div class="step-desc">七层架构分类沉淀</div>
-      </div>
-      <div class="solution-arrow">→</div>
-      <div class="solution-step">
-        <div class="step-icon">🔗</div>
-        <div class="step-title">跨源合成</div>
-        <div class="step-desc">提炼深层规律与矛盾</div>
-      </div>
-      <div class="solution-arrow">→</div>
-      <div class="solution-step">
-        <div class="step-icon">💡</div>
-        <div class="step-title">认知升级</div>
-        <div class="step-desc">框架倒逼、缺口识别</div>
-      </div>
+    <!-- ==================== ABOUT ==================== -->
+    <div class="about-section">
+        <div class="about-toggle-wrap">
+            <button class="about-toggle-btn" onclick="toggleAbout(this)">
+                <span>💡</span>
+                <span>了解研发效能洞察：为什么做 &amp; 有什么特别</span>
+                <span class="about-toggle-arrow">▼</span>
+            </button>
+        </div>
+        <div class="about-content" id="aboutContent">
+
+            <div class="pain-points-grid">
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">🌊</div>
+                    <div class="pain-point-title">知识碎片化</div>
+                    <div class="pain-point-desc">DORA、DevEx、GSM、SPACE... 框架太多，缺乏系统性认知框架把它们串起来</div>
+                </div>
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">🔍</div>
+                    <div class="pain-point-title">实践难对标</div>
+                    <div class="pain-point-desc">各大厂的效能实践各说各话，缺少跨公司横向对比和深层规律提炼</div>
+                </div>
+                <div class="pain-point-card">
+                    <div class="pain-point-icon">🤖</div>
+                    <div class="pain-point-title">AI融合困惑</div>
+                    <div class="pain-point-desc">AI代码生成率30%+但组织效率没变？个人提效不等于组织提效的根因是什么？</div>
+                </div>
+            </div>
+
+            <div class="solution-flow">
+                <div class="flow-step">
+                    <div class="flow-step-icon">📚</div>
+                    <div class="flow-step-title">系统学习</div>
+                    <div class="flow-step-desc">42篇文档全量吸收</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">🧩</div>
+                    <div class="flow-step-title">结构化整理</div>
+                    <div class="flow-step-desc">七层架构分类沉淀</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">🔗</div>
+                    <div class="flow-step-title">跨源合成</div>
+                    <div class="flow-step-desc">提炼深层规律与矛盾</div>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-step-icon">💡</div>
+                    <div class="flow-step-title">认知升级</div>
+                    <div class="flow-step-desc">框架倒逼、缺口识别</div>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">🏗️</div>
+                    <div class="highlight-title">七层架构体系</div>
+                    <div class="highlight-desc">从理论基础到行业验证，七层知识架构覆盖研发效能全域</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">🔬</div>
+                    <div class="highlight-title">跨源交叉验证</div>
+                    <div class="highlight-desc">6批次42篇文档跨源分析，每条规律至少3条独立证据链验证</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">📊</div>
+                    <div class="highlight-title">数据驱动洞察</div>
+                    <div class="highlight-desc">四大厂真实数据对比，避免空谈方法论</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="icon">🏗️</div>
-        <h4>七层架构体系</h4>
-        <p>从理论基础到行业验证，七层知识架构覆盖研发效能全域</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">🔬</div>
-        <h4>跨源交叉验证</h4>
-        <p>6批次42篇文档跨源分析，每条规律至少3条独立证据链验证</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">📊</div>
-        <h4>数据驱动洞察</h4>
-        <p>快手/字节/腾讯/阿里四大厂真实数据对比，避免空谈方法论</p>
-      </div>
-    </div>
-  </div>
+    <!-- ==================== TAB NAVIGATION ==================== -->
+    <nav class="tab-nav" role="navigation">
+        <button class="tab-btn active" data-tab="architecture">
+            <span class="tab-btn-icon">🏗️</span>
+            <span class="tab-btn-text">知识架构</span>
+        </button>
+        <button class="tab-btn" data-tab="insights">
+            <span class="tab-btn-icon">💡</span>
+            <span class="tab-btn-text">深度洞察</span>
+        </button>
+        <button class="tab-btn" data-tab="tracking">
+            <span class="tab-btn-icon">🎯</span>
+            <span class="tab-btn-text">追踪体系</span>
+        </button>
+        <button class="tab-btn" data-tab="knowledge">
+            <span class="tab-btn-icon">📚</span>
+            <span class="tab-btn-text">知识库</span>
+        </button>
+    </nav>
 
-  <!-- ==================== TAB NAVIGATION ==================== -->
-  <nav class="tab-nav">
-    <button class="tab-btn active" data-tab="architecture">🏗️ 知识架构</button>
-    <button class="tab-btn" data-tab="insights">💡 跨源洞察</button>
-    <button class="tab-btn" data-tab="cases">🏢 大厂案例</button>
-    <button class="tab-btn" data-tab="knowledge">📚 知识库</button>
-  </nav>
+    <!-- ==================== TAB 1: ARCHITECTURE ==================== -->
+    <article id="architecture" class="tab-panel active">
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🏗️</div>
+                <div>
+                    <h2 class="section-title">研发效能七层知识架构</h2>
+                    <p class="section-desc">从理论基础到行业验证，每一层回答一个核心问题。覆盖度基于42篇文档的学习深度评估。</p>
+                </div>
+            </div>
 
-  <!-- ==================== TAB 1: ARCHITECTURE ==================== -->
-  <div class="tab-panel active" id="tab-architecture">
+            <div class="arch-container">
+                <div class="arch-layer layer-7">
+                    <div class="arch-level">L7</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>行业验证 Industry Validation</h4>
+                            <p>大厂实践 · 行业报告 · 基准数据 · 趋势预判</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:90%"></div></div>
+                            <div class="coverage-text">90%</div>
+                        </div>
+                    </div>
+                </div>
 
-    <h2 class="section-title"><span class="icon">🏗️</span> 研发效能七层知识架构</h2>
-    <p class="section-desc">从理论基础到行业验证，每一层回答一个核心问题。覆盖度基于42篇文档的学习深度评估。</p>
+                <div class="arch-layer layer-6">
+                    <div class="arch-level">L6</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>组织与管理 Organization &amp; Management</h4>
+                            <p>团队拓扑 · 三大去化 · 效能中心架构 · 变革管理</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:70%"></div></div>
+                            <div class="coverage-text">70%</div>
+                        </div>
+                    </div>
+                </div>
 
-    <div class="arch-container">
-      <div class="arch-layer layer-7">
-        <div class="arch-level">L7</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>行业验证 Industry Validation</h4>
-            <p>大厂实践 · 行业报告 · 基准数据 · 趋势预判</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:90%"></div></div>
-            <div class="coverage-text">90%</div>
-          </div>
+                <div class="arch-layer layer-5">
+                    <div class="arch-level">L5</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>AI变革 AI Transformation</h4>
+                            <p>AI成熟度模型 · Spec Coding · Context工程 · 度量换挡</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:95%"></div></div>
+                            <div class="coverage-text">95%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-layer layer-4">
+                    <div class="arch-level">L4</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>工具与平台 Tooling &amp; Platform</h4>
+                            <p>DevOps工具链 · 平台工程(IDP) · KATE/Bits架构</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:80%"></div></div>
+                            <div class="coverage-text">80%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-layer layer-3">
+                    <div class="arch-level">L3</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>工程实践 Engineering Practices</h4>
+                            <p>CI/CD · 质量工程 · 分层监控 · 代码质量治理</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:70%"></div></div>
+                            <div class="coverage-text">70%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-layer layer-2">
+                    <div class="arch-level">L2</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>度量体系 Measurement System</h4>
+                            <p>DORA/SPACE/DevEx/DX Core 4 · 九阴真经 · 度量换挡</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:95%"></div></div>
+                            <div class="coverage-text">95%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-layer layer-1">
+                    <div class="arch-level">L1</div>
+                    <div class="arch-body">
+                        <div class="arch-body-info">
+                            <h4>理论基础 Theoretical Foundation</h4>
+                            <p>本质定义 · 八大定律 · 黄金三角 · 演进阶段模型</p>
+                        </div>
+                        <div class="arch-coverage">
+                            <div class="coverage-bar"><div class="coverage-fill" style="width:90%"></div></div>
+                            <div class="coverage-text">90%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Golden Triangle -->
+            <div class="golden-triangle">
+                <div class="triangle-label">贯穿七层的核心框架 —— 研发效能黄金三角（张乐）</div>
+                <div class="triangle-visual">
+                    <div class="triangle-node">📐 效能平台</div>
+                    <div class="triangle-arrow">⟷</div>
+                    <div class="triangle-node">🔧 效能实践</div>
+                    <div class="triangle-arrow">⟷</div>
+                    <div class="triangle-node">📊 效能度量</div>
+                </div>
+                <div class="triangle-desc">三者构成持续迭代的增强回路：平台承载实践 → 实践产生数据 → 度量驱动改进</div>
+            </div>
+        </section>
+
+        <!-- Key Frameworks -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📐</div>
+                <div>
+                    <h2 class="section-title">核心框架速览</h2>
+                    <p class="section-desc">四大核心框架，覆盖AI成熟度、度量演进、演进模型和度量换挡。</p>
+                </div>
+            </div>
+
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <h4>AI研发成熟度模型</h4>
+                    <div class="source">来源：万人组织实践验证</div>
+                    <div class="levels">
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#059669">L1</span>
+                            <span>AI辅助 — 人主导 + AI编码辅助，提效10-20%</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#2563EB">L2</span>
+                            <span>AI协同 — 人机深度协同，全流程AI，提效30-40%</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#7C3AED">L3</span>
+                            <span>AI自主 — 人如PM，AI端到端完成</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="framework-card">
+                    <h4>度量框架演进</h4>
+                    <div class="source">来源：跨越10年的框架迭代</div>
+                    <div class="levels">
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#6366F1">2014</span>
+                            <span>DORA — 4+1指标，产出导向</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#0EA5E9">2021</span>
+                            <span>SPACE — 5维度，首纳开发者体验</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#059669">2023</span>
+                            <span>DevEx — 3维度，彻底转向体验</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#D97706">2024</span>
+                            <span>DX Core 4 — 极简统一框架</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="framework-card">
+                    <h4>五阶段演进模型</h4>
+                    <div class="source">来源：五年实践验证</div>
+                    <div class="levels">
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#94A3B8">P1</span>
+                            <span>平台化 — 工具渗透率&gt;95%</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#64748B">P2</span>
+                            <span>数字化 — 效能度量体系建立</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#475569">P3</span>
+                            <span>精益化 — 数据驱动瓶颈识别</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#2563EB">P4</span>
+                            <span>智能化L1 — AI编码推广</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#7C3AED">P5</span>
+                            <span>智能化L2 — 组织级AI范式升级</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="framework-card">
+                    <h4>度量换挡机制</h4>
+                    <div class="source">来源：跨源合成新发现</div>
+                    <div class="levels">
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#94A3B8">挡1</span>
+                            <span>工具推广期 → 北极星：AI代码生成率</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#0EA5E9">挡2</span>
+                            <span>个人提效期 → 北极星：编码周期缩短</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#059669">挡3</span>
+                            <span>组织提效期 → 北极星：L2+需求占比</span>
+                        </div>
+                        <div class="level-item">
+                            <span class="level-badge" style="background:#7C3AED">挡4</span>
+                            <span>业务成效期 → 北极星：人均交付需求数</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <!-- ==================== TAB 2: DEEP INSIGHTS ==================== -->
+    <article id="insights" class="tab-panel">
+
+        <!-- Cross-source Laws -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">💡</div>
+                <div>
+                    <h2 class="section-title">跨源深层规律</h2>
+                    <p class="section-desc">6批次42篇文档交叉分析后浮现的深层规律——这些是单篇文档看不出来的。</p>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3 class="category-title">六大定律与模式</h3>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">⚡</span>
+                            <span class="content-card-title">基建先行定律</span>
+                            <span class="content-card-tag blue">定律</span>
+                        </div>
+                        <div class="content-card-desc">AI效果 = 基建质量的乘数。4条独立证据验证：95%+渗透率是AI成功的隐性前提，基建好但AI三线分裂，工具碎片化导致AI推广N×M适配。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">🔄</span>
+                            <span class="content-card-title">度量换挡机制</span>
+                            <span class="content-card-tag blue">定律</span>
+                        </div>
+                        <div class="content-card-desc">每一级的"北极星"不同。在错误阶段看错误指标会产生"虚假安全感"——从AI代码生成率切换到需求交付周期，才发现组织效率没变。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">🧠</span>
+                            <span class="content-card-title">知识 &gt; 算法</span>
+                            <span class="content-card-tag blue">定律</span>
+                        </div>
+                        <div class="content-card-desc">Agent效果的天花板是知识沉淀深度。测试用例V2→V3靠知识增强提升190%，自研工具的核心壁垒是业务知识积累。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">🏛️</span>
+                            <span class="content-card-title">组织结构决定AI融合上限</span>
+                            <span class="content-card-tag blue">定律</span>
+                        </div>
+                        <div class="content-card-desc">6/6 vs 0/6：效能团队主导追求"组织交付效率"，AI团队主导追求"用户量/商业化"——目标函数不同，结果截然不同。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">📈</span>
+                            <span class="content-card-title">渐进比激进更有效</span>
+                            <span class="content-card-tag green">模式</span>
+                        </div>
+                        <div class="content-card-desc">质量门禁弱卡→强卡、单测会写→TDD、AI推广僵化→优化→固化——万人组织中"先弱后强"不是保守，而是唯一可行路径。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">📊</span>
+                            <span class="content-card-title">两极分化是结构性特征</span>
+                            <span class="content-card-tag green">模式</span>
+                        </div>
+                        <div class="content-card-desc">AI不是雨露均沾而是马太效应加速器。高效人群40%+ vs 一般&lt;10%，推广策略应"找头羊→提炼方法→扩大群体"。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3 class="category-title">四组关键矛盾</h3>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">⚖️</span>
+                            <span class="content-card-title">平台统一 vs AI产品独立</span>
+                            <span class="content-card-tag red">张力</span>
+                        </div>
+                        <div class="content-card-desc">AI嵌入平台路线利于知识积累和组织提效；独立产品路线利于快速迭代和商业变现。短期数据支持统一路线。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">📏</span>
+                            <span class="content-card-title">严格度量 vs 古德哈特效应</span>
+                            <span class="content-card-tag red">张力</span>
+                        </div>
+                        <div class="content-card-desc">最严格的"编辑距离&lt;50%逐行比对"数据准确但成本高。破解方法：不断换北极星，让度量永远在指标化之前。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">👤</span>
+                            <span class="content-card-title">超级个体 vs 团队协同</span>
+                            <span class="content-card-tag red">张力</span>
+                        </div>
+                        <div class="content-card-desc">AI让个人能力变强（去职能化/超级个体），但复杂系统仍需协作。解法：小兵团内部去职能化 + 兵团间清晰边界。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">🚀</span>
+                            <span class="content-card-title">快速迭代 vs 质量保障</span>
+                            <span class="content-card-tag red">张力</span>
+                        </div>
+                        <div class="content-card-desc">1.53天一版本如何保质量？从"发布前卡质量"→"发布后快恢复"→"AI自动检测+修复"，AI既是加速器也是安全网。</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section">
+                <h3 class="category-title">三次认知跃迁</h3>
+                <div class="content-grid">
+                    <div class="content-card full-width">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">💎</span>
+                            <span class="content-card-title">相变点理论 — 效能提升是非线性的</span>
+                            <span class="content-card-tag purple">跃迁</span>
+                        </div>
+                        <div class="content-card-desc">存在临界相变点：平台渗透率&gt;95%数据才可信、AI代码&gt;30%编码才缩短、L2+需求&gt;15%组织才提效。放弃的团队往往死在相变点前一步。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">🔀</span>
+                            <span class="content-card-title">第二曲线 — AI范式的加速分离</span>
+                            <span class="content-card-tag purple">跃迁</span>
+                        </div>
+                        <div class="content-card-desc">传统优化天花板约20-30%，之后边际递减。AI L2在标杆团队实现交付周期下降52.9%——第二曲线加速分离点。</div>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-card-header">
+                            <span class="content-card-icon">🤝</span>
+                            <span class="content-card-title">从"人用工具"到"人机共生"</span>
+                            <span class="content-card-tag purple">跃迁</span>
+                        </div>
+                        <div class="content-card-desc">每次跃迁改变的不只是工具，还有协作模式、技能要求、组织结构和度量指标。人的核心价值上移到"定义目标+评估价值"。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Cases -->
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🏢</div>
+                <div>
+                    <h2 class="section-title">大厂研发效能实践</h2>
+                    <p class="section-desc">覆盖四大厂的真实实践数据，以及行业基准对标分析。</p>
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <span class="content-card-icon">🔥</span>
+                        <span class="content-card-title">万人组织AI研发范式跃迁</span>
+                        <span class="content-card-tag green">案例A</span>
+                    </div>
+                    <div class="content-card-desc">19篇内部文档全量沉淀，从平台化到智能化L2的五年完整演进。效能中心主导，AI融合评分6/6。</div>
+                    <div class="content-card-meta">AI代码生成率30.2% · 交付周期降58% · OnCall拦截53%</div>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <span class="content-card-icon">🔷</span>
+                        <span class="content-card-title">效能度量体系 + 平台地图</span>
+                        <span class="content-card-tag blue">案例B</span>
+                    </div>
+                    <div class="content-card-desc">90+工具整合、1415个标准指标、服务27000+人。但AI时代面临三线分裂。</div>
+                    <div class="content-card-meta">AI编码贡献率12.97% · 告警归因率60.62%</div>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <span class="content-card-icon">🔷</span>
+                        <span class="content-card-title">4大业务线最佳实践</span>
+                        <span class="content-card-tag blue">案例B</span>
+                    </div>
+                    <div class="content-card-desc">流程收敛(-30.41%)、质量门禁(1.79%→17.8%)、双流自动流转、AI全链路提效。</div>
+                    <div class="content-card-meta">流程标准化 · 质量门禁渐进 · 全球化适配</div>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <span class="content-card-icon">🔥</span>
+                        <span class="content-card-title">三大去化组织变革实验</span>
+                        <span class="content-card-tag green">案例A</span>
+                    </div>
+                    <div class="content-card-desc">去中心化(小兵团)、去流程化(先快再好)、去职能化(超级个体)。AI原生团队变革。</div>
+                    <div class="content-card-meta">版本10天→1.53天 · 人均代码+680% · AI代码率46.2%</div>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <span class="content-card-icon">📈</span>
+                        <span class="content-card-title">效能报告与跨公司对标</span>
+                        <span class="content-card-tag orange">基准</span>
+                    </div>
+                    <div class="content-card-desc">DORA/DevData/大数据报告交叉分析，17家顶级科技公司访谈结论，按公司规模差异化度量策略。</div>
+                    <div class="content-card-meta">多维度是共识 · 流程&gt;工具&gt;度量 · AI双刃剑效应</div>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-header">
+                        <span class="content-card-icon">🌐</span>
+                        <span class="content-card-title">AI融合度横向评估</span>
+                        <span class="content-card-tag orange">基准</span>
+                    </div>
+                    <div class="content-card-desc">基础建设×AI融合度双维评估，揭示"基建好≠AI融合好"的反直觉结论。</div>
+                    <div class="content-card-meta">A: 6/6 · B: 0/6 · C: 1/6 · D: 2/6</div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <!-- ==================== TAB 3: TRACKING ==================== -->
+    <article id="tracking" class="tab-panel">
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">🎯</div>
+                <div>
+                    <h2 class="section-title">追踪体系</h2>
+                    <p class="section-desc">研发效能领域关键人物、企业、信息源的系统化追踪清单（点击展开查看详情）</p>
+                </div>
+            </div>
+
+            <!-- PEOPLE -->
+            <div class="tracking-section">
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <div class="coll-left">
+                        <span class="coll-emoji">👤</span>
+                        <span class="coll-title">人物追踪</span>
+                        <span class="coll-count">47+</span>
+                    </div>
+                    <span class="coll-arrow">▼</span>
+                </div>
+                <div class="collapsible-body">
+                    <h4 class="tracking-subtitle">L1 框架创建者 — 效能度量</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>人物</th><th>机构/角色</th><th>核心贡献</th><th>追踪渠道</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Nicole Forsgren</strong></td><td>DORA创始人</td><td>DORA Metrics → SPACE → DevEx</td><td>论文、DORA报告</td></tr>
+                        <tr><td><strong>Abi Noda</strong></td><td>DX CEO</td><td>DX Core 4框架</td><td>getdx.com</td></tr>
+                        <tr><td><strong>M.A. Storey</strong></td><td>UVic教授</td><td>SPACE合著、DX Core 4</td><td>学术论文</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">L1 框架创建者 — DevOps/持续交付</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>人物</th><th>机构/角色</th><th>核心贡献</th><th>追踪渠道</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Gene Kim</strong></td><td>IT Revolution</td><td>《凤凰项目》《Vibe Coding》DevOps之父</td><td>itrevolution.com</td></tr>
+                        <tr><td><strong>Jez Humble</strong></td><td>—</td><td>《持续交付》DORA合著</td><td>博客、演讲</td></tr>
+                        <tr><td><strong>Kent Beck</strong></td><td>独立</td><td>XP/TDD创始人</td><td>X、Newsletter</td></tr>
+                        <tr><td><strong>Dave Farley</strong></td><td>独立</td><td>持续交付合著</td><td>YouTube</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">L1 框架创建者 — 方法论/架构</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>人物</th><th>机构/角色</th><th>核心贡献</th><th>追踪渠道</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Martin Fowler</strong></td><td>ThoughtWorks首席科学家</td><td>重构、微服务、CI方法论</td><td>martinfowler.com</td></tr>
+                        <tr><td><strong>张乐</strong></td><td>独立/QECon</td><td>黄金三角（平台+实践+度量）</td><td>知识星球、QECon</td></tr>
+                        <tr><td><strong>M. Skelton &amp; M. Pais</strong></td><td>Team Topologies</td><td>团队拓扑理论</td><td>teamtopologies.com</td></tr>
+                        <tr><td><strong>Luca Galante</strong></td><td>platformengineering.org</td><td>平台工程运动发起人</td><td>社区网站</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">L2 实践领军者 — 中国大厂</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>人物</th><th>公司/角色</th><th>核心实践</th><th>追踪方式</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>华剑侃</strong></td><td>AI编程万人落地</td><td>代码率30%+</td><td>A2M大会</td></tr>
+                        <tr><td><strong>何勉</strong></td><td>精益专家</td><td>精益+研发效能、FILA模型</td><td>技术博客</td></tr>
+                        <tr><td><strong>石雪峰</strong></td><td>独立 DevOps专家</td><td>DORA深度中文解读</td><td>公众号</td></tr>
+                        <tr><td><strong>任晶磊</strong></td><td>思码逸 CEO</td><td>GQM方法、效能基准报告</td><td>思码逸博客</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">L2 实践领军者 — AI编码/国际</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>人物</th><th>公司/角色</th><th>核心实践</th><th>追踪方式</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>陈洋/臧志</strong></td><td>文心快码</td><td>Coding Agent产品化</td><td>技术博客</td></tr>
+                        <tr><td><strong>Kelsey Hightower</strong></td><td>Google(前)</td><td>K8s/平台工程布道</td><td>X、YouTube</td></tr>
+                        <tr><td><strong>Charity Majors</strong></td><td>Honeycomb CTO</td><td>可观测性运动</td><td>honeycomb.io</td></tr>
+                        <tr><td><strong>Will Larson</strong></td><td>独立</td><td>工程管理《An Elegant Puzzle》</td><td>lethain.com</td></tr>
+                        <tr><td><strong>Gregor Hohpe</strong></td><td>独立</td><td>企业架构/平台战略</td><td>博客</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">L3 行业观察者</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>人物</th><th>平台</th><th>价值定位</th><th>频率</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Gergely Orosz</strong></td><td>Pragmatic Engineer</td><td>工程管理、AI对工程师影响</td><td>每周</td></tr>
+                        <tr><td><strong>Oren Ellenbogen</strong></td><td>Software Lead Weekly</td><td>工程领导力精选</td><td>每周</td></tr>
+                        <tr><td><strong>Gareth Rushgrove</strong></td><td>DevOps Weekly</td><td>DevOps/SRE精选</td><td>每周</td></tr>
+                        <tr><td><strong>Dave Farley</strong></td><td>YouTube</td><td>持续交付/工程实践</td><td>每周</td></tr>
+                        <tr><td><strong>Jeff Delaney</strong></td><td>Fireship</td><td>开发工具速览</td><td>每周</td></tr>
+                        <tr><td><strong>王欢/徐陈飞</strong></td><td>知识星球</td><td>CMMI+效能度量实战</td><td>每周</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <div class="adjust-rules">
+                        <h4>动态调整规则</h4>
+                        <ul>
+                            <li>发布新框架/方法论论文 → L3升级至L1或L2</li>
+                            <li>连续2月无新输出 → 降低检查频率</li>
+                            <li>大会主题演讲 → 重点追踪该期内容</li>
+                            <li>发现新效能实践领军者 → 加入L2清单</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMPANIES -->
+            <div class="tracking-section">
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <div class="coll-left">
+                        <span class="coll-emoji">🏢</span>
+                        <span class="coll-title">企业追踪</span>
+                        <span class="coll-count">62+</span>
+                    </div>
+                    <span class="coll-arrow">▼</span>
+                </div>
+                <div class="collapsible-body">
+                    <h4 class="tracking-subtitle">中国互联网大厂 — 核心案例研究对象</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>公司</th><th>AI融合度</th><th>核心效能平台</th><th>代表数据</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>案例A</strong></td><td><span class="ai-score score-high">6/6</span></td><td>一体化效能平台+AI编程</td><td>AI代码30.2%, 周期降58%</td></tr>
+                        <tr><td><strong>案例B</strong></td><td><span class="ai-score score-low">0/6</span></td><td>90+工具整合/1415指标</td><td>AI编码12.97%</td></tr>
+                        <tr><td><strong>案例C</strong></td><td><span class="ai-score score-low">1/6</span></td><td>各BG独立工具链</td><td>AI代码50%, CR参与94%</td></tr>
+                        <tr><td><strong>案例D</strong></td><td><span class="ai-score score-mid">2/6</span></td><td>AI编码+BizDevOps</td><td>—</td></tr>
+                        <tr><td><strong>百度</strong></td><td><span class="ai-score score-mid">—</span></td><td>文心快码Comate(L2-L4)</td><td>AI代码率40%+</td></tr>
+                        <tr><td><strong>华为</strong></td><td><span class="ai-score score-mid">—</span></td><td>E3CI框架/系统工程三条流</td><td>—</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">国际科技巨头 — 效能工程标杆</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>公司</th><th>核心贡献</th><th>效能特色</th><th>追踪渠道</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Google</strong></td><td>GSM方法论/DORA/SRE</td><td>开发者生产力研究标杆</td><td>research.google</td></tr>
+                        <tr><td><strong>Microsoft</strong></td><td>SPACE/DevEx/Copilot</td><td>学术+产品双驱</td><td>devblogs.microsoft.com</td></tr>
+                        <tr><td><strong>GitHub</strong></td><td>Copilot/Octoverse</td><td>开发者生态数据</td><td>github.blog</td></tr>
+                        <tr><td><strong>Spotify</strong></td><td>Backstage开源IDP</td><td>平台工程标杆</td><td>engineering.atspotify.com</td></tr>
+                        <tr><td><strong>Netflix</strong></td><td>规模化/可靠性</td><td>混沌工程先驱</td><td>netflixtechblog.com</td></tr>
+                        <tr><td><strong>Amazon/AWS</strong></td><td>Kiro(Spec驱动)</td><td>云原生效能</td><td>aws.amazon.com/blogs</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">AI编码工具公司</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>公司</th><th>产品</th><th>工具层级</th><th>追踪重点</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Cursor</strong></td><td>Cursor AI IDE</td><td>L2-L3</td><td>Agent模式演进</td></tr>
+                        <tr><td><strong>Anthropic</strong></td><td>Claude Code</td><td>L3</td><td>Terminal-native</td></tr>
+                        <tr><td><strong>OpenAI</strong></td><td>Codex</td><td>L3</td><td>自主编码Agent</td></tr>
+                        <tr><td><strong>Cognition</strong></td><td>Devin</td><td>L4</td><td>自主AI工程师</td></tr>
+                        <tr><td><strong>Vercel</strong></td><td>v0</td><td>L3</td><td>Prompt到UI</td></tr>
+                        <tr><td><strong>Lovable</strong></td><td>Lovable</td><td>L4</td><td>需求到产品</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">效能度量工具公司</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>公司</th><th>产品/定位</th><th>核心价值</th><th>追踪渠道</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>DX</strong></td><td>开发者体验度量</td><td>DX Core 4商业化</td><td>getdx.com</td></tr>
+                        <tr><td><strong>思码逸</strong></td><td>DevData基准</td><td>国内效能基准</td><td>merico.cn</td></tr>
+                        <tr><td><strong>LinearB</strong></td><td>工程效能分析</td><td>DORA可视化</td><td>linearb.io</td></tr>
+                        <tr><td><strong>Backstage</strong></td><td>开源IDP(Spotify)</td><td>开发者门户</td><td>backstage.io</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">研究机构与咨询</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>机构</th><th>类型</th><th>核心贡献</th><th>追踪渠道</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>DORA</strong></td><td>研究</td><td>效能度量全球标准</td><td>dora.dev</td></tr>
+                        <tr><td><strong>Stanford HAI</strong></td><td>学术</td><td>AI对生产力影响</td><td>hai.stanford.edu</td></tr>
+                        <tr><td><strong>METR</strong></td><td>研究</td><td>AI生产力RCT实验</td><td>metr.org</td></tr>
+                        <tr><td><strong>Gartner</strong></td><td>咨询</td><td>Platform Engineering Hype</td><td>gartner.com</td></tr>
+                        <tr><td><strong>ThoughtWorks</strong></td><td>咨询</td><td>Technology Radar</td><td>thoughtworks.com</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <div class="adjust-rules">
+                        <h4>动态调整规则</h4>
+                        <ul>
+                            <li>公司发布重大效能平台更新 → 提升追踪频率</li>
+                            <li>获得大额融资(&gt;5000万美元) → 加强关注</li>
+                            <li>发布开源效能工具 → 评估纳入</li>
+                            <li>年度报告发布(DORA/DevData) → 第一时间学习</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOURCES -->
+            <div class="tracking-section">
+                <div class="collapsible-header" onclick="toggleCollapsible(this)">
+                    <div class="coll-left">
+                        <span class="coll-emoji">📡</span>
+                        <span class="coll-title">信息源追踪</span>
+                        <span class="coll-count">100+</span>
+                    </div>
+                    <span class="coll-arrow">▼</span>
+                </div>
+                <div class="collapsible-body">
+                    <h4 class="tracking-subtitle">年度权威报告</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>报告</th><th>发布机构</th><th>频率</th><th>核心价值</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>DORA State of DevOps</strong></td><td>DORA/Google</td><td>每年</td><td>全球效能基准</td></tr>
+                        <tr><td><strong>GitHub Octoverse</strong></td><td>GitHub</td><td>每年</td><td>AI编码趋势</td></tr>
+                        <tr><td><strong>Technology Radar</strong></td><td>ThoughtWorks</td><td>半年</td><td>技术成熟度</td></tr>
+                        <tr><td><strong>DevData基准报告</strong></td><td>思码逸</td><td>每年</td><td>国内效能基准</td></tr>
+                        <tr><td><strong>Stanford AI Index</strong></td><td>Stanford HAI</td><td>每年</td><td>AI生产力影响</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">官方技术博客</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>公司</th><th>URL</th><th>频率</th><th>重点</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Google</strong></td><td>research.google</td><td>每周</td><td>效能研究/SRE</td></tr>
+                        <tr><td><strong>GitHub</strong></td><td>github.blog</td><td>每周</td><td>Copilot/生态</td></tr>
+                        <tr><td><strong>Spotify</strong></td><td>engineering.atspotify.com</td><td>每月</td><td>平台工程</td></tr>
+                        <tr><td><strong>Netflix</strong></td><td>netflixtechblog.com</td><td>每月</td><td>规模化/可靠性</td></tr>
+                        <tr><td><strong>Stripe</strong></td><td>stripe.com/blog</td><td>每月</td><td>工程卓越</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">Newsletter与博客</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>名称</th><th>作者</th><th>频率</th><th>核心价值</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>Pragmatic Engineer</strong></td><td>Gergely Orosz</td><td>每周</td><td>工程管理/AI影响</td></tr>
+                        <tr><td><strong>Software Lead Weekly</strong></td><td>Oren Ellenbogen</td><td>每周</td><td>领导力精选</td></tr>
+                        <tr><td><strong>DevOps Weekly</strong></td><td>Gareth Rushgrove</td><td>每周</td><td>DevOps精选</td></tr>
+                        <tr><td><strong>martinfowler.com</strong></td><td>Martin Fowler</td><td>不定期</td><td>架构深度</td></tr>
+                        <tr><td><strong>getdx.com/blog</strong></td><td>Abi Noda</td><td>每月</td><td>DX度量研究</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">微信公众号</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>公众号</th><th>作者/机构</th><th>频率</th><th>价值定位</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>InfoQ</strong></td><td>InfoQ中国</td><td>每日</td><td>技术趋势/效能深度</td></tr>
+                        <tr><td><strong>思码逸研发效能</strong></td><td>思码逸</td><td>每周</td><td>效能基准/方法论</td></tr>
+                        <tr><td><strong>DevOps时代</strong></td><td>DevOps社区</td><td>每周</td><td>DevOps实践</td></tr>
+                        <tr><td><strong>张乐的研发效能</strong></td><td>张乐</td><td>每周</td><td>黄金三角/洞察</td></tr>
+                        <tr><td><strong>石雪峰DevOps</strong></td><td>石雪峰</td><td>每周</td><td>DORA解读</td></tr>
+                        <tr><td><strong>QECon质效圈</strong></td><td>QECon</td><td>每周</td><td>质量+效能</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <h4 class="tracking-subtitle">行业大会与播客</h4>
+                    <div style="overflow-x:auto">
+                    <table class="track-table">
+                    <thead><tr><th>名称</th><th>类型</th><th>频率</th><th>核心价值</th></tr></thead>
+                    <tbody>
+                        <tr><td><strong>QECon</strong></td><td>国内大会</td><td>每年</td><td>国内效能最佳实践</td></tr>
+                        <tr><td><strong>A2M</strong></td><td>AI效能大会</td><td>每年</td><td>AI+研发效能前沿</td></tr>
+                        <tr><td><strong>DevOps Enterprise</strong></td><td>国际大会</td><td>每年</td><td>DevOps战略分享</td></tr>
+                        <tr><td><strong>PlatformCon</strong></td><td>在线大会</td><td>每年</td><td>平台工程专项</td></tr>
+                        <tr><td><strong>Continuous Delivery</strong></td><td>YouTube</td><td>每周</td><td>Dave Farley讲解</td></tr>
+                    </tbody>
+                    </table>
+                    </div>
+
+                    <div class="adjust-rules">
+                        <h4>信源使用策略</h4>
+                        <ul>
+                            <li>每周必查: DORA/GitHub博客、Pragmatic Engineer、思码逸</li>
+                            <li>每月必查: 各大厂技术博客、QECon、知识星球</li>
+                            <li>新年度报告发布 → 第一时间学习纳入知识库</li>
+                            <li>新Newsletter发现 → 试读2-3期后评估纳入</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <!-- ==================== TAB 4: KNOWLEDGE BASE ==================== -->
+    <article id="knowledge" class="tab-panel">
+        <section class="section">
+            <div class="section-header">
+                <div class="section-icon">📚</div>
+                <div>
+                    <h2 class="section-title">知识库架构</h2>
+                    <p class="section-desc">42+篇知识文档，覆盖9大类别，来源于知识星球、语雀P0/P1全量学习、国际报告和大厂实践。</p>
+                </div>
+            </div>
+
+            <div class="kb-dimensions">
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">📊</span>
+                        <span class="kb-dim-title">效能度量体系</span>
+                        <span class="kb-dim-count">5 篇 · 49KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-primary)"></span>
+                            九阴真经方法论概览
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-primary)"></span>
+                            五大实践完整指南
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-primary)"></span>
+                            研效产品经理修炼
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-primary)"></span>
+                            DevEx开发者体验框架
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-primary)"></span>
+                            DevMind深度实践
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">🤖</span>
+                        <span class="kb-dim-title">AI+研发效能</span>
+                        <span class="kb-dim-count">4 篇 · 28KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-info)"></span>
+                            AI DevOps趋势总览
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-info)"></span>
+                            Prompt驱动CI实践
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-info)"></span>
+                            年度回顾与展望
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-info)"></span>
+                            研发效能之道
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">🏢</span>
+                        <span class="kb-dim-title">行业实践案例</span>
+                        <span class="kb-dim-count">8 篇 · 123KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            大厂实践对比分析
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            A2M大会PPT精华
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            AI研发范式跃迁
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            19篇完整体系(40KB)
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            效能全景分析
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            效能报告与行业基准
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            4大业务线实践
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-warning)"></span>
+                            AI研发范式跃迁全景
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">🧭</span>
+                        <span class="kb-dim-title">知识框架</span>
+                        <span class="kb-dim-count">3 篇 · 51KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-purple)"></span>
+                            七层架构全景版 v2.0
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-purple)"></span>
+                            五大度量框架对比
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-purple)"></span>
+                            AI研发成熟度模型(L1-L3)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">💡</span>
+                        <span class="kb-dim-title">核心洞察</span>
+                        <span class="kb-dim-count">3 篇 · 49KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-success)"></span>
+                            10大核心洞察 + 4大趋势
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-success)"></span>
+                            2026 AI×研发效能洞察报告
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-success)"></span>
+                            42篇跨源知识合成
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">🔧</span>
+                        <span class="kb-dim-title">智能编码工具</span>
+                        <span class="kb-dim-count">4 篇 · 31KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-teal)"></span>
+                            Cursor最佳实践
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-teal)"></span>
+                            AI编码深度指南
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-teal)"></span>
+                            Coding Agent完全指南
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:var(--color-teal)"></span>
+                            AI质效宣言
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">🏗️</span>
+                        <span class="kb-dim-title">DevOps与平台工程</span>
+                        <span class="kb-dim-count">2 篇 · 9KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:#64748B"></span>
+                            DORA+平台工程
+                        </div>
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:#64748B"></span>
+                            行业报告对比
+                        </div>
+                    </div>
+                </div>
+
+                <div class="kb-dimension" data-expanded="false">
+                    <div class="kb-dim-header" onclick="toggleKBDimension(this)">
+                        <span class="kb-dim-icon">⚙️</span>
+                        <span class="kb-dim-title">工程实践</span>
+                        <span class="kb-dim-count">1 篇 · 17KB</span>
+                        <span class="kb-dim-arrow">▼</span>
+                    </div>
+                    <div class="kb-dim-content">
+                        <div class="kb-dim-item">
+                            <span class="kb-dim-dot" style="background:#475569"></span>
+                            工程实践深度分析
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coverage Map -->
+            <h3 style="font-size:16px; font-weight:700; margin-bottom:var(--spacing-sm);">📊 知识覆盖度地图</h3>
+            <p style="font-size:13px; color:var(--color-text-secondary); margin-bottom:var(--spacing-md);">10个子领域的知识覆盖深度评估，基于42篇文档的学习成果。</p>
+
+            <div class="coverage-grid">
+                <div class="coverage-cell">
+                    <div class="cell-icon">📊</div>
+                    <div class="cell-name">效能度量</div>
+                    <div class="cell-stars stars-full">★★★★★</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">🤖</div>
+                    <div class="cell-name">AI+研发</div>
+                    <div class="cell-stars stars-full">★★★★★</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">🏢</div>
+                    <div class="cell-name">大厂案例</div>
+                    <div class="cell-stars stars-full">★★★★★</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">🏗️</div>
+                    <div class="cell-name">效能平台</div>
+                    <div class="cell-stars stars-full">★★★★★</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">🧪</div>
+                    <div class="cell-name">质量工程</div>
+                    <div class="cell-stars stars-full">★★★★★</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">⚙️</div>
+                    <div class="cell-name">工程实践</div>
+                    <div class="cell-stars stars-good">★★★★☆</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">👥</div>
+                    <div class="cell-name">组织管理</div>
+                    <div class="cell-stars stars-good">★★★★☆</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">📡</div>
+                    <div class="cell-name">可观测性</div>
+                    <div class="cell-stars stars-mid">★★★☆☆</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">🔐</div>
+                    <div class="cell-name">安全左移</div>
+                    <div class="cell-stars stars-low">★☆☆☆☆</div>
+                </div>
+                <div class="coverage-cell">
+                    <div class="cell-icon">🌐</div>
+                    <div class="cell-name">国际案例</div>
+                    <div class="cell-stars stars-low">★★☆☆☆</div>
+                </div>
+            </div>
+
+            <div class="tree-actions">
+                <button onclick="expandAllKB()" class="tree-action-btn">全部展开</button>
+                <button onclick="collapseAllKB()" class="tree-action-btn">全部折叠</button>
+                <a href="README.md" target="_blank" class="tree-action-btn primary">查看完整索引</a>
+            </div>
+        </section>
+    </article>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-brand">
+            <span>📐</span>
+            <span>研发效能洞察 · 持续追踪 · 深度洞察</span>
         </div>
-      </div>
-
-      <div class="arch-layer layer-6">
-        <div class="arch-level">L6</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>组织与管理 Organization & Management</h4>
-            <p>团队拓扑 · 三大去化 · 效能中心架构 · 变革管理</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:70%"></div></div>
-            <div class="coverage-text">70%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="arch-layer layer-5">
-        <div class="arch-level">L5</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>AI变革 AI Transformation</h4>
-            <p>AI成熟度模型 · Spec Coding · Context工程 · 度量换挡</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:95%"></div></div>
-            <div class="coverage-text">95%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="arch-layer layer-4">
-        <div class="arch-level">L4</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>工具与平台 Tooling & Platform</h4>
-            <p>DevOps工具链 · 平台工程(IDP) · KATE/Bits架构</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:80%"></div></div>
-            <div class="coverage-text">80%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="arch-layer layer-3">
-        <div class="arch-level">L3</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>工程实践 Engineering Practices</h4>
-            <p>CI/CD · 质量工程 · 分层监控 · 代码质量治理</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:70%"></div></div>
-            <div class="coverage-text">70%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="arch-layer layer-2">
-        <div class="arch-level">L2</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>度量体系 Measurement System</h4>
-            <p>DORA/SPACE/DevEx/DX Core 4 · 九阴真经 · 度量换挡</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:95%"></div></div>
-            <div class="coverage-text">95%</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="arch-layer layer-1">
-        <div class="arch-level">L1</div>
-        <div class="arch-body">
-          <div class="arch-body-info">
-            <h4>理论基础 Theoretical Foundation</h4>
-            <p>本质定义 · 八大定律 · 黄金三角 · 演进阶段模型</p>
-          </div>
-          <div class="arch-coverage">
-            <div class="coverage-bar"><div class="coverage-fill" style="width:90%"></div></div>
-            <div class="coverage-text">90%</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Golden Triangle -->
-    <div class="golden-triangle">
-      <div style="font-size:13px; font-weight:600; color:var(--text-secondary)">贯穿七层的核心框架 —— 研发效能黄金三角（张乐）</div>
-      <div class="triangle-visual">
-        <div class="triangle-node">📐 效能平台</div>
-        <div class="triangle-arrow">⟷</div>
-        <div class="triangle-node">🔧 效能实践</div>
-        <div class="triangle-arrow">⟷</div>
-        <div class="triangle-node">📊 效能度量</div>
-      </div>
-      <div class="subtitle">三者构成持续迭代的增强回路：平台承载实践 → 实践产生数据 → 度量驱动改进</div>
-    </div>
-
-    <!-- Key Frameworks -->
-    <h2 class="section-title"><span class="icon">📐</span> 核心框架速览</h2>
-
-    <div class="framework-grid">
-      <div class="framework-card">
-        <h4>AI研发成熟度模型</h4>
-        <div class="source">来源：快手万人组织实践验证</div>
-        <div class="levels">
-          <div class="level-item">
-            <span class="level-badge" style="background:#059669">L1</span>
-            <span>AI辅助 — 人主导 + AI编码辅助，提效10-20%</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#2563EB">L2</span>
-            <span>AI协同 — 人机深度协同，全流程AI，提效30-40%</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#7C3AED">L3</span>
-            <span>AI自主 — 人如PM，AI端到端完成</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="framework-card">
-        <h4>度量框架演进</h4>
-        <div class="source">来源：跨越10年的框架迭代</div>
-        <div class="levels">
-          <div class="level-item">
-            <span class="level-badge" style="background:#6366F1">2014</span>
-            <span>DORA — 4+1指标，产出导向</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#0EA5E9">2021</span>
-            <span>SPACE — 5维度，首纳开发者体验</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#059669">2023</span>
-            <span>DevEx — 3维度，彻底转向体验</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#D97706">2024</span>
-            <span>DX Core 4 — 极简统一框架</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="framework-card">
-        <h4>五阶段演进模型</h4>
-        <div class="source">来源：快手2021-2025五年实践验证</div>
-        <div class="levels">
-          <div class="level-item">
-            <span class="level-badge" style="background:#94A3B8">P1</span>
-            <span>平台化 — 工具渗透率>95%</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#64748B">P2</span>
-            <span>数字化 — 效能度量体系建立</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#475569">P3</span>
-            <span>精益化 — 数据驱动瓶颈识别</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#2563EB">P4</span>
-            <span>智能化L1 — AI编码推广</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#7C3AED">P5</span>
-            <span>智能化L2 — 组织级AI范式升级</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="framework-card">
-        <h4>度量换挡机制</h4>
-        <div class="source">来源：跨源合成新发现</div>
-        <div class="levels">
-          <div class="level-item">
-            <span class="level-badge" style="background:#94A3B8">挡1</span>
-            <span>工具推广期 → 北极星：AI代码生成率</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#0EA5E9">挡2</span>
-            <span>个人提效期 → 北极星：编码周期缩短</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#059669">挡3</span>
-            <span>组织提效期 → 北极星：L2+需求占比</span>
-          </div>
-          <div class="level-item">
-            <span class="level-badge" style="background:#7C3AED">挡4</span>
-            <span>业务成效期 → 北极星：人均交付需求数</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== TAB 2: INSIGHTS ==================== -->
-  <div class="tab-panel" id="tab-insights">
-
-    <h2 class="section-title"><span class="icon">💡</span> 跨源深层规律</h2>
-    <p class="section-desc">6批次42篇文档交叉分析后浮现的深层规律——这些是单篇文档看不出来的。</p>
-
-    <div class="insight-grid">
-      <div class="insight-card">
-        <span class="tag tag-law">定律</span>
-        <h4>基建先行定律</h4>
-        <p>AI效果 = 基建质量的乘数。4条独立证据验证：快手95%+渗透率是AI成功的隐性前提，字节基建好但AI三线分裂，腾讯工具碎片化导致AI推广N×M适配。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-law">定律</span>
-        <h4>度量换挡机制</h4>
-        <p>每一级的"北极星"不同。在错误阶段看错误指标会产生"虚假安全感"——快手从AI代码生成率切换到需求交付周期，才发现组织效率没变。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-law">定律</span>
-        <h4>知识 > 算法</h4>
-        <p>Agent效果的天花板是知识沉淀深度。测试用例V2→V3靠知识增强提升190%，DevMind"规则覆盖80%场景"，快手自研工具的核心壁垒是业务知识积累。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-law">定律</span>
-        <h4>组织结构决定AI融合上限</h4>
-        <p>快手6/6 vs 字节0/6：效能团队主导追求"组织交付效率"，AI团队主导追求"用户量/商业化"——目标函数不同，结果截然不同。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-pattern">模式</span>
-        <h4>渐进比激进更有效</h4>
-        <p>质量门禁弱卡→强卡、单测会写→TDD、AI推广僵化→优化→固化——万人组织中"先弱后强"不是保守，而是唯一可行路径。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-pattern">模式</span>
-        <h4>两极分化是结构性特征</h4>
-        <p>AI不是雨露均沾而是马太效应加速器。高效人群40%+ vs 一般<10%，标杆团队+38%差异。推广策略应该是"找头羊→提炼方法→扩大群体"。</p>
-      </div>
-    </div>
-
-    <h2 class="section-title"><span class="icon">⚡</span> 四组关键矛盾</h2>
-
-    <div class="insight-grid">
-      <div class="insight-card">
-        <span class="tag tag-tension">张力</span>
-        <h4>平台统一 vs AI产品独立</h4>
-        <p>快手路线（AI嵌入平台）利于知识积累和组织提效；字节Trae路线（独立产品）利于快速迭代和商业变现。短期数据支持统一路线。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-tension">张力</span>
-        <h4>严格度量 vs 古德哈特效应</h4>
-        <p>快手采用最严格的"编辑距离<50%逐行比对"——数据准确但成本高。破解方法：不断换北极星，让度量永远在指标化之前。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-tension">张力</span>
-        <h4>超级个体 vs 团队协同</h4>
-        <p>AI让个人能力变强（去职能化/超级个体），但复杂系统仍需团队协作。解法：小兵团内部去职能化 + 兵团之间保持清晰边界。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-tension">张力</span>
-        <h4>快速迭代 vs 质量保障</h4>
-        <p>Kwaipilot团队1.53天一版本，如何保质量？从"发布前卡质量"→"发布后快恢复"→"AI自动检测+修复"，AI既是加速器也是安全网。</p>
-      </div>
-    </div>
-
-    <h2 class="section-title"><span class="icon">🚀</span> 三次认知跃迁</h2>
-
-    <div class="insight-grid">
-      <div class="insight-card full-width">
-        <span class="tag tag-leap">跃迁</span>
-        <h4>相变点理论 — 效能提升是非线性的</h4>
-        <p>存在临界相变点：平台渗透率>95%数据才可信、AI代码>30%编码才缩短、L2+需求>15%组织才提效。相变点前"看起来没效果"，其实是在积蓄势能。放弃的团队往往死在相变点前一步。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-leap">跃迁</span>
-        <h4>第二曲线 — AI范式的加速分离</h4>
-        <p>传统优化天花板约20-30%，之后边际递减。AI L2在标杆团队实现交付周期下降52.9%——这是第二曲线的加速分离点。</p>
-      </div>
-      <div class="insight-card">
-        <span class="tag tag-leap">跃迁</span>
-        <h4>从"人用工具"到"人机共生"</h4>
-        <p>每次跃迁改变的不只是工具，还有协作模式、技能要求、组织结构和度量指标。人的核心价值从"写代码"上移到"定义目标+评估价值"。</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== TAB 3: CASES ==================== -->
-  <div class="tab-panel" id="tab-cases">
-
-    <h2 class="section-title"><span class="icon">🏢</span> 大厂研发效能实践</h2>
-    <p class="section-desc">覆盖快手、字节、腾讯、阿里四大厂的真实实践数据，以及行业基准对标分析。</p>
-
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="company-badge badge-ks">🔥 快手</span>
-        <h4>万人组织AI研发范式跃迁</h4>
-        <p>19篇内部文档全量沉淀，从平台化到智能化L2的五年完整演进。效能中心主导，AI融合评分6/6。</p>
-        <div class="metrics">
-          <span class="metric">AI代码生成率 30.2%</span>
-          <span class="metric">交付周期降58%</span>
-          <span class="metric">OnCall拦截53%</span>
-          <span class="metric">测试用例60%+</span>
-        </div>
-      </div>
-      <div class="case-card">
-        <span class="company-badge badge-byte">🔷 字节</span>
-        <h4>DevMind效能度量体系 + 平台地图</h4>
-        <p>90+工具整合的Bits平台、1415个标准指标、服务27000+人。但AI时代面临Trae/Bits-AI/Aime三线分裂。</p>
-        <div class="metrics">
-          <span class="metric">AI编码贡献率 12.97%</span>
-          <span class="metric">告警归因率 60.62%</span>
-          <span class="metric">UT覆盖率 7.62%</span>
-        </div>
-      </div>
-      <div class="case-card">
-        <span class="company-badge badge-byte">🔷 字节</span>
-        <h4>4大业务线最佳实践</h4>
-        <p>生活服务流程收敛(-30.41%)、TikTok-PnS质量门禁(1.79%→17.8%)、抖音前端双流自动流转、AI全链路提效。</p>
-        <div class="metrics">
-          <span class="metric">流程标准化</span>
-          <span class="metric">质量门禁渐进</span>
-          <span class="metric">全球化适配</span>
-        </div>
-      </div>
-      <div class="case-card">
-        <span class="company-badge badge-ks">🔥 快手</span>
-        <h4>Kwaipilot团队三大去化</h4>
-        <p>去中心化(小兵团)、去流程化(先快再好)、去职能化(超级个体)。AI原生团队的组织变革实验。</p>
-        <div class="metrics">
-          <span class="metric">版本 10天→1.53天</span>
-          <span class="metric">人均代码 +680%</span>
-          <span class="metric">AI代码率 46.2%</span>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="section-title"><span class="icon">📊</span> 行业对标与基准数据</h2>
-
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="company-badge" style="background:rgba(100,116,139,0.1);color:#64748B">📈 行业基准</span>
-        <h4>效能报告与跨公司对标</h4>
-        <p>DORA/DevData/腾讯大数据报告交叉分析，17家顶级科技公司访谈结论，按公司规模差异化度量策略。</p>
-        <div class="metrics">
-          <span class="metric">多维度是共识</span>
-          <span class="metric">流程>工具>度量</span>
-          <span class="metric">AI双刃剑效应</span>
-        </div>
-      </div>
-      <div class="case-card">
-        <span class="company-badge" style="background:rgba(100,116,139,0.1);color:#64748B">🌐 四大厂对比</span>
-        <h4>AI融合度横向评估</h4>
-        <p>基础建设×AI融合度双维评估：快手AI融合6/6领先，字节基建好但AI融合0/6，揭示"基建好≠AI融合好"的反直觉结论。</p>
-        <div class="metrics">
-          <span class="metric">快手 6/6</span>
-          <span class="metric">字节 0/6</span>
-          <span class="metric">腾讯 1/6</span>
-          <span class="metric">阿里 2/6</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== TAB 4: KNOWLEDGE ==================== -->
-  <div class="tab-panel" id="tab-knowledge">
-
-    <h2 class="section-title"><span class="icon">📚</span> 知识库全景</h2>
-    <p class="section-desc">33+篇知识文档，覆盖9大类别，来源于知识星球、语雀P0/P1全量学习、国际报告和大厂实践。</p>
-
-    <div class="kb-grid">
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">📊</div>
-        <h4>效能度量体系</h4>
-        <div class="kb-count">5 篇文档 · 49KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--primary)"></div>九阴真经方法论概览</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary)"></div>五大实践完整指南</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary)"></div>研效产品经理修炼</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary)"></div>DevEx开发者体验框架</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary)"></div>字节DevMind深度实践</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">🧭</div>
-        <h4>知识框架</h4>
-        <div class="kb-count">3 篇文档 · 51KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--accent-purple)"></div>七层架构全景版 v2.0</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-purple)"></div>五大度量框架对比</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-purple)"></div>AI研发成熟度模型(L1-L3)</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">💡</div>
-        <h4>核心洞察</h4>
-        <div class="kb-count">3 篇文档 · 49KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--accent-green)"></div>10大核心洞察 + 4大趋势</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-green)"></div>2026 AI×研发效能洞察报告</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-green)"></div>42篇跨源知识合成</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">🏢</div>
-        <h4>行业实践案例</h4>
-        <div class="kb-count">8 篇文档 · 123KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>大厂实践对比分析</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>A2M大会PPT精华</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>快手AI研发范式跃迁</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>快手19篇完整体系(40KB)</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>字节效能全景</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>效能报告与行业基准</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>字节4大业务线实践</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-orange)"></div>AI研发范式跃迁全景</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">🤖</div>
-        <h4>AI+研发效能</h4>
-        <div class="kb-count">4 篇文档 · 28KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--accent-teal)"></div>AI DevOps趋势总览</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-teal)"></div>Prompt驱动CI实践</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-teal)"></div>年度回顾与展望</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-teal)"></div>字节研发效能之道</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">🔧</div>
-        <h4>智能编码工具</h4>
-        <div class="kb-count">4 篇文档 · 31KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--primary-light)"></div>Cursor最佳实践</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary-light)"></div>AI编码深度指南</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary-light)"></div>Coding Agent完全指南</div>
-          <div class="kb-item"><div class="dot" style="background:var(--primary-light)"></div>AI质效宣言</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">🏗️</div>
-        <h4>DevOps与平台工程</h4>
-        <div class="kb-count">2 篇文档 · 9KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:#64748B"></div>DORA+平台工程</div>
-          <div class="kb-item"><div class="dot" style="background:#64748B"></div>行业报告对比</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">⚙️</div>
-        <h4>工程实践</h4>
-        <div class="kb-count">1 篇文档 · 17KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:#475569"></div>字节工程实践深度分析</div>
-        </div>
-      </div>
-
-      <div class="kb-card" onclick="toggleKb(this)">
-        <div class="kb-icon">🔍</div>
-        <h4>信息源管理</h4>
-        <div class="kb-count">100+ 信息源 · 25KB</div>
-        <div class="kb-items">
-          <div class="kb-item"><div class="dot" style="background:var(--accent-rose)"></div>KOL/意见领袖</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-rose)"></div>行业报告</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-rose)"></div>大会/会议</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-rose)"></div>书籍/课程</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-rose)"></div>工具/产品</div>
-          <div class="kb-item"><div class="dot" style="background:var(--accent-rose)"></div>社区/Newsletter</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Coverage Map -->
-    <h2 class="section-title"><span class="icon">🗺️</span> 知识覆盖度地图</h2>
-    <p class="section-desc">10个子领域的知识覆盖深度评估，基于42篇文档的学习成果。</p>
-
-    <div class="coverage-grid">
-      <div class="coverage-cell">
-        <div class="cell-icon">📊</div>
-        <div class="cell-name">效能度量</div>
-        <div class="cell-stars stars-full">★★★★★</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">🤖</div>
-        <div class="cell-name">AI+研发</div>
-        <div class="cell-stars stars-full">★★★★★</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">🏢</div>
-        <div class="cell-name">大厂案例</div>
-        <div class="cell-stars stars-full">★★★★★</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">🏗️</div>
-        <div class="cell-name">效能平台</div>
-        <div class="cell-stars stars-full">★★★★★</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">🧪</div>
-        <div class="cell-name">质量工程</div>
-        <div class="cell-stars stars-full">★★★★★</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">⚙️</div>
-        <div class="cell-name">工程实践</div>
-        <div class="cell-stars stars-good">★★★★☆</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">👥</div>
-        <div class="cell-name">组织管理</div>
-        <div class="cell-stars stars-good">★★★★☆</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">📡</div>
-        <div class="cell-name">可观测性</div>
-        <div class="cell-stars stars-mid">★★★☆☆</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">🔐</div>
-        <div class="cell-name">安全左移</div>
-        <div class="cell-stars stars-low">★☆☆☆☆</div>
-      </div>
-      <div class="coverage-cell">
-        <div class="cell-icon">🌐</div>
-        <div class="cell-name">国际案例</div>
-        <div class="cell-stars stars-low">★★☆☆☆</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="footer">
-    <p>研发效能洞察 · 林克整理 · 知识来源：知识星球「研发效能」+ 语雀P0/P1全量 + 国际报告 + 大厂实践</p>
-    <p style="margin-top:6px">最后更新：2026-03-14 · 文档总量：33+ 篇 · 信息源：100+</p>
-  </footer>
+        <p>由 <a href="https://my-ai-research-lab.github.io/codeflicker-homepage/" target="_blank">林克</a>（基于CodeFlicker打造的AI数字分身）负责维护</p>
+        <p style="margin-top: 8px;">
+            <a href="https://my-ai-research-lab.github.io/codeflicker-homepage/" target="_blank">首页</a> ·
+            <a href="README.md" target="_blank">项目说明</a> ·
+            最后更新：2026-03-14 · 文档总量：42+ 篇
+        </p>
+    </footer>
 
 </div>
 
+<!-- ==================== JAVASCRIPT ==================== -->
 <script>
-// ============ Tab Switching ============
-const tabNav = document.querySelector('.tab-nav');
-const tabBtns = tabNav.querySelectorAll('.tab-btn');
-const tabPanels = document.querySelectorAll('.tab-panel');
+// ============ Tab Switching (Event Delegation) ============
+(() => {
+    const tabNav = document.querySelector('.tab-nav');
+    const allBtns = document.querySelectorAll('.tab-btn');
+    const allPanels = document.querySelectorAll('.tab-panel');
 
-tabNav.addEventListener('click', (e) => {
-  const btn = e.target.closest('.tab-btn');
-  if (!btn) return;
-
-  tabBtns.forEach(b => b.classList.remove('active'));
-  tabPanels.forEach(p => p.classList.remove('active'));
-
-  btn.classList.add('active');
-  const panel = document.getElementById('tab-' + btn.dataset.tab);
-  if (panel) panel.classList.add('active');
-});
+    if (tabNav) {
+        tabNav.addEventListener('click', (e) => {
+            const btn = e.target.closest('.tab-btn');
+            if (!btn) return;
+            allBtns.forEach(b => b.classList.remove('active'));
+            allPanels.forEach(p => p.classList.remove('active'));
+            btn.classList.add('active');
+            const panel = document.getElementById(btn.dataset.tab);
+            if (panel) panel.classList.add('active');
+        });
+    }
+})();
 
 // ============ About Toggle ============
 function toggleAbout(btn) {
-  const content = document.getElementById('aboutContent');
-  btn.classList.toggle('active');
-  content.classList.toggle('active');
+    const content = document.getElementById('aboutContent');
+    const isExpanded = btn.classList.contains('expanded');
+    if (isExpanded) {
+        btn.classList.remove('expanded');
+        content.classList.remove('active');
+    } else {
+        btn.classList.add('expanded');
+        content.classList.add('active');
+    }
 }
 
-// ============ Knowledge Base Card Toggle ============
-function toggleKb(card) {
-  card.classList.toggle('expanded');
+// ============ Collapsible Toggle ============
+function toggleCollapsible(header) {
+    const content = header.nextElementSibling;
+    const isActive = header.classList.contains('active');
+    if (isActive) {
+        header.classList.remove('active');
+        content.classList.remove('active');
+    } else {
+        header.classList.add('active');
+        content.classList.add('active');
+    }
+}
+
+// ============ Knowledge Base Dimension Toggle ============
+function toggleKBDimension(node) {
+    if (event) event.stopPropagation();
+    const dimension = node.closest('.kb-dimension');
+    if (!dimension) return;
+    const isExpanded = dimension.getAttribute('data-expanded') === 'true';
+    dimension.setAttribute('data-expanded', !isExpanded);
+}
+
+function expandAllKB() {
+    document.querySelectorAll('.kb-dimension').forEach(dim => {
+        dim.setAttribute('data-expanded', 'true');
+    });
+}
+
+function collapseAllKB() {
+    document.querySelectorAll('.kb-dimension').forEach(dim => {
+        dim.setAttribute('data-expanded', 'false');
+    });
 }
 
 // ============ Animate Coverage Bars on Scroll ============
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.querySelectorAll('.coverage-fill').forEach(fill => {
-        fill.style.width = fill.style.width; // trigger animation
-      });
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.coverage-fill').forEach(fill => {
+                fill.style.width = fill.style.width;
+            });
+        }
+    });
 }, { threshold: 0.3 });
 
 document.querySelectorAll('.arch-container').forEach(el => observer.observe(el));

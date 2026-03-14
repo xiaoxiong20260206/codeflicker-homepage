@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=50">
+<link rel="stylesheet" href="styles.css?v=51">
 </head>
 <body>
 
@@ -1298,7 +1298,7 @@
                 </div>
 
                 <!-- Row 2: T3 计算层 (↔Agent能力层) — 移到T2前面 -->
-                <div class="arch-lv" data-pair="row2" style="--lv-color: var(--emerald);">
+                <div class="arch-lv" data-pair="row2" style="--lv-color: var(--violet);">
                     <div class="arch-lv-label">⚙️ T3 计算层 <span class="map-badge violet">← Agent能力层</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-agent">
@@ -1309,7 +1309,7 @@
                                 <span class="arch-tag phys">物理: K8S Pod | 4C8G</span>
                             </div>
                             <div class="arch-tip">
-                                <div class="arch-tip-hd" style="background:var(--emerald)">📦 OpenClaw Agent 处理</div>
+                                <div class="arch-tip-hd" style="background:var(--violet)">📦 OpenClaw Agent 处理</div>
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li>Agent 运行容器：每个用户独占 Pod（4C8G）</li>
@@ -1329,7 +1329,7 @@
                                 <span class="arch-tag phys">物理: S3 + CDN</span>
                             </div>
                             <div class="arch-tip">
-                                <div class="arch-tip-hd" style="background:var(--emerald)">🏪 Skills Hub 技能中心</div>
+                                <div class="arch-tip-hd" style="background:var(--violet)">🏪 Skills Hub 技能中心</div>
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li>技能注册：Schema 定义 + 自动校验</li>
@@ -1373,7 +1373,7 @@
 
                 <!-- Row 4: T4推理层+T5存储层 (↔AgentCore能力内核) — 合为一组 -->
                 <div class="arch-lv-group" data-pair="row4">
-                <div class="arch-lv" style="--lv-color: var(--violet);">
+                <div class="arch-lv" style="--lv-color: var(--emerald);">
                     <div class="arch-lv-label">🧠 T4 推理层 <span class="map-badge emerald">← AgentCore</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-model">
@@ -1384,7 +1384,7 @@
                                 <span class="arch-tag phys">物理: 万擎+Claude | MAAS</span>
                             </div>
                             <div class="arch-tip">
-                                <div class="arch-tip-hd" style="background:var(--violet)">🎯 智能模型路由 + 推理</div>
+                                <div class="arch-tip-hd" style="background:var(--emerald)">🎯 智能模型路由 + 推理</div>
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li>复杂度评估：自动判断任务难度</li>
@@ -1398,8 +1398,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="arch-lv" style="--lv-color: var(--rose);">
-                    <div class="arch-lv-label">💾 T5 存储层 <span class="map-badge rose">← Memory</span></div>
+                <div class="arch-lv" style="--lv-color: var(--emerald);">
+                    <div class="arch-lv-label">💾 T5 存储层 <span class="map-badge emerald">← AgentCore</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-storage">
                             <div class="arch-mod-nm"><span>🗄️</span> KFS 存储 + 同步</div>
@@ -1409,7 +1409,7 @@
                                 <span class="arch-tag phys">物理: KFS卷 | /home/node/.openclaw</span>
                             </div>
                             <div class="arch-tip">
-                                <div class="arch-tip-hd" style="background:var(--rose)">🗄️ KFS 存储 + 同步</div>
+                                <div class="arch-tip-hd" style="background:var(--emerald)">🗄️ KFS 存储 + 同步</div>
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li>KFS 持久卷：配置/会话/记忆中心化存储</li>
@@ -1429,7 +1429,7 @@
                                 <span class="arch-tag phys">物理: Prometheus + Grafana</span>
                             </div>
                             <div class="arch-tip">
-                                <div class="arch-tip-hd" style="background:var(--rose)">📊 监控 + 日志</div>
+                                <div class="arch-tip-hd" style="background:var(--emerald)">📊 监控 + 日志</div>
                                 <div class="arch-tip-bd">
                                     <ul>
                                         <li>任务统计：完成率/延迟/错误率仪表盘</li>

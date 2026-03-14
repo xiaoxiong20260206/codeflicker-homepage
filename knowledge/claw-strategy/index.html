@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=55">
+<link rel="stylesheet" href="styles.css?v=56">
 </head>
 <body>
 
@@ -1674,6 +1674,12 @@ function alignLayerHeights() {
         left.style.minHeight = max + 'px';
         right.style.minHeight = max + 'px';
     });
+
+    // Force row4 group border color to match left side (emerald)
+    const row4Right = rightLane.querySelector('.arch-lv-group[data-pair="row4"]');
+    if (row4Right) {
+        row4Right.style.borderLeft = '4px solid #059669';
+    }
 }
 
 // Draw on load and resize (debounced)

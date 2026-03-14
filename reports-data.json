@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T06:33:43.810947",
+  "generatedAt": "2026-03-14T07:30:12.106529",
   "summary": {
     "totalDays": 18,
     "latestDate": "2026-03-13",
@@ -52,7 +52,7 @@
       240,
       240,
       271,
-      286
+      293
     ],
     "memory": [
       20,
@@ -68,7 +68,7 @@
       112,
       118,
       129,
-      130
+      131
     ]
   },
   "reports": [
@@ -77,11 +77,11 @@
       "dayOfWeek": "周五",
       "activeProjects": 6,
       "totalCommits": 33,
-      "conversationCount": 6,
+      "conversationCount": 5,
       "coreProgress": [
-        "💬 完成 6 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 更新AI本质洞察报告至v4.0版本并完成部署...",
+        "💬 完成 5 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 更新AI本质洞察报告至v4.0版本并完成部署...",
         "📁 项目成果: 文档完善 1 份",
-        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等7条，优化任务执行流程",
+        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等8条，避免常见错误",
         "📚 新增 1 篇知识文档，扩展专业领域覆盖"
       ],
       "deliveries": [
@@ -132,35 +132,19 @@
           ]
         },
         {
-          "title": "AI Promotion Pitch Framework Optimization",
+          "title": "CSS Fix for Strategy Page Layout Overflow",
           "type": "conversation",
-          "goal": "帮助优化晋升提纲，向非技术评委清晰展示AI提效的价值和成果",
+          "goal": "修复右泳道灰色背景溢出覆盖绿色存储区的布局问题",
           "deliverables": [],
           "process": [
-            "尝试生成900+行的演示脚本gen.js时遇到连接中断问题，采用分块写入方案解决。最终目标是构建一个体系化的AI效能提升展示框架，突出技术亮点和业务价值。"
+            "移除了`.arch-lane-bd`的`min-height: 100%`属性，解决了右泳道灰色背景溢出问题。修改已提交到GitHub仓库codeflicker-homepage，部署后可通过指定UR..."
           ],
           "tags": [
-            "promotion",
-            "presentation",
-            "AI-efficiency",
-            "technical-communication",
-            "storytelling"
-          ]
-        },
-        {
-          "title": "Redesigning Architecture Diagram Connections for Clarity",
-          "type": "conversation",
-          "goal": "重新设计架构图中的连接线，使其清晰、美观且正确链接各个对象",
-          "deliverables": [],
-          "process": [
-            "重构了`drawUserArrows`和`drawArchLines`函数，修复了连线重叠和混乱问题，强制实现了3列并排布局（使用`flex-wrap: nowrap` + `min-width: 0..."
-          ],
-          "tags": [
-            "architecture-diagram",
-            "svg",
-            "connection-lines",
-            "visualization",
-            "refactoring"
+            "css",
+            "layout",
+            "git",
+            "frontend",
+            "bugfix"
           ]
         },
         {
@@ -216,24 +200,32 @@
           "commitCount": 24,
           "fileChangeCount": 194,
           "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [],
+          "process": [
+            "修复: 技能统计数据恢复 - 一次性历史基线迁移"
+          ],
+          "commitCount": 1,
+          "fileChangeCount": 647,
+          "deployUrl": null
         }
       ],
       "capabilityGrowth": {
         "skillCount": 71,
-        "knowledgeCount": 185,
-        "memoryCount": 130,
+        "knowledgeCount": 192,
+        "memoryCount": 131,
         "skillChange": 0,
         "knowledgeChange": 0,
-        "memoryChange": 7,
+        "memoryChange": 8,
         "newSkills": [],
         "updatedSkills": [
           {
             "name": "skill-management",
             "description": "技能体系优化元能力（含执行）。当用户说\"优化技能体系\"、\"技能优化\"、\"检查技能健康度\"、\"梳理技能关系\"、\"技能架构\""
-          },
-          {
-            "name": "codeflicker-homepage",
-            "description": "|"
           },
           {
             "name": "xixingdafa",
@@ -242,10 +234,6 @@
           {
             "name": "web-dev-workflow",
             "description": "|"
-          },
-          {
-            "name": "daily-reflection-evolution",
-            "description": "This skill should be used when the user mentions \"每日修炼\", \"每日"
           },
           {
             "name": "linke-kim-message",
@@ -288,10 +276,6 @@
             "description": "Master error handling patterns across languages including ex"
           },
           {
-            "name": "personal-assistant",
-            "description": "This skill should be used whenever users request personal as"
-          },
-          {
             "name": "investment-analyzer",
             "description": "Analyzes investment opportunities across asset classes. Use "
           },
@@ -321,6 +305,10 @@
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "架构图tooltip气泡必须始终在最顶层（不可被遮挡）",
+            "category": "development_code_specification"
+          },
+          {
             "title": "微信公众号链接必然过期：永远使用搜狗搜索URL替代直链",
             "category": "common_pitfalls_experience"
           },
@@ -339,7 +327,7 @@
         ],
         "updatedMemory": [
           {
-            "title": "规则膨胀悖论：结构性约束 > 文字规则（v3 含记忆≠修复）",
+            "title": "规则膨胀悖论：结构性约束 > 文字规则（v4 含v8.2实践）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -363,6 +351,10 @@
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "技能callCount骤降根因：历史基线必须永久叠加（不可设migration_completed门控）",
+            "category": "common_pitfalls_experience"
+          },
+          {
             "title": "AI日报分类+去重+地区门控经验（v6.0 含地区分类+板块分类+跨天去重）",
             "category": "common_pitfalls_experience"
           }
@@ -370,15 +362,15 @@
         "trend": "growing"
       },
       "skillCount": 71,
-      "knowledgeCount": 185,
-      "memoryCount": 130,
+      "knowledgeCount": 192,
+      "memoryCount": 131,
       "skillChange": 0,
       "knowledgeChange": 0,
-      "memoryChange": 7,
+      "memoryChange": 8,
       "highlights": [
-        "💬 完成 6 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 更新AI本质洞察报告至v4.0版本并完成部署...",
+        "💬 完成 5 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 更新AI本质洞察报告至v4.0版本并完成部署...",
         "📁 项目成果: 文档完善 1 份",
-        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等7条，优化任务执行流程"
+        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等8条，避免常见错误"
       ]
     },
     {

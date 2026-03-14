@@ -38,8 +38,8 @@ function renderSkillTechTree(container, skills) {
     var _idx = 0;
     function classifySource(src) {
         if (!src) return { label: '未知', badge: '❓' };
-        if (src === '林克核心能力' || src === 'AI核心能力') return { label: '内置技能', badge: '🔧' };
-        if (src === '用户自定义') return { label: '自定义', badge: '✏️' };
+        if (src === '林克核心能力' || src === 'AI核心能力') return { label: '自定义', badge: '✏️' };
+        if (src === '平台预装技能' || src === '用户自定义') return { label: '平台技能', badge: '📦' };
         if (src.indexOf('技能库') > -1) return { label: '平台技能', badge: '📦' };
         return { label: src, badge: '📍' };
     }

@@ -946,7 +946,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* --- swimlane container --- */
 .arch-swimlanes {
     display: grid;
-    grid-template-columns: 55fr 45fr;
+    grid-template-columns: 1fr 50px 1fr;
     gap: 0;
     position: relative;
     margin-bottom: 0;
@@ -957,7 +957,40 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
         0 2px 8px rgba(0,0,0,.03),
         0 12px 40px rgba(0,0,0,.06);
 }
-#archSvg { display: none; }
+
+/* --- mapping lines corridor --- */
+.arch-corridor {
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+    grid-column: 2;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+}
+.arch-corridor-hd {
+    padding: 16px 0;
+    background: linear-gradient(180deg, rgba(5,150,105,.08), rgba(37,99,235,.08));
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--ink-4);
+    letter-spacing: .05em;
+}
+.arch-corridor-bd {
+    flex: 1;
+    position: relative;
+    background: linear-gradient(180deg,
+        rgba(5,150,105,.03) 0%,
+        rgba(37,99,235,.02) 50%,
+        rgba(124,58,237,.03) 100%);
+}
+#mappingSvg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+}
 
 /* --- lane --- */
 .arch-lane { position: relative; z-index: 1; }
@@ -965,6 +998,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane-hd { color: #fff; padding: 16px 22px; text-align: center; }
 .arch-lane:first-child .arch-lane-hd { border-radius: 18px 0 0 0; }
 .arch-lane:last-child .arch-lane-hd { border-radius: 0 18px 0 0; }
+.arch-lane:first-child { grid-column: 1; }
+.arch-lane:last-child  { grid-column: 3; }
 .arch-lane-title { font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
 .arch-lane-sub { font-size: 12px; opacity: .85; margin-top: 2px; }
 .arch-lane-bd {
@@ -1432,6 +1467,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* --- responsive for arch --- */
 @media (max-width: 900px) {
     .arch-swimlanes { grid-template-columns: 1fr; }
+    .arch-corridor { display: none; }
+    .arch-lane:first-child, .arch-lane:last-child { grid-column: auto; }
     .arch-lane:first-child .arch-lane-bd { border-right: none; border-bottom: 2px dashed var(--border); border-radius: 0; }
     .arch-lane:last-child .arch-lane-bd { border-radius: 0 0 18px 18px; }
     .arch-lane:first-child .arch-lane-hd { border-radius: 18px 18px 0 0; }

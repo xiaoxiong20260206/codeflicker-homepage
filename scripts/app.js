@@ -1702,7 +1702,7 @@ function showSkillDetailPanel(skillId) {
             </div>
             <div class="skill-panel-row">
                 <span class="skill-panel-label">分类</span>
-                <span class="skill-panel-value"><span class="tip-source-badge" data-type="${data.sourceLabel === '内置技能' ? 'builtin' : data.sourceLabel === '自定义' ? 'custom' : 'platform'}" style="display:inline">${escapeHtml(data.sourceLabel || '未知')}</span></span>
+                <span class="skill-panel-value"><span class="tip-source-badge" data-type="${data.sourceLabel === '自定义' ? 'custom' : data.sourceLabel === '平台技能' ? 'platform' : 'other'}" style="display:inline">${escapeHtml(data.sourceLabel || '未知')}</span></span>
             </div>
             <div class="skill-panel-row">
                 <span class="skill-panel-label">使用频率</span>
@@ -2379,7 +2379,7 @@ function showTreeTooltip(event, id, type) {
     
     // 来源badge（机制类型不显示）
     if (sourceBadge && data.sourceLabel && !isMechanism) {
-        var badgeType = data.sourceLabel === '内置技能' ? 'builtin' : data.sourceLabel === '自定义' ? 'custom' : 'platform';
+        var badgeType = data.sourceLabel === '自定义' ? 'custom' : data.sourceLabel === '平台技能' ? 'platform' : 'other';
         sourceBadge.textContent = data.sourceLabel;
         sourceBadge.setAttribute('data-type', badgeType);
         sourceBadge.style.display = 'inline';

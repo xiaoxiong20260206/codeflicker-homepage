@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=40">
+<link rel="stylesheet" href="styles.css?v=41">
 </head>
 <body>
 
@@ -821,7 +821,7 @@
     <!-- 泳道架构图 -->
     <div class="arch-swimlanes" id="archSwim">
         <!-- 左泳道：产品架构 -->
-        <div class="arch-lane">
+        <div class="arch-lane" id="laneLeft">
             <div class="arch-lane-hd" style="background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-l) 100%);">
                 <div class="arch-lane-title">🎨 产品架构</div>
                 <div class="arch-lane-sub">用户视角的功能与价值</div>
@@ -1261,8 +1261,16 @@
             </div>
         </div>
 
+        <!-- 连线走廊 -->
+        <div class="arch-corridor" id="archCorridor">
+            <div class="arch-corridor-hd">映射</div>
+            <div class="arch-corridor-bd" id="corridorBd">
+                <svg id="mappingSvg"></svg>
+            </div>
+        </div>
+
         <!-- 右泳道：技术架构 -->
-        <div class="arch-lane">
+        <div class="arch-lane" id="laneRight">
             <div class="arch-lane-hd" style="background: linear-gradient(135deg, var(--blue) 0%, var(--blue-l) 100%);">
                 <div class="arch-lane-title">🏗️ 技术架构</div>
                 <div class="arch-lane-sub">实现逻辑 + 部署拓扑</div>
@@ -1408,35 +1416,113 @@ document.addEventListener('mouseover', e => {
     if (!mod) return;
     const tip = mod.querySelector('.arch-tip') || mod.querySelector('.scene-tip');
     if (!tip) return;
-    // Reset positioning
     tip.style.left = ''; tip.style.right = ''; tip.style.transform = '';
     tip.style.bottom = ''; tip.style.top = '';
-    const arrow = tip.querySelector(':scope::after') || null;
-
     requestAnimationFrame(() => {
         const tr = tip.getBoundingClientRect();
         const vw = document.documentElement.clientWidth;
-        const vh = window.innerHeight;
         const pad = 12;
-
-        // Horizontal: prevent overflow left/right
-        if (tr.right > vw - pad) {
-            tip.style.left = `${-(tr.right - vw + pad)}px`;
-            tip.style.right = 'auto';
-        }
-        if (tr.left < pad) {
-            tip.style.left = `${pad - tr.left}px`;
-            tip.style.right = 'auto';
-        }
-
-        // Vertical: if tooltip goes above viewport, flip to below
-        if (tr.top < pad) {
-            tip.style.bottom = 'auto';
-            tip.style.top = 'calc(100% + 10px)';
-        }
+        if (tr.right > vw - pad) { tip.style.left = `${-(tr.right - vw + pad)}px`; tip.style.right = 'auto'; }
+        if (tr.left < pad) { tip.style.left = `${pad - tr.left}px`; tip.style.right = 'auto'; }
+        if (tr.top < pad) { tip.style.bottom = 'auto'; tip.style.top = 'calc(100% + 10px)'; }
     });
 });
+
+// === Mapping connection lines ===
+const MAPPINGS = [
+    { leftIdx: 0, rightIdx: 0, color: '#2563EB', label: '触点→接入' },
+    { leftIdx: 1, rightIdx: 2, color: '#7C3AED', label: '能力→计算' },
+    { leftIdx: 2, rightIdx: 1, color: '#D97706', label: '服务→网关' },
+    { leftIdx: 3, rightIdx: 3, color: '#059669', label: '内核→推理' },
+    { leftIdx: 3, rightIdx: 4, color: '#E11D48', label: '记忆→存储', yOffsetLeft: 0.85 }
+];
+
+function drawMappingLines() {
+    const svg = document.getElementById('mappingSvg');
+    const corrBd = document.getElementById('corridorBd');
+    const laneL = document.getElementById('laneLeft');
+    const laneR = document.getElementById('laneRight');
+    if (!svg || !corrBd || !laneL || !laneR) return;
+
+    const leftLayers = laneL.querySelectorAll('.arch-lane-bd > .arch-lv');
+    const rightLayers = laneR.querySelectorAll('.arch-lane-bd > .arch-lv');
+    if (!leftLayers.length || !rightLayers.length) return;
+
+    const cRect = corrBd.getBoundingClientRect();
+    const W = cRect.width;
+    const H = cRect.height;
+    if (H < 10) return;
+
+    svg.setAttribute('width', W);
+    svg.setAttribute('height', H);
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    svg.innerHTML = '';
+
+    // Defs: arrowheads
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    MAPPINGS.forEach(m => {
+        const hex = m.color.slice(1);
+        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+        mk.setAttribute('id', `mk-${hex}`);
+        mk.setAttribute('viewBox', '0 0 8 6');
+        mk.setAttribute('refX', '7'); mk.setAttribute('refY', '3');
+        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
+        mk.setAttribute('orient', 'auto');
+        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+        pg.setAttribute('points', '0 0.5, 8 3, 0 5.5');
+        pg.setAttribute('fill', m.color);
+        mk.appendChild(pg); defs.appendChild(mk);
+    });
+    svg.appendChild(defs);
+
+    MAPPINGS.forEach(m => {
+        const srcEl = leftLayers[m.leftIdx];
+        const dstEl = rightLayers[m.rightIdx];
+        if (!srcEl || !dstEl) return;
+
+        const srcR = srcEl.getBoundingClientRect();
+        const dstR = dstEl.getBoundingClientRect();
+
+        const yRatio = m.yOffsetLeft || 0.5;
+        const y1 = srcR.top + srcR.height * yRatio - cRect.top;
+        const y2 = dstR.top + dstR.height * 0.5 - cRect.top;
+
+        // Smooth S-curve through the corridor
+        const cpx1 = W * 0.35;
+        const cpx2 = W * 0.65;
+
+        const d = `M 0 ${y1} C ${cpx1} ${y1}, ${cpx2} ${y2}, ${W} ${y2}`;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('stroke', m.color);
+        path.setAttribute('stroke-width', '2');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('opacity', '0.55');
+        path.setAttribute('stroke-dasharray', '6,4');
+        path.setAttribute('stroke-linecap', 'round');
+        path.setAttribute('marker-end', `url(#mk-${m.color.slice(1)})`);
+        svg.appendChild(path);
+
+        // Small colored dot at start
+        const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        dot.setAttribute('cx', '0'); dot.setAttribute('cy', y1);
+        dot.setAttribute('r', '3.5');
+        dot.setAttribute('fill', m.color);
+        dot.setAttribute('opacity', '0.7');
+        svg.appendChild(dot);
+    });
+}
+
+// Draw on load and resize (debounced)
+function scheduleRedraw() {
+    clearTimeout(scheduleRedraw._t);
+    scheduleRedraw._t = setTimeout(drawMappingLines, 100);
+}
+window.addEventListener('resize', scheduleRedraw);
+
     window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
+    if (id === 'ch6') setTimeout(drawMappingLines, 80);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -1015,7 +1015,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     background: var(--card);
     border-radius: 14px;
     padding: 10px;
-    border-left: 4px solid var(--emerald);
+    border-left: 4px solid #059669;
     box-shadow: 0 1px 4px rgba(0,0,0,.04);
 }
 .arch-lv-group > .arch-lv {

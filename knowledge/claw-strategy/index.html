@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=41">
+<link rel="stylesheet" href="styles.css?v=48">
 </head>
 <body>
 
@@ -820,6 +820,7 @@
 
     <!-- 泳道架构图 -->
     <div class="arch-swimlanes" id="archSwim">
+        <svg id="mappingSvg"></svg>
         <!-- 左泳道：产品架构 -->
         <div class="arch-lane" id="laneLeft">
             <div class="arch-lane-hd" style="background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-l) 100%);">
@@ -832,38 +833,27 @@
                 <div class="arch-lv" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">🌍 用户触点层 <span class="map-badge blue">→ T1 接入层</span></div>
 
-                    <!-- 两类用户 -->
-                    <div class="user-segments">
-                        <div class="user-seg user-seg-eng" id="userSegEng">
-                            <div class="user-seg-icon">🔧</div>
-                            <div class="user-seg-info">
-                                <div class="user-seg-title">工程师</div>
-                                <div class="user-seg-desc">研发 · 测试 · 运维 · 数据</div>
+                    <!-- 两列对齐：用户角色 + 产品 -->
+                    <div class="touch-columns">
+                        <!-- 左列：工程师 + CodeFlicker -->
+                        <div class="touch-col">
+                            <div class="user-seg user-seg-eng" id="userSegEng">
+                                <div class="user-seg-icon">🔧</div>
+                                <div class="user-seg-info">
+                                    <div class="user-seg-title">工程师</div>
+                                    <div class="user-seg-desc">研发 · 测试 · 运维 · 数据</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="user-seg user-seg-all" id="userSegAll">
-                            <div class="user-seg-icon">👥</div>
-                            <div class="user-seg-info">
-                                <div class="user-seg-title">所有员工</div>
-                                <div class="user-seg-desc">产品 · 运营 · 市场 · 管理 · HR · 财务 …</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 两个产品子区域 -->
-                    <div class="touch-products">
-                        <!-- CodeFlicker -->
-                        <div class="touch-product touch-cf" id="touchCf">
-                            <div class="touch-product-hd cf">
-                                <span>💻</span> CodeFlicker
-                                <div class="touch-product-sub">AI 编码助手 → AI 工程师</div>
-                            </div>
+                            <div class="touch-product touch-cf" id="touchCf">
+                                <div class="touch-product-hd cf">
+                                    <span>💻</span> CodeFlicker
+                                    <div class="touch-product-sub">AI 编码助手 → AI 工程师</div>
+                                </div>
                             <div class="arch-mods">
                                 <div class="arch-mod arch-mod-mini" data-n="p-cf-ide">
-                                    <div class="arch-mod-nm"><span>⌨️</span> IDE 集成</div>
-                                    <div class="arch-mod-ds">代码补全 · Review · Debug</div>
+                                    <div class="arch-mod-nm"><span>⌨️</span> AI IDE · 插件</div>
                                     <div class="arch-tip">
-                                        <div class="arch-tip-hd">⌨️ CodeFlicker IDE 集成</div>
+                                        <div class="arch-tip-hd">⌨️ AI IDE · 插件</div>
                                         <div class="arch-tip-bd">
                                             <p>深度嵌入开发者日常 IDE 工作流</p>
                                             <ul>
@@ -878,6 +868,17 @@
                                 </div>
                             </div>
                         </div>
+                        </div><!-- /touch-col left -->
+
+                        <!-- 右列：所有员工 + AIme -->
+                        <div class="touch-col">
+                            <div class="user-seg user-seg-all" id="userSegAll">
+                                <div class="user-seg-icon">👥</div>
+                                <div class="user-seg-info">
+                                    <div class="user-seg-title">所有员工</div>
+                                    <div class="user-seg-desc">产品 · 运营 · 市场 · 管理 · HR · 财务 …</div>
+                                </div>
+                            </div>
 
                         <!-- AIme -->
                         <div class="touch-product touch-ka" id="touchKa">
@@ -887,10 +888,9 @@
                             </div>
                             <div class="arch-mods arch-mods-horizontal">
                                 <div class="arch-mod arch-mod-mini" data-n="p-kim">
-                                    <div class="arch-mod-nm"><span>💬</span> KIM 对话</div>
-                                    <div class="arch-mod-ds">企业IM · 卡瓦</div>
+                                    <div class="arch-mod-nm"><span>💬</span> KIM 机器人</div>
                                     <div class="arch-tip">
-                                        <div class="arch-tip-hd">💬 KIM 对话</div>
+                                        <div class="arch-tip-hd">💬 KIM 机器人</div>
                                         <div class="arch-tip-bd">
                                             <p>企业IM即时交互入口，消息号「卡瓦」</p>
                                             <ul>
@@ -901,10 +901,9 @@
                                     </div>
                                 </div>
                                 <div class="arch-mod arch-mod-mini" data-n="p-web">
-                                    <div class="arch-mod-nm"><span>🌐</span> Web 管理</div>
-                                    <div class="arch-mod-ds">激活部署 · 监控</div>
+                                    <div class="arch-mod-nm"><span>🌐</span> 网页端</div>
                                     <div class="arch-tip">
-                                        <div class="arch-tip-hd">🌐 Web 管理平台</div>
+                                        <div class="arch-tip-hd">🌐 网页端</div>
                                         <div class="arch-tip-bd">
                                             <p>一键激活部署和可视化监控</p>
                                             <ul>
@@ -915,10 +914,9 @@
                                     </div>
                                 </div>
                                 <div class="arch-mod arch-mod-mini" data-n="p-local">
-                                    <div class="arch-mod-nm"><span>🖥️</span> 本地端</div>
-                                    <div class="arch-mod-ds">深度任务</div>
+                                    <div class="arch-mod-nm"><span>🖥️</span> 本地应用</div>
                                     <div class="arch-tip">
-                                        <div class="arch-tip-hd">🖥️ 本地客户端</div>
+                                        <div class="arch-tip-hd">🖥️ 本地应用</div>
                                         <div class="arch-tip-bd">
                                             <p>面向深度任务处理场景</p>
                                             <ul>
@@ -929,8 +927,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div><!-- /touch-col right -->
 
+                        <!-- CodeFlicker → AIme 连线指示 -->
+                        <div class="cf-to-aime-arrow" title="CodeFlicker → AIme"></div>
+                    </div><!-- /touch-columns -->
                     <!-- 云端 Code Agent：横跨底部，共同支撑 CodeFlicker 和 AIme -->
                     <div class="cloud-agent-bar arch-mod" data-n="p-cf-cloud">
                         <div class="cloud-agent-inner">
@@ -1261,14 +1262,6 @@
             </div>
         </div>
 
-        <!-- 连线走廊 -->
-        <div class="arch-corridor" id="archCorridor">
-            <div class="arch-corridor-hd">映射</div>
-            <div class="arch-corridor-bd" id="corridorBd">
-                <svg id="mappingSvg"></svg>
-            </div>
-        </div>
-
         <!-- 右泳道：技术架构 -->
         <div class="arch-lane" id="laneRight">
             <div class="arch-lane-hd" style="background: linear-gradient(135deg, var(--blue) 0%, var(--blue-l) 100%);">
@@ -1286,6 +1279,19 @@
                                 <span class="arch-tag logic">逻辑: HTTP/WebSocket</span>
                                 <span class="arch-tag phys">物理: KIM平台 + Nginx</span>
                             </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--blue)">📨 多端请求接入</div>
+                                <div class="arch-tip-bd">
+                                    <p>统一接收来自四个端的请求：</p>
+                                    <ul>
+                                        <li>IDE 插件 → VS Code / JetBrains 端</li>
+                                        <li>KIM 对话 → 企业 IM 消息通道</li>
+                                        <li>Web 管理台 → 浏览器前端</li>
+                                        <li>本地端 → macOS/Windows 本地进程</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">协议归一化：所有端统一走 HTTP/WebSocket</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1298,6 +1304,18 @@
                             <div class="arch-mod-tags">
                                 <span class="arch-tag logic">逻辑: JWT鉴权 + 路由</span>
                                 <span class="arch-tag phys">物理: Node.js | 18789</span>
+                            </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--amber)">🛡️ Gateway 鉴权路由</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>JWT Token 身份验证（SSO 统一登录）</li>
+                                        <li>消息路由：根据请求类型分发到对应 Agent</li>
+                                        <li>协议桥接：WebSocket ↔ HTTP 双向转换</li>
+                                        <li>流量管控：限流 + 降级 + 熔断</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">Node.js 网关 · 端口 18789</div>
                             </div>
                         </div>
                     </div>
@@ -1312,6 +1330,18 @@
                                 <span class="arch-tag logic">逻辑: Agent + Skills调度</span>
                                 <span class="arch-tag phys">物理: K8S Pod | 4C8G</span>
                             </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--emerald)">📦 OpenClaw Agent 处理</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>Agent 运行容器：每个用户独占 Pod（4C8G）</li>
+                                        <li>Skills 调度：动态加载所需技能包</li>
+                                        <li>代码生成：AST 级别代码修改与创建</li>
+                                        <li>沙箱执行：隔离环境运行用户代码</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">K8S 弹性伸缩 · 支持 GPU 推理加速</div>
+                            </div>
                         </div>
                         <div class="arch-mod" data-n="t-hub">
                             <div class="arch-mod-nm"><span>🏪</span> Skills Hub 技能中心</div>
@@ -1319,6 +1349,18 @@
                             <div class="arch-mod-tags">
                                 <span class="arch-tag logic">逻辑: 注册+审核+版本</span>
                                 <span class="arch-tag phys">物理: S3 + CDN</span>
+                            </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--emerald)">🏪 Skills Hub 技能中心</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>技能注册：Schema 定义 + 自动校验</li>
+                                        <li>版本管理：语义化版本 + 灰度发布</li>
+                                        <li>审核流：安全扫描 + 人工审批</li>
+                                        <li>CDN 分发：全球加速 + 按需拉取</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">S3 存储 + CDN 分发 · 支持私有技能</div>
                             </div>
                         </div>
                     </div>
@@ -1333,6 +1375,18 @@
                                 <span class="arch-tag logic">逻辑: 复杂度评估+路由</span>
                                 <span class="arch-tag phys">物理: 万擎+Claude | MAAS</span>
                             </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--violet)">🎯 智能模型路由 + 推理</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>复杂度评估：自动判断任务难度</li>
+                                        <li>小杯任务 → 轻量模型（低延迟、低成本）</li>
+                                        <li>大杯任务 → 旗舰模型（高精度推理）</li>
+                                        <li>Fallback 机制：主模型不可用自动切换备选</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">MAAS 统一调度 · 万擎 + Claude 双引擎</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1346,12 +1400,37 @@
                                 <span class="arch-tag logic">逻辑: 流式返回+增量同步</span>
                                 <span class="arch-tag phys">物理: KFS卷 | /home/node/.openclaw</span>
                             </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--rose)">🗄️ KFS 存储 + 同步</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>KFS 持久卷：配置/会话/记忆中心化存储</li>
+                                        <li>云↔本地同步：实时增量，换设备无缝衔接</li>
+                                        <li>流式返回：大文件分块传输</li>
+                                        <li>秒级 Failover：Pod 故障数据自动迁移</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">KFS 卷挂载 · /home/node/.openclaw</div>
+                            </div>
                         </div>
                         <div class="arch-mod" data-n="t-monitor">
                             <div class="arch-mod-nm"><span>📊</span> 监控 + 日志</div>
                             <div class="arch-mod-ds">任务统计 · 成本追踪 · 异常告警</div>
                             <div class="arch-mod-tags">
+                                <span class="arch-tag logic">逻辑: 指标采集+告警规则</span>
                                 <span class="arch-tag phys">物理: Prometheus + Grafana</span>
+                            </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--rose)">📊 监控 + 日志</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>任务统计：完成率/延迟/错误率仪表盘</li>
+                                        <li>成本追踪：Token 消耗 + 模型调用计费</li>
+                                        <li>异常告警：P0 故障 < 1min 触达</li>
+                                        <li>日志聚合：全链路 Trace ID 串联</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">Prometheus 指标 + Grafana 可视化</div>
                             </div>
                         </div>
                     </div>
@@ -1410,6 +1489,10 @@ function go(id) {
     });
 
 
+    window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
+    if (id === 'ch6') setTimeout(drawMappingLines, 120);
+}
+
 /* tooltip viewport-aware repositioning */
 document.addEventListener('mouseover', e => {
     const mod = e.target.closest('.arch-mod, .arch-evolution, .cloud-agent-bar, .scene-tag, .eco-infra-card');
@@ -1428,90 +1511,134 @@ document.addEventListener('mouseover', e => {
     });
 });
 
-// === Mapping connection lines ===
-const MAPPINGS = [
-    { leftIdx: 0, rightIdx: 0, color: '#2563EB', label: '触点→接入' },
-    { leftIdx: 1, rightIdx: 2, color: '#7C3AED', label: '能力→计算' },
-    { leftIdx: 2, rightIdx: 1, color: '#D97706', label: '服务→网关' },
-    { leftIdx: 3, rightIdx: 3, color: '#059669', label: '内核→推理' },
-    { leftIdx: 3, rightIdx: 4, color: '#E11D48', label: '记忆→存储', yOffsetLeft: 0.85 }
+// === Object-level mapping connection lines ===
+const OBJ_MAPPINGS = [
+    // 用户触点层 → T1 接入层
+    { from: '#touchCf',    to: '[data-n="t-access"]', color: '#2563EB', label: 'CF→接入' },
+    { from: '#touchKa',    to: '[data-n="t-access"]', color: '#2563EB', label: 'AIme→接入' },
+    { from: '[data-n="p-cf-cloud"]', to: '[data-n="t-agent"]', color: '#7C3AED', label: 'Agent→计算' },
+    // Skill & 知识市场 → T3 Skills Hub
+    { from: '[data-n="p-skills"]',  to: '[data-n="t-hub"]', color: '#7C3AED', label: 'Skills→Hub' },
+    { from: '[data-n="p-market"]',  to: '[data-n="t-hub"]', color: '#7C3AED', label: '三方→Hub' },
+    // 服务层 → T2 网关层
+    { from: '[data-n="p-routing"]',  to: '[data-n="t-gateway"]', color: '#D97706', label: '路由→GW' },
+    { from: '[data-n="p-security"]', to: '[data-n="t-gateway"]', color: '#D97706', label: '审计→GW' },
+    // AgentCore → T4 推理层
+    { from: '[data-n="p-reasoning"]', to: '[data-n="t-model"]', color: '#059669', label: '推理→模型' },
+    { from: '[data-n="p-planning"]',  to: '[data-n="t-model"]', color: '#059669', label: '规划→模型' },
+    // Memory → T5 存储层
+    { from: '[data-n="p-memory"]', to: '[data-n="t-storage"]', color: '#E11D48', label: '记忆→存储' },
 ];
+
+// CodeFlicker → AIme horizontal connection (drawn separately)
+const CF_TO_AIME = { from: '#touchCf', to: '#touchKa', color: '#7C3AED' };
 
 function drawMappingLines() {
     const svg = document.getElementById('mappingSvg');
-    const corrBd = document.getElementById('corridorBd');
-    const laneL = document.getElementById('laneLeft');
-    const laneR = document.getElementById('laneRight');
-    if (!svg || !corrBd || !laneL || !laneR) return;
+    const swim = document.getElementById('archSwim');
+    if (!svg || !swim) return;
 
-    const leftLayers = laneL.querySelectorAll('.arch-lane-bd > .arch-lv');
-    const rightLayers = laneR.querySelectorAll('.arch-lane-bd > .arch-lv');
-    if (!leftLayers.length || !rightLayers.length) return;
-
-    const cRect = corrBd.getBoundingClientRect();
-    const W = cRect.width;
-    const H = cRect.height;
-    if (H < 10) return;
+    const sRect = swim.getBoundingClientRect();
+    const W = sRect.width;
+    const H = sRect.height;
+    if (H < 10 || W < 100) return;
 
     svg.setAttribute('width', W);
     svg.setAttribute('height', H);
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     svg.innerHTML = '';
 
-    // Defs: arrowheads
+    // Defs: arrowheads per color
     const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    MAPPINGS.forEach(m => {
-        const hex = m.color.slice(1);
+    const colors = [...new Set(OBJ_MAPPINGS.map(m => m.color))];
+    colors.forEach(c => {
+        const hex = c.slice(1);
         const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
         mk.setAttribute('id', `mk-${hex}`);
         mk.setAttribute('viewBox', '0 0 8 6');
         mk.setAttribute('refX', '7'); mk.setAttribute('refY', '3');
-        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
+        mk.setAttribute('markerWidth', '7'); mk.setAttribute('markerHeight', '5');
         mk.setAttribute('orient', 'auto');
         const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
         pg.setAttribute('points', '0 0.5, 8 3, 0 5.5');
-        pg.setAttribute('fill', m.color);
+        pg.setAttribute('fill', c);
+        pg.setAttribute('opacity', '0.6');
         mk.appendChild(pg); defs.appendChild(mk);
     });
     svg.appendChild(defs);
 
-    MAPPINGS.forEach(m => {
-        const srcEl = leftLayers[m.leftIdx];
-        const dstEl = rightLayers[m.rightIdx];
+    OBJ_MAPPINGS.forEach(m => {
+        const srcEl = swim.querySelector(m.from);
+        const dstEl = swim.querySelector(m.to);
         if (!srcEl || !dstEl) return;
 
         const srcR = srcEl.getBoundingClientRect();
         const dstR = dstEl.getBoundingClientRect();
 
-        const yRatio = m.yOffsetLeft || 0.5;
-        const y1 = srcR.top + srcR.height * yRatio - cRect.top;
-        const y2 = dstR.top + dstR.height * 0.5 - cRect.top;
+        // Source: right-center of left-lane element
+        const x1 = srcR.right - sRect.left;
+        const y1 = srcR.top + srcR.height * 0.5 - sRect.top;
+        // Destination: left-center of right-lane element
+        const x2 = dstR.left - sRect.left;
+        const y2 = dstR.top + dstR.height * 0.5 - sRect.top;
 
-        // Smooth S-curve through the corridor
-        const cpx1 = W * 0.35;
-        const cpx2 = W * 0.65;
+        // Mid-X for the S-curve control points (halfway between lanes)
+        const midX = (x1 + x2) / 2;
+        const cpx1 = x1 + (midX - x1) * 0.7;
+        const cpx2 = x2 - (midX - x1) * 0.7;
 
-        const d = `M 0 ${y1} C ${cpx1} ${y1}, ${cpx2} ${y2}, ${W} ${y2}`;
+        const d = `M ${x1} ${y1} C ${cpx1} ${y1}, ${cpx2} ${y2}, ${x2} ${y2}`;
 
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         path.setAttribute('d', d);
         path.setAttribute('stroke', m.color);
-        path.setAttribute('stroke-width', '2');
+        path.setAttribute('stroke-width', '1.5');
         path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.55');
-        path.setAttribute('stroke-dasharray', '6,4');
+        path.setAttribute('opacity', '0.4');
+        path.setAttribute('stroke-dasharray', '5,3');
         path.setAttribute('stroke-linecap', 'round');
         path.setAttribute('marker-end', `url(#mk-${m.color.slice(1)})`);
         svg.appendChild(path);
 
-        // Small colored dot at start
+        // Small dot at source
         const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        dot.setAttribute('cx', '0'); dot.setAttribute('cy', y1);
-        dot.setAttribute('r', '3.5');
+        dot.setAttribute('cx', x1); dot.setAttribute('cy', y1);
+        dot.setAttribute('r', '2.5');
         dot.setAttribute('fill', m.color);
-        dot.setAttribute('opacity', '0.7');
+        dot.setAttribute('opacity', '0.5');
         svg.appendChild(dot);
     });
+
+    // Draw CodeFlicker → AIme horizontal arrow
+    const cfEl = swim.querySelector(CF_TO_AIME.from);
+    const kaEl = swim.querySelector(CF_TO_AIME.to);
+    if (cfEl && kaEl) {
+        const cfR = cfEl.getBoundingClientRect();
+        const kaR = kaEl.getBoundingClientRect();
+        const ax1 = cfR.right - sRect.left;
+        const ay = cfR.top + cfR.height * 0.5 - sRect.top;
+        const ax2 = kaR.left - sRect.left;
+        const ay2 = kaR.top + kaR.height * 0.5 - sRect.top;
+        const amid = (ax1 + ax2) / 2;
+        const ad = `M ${ax1} ${ay} C ${amid} ${ay}, ${amid} ${ay2}, ${ax2} ${ay2}`;
+        const aPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        aPath.setAttribute('d', ad);
+        aPath.setAttribute('stroke', CF_TO_AIME.color);
+        aPath.setAttribute('stroke-width', '1.5');
+        aPath.setAttribute('fill', 'none');
+        aPath.setAttribute('opacity', '0.5');
+        aPath.setAttribute('stroke-dasharray', '5,3');
+        aPath.setAttribute('stroke-linecap', 'round');
+        aPath.setAttribute('marker-end', `url(#mk-${CF_TO_AIME.color.slice(1)})`);
+        svg.appendChild(aPath);
+        // Dot at source
+        const aDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        aDot.setAttribute('cx', ax1); aDot.setAttribute('cy', ay);
+        aDot.setAttribute('r', '2.5');
+        aDot.setAttribute('fill', CF_TO_AIME.color);
+        aDot.setAttribute('opacity', '0.5');
+        svg.appendChild(aDot);
+    }
 }
 
 // Draw on load and resize (debounced)
@@ -1521,14 +1648,12 @@ function scheduleRedraw() {
 }
 window.addEventListener('resize', scheduleRedraw);
 
-    window.scrollTo({ top: document.querySelector('.sticky-nav').offsetTop - 20, behavior: 'smooth' });
-    if (id === 'ch6') setTimeout(drawMappingLines, 80);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.chapter').forEach((ch, i) => {
         ch.style.display = i === 0 ? 'block' : 'none';
     });
+    // Draw mapping lines after layout settles
+    setTimeout(drawMappingLines, 200);
 });
 </script>
 

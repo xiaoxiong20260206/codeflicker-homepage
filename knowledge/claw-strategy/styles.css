@@ -906,12 +906,18 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 #ch6 { max-width: 100%; }
 #ch6 .chapter-lead { max-width: 680px; }
 
-/* --- user segments (inside touchpoint layer) --- */
-.user-segments {
+/* --- user segments + products in aligned columns --- */
+.touch-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     margin-bottom: 10px;
+    position: relative;
+}
+.touch-col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 .user-seg {
     display: flex;
@@ -946,7 +952,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* --- swimlane container --- */
 .arch-swimlanes {
     display: grid;
-    grid-template-columns: 1fr 50px 1fr;
+    grid-template-columns: 55fr 45fr;
     gap: 0;
     position: relative;
     margin-bottom: 0;
@@ -958,38 +964,13 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
         0 12px 40px rgba(0,0,0,.06);
 }
 
-/* --- mapping lines corridor --- */
-.arch-corridor {
-    position: relative;
-    z-index: 3;
-    pointer-events: none;
-    grid-column: 2;
-    grid-row: 1 / -1;
-    display: flex;
-    flex-direction: column;
-}
-.arch-corridor-hd {
-    padding: 16px 0;
-    background: linear-gradient(180deg, rgba(5,150,105,.08), rgba(37,99,235,.08));
-    text-align: center;
-    font-size: 10px;
-    font-weight: 700;
-    color: var(--ink-4);
-    letter-spacing: .05em;
-}
-.arch-corridor-bd {
-    flex: 1;
-    position: relative;
-    background: linear-gradient(180deg,
-        rgba(5,150,105,.03) 0%,
-        rgba(37,99,235,.02) 50%,
-        rgba(124,58,237,.03) 100%);
-}
+/* --- object-level mapping SVG overlay --- */
 #mappingSvg {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
     pointer-events: none;
+    z-index: 4;
 }
 
 /* --- lane --- */
@@ -998,13 +979,11 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane-hd { color: #fff; padding: 16px 22px; text-align: center; }
 .arch-lane:first-child .arch-lane-hd { border-radius: 18px 0 0 0; }
 .arch-lane:last-child .arch-lane-hd { border-radius: 0 18px 0 0; }
-.arch-lane:first-child { grid-column: 1; }
-.arch-lane:last-child  { grid-column: 3; }
-.arch-lane-title { font-size: 18px; font-weight: 800; letter-spacing: -.01em; }
-.arch-lane-sub { font-size: 12px; opacity: .85; margin-top: 2px; }
+.arch-lane-title { font-size: 17px; font-weight: 700; letter-spacing: .01em; }
+.arch-lane-sub { font-size: 12px; opacity: .85; margin-top: 3px; letter-spacing: .02em; }
 .arch-lane-bd {
-    padding: 16px;
-    background: linear-gradient(180deg, #FCFCFC 0%, #F8F8F7 100%);
+    padding: 18px;
+    background: #FAFBFC;
 }
 .arch-lane:first-child .arch-lane-bd {
     border-right: 1px dashed rgba(0,0,0,.08);
@@ -1037,26 +1016,24 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane:has(.cloud-agent-bar:hover),
 .arch-lane:has(.scene-tag:hover) { z-index: 9000 !important; }
 .arch-lv-label {
-    font-size: 13px; font-weight: 700; color: var(--lv-color);
+    font-size: 14px; font-weight: 700; color: var(--lv-color);
     margin-bottom: 10px; padding-bottom: 8px;
     border-bottom: 1px solid var(--border-l);
     letter-spacing: .01em;
 }
 
-/* --- touchpoint product split --- */
-.touch-products {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
+/* --- touchpoint product split (inside touch-col) --- */
 .touch-product {
     border: 1px solid var(--border);
     border-radius: 12px;
     overflow: visible;
     background: #fff;
     transition: all .25s;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
-.touch-product:hover { box-shadow: 0 6px 20px rgba(0,0,0,.07); transform: translateY(-1px); }
+.touch-product:hover { box-shadow: 0 4px 16px rgba(0,0,0,.06); transform: translateY(-1px); }
 .touch-product-hd {
     padding: 10px 12px;
     font-size: 14px;
@@ -1095,20 +1072,44 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     gap: 4px;
 }
 .touch-product .arch-mod-mini .arch-mod-nm span { font-size: 13px; }
-.touch-product .arch-mod-mini .arch-mod-ds { font-size: 10.5px; }
+.touch-product .arch-mod-mini .arch-mod-ds { font-size: 11px; }
 
 /* AIme horizontal layout */
 .arch-mods-horizontal {
     flex-direction: row !important;
     flex-wrap: nowrap !important;
+    align-items: stretch !important;
 }
 .arch-mods-horizontal .arch-mod-mini {
     flex: 1 1 0;
-    min-width: 0;
+    min-width: 80px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .arch-mods-horizontal .arch-mod-mini .arch-mod-nm {
     justify-content: center;
+}
+/* CodeFlicker single-card: match AIme row height */
+.touch-cf .arch-mods {
+    flex: 1;
+}
+.touch-cf .arch-mod-mini {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.touch-product .arch-mods {
+    flex: 1;
+}
+.touch-product .arch-mods-horizontal {
+    flex: 1;
+}
+
+/* CodeFlicker → AIme connection arrow */
+.cf-to-aime-arrow {
+    display: none; /* rendered via SVG mapping lines instead */
 }
 
 /* Cloud Code Agent bar (full-width at bottom of touchpoint layer) */
@@ -1123,8 +1124,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 }
 .cloud-agent-bar:hover {
     border-color: var(--blue) !important;
-    box-shadow: 0 4px 16px rgba(37,99,235,.12) !important;
-    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 14px rgba(37,99,235,.1) !important;
+    transform: translateY(-1px) !important;
 }
 .cloud-agent-inner {
     display: flex;
@@ -1141,24 +1142,28 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     color: var(--blue);
 }
 .cloud-agent-desc {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--ink-3);
-    margin-top: 1px;
+    margin-top: 2px;
 }
 .cloud-agent-bar .arch-tip {
-    display: none;
     position: absolute;
     z-index: 99999;
-    bottom: calc(100% + 10px);
+    bottom: calc(100% + 8px);
     left: 0;
     width: 400px;
     max-width: 90vw;
     background: #fff;
-    border: 1px solid rgba(0,0,0,.12);
+    border: 1px solid rgba(0,0,0,.1);
     border-radius: var(--r-lg);
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06);
     pointer-events: none;
+    opacity: 0; visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .22s cubic-bezier(.25,1,.5,1),
+                visibility .22s cubic-bezier(.25,1,.5,1),
+                transform .22s cubic-bezier(.25,1,.5,1);
 }
 .cloud-agent-bar .arch-tip::after {
     content: '';
@@ -1168,7 +1173,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     border: 7px solid transparent;
     border-top-color: #fff;
 }
-.cloud-agent-bar:hover .arch-tip { display: block; }
+.cloud-agent-bar:hover .arch-tip { opacity: 1; visibility: visible; transform: translateY(0); }
 .cloud-agent-bar .arch-tip .arch-tip-hd { background: var(--blue); }
 
 /* --- module cards --- */
@@ -1177,13 +1182,13 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-mods-row .arch-mod-mini { flex: 1 1 0; min-width: 80px; text-align: center; }
 .arch-mods-row .arch-mod-mini .arch-mod-nm { justify-content: center; font-size: 12px; gap: 4px; margin-bottom: 2px; }
 .arch-mods-row .arch-mod-mini .arch-mod-nm span { font-size: 14px; }
-.arch-mods-row .arch-mod-mini .arch-mod-ds { font-size: 10.5px; text-align: center; }
+.arch-mods-row .arch-mod-mini .arch-mod-ds { font-size: 11px; text-align: center; }
 
 .arch-mods-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
 .arch-mods-grid .arch-mod { text-align: center; }
 .arch-mods-grid .arch-mod .arch-mod-nm { justify-content: center; font-size: 12px; gap: 4px; margin-bottom: 2px; }
 .arch-mods-grid .arch-mod .arch-mod-nm span { font-size: 14px; }
-.arch-mods-grid .arch-mod .arch-mod-ds { font-size: 10.5px; text-align: center; color: var(--ink-4); }
+.arch-mods-grid .arch-mod .arch-mod-ds { font-size: 11px; text-align: center; color: var(--ink-4); }
 
 /* AgentCore special */
 .arch-lv-agentcore { border-left-width: 4px; background: linear-gradient(135deg, #ECFDF5 0%, #fff 100%); }
@@ -1223,11 +1228,11 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     display: inline-flex;
     align-items: center;
     gap: 3px;
-    padding: 4px 12px;
+    padding: 5px 14px;
     background: linear-gradient(135deg, #F5F3FF 0%, #EDE9FE 100%);
     border: 1px solid rgba(124,58,237,.15);
     border-radius: 16px;
-    font-size: 11.5px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--violet);
     transition: all .2s ease;
@@ -1244,11 +1249,10 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 
 /* scene tag tooltip */
 .scene-tip {
-    display: none;
     position: absolute;
     bottom: calc(100% + 8px);
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(6px);
     width: 200px;
     background: #fff;
     border: 1px solid rgba(124,58,237,.15);
@@ -1257,6 +1261,10 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     box-shadow: 0 8px 24px rgba(124,58,237,.12), 0 2px 6px rgba(0,0,0,.06);
     pointer-events: none;
     z-index: 99999;
+    opacity: 0; visibility: hidden;
+    transition: opacity .22s cubic-bezier(.25,1,.5,1),
+                visibility .22s cubic-bezier(.25,1,.5,1),
+                transform .22s cubic-bezier(.25,1,.5,1);
 }
 .scene-tip::after {
     content: '';
@@ -1267,7 +1275,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     border: 6px solid transparent;
     border-top-color: #fff;
 }
-.scene-tag:hover .scene-tip { display: block; }
+.scene-tag:hover .scene-tip { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .scene-tip-title {
     padding: 8px 12px;
     font-size: 12px;
@@ -1281,7 +1289,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     margin: 0;
 }
 .scene-tip ul li {
-    font-size: 11.5px;
+    font-size: 12px;
     color: var(--ink-2);
     padding: 3px 0;
     position: relative;
@@ -1315,66 +1323,76 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     border-radius: 12px;
     cursor: pointer; position: relative;
     transition: all .25s cubic-bezier(.4,0,.2,1);
-    animation: pulse-glow 3s infinite;
+    /* animation: pulse-glow 3s infinite; — removed for cleaner look */
 }
-.arch-evolution:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(5,150,105,.3); z-index: 9990 !important; }
+.arch-evolution:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(5,150,105,.25); z-index: 9990 !important; }
 .arch-evolution-icon { font-size: 22px; flex-shrink: 0; }
 .arch-evolution-title { font-size: 13px; font-weight: 800; color: #fff; }
-.arch-evolution-desc { font-size: 10.5px; color: rgba(255,255,255,.85); margin-top: 1px; }
+.arch-evolution-desc { font-size: 11.5px; color: rgba(255,255,255,.85); margin-top: 1px; }
 
 /* evolution tooltip */
 .arch-evolution .arch-tip {
-    display: none; position: absolute; z-index: 99999;
-    bottom: calc(100% + 10px); left: 0;
+    position: absolute; z-index: 99999;
+    bottom: calc(100% + 8px); left: 0;
     width: 360px; max-width: 90vw;
-    background: #fff; border: 1px solid rgba(0,0,0,.12);
+    background: #fff; border: 1px solid rgba(0,0,0,.1);
     border-radius: var(--r-lg); overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06);
     pointer-events: none;
+    opacity: 0; visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .22s cubic-bezier(.25,1,.5,1),
+                visibility .22s cubic-bezier(.25,1,.5,1),
+                transform .22s cubic-bezier(.25,1,.5,1);
 }
 .arch-evolution .arch-tip::after {
     content: ''; position: absolute; top: 100%; left: 30px;
     border: 7px solid transparent; border-top-color: #fff;
 }
-.arch-evolution:hover .arch-tip { display: block; }
+.arch-evolution:hover .arch-tip { opacity: 1; visibility: visible; transform: translateY(0); }
 .arch-evolution .arch-tip .arch-tip-hd { background: var(--emerald); }
 
 /* module card */
 .arch-mod {
-    background: linear-gradient(145deg, #fff 0%, #FAFAF9 100%);
+    background: #fff;
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 10px 12px;
+    padding: 10px 14px;
     cursor: pointer; position: relative;
-    transition: all .25s cubic-bezier(.4,0,.2,1);
+    transition: all .2s cubic-bezier(.25,1,.5,1);
+    box-shadow: 0 1px 3px rgba(0,0,0,.04);
 }
 .arch-mod:hover {
     border-color: var(--lv-color); z-index: 9990 !important;
-    transform: translateX(4px); box-shadow: 0 4px 16px rgba(0,0,0,.07);
+    transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,.07);
 }
 .arch-mod-nm { font-size: 13px; font-weight: 700; color: var(--ink); display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
 .arch-mod-nm span { font-size: 15px; }
-.arch-mod-ds { font-size: 11.5px; color: var(--ink-3); line-height: 1.5; }
+.arch-mod-ds { font-size: 12px; color: var(--ink-3); line-height: 1.5; }
 .arch-mod-tags { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
-.arch-tag { display: inline-flex; padding: 3px 10px; border-radius: 8px; font-size: 10.5px; font-weight: 600; }
+.arch-tag { display: inline-flex; padding: 3px 10px; border-radius: 8px; font-size: 11px; font-weight: 600; }
 .arch-tag.logic { background: var(--blue-50); color: var(--blue); }
 .arch-tag.phys  { background: var(--amber-50); color: var(--amber); }
 
 /* --- tooltip --- */
 .arch-mod .arch-tip {
-    display: none; position: absolute; z-index: 99999;
-    bottom: calc(100% + 10px); width: 360px; max-width: 90vw;
-    background: #fff; border: 1px solid rgba(0,0,0,.12);
+    position: absolute; z-index: 99999;
+    bottom: calc(100% + 8px); width: 360px; max-width: 90vw;
+    background: #fff; border: 1px solid rgba(0,0,0,.1);
     border-radius: var(--r-lg); overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,.12), 0 2px 8px rgba(0,0,0,.06);
     pointer-events: none;
-    backdrop-filter: blur(2px);
+    opacity: 0; visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity .22s cubic-bezier(.25,1,.5,1),
+                visibility .22s cubic-bezier(.25,1,.5,1),
+                transform .22s cubic-bezier(.25,1,.5,1);
 }
 .arch-mod .arch-tip::after {
     content: ''; position: absolute; top: 100%;
     border: 7px solid transparent; border-top-color: #fff;
 }
-.arch-mod:hover .arch-tip { display: block; }
+.arch-mod:hover .arch-tip { opacity: 1; visibility: visible; transform: translateY(0); }
 .arch-tip-hd { padding: 12px 16px; font-size: 14px; font-weight: 700; color: #fff; background: var(--lv-color, var(--emerald)); }
 .arch-tip-bd { padding: 14px 16px; font-size: 13px; line-height: 1.75; color: var(--ink-2); }
 .arch-tip-bd p { margin: 0 0 8px; }
@@ -1440,7 +1458,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     gap: 2px;
     padding: 2px 8px;
     border-radius: 10px;
-    font-size: 10px;
+    font-size: 10.5px;
     font-weight: 700;
     letter-spacing: .02em;
     vertical-align: middle;
@@ -1467,19 +1485,20 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* --- responsive for arch --- */
 @media (max-width: 900px) {
     .arch-swimlanes { grid-template-columns: 1fr; }
-    .arch-corridor { display: none; }
+    #mappingSvg { display: none; }
+    .arch-legend { display: none; }
     .arch-lane:first-child, .arch-lane:last-child { grid-column: auto; }
     .arch-lane:first-child .arch-lane-bd { border-right: none; border-bottom: 2px dashed var(--border); border-radius: 0; }
     .arch-lane:last-child .arch-lane-bd { border-radius: 0 0 18px 18px; }
     .arch-lane:first-child .arch-lane-hd { border-radius: 18px 18px 0 0; }
     .arch-lane:last-child .arch-lane-hd { border-radius: 0; }
     .arch-storage-bd { grid-template-columns: 1fr; }
-    .touch-products { grid-template-columns: 1fr; }
+    .touch-columns { grid-template-columns: 1fr; }
     .arch-legend-items { gap: 10px; }
     .arch-legend-item { font-size: 11px; }
 }
 @media (max-width: 768px) {
-    .user-segments { grid-template-columns: 1fr; gap: 8px; }
+    .touch-columns { grid-template-columns: 1fr; gap: 8px; }
     .arch-mods-grid { grid-template-columns: repeat(2, 1fr); }
     .scene-tags { gap: 6px; }
     .scene-tag { font-size: 10.5px; padding: 3px 10px; }

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=48">
+<link rel="stylesheet" href="styles.css?v=50">
 </head>
 <body>
 
@@ -830,7 +830,7 @@
             <div class="arch-lane-bd">
 
                 <!-- 用户触点层：用户分层 + CodeFlicker + AIme -->
-                <div class="arch-lv" style="--lv-color: var(--blue);">
+                <div class="arch-lv" data-pair="row1" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">🌍 用户触点层 <span class="map-badge blue">→ T1 接入层</span></div>
 
                     <!-- 两列对齐：用户角色 + 产品 -->
@@ -958,7 +958,7 @@
                 </div>
 
                 <!-- Agent 能力层 -->
-                <div class="arch-lv arch-lv-agent" style="--lv-color: var(--violet);">
+                <div class="arch-lv arch-lv-agent" data-pair="row2" style="--lv-color: var(--violet);">
                     <div class="arch-lv-label">🤖 Agent 能力层 <span class="map-badge violet">→ T3 计算层</span></div>
 
                     <!-- 子层1：场景层 -->
@@ -1120,7 +1120,7 @@
                 </div>
 
                 <!-- 服务层 -->
-                <div class="arch-lv" style="--lv-color: var(--amber);">
+                <div class="arch-lv" data-pair="row3" style="--lv-color: var(--amber);">
                     <div class="arch-lv-label">🛡️ 服务层 <span class="map-badge amber">→ T2 网关层</span></div>
                     <div class="arch-mods arch-mods-row">
                         <div class="arch-mod arch-mod-mini" data-n="p-routing">
@@ -1156,7 +1156,7 @@
                 </div>
 
                 <!-- AgentCore 核心能力层 -->
-                <div class="arch-lv arch-lv-agentcore" style="--lv-color: var(--emerald);">
+                <div class="arch-lv arch-lv-agentcore" data-pair="row4" style="--lv-color: var(--emerald);">
                     <div class="arch-lv-label">🤖 AgentCore · 能力内核 <span class="map-badge emerald">→ T4 推理层</span> <span class="map-badge rose">→ T5 存储层</span></div>
                     <div class="arch-mods arch-mods-grid">
                         <div class="arch-mod" data-n="p-memory">
@@ -1269,7 +1269,8 @@
                 <div class="arch-lane-sub">实现逻辑 + 部署拓扑</div>
             </div>
             <div class="arch-lane-bd">
-                <div class="arch-lv" style="--lv-color: var(--blue);">
+                <!-- Row 1: T1 接入层 (↔用户触点层) -->
+                <div class="arch-lv" data-pair="row1" style="--lv-color: var(--blue);">
                     <div class="arch-lv-label">📥 T1 接入层 <span class="map-badge blue">← 触点层</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-access">
@@ -1295,32 +1296,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="arch-lv" style="--lv-color: var(--amber);">
-                    <div class="arch-lv-label">🚪 T2 网关层 <span class="map-badge amber">← 服务层</span></div>
-                    <div class="arch-mods">
-                        <div class="arch-mod" data-n="t-gateway">
-                            <div class="arch-mod-nm"><span>🛡️</span> Gateway 鉴权路由</div>
-                            <div class="arch-mod-ds">Token验证 · 消息路由 · 协议桥接</div>
-                            <div class="arch-mod-tags">
-                                <span class="arch-tag logic">逻辑: JWT鉴权 + 路由</span>
-                                <span class="arch-tag phys">物理: Node.js | 18789</span>
-                            </div>
-                            <div class="arch-tip">
-                                <div class="arch-tip-hd" style="background:var(--amber)">🛡️ Gateway 鉴权路由</div>
-                                <div class="arch-tip-bd">
-                                    <ul>
-                                        <li>JWT Token 身份验证（SSO 统一登录）</li>
-                                        <li>消息路由：根据请求类型分发到对应 Agent</li>
-                                        <li>协议桥接：WebSocket ↔ HTTP 双向转换</li>
-                                        <li>流量管控：限流 + 降级 + 熔断</li>
-                                    </ul>
-                                </div>
-                                <div class="arch-tip-ft">Node.js 网关 · 端口 18789</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="arch-lv" style="--lv-color: var(--emerald);">
+
+                <!-- Row 2: T3 计算层 (↔Agent能力层) — 移到T2前面 -->
+                <div class="arch-lv" data-pair="row2" style="--lv-color: var(--emerald);">
                     <div class="arch-lv-label">⚙️ T3 计算层 <span class="map-badge violet">← Agent能力层</span></div>
                     <div class="arch-mods">
                         <div class="arch-mod" data-n="t-agent">
@@ -1365,6 +1343,36 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Row 3: T2 网关层 (↔服务层) — 移到T3后面 -->
+                <div class="arch-lv" data-pair="row3" style="--lv-color: var(--amber);">
+                    <div class="arch-lv-label">🚪 T2 网关层 <span class="map-badge amber">← 服务层</span></div>
+                    <div class="arch-mods">
+                        <div class="arch-mod" data-n="t-gateway">
+                            <div class="arch-mod-nm"><span>🛡️</span> Gateway 鉴权路由</div>
+                            <div class="arch-mod-ds">Token验证 · 消息路由 · 协议桥接</div>
+                            <div class="arch-mod-tags">
+                                <span class="arch-tag logic">逻辑: JWT鉴权 + 路由</span>
+                                <span class="arch-tag phys">物理: Node.js | 18789</span>
+                            </div>
+                            <div class="arch-tip">
+                                <div class="arch-tip-hd" style="background:var(--amber)">🛡️ Gateway 鉴权路由</div>
+                                <div class="arch-tip-bd">
+                                    <ul>
+                                        <li>JWT Token 身份验证（SSO 统一登录）</li>
+                                        <li>消息路由：根据请求类型分发到对应 Agent</li>
+                                        <li>协议桥接：WebSocket ↔ HTTP 双向转换</li>
+                                        <li>流量管控：限流 + 降级 + 熔断</li>
+                                    </ul>
+                                </div>
+                                <div class="arch-tip-ft">Node.js 网关 · 端口 18789</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: T4推理层+T5存储层 (↔AgentCore能力内核) — 合为一组 -->
+                <div class="arch-lv-group" data-pair="row4">
                 <div class="arch-lv" style="--lv-color: var(--violet);">
                     <div class="arch-lv-label">🧠 T4 推理层 <span class="map-badge emerald">← AgentCore</span></div>
                     <div class="arch-mods">
@@ -1435,6 +1443,7 @@
                         </div>
                     </div>
                 </div>
+                </div><!-- /arch-lv-group row4 -->
             </div>
         </div>
     </div>
@@ -1641,10 +1650,39 @@ function drawMappingLines() {
     }
 }
 
+// ============================================================
+// Layer height alignment: match left/right layers by data-pair
+// ============================================================
+function alignLayerHeights() {
+    const leftLane = document.getElementById('laneLeft');
+    const rightLane = document.getElementById('laneRight');
+    if (!leftLane || !rightLane) return;
+
+    // Reset all min-heights first
+    leftLane.querySelectorAll('[data-pair]').forEach(el => el.style.minHeight = '');
+    rightLane.querySelectorAll('[data-pair]').forEach(el => el.style.minHeight = '');
+
+    // Match pairs
+    const pairs = ['row1', 'row2', 'row3', 'row4'];
+    pairs.forEach(pair => {
+        const left = leftLane.querySelector(`[data-pair="${pair}"]`);
+        const right = rightLane.querySelector(`[data-pair="${pair}"]`);
+        if (!left || !right) return;
+        const lh = left.offsetHeight;
+        const rh = right.offsetHeight;
+        const max = Math.max(lh, rh);
+        left.style.minHeight = max + 'px';
+        right.style.minHeight = max + 'px';
+    });
+}
+
 // Draw on load and resize (debounced)
 function scheduleRedraw() {
     clearTimeout(scheduleRedraw._t);
-    scheduleRedraw._t = setTimeout(drawMappingLines, 100);
+    scheduleRedraw._t = setTimeout(() => {
+        alignLayerHeights();
+        drawMappingLines();
+    }, 100);
 }
 window.addEventListener('resize', scheduleRedraw);
 
@@ -1652,8 +1690,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.chapter').forEach((ch, i) => {
         ch.style.display = i === 0 ? 'block' : 'none';
     });
-    // Draw mapping lines after layout settles
-    setTimeout(drawMappingLines, 200);
+    // Align layers first, then draw mapping lines
+    setTimeout(() => {
+        alignLayerHeights();
+        drawMappingLines();
+    }, 200);
 });
 </script>
 

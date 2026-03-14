@@ -1004,6 +1004,17 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     transition: box-shadow .3s;
     position: relative;
 }
+/* Group wrapper for T4+T5 to align as one block with AgentCore */
+.arch-lv-group {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.arch-lv-group > .arch-lv {
+    margin-bottom: 0;
+}
+.arch-lv-group > .arch-lv:last-child { margin-bottom: 0; }
 .arch-lv:last-child { margin-bottom: 0; }
 .arch-lv:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); }
 /* Escalate z-index through parent chain when any tooltip is active */

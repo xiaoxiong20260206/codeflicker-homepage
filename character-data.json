@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T15:40:52.039589",
+  "generatedAt": "2026-03-14T22:33:37.778218",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,14 +15,14 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 416950,
-    "expProgress": 91.8,
+    "totalExp": 416850,
+    "expProgress": 91.5,
     "currentThreshold": 382801,
     "nextThreshold": 420009,
     "stats": {
       "understanding": 86.2,
       "execution": 81.7,
-      "skillDepth": 92.7,
+      "skillDepth": 92.5,
       "thinkingDepth": 66.8,
       "knowledgeBreadth": 80.8
     },
@@ -34,18 +34,18 @@
         "mdv": 0.6,
         "ctr": 2.8
       },
-      "activeSkills": 47,
-      "highLevelSkills": 47,
-      "skillTotalValue": 4981.8,
-      "cultivationExp": 0,
-      "baseExp": 416950,
+      "activeSkills": 48,
+      "highLevelSkills": 48,
+      "skillTotalValue": 4992.9,
+      "cultivationExp": 200,
+      "baseExp": 416650,
       "expBreakdown": {
         "understanding": 86200,
         "execution": 81700,
-        "skill": 139050,
+        "skill": 138750,
         "thinking": 53439,
         "knowledge": 56559,
-        "cultivation": 0
+        "cultivation": 200
       }
     }
   },
@@ -67,7 +67,7 @@
             "exp": 100,
             "description": "This skill should be used when the user mentions \"每日修炼\", \"每日反思\", \"自主学习\", \"小无相功\", \"自进化\", \"内功修炼\", \"补跑日报\", \"运行每日任务\", \"daily routine\", \"self-learning\", \"self-evolution\", or when triggering daily reflectio",
             "lastUpdated": "2026-03-13",
-            "callCount": 157,
+            "callCount": 158,
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
@@ -105,7 +105,7 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 26042,
+            "skillSize": 26184,
             "skillSizeLabel": "26K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -134,13 +134,13 @@
             "level": 4,
             "exp": 78,
             "description": "记忆优化元能力（含执行）。当用户说\"记忆优化\"、\"检查记忆健康度\"、\"优化记忆\"、\"记忆清理\"、\"memory optimization\"、\"记忆架构\"时使用此技能。提供记忆问题的自动化扫描、批量诊断、优化建议和执行的完整能力，支持诊断→决策→执行完整闭环。",
-            "lastUpdated": "2026-03-09",
+            "lastUpdated": "2026-03-14",
             "callCount": 41,
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 14171,
-            "skillSizeLabel": "14K字 · 中型",
+            "skillSize": 11726,
+            "skillSizeLabel": "11K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -196,19 +196,19 @@
             "cfProject": false
           },
           {
-            "name": "xixingdafa",
-            "displayName": "吸星大法",
-            "source": "AI核心能力",
+            "name": "skill-dojo",
+            "displayName": "skill-dojo",
+            "source": "未知来源",
             "level": 3,
-            "exp": 62,
-            "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收外部技能\", \"学习外部最佳实践\", \"外部技能调研\", \"OpenClaw技能\", \"ClawHub\", \"star absorb\", \"absorb external skills\", or when needing to systematically search, eva",
-            "lastUpdated": "2026-03-10",
+            "exp": 64,
+            "description": "skill-dojo 技能",
+            "lastUpdated": "2026-03-14",
             "callCount": 1,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 14311,
-            "skillSizeLabel": "14K字 · 中型",
+            "skillSize": 6652,
+            "skillSizeLabel": "6K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -226,6 +226,23 @@
             "sourceType": "自定义",
             "skillSize": 172528,
             "skillSizeLabel": "172K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
+            "name": "xixingdafa",
+            "displayName": "吸星大法",
+            "source": "AI核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收外部技能\", \"学习外部最佳实践\", \"外部技能调研\", \"OpenClaw技能\", \"ClawHub\", \"star absorb\", \"absorb external skills\", or when needing to systematically search, eva",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 14311,
+            "skillSizeLabel": "14K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -262,23 +279,6 @@
             "skillSizeLabel": "62K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
-          },
-          {
-            "name": "skill-dojo",
-            "displayName": "skill-dojo",
-            "source": "未知来源",
-            "level": 1,
-            "exp": 10,
-            "description": "skill-dojo 技能",
-            "lastUpdated": "2026-03-14",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 6652,
-            "skillSizeLabel": "6K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false
           }
         ],
         "count": 13,
@@ -313,7 +313,7 @@
             "displayName": "前端设计",
             "source": "平台预装技能",
             "level": 5,
-            "exp": 100,
+            "exp": 96,
             "description": "前端界面设计。创建独特、生产级的前端界面，避免AI审美",
             "lastUpdated": "2026-03-06",
             "callCount": 101,
@@ -330,10 +330,10 @@
             "displayName": "本质洞察",
             "source": "AI核心能力",
             "level": 4,
-            "exp": 76,
+            "exp": 77,
             "description": "本质洞察能力。透过现象看本质，分析事物的底层规律和动机",
             "lastUpdated": "2026-03-09",
-            "callCount": 35,
+            "callCount": 37,
             "frequency": "1次/月",
             "successRate": 93,
             "sourceType": "自定义",
@@ -360,6 +360,23 @@
             "cfProject": false
           },
           {
+            "name": "proactive-agent",
+            "displayName": "主动Agent",
+            "source": "AI核心能力",
+            "level": 3,
+            "exp": 62,
+            "description": "主动Agent。将AI从任务跟随者转变为主动预判需求的伙伴",
+            "lastUpdated": "2026-03-10",
+            "callCount": 1,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 16666,
+            "skillSizeLabel": "16K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false
+          },
+          {
             "name": "critical-thinking-logical-reasoning",
             "displayName": "批判性思维",
             "source": "AI核心能力",
@@ -373,23 +390,6 @@
             "sourceType": "自定义",
             "skillSize": 3550,
             "skillSizeLabel": "3K字 · 小型",
-            "ksInternal": false,
-            "cfProject": false
-          },
-          {
-            "name": "proactive-agent",
-            "displayName": "主动Agent",
-            "source": "AI核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "主动Agent。将AI从任务跟随者转变为主动预判需求的伙伴",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 16666,
-            "skillSizeLabel": "16K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -412,7 +412,7 @@
           }
         ],
         "count": 7,
-        "avgLevel": 3.0
+        "avgLevel": 3.3
       },
       "⚙️ 做事方法": {
         "role": "system",
@@ -1453,7 +1453,7 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 8641,
+            "skillSize": 8184,
             "skillSizeLabel": "8K字 · 中型",
             "ksInternal": false,
             "cfProject": false
@@ -1484,7 +1484,7 @@
                 "exp": 100,
                 "description": "This skill should be used when the user mentions \"每日修炼\", \"每日反思\", \"自主学习\", \"小无相功\", \"自进化\", \"内功修炼\", \"补跑日报\", \"运行每日任务\", \"daily routine\", \"self-learning\", \"self-evolution\", or when triggering daily reflectio",
                 "lastUpdated": "2026-03-13",
-                "callCount": 157,
+                "callCount": 158,
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
@@ -1522,7 +1522,7 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 26042,
+                "skillSize": 26184,
                 "skillSizeLabel": "26K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1551,13 +1551,13 @@
                 "level": 4,
                 "exp": 78,
                 "description": "记忆优化元能力（含执行）。当用户说\"记忆优化\"、\"检查记忆健康度\"、\"优化记忆\"、\"记忆清理\"、\"memory optimization\"、\"记忆架构\"时使用此技能。提供记忆问题的自动化扫描、批量诊断、优化建议和执行的完整能力，支持诊断→决策→执行完整闭环。",
-                "lastUpdated": "2026-03-09",
+                "lastUpdated": "2026-03-14",
                 "callCount": 41,
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 14171,
-                "skillSizeLabel": "14K字 · 中型",
+                "skillSize": 11726,
+                "skillSizeLabel": "11K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1613,19 +1613,19 @@
                 "cfProject": false
               },
               {
-                "name": "xixingdafa",
-                "displayName": "吸星大法",
-                "source": "AI核心能力",
+                "name": "skill-dojo",
+                "displayName": "skill-dojo",
+                "source": "未知来源",
                 "level": 3,
-                "exp": 62,
-                "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收外部技能\", \"学习外部最佳实践\", \"外部技能调研\", \"OpenClaw技能\", \"ClawHub\", \"star absorb\", \"absorb external skills\", or when needing to systematically search, eva",
-                "lastUpdated": "2026-03-10",
+                "exp": 64,
+                "description": "skill-dojo 技能",
+                "lastUpdated": "2026-03-14",
                 "callCount": 1,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 14311,
-                "skillSizeLabel": "14K字 · 中型",
+                "skillSize": 6652,
+                "skillSizeLabel": "6K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1643,6 +1643,23 @@
                 "sourceType": "自定义",
                 "skillSize": 172528,
                 "skillSizeLabel": "172K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
+                "name": "xixingdafa",
+                "displayName": "吸星大法",
+                "source": "AI核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收外部技能\", \"学习外部最佳实践\", \"外部技能调研\", \"OpenClaw技能\", \"ClawHub\", \"star absorb\", \"absorb external skills\", or when needing to systematically search, eva",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 14311,
+                "skillSizeLabel": "14K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1679,23 +1696,6 @@
                 "skillSizeLabel": "62K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
-              },
-              {
-                "name": "skill-dojo",
-                "displayName": "skill-dojo",
-                "source": "未知来源",
-                "level": 1,
-                "exp": 10,
-                "description": "skill-dojo 技能",
-                "lastUpdated": "2026-03-14",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 6652,
-                "skillSizeLabel": "6K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false
               }
             ],
             "count": 13,
@@ -1729,7 +1729,7 @@
                 "displayName": "前端设计",
                 "source": "平台预装技能",
                 "level": 5,
-                "exp": 100,
+                "exp": 96,
                 "description": "前端界面设计。创建独特、生产级的前端界面，避免AI审美",
                 "lastUpdated": "2026-03-06",
                 "callCount": 101,
@@ -1746,10 +1746,10 @@
                 "displayName": "本质洞察",
                 "source": "AI核心能力",
                 "level": 4,
-                "exp": 76,
+                "exp": 77,
                 "description": "本质洞察能力。透过现象看本质，分析事物的底层规律和动机",
                 "lastUpdated": "2026-03-09",
-                "callCount": 35,
+                "callCount": 37,
                 "frequency": "1次/月",
                 "successRate": 93,
                 "sourceType": "自定义",
@@ -1776,6 +1776,23 @@
                 "cfProject": false
               },
               {
+                "name": "proactive-agent",
+                "displayName": "主动Agent",
+                "source": "AI核心能力",
+                "level": 3,
+                "exp": 62,
+                "description": "主动Agent。将AI从任务跟随者转变为主动预判需求的伙伴",
+                "lastUpdated": "2026-03-10",
+                "callCount": 1,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 16666,
+                "skillSizeLabel": "16K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false
+              },
+              {
                 "name": "critical-thinking-logical-reasoning",
                 "displayName": "批判性思维",
                 "source": "AI核心能力",
@@ -1789,23 +1806,6 @@
                 "sourceType": "自定义",
                 "skillSize": 3550,
                 "skillSizeLabel": "3K字 · 小型",
-                "ksInternal": false,
-                "cfProject": false
-              },
-              {
-                "name": "proactive-agent",
-                "displayName": "主动Agent",
-                "source": "AI核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "主动Agent。将AI从任务跟随者转变为主动预判需求的伙伴",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 16666,
-                "skillSizeLabel": "16K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1828,7 +1828,7 @@
               }
             ],
             "count": 7,
-            "avgLevel": 3.0
+            "avgLevel": 3.3
           },
           "⚙️ 做事方法": {
             "role": "system",
@@ -1927,7 +1927,7 @@
           }
         },
         "count": 25,
-        "avgLevel": 3.2
+        "avgLevel": 3.3
       },
       "domain_pack": {
         "name": "🎯 领域能力层",
@@ -2878,7 +2878,7 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 8641,
+                "skillSize": 8184,
                 "skillSizeLabel": "8K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
@@ -3075,10 +3075,10 @@
           "industry-research"
         ],
         "relatedMemories": [],
-        "fileCount": 37,
-        "sizeKB": 535.8,
+        "fileCount": 38,
+        "sizeKB": 544.1,
         "heatLevel": 5,
-        "recentCount": 37
+        "recentCount": 38
       },
       "AI产品终极形态思考": {
         "name": "AI产品终极形态思考",
@@ -3230,14 +3230,14 @@
               "industry-research"
             ],
             "relatedMemories": [],
-            "fileCount": 37,
-            "sizeKB": 535.8,
+            "fileCount": 38,
+            "sizeKB": 544.1,
             "heatLevel": 5,
-            "recentCount": 37
+            "recentCount": 38
           }
         },
-        "totalFiles": 132,
-        "totalSizeKB": 1117.2
+        "totalFiles": 133,
+        "totalSizeKB": 1125.5
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3294,8 +3294,8 @@
         "totalSizeKB": 731.8
       }
     },
-    "totalFiles": 297,
-    "totalSizeKB": 2835.3
+    "totalFiles": 298,
+    "totalSizeKB": 2843.6
   },
   "memories": {
     "items": [
@@ -3642,25 +3642,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "HTML截图到Docs文档的踩坑经验（含高度计算强制规则）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
-        "keywords": [
-          "HTML截图",
-          "Docs文档",
-          "Puppeteer",
-          "Chrome headless",
-          "图片裁剪"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-06",
-        "source": "项目记忆"
-      },
-      {
         "title": "HTML链接必须target=_blank且禁止href=#占位符",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -3794,25 +3775,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除） 类型1：版本漂移检测误报（3种） | 误报类...",
-        "keywords": [
-          "neigong_check",
-          "误报",
-          "版本漂移",
-          "分类建议",
-          "P2"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-12",
-        "source": "项目记忆"
-      },
-      {
         "title": "pathlib rglob/glob 不跟踪软链接（symlinks）导致数据丢失",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -3867,25 +3829,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-14",
-        "source": "项目记忆"
-      },
-      {
-        "title": "skill_optimization.py P0检测存在多类误报（v3：含章节编号修复）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "skill_optimization.py P0检测存在多类误报（v3：含章节编号修复） 来源 - 2026-03-12每日修炼：7个P0问...",
-        "keywords": [
-          "skill_optimization",
-          "P0",
-          "误报",
-          "检测逻辑",
-          "脚本bug"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-13",
         "source": "项目记忆"
       },
       {
@@ -4098,22 +4041,22 @@
         "source": "项目记忆"
       },
       {
-        "title": "内功修炼P0跳过必须记录判断理由（v2：含误报识别）",
+        "title": "内功修炼执行规范（强制执行 + P0评估 v3）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
+        "categoryLabel": "脚本自动化",
         "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "内功修炼P0问题跳过必须记录理由（v2：含误报识别） 问题 neigong_check.py 报告的P0问题被跳过，但没有记录判断理由，导致...",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "内功修炼执行规范（强制执行 + P0评估 v3） 一、强制执行操作（操作数 >= 3） 问题：2026-03-10/14 内功修炼时...",
         "keywords": [
-          "P0跳过",
-          "判断理由",
+          "每日修炼",
           "内功修炼",
-          "neigong_check",
-          "版本漂移"
+          "强制执行",
+          "操作计数",
+          "零操作"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-14",
         "source": "项目记忆"
       },
       {
@@ -4288,13 +4231,13 @@
         "source": "项目记忆"
       },
       {
-        "title": "封闭平台(微信/小红书)链接处理三步法(v2.0 含优先级+深度自检)",
+        "title": "封闭平台(微信/小红书)链接处理三步法(v3.0 含小红书ID陷阱验证)",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "封闭平台(微信/小红书)链接处理三步法 (v2.0 — 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 > 用户点了个首页，...",
+        "description": "封闭平台(微信/小红书)链接处理三步法 (v3.0 -- 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 > 用户点了个40...",
         "keywords": [
           "微信公众号",
           "小红书",
@@ -4666,25 +4609,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "每日修炼内功修炼步骤必须强制执行操作",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "每日修炼内功修炼步骤必须强制执行操作 问题描述 2026-03-10 每日修炼时，内功修炼步骤声称\"零操作已验证，P0为脚本误报\"，但实际上...",
-        "keywords": [
-          "每日修炼",
-          "内功修炼",
-          "强制执行",
-          "操作计数",
-          "零操作"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-11",
-        "source": "项目记忆"
-      },
-      {
         "title": "每日修炼统一流程 v8.0（不再区分模式A/B）",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -4894,6 +4818,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5） 一、neigong_check.py 误...",
+        "keywords": [
+          "neigong_check",
+          "skill_optimization",
+          "误报",
+          "版本漂移",
+          "分类建议"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-14",
+        "source": "项目记忆"
+      },
+      {
         "title": "语雀文档读取优先使用API",
         "category": "development_practice_specification",
         "categoryLabel": "前端开发",
@@ -5046,13 +4989,13 @@
         "source": "项目记忆"
       },
       {
-        "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）",
+        "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）v2：含证据驱动Gate模式",
         "category": "common_pitfalls_experience",
         "categoryLabel": "脚本自动化",
         "layer": "🛠️ 实践记忆层",
         "icon": "⚡",
         "color": "#64748b",
-        "description": "门控机制取代自觉性依赖 问题背景 每日修炼中反复出现的问题： - P0/P1问题处理不完整 - 操作数勉强达标 - 用\"时间不足\"作为跳过理...",
+        "description": "门控机制取代自觉性依赖 v2 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > 结构性约束（脚本门控 + 证据驱动）...",
         "keywords": [
           "门控机制",
           "脚本门控",
@@ -5061,7 +5004,7 @@
           "程序性执行"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-11",
+        "updatedAt": "2026-03-14",
         "source": "用户显式记录"
       },
       {
@@ -5233,6 +5176,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-10",
+        "source": "项目记忆"
+      },
+      {
+        "title": "HTML截图到Docs文档的踩坑经验（含高度计算强制规则）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题场景：将HTML图表截图上传到快手Docs系统时，图片底部或右侧被截断。 失败方案 Chrome headless的`--window-siz...",
+        "keywords": [
+          "HTML截图",
+          "Docs文档",
+          "Puppeteer",
+          "Chrome headless",
+          "图片裁剪"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-06",
         "source": "项目记忆"
       },
       {
@@ -5894,7 +5856,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 129,
+    "total": 127,
     "byCategory": {
       "development_code_specification": {
         "count": 5,
@@ -5932,7 +5894,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 76,
+        "count": 74,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
@@ -7096,7 +7058,7 @@
                   "Chrome headless",
                   "图片裁剪"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-06",
                 "source": "项目记忆"
               },
@@ -7367,13 +7329,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "封闭平台(微信/小红书)链接处理三步法(v2.0 含优先级+深度自检)",
+                "title": "封闭平台(微信/小红书)链接处理三步法(v3.0 含小红书ID陷阱验证)",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "封闭平台(微信/小红书)链接处理三步法 (v2.0 — 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 > 用户点了个首页，...",
+                "description": "封闭平台(微信/小红书)链接处理三步法 (v3.0 -- 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 > 用户点了个40...",
                 "keywords": [
                   "微信公众号",
                   "小红书",
@@ -7603,41 +7565,22 @@
                 "source": "项目记忆"
               },
               {
-                "title": "内功修炼P0跳过必须记录判断理由（v2：含误报识别）",
+                "title": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "内功修炼P0问题跳过必须记录理由（v2：含误报识别） 问题 neigong_check.py 报告的P0问题被跳过，但没有记录判断理由，导致...",
-                "keywords": [
-                  "P0跳过",
-                  "判断理由",
-                  "内功修炼",
-                  "neigong_check",
-                  "版本漂移"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "项目记忆"
-              },
-              {
-                "title": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "neigong_check.py 已知误报模式汇总（v4：含版本漂移+分类建议+P2约束删除） 类型1：版本漂移检测误报（3种） | 误报类...",
+                "description": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5） 一、neigong_check.py 误...",
                 "keywords": [
                   "neigong_check",
+                  "skill_optimization",
                   "误报",
                   "版本漂移",
-                  "分类建议",
-                  "P2"
+                  "分类建议"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-14",
                 "source": "项目记忆"
               },
               {
@@ -7660,7 +7603,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 10
+            "count": 9
           },
           "文档处理": {
             "icon": "📄",
@@ -7996,13 +7939,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）",
+                "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）v2：含证据驱动Gate模式",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "门控机制取代自觉性依赖 问题背景 每日修炼中反复出现的问题： - P0/P1问题处理不完整 - 操作数勉强达标 - 用\"时间不足\"作为跳过理...",
+                "description": "门控机制取代自觉性依赖 v2 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > 结构性约束（脚本门控 + 证据驱动）...",
                 "keywords": [
                   "门控机制",
                   "脚本门控",
@@ -8011,7 +7954,7 @@
                   "程序性执行"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-11",
+                "updatedAt": "2026-03-14",
                 "source": "用户显式记录"
               },
               {
@@ -8034,13 +7977,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "每日修炼内功修炼步骤必须强制执行操作",
+                "title": "内功修炼执行规范（强制执行 + P0评估 v3）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "每日修炼内功修炼步骤必须强制执行操作 问题描述 2026-03-10 每日修炼时，内功修炼步骤声称\"零操作已验证，P0为脚本误报\"，但实际上...",
+                "description": "内功修炼执行规范（强制执行 + P0评估 v3） 一、强制执行操作（操作数 >= 3） 问题：2026-03-10/14 内功修炼时...",
                 "keywords": [
                   "每日修炼",
                   "内功修炼",
@@ -8049,7 +7992,7 @@
                   "零操作"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-11",
+                "updatedAt": "2026-03-14",
                 "source": "项目记忆"
               },
               {
@@ -8069,25 +8012,6 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-11",
-                "source": "项目记忆"
-              },
-              {
-                "title": "skill_optimization.py P0检测存在多类误报（v3：含章节编号修复）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "skill_optimization.py P0检测存在多类误报（v3：含章节编号修复） 来源 - 2026-03-12每日修炼：7个P0问...",
-                "keywords": [
-                  "skill_optimization",
-                  "P0",
-                  "误报",
-                  "检测逻辑",
-                  "脚本bug"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-13",
                 "source": "项目记忆"
               },
               {
@@ -8186,7 +8110,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 11
+            "count": 10
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -8547,7 +8471,7 @@
             "count": 2
           }
         },
-        "count": 96
+        "count": 94
       }
     }
   },
@@ -8607,7 +8531,7 @@
       240,
       240,
       271,
-      297
+      298
     ],
     "memories": [
       19,
@@ -8626,7 +8550,7 @@
       112,
       118,
       129,
-      137
+      135
     ]
   },
   "achievements": [
@@ -8673,7 +8597,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 47/10",
+      "progressText": "4星+技能 48/10",
       "date": "2026-03-14"
     },
     {

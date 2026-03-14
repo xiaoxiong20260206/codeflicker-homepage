@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T15:17:23.594524",
+  "generatedAt": "2026-03-14T22:33:23.713177",
   "summary": {
     "totalDays": 18,
     "latestDate": "2026-03-13",
@@ -52,7 +52,7 @@
       240,
       240,
       271,
-      297
+      298
     ],
     "memory": [
       20,
@@ -68,7 +68,7 @@
       112,
       118,
       129,
-      137
+      135
     ]
   },
   "reports": [
@@ -77,11 +77,11 @@
       "dayOfWeek": "周五",
       "activeProjects": 6,
       "totalCommits": 33,
-      "conversationCount": 4,
+      "conversationCount": 3,
       "coreProgress": [
-        "💬 完成 4 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 用户想要理解CodeAgent相比小龙虾类AI产品的核心能力优势及其架构设计原理...",
+        "💬 完成 3 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 修复架构图中各层级的高度对齐和边框颜色问题，并验证部署版本v56的正确性...",
         "📁 项目成果: 文档完善 1 份",
-        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等8条，优化沟通方式",
+        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等8条，避免常见错误",
         "📚 新增 1 篇知识文档，扩展专业领域覆盖"
       ],
       "deliveries": [
@@ -100,35 +100,19 @@
           ]
         },
         {
-          "title": "CodeAgent vs Lobster AI Capability Comparison",
+          "title": "CSS and JS Fixes for Architecture Diagram Alignment",
           "type": "conversation",
-          "goal": "用户想要理解CodeAgent相比小龙虾类AI产品的核心能力优势及其架构设计原理",
+          "goal": "修复架构图中各层级的高度对齐和边框颜色问题，并验证部署版本v56的正确性",
           "deliverables": [],
           "process": [
-            "分析指出CodeAgent的核心优势在于代码即万能胶水能力（动态连接任意系统）、图灵完备的执行环境、以及自我增强的Skill沉淀机制。相比传统预定义工具集的Agent架构，CodeAgent通过代码生..."
+            "修复了`alignLayerHeights()`函数在tab切换时的执行问题，调整了row4的边框颜色和视觉样式，优化了lane header和body的布局。通过curl和浏览器代理验证v56部署成..."
           ],
           "tags": [
-            "ai-comparison",
-            "agent-architecture",
-            "code-execution",
-            "tool-creation",
-            "context-awareness"
-          ]
-        },
-        {
-          "title": "Deployment Verification of AI Research Lab Webpage",
-          "type": "conversation",
-          "goal": "验证AI研究实验室网页部署情况，特别是快手AI员工架构图的样式和功能",
-          "deliverables": [],
-          "process": [
-            "通过curl命令验证styles.css?v=53版本已部署，并使用浏览器自动化测试检查了架构图的双泳道布局和5条映射连线功能。"
-          ],
-          "tags": [
-            "deployment",
-            "verification",
-            "css",
+            "css-fixes",
             "javascript",
-            "architecture"
+            "deployment",
+            "ui-alignment",
+            "version-control"
           ]
         },
         {
@@ -194,7 +178,7 @@
             "修复: 技能统计数据恢复 - 一次性历史基线迁移"
           ],
           "commitCount": 1,
-          "fileChangeCount": 367,
+          "fileChangeCount": 111,
           "deployUrl": null
         },
         {
@@ -215,12 +199,30 @@
           "commitCount": 8,
           "fileChangeCount": 0,
           "deployUrl": "https://my-ai-research-lab.github.io/ai-insight-public"
+        },
+        {
+          "title": "knowledge/self-evolution",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "cultivation-report-2026-03-13.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "文档完善 1 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 1,
+          "deployUrl": null
         }
       ],
       "capabilityGrowth": {
         "skillCount": 74,
-        "knowledgeCount": 196,
-        "memoryCount": 137,
+        "knowledgeCount": 197,
+        "memoryCount": 135,
         "skillChange": 0,
         "knowledgeChange": 0,
         "memoryChange": 8,
@@ -292,7 +294,7 @@
             "category": "development_code_specification"
           },
           {
-            "title": "封闭平台(微信/小红书)链接处理三步法(v2.0 含优先级+深度自检)",
+            "title": "封闭平台(微信/小红书)链接处理三步法(v3.0 含小红书ID陷阱验证)",
             "category": "common_pitfalls_experience"
           },
           {
@@ -330,10 +332,6 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "skill_optimization.py P0检测存在多类误报（v3：含章节编号修复）",
-            "category": "common_pitfalls_experience"
-          },
-          {
             "title": "技能callCount骤降根因：历史基线必须永久叠加（不可设migration_completed门控）",
             "category": "common_pitfalls_experience"
           },
@@ -345,15 +343,15 @@
         "trend": "growing"
       },
       "skillCount": 74,
-      "knowledgeCount": 196,
-      "memoryCount": 137,
+      "knowledgeCount": 197,
+      "memoryCount": 135,
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 8,
       "highlights": [
-        "💬 完成 4 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 用户想要理解CodeAgent相比小龙虾类AI产品的核心能力优势及其架构设计原理...",
+        "💬 完成 3 个任务: 用户希望基于现有的KAvatar/KPandora概念图，生成一张风格相似的AI..., 修复架构图中各层级的高度对齐和边框颜色问题，并验证部署版本v56的正确性...",
         "📁 项目成果: 文档完善 1 份",
-        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等8条，优化沟通方式"
+        "🧠 新增记忆: 每日修炼统一流程 v8.0（不再区分模式等8条，避免常见错误"
       ]
     },
     {

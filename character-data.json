@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T22:33:37.778218",
+  "generatedAt": "2026-03-14T23:10:03.914217",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,14 +15,14 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 416850,
-    "expProgress": 91.5,
+    "totalExp": 416350,
+    "expProgress": 90.2,
     "currentThreshold": 382801,
     "nextThreshold": 420009,
     "stats": {
       "understanding": 86.2,
       "execution": 81.7,
-      "skillDepth": 92.5,
+      "skillDepth": 92.3,
       "thinkingDepth": 66.8,
       "knowledgeBreadth": 80.8
     },
@@ -34,18 +34,18 @@
         "mdv": 0.6,
         "ctr": 2.8
       },
-      "activeSkills": 48,
-      "highLevelSkills": 48,
-      "skillTotalValue": 4992.9,
-      "cultivationExp": 200,
-      "baseExp": 416650,
+      "activeSkills": 49,
+      "highLevelSkills": 49,
+      "skillTotalValue": 4993.6,
+      "cultivationExp": 0,
+      "baseExp": 416350,
       "expBreakdown": {
         "understanding": 86200,
         "execution": 81700,
-        "skill": 138750,
+        "skill": 138450,
         "thinking": 53439,
         "knowledge": 56559,
-        "cultivation": 200
+        "cultivation": 0
       }
     }
   },
@@ -71,7 +71,7 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 71915,
+            "skillSize": 71800,
             "skillSizeLabel": "71K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
@@ -203,7 +203,7 @@
             "exp": 64,
             "description": "skill-dojo 技能",
             "lastUpdated": "2026-03-14",
-            "callCount": 1,
+            "callCount": 2,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -224,7 +224,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 172528,
+            "skillSize": 172543,
             "skillSizeLabel": "172K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
@@ -330,14 +330,14 @@
             "displayName": "本质洞察",
             "source": "AI核心能力",
             "level": 4,
-            "exp": 77,
+            "exp": 76,
             "description": "本质洞察能力。透过现象看本质，分析事物的底层规律和动机",
             "lastUpdated": "2026-03-09",
-            "callCount": 37,
+            "callCount": 35,
             "frequency": "1次/月",
             "successRate": 93,
             "sourceType": "自定义",
-            "skillSize": 25699,
+            "skillSize": 25905,
             "skillSizeLabel": "25K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -433,8 +433,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 16737,
-            "skillSizeLabel": "16K字 · 大型",
+            "skillSize": 15935,
+            "skillSizeLabel": "15K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -450,7 +450,7 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 6235,
+            "skillSize": 6440,
             "skillSizeLabel": "6K字 · 中型",
             "ksInternal": false,
             "cfProject": false
@@ -549,12 +549,12 @@
             "name": "rd-efficiency-insight",
             "displayName": "研效洞察",
             "source": "AI核心能力",
-            "level": 1,
-            "exp": 10,
+            "level": 3,
+            "exp": 62,
             "description": "研发效能洞察。知识学习与沉淀、追踪体系管理、深度调研、企业案例研究",
             "lastUpdated": "2026-03-14",
-            "callCount": 0,
-            "frequency": "<0.1/天",
+            "callCount": 2,
+            "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 9578,
@@ -564,7 +564,7 @@
           }
         ],
         "count": 1,
-        "avgLevel": 1.0
+        "avgLevel": 3.0
       },
       "投资理财": {
         "role": "investment",
@@ -647,7 +647,7 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 14252,
+            "skillSize": 14989,
             "skillSizeLabel": "14K字 · 中型",
             "ksInternal": false,
             "cfProject": false
@@ -760,7 +760,7 @@
             "frequency": "1次/月",
             "successRate": 93,
             "sourceType": "自定义",
-            "skillSize": 164645,
+            "skillSize": 164800,
             "skillSizeLabel": "164K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
@@ -789,12 +789,12 @@
             "level": 4,
             "exp": 74,
             "description": "快手内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」「上传 Excel 到 Docs」「拉取表格」「下载表格为 CSV」「上传 CSV 到表格」「更新表格数据」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD/Excel/CSV 文件、拉取",
-            "lastUpdated": "2026-03-12",
+            "lastUpdated": "2026-03-14",
             "callCount": 23,
             "frequency": "2次/月",
             "successRate": 93,
             "sourceType": "自定义",
-            "skillSize": 208476,
+            "skillSize": 208348,
             "skillSizeLabel": "208K字 · 巨型",
             "ksInternal": true,
             "cfProject": false
@@ -1065,8 +1065,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 48579,
-            "skillSizeLabel": "48K字 · 大型",
+            "skillSize": 47728,
+            "skillSizeLabel": "47K字 · 大型",
             "ksInternal": true,
             "cfProject": false
           },
@@ -1453,8 +1453,8 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 8184,
-            "skillSizeLabel": "8K字 · 中型",
+            "skillSize": 10158,
+            "skillSizeLabel": "10K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1488,7 +1488,7 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 71915,
+                "skillSize": 71800,
                 "skillSizeLabel": "71K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1620,7 +1620,7 @@
                 "exp": 64,
                 "description": "skill-dojo 技能",
                 "lastUpdated": "2026-03-14",
-                "callCount": 1,
+                "callCount": 2,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -1641,7 +1641,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 172528,
+                "skillSize": 172543,
                 "skillSizeLabel": "172K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1746,14 +1746,14 @@
                 "displayName": "本质洞察",
                 "source": "AI核心能力",
                 "level": 4,
-                "exp": 77,
+                "exp": 76,
                 "description": "本质洞察能力。透过现象看本质，分析事物的底层规律和动机",
                 "lastUpdated": "2026-03-09",
-                "callCount": 37,
+                "callCount": 35,
                 "frequency": "1次/月",
                 "successRate": 93,
                 "sourceType": "自定义",
-                "skillSize": 25699,
+                "skillSize": 25905,
                 "skillSizeLabel": "25K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1848,8 +1848,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 16737,
-                "skillSizeLabel": "16K字 · 大型",
+                "skillSize": 15935,
+                "skillSizeLabel": "15K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1865,7 +1865,7 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 6235,
+                "skillSize": 6440,
                 "skillSizeLabel": "6K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1972,12 +1972,12 @@
                 "name": "rd-efficiency-insight",
                 "displayName": "研效洞察",
                 "source": "AI核心能力",
-                "level": 1,
-                "exp": 10,
+                "level": 3,
+                "exp": 62,
                 "description": "研发效能洞察。知识学习与沉淀、追踪体系管理、深度调研、企业案例研究",
                 "lastUpdated": "2026-03-14",
-                "callCount": 0,
-                "frequency": "<0.1/天",
+                "callCount": 2,
+                "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 9578,
@@ -1987,7 +1987,7 @@
               }
             ],
             "count": 1,
-            "avgLevel": 1.0
+            "avgLevel": 3.0
           },
           "投资理财": {
             "role": "investment",
@@ -2052,7 +2052,7 @@
           }
         },
         "count": 5,
-        "avgLevel": 3.4
+        "avgLevel": 3.8
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -2078,7 +2078,7 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 14252,
+                "skillSize": 14989,
                 "skillSizeLabel": "14K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
@@ -2190,7 +2190,7 @@
                 "frequency": "1次/月",
                 "successRate": 93,
                 "sourceType": "自定义",
-                "skillSize": 164645,
+                "skillSize": 164800,
                 "skillSizeLabel": "164K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
@@ -2219,12 +2219,12 @@
                 "level": 4,
                 "exp": 74,
                 "description": "快手内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」「上传 Excel 到 Docs」「拉取表格」「下载表格为 CSV」「上传 CSV 到表格」「更新表格数据」或需要与 docs.corp.kuaishou.com 进行文档同步时，使用此技能。支持导入 MD/Excel/CSV 文件、拉取",
-                "lastUpdated": "2026-03-12",
+                "lastUpdated": "2026-03-14",
                 "callCount": 23,
                 "frequency": "2次/月",
                 "successRate": 93,
                 "sourceType": "自定义",
-                "skillSize": 208476,
+                "skillSize": 208348,
                 "skillSizeLabel": "208K字 · 巨型",
                 "ksInternal": true,
                 "cfProject": false
@@ -2492,8 +2492,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 48579,
-                "skillSizeLabel": "48K字 · 大型",
+                "skillSize": 47728,
+                "skillSizeLabel": "47K字 · 大型",
                 "ksInternal": true,
                 "cfProject": false
               },
@@ -2878,8 +2878,8 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 8184,
-                "skillSizeLabel": "8K字 · 中型",
+                "skillSize": 10158,
+                "skillSizeLabel": "10K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -3075,10 +3075,10 @@
           "industry-research"
         ],
         "relatedMemories": [],
-        "fileCount": 38,
-        "sizeKB": 544.1,
+        "fileCount": 39,
+        "sizeKB": 578.6,
         "heatLevel": 5,
-        "recentCount": 38
+        "recentCount": 39
       },
       "AI产品终极形态思考": {
         "name": "AI产品终极形态思考",
@@ -3109,7 +3109,7 @@
           "thinking_pattern"
         ],
         "fileCount": 12,
-        "sizeKB": 123.5,
+        "sizeKB": 122.5,
         "heatLevel": 5,
         "recentCount": 9
       },
@@ -3184,13 +3184,13 @@
               "thinking_pattern"
             ],
             "fileCount": 12,
-            "sizeKB": 123.5,
+            "sizeKB": 122.5,
             "heatLevel": 5,
             "recentCount": 9
           }
         },
         "totalFiles": 143,
-        "totalSizeKB": 986.3
+        "totalSizeKB": 985.3
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -3230,14 +3230,14 @@
               "industry-research"
             ],
             "relatedMemories": [],
-            "fileCount": 38,
-            "sizeKB": 544.1,
+            "fileCount": 39,
+            "sizeKB": 578.6,
             "heatLevel": 5,
-            "recentCount": 38
+            "recentCount": 39
           }
         },
-        "totalFiles": 133,
-        "totalSizeKB": 1125.5
+        "totalFiles": 134,
+        "totalSizeKB": 1160.0
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3294,8 +3294,8 @@
         "totalSizeKB": 731.8
       }
     },
-    "totalFiles": 298,
-    "totalSizeKB": 2843.6
+    "totalFiles": 299,
+    "totalSizeKB": 2877.0
   },
   "memories": {
     "items": [
@@ -4041,19 +4041,19 @@
         "source": "项目记忆"
       },
       {
-        "title": "内功修炼执行规范（强制执行 + P0评估 v3）",
+        "title": "内功修炼执行规范（v4 与v8.2对齐）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
+        "categoryLabel": "文档处理",
         "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "内功修炼执行规范（强制执行 + P0评估 v3） 一、强制执行操作（操作数 >= 3） 问题：2026-03-10/14 内功修炼时...",
+        "icon": "📄",
+        "color": "#38bdf8",
+        "description": "内功修炼执行规范（v8.2 对齐版） 一、Phase 3 决策逻辑（v8.2） ```python P0 必须修复 if p0_coun...",
         "keywords": [
           "每日修炼",
           "内功修炼",
           "强制执行",
-          "操作计数",
-          "零操作"
+          "v8.2",
+          "P0"
         ],
         "importance": 5,
         "updatedAt": "2026-03-14",
@@ -4231,19 +4231,19 @@
         "source": "项目记忆"
       },
       {
-        "title": "封闭平台(微信/小红书)链接处理三步法(v3.0 含小红书ID陷阱验证)",
+        "title": "封闭平台(微信/小红书)链接处理规则(v4.0 含小红书链接可用性纠正+SPA验证陷阱)",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "封闭平台(微信/小红书)链接处理三步法 (v3.0 -- 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 > 用户点了个40...",
+        "description": "封闭平台(微信/小红书)链接处理规则 (v4.0 -- 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 平台分类 (...",
         "keywords": [
           "微信公众号",
           "小红书",
-          "链接过期",
+          "链接",
           "封闭平台",
-          "三步法"
+          "SPA"
         ],
         "importance": 5,
         "updatedAt": "2026-03-14",
@@ -4269,7 +4269,7 @@
         "source": "用户显式记录"
       },
       {
-        "title": "工具能力边界测试原则（三层测试法）",
+        "title": "工具能力边界测试原则（三层测试法 + SPA假阴性防护）",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
         "layer": "🧠 元认知层",
@@ -4279,12 +4279,12 @@
         "keywords": [
           "边界测试",
           "工具能力",
-          "天花板",
-          "API限制",
-          "验证"
+          "SPA",
+          "fetch_web",
+          "链接验证"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-11",
+        "updatedAt": "2026-03-14",
         "source": "用户显式记录"
       },
       {
@@ -4590,22 +4590,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "每日修炼三剑客调用失效：事后验证 vs 前置约束（v7.11修复）",
+        "title": "每日修炼三剑客调用策略演进（v7.11前置约束 → v8.2按需调用）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
+        "categoryLabel": "文档处理",
         "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "每日修炼三剑客调用失效：事后验证 vs 前置约束 问题现象 用户执行每日修炼后反馈： > \"我发现技能分类的其他分类里没有做技能分类，同时，也没...",
+        "icon": "📄",
+        "color": "#38bdf8",
+        "description": "每日修炼三剑客调用策略演进 当前版本行为（v8.2 — 2026-03-14 生效） v8.2 将三剑客调用从\"每次强制\"改为\"按需调用\"： |...",
         "keywords": [
           "每日修炼",
           "三剑客",
-          "强制调用",
-          "事后验证",
-          "前置约束"
+          "按需调用",
+          "v8.2",
+          "门控机制"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-12",
+        "updatedAt": "2026-03-14",
         "source": "项目记忆"
       },
       {
@@ -6177,7 +6177,7 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "工具能力边界测试原则（三层测试法）",
+                "title": "工具能力边界测试原则（三层测试法 + SPA假阴性防护）",
                 "category": "constraint_or_forbidden_rule",
                 "categoryLabel": "用户约束",
                 "layer": "🧠 元认知层",
@@ -6187,12 +6187,12 @@
                 "keywords": [
                   "边界测试",
                   "工具能力",
-                  "天花板",
-                  "API限制",
-                  "验证"
+                  "SPA",
+                  "fetch_web",
+                  "链接验证"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-11",
+                "updatedAt": "2026-03-14",
                 "source": "用户显式记录"
               },
               {
@@ -7329,19 +7329,19 @@
                 "source": "项目记忆"
               },
               {
-                "title": "封闭平台(微信/小红书)链接处理三步法(v3.0 含小红书ID陷阱验证)",
+                "title": "封闭平台(微信/小红书)链接处理规则(v4.0 含小红书链接可用性纠正+SPA验证陷阱)",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "封闭平台(微信/小红书)链接处理三步法 (v3.0 -- 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 > 用户点了个40...",
+                "description": "封闭平台(微信/小红书)链接处理规则 (v4.0 -- 2026-03-14) 第一原则: 错误的链接比没有链接更糟糕 平台分类 (...",
                 "keywords": [
                   "微信公众号",
                   "小红书",
-                  "链接过期",
+                  "链接",
                   "封闭平台",
-                  "三步法"
+                  "SPA"
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-14",
@@ -7725,6 +7725,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "内功修炼执行规范（v4 与v8.2对齐）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "文档处理",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "📄",
+                "color": "#38bdf8",
+                "description": "内功修炼执行规范（v8.2 对齐版） 一、Phase 3 决策逻辑（v8.2） ```python P0 必须修复 if p0_coun...",
+                "keywords": [
+                  "每日修炼",
+                  "内功修炼",
+                  "强制执行",
+                  "v8.2",
+                  "P0"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-14",
+                "source": "项目记忆"
+              },
+              {
                 "title": "双渠道发布规范（Web + 企业文档图片处理）",
                 "category": "development_practice_specification",
                 "categoryLabel": "文档处理",
@@ -7763,6 +7782,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "每日修炼三剑客调用策略演进（v7.11前置约束 → v8.2按需调用）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "文档处理",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "📄",
+                "color": "#38bdf8",
+                "description": "每日修炼三剑客调用策略演进 当前版本行为（v8.2 — 2026-03-14 生效） v8.2 将三剑客调用从\"每次强制\"改为\"按需调用\"： |...",
+                "keywords": [
+                  "每日修炼",
+                  "三剑客",
+                  "按需调用",
+                  "v8.2",
+                  "门控机制"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-14",
+                "source": "项目记忆"
+              },
+              {
                 "title": "AI日报微信公众号覆盖不足的根因与三层结构性改进（v4.0 含双轨搜索+门控硬约束）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "文档处理",
@@ -7782,7 +7820,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 9
+            "count": 11
           },
           "消息通信": {
             "icon": "💬",
@@ -7977,25 +8015,6 @@
                 "source": "项目记忆"
               },
               {
-                "title": "内功修炼执行规范（强制执行 + P0评估 v3）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "内功修炼执行规范（强制执行 + P0评估 v3） 一、强制执行操作（操作数 >= 3） 问题：2026-03-10/14 内功修炼时...",
-                "keywords": [
-                  "每日修炼",
-                  "内功修炼",
-                  "强制执行",
-                  "操作计数",
-                  "零操作"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-14",
-                "source": "项目记忆"
-              },
-              {
                 "title": "AI日报时效性锚定规则（强制日期验证）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
@@ -8012,25 +8031,6 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-03-11",
-                "source": "项目记忆"
-              },
-              {
-                "title": "每日修炼三剑客调用失效：事后验证 vs 前置约束（v7.11修复）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "每日修炼三剑客调用失效：事后验证 vs 前置约束 问题现象 用户执行每日修炼后反馈： > \"我发现技能分类的其他分类里没有做技能分类，同时，也没...",
-                "keywords": [
-                  "每日修炼",
-                  "三剑客",
-                  "强制调用",
-                  "事后验证",
-                  "前置约束"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-12",
                 "source": "项目记忆"
               },
               {
@@ -8110,7 +8110,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 10
+            "count": 8
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -8531,7 +8531,7 @@
       240,
       240,
       271,
-      298
+      299
     ],
     "memories": [
       19,
@@ -8597,7 +8597,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 48/10",
+      "progressText": "4星+技能 49/10",
       "date": "2026-03-14"
     },
     {

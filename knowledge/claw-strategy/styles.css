@@ -976,7 +976,7 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 /* --- lane --- */
 .arch-lane { position: relative; z-index: 1; }
 .arch-lane:hover { z-index: 10; }
-.arch-lane-hd { color: #fff; padding: 16px 22px; text-align: center; }
+.arch-lane-hd { color: #fff; padding: 16px 22px; text-align: center; min-height: 80px; display: flex; flex-direction: column; justify-content: center; }
 .arch-lane:first-child .arch-lane-hd { border-radius: 18px 0 0 0; }
 .arch-lane:last-child .arch-lane-hd { border-radius: 0 18px 0 0; }
 .arch-lane-title { font-size: 17px; font-weight: 700; letter-spacing: .01em; }
@@ -984,6 +984,8 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .arch-lane-bd {
     padding: 18px;
     background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
 }
 .arch-lane:first-child .arch-lane-bd {
     border-right: 1px dashed rgba(0,0,0,.08);
@@ -1010,12 +1012,24 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
     display: flex;
     flex-direction: column;
     gap: 10px;
+    background: var(--card);
+    border-radius: 14px;
+    padding: 10px;
+    border-left: 4px solid var(--emerald);
+    box-shadow: 0 1px 4px rgba(0,0,0,.04);
 }
 .arch-lv-group > .arch-lv {
     margin-bottom: 0;
+    border-left: none;
+    box-shadow: none;
+    background: rgba(5, 150, 105, .04);
+    border: 1px solid rgba(5, 150, 105, .12);
 }
-.arch-lv-group > .arch-lv:last-child { margin-bottom: 0; }
+.arch-lv-group > .arch-lv:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,.05);
+}
 .arch-lv:last-child { margin-bottom: 0; }
+.arch-lv-group:last-child { margin-bottom: 0; }
 .arch-lv:hover { box-shadow: 0 4px 18px rgba(0,0,0,.07); }
 /* Escalate z-index through parent chain when any tooltip is active */
 .arch-lv:has(.arch-mod:hover),

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T15:17:51.158796",
+  "generatedAt": "2026-03-14T15:40:52.039589",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -105,8 +105,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 25135,
-            "skillSizeLabel": "25K字 · 大型",
+            "skillSize": 26042,
+            "skillSizeLabel": "26K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -907,8 +907,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "平台预装",
-            "skillSize": 73522,
-            "skillSizeLabel": "73K字 · 巨型",
+            "skillSize": 123543,
+            "skillSizeLabel": "123K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1522,8 +1522,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 25135,
-                "skillSizeLabel": "25K字 · 大型",
+                "skillSize": 26042,
+                "skillSizeLabel": "26K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -2336,8 +2336,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "平台预装",
-                "skillSize": 73522,
-                "skillSizeLabel": "73K字 · 巨型",
+                "skillSize": 123543,
+                "skillSizeLabel": "123K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -3109,7 +3109,7 @@
           "thinking_pattern"
         ],
         "fileCount": 12,
-        "sizeKB": 123.2,
+        "sizeKB": 123.5,
         "heatLevel": 5,
         "recentCount": 9
       },
@@ -3184,13 +3184,13 @@
               "thinking_pattern"
             ],
             "fileCount": 12,
-            "sizeKB": 123.2,
+            "sizeKB": 123.5,
             "heatLevel": 5,
             "recentCount": 9
           }
         },
         "totalFiles": 143,
-        "totalSizeKB": 986.0
+        "totalSizeKB": 986.3
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -3295,7 +3295,7 @@
       }
     },
     "totalFiles": 297,
-    "totalSizeKB": 2835.0
+    "totalSizeKB": 2835.3
   },
   "memories": {
     "items": [

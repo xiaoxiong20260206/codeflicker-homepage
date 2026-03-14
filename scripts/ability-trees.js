@@ -166,7 +166,7 @@ function renderSkillTechTree(container, skills) {
     for (var t = 0; t < toolNames.length; t++) {
         if (engineSkillMap[toolNames[t]]) toolSkills.push(engineSkillMap[toolNames[t]]);
     }
-    var techniqueNames = ['find-skills', 'skill-creator', 'skill-evaluator'];
+    var techniqueNames = ['find-skills', 'skill-creator', 'skill-evaluator', 'skill-dojo'];
     var techniqueSkills = [];
     for (var tt = 0; tt < techniqueNames.length; tt++) {
         if (engineSkillMap[techniqueNames[tt]]) techniqueSkills.push(engineSkillMap[techniqueNames[tt]]);

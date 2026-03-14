@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-15T07:32:43.342632",
+  "generatedAt": "2026-03-15T07:36:42.268941",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -71,8 +71,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 72029,
-            "skillSizeLabel": "72K字 · 巨型",
+            "skillSize": 74479,
+            "skillSizeLabel": "74K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -1479,8 +1479,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 72029,
-                "skillSizeLabel": "72K字 · 巨型",
+                "skillSize": 74479,
+                "skillSizeLabel": "74K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -3091,7 +3091,7 @@
           "thinking_pattern"
         ],
         "fileCount": 13,
-        "sizeKB": 126.7,
+        "sizeKB": 126.8,
         "heatLevel": 5,
         "recentCount": 10
       },
@@ -3166,13 +3166,13 @@
               "thinking_pattern"
             ],
             "fileCount": 13,
-            "sizeKB": 126.7,
+            "sizeKB": 126.8,
             "heatLevel": 5,
             "recentCount": 10
           }
         },
         "totalFiles": 144,
-        "totalSizeKB": 989.5
+        "totalSizeKB": 989.6
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -3277,7 +3277,7 @@
       }
     },
     "totalFiles": 301,
-    "totalSizeKB": 2898.0
+    "totalSizeKB": 2898.1
   },
   "memories": {
     "items": [
@@ -4534,25 +4534,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "每日修炼三剑客调用策略演进（v8.2按需 → v9.0必须执行）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "每日修炼三剑客调用策略演进 当前版本行为（v9.0 — 2026-03-15 生效） v9.0 将三剑客调用从\"按需调用\"恢复为\"必须全部调用\"...",
-        "keywords": [
-          "每日修炼",
-          "三剑客",
-          "必须执行",
-          "v9.0",
-          "neigong-cultivation"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-14",
-        "source": "项目记忆"
-      },
-      {
         "title": "每日修炼统一流程 v8.2（含Phase 3决策逻辑+脚本门控+按需三剑客）",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -4566,25 +4547,6 @@
           "v8.2",
           "Phase",
           "数据收集"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-14",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "每日修炼踩坑总结与防重犯架构（v9.0 — 含内功修炼必须执行）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "每日修炼踩坑总结与防重犯架构（v9.0 — 含内功修炼必须执行） 问题归因表（累积） | | 问题 | 根因 | 解决方案 | 修复版本...",
-        "keywords": [
-          "daily cultivation",
-          "pitfalls",
-          "v9.0",
-          "内功修炼",
-          "必须执行"
         ],
         "importance": 5,
         "updatedAt": "2026-03-14",
@@ -5047,22 +5009,22 @@
         "source": "项目记忆"
       },
       {
-        "title": "AI日报默认执行规则：预览后直接推送到所有群",
+        "title": "AI日报默认执行规则：先发给虓晗确认，确认后再推送到群",
         "category": "task_flow_experience",
-        "categoryLabel": "做事方法",
-        "layer": "🧠 元认知层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 群推送配置（2026-03-13更...",
+        "categoryLabel": "AI领域洞察",
+        "layer": "🎯 领域记忆层",
+        "icon": "🔍",
+        "color": "#8b5cf6",
+        "description": "AI日报发布流程规则（v2 — 2026-03-15更新） 核心变更: 先确认再发群 流程: 1. 生成AI日报（HTML页面 + ...",
         "keywords": [
           "AI日报",
-          "默认执行",
-          "不用确认",
-          "直接推送",
-          "KIM卡片"
+          "发布流程",
+          "先确认",
+          "再发群",
+          "预览"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-13",
+        "updatedAt": "2026-03-14",
         "source": "用户显式记录"
       },
       {
@@ -5781,7 +5743,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 124,
+    "total": 122,
     "byCategory": {
       "development_code_specification": {
         "count": 5,
@@ -5819,7 +5781,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 71,
+        "count": 69,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
@@ -6365,25 +6327,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "AI日报默认执行规则：预览后直接推送到所有群",
-                "category": "task_flow_experience",
-                "categoryLabel": "做事方法",
-                "layer": "🧠 元认知层",
-                "icon": "⚙️",
-                "color": "#5ec4d4",
-                "description": "AI日报默认执行规则 核心规则：AI日报生成后，预览确认无误后直接推送到群，不需要用户额外确认。 群推送配置（2026-03-13更...",
-                "keywords": [
-                  "AI日报",
-                  "默认执行",
-                  "不用确认",
-                  "直接推送",
-                  "KIM卡片"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-13",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "Skill触发词精确匹配原则（避免大词冲突）",
                 "category": "development_practice_specification",
                 "categoryLabel": "做事方法",
@@ -6498,10 +6441,10 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 10
+            "count": 9
           }
         },
-        "count": 32
+        "count": 31
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -6514,6 +6457,25 @@
             "color": "#8b5cf6",
             "description": "日报/周报/深度调研/追踪体系经验",
             "items": [
+              {
+                "title": "AI日报默认执行规则：先发给虓晗确认，确认后再推送到群",
+                "category": "task_flow_experience",
+                "categoryLabel": "AI领域洞察",
+                "layer": "🎯 领域记忆层",
+                "icon": "🔍",
+                "color": "#8b5cf6",
+                "description": "AI日报发布流程规则（v2 — 2026-03-15更新） 核心变更: 先确认再发群 流程: 1. 生成AI日报（HTML页面 + ...",
+                "keywords": [
+                  "AI日报",
+                  "发布流程",
+                  "先确认",
+                  "再发群",
+                  "预览"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-14",
+                "source": "用户显式记录"
+              },
               {
                 "title": "AI-Insight 持续洞察项目",
                 "category": "project_introduction",
@@ -6534,10 +6496,10 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 1
+            "count": 2
           }
         },
-        "count": 1
+        "count": 2
       },
       "🛠️ 实践记忆层": {
         "icon": "🛠️",
@@ -7319,25 +7281,6 @@
             "description": "GitHub Pages/部署踩坑",
             "items": [
               {
-                "title": "每日修炼踩坑总结与防重犯架构（v9.0 — 含内功修炼必须执行）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "每日修炼踩坑总结与防重犯架构（v9.0 — 含内功修炼必须执行） 问题归因表（累积） | | 问题 | 根因 | 解决方案 | 修复版本...",
-                "keywords": [
-                  "daily cultivation",
-                  "pitfalls",
-                  "v9.0",
-                  "内功修炼",
-                  "必须执行"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-14",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "日报/自学漏记修复：文件mtime代理信号陷阱（v2 含完整修复）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
@@ -7490,7 +7433,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 9
+            "count": 8
           },
           "文档处理": {
             "icon": "📄",
@@ -8214,25 +8157,6 @@
                 "source": "项目记忆"
               },
               {
-                "title": "每日修炼三剑客调用策略演进（v8.2按需 → v9.0必须执行）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "每日修炼三剑客调用策略演进 当前版本行为（v9.0 — 2026-03-15 生效） v9.0 将三剑客调用从\"按需调用\"恢复为\"必须全部调用\"...",
-                "keywords": [
-                  "每日修炼",
-                  "三剑客",
-                  "必须执行",
-                  "v9.0",
-                  "neigong-cultivation"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-14",
-                "source": "项目记忆"
-              },
-              {
                 "title": "技能callCount骤降根因：历史基线必须永久叠加（不可设migration_completed门控）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "通用踩坑",
@@ -8290,7 +8214,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 18
+            "count": 17
           },
           "项目知识": {
             "icon": "📋",
@@ -8339,7 +8263,7 @@
             "count": 2
           }
         },
-        "count": 91
+        "count": 89
       }
     }
   },
@@ -8422,7 +8346,7 @@
       118,
       129,
       135,
-      132
+      130
     ]
   },
   "achievements": [

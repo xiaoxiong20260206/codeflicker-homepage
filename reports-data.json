@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T23:09:53.212394",
+  "generatedAt": "2026-03-15T07:36:30.945552",
   "summary": {
     "totalDays": 19,
     "latestDate": "2026-03-14",
@@ -68,7 +68,7 @@
       118,
       129,
       135,
-      135
+      130
     ]
   },
   "reports": [
@@ -77,74 +77,60 @@
       "dayOfWeek": "周六",
       "activeProjects": 9,
       "totalCommits": 27,
-      "conversationCount": 8,
+      "conversationCount": 7,
       "coreProgress": [
-        "💬 完成 8 个任务: 用户要求通过技能训练场(skill-dojo)对所有常用技能进行全面能力提升, 用户希望进一步提升每日修炼技能的功能正确性、执行效率和用户体验...",
+        "💬 完成 7 个任务: 修正AI日报生成流程中的小红书数据源处理问题，并完善微信搜索能力文档, 诊断并解决GitHub Pages部署失败的问题，特别是并发部署冲突情况...",
         "📁 项目成果: 网页更新 10 个",
         "⚡ 新增能力: skill-dojo、rd-efficiency-insight，提升调研分析能力",
-        "🧠 新增记忆: AI助手主动性承诺：从被动响应到主动预判（2等7条，避免常见错误"
+        "🧠 新增记忆: AI助手主动性承诺：从被动响应到主动预判（2等6条，优化任务执行流程"
       ],
       "deliveries": [
         {
-          "title": "Overnight Skill Training and Improvement Task",
+          "title": "AI Content Research Pipeline Fixes and Enhancements",
           "type": "conversation",
-          "goal": "用户要求通过技能训练场(skill-dojo)对所有常用技能进行全面能力提升",
+          "goal": "修正AI日报生成流程中的小红书数据源处理问题，并完善微信搜索能力文档",
           "deliverables": [],
           "process": [
-            "识别了14个高频使用技能(包括ai-insight/daily-reflection-evolution/web-dev-workflow等)，创建了包含10个步骤的训练计划，首先扫描技能当前状态，然..."
+            "修正了小红书noteId链接构造规则(v4.0)，验证了SPA渲染陷阱需用browser_agent；完成了技能文档更新和JSON数据恢复；微信搜索能力边界分析待完成。部署过程中出现未知连接错误待解决..."
           ],
           "tags": [
-            "skill-dojo",
-            "skill-improvement",
-            "autonomous-task",
-            "skill-evaluation",
-            "skill-management"
+            "content-research",
+            "memory-fix",
+            "deployment",
+            "wechat-api",
+            "xiaohongshu"
           ]
         },
         {
-          "title": "Daily Skill Dojo Enhancement and Optimization",
+          "title": "GitHub Pages Deployment Failure Analysis",
           "type": "conversation",
-          "goal": "用户希望进一步提升每日修炼技能的功能正确性、执行效率和用户体验",
+          "goal": "诊断并解决GitHub Pages部署失败的问题，特别是并发部署冲突情况",
           "deliverables": [],
           "process": [
-            "已完成6项核心改进：包括三剑客定位冲突修复(v8.2对齐)、移除未使用的修炼报告模块、新增积压检测机制、精简CHANGELOG归档。当前评分3.95/5，正在深入分析脚本层和执行层寻找隐藏优化点。"
+            "部署过程中出现并发冲突导致失败，通过查看工作流日志确认前一个部署仍在进行。执行了等待10秒后重新触发部署的命令(gh run rerun)，成功重新启动了部署流程。需要注意Node.js 20版本即将..."
           ],
           "tags": [
-            "skill-enhancement",
-            "version-upgrade",
-            "code-refactoring",
-            "changelog",
-            "performance"
+            "github-actions",
+            "deployment",
+            "CI/CD",
+            "nodejs",
+            "troubleshooting"
           ]
         },
         {
-          "title": "Kuaishou R&D Efficiency System Analysis",
+          "title": "Python Path Resolution in Launchd Environment",
           "type": "conversation",
-          "goal": "要求对快手的研发效能体系和实践进行深度调研和分析",
-          "deliverables": [],
-          "process": [],
-          "tags": [
-            "research",
-            "r&d-efficiency",
-            "system-analysis",
-            "kuaishou",
-            "devops"
-          ]
-        },
-        {
-          "title": "Agent System Maintenance and Proactive Skill Enhancement",
-          "type": "conversation",
-          "goal": "完成智能代理系统的工作区补课和全面问题修复",
+          "goal": "排查launchd环境下Python脚本执行时路径解析异常的问题",
           "deliverables": [],
           "process": [
-            "更新了12个工作文件包括SESSION-STATE.md、AGENTS.md等，修复了6个系统问题（P0-P2优先级），包括cron环境依赖、权限问题、卡死任务清理等，完成了首次心跳检查并上线了修炼经..."
+            "发现daily-routine.sh使用/usr/bin/env python3解析到Apple Python，而phase4_publish.sh直接调用python3却解析到Homebrew Py..."
           ],
           "tags": [
-            "system-maintenance",
-            "agent-enhancement",
-            "cron-fix",
-            "logging",
-            "memory-update"
+            "python",
+            "launchd",
+            "path-resolution",
+            "shell-script",
+            "debugging"
           ]
         },
         {
@@ -206,15 +192,45 @@
             "portfolio tracking",
             "financial strategy"
           ]
+        },
+        {
+          "title": "养了个AI专栏",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "article.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "prompt-ep3-cover.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "ep3-ch04b-sources.html",
+              "type": "page",
+              "url": null
+            }
+          ],
+          "process": [
+            "网页更新 10 个",
+            "文档完善 3 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 26,
+          "deployUrl": null
         }
       ],
       "capabilityGrowth": {
         "skillCount": 74,
-        "knowledgeCount": 197,
-        "memoryCount": 135,
-        "skillChange": 3,
-        "knowledgeChange": 28,
-        "memoryChange": 7,
+        "knowledgeCount": 198,
+        "memoryCount": 131,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 6,
         "newSkills": [
           {
             "name": "skill-dojo",
@@ -257,10 +273,6 @@
           {
             "name": "xixingdafa",
             "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收"
-          },
-          {
-            "name": "daily-reflection-evolution",
-            "description": "This skill should be used when the user mentions \"每日修炼\", \"每日"
           },
           {
             "name": "memory-hygiene",
@@ -391,6 +403,10 @@
           {
             "name": "cultivation-report-2026-03-14",
             "category": "self-evolution"
+          },
+          {
+            "name": "skill-training-report-2026-03-14",
+            "category": "self-evolution"
           }
         ],
         "updatedKnowledge": [
@@ -415,10 +431,6 @@
           {
             "title": "AI助手主动性承诺：从被动响应到主动预判（2026-03-14约定）",
             "category": "task_flow_experience"
-          },
-          {
-            "title": "AI生图用于PPT/文档：企业场景默认走结构化信息图路线",
-            "category": "common_pitfalls_experience"
           },
           {
             "title": "外部技能吸收五步法（Ground Truth 优先）",
@@ -447,8 +459,12 @@
             "category": "task_flow_experience"
           },
           {
-            "title": "工具能力边界测试原则（三层测试法 + SPA假阴性防护）",
+            "title": "工具能力边界测试原则（三层测试法 + SPA假阴性防护 v2）",
             "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "AI日报默认执行规则：先发给虓晗确认，确认后再推送到群",
+            "category": "task_flow_experience"
           },
           {
             "title": "门控机制取代自觉性依赖（结构性约束 > 文字规则）v2：含证据驱动Gate模式",
@@ -459,11 +475,19 @@
             "category": "task_flow_experience"
           },
           {
+            "title": "每日修炼统一流程 v8.2（含Phase 3决策逻辑+脚本门控+按需三剑客）",
+            "category": "user_communication"
+          },
+          {
+            "title": "个人助理目录结构与项目索引 (v3.0 - 2026-03-15 清理后)",
+            "category": "project_configuration"
+          },
+          {
             "title": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5）",
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "内功修炼执行规范（v4 与v8.2对齐）",
+            "title": "内功修炼执行规范（v5 与v9.0对齐）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -471,7 +495,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "每日修炼三剑客调用策略演进（v7.11前置约束 → v8.2按需调用）",
+            "title": "每日修炼三剑客调用策略演进（v8.2按需 → v9.0必须执行）",
             "category": "common_pitfalls_experience"
           },
           {
@@ -479,7 +503,7 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "封闭平台(微信/小红书)链接处理规则(v4.0 含小红书链接可用性纠正+SPA验证陷阱)",
+            "title": "封闭平台(微信/小红书)链接处理规则(v5.0 含browser_agent穿透微信+SPA验证陷阱)",
             "category": "common_pitfalls_experience"
           },
           {
@@ -490,13 +514,13 @@
         "trend": "growing"
       },
       "skillCount": 74,
-      "knowledgeCount": 197,
-      "memoryCount": 135,
-      "skillChange": 3,
-      "knowledgeChange": 28,
-      "memoryChange": 7,
+      "knowledgeCount": 198,
+      "memoryCount": 131,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 6,
       "highlights": [
-        "💬 完成 8 个任务: 用户要求通过技能训练场(skill-dojo)对所有常用技能进行全面能力提升, 用户希望进一步提升每日修炼技能的功能正确性、执行效率和用户体验...",
+        "💬 完成 7 个任务: 修正AI日报生成流程中的小红书数据源处理问题，并完善微信搜索能力文档, 诊断并解决GitHub Pages部署失败的问题，特别是并发部署冲突情况...",
         "📁 项目成果: 网页更新 10 个",
         "⚡ 新增能力: skill-dojo、rd-efficiency-insight，提升调研分析能力"
       ]

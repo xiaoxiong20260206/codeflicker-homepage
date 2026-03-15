@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-15T09:27:53.111987",
+  "generatedAt": "2026-03-15T20:42:50.938917",
   "summary": {
     "totalDays": 19,
     "latestDate": "2026-03-14",
@@ -36,7 +36,7 @@
       72,
       71,
       74,
-      74
+      77
     ],
     "knowledge": [
       152,
@@ -52,7 +52,7 @@
       240,
       271,
       299,
-      301
+      307
     ],
     "memory": [
       25,
@@ -68,7 +68,7 @@
       118,
       129,
       135,
-      110
+      120
     ]
   },
   "reports": [
@@ -77,46 +77,14 @@
       "dayOfWeek": "周六",
       "activeProjects": 9,
       "totalCommits": 27,
-      "conversationCount": 5,
+      "conversationCount": 3,
       "coreProgress": [
-        "💬 完成 5 个任务: 用户希望完成研发效能调研报告的HTML/CSS重建并部署到GitHub Page..., 用户需要生成并验证快手AI员工系统的完整架构图，包含产品架构和技术架构的双泳道可......",
+        "💬 完成 3 个任务: Enterprise AI Employee Naming ..., 优化晋升PPT辅导流程，特别是AI生图环节，并沉淀可复用的经验模式...",
         "📁 项目成果: 网页更新 10 个",
         "⚡ 新增能力: skill-dojo、rd-efficiency-insight，提升调研分析能力",
-        "🧠 新增记忆: AI助手主动性承诺：从被动响应到主动预判（2等6条，优化任务执行流程"
+        "🧠 新增记忆: AI助手主动性承诺：从被动响应到系统性保障主等6条，优化任务执行流程"
       ],
       "deliveries": [
-        {
-          "title": "Research Efficiency Report Deployment",
-          "type": "conversation",
-          "goal": "用户希望完成研发效能调研报告的HTML/CSS重建并部署到GitHub Pages",
-          "deliverables": [],
-          "process": [
-            "已完成前端页面重建（包含Mesh Gradient背景、毛玻璃Tab等新特性），本地curl验证通过。待完成GitHub Pages部署、主页卡片添加和最终总结输出。因环境问题浏览器预览未成功，但文件..."
-          ],
-          "tags": [
-            "deployment",
-            "github-pages",
-            "frontend",
-            "research-efficiency",
-            "html-css"
-          ]
-        },
-        {
-          "title": "Kuaishou AI Employee Architecture Diagram Review",
-          "type": "conversation",
-          "goal": "用户需要生成并验证快手AI员工系统的完整架构图，包含产品架构和技术架构的双泳道可视化展示",
-          "deliverables": [],
-          "process": [
-            "生成了高清架构图(output/claw-strategy-architecture.png)，确认了产品架构与技术架构的4对层级对齐、颜色匹配和SVG连线正确，包含底部存储架构基础和映射关系图例。最..."
-          ],
-          "tags": [
-            "architecture-diagram",
-            "kuaishou-ai",
-            "technical-design",
-            "visualization",
-            "product-architecture"
-          ]
-        },
         {
           "title": "Enterprise AI Employee Naming Strategy",
           "type": "conversation",
@@ -214,10 +182,10 @@
           ],
           "process": [
             "网页更新 5 个",
-            "文档完善 22 份"
+            "文档完善 21 份"
           ],
           "commitCount": 0,
-          "fileChangeCount": 27,
+          "fileChangeCount": 26,
           "deployUrl": null
         },
         {
@@ -237,14 +205,47 @@
             "修复: sync: 外部版同步 (全量链接修复)"
           ],
           "commitCount": 17,
-          "fileChangeCount": 10,
+          "fileChangeCount": 8,
           "deployUrl": "https://my-ai-research-lab.github.io/ai-insight"
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [],
+          "process": [
+            "新增: rd-efficiency-insight P0修复 — 添加分类/中文名/描述",
+            "修复: callCount数据修复+技能分类标签修正+数据质量门控 (2565次调用, ",
+            "修复: daily cultivation 2026-03-14: fix broken"
+          ],
+          "commitCount": 3,
+          "fileChangeCount": 2757,
+          "deployUrl": null
+        },
+        {
+          "title": "ai-insight-public",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "在线页面",
+              "type": "page",
+              "url": "https://my-ai-research-lab.github.io/ai-insight-public"
+            }
+          ],
+          "process": [
+            "📤 同步外部版本: 2026-03-14 14:58",
+            "📤 同步外部版本: 2026-03-14 14:54"
+          ],
+          "commitCount": 7,
+          "fileChangeCount": 1,
+          "deployUrl": "https://my-ai-research-lab.github.io/ai-insight-public"
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 74,
-        "knowledgeCount": 198,
-        "memoryCount": 110,
+        "skillCount": 77,
+        "knowledgeCount": 202,
+        "memoryCount": 120,
         "skillChange": 0,
         "knowledgeChange": 0,
         "memoryChange": 6,
@@ -259,7 +260,7 @@
           },
           {
             "name": "ai-insight",
-            "description": "AI行业洞察平台专属技能。仅当用户明确提到\"AI洞察\"、\"AI日报\"、\"AI周报\"或执行AI行业调研任务时使用。核心场景"
+            "description": "\"AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI周报'或执行AI行业调研任务时使用。核心场景"
           },
           {
             "name": "xiaohongshu",
@@ -276,24 +277,12 @@
             "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
           },
           {
-            "name": "essence-insight",
-            "description": "This skill should be used when the user asks about \"本质\", \"为什"
-          },
-          {
-            "name": "meta-execution",
-            "description": "This skill should be used automatically when receiving any t"
-          },
-          {
             "name": "codeflicker-homepage",
             "description": "|"
           },
           {
             "name": "xixingdafa",
             "description": "This skill should be used when the user mentions \"吸星大法\", \"吸收"
-          },
-          {
-            "name": "skill-creator",
-            "description": "Create new skills, modify and improve existing skills, and m"
           },
           {
             "name": "linke-kim-message",
@@ -308,16 +297,8 @@
             "description": "***的个人知识库检索技能。当用户提到\"查文档\"、\"找调研\"、\"我之前做过什么调研\"、\"帮我找一下之前的文档\"、\"知识库里"
           },
           {
-            "name": "codeflicker-weekly-report",
-            "description": "This skill should be used when the user mentions \"CodeFlicke"
-          },
-          {
             "name": "neigong-cultivation",
             "description": "This skill should be used when the user mentions \"内功修炼\", \"三位"
-          },
-          {
-            "name": "xiaowuxianggong",
-            "description": "This skill should be used when the user mentions \"小无相功\", \"自进"
           },
           {
             "name": "work-report-ppt",
@@ -424,10 +405,6 @@
         ],
         "updatedKnowledge": [
           {
-            "name": "README",
-            "category": "rd-efficiency"
-          },
-          {
             "name": "knowledge-framework",
             "category": "rd-efficiency"
           },
@@ -438,7 +415,7 @@
         ],
         "newMemory": [
           {
-            "title": "AI助手主动性承诺：从被动响应到主动预判（2026-03-14约定）",
+            "title": "AI助手主动性承诺：从被动响应到系统性保障主动（含SSP+watchdog+agenda工程化）",
             "category": "task_flow_experience"
           },
           {
@@ -480,10 +457,6 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "成功模式提炼：高效执行的关键条件（含上下文预算+批量操作维度 v6）",
-            "category": "task_flow_experience"
-          },
-          {
             "title": "个人助理目录结构与项目索引 (v3.0 - 2026-03-15 清理后)",
             "category": "project_configuration"
           },
@@ -496,24 +469,20 @@
             "category": "common_pitfalls_experience"
           },
           {
-            "title": "封闭平台(微信/小红书)链接处理规则(v5.0 含browser_agent穿透微信+SPA验证陷阱)",
-            "category": "common_pitfalls_experience"
-          },
-          {
             "title": "write_todo_anthropic必须传todos参数（20+次重复错误，记忆提醒已证明无效）",
             "category": "common_pitfalls_experience"
           }
         ],
         "trend": "growing"
       },
-      "skillCount": 74,
-      "knowledgeCount": 198,
-      "memoryCount": 110,
+      "skillCount": 77,
+      "knowledgeCount": 202,
+      "memoryCount": 120,
       "skillChange": 0,
       "knowledgeChange": 0,
       "memoryChange": 6,
       "highlights": [
-        "💬 完成 5 个任务: 用户希望完成研发效能调研报告的HTML/CSS重建并部署到GitHub Page..., 用户需要生成并验证快手AI员工系统的完整架构图，包含产品架构和技术架构的双泳道可......",
+        "💬 完成 3 个任务: Enterprise AI Employee Naming ..., 优化晋升PPT辅导流程，特别是AI生图环节，并沉淀可复用的经验模式...",
         "📁 项目成果: 网页更新 10 个",
         "⚡ 新增能力: skill-dojo、rd-efficiency-insight，提升调研分析能力"
       ]

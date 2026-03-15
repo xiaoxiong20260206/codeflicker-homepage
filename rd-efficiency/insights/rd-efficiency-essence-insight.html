@@ -1,427 +1,713 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>研发效能领域 — 本质洞察</title>
-<style>
-:root{--bg:#f8f9fb;--card:#fff;--primary:#2563eb;--emerald:#059669;--amber:#d97706;--violet:#7c3aed;--rose:#dc2626;--slate:#64748b;--radius:12px;--shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);--shadow-md:0 4px 6px rgba(0,0,0,.05),0 2px 4px rgba(0,0,0,.03);--font:-apple-system,"SF Pro Display",system-ui,"Segoe UI","Noto Sans SC",sans-serif}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--font);background:var(--bg);color:#1e293b;line-height:1.7}
-.container{max-width:960px;margin:0 auto;padding:24px 20px 48px}
-/* Hero */
-.hero{text-align:center;padding:48px 24px 36px;background:var(--card);border-radius:20px;box-shadow:var(--shadow-md);margin-bottom:24px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--emerald),var(--primary),var(--violet))}
-.badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;background:rgba(37,99,235,.08);color:var(--primary);margin-bottom:12px}
-.hero h1{font-size:28px;font-weight:700;margin-bottom:8px}
-.hero .subtitle{color:var(--slate);font-size:14px;margin-bottom:4px}
-.hero .version{color:var(--slate);font-size:12px}
-/* Stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
-.stat-card{background:var(--card);border-radius:var(--radius);padding:16px;text-align:center;box-shadow:var(--shadow)}
-.stat-num{font-size:24px;font-weight:700;color:var(--primary)}
-.stat-label{font-size:12px;color:var(--slate);margin-top:2px}
-/* Phase 0 */
-.phase0{background:var(--card);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:24px;border-left:4px solid var(--primary)}
-.phase0 h2{font-size:18px;margin-bottom:12px;color:var(--primary)}
-.obj-table{width:100%;border-collapse:collapse;font-size:13px}
-.obj-table th{text-align:left;padding:8px 10px;background:#f1f5f9;font-weight:600;border-bottom:2px solid #e2e8f0}
-.obj-table td{padding:8px 10px;border-bottom:1px solid #f1f5f9}
-.obj-table .type-thing{color:var(--emerald);font-weight:600}
-.obj-table .type-player{color:var(--violet);font-weight:600}
-/* Tabs */
-.tab-nav{display:flex;gap:6px;margin-bottom:20px;position:sticky;top:12px;z-index:10;background:rgba(248,249,251,.9);backdrop-filter:blur(8px);padding:8px;border-radius:var(--radius)}
-.tab-btn{flex:1;padding:10px 8px;border:none;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;background:transparent;color:var(--slate);transition:.2s}
-.tab-btn:hover{background:#f1f5f9}
-.tab-btn.active{background:var(--primary);color:#fff}
-.tab-panel{display:none}
-.tab-panel.active{display:block}
-/* Insight Card */
-.insight-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden}
-.card-header{padding:20px 24px 12px;border-bottom:1px solid #f1f5f9}
-.card-level{font-size:11px;font-weight:600;text-transform:uppercase;color:var(--primary);letter-spacing:.5px}
-.card-title{font-size:20px;font-weight:700;margin-top:4px}
-.row{display:flex;padding:14px 24px;border-bottom:1px solid #f8f9fb}
-.row-label{width:72px;flex-shrink:0;font-size:12px;font-weight:700;padding-top:2px;text-transform:uppercase;letter-spacing:.5px}
-.row-label.l1{color:var(--slate)}
-.row-label.l2{color:var(--emerald)}
-.row-content{flex:1;font-size:14px}
-.row.highlight{background:rgba(5,150,105,.03)}
-.row.highlight .row-content strong{color:var(--emerald);font-size:15px;display:block;margin-bottom:6px}
-.analogy{background:#fffbeb;border-left:3px solid var(--amber);padding:10px 14px;border-radius:6px;margin:8px 0;font-size:13px;color:#92400e}
-/* Evo Flow */
-.evo-flow{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin-top:8px}
-.evo-step{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;font-size:12px;background:#f1f5f9;color:var(--slate)}
-.evo-tag{font-weight:700;color:var(--primary)}
-.evo-arrow{color:#cbd5e1;font-size:14px}
-/* Insight Table (Three-Column) */
-.it-wrap{padding:0 24px 20px}
-.it-label{font-size:12px;font-weight:700;color:var(--slate);letter-spacing:.5px;padding:12px 0 8px;text-transform:uppercase}
-.it-table{width:100%;border-collapse:collapse;font-size:13px}
-.it-table th{text-align:left;padding:8px;background:#f8f9fb;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--slate)}
-.it-table td{padding:8px;border-bottom:1px solid #f8f9fb;vertical-align:top}
-.it-section{font-size:12px;font-weight:700;padding:10px 8px 4px}
-.it-section.verified{color:var(--emerald)}
-.it-section.evolving{color:var(--primary)}
-.it-section.projected{color:var(--violet)}
-.it-verify{font-size:12px;color:var(--emerald);padding:4px 8px 8px;font-style:italic}
-.it-divider{height:1px;background:linear-gradient(90deg,transparent,#e2e8f0,transparent);margin:4px 0}
-.it-stage{font-weight:600;color:var(--primary);white-space:nowrap}
-/* Player Card */
-.player-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:16px;overflow:hidden}
-.player-header{padding:16px 20px 8px;border-bottom:1px solid #f1f5f9}
-.player-header h3{font-size:18px;font-weight:700}
-.player-header .player-type{font-size:11px;color:var(--violet);font-weight:600}
-.player-table{width:100%;font-size:13px;border-collapse:collapse}
-.player-table th{text-align:left;padding:8px 20px;background:#faf5ff;font-weight:600;width:80px;color:var(--violet);font-size:12px;vertical-align:top}
-.player-table td{padding:8px 20px;border-bottom:1px solid #f8f9fb}
-.predict-list{padding:12px 20px 16px}
-.predict-list h4{font-size:13px;color:var(--slate);margin-bottom:6px}
-.predict-list ol{font-size:13px;padding-left:18px;color:#475569}
-.predict-list li{margin-bottom:4px}
-/* Meta */
-.meta-card{background:linear-gradient(135deg,#1e293b,#334155);color:#f1f5f9;border-radius:var(--radius);padding:24px;margin-bottom:16px}
-.meta-card h3{font-size:16px;font-weight:700;color:#e2e8f0;margin-bottom:8px}
-.meta-card .meta-rule{font-size:15px;color:#93c5fd;font-weight:600;margin-bottom:8px}
-.meta-card p{font-size:13px;line-height:1.8;color:#cbd5e1}
-.meta-card .meta-analogy{color:var(--amber);font-weight:500}
-/* Footer */
-.footer{text-align:center;padding:32px 0 16px;font-size:12px;color:var(--slate)}
-/* Mobile */
-@media(max-width:768px){
-.stats{grid-template-columns:repeat(2,1fr)}
-.tab-nav{flex-wrap:wrap}
-.tab-btn{flex:0 0 calc(50% - 3px);font-size:12px}
-.row{flex-direction:column;gap:4px}
-.row-label{width:auto}
-.it-table{font-size:12px}
-.evo-flow{flex-wrap:wrap}
-}
-@media(max-width:480px){
-.hero h1{font-size:22px}
-.stats{grid-template-columns:1fr 1fr}
-.stat-num{font-size:20px}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研发效能领域 — 本质洞察报告 v2.0</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><path d='M8 24V8l8 6 8-6v16l-8-6z' fill='none' stroke='white' stroke-width='2.5' stroke-linejoin='round'/></svg>">
+    <link rel="stylesheet" href="rd-essence-styles.css">
+    <style>
+    /* === RD-specific overrides & additions === */
+    .phase0{background:var(--bg-card);border-radius:var(--r-xl);border:1px solid var(--border-light);box-shadow:var(--shadow-md);margin-bottom:var(--sp-6);overflow:hidden}
+    .phase0-accent{height:3px;background:var(--grad-blue)}
+    .phase0-body{padding:var(--sp-6)}
+    .phase0-label{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--c-blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--sp-3)}
+    .phase0-label::before{content:'';width:8px;height:8px;background:var(--c-blue);border-radius:50%}
+    .phase0-title{font-size:18px;font-weight:700;margin-bottom:var(--sp-4)}
+    .obj-grid{display:flex;flex-direction:column;gap:2px}
+    .obj-row{display:grid;grid-template-columns:28px 120px 56px 1fr;gap:var(--sp-2);padding:6px var(--sp-2);border-radius:4px;font-size:12.5px;line-height:1.5;align-items:center;transition:background var(--t-fast)}
+    .obj-row:hover{background:var(--c-gray-50)}
+    .obj-row.header{font-weight:700;color:var(--text-secondary);font-size:11px;text-transform:uppercase;letter-spacing:.04em;padding-bottom:8px;border-bottom:1px solid var(--border-light)}
+    .obj-num{font-weight:800;color:var(--c-blue);text-align:center}
+    .obj-name{font-weight:700;color:var(--text-primary)}
+    .obj-type{font-size:11px;font-weight:700;padding:2px 8px;border-radius:var(--r-full);text-align:center}
+    .obj-type.thing{background:var(--c-emerald-50);color:var(--c-emerald)}
+    .obj-type.player{background:var(--c-violet-50);color:var(--c-violet)}
+    .obj-q{color:var(--text-secondary);font-size:12px}
+    .player-tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:var(--r-full)}
+    .player-tag.company{background:var(--c-blue-50);color:var(--c-blue)}
+    .player-tag.person{background:var(--c-violet-50);color:var(--c-violet)}
+    .sub-title{font-size:15px;font-weight:700;color:var(--text-secondary);margin:var(--sp-5) 0 var(--sp-3);padding-left:var(--sp-2)}
+    @media(max-width:768px){
+        .obj-row{grid-template-columns:24px 90px 48px 1fr;font-size:11.5px}
+        .obj-row.header{font-size:10px}
+    }
+    </style>
 </head>
 <body>
 <div class="container">
 
-<!-- Hero -->
-<div class="hero">
-<div class="badge">本质洞察力 × 五层闭环框架 v2.3</div>
-<h1>研发效能领域 — 本质洞察</h1>
-<p class="subtitle">多对象洞察（5个概念 + 4个企业/人物）· 置信度 ★★★★☆</p>
-<p class="version">v2.0 · 2026-03-15 · 数据来源：46+篇文档 · 100+信息源</p>
+    <!-- ==================== Hero ==================== -->
+    <header class="hero">
+        <span class="hero-badge">🔍 本质洞察力 × 五层闭环框架</span>
+        <h1 class="hero-title">研发效能领域 — 本质洞察</h1>
+        <p class="hero-subtitle">多对象穿透洞察：5个概念 + 4个企业/人物，归纳→验证→预测完整闭环</p>
+        <span class="hero-version"><span class="dot"></span> v2.0 · 2026-03-15 · 46+篇文档</span>
+    </header>
+
+    <!-- ==================== Core Insight ==================== -->
+    <section class="core-insight">
+        <div class="core-insight-accent"></div>
+        <div class="core-insight-body">
+            <span class="core-insight-label">核心洞察</span>
+            <p class="core-insight-text">
+                研发效能的本质是<em>"组织将意图转化为用户价值的代谢效率"</em>。
+                跨9个对象均显示同一规律：<em>基建是本金，AI是利率</em>——基建为零时一切AI投入归零。
+            </p>
+            <div class="stats-grid">
+                <div class="stat-item"><div class="stat-num emerald">9</div><div class="stat-text">洞察对象</div></div>
+                <div class="stat-item"><div class="stat-num blue">46+</div><div class="stat-text">知识文档</div></div>
+                <div class="stat-item"><div class="stat-num violet">60+</div><div class="stat-text">追踪人物</div></div>
+                <div class="stat-item"><div class="stat-num amber">54+</div><div class="stat-text">追踪企业</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Meta Insight ==================== -->
+    <section class="meta-insight">
+        <div class="meta-insight-accent"></div>
+        <div class="meta-insight-body">
+            <span class="meta-insight-label">跨域元洞察</span>
+            <p class="meta-insight-title">9个洞察对象，走同一条进化路径</p>
+            <p class="meta-insight-desc">
+                从度量到平台到AI编程到企业策略——所有维度都在经历<strong>从人驱动到平台赋能到AI协同</strong>的三阶段跃迁。就像城市基建的进化：乡村小路（手工）→ 高速公路（平台）→ 自动驾驶（AI）。
+            </p>
+            <div class="meta-evo">
+                <div class="meta-evo-step"><span class="meta-evo-num">1</span><span class="meta-evo-text">人驱动<br><small>手工+经验</small></span></div>
+                <div class="meta-evo-arrow">→</div>
+                <div class="meta-evo-step current"><span class="meta-evo-num">2</span><span class="meta-evo-text">平台赋能<br><small>标准化+自助</small></span></div>
+                <div class="meta-evo-arrow">→</div>
+                <div class="meta-evo-step future"><span class="meta-evo-num">3</span><span class="meta-evo-text">AI协同<br><small>人机共创+自主</small></span></div>
+            </div>
+            <div class="meta-mapping">
+                <div class="meta-mapping-title">📋 进化方向速查</div>
+                <div class="meta-mapping-grid">
+                    <div class="mm-row"><span class="mm-obj">度量框架</span><span class="mm-past">产出(DORA)</span><span class="mm-now">体验(DevEx)</span><span class="mm-next">价值(DX Core 4)</span></div>
+                    <div class="mm-row"><span class="mm-obj">平台工程</span><span class="mm-past">无平台</span><span class="mm-now">自助平台(95%+)</span><span class="mm-next">智能/自进化平台</span></div>
+                    <div class="mm-row"><span class="mm-obj">AI开发</span><span class="mm-past">L1补全</span><span class="mm-now">L2协同(↓58%)</span><span class="mm-next">L3自主/L4创造</span></div>
+                    <div class="mm-row"><span class="mm-obj">知识工程</span><span class="mm-past">个人经验</span><span class="mm-now">结构化知识</span><span class="mm-next">AI可消费(↑190%)</span></div>
+                    <div class="mm-row"><span class="mm-obj">研发效能</span><span class="mm-past">手工时代</span><span class="mm-now">平台时代</span><span class="mm-next">AI协同/人机共生</span></div>
+                    <div class="mm-row"><span class="mm-obj">快手</span><span class="mm-past">工具堆砌</span><span class="mm-now">平台嵌入AI(6/6)</span><span class="mm-next">L2全组织推广</span></div>
+                    <div class="mm-row"><span class="mm-obj">字节跳动</span><span class="mm-past">基建统一</span><span class="mm-now">三线分裂(0/6)</span><span class="mm-next">整合或持续分裂</span></div>
+                    <div class="mm-row"><span class="mm-obj">Forsgren</span><span class="mm-past">DORA</span><span class="mm-now">DX Core 4</span><span class="mm-next">AI原生度量?</span></div>
+                    <div class="mm-row"><span class="mm-obj">阿里巴巴</span><span class="mm-past">旧方案</span><span class="mm-now">公开复盘</span><span class="mm-next">重新出发</span></div>
+                </div>
+                <div class="meta-mapping-legend">
+                    <span class="mm-legend-item past">● 已过去</span>
+                    <span class="mm-legend-item now">● 当下</span>
+                    <span class="mm-legend-item next">● 下一站</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Phase 0 ==================== -->
+    <section class="phase0">
+        <div class="phase0-accent"></div>
+        <div class="phase0-body">
+            <span class="phase0-label">Phase 0 · 对象提炼</span>
+            <p class="phase0-title">从46+篇知识文档中提炼9个关键洞察对象</p>
+            <div class="obj-grid">
+                <div class="obj-row header"><span>#</span><span>对象</span><span>类型</span><span>核心问题</span></div>
+                <div class="obj-row"><span class="obj-num">1</span><span class="obj-name">度量框架演进</span><span class="obj-type thing">事情</span><span class="obj-q">DORA到DX Core 4的十年进化本质？</span></div>
+                <div class="obj-row"><span class="obj-num">2</span><span class="obj-name">平台工程</span><span class="obj-type thing">事情</span><span class="obj-q">为什么突然成为"必选项"？</span></div>
+                <div class="obj-row"><span class="obj-num">3</span><span class="obj-name">AI辅助开发</span><span class="obj-type thing">事情</span><span class="obj-q">L1/L2/L3到底在说什么？</span></div>
+                <div class="obj-row"><span class="obj-num">4</span><span class="obj-name">知识工程</span><span class="obj-type thing">事情</span><span class="obj-q">为什么"知识>算法"？</span></div>
+                <div class="obj-row"><span class="obj-num">5</span><span class="obj-name">研发效能</span><span class="obj-type thing">事情</span><span class="obj-q">这个领域本身的本质？</span></div>
+                <div class="obj-row"><span class="obj-num">6</span><span class="obj-name">快手</span><span class="obj-type player">企业</span><span class="obj-q">为什么AI融合满分？</span></div>
+                <div class="obj-row"><span class="obj-num">7</span><span class="obj-name">字节跳动</span><span class="obj-type player">企业</span><span class="obj-q">基建最强但融合最弱？</span></div>
+                <div class="obj-row"><span class="obj-num">8</span><span class="obj-name">Nicole Forsgren</span><span class="obj-type player">人物</span><span class="obj-q">一人如何推动范式转移？</span></div>
+                <div class="obj-row"><span class="obj-num">9</span><span class="obj-name">阿里巴巴</span><span class="obj-type player">企业</span><span class="obj-q">为什么只有它敢公开认错？</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Tab Nav ==================== -->
+    <nav class="tab-nav" role="navigation">
+        <button class="tab-btn active" data-tab="s1"><span class="tab-num">1</span> 事情洞察(5)</button>
+        <button class="tab-btn" data-tab="s2"><span class="tab-num">2</span> 对象洞察(4)</button>
+        <button class="tab-btn" data-tab="s3"><span class="tab-num">3</span> 跨域元洞察</button>
+    </nav>
+
+    <!-- ==================== Tab 1: 事情洞察 ==================== -->
+    <article id="s1" class="tab-panel active">
+        <div class="section-overview">
+            <span class="overview-label">📊 章节概览</span>
+            <div class="overview-content">
+                <svg viewBox="0 0 600 150" style="max-width:580px;width:100%">
+                    <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#059669"/><stop offset="100%" stop-color="#2563EB"/></linearGradient></defs>
+                    <g transform="translate(50,10)"><rect width="500" height="28" rx="6" fill="url(#g1)"/><text x="250" y="19" text-anchor="middle" font-size="12" font-weight="700" fill="white">5个核心概念 — 从度量到平台到AI到知识到效能本身</text></g>
+                    <g transform="translate(50,48)"><rect width="96" height="90" rx="8" fill="#ECFDF5" stroke="#059669"/><text x="48" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#059669">度量框架</text><text x="48" y="40" text-anchor="middle" font-size="9" fill="#57534E">从称体重</text><text x="48" y="54" text-anchor="middle" font-size="9" fill="#57534E">到基因检测</text><text x="48" y="76" text-anchor="middle" font-size="8" fill="#78716C">DORA→DX Core4</text></g>
+                    <g transform="translate(152,48)"><rect width="96" height="90" rx="8" fill="#ECFDF5" stroke="#059669"/><text x="48" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#059669">平台工程</text><text x="48" y="40" text-anchor="middle" font-size="9" fill="#57534E">从自建厨房</text><text x="48" y="54" text-anchor="middle" font-size="9" fill="#57534E">到中央厨房</text><text x="48" y="76" text-anchor="middle" font-size="8" fill="#78716C">渗透率95%+</text></g>
+                    <g transform="translate(254,48)"><rect width="96" height="90" rx="8" fill="#EFF6FF" stroke="#2563EB"/><text x="48" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#2563EB">AI辅助开发</text><text x="48" y="40" text-anchor="middle" font-size="9" fill="#57534E">从学徒</text><text x="48" y="54" text-anchor="middle" font-size="9" fill="#57534E">到老板</text><text x="48" y="76" text-anchor="middle" font-size="8" fill="#78716C">交付↓58%</text></g>
+                    <g transform="translate(356,48)"><rect width="96" height="90" rx="8" fill="#EFF6FF" stroke="#2563EB"/><text x="48" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#2563EB">知识工程</text><text x="48" y="40" text-anchor="middle" font-size="9" fill="#57534E">弹药比枪</text><text x="48" y="54" text-anchor="middle" font-size="9" fill="#57534E">更重要</text><text x="48" y="76" text-anchor="middle" font-size="8" fill="#78716C">↑190%</text></g>
+                    <g transform="translate(458,48)"><rect width="96" height="90" rx="8" fill="#F5F3FF" stroke="#7C3AED"/><text x="48" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#7C3AED">研发效能</text><text x="48" y="40" text-anchor="middle" font-size="9" fill="#57534E">组织的</text><text x="48" y="54" text-anchor="middle" font-size="9" fill="#57534E">新陈代谢</text><text x="48" y="76" text-anchor="middle" font-size="8" fill="#78716C">元概念</text></g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- ===== #1 度量框架演进 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level">概念 #1</span>
+                <h3 class="card-title">度量框架演进</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">DORA(2014)→SPACE(2021)→DevEx(2023)→DX Core 4(2024)，平均每2年一个新框架，方向从"产出"→"体验"→"价值"</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>度量框架演进的本质是"被度量对象"在变——从流水线到人到价值</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">1.0</span><span class="evo-text">产出度量</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">2.0</span><span class="evo-text">多维度量</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">3.0</span><span class="evo-text">体验度量</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step active"><span class="evo-tag">4.0</span><span class="evo-text">价值度量</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>体检技术的进化</b>——称体重(DORA) → 年度体检(SPACE) → 实时手环(DevEx) → 基因检测(DX Core 4)。每一代都在看更深层的东西。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>阶段</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">1.0 产出度量</div><div class="it-reality">DORA(2014)定义4指标，全球部署频率从月→日</div><div class="it-analogy">称体重——简单但信息有限</div></div>
+                <div class="it-row"><div class="it-rule">2.0 多维度量</div><div class="it-reality">SPACE(2021)加入满意度/协作5维度</div><div class="it-analogy">年度体检——全面但仍是快照</div></div>
+                <div class="it-row"><div class="it-rule">3.0 体验度量</div><div class="it-reality">DevEx(2023)引入认知负荷/心流</div><div class="it-analogy">实时手环——戴上就能持续追踪</div></div>
+                <div class="it-row"><div class="it-rule">4.0 价值度量</div><div class="it-reality">DX Core 4(2024)回归极简：Speed+Quality+Impact</div><div class="it-analogy">基因检测——找到根因而非症状</div></div>
+                <div class="it-verify">✅ 四阶段逐一验证——每代看的层次更深，被度量对象从流水线→人→价值</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">1.0 产出度量</div><div class="it-reality">DORA指标被"刷"（古德哈特效应），失去区分力</div><div class="it-analogy">体重秤人人有，不再稀奇</div></div>
+                <div class="it-row evolving"><div class="it-rule">2.0 多维度量</div><div class="it-reality">维度太多→"分析瘫痪"，实际落地困难</div><div class="it-analogy">体检100+项目，看不懂报告</div></div>
+                <div class="it-row evolving"><div class="it-rule">3.0 体验度量</div><div class="it-reality">从可选变必选，开发者体验成招聘竞争力</div><div class="it-analogy">手环从极客玩具→人人标配</div></div>
+                <div class="it-row evolving"><div class="it-rule">4.0 价值度量</div><div class="it-reality">"Impact"成CEO级KPI，效能与业务直接挂钩</div><div class="it-analogy">基因检测引导精准治疗方案</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：价值度量之后</span></div>
+                <div class="it-row projected"><div class="it-rule">5.0 AI原生度量</div><div class="it-reality">度量对象从"人"→"人+AI系统"，需要全新指标体系</div><div class="it-analogy">DNA编辑——不只检测还能改写</div></div>
+                <div class="it-row projected"><div class="it-rule">6.0 自适应度量</div><div class="it-reality">AI驱动度量框架自动调整，指标随上下文变化</div><div class="it-analogy">免疫系统——自动检测自动修复</div></div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-12个月 · 信号：DX Core 4企业采纳率、AI原生度量指标出现、DevEx在招聘JD中的提及率</div>
+            </div>
+        </div>
+
+        <!-- ===== #2 平台工程 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level">概念 #2</span>
+                <h3 class="card-title">平台工程</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">Gartner预测2026年80%大型组织建立平台工程团队。从"DevOps人人都要会"到"平台团队帮你搞定"。快手平台渗透率95%+</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>平台工程的本质是"DevOps的社会化"——从每个人都要会做饭，到有了中央厨房</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">1.0</span><span class="evo-text">无平台</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">2.0</span><span class="evo-text">内部工具</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step active"><span class="evo-tag">3.0</span><span class="evo-text">自助平台</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">4.0</span><span class="evo-text">智能平台</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>城市供水系统</b>——以前每家打井取水（DevOps理想），后来发现不如建自来水厂（平台工程）。用户只需拧水龙头。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>阶段</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">1.0 无平台</div><div class="it-reality">每个团队自建CI/CD，环境配置消耗40%时间</div><div class="it-analogy">每家打井——费力且水质不稳定</div></div>
+                <div class="it-row"><div class="it-rule">2.0 内部工具</div><div class="it-reality">统一构建/部署工具，但仍需专人维护</div><div class="it-analogy">村里公共水井——方便但得排队</div></div>
+                <div class="it-row"><div class="it-rule">3.0 自助平台</div><div class="it-reality">开发者门户+自助服务，快手渗透率95%+</div><div class="it-analogy">自来水入户——拧开就有水</div></div>
+                <div class="it-row"><div class="it-rule">4.0 智能平台</div><div class="it-reality">平台内嵌AI，自动推荐配置/检测异常</div><div class="it-analogy">智能净水器——自动调整水质</div></div>
+                <div class="it-verify">✅ 四阶段验证——从分散到集中到智能，DevOps理想通过平台实现</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">1.0 无平台</div><div class="it-reality">彻底消亡，仅存于10人以下初创</div><div class="it-analogy">打井已是远古记忆</div></div>
+                <div class="it-row evolving"><div class="it-rule">2.0 内部工具</div><div class="it-reality">被平台吸收，不再独立存在</div><div class="it-analogy">公共水井改造为管网节点</div></div>
+                <div class="it-row evolving"><div class="it-rule">3.0 自助平台</div><div class="it-reality">从竞争优势→基线，没有就是落后</div><div class="it-analogy">自来水从奢侈品→基础设施</div></div>
+                <div class="it-row evolving"><div class="it-rule">4.0 智能平台</div><div class="it-reality">AI从锦上添花→核心引擎</div><div class="it-analogy">净水器→智能家居中枢</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：智能平台之后</span></div>
+                <div class="it-row projected"><div class="it-rule">5.0 自进化平台</div><div class="it-reality">平台自身用AI持续优化——自动发现瓶颈、自动升级</div><div class="it-analogy">城市水网自动扩容——需求多了自动加管道</div></div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-12个月 · 信号：Gartner预测兑现率、企业平台工程团队增长率、平台NPS变化</div>
+            </div>
+        </div>
+
+        <!-- ===== #3 AI辅助开发成熟度 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level">概念 #3</span>
+                <h3 class="card-title">AI辅助开发成熟度</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">L1(Copilot补全,20-40%) → L2(Cursor/Claude Code深度协作,交付↓58%) → L3(Codex端到端自主)。企业分化严重</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>AI辅助开发的本质是"人机关系的重构"——决策权的渐进转移</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">L1</span><span class="evo-text">AI辅助</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step active"><span class="evo-tag">L2</span><span class="evo-text">AI协同</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">L3</span><span class="evo-text">AI自主</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>厨房里的分工</b>——L1你做菜AI切菜（学徒），L2你定菜单AI做菜你尝味（副厨），L3你只管点菜和验收（餐厅老板）。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>阶段</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">L1 AI辅助</div><div class="it-reality">Copilot补全，采纳率20-40%，显著提升编码速度</div><div class="it-analogy">学徒帮你切菜——你还是大厨</div></div>
+                <div class="it-row"><div class="it-rule">L2 AI协同</div><div class="it-reality">Cursor/Claude Code全流程协作，交付↓58%</div><div class="it-analogy">副厨——你定菜单它做菜你尝味</div></div>
+                <div class="it-row"><div class="it-rule">L3 AI自主</div><div class="it-reality">Codex多Agent并行，端到端完成标准需求</div><div class="it-analogy">餐厅老板——只管验收出品</div></div>
+                <div class="it-verify">✅ L1→L2→L3，决策权逐级转移——从"AI帮我"到"我帮AI"</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">L1 AI辅助</div><div class="it-reality">补全型产品消亡，被Agent吸收</div><div class="it-analogy">学徒被机器替代</div></div>
+                <div class="it-row evolving"><div class="it-rule">L2 AI协同</div><div class="it-reality">从标杆→全组织推广，瓶颈从AI→流程/组织</div><div class="it-analogy">副厨从1个→每个工位都配</div></div>
+                <div class="it-row evolving"><div class="it-rule">L3 AI自主</div><div class="it-reality">仅限标准化高的需求，创新性需求仍需人</div><div class="it-analogy">有些菜必须亲自做——特色菜不能流水线</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：AI自主之后</span></div>
+                <div class="it-row projected"><div class="it-rule">L4 AI创造</div><div class="it-reality">AI不只执行需求，还能发现需求和提出创新方向</div><div class="it-analogy">厨师设计新菜品——从执行者变为创造者</div></div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-12个月 · 信号：L2全组织渗透率、L3成功率、AI发现需求的案例数</div>
+            </div>
+        </div>
+
+        <!-- ===== #4 知识工程 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level">概念 #4</span>
+                <h3 class="card-title">知识工程</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">快手测试用例生成：知识增强↑190%，远超算法优化50%。Agent瓶颈不在模型在知识。企业知识散落在个人脑/Wiki/文档中</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>知识工程的本质是"把人脑里的隐性知识变成AI能消费的显性资产"</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">1.0</span><span class="evo-text">个人经验</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">2.0</span><span class="evo-text">文档沉淀</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">3.0</span><span class="evo-text">结构化知识</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step active"><span class="evo-tag">4.0</span><span class="evo-text">AI可消费</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>弹药比枪更重要</b>——所有人都能买到同一款步枪（大模型），但谁有精确制导弹药（结构化知识），谁就能百步穿杨。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>阶段</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">1.0 个人经验</div><div class="it-reality">知识在老员工脑里，离职即流失</div><div class="it-analogy">祖传秘方——只在师傅脑子里</div></div>
+                <div class="it-row"><div class="it-rule">2.0 文档沉淀</div><div class="it-reality">Wiki堆积但无结构、难检索、快过时</div><div class="it-analogy">秘方写纸上——字迹潦草塞抽屉</div></div>
+                <div class="it-row"><div class="it-rule">3.0 结构化知识</div><div class="it-reality">知识图谱/标签体系，可检索可关联</div><div class="it-analogy">编写标准菜谱——步骤清晰可复制</div></div>
+                <div class="it-row"><div class="it-rule">4.0 AI可消费</div><div class="it-reality">AI可直接调用的格式，快手知识增强↑190%</div><div class="it-analogy">菜谱写入机器人——AI看了就能做</div></div>
+                <div class="it-verify">✅ 知识增强↑190%验证4.0阶段的巨大价值——弹药才是决定性因素</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">1.0 个人经验</div><div class="it-reality">被视为"风险"而非"资产"——关键人依赖</div><div class="it-analogy">只靠口传的餐厅——师傅一走关门</div></div>
+                <div class="it-row evolving"><div class="it-rule">2.0 文档沉淀</div><div class="it-reality">质量比数量重要，垃圾知识是负资产</div><div class="it-analogy">过期食材比没有更危险</div></div>
+                <div class="it-row evolving"><div class="it-rule">3.0 结构化知识</div><div class="it-reality">从手动维护→AI辅助更新</div><div class="it-analogy">菜谱需根据季节更新食材</div></div>
+                <div class="it-row evolving"><div class="it-rule">4.0 AI可消费</div><div class="it-reality">成为企业核心资产，知识=AI效果的天花板</div><div class="it-analogy">弹药工厂比枪厂更稀缺更值钱</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：AI可消费之后</span></div>
+                <div class="it-row projected"><div class="it-rule">5.0 知识自生长</div><div class="it-reality">AI自主从代码/PR/事故中提取知识，知识库自动扩展</div><div class="it-analogy">弹药工厂根据战场反馈自动研发新型号</div></div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-12个月 · 信号：知识增强效果倍数、AI自动提取知识的准确率、企业知识资产估值出现</div>
+            </div>
+        </div>
+
+        <!-- ===== #5 研发效能 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level violet">元概念</span>
+                <h3 class="card-title">研发效能</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">度量框架每2年换代。AI改变"谁在写软件"。大厂效能差距在拉大。领域自身被AI颠覆</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>研发效能的本质是"组织将意图转化为用户价值的代谢效率"</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">1.0</span><span class="evo-text">手工时代</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">2.0</span><span class="evo-text">工具时代</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step"><span class="evo-tag">3.0</span><span class="evo-text">平台时代</span></div>
+                        <span class="evo-arrow">→</span>
+                        <div class="evo-step active"><span class="evo-tag">4.0</span><span class="evo-text">AI协同</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>生物体的新陈代谢</b>——摄入食物（需求）、消化吸收（开发）、转化为能量（价值）、排出废物（技术债）。健康不是"吃得多"，而是"消化好"。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>阶段</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">1.0 手工时代</div><div class="it-reality">瀑布式，无标准度量，靠"老师傅"</div><div class="it-analogy">原始消化——生吃食物</div></div>
+                <div class="it-row"><div class="it-rule">2.0 工具时代</div><div class="it-reality">CI/CD+DORA，部署频率月→日</div><div class="it-analogy">学会用火——吸收率翻倍</div></div>
+                <div class="it-row"><div class="it-rule">3.0 平台时代</div><div class="it-reality">平台工程+DevEx，渗透率95%+</div><div class="it-analogy">现代厨房——营养科学化管理</div></div>
+                <div class="it-row"><div class="it-rule">4.0 AI协同</div><div class="it-reality">L2模式落地，交付周期↓58%</div><div class="it-analogy">智能厨师——AI帮你做饭</div></div>
+                <div class="it-verify">✅ 代谢效率每代提升一个数量级——从手工到AI协同</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">1.0 手工时代</div><div class="it-reality">已消亡——没有任何企业完全手工</div><div class="it-analogy">原始人灭绝</div></div>
+                <div class="it-row evolving"><div class="it-rule">2.0 工具时代</div><div class="it-reality">CI/CD成标配，DORA指标被刷失效</div><div class="it-analogy">火人人都有——不再是优势</div></div>
+                <div class="it-row evolving"><div class="it-rule">3.0 平台时代</div><div class="it-reality">从可选→必选，没有平台=落后</div><div class="it-analogy">每家都有现代厨房</div></div>
+                <div class="it-row evolving"><div class="it-rule">4.0 AI协同</div><div class="it-reality">从标杆→全组织推广阶段</div><div class="it-analogy">智能厨师从外卖→驻家</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：AI协同之后</span></div>
+                <div class="it-row projected"><div class="it-rule">5.0 AI自主</div><div class="it-reality">AI端到端完成标准需求，人类聚焦创新</div><div class="it-analogy">自动代谢——身体自主调节营养分配</div></div>
+                <div class="it-row projected"><div class="it-rule">6.0 人机共生</div><div class="it-reality">AI发现需求+提出创新方向，人机共同进化</div><div class="it-analogy">生物进化——新物种出现</div></div>
+                <div class="it-confidence">📐 置信度：中高 · 验证窗口12-24个月 · 信号：L3成熟企业数量、AI自主需求发现案例、效能学科教材更新</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== Tab 2: 对象洞察 ==================== -->
+    <article id="s2" class="tab-panel">
+        <div class="section-overview">
+            <span class="overview-label">📊 章节概览</span>
+            <div class="overview-content">
+                <svg viewBox="0 0 600 130" style="max-width:580px;width:100%">
+                    <g transform="translate(20,10)"><rect width="270" height="110" rx="10" fill="#F5F5F4" stroke="#D6D3D1"/>
+                        <text x="135" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#57534E">企业 (3家)</text>
+                        <g transform="translate(10,32)"><rect width="76" height="52" rx="6" fill="#2563EB" fill-opacity="0.06" stroke="#2563EB" stroke-opacity="0.3"/><text x="38" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#2563EB">快手</text><text x="38" y="32" text-anchor="middle" font-size="8" fill="#57534E">融合满分6/6</text><text x="38" y="44" text-anchor="middle" font-size="7" fill="#78716C">全科医生</text></g>
+                        <g transform="translate(96,32)"><rect width="76" height="52" rx="6" fill="#7C3AED" fill-opacity="0.06" stroke="#7C3AED" stroke-opacity="0.3"/><text x="38" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#7C3AED">字节跳动</text><text x="38" y="32" text-anchor="middle" font-size="8" fill="#57534E">基建最强0/6</text><text x="38" y="44" text-anchor="middle" font-size="7" fill="#78716C">超级大厨</text></g>
+                        <g transform="translate(182,32)"><rect width="76" height="52" rx="6" fill="#D97706" fill-opacity="0.06" stroke="#D97706" stroke-opacity="0.3"/><text x="38" y="18" text-anchor="middle" font-size="10" font-weight="700" fill="#D97706">阿里巴巴</text><text x="38" y="32" text-anchor="middle" font-size="8" fill="#57534E">公开认错</text><text x="38" y="44" text-anchor="middle" font-size="7" fill="#78716C">老司机翻新</text></g>
+                        <text x="135" y="102" text-anchor="middle" font-size="9" fill="#78716C">三种路线 · 互为镜像</text>
+                    </g>
+                    <g transform="translate(320,10)"><rect width="270" height="110" rx="10" fill="#F5F5F4" stroke="#D6D3D1"/>
+                        <text x="135" y="22" text-anchor="middle" font-size="11" font-weight="700" fill="#57534E">人物 (1位)</text>
+                        <g transform="translate(80,34)"><rect width="110" height="56" rx="8" fill="#059669" fill-opacity="0.06" stroke="#059669" stroke-opacity="0.3"/><text x="55" y="20" text-anchor="middle" font-size="11" font-weight="700" fill="#059669">Nicole Forsgren</text><text x="55" y="36" text-anchor="middle" font-size="9" fill="#57534E">DORA→DX Core 4</text><text x="55" y="48" text-anchor="middle" font-size="8" fill="#78716C">"用科学推动范式转移"</text></g>
+                        <text x="135" y="102" text-anchor="middle" font-size="9" fill="#78716C">定义学科的人</text>
+                    </g>
+                </svg>
+            </div>
+        </div>
+
+        <h3 class="sub-title">🏢 企业篇</h3>
+
+        <!-- ===== 快手 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level blue">企业</span>
+                <h3 class="card-title">快手</h3>
+                <span class="card-tag blue">AI融合 6/6 满分</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">效能平台全面嵌入AI（6/6平台渗透）。测试用例知识增强↑190%。交付周期↓58%。平台渗透率95%+。以"交付周期"为北极星指标</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">动机</div>
+                <div class="row-content"><strong>"效能团队主导AI × 平台嵌入 × 交付周期为北极星 = 全科医生式系统诊疗"</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">维度1</span><span class="evo-text">效能主导：团队牵头而非AI团队</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step"><span class="evo-tag">维度2</span><span class="evo-text">平台嵌入：6/6全渗透</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step active"><span class="evo-tag">维度3</span><span class="evo-text">北极星：交付周期</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>全科医生</b>——不是给你开最贵的药（纯AI炫技），而是先做全面体检（平台化），再综合诊疗（AI嵌入各环节），最终让身体恢复健康（交付效率提升）。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>动机维度</span><span>行为</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">效能主导</div><div class="it-reality">效能团队而非AI团队牵头——确保AI真正解决效能问题</div><div class="it-analogy">医生开药而非药厂开药——懂病人才能开对</div></div>
+                <div class="it-row"><div class="it-rule">平台嵌入</div><div class="it-reality">6/6平台全部AI化+知识增强↑190%</div><div class="it-analogy">每个科室都配了AI助手——全面覆盖</div></div>
+                <div class="it-row"><div class="it-rule">北极星</div><div class="it-reality">交付周期为唯一北极星——聚焦端到端</div><div class="it-analogy">不看血压心率各种指标——只看"你几天能活蹦乱跳回来"</div></div>
+                <div class="it-verify">✅ 效能主导×平台嵌入×北极星 三维度验证——系统性方法论有效</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">效能主导</div><div class="it-reality">优势：懂场景。风险：模型能力跟不上</div><div class="it-analogy">全科医生需要持续学习前沿技术</div></div>
+                <div class="it-row evolving"><div class="it-rule">平台嵌入</div><div class="it-reality">从L1→L2大规模推广，组织阻力是主要瓶颈</div><div class="it-analogy">每个科室从尝试→全面使用</div></div>
+                <div class="it-row evolving"><div class="it-rule">北极星</div><div class="it-reality">从部门指标→公司级指标提升</div><div class="it-analogy">从科室指标→医院整体评级</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：新竞争维度</span></div>
+                <div class="it-row projected"><div class="it-rule">L2→L3 <small>← 平台嵌入</small></div><div class="it-reality">从AI辅助→AI自主，部分标准需求零人力交付</div><div class="it-analogy">无人诊所——常见病AI直接处理</div></div>
+                <div class="it-row projected"><div class="it-rule">价值度量 <small>← 北极星</small></div><div class="it-reality">从"交付多快"到"交付多少价值"</div><div class="it-analogy">从"治好病多快"到"健康寿命多长"</div></div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-12个月 · 信号：L2全组织渗透率、L3试点数量、交付周期持续缩短比例</div>
+            </div>
+        </div>
+
+        <!-- ===== 字节跳动 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level violet">企业</span>
+                <h3 class="card-title">字节跳动</h3>
+                <span class="card-tag violet">基建最强 · AI融合0/6</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">Monorepo+DevLake+自研MergeBot。基建全行业最成熟。但AI融合公开报告几乎为零(0/6)。三条线各自为战(豆包/Coze/质效)</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">动机</div>
+                <div class="row-content"><strong>"基建投资 × AI多线并进 × 内部竞赛 = 超级大厨不屑用预制菜"</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">维度1</span><span class="evo-text">基建：Monorepo+DevLake</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step"><span class="evo-tag">维度2</span><span class="evo-text">AI多线：豆包/Coze/质效</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step active"><span class="evo-tag">维度3</span><span class="evo-text">内部竞赛：赛马机制</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>超级大厨的厨房</b>——厨房设备全行业最好(基建)，但这位大厨觉得自己手艺高超不需要用预制菜(AI融合)，三个学徒各自练刀法谁也不帮谁(内部竞赛)。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>动机维度</span><span>行为</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">基建</div><div class="it-reality">Monorepo+DevLake+MergeBot——工具链成熟度业界领先</div><div class="it-analogy">厨房设备全是顶配——刀具灶台冰箱一流</div></div>
+                <div class="it-row"><div class="it-rule">AI多线</div><div class="it-reality">豆包/Coze/质效三线并进，未整合到效能平台</div><div class="it-analogy">三个学徒各练各的刀法——没有统一课程</div></div>
+                <div class="it-row"><div class="it-rule">内部竞赛</div><div class="it-reality">赛马机制：每条线独立发展，谁跑出来谁赢</div><div class="it-analogy">厨艺比赛——不合作但淘汰制</div></div>
+                <div class="it-verify">✅ 基建强+AI分散 验证——顶级厨房设备≠融合</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">基建</div><div class="it-reality">基建领先优势缩小——其他企业平台化追赶</div><div class="it-analogy">顶配厨房不再稀缺——大家都在升级</div></div>
+                <div class="it-row evolving"><div class="it-rule">AI多线</div><div class="it-reality">内部整合压力增大——资源分散导致效率降低</div><div class="it-analogy">三个学徒争食材——不如合作更高效</div></div>
+                <div class="it-row evolving"><div class="it-rule">内部竞赛</div><div class="it-reality">赛马→收敛：终将选出一条主线</div><div class="it-analogy">厨艺比赛总要评出冠军</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：新竞争维度</span></div>
+                <div class="it-row projected"><div class="it-rule">整合期 <small>← AI多线</small></div><div class="it-reality">三线收敛为统一AI效能策略</div><div class="it-analogy">学徒们毕业组成一个厨师团队</div></div>
+                <div class="it-row projected"><div class="it-rule">爆发期 <small>← 基建×AI</small></div><div class="it-reality">一旦整合完成，基建优势释放——可能后来居上</div><div class="it-analogy">顶配厨房终于迎来大厨——爆发力最强</div></div>
+                <div class="it-confidence">📐 置信度：中 · 验证窗口12-24个月 · 信号：字节是否公开效能AI融合报告、三线是否整合、DevLake AI功能发布</div>
+            </div>
+        </div>
+
+        <h3 class="sub-title">👤 人物篇</h3>
+
+        <!-- ===== Nicole Forsgren ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level green">人物</span>
+                <h3 class="card-title">Nicole Forsgren</h3>
+                <span class="card-tag green">DORA → DX Core 4</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">创建DORA(2014)→加入GitHub(2019)→发布DevEx(2023)→DX Core 4(2024)。十年间推动3次范式转移。从学术到产业全覆盖</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">动机</div>
+                <div class="row-content"><strong>"用科学方法推动范式转移 × 学术/产业双栖 × 持续迭代"</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">维度1</span><span class="evo-text">科学方法：统计学验证</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step"><span class="evo-tag">维度2</span><span class="evo-text">范式转移：定义问题</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step active"><span class="evo-tag">维度3</span><span class="evo-text">自我迭代：不断推翻</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>"学科建筑师"</b>——先打地基(DORA)，发现地基偏了就拆了重建(DevEx/DX Core 4)。不是固守第一版，而是持续推翻自己。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>动机维度</span><span>行为</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">科学方法</div><div class="it-reality">DORA基于10万+数据点统计验证——区别于经验主义</div><div class="it-analogy">用温度计测体温——不是用手摸感觉</div></div>
+                <div class="it-row"><div class="it-rule">范式转移</div><div class="it-reality">每次都在定义"应该度量什么"而非"如何度量"</div><div class="it-analogy">建筑师画图纸——不是砌砖工</div></div>
+                <div class="it-row"><div class="it-rule">自我迭代</div><div class="it-reality">DX Core 4某种程度上推翻了DORA——敢否定自己</div><div class="it-analogy">建筑师拆了自己盖的楼——因为发现设计有缺陷</div></div>
+                <div class="it-verify">✅ 科学×范式×迭代 三维度验证——"定义问题的人"最有影响力</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">科学方法</div><div class="it-reality">数据验证从稀缺→标配——方法论被广泛采纳</div><div class="it-analogy">温度计从医院→人人家里有</div></div>
+                <div class="it-row evolving"><div class="it-rule">范式转移</div><div class="it-reality">下一次转移的压力：AI改变了"谁在写软件"</div><div class="it-analogy">建筑师面对新材料——需要新设计</div></div>
+                <div class="it-row evolving"><div class="it-rule">自我迭代</div><div class="it-reality">从个人迭代→带动整个学科迭代</div><div class="it-analogy">建筑师带了一群徒弟一起创新</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：下一次范式转移</span></div>
+                <div class="it-row projected"><div class="it-rule">AI原生 <small>← 范式×迭代</small></div><div class="it-reality">AI时代的度量框架——度量"人+AI系统"而非单独度量人</div><div class="it-analogy">建筑师学会为机器人设计房子——不只为人类设计</div></div>
+                <div class="it-confidence">📐 置信度：中高 · 验证窗口12-18个月 · 信号：Forsgren是否发布AI相关度量框架、DX Core 4企业版发布</div>
+            </div>
+        </div>
+
+        <!-- ===== 阿里巴巴 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level" style="color:var(--c-amber)">企业</span>
+                <h3 class="card-title">阿里巴巴</h3>
+                <span class="card-tag" style="background:rgba(217,119,6,.08);color:var(--c-amber)">公开复盘 · 寻找新路</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">公开反思效能度量"走过的弯路"。承认旧方案有问题。效能建设从"追新框架"转向"找到自己的路"。AI策略尚不清晰</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">动机</div>
+                <div class="row-content"><strong>"自我修正 × 寻找可持续路线 × 公开信号"</strong>
+                    <div class="evo-flow">
+                        <div class="evo-step"><span class="evo-tag">维度1</span><span class="evo-text">自我修正：承认弯路</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step active"><span class="evo-tag">维度2</span><span class="evo-text">寻路：找可持续方案</span></div>
+                        <span class="evo-arrow">×</span>
+                        <div class="evo-step"><span class="evo-tag">维度3</span><span class="evo-text">公开：对行业负责</span></div>
+                    </div>
+                    <div class="analogy">💡 就像<b>老司机掉头</b>——走错路的勇气是承认走错，然后找到正确方向。大多数公司选择硬着头皮往前开。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>动机维度</span><span>行为</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">自我修正</div><div class="it-reality">公开发文反思"走过的弯路"——业界罕见</div><div class="it-analogy">老司机停车看地图——不怕丢脸</div></div>
+                <div class="it-row"><div class="it-rule">寻路</div><div class="it-reality">从追逐DORA/SPACE新框架→回归业务价值</div><div class="it-analogy">不再跟风买新导航——按实际路况走</div></div>
+                <div class="it-row"><div class="it-rule">公开</div><div class="it-reality">对行业公开分享教训——帮同行避坑</div><div class="it-analogy">老司机在论坛分享"此路不通"</div></div>
+                <div class="it-verify">✅ 自我修正×寻路×公开 三维度验证——"敢认错"是稀缺能力</div>
+                <div class="it-divider"></div>
+                <div class="it-section evolving"><span class="it-section-tag">🔄 趋势演变</span></div>
+                <div class="it-row evolving"><div class="it-rule">自我修正</div><div class="it-reality">修正后需要给出新方向——否则只是"认错"</div><div class="it-analogy">停车看地图→还得重新出发</div></div>
+                <div class="it-row evolving"><div class="it-rule">寻路</div><div class="it-reality">AI策略尚不清晰——可能成为新的弯路</div><div class="it-analogy">新地图还没画好</div></div>
+                <div class="it-row evolving"><div class="it-rule">公开</div><div class="it-reality">公开复盘获得行业好感——但需要后续行动证明</div><div class="it-analogy">论坛发帖获赞——但得证明新路能走通</div></div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演：新竞争维度</span></div>
+                <div class="it-row projected"><div class="it-rule">重新出发 <small>← 修正×寻路</small></div><div class="it-reality">找到适合自己的效能+AI路线——可能成为后发优势</div><div class="it-analogy">掉头后找到捷径——后来者反而先到</div></div>
+                <div class="it-confidence">📐 置信度：中 · 验证窗口12-24个月 · 信号：阿里是否发布新效能策略、AI融合进展、行业分享频率</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== Tab 3: 跨域元洞察 ==================== -->
+    <article id="s3" class="tab-panel">
+        <div class="section-overview">
+            <span class="overview-label">📊 章节概览</span>
+            <div class="overview-content">
+                <p style="font-size:13px;color:var(--text-secondary);padding:8px 0">跳出单个对象，在9个洞察之间发现跨领域的深层规律</p>
+            </div>
+        </div>
+
+        <!-- ===== 跨域规律1 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level violet">跨域规律 #1</span>
+                <h3 class="card-title">基建是本金，AI是利率</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">快手6/6融合(平台渗透95%+)，字节0/6融合(基建最强但无嵌入)。知识增强↑190%远超算法50%。平台工程成AI落地的必要前提</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>AI效果 = 基建成熟度 × AI投入。基建为零时，AI投入归零</strong>
+                    <div class="analogy">💡 就像<b>复利公式</b>——本金(基建)×利率(AI)=收益。本金为零，利率再高也是零。快手本金高利率也高→复利飞转。字节本金最高但利率为零→收益为零。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>验证对象</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">快手</div><div class="it-reality">平台95%+渗透(高本金) × AI 6/6嵌入(高利率) = 190%知识增强</div><div class="it-analogy">高本金+高利率 = 复利飞转</div></div>
+                <div class="it-row"><div class="it-rule">字节</div><div class="it-reality">基建最强(最高本金) × AI 0/6嵌入(零利率) = 效果未显</div><div class="it-analogy">百万存款但利率为零 = 不涨</div></div>
+                <div class="it-row"><div class="it-rule">阿里</div><div class="it-reality">旧方案(本金质量差) × 新AI(利率不稳) = 需先修正本金</div><div class="it-analogy">先整理账目再投资</div></div>
+                <div class="it-verify">✅ 三家企业交叉验证——公式成立</div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演</span></div>
+                <div class="it-row projected"><div class="it-rule">基建竞赛</div><div class="it-reality">企业发现"补基建"比"追AI"更紧急——平台投资回升</div><div class="it-analogy">投资人发现本金比利率更重要——先攒钱</div></div>
+                <div class="it-row projected"><div class="it-rule">飞轮效应</div><div class="it-reality">基建成熟→AI效果好→数据多→AI更好——正循环</div><div class="it-analogy">复利滚雪球——越滚越大越滚越快</div></div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-12个月 · 信号：企业平台投资与AI效果的相关性数据、字节AI融合是否启动</div>
+            </div>
+        </div>
+
+        <!-- ===== 跨域规律2 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level violet">跨域规律 #2</span>
+                <h3 class="card-title">效能学科正在被AI"自噬"</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">DORA指标体系10年3次被革命。AI改变"谁在写软件"(从人→人+AI→AI)。度量、平台、知识三大支柱全部受AI冲击</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>研发效能这个领域本身，正在被它所研究的对象（AI）所颠覆</strong>
+                    <div class="analogy">💡 就像<b>天气预报学被气候变化改变</b>——你研究天气(效能)，但天气本身变了(AI改变了软件开发方式)，你的所有预报模型(度量框架)都得重写。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>自噬维度</span><span>现实</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 已验证</span></div>
+                <div class="it-row"><div class="it-rule">度量被噬</div><div class="it-reality">DORA指标体系失效——AI写代码后"部署频率"意义不同</div><div class="it-analogy">称体重——但体重已不反映健康</div></div>
+                <div class="it-row"><div class="it-rule">平台被噬</div><div class="it-reality">平台工程从"服务人"→"服务人+AI"——架构要变</div><div class="it-analogy">厨房要同时给人和机器人做饭</div></div>
+                <div class="it-row"><div class="it-rule">知识被噬</div><div class="it-reality">知识工程从"人读"→"AI读"——格式/结构全要变</div><div class="it-analogy">书改为机器可读的数据流</div></div>
+                <div class="it-verify">✅ 三大支柱全部受冲击——学科自噬已开始</div>
+                <div class="it-divider"></div>
+                <div class="it-section projected"><span class="it-section-tag">🔮 趋势推演</span></div>
+                <div class="it-row projected"><div class="it-rule">学科重构</div><div class="it-reality">"研发效能"将进化为"人机协同效能"——新学科</div><div class="it-analogy">天气预报→气候科学——学科升级</div></div>
+                <div class="it-row projected"><div class="it-rule">从业者转型</div><div class="it-reality">效能从业者需要理解AI——否则被淘汰</div><div class="it-analogy">气象员需要学会处理卫星数据</div></div>
+                <div class="it-confidence">📐 置信度：中高 · 验证窗口12-24个月 · 信号：新一代度量框架是否包含AI维度、效能团队是否更名/转型</div>
+            </div>
+        </div>
+
+        <!-- ===== 跨域规律3 ===== -->
+        <div class="insight-card">
+            <div class="card-header">
+                <span class="card-level violet">跨域规律 #3</span>
+                <h3 class="card-title">统一进化方程</h3>
+                <span class="update-badge">v2.0</span>
+            </div>
+            <div class="row">
+                <div class="row-label l1">表象</div>
+                <div class="row-content">度量、平台、AI、知识、企业策略——9个对象全部遵循同一个进化方向</div>
+            </div>
+            <div class="row highlight">
+                <div class="row-label l2">本质</div>
+                <div class="row-content"><strong>人驱动 → 平台赋能 → AI协同 → 人机共生</strong>
+                    <div class="analogy">💡 就像<b>交通进化</b>——步行(手工)→马车(工具)→公路(平台)→自动驾驶(AI)。所有维度都在同一条路上，只是走到了不同位置。</div>
+                </div>
+            </div>
+            <div class="insight-table">
+                <div class="it-head"><span>验证维度</span><span>所在阶段</span><span>类比</span></div>
+                <div class="it-section verified"><span class="it-section-tag">✅ 9个对象逐一验证</span></div>
+                <div class="it-row"><div class="it-rule">度量框架</div><div class="it-reality">4.0 价值度量——已走到"精准导航"阶段</div><div class="it-analogy">GPS导航——知道去哪+怎么去最快</div></div>
+                <div class="it-row"><div class="it-rule">平台工程</div><div class="it-reality">3.0→4.0 自助→智能——正在装"自动驾驶"</div><div class="it-analogy">高速公路在装智能交通系统</div></div>
+                <div class="it-row"><div class="it-rule">AI开发</div><div class="it-reality">L2→L3 协同→自主——"副驾驶"正在学开车</div><div class="it-analogy">从教练陪练→自己上路</div></div>
+                <div class="it-row"><div class="it-rule">知识工程</div><div class="it-reality">3.0→4.0 结构化→AI可消费——路标在"数字化"</div><div class="it-analogy">纸质地图→电子导航</div></div>
+                <div class="it-row"><div class="it-rule">快手</div><div class="it-reality">L2全面推广——已上高速，正在提速</div><div class="it-analogy">上了高速在加速——方向正确</div></div>
+                <div class="it-row"><div class="it-rule">字节</div><div class="it-reality">基建成熟但AI融合未启动——高速公路建好但没上</div><div class="it-analogy">修了最好的路但还在用马车</div></div>
+                <div class="it-row"><div class="it-rule">Forsgren</div><div class="it-reality">推动了3次范式转移——画了3版地图</div><div class="it-analogy">测绘师不断更新地图</div></div>
+                <div class="it-row"><div class="it-rule">阿里</div><div class="it-reality">停车检查地图——承认走错准备重新出发</div><div class="it-analogy">在路边停车看地图</div></div>
+                <div class="it-row"><div class="it-rule">研发效能</div><div class="it-reality">4.0 AI协同——学科自身在被改写</div><div class="it-analogy">交通规则在为自动驾驶修改</div></div>
+                <div class="it-verify">✅ 9个对象全部验证——统一方程成立</div>
+                <div class="it-confidence">📐 置信度：高 · 验证窗口6-24个月 · 信号：落后对象是否加速向"AI协同"阶段移动</div>
+            </div>
+        </div>
+    </article>
+
+    <!-- ==================== Footer ==================== -->
+    <footer class="footer">
+        <p>基于 <strong>本质洞察力 v2.3.1</strong> 五层闭环框架生成</p>
+        <p style="margin-top:4px">数据来源：46+ 知识文档 · 60+ 追踪人物 · 54+ 追踪企业</p>
+        <p style="margin-top:4px;font-size:11px;color:var(--c-gray-400)">by 林克 × 沈浪 · 2026-03-15</p>
+    </footer>
 </div>
 
-<!-- Stats -->
-<div class="stats">
-<div class="stat-card"><div class="stat-num">9</div><div class="stat-label">洞察对象</div></div>
-<div class="stat-card"><div class="stat-num">46+</div><div class="stat-label">知识文档</div></div>
-<div class="stat-card"><div class="stat-num">60+</div><div class="stat-label">追踪人物</div></div>
-<div class="stat-card"><div class="stat-num">54+</div><div class="stat-label">追踪企业</div></div>
-</div>
-
-<!-- Phase 0 -->
-<div class="phase0">
-<h2>Phase 0：对象提炼</h2>
-<p style="font-size:13px;color:var(--slate);margin-bottom:12px">从46+篇知识文档中提炼9个关键洞察对象：</p>
-<table class="obj-table">
-<thead><tr><th>#</th><th>对象</th><th>类型</th><th>核心问题</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>度量框架演进</td><td class="type-thing">事情</td><td>DORA到DX Core 4的十年进化本质？</td></tr>
-<tr><td>2</td><td>平台工程</td><td class="type-thing">事情</td><td>为什么突然成为"必选项"？</td></tr>
-<tr><td>3</td><td>AI辅助开发成熟度</td><td class="type-thing">事情</td><td>L1/L2/L3到底在说什么？</td></tr>
-<tr><td>4</td><td>知识工程</td><td class="type-thing">事情</td><td>为什么"知识>算法"？</td></tr>
-<tr><td>5</td><td>研发效能</td><td class="type-thing">事情</td><td>这个领域本身的本质？</td></tr>
-<tr><td>6</td><td>快手</td><td class="type-player">企业</td><td>为什么AI融合满分？</td></tr>
-<tr><td>7</td><td>字节跳动</td><td class="type-player">企业</td><td>为什么基建最强但融合最弱？</td></tr>
-<tr><td>8</td><td>Nicole Forsgren</td><td class="type-player">人物</td><td>一人如何推动范式转移？</td></tr>
-<tr><td>9</td><td>阿里巴巴</td><td class="type-player">企业</td><td>为什么只有它敢公开认错？</td></tr>
-</tbody>
-</table>
-</div>
-
-<!-- Tab Nav -->
-<nav class="tab-nav">
-<button class="tab-btn active" data-tab="concepts">事情洞察(5)</button>
-<button class="tab-btn" data-tab="players">对象洞察(4)</button>
-<button class="tab-btn" data-tab="meta">跨域元洞察</button>
-</nav>
-
-<!-- Tab: Concepts -->
-<div class="tab-panel active" id="concepts">
-
-<!-- 1. 度量框架 -->
-<div class="insight-card">
-<div class="card-header"><span class="card-level">概念 #1</span><h3 class="card-title">度量框架演进 — "从称体重到基因检测"</h3></div>
-<div class="row"><div class="row-label l1">① 表象</div><div class="row-content">DORA(2014)→SPACE(2021)→DevEx(2023)→DX Core 4(2024)，平均每2年一个新框架，方向从"产出"→"体验"→"价值"</div></div>
-<div class="row highlight"><div class="row-label l2">② 本质</div><div class="row-content"><strong>度量框架演进的本质是"被度量对象"在变——从流水线到人到价值</strong>
-<div class="analogy">就像<b>体检技术的进化</b>——称体重(DORA) → 年度体检(SPACE) → 实时手环(DevEx) → 基因检测(DX Core 4)。每一代都在看更深层的东西。</div>
-<div class="evo-flow"><div class="evo-step"><span class="evo-tag">1.0</span>产出度量</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">2.0</span>多维度量</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">3.0</span>体验度量</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">4.0</span>价值度量</div></div>
-</div></div>
-<div class="it-wrap"><div class="it-label">③ 趋势推演</div>
-<table class="it-table">
-<thead><tr><th>阶段</th><th>现实</th><th>类比</th></tr></thead>
-<tbody>
-<tr><td colspan="3"><div class="it-section verified">✅ 已验证</div></td></tr>
-<tr><td class="it-stage">1.0 产出度量</td><td>DORA(2014)定义4指标，全球部署频率从月→日</td><td>称体重——简单但信息有限</td></tr>
-<tr><td class="it-stage">2.0 多维度量</td><td>SPACE(2021)加入满意度/协作5维度</td><td>年度体检——全面但仍是快照</td></tr>
-<tr><td class="it-stage">3.0 体验度量</td><td>DevEx(2023)引入认知负荷/心流</td><td>实时手环——戴上就能持续追踪</td></tr>
-<tr><td class="it-stage">4.0 价值度量</td><td>DX Core 4(2024)回归极简：Speed+Quality+Impact</td><td>基因检测——找到根因而非症状</td></tr>
-<tr><td colspan="3"><div class="it-verify">✅ 四阶段逐一验证——每代看的层次更深</div></td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section evolving">🔄 各阶段演变</div></td></tr>
-<tr><td class="it-stage">1.0 产出度量</td><td>DORA指标被"刷"（古德哈特效应）</td><td>体重秤人人有，不再稀奇</td></tr>
-<tr><td class="it-stage">2.0 多维度量</td><td>维度太多→"分析瘫痪"</td><td>体检100+项目，看不懂报告</td></tr>
-<tr><td class="it-stage">3.0 体验度量</td><td>从可选变必选，成为招聘竞争力</td><td>手环从极客玩具→人人标配</td></tr>
-<tr><td class="it-stage">4.0 价值度量</td><td>"Impact"成CEO级KPI</td><td>基因检测引导精准治疗方案</td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section projected">🔮 新阶段预测</div></td></tr>
-<tr><td class="it-stage">5.0 AI原生度量</td><td>度量对象从"人"→"人+AI系统"</td><td>DNA编辑——不只检测还能改写</td></tr>
-<tr><td class="it-stage">6.0 自适应度量</td><td>AI驱动度量框架自动调整</td><td>免疫系统——自动检测自动修复</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<!-- 2. 平台工程 -->
-<div class="insight-card">
-<div class="card-header"><span class="card-level">概念 #2</span><h3 class="card-title">平台工程 — "从自建厨房到中央厨房"</h3></div>
-<div class="row"><div class="row-label l1">① 表象</div><div class="row-content">Gartner预测2026年80%大型组织建立平台工程团队。从"DevOps人人都要会"到"平台团队帮你搞定"。快手平台渗透率95%+。</div></div>
-<div class="row highlight"><div class="row-label l2">② 本质</div><div class="row-content"><strong>平台工程的本质是"DevOps的社会化"——从每个人都要会做饭，到有了中央厨房</strong>
-<div class="analogy">就像<b>城市供水系统</b>——以前每家打井取水（DevOps理想），后来发现不如建自来水厂（平台工程）。用户只需拧水龙头。</div>
-<div class="evo-flow"><div class="evo-step"><span class="evo-tag">1.0</span>无平台</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">2.0</span>内部工具</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">3.0</span>自助平台</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">4.0</span>智能平台</div></div>
-</div></div>
-<div class="it-wrap"><div class="it-label">③ 趋势推演</div>
-<table class="it-table">
-<thead><tr><th>阶段</th><th>现实</th><th>类比</th></tr></thead>
-<tbody>
-<tr><td colspan="3"><div class="it-section verified">✅ 已验证</div></td></tr>
-<tr><td class="it-stage">1.0 无平台</td><td>每个团队自建CI/CD，环境配置消耗40%时间</td><td>每家打井——费力且水质不稳定</td></tr>
-<tr><td class="it-stage">2.0 内部工具</td><td>统一构建/部署工具，但仍需专人维护</td><td>村里公共水井——方便但得排队</td></tr>
-<tr><td class="it-stage">3.0 自助平台</td><td>开发者门户+自助服务，快手渗透率95%+</td><td>自来水入户——拧开就有水</td></tr>
-<tr><td class="it-stage">4.0 智能平台</td><td>平台内嵌AI，自动推荐配置/检测异常</td><td>智能净水器——自动调整水质</td></tr>
-<tr><td colspan="3"><div class="it-verify">✅ 四阶段验证——从分散到集中到智能</div></td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section evolving">🔄 各阶段演变</div></td></tr>
-<tr><td class="it-stage">1.0 无平台</td><td>彻底消亡，仅存于10人以下初创</td><td>打井已是远古记忆</td></tr>
-<tr><td class="it-stage">2.0 内部工具</td><td>被平台吸收，不再独立存在</td><td>公共水井改造为管网节点</td></tr>
-<tr><td class="it-stage">3.0 自助平台</td><td>从竞争优势→基线，没有就是落后</td><td>自来水从奢侈品→基础设施</td></tr>
-<tr><td class="it-stage">4.0 智能平台</td><td>AI从锦上添花→核心引擎</td><td>净水器→智能家居中枢</td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section projected">🔮 新阶段预测</div></td></tr>
-<tr><td class="it-stage">5.0 自进化平台</td><td>平台自身用AI持续优化——自动发现瓶颈、自动升级</td><td>城市水网自动扩容</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<!-- 3. AI辅助开发成熟度 -->
-<div class="insight-card">
-<div class="card-header"><span class="card-level">概念 #3</span><h3 class="card-title">AI辅助开发成熟度 — "从学徒到老板"</h3></div>
-<div class="row"><div class="row-label l1">① 表象</div><div class="row-content">L1(Copilot补全,20-40%) → L2(Cursor/Claude Code深度协作,交付↓58%) → L3(Codex端到端自主)。企业分化严重。</div></div>
-<div class="row highlight"><div class="row-label l2">② 本质</div><div class="row-content"><strong>AI辅助开发的本质是"人机关系的重构"——决策权的渐进转移</strong>
-<div class="analogy">就像<b>厨房里的分工</b>——L1你做菜AI切菜（学徒），L2你定菜单AI做菜你尝味（副厨），L3你只管点菜和验收（餐厅老板）。</div>
-<div class="evo-flow"><div class="evo-step"><span class="evo-tag">L1</span>AI辅助</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">L2</span>AI协同</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">L3</span>AI自主</div></div>
-</div></div>
-<div class="it-wrap"><div class="it-label">③ 趋势推演</div>
-<table class="it-table">
-<thead><tr><th>阶段</th><th>现实</th><th>类比</th></tr></thead>
-<tbody>
-<tr><td colspan="3"><div class="it-section verified">✅ 已验证</div></td></tr>
-<tr><td class="it-stage">L1 AI辅助</td><td>Copilot补全，采纳率20-40%</td><td>学徒帮你切菜</td></tr>
-<tr><td class="it-stage">L2 AI协同</td><td>Cursor/Claude Code全流程协作，交付↓58%</td><td>副厨——你定菜单它做菜</td></tr>
-<tr><td class="it-stage">L3 AI自主</td><td>Codex多Agent并行，端到端完成标准需求</td><td>餐厅老板——只管验收</td></tr>
-<tr><td colspan="3"><div class="it-verify">✅ L1→L2→L3，决策权逐级转移——验证成立</div></td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section evolving">🔄 各阶段演变</div></td></tr>
-<tr><td class="it-stage">L1 AI辅助</td><td>补全型产品消亡，被Agent吸收</td><td>学徒被机器替代</td></tr>
-<tr><td class="it-stage">L2 AI协同</td><td>从标杆→全组织推广，瓶颈从AI→流程</td><td>副厨从1个→每个工位都配</td></tr>
-<tr><td class="it-stage">L3 AI自主</td><td>仅限标准化高的需求</td><td>有些菜必须亲自做</td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section projected">🔮 新阶段预测</div></td></tr>
-<tr><td class="it-stage">L4 AI创造</td><td>AI不只执行需求，还能发现需求</td><td>厨师设计新菜品</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<!-- 4. 知识工程 -->
-<div class="insight-card">
-<div class="card-header"><span class="card-level">概念 #4</span><h3 class="card-title">知识工程 — "弹药比枪更重要"</h3></div>
-<div class="row"><div class="row-label l1">① 表象</div><div class="row-content">快手测试用例生成：知识增强↑190%，远超算法优化50%。Agent瓶颈不在模型在知识。企业知识散落在个人脑/Wiki/文档中。</div></div>
-<div class="row highlight"><div class="row-label l2">② 本质</div><div class="row-content"><strong>知识工程的本质是"把人脑里的隐性知识变成AI能消费的显性资产"</strong>
-<div class="analogy">就像<b>弹药比枪更重要</b>——所有人都能买到同一款步枪（大模型），但谁有精确制导弹药（结构化知识），谁就能百步穿杨。</div>
-<div class="evo-flow"><div class="evo-step"><span class="evo-tag">1.0</span>个人经验</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">2.0</span>文档沉淀</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">3.0</span>结构化知识</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">4.0</span>AI可消费</div></div>
-</div></div>
-<div class="it-wrap"><div class="it-label">③ 趋势推演</div>
-<table class="it-table">
-<thead><tr><th>阶段</th><th>现实</th><th>类比</th></tr></thead>
-<tbody>
-<tr><td colspan="3"><div class="it-section verified">✅ 已验证</div></td></tr>
-<tr><td class="it-stage">1.0 个人经验</td><td>知识在老员工脑里，离职即流失</td><td>祖传秘方——只在师傅脑子里</td></tr>
-<tr><td class="it-stage">2.0 文档沉淀</td><td>Wiki堆积但无结构、难检索、快过时</td><td>秘方写纸上——字迹潦草塞抽屉</td></tr>
-<tr><td class="it-stage">3.0 结构化知识</td><td>知识图谱/标签体系，可检索可关联</td><td>编写标准菜谱——步骤清晰可复制</td></tr>
-<tr><td class="it-stage">4.0 AI可消费</td><td>AI可直接调用的格式，快手↑190%</td><td>菜谱写入机器人——AI看了就能做</td></tr>
-<tr><td colspan="3"><div class="it-verify">✅ 知识增强↑190%验证4.0阶段巨大价值</div></td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section evolving">🔄 各阶段演变</div></td></tr>
-<tr><td class="it-stage">1.0 个人经验</td><td>被视为"风险"而非"资产"</td><td>只靠口传的餐厅——师傅一走关门</td></tr>
-<tr><td class="it-stage">2.0 文档沉淀</td><td>质量比数量重要，垃圾知识是负资产</td><td>过期食材比没有更危险</td></tr>
-<tr><td class="it-stage">3.0 结构化知识</td><td>从手动→AI辅助更新</td><td>菜谱需根据季节更新</td></tr>
-<tr><td class="it-stage">4.0 AI可消费</td><td>成为企业核心资产</td><td>弹药工厂比枪厂更稀缺</td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section projected">🔮 新阶段预测</div></td></tr>
-<tr><td class="it-stage">5.0 知识自生长</td><td>AI自主从代码/PR/事故中提取知识</td><td>弹药工厂根据战场自动研发新型号</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
-<!-- 5. 研发效能 -->
-<div class="insight-card">
-<div class="card-header"><span class="card-level">概念 #5</span><h3 class="card-title">研发效能 — "组织的新陈代谢"</h3></div>
-<div class="row"><div class="row-label l1">① 表象</div><div class="row-content">度量框架每2年换代。AI改变"谁在写软件"。大厂效能差距在拉大。领域自身被AI颠覆。</div></div>
-<div class="row highlight"><div class="row-label l2">② 本质</div><div class="row-content"><strong>研发效能的本质是"组织将意图转化为用户价值的代谢效率"</strong>
-<div class="analogy">就像<b>生物体的新陈代谢</b>——摄入食物（需求）、消化吸收（开发）、转化为能量（价值）、排出废物（技术债）。健康不是"吃得多"，而是"消化好"。</div>
-<div class="evo-flow"><div class="evo-step"><span class="evo-tag">1.0</span>手工时代</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">2.0</span>工具时代</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">3.0</span>平台时代</div><span class="evo-arrow">→</span><div class="evo-step"><span class="evo-tag">4.0</span>AI协同</div></div>
-</div></div>
-<div class="it-wrap"><div class="it-label">③ 趋势推演</div>
-<table class="it-table">
-<thead><tr><th>阶段</th><th>现实</th><th>类比</th></tr></thead>
-<tbody>
-<tr><td colspan="3"><div class="it-section verified">✅ 已验证</div></td></tr>
-<tr><td class="it-stage">1.0 手工时代</td><td>瀑布式，无标准度量，靠"老师傅"</td><td>原始消化——生吃食物</td></tr>
-<tr><td class="it-stage">2.0 工具时代</td><td>CI/CD+DORA，部署频率月→日</td><td>学会用火——吸收率翻倍</td></tr>
-<tr><td class="it-stage">3.0 平台时代</td><td>平台工程+DevEx，渗透率95%+</td><td>现代厨房——营养科学化</td></tr>
-<tr><td class="it-stage">4.0 AI协同</td><td>L2模式落地，交付周期↓58%</td><td>智能厨师——AI帮你做饭</td></tr>
-<tr><td colspan="3"><div class="it-verify">✅ 代谢效率每代提升一个数量级</div></td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section evolving">🔄 各阶段演变</div></td></tr>
-<tr><td class="it-stage">1.0 手工时代</td><td>已消亡</td><td>原始人灭绝</td></tr>
-<tr><td class="it-stage">2.0 工具时代</td><td>CI/CD成标配，DORA指标被刷</td><td>火人人都有</td></tr>
-<tr><td class="it-stage">3.0 平台时代</td><td>从可选→必选</td><td>每家都有现代厨房</td></tr>
-<tr><td class="it-stage">4.0 AI协同</td><td>从标杆→全组织推广</td><td>智能厨师从外卖→驻家</td></tr>
-<tr><td colspan="3"><div class="it-divider"></div></td></tr>
-<tr><td colspan="3"><div class="it-section projected">🔮 新阶段预测</div></td></tr>
-<tr><td class="it-stage">5.0 AI自主</td><td>AI端到端完成标准需求</td><td>自动代谢——身体自主调节</td></tr>
-<tr><td class="it-stage">6.0 人机共生</td><td>AI发现需求+提出创新方向</td><td>生物进化——新物种出现</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-
-</div><!-- end concepts -->
-
-<!-- Tab: Players -->
-<div class="tab-panel" id="players">
-
-<!-- 快手 -->
-<div class="player-card">
-<div class="player-header"><span class="player-type">企业</span><h3>快手 — "全科医生"</h3></div>
-<table class="player-table">
-<tr><th>言行</th><td>效能中心统一主导AI落地，先平台化再智能化，"需求交付周期"做唯一北极星</td></tr>
-<tr><th>模式</th><td>系统性 > 局部优化，组织效能 > 个人效率</td></tr>
-<tr><th>动机</th><td><strong>证明"效能团队主导AI"是正确路线</strong></td></tr>
-<tr><th>信念</th><td>AI必须嵌入现有平台才能产生组织级效果</td></tr>
-<tr><th>恐惧</th><td>AI割裂——怕成为字节那样的"三线分裂"</td></tr>
-<tr><th>类比</th><td><strong>全科医生</strong>——先全面体检（平台化），再对症下药（AI嵌入），不卖单一保健品</td></tr>
-<tr><th>数据</th><td>AI融合6/6 ★★★★★ · 基建5/7 · 交付↓58% · 人均↑80%+</td></tr>
-</table>
-<div class="predict-list"><h4>行为预测</h4><ol><li>继续深化L2全组织推广，2026目标80%+</li><li>度量北极星从"采纳率"→"交付周期"</li><li>不推独立AI编程产品，坚持"嵌入平台"</li><li>可能成为行业标杆</li></ol></div>
-</div>
-
-<!-- 字节 -->
-<div class="player-card">
-<div class="player-header"><span class="player-type">企业</span><h3>字节跳动 — "外科专家"</h3></div>
-<table class="player-table">
-<tr><th>言行</th><td>基建全面标准化(6/7)，但AI产品三线分裂（Trae/Bits-AI/Aime各自独立）</td></tr>
-<tr><th>模式</th><td>技术卓越 > 组织协调，每个团队独立作战</td></tr>
-<tr><th>动机</th><td><strong>用工程力量解决一切问题</strong></td></tr>
-<tr><th>信念</th><td>"标准化是效率之母"——先统一再优化</td></tr>
-<tr><th>恐惧</th><td>技术落后——怕被竞品超越</td></tr>
-<tr><th>类比</th><td><strong>外科专家</strong>——手术刀最锋利（基建最强），但三个科室各开各的刀（三线分裂）</td></tr>
-<tr><th>悖论</th><td style="color:var(--rose)"><strong>基建最高(6/7) + AI融合最低(0/6) = 最强基建 × 最弱融合</strong></td></tr>
-</table>
-<div class="predict-list"><h4>行为预测</h4><ol><li>三线分裂可能持续——除非高层强制指定</li><li>Trae可能成为对外产品</li><li>内部效能提升会落后于快手</li></ol></div>
-</div>
-
-<!-- Nicole Forsgren -->
-<div class="player-card">
-<div class="player-header"><span class="player-type">人物</span><h3>Nicole Forsgren — "效能界的牛顿"</h3></div>
-<table class="player-table">
-<tr><th>言行</th><td>创建DORA/SPACE/DevEx/DX Core 4四大框架，每代修正前作，坚持科学方法</td></tr>
-<tr><th>模式</th><td>每一代框架都在回答更本质的问题，从不固守旧作</td></tr>
-<tr><th>动机</th><td><strong>用科学方法定义一个学科</strong></td></tr>
-<tr><th>信念</th><td>"If you can't measure it, you can't improve it"——但度量必须科学</td></tr>
-<tr><th>独特</th><td>唯一推动整个领域从"管理视角"到"开发者视角"范式转移的个人</td></tr>
-<tr><th>类比</th><td><strong>效能界的牛顿</strong>——用科学方法定义了基本定律，而且她还在不断修正自己的定律</td></tr>
-</table>
-<div class="predict-list"><h4>行为预测</h4><ol><li>下一代框架可能聚焦"AI时代的效能"</li><li>可能推出"AI原生版DORA"</li><li>持续保持学术影响力</li></ol></div>
-</div>
-
-<!-- 阿里 -->
-<div class="player-card">
-<div class="player-header"><span class="player-type">企业</span><h3>阿里巴巴 — "反思型建筑师"</h3></div>
-<table class="player-table">
-<tr><th>言行</th><td>唯一公开发布"智能化研发一年复盘"，坦承"所有范式只有一年生命周期"</td></tr>
-<tr><th>模式</th><td>在压力下选择坦诚而非掩盖</td></tr>
-<tr><th>动机</th><td><strong>找到真正可持续的效能路线——不再走弯路</strong></td></tr>
-<tr><th>信念</th><td>"坦诚 > 面子"——重新定位比坚持错误路线更有价值</td></tr>
-<tr><th>恐惧</th><td>重蹈覆辙——怕再走一年才发现方向错了</td></tr>
-<tr><th>类比</th><td><strong>反思型建筑师</strong>——前几栋楼出问题（旧方案），停工检查地基（复盘），重新画图纸</td></tr>
-</table>
-<div class="predict-list"><h4>行为预测</h4><ol><li>2026年可能推出全新效能策略</li><li>复盘精神向其他BU传染</li><li>可能成为行业"避坑指南"最佳来源</li></ol></div>
-</div>
-
-</div><!-- end players -->
-
-<!-- Tab: Meta -->
-<div class="tab-panel" id="meta">
-
-<div class="meta-card">
-<h3>元规律一</h3>
-<div class="meta-rule">基建是本金，AI是利率</div>
-<p>AI效果 = 基建质量 × 模型能力，基建为零时一切归零。快手(5/7 × 6/6)领先字节(6/7 × 0/6)，不是AI更强，而是组织让AI有处可嵌。<span class="meta-analogy">就像投资复利——本金（基建）决定利息（AI回报）上限。</span></p>
-</div>
-
-<div class="meta-card">
-<h3>元规律二</h3>
-<div class="meta-rule">AI是新的参与者，不是更好的工具</div>
-<p>软件工程诞生以来，系统中第一次出现第二个智能主体。这解释了L1→L2为何如此困难——不是技术升级（换工具），而是组织变革（接纳新成员）。<span class="meta-analogy">就像家里添了一个新人——不只是多一双筷子，所有人的关系都要重新调整。</span></p>
-</div>
-
-<div class="meta-card">
-<h3>元规律三</h3>
-<div class="meta-rule">领域在被自己研究的对象颠覆</div>
-<p>研发效能试图度量和优化的对象（软件开发），正在被AI根本性地改变——游戏还没结束，规则就变了。<span class="meta-analogy">就像体检中心给病人做检查时，发现病人正在变成另一个物种。旧体检标准还有用吗？</span></p>
-</div>
-
-</div><!-- end meta -->
-
-<div class="footer">
-<p>洞察者：林克 · 2026-03-15 · 46+篇文档 · 100+信息源 · 60+追踪人物 · 54+追踪企业</p>
-</div>
-
-</div><!-- end container -->
-
+<!-- ==================== Script ==================== -->
 <script>
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-btn.addEventListener('click',()=>{
-document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
-btn.classList.add('active');
-document.getElementById(btn.dataset.tab).classList.add('active');
-history.replaceState(null,null,'#'+btn.dataset.tab);
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+        window.scrollTo({top: document.querySelector('.tab-nav').offsetTop - 20, behavior: 'smooth'});
+    });
 });
-});
-window.addEventListener('hashchange',()=>{
-const h=location.hash.slice(1);
-if(h){const b=document.querySelector(`[data-tab="${h}"]`);if(b)b.click();}
-});
-if(location.hash){const h=location.hash.slice(1);const b=document.querySelector(`[data-tab="${h}"]`);if(b)b.click();}
 </script>
 </body>
 </html>

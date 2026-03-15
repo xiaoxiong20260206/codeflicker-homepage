@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>全员养虾时代，我们怎么接</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='23' text-anchor='middle' font-size='20'>🦞</text></svg>">
-<link rel="stylesheet" href="styles.css?v=56">
+<link rel="stylesheet" href="styles.css?v=57">
 </head>
 <body>
 
@@ -1469,11 +1469,10 @@
     <div class="arch-legend">
         <div class="arch-legend-title">📊 产品架构 ↔ 技术架构 映射关系</div>
         <div class="arch-legend-items">
-            <div class="arch-legend-item"><span class="map-badge blue" style="position:static;">①</span> 用户触点层 ↔ T1 接入层</div>
-            <div class="arch-legend-item"><span class="map-badge violet" style="position:static;">②</span> Agent能力层 ↔ T3 计算层</div>
-            <div class="arch-legend-item"><span class="map-badge amber" style="position:static;">③</span> 服务层 ↔ T2 网关层</div>
-            <div class="arch-legend-item"><span class="map-badge emerald" style="position:static;">④</span> AgentCore ↔ T4 推理层</div>
-            <div class="arch-legend-item"><span class="map-badge rose" style="position:static;">⑤</span> Memory ↔ T5 存储层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#2563EB"></span> <span class="map-badge blue" style="position:static;">①</span> 用户触点层 ↔ T1 接入层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#7C3AED"></span> <span class="map-badge violet" style="position:static;">②</span> Agent能力层 ↔ T3 计算层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#D97706"></span> <span class="map-badge amber" style="position:static;">③</span> 服务层 ↔ T2 网关层</div>
+            <div class="arch-legend-item"><span class="arch-legend-line" style="color:#059669"></span> <span class="map-badge emerald" style="position:static;">④</span> AgentCore ↔ T4+T5</div>
         </div>
     </div>
 
@@ -1521,31 +1520,20 @@ document.addEventListener('mouseover', e => {
 });
 
 // === Object-level mapping connection lines ===
-const OBJ_MAPPINGS = [
-    // 用户触点层 → T1 接入层
-    { from: '#touchCf',    to: '[data-n="t-access"]', color: '#2563EB', label: 'CF→接入' },
-    { from: '#touchKa',    to: '[data-n="t-access"]', color: '#2563EB', label: 'AIme→接入' },
-    { from: '[data-n="p-cf-cloud"]', to: '[data-n="t-agent"]', color: '#7C3AED', label: 'Agent→计算' },
-    // Skill & 知识市场 → T3 Skills Hub
-    { from: '[data-n="p-skills"]',  to: '[data-n="t-hub"]', color: '#7C3AED', label: 'Skills→Hub' },
-    { from: '[data-n="p-market"]',  to: '[data-n="t-hub"]', color: '#7C3AED', label: '三方→Hub' },
-    // 服务层 → T2 网关层
-    { from: '[data-n="p-routing"]',  to: '[data-n="t-gateway"]', color: '#D97706', label: '路由→GW' },
-    { from: '[data-n="p-security"]', to: '[data-n="t-gateway"]', color: '#D97706', label: '审计→GW' },
-    // AgentCore → T4 推理层
-    { from: '[data-n="p-reasoning"]', to: '[data-n="t-model"]', color: '#059669', label: '推理→模型' },
-    { from: '[data-n="p-planning"]',  to: '[data-n="t-model"]', color: '#059669', label: '规划→模型' },
-    // Memory → T5 存储层
-    { from: '[data-n="p-memory"]', to: '[data-n="t-storage"]', color: '#E11D48', label: '记忆→存储' },
+// Layer-level mapping lines (clean 4-pair connections)
+const LAYER_MAPPINGS = [
+    { pair: 'row1', color: '#2563EB', label: '用户触点层 ↔ T1 接入层' },
+    { pair: 'row2', color: '#7C3AED', label: 'Agent能力层 ↔ T3 计算层' },
+    { pair: 'row3', color: '#D97706', label: '服务层 ↔ T2 网关层' },
+    { pair: 'row4', color: '#059669', label: 'AgentCore ↔ T4+T5' },
 ];
-
-// CodeFlicker → AIme horizontal connection (drawn separately)
-const CF_TO_AIME = { from: '#touchCf', to: '#touchKa', color: '#7C3AED' };
 
 function drawMappingLines() {
     const svg = document.getElementById('mappingSvg');
     const swim = document.getElementById('archSwim');
-    if (!svg || !swim) return;
+    const leftLane = document.getElementById('laneLeft');
+    const rightLane = document.getElementById('laneRight');
+    if (!svg || !swim || !leftLane || !rightLane) return;
 
     const sRect = swim.getBoundingClientRect();
     const W = sRect.width;
@@ -1557,97 +1545,140 @@ function drawMappingLines() {
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     svg.innerHTML = '';
 
-    // Defs: arrowheads per color
-    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
-    const colors = [...new Set(OBJ_MAPPINGS.map(m => m.color))];
-    colors.forEach(c => {
-        const hex = c.slice(1);
-        const mk = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
-        mk.setAttribute('id', `mk-${hex}`);
-        mk.setAttribute('viewBox', '0 0 8 6');
-        mk.setAttribute('refX', '7'); mk.setAttribute('refY', '3');
-        mk.setAttribute('markerWidth', '7'); mk.setAttribute('markerHeight', '5');
+    const NS = 'http://www.w3.org/2000/svg';
+    const defs = document.createElementNS(NS, 'defs');
+
+    // Animated dash keyframes via CSS
+    const style = document.createElementNS(NS, 'style');
+    style.textContent = `
+        @keyframes flowDash { to { stroke-dashoffset: -24; } }
+        .map-line { animation: flowDash 2s linear infinite; }
+        .map-line-hover { transition: opacity .3s, stroke-width .3s; }
+    `;
+    defs.appendChild(style);
+
+    // Gradient defs + arrow markers per color
+    LAYER_MAPPINGS.forEach(m => {
+        const hex = m.color.slice(1);
+        // Gradient
+        const grad = document.createElementNS(NS, 'linearGradient');
+        grad.setAttribute('id', `grad-${hex}`);
+        grad.setAttribute('x1', '0%'); grad.setAttribute('x2', '100%');
+        const s1 = document.createElementNS(NS, 'stop');
+        s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', m.color); s1.setAttribute('stop-opacity', '0.7');
+        const s2 = document.createElementNS(NS, 'stop');
+        s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', m.color); s2.setAttribute('stop-opacity', '0.5');
+        grad.appendChild(s1); grad.appendChild(s2);
+        defs.appendChild(grad);
+        // Arrow marker
+        const mk = document.createElementNS(NS, 'marker');
+        mk.setAttribute('id', `arr-${hex}`);
+        mk.setAttribute('viewBox', '0 0 10 8');
+        mk.setAttribute('refX', '9'); mk.setAttribute('refY', '4');
+        mk.setAttribute('markerWidth', '8'); mk.setAttribute('markerHeight', '6');
         mk.setAttribute('orient', 'auto');
-        const pg = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-        pg.setAttribute('points', '0 0.5, 8 3, 0 5.5');
-        pg.setAttribute('fill', c);
-        pg.setAttribute('opacity', '0.6');
+        const pg = document.createElementNS(NS, 'polygon');
+        pg.setAttribute('points', '0 1, 10 4, 0 7');
+        pg.setAttribute('fill', m.color); pg.setAttribute('opacity', '0.65');
         mk.appendChild(pg); defs.appendChild(mk);
+        // Glow filter
+        const flt = document.createElementNS(NS, 'filter');
+        flt.setAttribute('id', `glow-${hex}`);
+        flt.setAttribute('x', '-20%'); flt.setAttribute('y', '-20%');
+        flt.setAttribute('width', '140%'); flt.setAttribute('height', '140%');
+        const blur = document.createElementNS(NS, 'feGaussianBlur');
+        blur.setAttribute('stdDeviation', '2'); blur.setAttribute('result', 'blur');
+        flt.appendChild(blur);
+        const merge = document.createElementNS(NS, 'feMerge');
+        const mn1 = document.createElementNS(NS, 'feMergeNode'); mn1.setAttribute('in', 'blur');
+        const mn2 = document.createElementNS(NS, 'feMergeNode'); mn2.setAttribute('in', 'SourceGraphic');
+        merge.appendChild(mn1); merge.appendChild(mn2);
+        flt.appendChild(merge); defs.appendChild(flt);
     });
     svg.appendChild(defs);
 
-    OBJ_MAPPINGS.forEach(m => {
-        const srcEl = swim.querySelector(m.from);
-        const dstEl = swim.querySelector(m.to);
-        if (!srcEl || !dstEl) return;
+    // Draw layer-to-layer connections
+    LAYER_MAPPINGS.forEach(m => {
+        const leftEl = leftLane.querySelector(`[data-pair="${m.pair}"]`);
+        const rightEl = rightLane.querySelector(`[data-pair="${m.pair}"]`);
+        if (!leftEl || !rightEl) return;
 
-        const srcR = srcEl.getBoundingClientRect();
-        const dstR = dstEl.getBoundingClientRect();
+        const lRect = leftEl.getBoundingClientRect();
+        const rRect = rightEl.getBoundingClientRect();
+        const hex = m.color.slice(1);
 
-        // Source: right-center of left-lane element
-        const x1 = srcR.right - sRect.left;
-        const y1 = srcR.top + srcR.height * 0.5 - sRect.top;
-        // Destination: left-center of right-lane element
-        const x2 = dstR.left - sRect.left;
-        const y2 = dstR.top + dstR.height * 0.5 - sRect.top;
+        // Source: right edge center of left layer
+        const x1 = lRect.right - sRect.left;
+        const y1 = lRect.top + lRect.height * 0.5 - sRect.top;
+        // Dest: left edge center of right layer
+        const x2 = rRect.left - sRect.left;
+        const y2 = rRect.top + rRect.height * 0.5 - sRect.top;
 
-        // Mid-X for the S-curve control points (halfway between lanes)
-        const midX = (x1 + x2) / 2;
-        const cpx1 = x1 + (midX - x1) * 0.7;
-        const cpx2 = x2 - (midX - x1) * 0.7;
+        const gap = x2 - x1;
+        const cpOff = gap * 0.45;
 
-        const d = `M ${x1} ${y1} C ${cpx1} ${y1}, ${cpx2} ${y2}, ${x2} ${y2}`;
+        // Smooth S-curve bezier
+        const d = `M ${x1} ${y1} C ${x1 + cpOff} ${y1}, ${x2 - cpOff} ${y2}, ${x2} ${y2}`;
 
-        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', d);
-        path.setAttribute('stroke', m.color);
-        path.setAttribute('stroke-width', '1.5');
-        path.setAttribute('fill', 'none');
-        path.setAttribute('opacity', '0.4');
-        path.setAttribute('stroke-dasharray', '5,3');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('marker-end', `url(#mk-${m.color.slice(1)})`);
-        svg.appendChild(path);
+        // Background glow line
+        const bgPath = document.createElementNS(NS, 'path');
+        bgPath.setAttribute('d', d);
+        bgPath.setAttribute('stroke', m.color);
+        bgPath.setAttribute('stroke-width', '6');
+        bgPath.setAttribute('fill', 'none');
+        bgPath.setAttribute('opacity', '0.08');
+        bgPath.setAttribute('stroke-linecap', 'round');
+        svg.appendChild(bgPath);
 
-        // Small dot at source
-        const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        dot.setAttribute('cx', x1); dot.setAttribute('cy', y1);
-        dot.setAttribute('r', '2.5');
-        dot.setAttribute('fill', m.color);
-        dot.setAttribute('opacity', '0.5');
-        svg.appendChild(dot);
+        // Main line with gradient + animated dash
+        const mainPath = document.createElementNS(NS, 'path');
+        mainPath.setAttribute('d', d);
+        mainPath.setAttribute('stroke', `url(#grad-${hex})`);
+        mainPath.setAttribute('stroke-width', '2.5');
+        mainPath.setAttribute('fill', 'none');
+        mainPath.setAttribute('stroke-dasharray', '8,4');
+        mainPath.setAttribute('stroke-linecap', 'round');
+        mainPath.setAttribute('marker-end', `url(#arr-${hex})`);
+        mainPath.setAttribute('filter', `url(#glow-${hex})`);
+        mainPath.classList.add('map-line', 'map-line-hover');
+        mainPath.dataset.pair = m.pair;
+        svg.appendChild(mainPath);
+
+        // Source dot (larger, pulsing)
+        const dot1 = document.createElementNS(NS, 'circle');
+        dot1.setAttribute('cx', x1); dot1.setAttribute('cy', y1);
+        dot1.setAttribute('r', '4');
+        dot1.setAttribute('fill', m.color); dot1.setAttribute('opacity', '0.55');
+        svg.appendChild(dot1);
+
+        // Destination dot
+        const dot2 = document.createElementNS(NS, 'circle');
+        dot2.setAttribute('cx', x2); dot2.setAttribute('cy', y2);
+        dot2.setAttribute('r', '3');
+        dot2.setAttribute('fill', m.color); dot2.setAttribute('opacity', '0.4');
+        svg.appendChild(dot2);
     });
 
-    // Draw CodeFlicker → AIme horizontal arrow
-    const cfEl = swim.querySelector(CF_TO_AIME.from);
-    const kaEl = swim.querySelector(CF_TO_AIME.to);
-    if (cfEl && kaEl) {
-        const cfR = cfEl.getBoundingClientRect();
-        const kaR = kaEl.getBoundingClientRect();
-        const ax1 = cfR.right - sRect.left;
-        const ay = cfR.top + cfR.height * 0.5 - sRect.top;
-        const ax2 = kaR.left - sRect.left;
-        const ay2 = kaR.top + kaR.height * 0.5 - sRect.top;
-        const amid = (ax1 + ax2) / 2;
-        const ad = `M ${ax1} ${ay} C ${amid} ${ay}, ${amid} ${ay2}, ${ax2} ${ay2}`;
-        const aPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        aPath.setAttribute('d', ad);
-        aPath.setAttribute('stroke', CF_TO_AIME.color);
-        aPath.setAttribute('stroke-width', '1.5');
-        aPath.setAttribute('fill', 'none');
-        aPath.setAttribute('opacity', '0.5');
-        aPath.setAttribute('stroke-dasharray', '5,3');
-        aPath.setAttribute('stroke-linecap', 'round');
-        aPath.setAttribute('marker-end', `url(#mk-${CF_TO_AIME.color.slice(1)})`);
-        svg.appendChild(aPath);
-        // Dot at source
-        const aDot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-        aDot.setAttribute('cx', ax1); aDot.setAttribute('cy', ay);
-        aDot.setAttribute('r', '2.5');
-        aDot.setAttribute('fill', CF_TO_AIME.color);
-        aDot.setAttribute('opacity', '0.5');
-        svg.appendChild(aDot);
-    }
+    // Hover interaction: highlight matching pair on layer hover
+    document.querySelectorAll('[data-pair]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            const pair = el.dataset.pair;
+            svg.querySelectorAll('.map-line').forEach(p => {
+                if (p.dataset.pair === pair) {
+                    p.style.opacity = '1';
+                    p.style.strokeWidth = '3.5';
+                } else {
+                    p.style.opacity = '0.15';
+                }
+            });
+        });
+        el.addEventListener('mouseleave', () => {
+            svg.querySelectorAll('.map-line').forEach(p => {
+                p.style.opacity = '';
+                p.style.strokeWidth = '';
+            });
+        });
+    });
 }
 
 // ============================================================

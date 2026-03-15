@@ -1,32 +1,60 @@
-/* Tab 切换 + 章节概览联动 + 全局控制 */
+/* Tab Navigation + Section Overview Sync + Global Controls */
 (function () {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const chips = document.querySelectorAll('.chip');
-  const panels = document.querySelectorAll('.panel');
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const panels  = document.querySelectorAll('.panel');
 
   function activate(idx) {
-    tabs.forEach(t => t.classList.toggle('active', +t.dataset.tab === idx));
-    chips.forEach(c => c.classList.toggle('active', +c.dataset.tab === idx));
+    tabBtns.forEach(btn => {
+      const isActive = +btn.dataset.tab === idx;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
     panels.forEach(p => p.classList.toggle('active', +p.dataset.panel === idx));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  tabs.forEach(t => t.addEventListener('click', () => activate(+t.dataset.tab)));
-  chips.forEach(c => c.addEventListener('click', () => activate(+c.dataset.tab)));
+  tabBtns.forEach(btn => btn.addEventListener('click', () => activate(+btn.dataset.tab)));
+
+  /* Keyboard navigation for tabs */
+  const tabNav = document.querySelector('.tab-nav');
+  if (tabNav) {
+    tabNav.addEventListener('keydown', (e) => {
+      const btns = Array.from(tabBtns);
+      const current = btns.findIndex(b => b.classList.contains('active'));
+      let next = -1;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        next = (current + 1) % btns.length;
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        next = (current - 1 + btns.length) % btns.length;
+      } else if (e.key === 'Home') {
+        next = 0;
+      } else if (e.key === 'End') {
+        next = btns.length - 1;
+      }
+      if (next >= 0) {
+        e.preventDefault();
+        btns[next].focus();
+        activate(next);
+      }
+    });
+  }
 })();
 
-/* 全屏切换 */
+/* Fullscreen toggle */
 function toggleFS() {
-  if (!document.fullscreenElement) document.documentElement.requestFullscreen();
-  else document.exitFullscreen();
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen();
+  }
 }
 
-/* 移动端预览 */
+/* Mobile preview toggle */
 function toggleMobile() {
   document.getElementById('app').classList.toggle('mobile-preview');
 }
 
-/* 回顶部 */
-function scrollTop() {
+/* Scroll to top */
+function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }

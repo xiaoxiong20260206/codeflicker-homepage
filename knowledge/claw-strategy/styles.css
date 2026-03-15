@@ -910,13 +910,15 @@ tbody tr:hover { background: rgba(5,150,105,.04); }
 .touch-columns {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     gap: 10px;
     margin-bottom: 10px;
     position: relative;
 }
 .touch-col {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
     gap: 10px;
 }
 .user-seg {

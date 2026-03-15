@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-15T09:22:36.898949",
+  "generatedAt": "2026-03-15T09:24:42.058591",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -3058,7 +3058,7 @@
         ],
         "relatedMemories": [],
         "fileCount": 40,
-        "sizeKB": 596.5,
+        "sizeKB": 597.9,
         "heatLevel": 5,
         "recentCount": 40
       },
@@ -3213,13 +3213,13 @@
             ],
             "relatedMemories": [],
             "fileCount": 40,
-            "sizeKB": 596.5,
+            "sizeKB": 597.9,
             "heatLevel": 5,
             "recentCount": 40
           }
         },
         "totalFiles": 135,
-        "totalSizeKB": 1177.9
+        "totalSizeKB": 1179.3
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3277,7 +3277,7 @@
       }
     },
     "totalFiles": 301,
-    "totalSizeKB": 2899.3
+    "totalSizeKB": 2900.7
   },
   "memories": {
     "items": [

@@ -658,6 +658,89 @@
   color: var(--zelda-gold);
 }
 
+/* --- My Places Panel --- */
+.places-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.place-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(93, 138, 74, 0.04);
+  border: 1px solid rgba(93, 138, 74, 0.18);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-normal);
+}
+
+.place-card:hover {
+  border-color: rgba(93, 138, 74, 0.45);
+  box-shadow: 0 0 20px rgba(93, 138, 74, 0.12);
+  transform: translateY(-2px);
+}
+
+.place-card-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: rgba(93, 138, 74, 0.08);
+  border: 1px solid rgba(93, 138, 74, 0.2);
+  border-radius: var(--radius-md);
+}
+
+.place-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.place-card-title {
+  font-family: var(--font-title);
+  font-size: 15px;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.place-card-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.place-card-note {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  padding: 2px 10px;
+  border-radius: 10px;
+  background: rgba(212, 168, 42, 0.1);
+  color: var(--zelda-gold);
+  border: 1px solid rgba(212, 168, 42, 0.25);
+}
+
+.place-card-arrow {
+  flex-shrink: 0;
+  font-size: 16px;
+  color: var(--zelda-green);
+  opacity: 0.5;
+  transition: all var(--transition-normal);
+}
+
+.place-card:hover .place-card-arrow {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
 /* --- Footer --- */
 .hub-footer {
   text-align: center;
@@ -757,6 +840,16 @@
   .article-card {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .place-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .place-card-arrow {
+    display: none;
   }
 
   .knowledge-stats {

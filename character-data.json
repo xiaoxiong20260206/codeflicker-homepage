@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-15T07:36:42.268941",
+  "generatedAt": "2026-03-15T09:07:57.280207",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -15,12 +15,12 @@
       "icon": "👑",
       "description": "炉火纯青，宗师风范"
     },
-    "totalExp": 416650,
-    "expProgress": 91.0,
+    "totalExp": 414150,
+    "expProgress": 84.3,
     "currentThreshold": 382801,
     "nextThreshold": 420009,
     "stats": {
-      "understanding": 86.2,
+      "understanding": 83.7,
       "execution": 81.7,
       "skillDepth": 92.5,
       "thinkingDepth": 66.8,
@@ -38,9 +38,9 @@
       "highLevelSkills": 49,
       "skillTotalValue": 5001.6,
       "cultivationExp": 0,
-      "baseExp": 416650,
+      "baseExp": 414150,
       "expBreakdown": {
-        "understanding": 86200,
+        "understanding": 83700,
         "execution": 81700,
         "skill": 138750,
         "thinking": 53439,
@@ -105,8 +105,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 26184,
-            "skillSizeLabel": "26K字 · 大型",
+            "skillSize": 27480,
+            "skillSizeLabel": "27K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -139,8 +139,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 11726,
-            "skillSizeLabel": "11K字 · 中型",
+            "skillSize": 14675,
+            "skillSizeLabel": "14K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -173,8 +173,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 22294,
-            "skillSizeLabel": "22K字 · 大型",
+            "skillSize": 23846,
+            "skillSizeLabel": "23K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -354,7 +354,7 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 18642,
+            "skillSize": 18932,
             "skillSizeLabel": "18K字 · 大型",
             "ksInternal": false,
             "cfProject": false
@@ -529,8 +529,8 @@
             "frequency": "1次/月",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 149291,
-            "skillSizeLabel": "149K字 · 巨型",
+            "skillSize": 150497,
+            "skillSizeLabel": "150K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           }
@@ -1082,8 +1082,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 20170,
-            "skillSizeLabel": "20K字 · 大型",
+            "skillSize": 21583,
+            "skillSizeLabel": "21K字 · 大型",
             "ksInternal": false,
             "cfProject": true
           },
@@ -1513,8 +1513,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 26184,
-                "skillSizeLabel": "26K字 · 大型",
+                "skillSize": 27480,
+                "skillSizeLabel": "27K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1547,8 +1547,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 11726,
-                "skillSizeLabel": "11K字 · 中型",
+                "skillSize": 14675,
+                "skillSizeLabel": "14K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1581,8 +1581,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 22294,
-                "skillSizeLabel": "22K字 · 大型",
+                "skillSize": 23846,
+                "skillSizeLabel": "23K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -1761,7 +1761,7 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 18642,
+                "skillSize": 18932,
                 "skillSizeLabel": "18K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
@@ -1944,8 +1944,8 @@
                 "frequency": "1次/月",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 149291,
-                "skillSizeLabel": "149K字 · 巨型",
+                "skillSize": 150497,
+                "skillSizeLabel": "150K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               }
@@ -2500,8 +2500,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 20170,
-                "skillSizeLabel": "20K字 · 大型",
+                "skillSize": 21583,
+                "skillSizeLabel": "21K字 · 大型",
                 "ksInternal": false,
                 "cfProject": true
               },
@@ -3058,7 +3058,7 @@
         ],
         "relatedMemories": [],
         "fileCount": 40,
-        "sizeKB": 595.2,
+        "sizeKB": 596.5,
         "heatLevel": 5,
         "recentCount": 40
       },
@@ -3091,7 +3091,7 @@
           "thinking_pattern"
         ],
         "fileCount": 13,
-        "sizeKB": 126.8,
+        "sizeKB": 126.9,
         "heatLevel": 5,
         "recentCount": 10
       },
@@ -3166,13 +3166,13 @@
               "thinking_pattern"
             ],
             "fileCount": 13,
-            "sizeKB": 126.8,
+            "sizeKB": 126.9,
             "heatLevel": 5,
             "recentCount": 10
           }
         },
         "totalFiles": 144,
-        "totalSizeKB": 989.6
+        "totalSizeKB": 989.7
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -3213,13 +3213,13 @@
             ],
             "relatedMemories": [],
             "fileCount": 40,
-            "sizeKB": 595.2,
+            "sizeKB": 596.5,
             "heatLevel": 5,
             "recentCount": 40
           }
         },
         "totalFiles": 135,
-        "totalSizeKB": 1176.6
+        "totalSizeKB": 1177.9
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -3277,7 +3277,7 @@
       }
     },
     "totalFiles": 301,
-    "totalSizeKB": 2898.1
+    "totalSizeKB": 2899.3
   },
   "memories": {
     "items": [
@@ -3396,13 +3396,13 @@
         "source": "项目记忆"
       },
       {
-        "title": "AI日报分类+去重+链接验证门控经验（v5.0 含微信源收录+JSON契约+首页同步）",
+        "title": "AI日报分类+去重+链接验证门控经验（v5.1 含wx_url匹配规则+微信源收录+JSON契约+首页同步）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "AI日报分类+去重+链接验证门控经验（v5.0 含微信源收录规则+JSON契约+首页同步） 来源 2026-03-13 AI日报全流程复盘，...",
+        "description": "AI日报分类+去重+链接验证门控经验（v5.1 含wx_url匹配规则+微信源收录+JSON契约+首页同步） 来源 2026-03-13 A...",
         "keywords": [
           "AI日报",
           "分类验证",
@@ -3411,7 +3411,7 @@
           "质量检查"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-13",
+        "updatedAt": "2026-03-15",
         "source": "项目记忆"
       },
       {
@@ -3548,13 +3548,13 @@
         "source": "项目记忆"
       },
       {
-        "title": "Chrome Headless / Puppeteer 截图完整经验（含边距控制+缩放适配+自动裁剪）",
+        "title": "Chrome Headless / Puppeteer 截图核心公式",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "Chrome Headless / Puppeteer 截图完整经验 核心公式：截图边距控制（最重要） 问题：截图四周留白过大，内容...",
+        "description": "Chrome Headless / Puppeteer 截图核心公式 边距控制三要素 | 根因 | 错误做法 | 正确做法 | |-----...",
         "keywords": [
           "Chrome",
           "headless",
@@ -3563,7 +3563,7 @@
           "边距"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-12",
+        "updatedAt": "2026-03-15",
         "source": "项目记忆"
       },
       {
@@ -3719,25 +3719,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "Skill触发词精确匹配原则（避免大词冲突）",
-        "category": "development_practice_specification",
-        "categoryLabel": "做事方法",
-        "layer": "🧠 元认知层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "Skill 触发词精确匹配原则 问题 CodeFlicker 周报 Skill 最初用\"周报\"做触发词，太宽泛会和其他周报技能（如 AI-I...",
-        "keywords": [
-          "Skill触发词",
-          "精确匹配",
-          "大词",
-          "冲突",
-          "description"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-07",
-        "source": "项目记忆"
-      },
-      {
         "title": "pathlib rglob/glob 不跟踪软链接（symlinks）导致数据丢失",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -3793,25 +3774,6 @@
         "importance": 5,
         "updatedAt": "2026-03-14",
         "source": "项目记忆"
-      },
-      {
-        "title": "中文全角引号导致JavaScript/Node代码语法错误",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "中文全角引号导致JavaScript/Node代码语法错误 问题描述 在创建artistic-ppt技能时，JavaScript代码中使用了...",
-        "keywords": [
-          "中文引号",
-          "全角引号",
-          "JavaScript",
-          "语法错误",
-          "Node"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-12",
-        "source": "用户显式记录"
       },
       {
         "title": "代码文件中文字符编码安全规则 + kimMd标记冲突",
@@ -3890,25 +3852,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "企业案例学习工作流（四阶段法）",
-        "category": "development_practice_specification",
-        "categoryLabel": "做事方法",
-        "layer": "🧠 元认知层",
-        "icon": "⚙️",
-        "color": "#5ec4d4",
-        "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
-        "keywords": [
-          "企业案例",
-          "学习工作流",
-          "文档学习",
-          "四阶段",
-          "知识合成"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-11",
-        "source": "用户显式记录"
-      },
-      {
         "title": "体系化任务的识别与前置设计（踩坑经验）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "内容创作",
@@ -3966,44 +3909,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "共享部署资源的临时借用陷阱（借-用-还三步协议）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "共享部署资源的临时借用陷阱（\"借-用-还\"协议） 事故（2026-03-14） 将 claw-strategy 架构图项目 force pu...",
-        "keywords": [
-          "共享资源",
-          "临时借用",
-          "部署仓库",
-          "force push",
-          "覆盖"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-14",
-        "source": "项目记忆"
-      },
-      {
-        "title": "内功修炼执行规范（v5 与v9.0对齐）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "内功修炼执行规范（v9.0 对齐版） 一、v9.0 核心变更：Phase 3 从\"按需\"变为\"必须\" v8.x 的问题：Phase ...",
-        "keywords": [
-          "每日修炼",
-          "内功修炼",
-          "强制执行",
-          "v9.0",
-          "neigong-cultivation"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-14",
-        "source": "项目记忆"
-      },
-      {
         "title": "北冥神功能力包完整生命周期成功模式（导出→安装→验证→修复→数据校准）",
         "category": "development_practice_specification",
         "categoryLabel": "通用踩坑",
@@ -4039,25 +3944,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-11",
-        "source": "项目记忆"
-      },
-      {
-        "title": "同步脚本脱敏闸门不完善（文件泄漏+凭证硬编码双漏洞）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "同步脚本脱敏闸门不完善（sync_to_public.py敏感文件泄漏） 来源 2026-03-08 Git日志：15:02 sync_to...",
-        "keywords": [
-          "脱敏",
-          "sync_to_public",
-          "敏感信息",
-          "公开仓库",
-          "凭证硬编码"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
         "source": "项目记忆"
       },
       {
@@ -4118,42 +4004,23 @@
         "source": "项目记忆"
       },
       {
-        "title": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖）",
+        "title": "多文件联动更新的隐式耦合陷阱（七类+检查清单）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖） 六类联动 | 维度 | 数据联动 | 概念联动 | 版本联动 | 配置腐烂 | 文档生...",
+        "description": "多文件联动更新的隐式耦合陷阱 七类联动 | 维度 | 典型场景 | 修复方式 | :---------...",
         "keywords": [
           "联动更新",
           "隐式耦合",
-          "数据一致性",
           "多文件",
-          "爆炸半径"
+          "爆炸半径",
+          "单一写入者"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-12",
+        "updatedAt": "2026-03-15",
         "source": "用户显式记录"
-      },
-      {
-        "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth） 问题 同一指标（如技能数、记忆数、知识数）在多个脚本中...",
-        "keywords": [
-          "统一度量",
-          "Single Source of Truth",
-          "函数去重",
-          "统计一致性",
-          "constants.py"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-12",
-        "source": "项目记忆"
       },
       {
         "title": "大文件编辑的Context节约策略（含sed vs replace_in_file选择）",
@@ -4289,25 +4156,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能callCount骤降根因：历史基线必须永久叠加（不可设migration_completed门控）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "问题现象（二次复发） 技能调用次数从2500+骤降至56次，66%的技能callCount归零。 根本原因 1. 初次修复设计缺陷：将...",
-        "keywords": [
-          "技能统计",
-          "callCount",
-          "历史基线",
-          "永久叠加",
-          "数据迁移"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-13",
-        "source": "项目记忆"
-      },
-      {
         "title": "技能分层文档的同步规则（v4：三向同步）",
         "category": "development_practice_specification",
         "categoryLabel": "文档处理",
@@ -4325,63 +4173,6 @@
         "importance": 5,
         "updatedAt": "2026-03-11",
         "source": "用户显式记录"
-      },
-      {
-        "title": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式）",
-        "category": "development_practice_specification",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式） 来源 2026-03-09 neigong-cultivation v3....",
-        "keywords": [
-          "技能重构",
-          "方法论",
-          "六步法",
-          "验证清单",
-          "反模式"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-12",
-        "source": "项目记忆"
-      },
-      {
-        "title": "技能间复用原则：委托而非重复定义",
-        "category": "development_practice_specification",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "核心规则 当一个技能需要某个能力（如搜索、安装、发消息等），如果已有其他技能完整实现了该能力，必须复用而非重复定义。 判断标准 1. ...",
-        "keywords": [
-          "技能复用",
-          "DRY",
-          "委托",
-          "find-skills",
-          "技能依赖"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-10",
-        "source": "项目记忆"
-      },
-      {
-        "title": "数据模型信息冗余导致渲染重复（emoji/icon双重显示）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "数据模型信息冗余导致渲染重复 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
-        "keywords": [
-          "数据冗余",
-          "重复渲染",
-          "emoji",
-          "icon",
-          "单一数据源"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-07",
-        "source": "项目记忆"
       },
       {
         "title": "新工具/技能接入前的三道关卡（基础设施→ROI→最小验证）",
@@ -4403,44 +4194,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "日报/自学漏记修复：文件mtime代理信号陷阱（v2 含完整修复）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "日报和自主学习漏记对话/项目活动的根因是「代理信号陷阱」——用 recap 文件的 mtime 作为\"对话是否活跃\"的判据，相当于用\"论文发表时间\"代替\"...",
-        "keywords": [
-          "日报",
-          "recap",
-          "mtime",
-          "时间判定",
-          "交叉校验"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-08",
-        "source": "项目记忆"
-      },
-      {
-        "title": "日报趋势数据必须使用统一数据源（Single Source of Truth）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "问题描述 日报的能力提升趋势和首页\"我的能力\"成长趋势数据不一致。 根因 1. generate_daily_report.py 使用 `...",
-        "keywords": [
-          "日报",
-          "趋势数据",
-          "统一数据源",
-          "Single Source of Truth",
-          "数据一致性"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-11",
-        "source": "项目记忆"
-      },
-      {
         "title": "本地HTTP服务器端口分配：禁止盲猜，必须系统动态分配",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -4457,25 +4210,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-09",
-        "source": "项目记忆"
-      },
-      {
-        "title": "条件渲染不应隐藏0值（指标类数据始终展示原则）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "问题模式：条件渲染逻辑中使用 data.value > 0 判断是否显示某个区块，导致当数据为0时区块被隐藏——但用户希望0也是有效信息需要展...",
-        "keywords": [
-          "条件渲染",
-          "0值",
-          "隐藏",
-          "默认值",
-          "指标"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-10",
         "source": "项目记忆"
       },
       {
@@ -4534,22 +4268,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "每日修炼统一流程 v8.2（含Phase 3决策逻辑+脚本门控+按需三剑客）",
+        "title": "每日修炼统一流程 v9.0（含Phase 3内功修炼必须执行+脚本门控）",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
         "layer": "🧠 元认知层",
         "icon": "💬",
         "color": "#0ea5e9",
-        "description": "每日修炼统一流程 v8.2（2026-03-14 生效） 用户偏好 \"每日修炼\"执行统一流程（4个Phase），不再区分模式A/B。...",
+        "description": "每日修炼统一流程 v9.0（2026-03-15 生效） 用户偏好 \"每日修炼\"执行统一流程（4个Phase），不区分模式。 ###...",
         "keywords": [
           "每日修炼",
           "统一流程",
-          "v8.2",
+          "v9.0",
           "Phase",
-          "数据收集"
+          "内功修炼"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-14",
+        "updatedAt": "2026-03-15",
         "source": "用户显式记录"
       },
       {
@@ -4570,25 +4304,6 @@
         "importance": 5,
         "updatedAt": "2026-03-14",
         "source": "用户显式记录"
-      },
-      {
-        "title": "版本号漂移根治方案：单一数据源 + 自动化同步",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "问题本质 版本号漂移和统计不一致是多文档协作的固有问题： - 多个文档硬编码同一个版本号（如 \"neigong-cultivation v4.2.0...",
-        "keywords": [
-          "版本漂移",
-          "版本一致性",
-          "单一数据源",
-          "自动化同步",
-          "sync_system_docs"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-10",
-        "source": "项目记忆"
       },
       {
         "title": "生图完成后必须发送可点击链接",
@@ -4686,13 +4401,32 @@
         "source": "项目记忆"
       },
       {
-        "title": "自动化管道脚本卫生规范（四层检查 v2）",
+        "title": "脚本诊断 vs Agent修复的分工边界（auto_fixable → agent_fixable 模式）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
+        "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "自动化管道脚本卫生规范（四层检查 v2） 来源 2026-03-09 脚本全面审查：发现21个问题（含P0级set-e冲突、P1版本漂移、P...",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题 首页3个技能显示英文名、2个技能落入\"其他技能\"分类。每日修炼诊断脚本已发现P0问题，但标记为 auto_fixable: False，导...",
+        "keywords": [
+          "脚本诊断",
+          "Agent修复",
+          "agent_fixable",
+          "缓存一致性",
+          "中文配置"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-15",
+        "source": "项目记忆"
+      },
+      {
+        "title": "自动化管道脚本卫生规范（五层检查表）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "自动化管道脚本卫生规范（五层检查） 五层检查表 | 层 | 检查问题 | 修复模式 | 交互隔离 | ...",
         "keywords": [
           "自动化",
           "脚本卫生",
@@ -4701,7 +4435,7 @@
           "单写入者"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-09",
+        "updatedAt": "2026-03-15",
         "source": "项目记忆"
       },
       {
@@ -4722,25 +4456,6 @@
         "importance": 5,
         "updatedAt": "2026-03-13",
         "source": "用户显式记录"
-      },
-      {
-        "title": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5） 一、neigong_check.py 误...",
-        "keywords": [
-          "neigong_check",
-          "skill_optimization",
-          "误报",
-          "版本漂移",
-          "分类建议"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-14",
-        "source": "项目记忆"
       },
       {
         "title": "语雀文档读取优先使用API",
@@ -4800,22 +4515,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "踩坑记忆召回失败模式（含完整任务检索映射 v12 — 诊断≠治疗门槛已加固）",
+        "title": "踩坑记忆召回失败模式（16类任务映射+三层方案）",
         "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
+        "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v12 共12个）： 1-11: 见历史版本 12. 诊断脚本≠工作...",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生（已累积13个案例）。 三层解决方案： 1. 被动召回层：执行前检索踩坑记...",
         "keywords": [
           "记忆召回",
           "踩坑复现",
           "执行前检索",
-          "记忆应用率",
-          "被动记忆"
+          "任务映射",
+          "硬编码"
         ],
         "importance": 5,
-        "updatedAt": "2026-03-08",
+        "updatedAt": "2026-03-15",
         "source": "项目记忆"
       },
       {
@@ -4933,25 +4648,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "首页日报数据同步遗漏问题（含完整流程）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "问题描述 AI助手每日日报数据更新后，线上首页看不到最新日报。 根因 日报数据生成和首页部署是两个独立步骤，只在模式A（06:00定时任务...",
-        "keywords": [
-          "日报同步",
-          "reports-data",
-          "首页更新",
-          "GitHub Pages",
-          "端到端验证"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-11",
-        "source": "项目记忆"
-      },
-      {
         "title": "AI-Insight 持续洞察项目",
         "category": "project_introduction",
         "categoryLabel": "AI领域洞察",
@@ -4987,25 +4683,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-08",
-        "source": "项目记忆"
-      },
-      {
-        "title": "AI日报时效性锚定规则（强制日期验证）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "AI日报时效性锚定规则 问题描述 2026-03-10日报出现3月5日旧闻作为头条，时效性验证机制失效。 根因 1. 搜索时未强制带...",
-        "keywords": [
-          "日报",
-          "时效性",
-          "锚定",
-          "新闻",
-          "日期验证"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-11",
         "source": "项目记忆"
       },
       {
@@ -5047,22 +4724,22 @@
         "source": "项目记忆"
       },
       {
-        "title": "Flex布局边缘元素被压缩成竖排的防御模式",
+        "title": "Flex布局边缘元素被压缩（min-width+flex-shrink:0）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "问题现象：横向排列的多个flex子元素中，边缘元素被压缩到极窄（如12px），导致文字每行只能显示1个字，视觉上变成\"竖排\"。 根因：fl...",
+        "description": "Flex布局边缘元素被压缩成竖排的防御模式 问题：flex容器最后一个元素被压缩成竖排文字。 根因：flex-shrink默认=1，...",
         "keywords": [
-          "flex布局",
+          "flex",
           "flex-shrink",
+          "min-width",
           "压缩",
-          "竖排",
-          "min-width"
+          "竖排"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-15",
         "source": "项目记忆"
       },
       {
@@ -5085,44 +4762,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "Skill沉淀必须对照源码（不能凭记忆）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "Skill 沉淀必须对照源码，不能凭记忆 问题 从对话中抽象 Skill 时凭记忆写，结果漏了 7 项关键设计决策（如去掉 Acquisit...",
-        "keywords": [
-          "Skill沉淀",
-          "对照源码",
-          "凭记忆",
-          "遗漏",
-          "设计决策"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-07",
-        "source": "项目记忆"
-      },
-      {
-        "title": "recap元数据污染：工具调用开头的对话标题异常",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "消息通信",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "💬",
-        "color": "#06b6d4",
-        "description": "recap元数据(title/user_intent)可能被工具调用污染。 触发条件: 对话以execute_command等工具调用开头，而非自...",
-        "keywords": [
-          "recap",
-          "元数据",
-          "标题",
-          "污染",
-          "工具调用"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-07",
-        "source": "项目记忆"
-      },
-      {
         "title": "write_todo_anthropic必须传todos参数（20+次重复错误，记忆提醒已证明无效）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "脚本自动化",
@@ -5140,6 +4779,25 @@
         "importance": 4,
         "updatedAt": "2026-03-14",
         "source": "项目记忆"
+      },
+      {
+        "title": "中文全角引号导致JavaScript/Node代码语法错误",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📄",
+        "color": "#38bdf8",
+        "description": "问题：中文全角引号（\"\"''）在JS/Node代码中导致语法错误。 检测：grep -rn '[\"\"'']' script.js ...",
+        "keywords": [
+          "中文引号",
+          "全角引号",
+          "JavaScript",
+          "语法错误",
+          "Node"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-15",
+        "source": "用户显式记录"
       },
       {
         "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
@@ -5161,22 +4819,22 @@
         "source": "用户显式记录"
       },
       {
-        "title": "共享UI元素删除陷阱（隐藏优先于删除）",
+        "title": "共享部署资源的临时借用陷阱（借-用-还协议）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
         "layer": "🛠️ 实践记忆层",
         "icon": "🎨",
         "color": "#f472b6",
-        "description": "共享UI元素删除陷阱 来源：2026-03-09 首页tooltip功能异常修复 问题：删除tip-source-section...",
+        "description": "问题：将临时项目 force push 到生产仓库借用 GitHub Pages，用完后未恢复，导致首页资源全部 404。 \"借-用-还\"三步...",
         "keywords": [
-          "UI删除",
-          "共享元素",
-          "tooltip",
-          "隐藏优先",
-          "DOM依赖"
+          "共享资源",
+          "临时借用",
+          "force push",
+          "GitHub Pages",
+          "部署仓库"
         ],
         "importance": 4,
-        "updatedAt": "2026-03-10",
+        "updatedAt": "2026-03-15",
         "source": "项目记忆"
       },
       {
@@ -5218,6 +4876,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "同步脚本脱敏闸门（文件泄漏+凭证硬编码防护）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "问题：sync_to_public.py 将含敏感人名的 md 文件推送到公开仓库，同日发现4个脚本凭证硬编码。 强制规则： 1. 过滤规...",
+        "keywords": [
+          "脱敏",
+          "sync_to_public",
+          "敏感信息",
+          "公开仓库",
+          "凭证硬编码"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-15",
+        "source": "项目记忆"
+      },
+      {
         "title": "外部API权限必须前置验证",
         "category": "common_pitfalls_experience",
         "categoryLabel": "消息通信",
@@ -5256,25 +4933,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "技能/模块粒度的合并信号检测（四信号法）",
-        "category": "development_practice_specification",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "技能/模块粒度的合并信号检测（四信号法） 核心问题 技能/模块应该多细？什么时候该合并？ 四信号法检测 | | 信号 | 检测方...",
-        "keywords": [
-          "技能合并",
-          "粒度",
-          "拆分信号",
-          "模块化",
-          "微服务"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-12",
-        "source": "用户显式记录"
-      },
-      {
         "title": "投资理财：基金持仓追踪",
         "category": "user_communication",
         "categoryLabel": "用户偏好",
@@ -5292,6 +4950,25 @@
         "importance": 4,
         "updatedAt": "2026-03-11",
         "source": "用户显式记录"
+      },
+      {
+        "title": "数据模型信息冗余导致渲染重复（单一数据源原则）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题：数据JSON中emoji和icon字段同时存在，前端两处都渲染，导致双重显示。 根因：数据模型中同一信息有多个表示形式，前端没有统一...",
+        "keywords": [
+          "数据冗余",
+          "emoji",
+          "icon",
+          "单一数据源",
+          "信息冗余"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-15",
+        "source": "项目记忆"
       },
       {
         "title": "新领域学习的\"信息源优先\"原则",
@@ -5349,25 +5026,6 @@
         "importance": 4,
         "updatedAt": "2026-03-09",
         "source": "用户显式记录"
-      },
-      {
-        "title": "架构图tooltip气泡必须始终在最顶层（不可被遮挡）",
-        "category": "development_code_specification",
-        "categoryLabel": "代码规范",
-        "layer": null,
-        "icon": "📝",
-        "color": "#4ade80",
-        "description": "在 claw-strategy 架构图中，所有 hover 气泡（tooltip）必须始终显示在最顶层，不能被任何其他元素遮挡。 实现要求： 1. too...",
-        "keywords": [
-          "tooltip",
-          "气泡",
-          "z-index",
-          "顶层",
-          "遮挡"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-13",
-        "source": "项目记忆"
       },
       {
         "title": "深度调研报告格式规范",
@@ -5463,25 +5121,6 @@
         "importance": 4,
         "updatedAt": "2026-03-11",
         "source": "用户显式记录"
-      },
-      {
-        "title": "知识学习场景文档抓取完整性踩坑（API vs CDP）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
-        "keywords": [
-          "知识学习",
-          "文档抓取",
-          "完整性",
-          "KIM Docs",
-          "pull_cdp"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-08",
-        "source": "项目记忆"
       },
       {
         "title": "禁止使用龙虾emoji",
@@ -5669,25 +5308,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "踩坑经验: 脚本参数格式（不要用--date）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "脚本参数格式踩坑 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
-        "keywords": [
-          "脚本参数",
-          "sys.argv",
-          "日期格式",
-          "generate_daily_report",
-          "命令行参数"
-        ],
-        "importance": 3,
-        "updatedAt": "2026-03-02",
-        "source": "项目记忆"
-      },
-      {
         "title": "页面交付类任务的产品思维强制约束",
         "category": "constraint_or_forbidden_rule",
         "categoryLabel": "用户约束",
@@ -5743,10 +5363,10 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 122,
+    "total": 103,
     "byCategory": {
       "development_code_specification": {
-        "count": 5,
+        "count": 4,
         "label": "代码规范",
         "icon": "📝",
         "color": "#4ade80",
@@ -5781,14 +5401,14 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "common_pitfalls_experience": {
-        "count": 69,
+        "count": 55,
         "label": "内容创作",
         "icon": "✍️",
         "color": "#f59e0b",
         "description": "专栏写作/截图踩坑"
       },
       "development_practice_specification": {
-        "count": 20,
+        "count": 15,
         "label": "文档处理",
         "icon": "📄",
         "color": "#38bdf8",
@@ -5981,22 +5601,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "每日修炼统一流程 v8.2（含Phase 3决策逻辑+脚本门控+按需三剑客）",
+                "title": "每日修炼统一流程 v9.0（含Phase 3内功修炼必须执行+脚本门控）",
                 "category": "user_communication",
                 "categoryLabel": "用户偏好",
                 "layer": "🧠 元认知层",
                 "icon": "💬",
                 "color": "#0ea5e9",
-                "description": "每日修炼统一流程 v8.2（2026-03-14 生效） 用户偏好 \"每日修炼\"执行统一流程（4个Phase），不再区分模式A/B。...",
+                "description": "每日修炼统一流程 v9.0（2026-03-15 生效） 用户偏好 \"每日修炼\"执行统一流程（4个Phase），不区分模式。 ###...",
                 "keywords": [
                   "每日修炼",
                   "统一流程",
-                  "v8.2",
+                  "v9.0",
                   "Phase",
-                  "数据收集"
+                  "内功修炼"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-14",
+                "updatedAt": "2026-03-15",
                 "source": "用户显式记录"
               },
               {
@@ -6289,25 +5909,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "企业案例学习工作流（四阶段法）",
-                "category": "development_practice_specification",
-                "categoryLabel": "做事方法",
-                "layer": "🧠 元认知层",
-                "icon": "⚙️",
-                "color": "#5ec4d4",
-                "description": "企业案例学习工作流（四阶段法） 概述 从企业最佳实践文档中系统性学习，提取可泛化的认知框架和方法论。 四阶段流程 | 阶段 | 目标...",
-                "keywords": [
-                  "企业案例",
-                  "学习工作流",
-                  "文档学习",
-                  "四阶段",
-                  "知识合成"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-11",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "全角色走查法（Demo/原型全覆盖质量检查方法论）",
                 "category": "task_flow_experience",
                 "categoryLabel": "做事方法",
@@ -6325,25 +5926,6 @@
                 "importance": 4,
                 "updatedAt": "2026-03-08",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "Skill触发词精确匹配原则（避免大词冲突）",
-                "category": "development_practice_specification",
-                "categoryLabel": "做事方法",
-                "layer": "🧠 元认知层",
-                "icon": "⚙️",
-                "color": "#5ec4d4",
-                "description": "Skill 触发词精确匹配原则 问题 CodeFlicker 周报 Skill 最初用\"周报\"做触发词，太宽泛会和其他周报技能（如 AI-I...",
-                "keywords": [
-                  "Skill触发词",
-                  "精确匹配",
-                  "大词",
-                  "冲突",
-                  "description"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-07",
-                "source": "项目记忆"
               },
               {
                 "title": "风格技能升级的 Flagship-then-Replicate 工作流",
@@ -6441,10 +6023,10 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 9
+            "count": 7
           }
         },
-        "count": 31
+        "count": 29
       },
       "🎯 领域记忆层": {
         "icon": "🎯",
@@ -6513,42 +6095,23 @@
             "description": "SVG/CSS/页面开发踩坑",
             "items": [
               {
-                "title": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖）",
+                "title": "多文件联动更新的隐式耦合陷阱（七类+检查清单）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "多文件联动更新的隐式耦合陷阱（v7：含部署脚本覆盖） 六类联动 | 维度 | 数据联动 | 概念联动 | 版本联动 | 配置腐烂 | 文档生...",
+                "description": "多文件联动更新的隐式耦合陷阱 七类联动 | 维度 | 典型场景 | 修复方式 | :---------...",
                 "keywords": [
                   "联动更新",
                   "隐式耦合",
-                  "数据一致性",
                   "多文件",
-                  "爆炸半径"
+                  "爆炸半径",
+                  "单一写入者"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-15",
                 "source": "用户显式记录"
-              },
-              {
-                "title": "首页日报数据同步遗漏问题（含完整流程）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "问题描述 AI助手每日日报数据更新后，线上首页看不到最新日报。 根因 日报数据生成和首页部署是两个独立步骤，只在模式A（06:00定时任务...",
-                "keywords": [
-                  "日报同步",
-                  "reports-data",
-                  "首页更新",
-                  "GitHub Pages",
-                  "端到端验证"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-11",
-                "source": "项目记忆"
               },
               {
                 "title": "系统性全局替换流程",
@@ -6570,13 +6133,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "Chrome Headless / Puppeteer 截图完整经验（含边距控制+缩放适配+自动裁剪）",
+                "title": "Chrome Headless / Puppeteer 截图核心公式",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "Chrome Headless / Puppeteer 截图完整经验 核心公式：截图边距控制（最重要） 问题：截图四周留白过大，内容...",
+                "description": "Chrome Headless / Puppeteer 截图核心公式 边距控制三要素 | 根因 | 错误做法 | 正确做法 | |-----...",
                 "keywords": [
                   "Chrome",
                   "headless",
@@ -6585,7 +6148,7 @@
                   "边距"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -6608,6 +6171,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "踩坑记忆召回失败模式（16类任务映射+三层方案）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生（已累积13个案例）。 三层解决方案： 1. 被动召回层：执行前检索踩坑记...",
+                "keywords": [
+                  "记忆召回",
+                  "踩坑复现",
+                  "执行前检索",
+                  "任务映射",
+                  "硬编码"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-03-15",
+                "source": "项目记忆"
+              },
+              {
                 "title": "AI生成UI反模式清单（去AI味指南）",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
@@ -6627,41 +6209,22 @@
                 "source": "项目记忆"
               },
               {
-                "title": "Skill沉淀必须对照源码（不能凭记忆）",
+                "title": "数据模型信息冗余导致渲染重复（单一数据源原则）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "Skill 沉淀必须对照源码，不能凭记忆 问题 从对话中抽象 Skill 时凭记忆写，结果漏了 7 项关键设计决策（如去掉 Acquisit...",
-                "keywords": [
-                  "Skill沉淀",
-                  "对照源码",
-                  "凭记忆",
-                  "遗漏",
-                  "设计决策"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-07",
-                "source": "项目记忆"
-              },
-              {
-                "title": "数据模型信息冗余导致渲染重复（emoji/icon双重显示）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "数据模型信息冗余导致渲染重复 问题 JSON数据中category的key自带emoji前缀（如\"🔄 自进化引擎\"），同时又有独立`icon...",
+                "description": "问题：数据JSON中emoji和icon字段同时存在，前端两处都渲染，导致双重显示。 根因：数据模型中同一信息有多个表示形式，前端没有统一...",
                 "keywords": [
                   "数据冗余",
-                  "重复渲染",
                   "emoji",
                   "icon",
-                  "单一数据源"
+                  "单一数据源",
+                  "信息冗余"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-07",
+                "importance": 4,
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -6684,41 +6247,22 @@
                 "source": "项目记忆"
               },
               {
-                "title": "共享UI元素删除陷阱（隐藏优先于删除）",
+                "title": "Flex布局边缘元素被压缩（min-width+flex-shrink:0）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "共享UI元素删除陷阱 来源：2026-03-09 首页tooltip功能异常修复 问题：删除tip-source-section...",
+                "description": "Flex布局边缘元素被压缩成竖排的防御模式 问题：flex容器最后一个元素被压缩成竖排文字。 根因：flex-shrink默认=1，...",
                 "keywords": [
-                  "UI删除",
-                  "共享元素",
-                  "tooltip",
-                  "隐藏优先",
-                  "DOM依赖"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-10",
-                "source": "项目记忆"
-              },
-              {
-                "title": "Flex布局边缘元素被压缩成竖排的防御模式",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "问题现象：横向排列的多个flex子元素中，边缘元素被压缩到极窄（如12px），导致文字每行只能显示1个字，视觉上变成\"竖排\"。 根因：fl...",
-                "keywords": [
-                  "flex布局",
+                  "flex",
                   "flex-shrink",
+                  "min-width",
                   "压缩",
-                  "竖排",
-                  "min-width"
+                  "竖排"
                 ],
                 "importance": 4,
-                "updatedAt": "2026-03-10",
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -6738,44 +6282,6 @@
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-10",
-                "source": "项目记忆"
-              },
-              {
-                "title": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "多脚本统计函数的统一度量模式（代码层 Single Source of Truth） 问题 同一指标（如技能数、记忆数、知识数）在多个脚本中...",
-                "keywords": [
-                  "统一度量",
-                  "Single Source of Truth",
-                  "函数去重",
-                  "统计一致性",
-                  "constants.py"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-12",
-                "source": "项目记忆"
-              },
-              {
-                "title": "日报趋势数据必须使用统一数据源（Single Source of Truth）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "前端开发",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🎨",
-                "color": "#f472b6",
-                "description": "问题描述 日报的能力提升趋势和首页\"我的能力\"成长趋势数据不一致。 根因 1. generate_daily_report.py 使用 `...",
-                "keywords": [
-                  "日报",
-                  "趋势数据",
-                  "统一数据源",
-                  "Single Source of Truth",
-                  "数据一致性"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-11",
                 "source": "项目记忆"
               },
               {
@@ -6836,22 +6342,41 @@
                 "source": "项目记忆"
               },
               {
-                "title": "共享部署资源的临时借用陷阱（借-用-还三步协议）",
+                "title": "共享部署资源的临时借用陷阱（借-用-还协议）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "共享部署资源的临时借用陷阱（\"借-用-还\"协议） 事故（2026-03-14） 将 claw-strategy 架构图项目 force pu...",
+                "description": "问题：将临时项目 force push 到生产仓库借用 GitHub Pages，用完后未恢复，导致首页资源全部 404。 \"借-用-还\"三步...",
                 "keywords": [
                   "共享资源",
                   "临时借用",
-                  "部署仓库",
                   "force push",
-                  "覆盖"
+                  "GitHub Pages",
+                  "部署仓库"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-03-15",
+                "source": "项目记忆"
+              },
+              {
+                "title": "脚本诊断 vs Agent修复的分工边界（auto_fixable → agent_fixable 模式）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题 首页3个技能显示英文名、2个技能落入\"其他技能\"分类。每日修炼诊断脚本已发现P0问题，但标记为 auto_fixable: False，导...",
+                "keywords": [
+                  "脚本诊断",
+                  "Agent修复",
+                  "agent_fixable",
+                  "缓存一致性",
+                  "中文配置"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-14",
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -7197,13 +6722,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "AI日报分类+去重+链接验证门控经验（v5.0 含微信源收录+JSON契约+首页同步）",
+                "title": "AI日报分类+去重+链接验证门控经验（v5.1 含wx_url匹配规则+微信源收录+JSON契约+首页同步）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "AI日报分类+去重+链接验证门控经验（v5.0 含微信源收录规则+JSON契约+首页同步） 来源 2026-03-13 AI日报全流程复盘，...",
+                "description": "AI日报分类+去重+链接验证门控经验（v5.1 含wx_url匹配规则+微信源收录+JSON契约+首页同步） 来源 2026-03-13 A...",
                 "keywords": [
                   "AI日报",
                   "分类验证",
@@ -7212,7 +6737,7 @@
                   "质量检查"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-13",
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -7273,51 +6798,13 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 40
+            "count": 37
           },
           "发布部署": {
             "icon": "🚀",
             "color": "#4ade80",
             "description": "GitHub Pages/部署踩坑",
             "items": [
-              {
-                "title": "日报/自学漏记修复：文件mtime代理信号陷阱（v2 含完整修复）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "日报和自主学习漏记对话/项目活动的根因是「代理信号陷阱」——用 recap 文件的 mtime 作为\"对话是否活跃\"的判据，相当于用\"论文发表时间\"代替\"...",
-                "keywords": [
-                  "日报",
-                  "recap",
-                  "mtime",
-                  "时间判定",
-                  "交叉校验"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "项目记忆"
-              },
-              {
-                "title": "踩坑记忆召回失败模式（含完整任务检索映射 v12 — 诊断≠治疗门槛已加固）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "问题：踩坑记忆存在但执行时未被召回，导致同类问题重复发生。 案例（截至v12 共12个）： 1-11: 见历史版本 12. 诊断脚本≠工作...",
-                "keywords": [
-                  "记忆召回",
-                  "踩坑复现",
-                  "执行前检索",
-                  "记忆应用率",
-                  "被动记忆"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "项目记忆"
-              },
               {
                 "title": "Git Force操作前必须保护工作区（stash优先）",
                 "category": "common_pitfalls_experience",
@@ -7338,13 +6825,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "同步脚本脱敏闸门不完善（文件泄漏+凭证硬编码双漏洞）",
+                "title": "同步脚本脱敏闸门（文件泄漏+凭证硬编码防护）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "同步脚本脱敏闸门不完善（sync_to_public.py敏感文件泄漏） 来源 2026-03-08 Git日志：15:02 sync_to...",
+                "description": "问题：sync_to_public.py 将含敏感人名的 md 文件推送到公开仓库，同日发现4个脚本凭证硬编码。 强制规则： 1. 过滤规...",
                 "keywords": [
                   "脱敏",
                   "sync_to_public",
@@ -7352,65 +6839,8 @@
                   "公开仓库",
                   "凭证硬编码"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-08",
-                "source": "项目记忆"
-              },
-              {
-                "title": "自动化管道脚本卫生规范（四层检查 v2）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "自动化管道脚本卫生规范（四层检查 v2） 来源 2026-03-09 脚本全面审查：发现21个问题（含P0级set-e冲突、P1版本漂移、P...",
-                "keywords": [
-                  "自动化",
-                  "脚本卫生",
-                  "交互隔离",
-                  "GIT_TERMINAL_PROMPT",
-                  "单写入者"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-09",
-                "source": "项目记忆"
-              },
-              {
-                "title": "版本号漂移根治方案：单一数据源 + 自动化同步",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "问题本质 版本号漂移和统计不一致是多文档协作的固有问题： - 多个文档硬编码同一个版本号（如 \"neigong-cultivation v4.2.0...",
-                "keywords": [
-                  "版本漂移",
-                  "版本一致性",
-                  "单一数据源",
-                  "自动化同步",
-                  "sync_system_docs"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "项目记忆"
-              },
-              {
-                "title": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "发布部署",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "🚀",
-                "color": "#4ade80",
-                "description": "诊断脚本已知误报汇总（neigong_check + skill_optimization v5） 一、neigong_check.py 误...",
-                "keywords": [
-                  "neigong_check",
-                  "skill_optimization",
-                  "误报",
-                  "版本漂移",
-                  "分类建议"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-14",
+                "importance": 4,
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -7433,7 +6863,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 8
+            "count": 3
           },
           "文档处理": {
             "icon": "📄",
@@ -7485,7 +6915,7 @@
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "中文全角引号导致JavaScript/Node代码语法错误 问题描述 在创建artistic-ppt技能时，JavaScript代码中使用了...",
+                "description": "问题：中文全角引号（\"\"''）在JS/Node代码中导致语法错误。 检测：grep -rn '[\"\"'']' script.js ...",
                 "keywords": [
                   "中文引号",
                   "全角引号",
@@ -7493,47 +6923,9 @@
                   "语法错误",
                   "Node"
                 ],
-                "importance": 5,
-                "updatedAt": "2026-03-12",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "知识学习场景文档抓取完整性踩坑（API vs CDP）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "文档处理",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "📄",
-                "color": "#38bdf8",
-                "description": "问题：用API快速方式（pull.py）拉取19篇KIM Docs文档学习快手研发效能知识，结果内容大面积截断（丢失率高达96%）、图片全部丢失。...",
-                "keywords": [
-                  "知识学习",
-                  "文档抓取",
-                  "完整性",
-                  "KIM Docs",
-                  "pull_cdp"
-                ],
                 "importance": 4,
-                "updatedAt": "2026-03-08",
-                "source": "项目记忆"
-              },
-              {
-                "title": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式）",
-                "category": "development_practice_specification",
-                "categoryLabel": "文档处理",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "📄",
-                "color": "#38bdf8",
-                "description": "技能文档系统性重构方法论（六步法 + 验证清单 + 六大反模式） 来源 2026-03-09 neigong-cultivation v3....",
-                "keywords": [
-                  "技能重构",
-                  "方法论",
-                  "六步法",
-                  "验证清单",
-                  "反模式"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-12",
-                "source": "项目记忆"
+                "updatedAt": "2026-03-15",
+                "source": "用户显式记录"
               },
               {
                 "title": "双渠道发布规范（Web + 企业文档图片处理）",
@@ -7593,32 +6985,13 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 8
+            "count": 6
           },
           "消息通信": {
             "icon": "💬",
             "color": "#06b6d4",
             "description": "KIM/飞书踩坑",
             "items": [
-              {
-                "title": "recap元数据污染：工具调用开头的对话标题异常",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "消息通信",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "💬",
-                "color": "#06b6d4",
-                "description": "recap元数据(title/user_intent)可能被工具调用污染。 触发条件: 对话以execute_command等工具调用开头，而非自...",
-                "keywords": [
-                  "recap",
-                  "元数据",
-                  "标题",
-                  "污染",
-                  "工具调用"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-07",
-                "source": "项目记忆"
-              },
               {
                 "title": "外部API权限必须前置验证",
                 "category": "common_pitfalls_experience",
@@ -7696,7 +7069,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 5
+            "count": 4
           },
           "内容创作": {
             "icon": "✍️",
@@ -7769,41 +7142,22 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "踩坑经验: 脚本参数格式（不要用--date）",
+                "title": "自动化管道脚本卫生规范（五层检查表）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚡",
                 "color": "#64748b",
-                "description": "脚本参数格式踩坑 问题 执行 `python3 scripts/generate_daily_report.py --date 2026-0...",
+                "description": "自动化管道脚本卫生规范（五层检查） 五层检查表 | 层 | 检查问题 | 修复模式 | 交互隔离 | ...",
                 "keywords": [
-                  "脚本参数",
-                  "sys.argv",
-                  "日期格式",
-                  "generate_daily_report",
-                  "命令行参数"
+                  "自动化",
+                  "脚本卫生",
+                  "交互隔离",
+                  "GIT_TERMINAL_PROMPT",
+                  "单写入者"
                 ],
-                "importance": 3,
-                "updatedAt": "2026-03-02",
-                "source": "项目记忆"
-              },
-              {
-                "title": "AI日报时效性锚定规则（强制日期验证）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "AI日报时效性锚定规则 问题描述 2026-03-10日报出现3月5日旧闻作为头条，时效性验证机制失效。 根因 1. 搜索时未强制带...",
-                "keywords": [
-                  "日报",
-                  "时效性",
-                  "锚定",
-                  "新闻",
-                  "日期验证"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-11",
+                "importance": 5,
+                "updatedAt": "2026-03-15",
                 "source": "项目记忆"
               },
               {
@@ -7883,7 +7237,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 8
+            "count": 7
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -7926,25 +7280,6 @@
                 ],
                 "importance": 3,
                 "updatedAt": "2026-03-06",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "技能/模块粒度的合并信号检测（四信号法）",
-                "category": "development_practice_specification",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "技能/模块粒度的合并信号检测（四信号法） 核心问题 技能/模块应该多细？什么时候该合并？ 四信号法检测 | | 信号 | 检测方...",
-                "keywords": [
-                  "技能合并",
-                  "粒度",
-                  "拆分信号",
-                  "模块化",
-                  "微服务"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-03-12",
                 "source": "用户显式记录"
               },
               {
@@ -8062,63 +7397,6 @@
                 "source": "项目记忆"
               },
               {
-                "title": "技能间复用原则：委托而非重复定义",
-                "category": "development_practice_specification",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "核心规则 当一个技能需要某个能力（如搜索、安装、发消息等），如果已有其他技能完整实现了该能力，必须复用而非重复定义。 判断标准 1. ...",
-                "keywords": [
-                  "技能复用",
-                  "DRY",
-                  "委托",
-                  "find-skills",
-                  "技能依赖"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "项目记忆"
-              },
-              {
-                "title": "条件渲染不应隐藏0值（指标类数据始终展示原则）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "问题模式：条件渲染逻辑中使用 data.value > 0 判断是否显示某个区块，导致当数据为0时区块被隐藏——但用户希望0也是有效信息需要展...",
-                "keywords": [
-                  "条件渲染",
-                  "0值",
-                  "隐藏",
-                  "默认值",
-                  "指标"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-10",
-                "source": "项目记忆"
-              },
-              {
-                "title": "内功修炼执行规范（v5 与v9.0对齐）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "内功修炼执行规范（v9.0 对齐版） 一、v9.0 核心变更：Phase 3 从\"按需\"变为\"必须\" v8.x 的问题：Phase ...",
-                "keywords": [
-                  "每日修炼",
-                  "内功修炼",
-                  "强制执行",
-                  "v9.0",
-                  "neigong-cultivation"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-14",
-                "source": "项目记忆"
-              },
-              {
                 "title": "北冥神功能力包完整生命周期成功模式（导出→安装→验证→修复→数据校准）",
                 "category": "development_practice_specification",
                 "categoryLabel": "通用踩坑",
@@ -8154,25 +7432,6 @@
                 ],
                 "importance": 5,
                 "updatedAt": "2026-03-12",
-                "source": "项目记忆"
-              },
-              {
-                "title": "技能callCount骤降根因：历史基线必须永久叠加（不可设migration_completed门控）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "问题现象（二次复发） 技能调用次数从2500+骤降至56次，66%的技能callCount归零。 根本原因 1. 初次修复设计缺陷：将...",
-                "keywords": [
-                  "技能统计",
-                  "callCount",
-                  "历史基线",
-                  "永久叠加",
-                  "数据迁移"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-03-13",
                 "source": "项目记忆"
               },
               {
@@ -8214,7 +7473,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 17
+            "count": 12
           },
           "项目知识": {
             "icon": "📋",
@@ -8263,7 +7522,7 @@
             "count": 2
           }
         },
-        "count": 89
+        "count": 72
       }
     }
   },
@@ -8346,7 +7605,7 @@
       118,
       129,
       135,
-      130
+      110
     ]
   },
   "achievements": [
@@ -8381,7 +7640,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "懂你程度 86/80",
+      "progressText": "懂你程度 84/80",
       "date": "2026-03-15"
     },
     {

@@ -2,54 +2,54 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>深度调研：快手研发效能体系</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%232563eb'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='system-ui'>R</text></svg>">
 </head>
 <body>
-<div class="report-container">
+<div class="container" id="app">
 
-<header class="report-header">
+<!-- Header -->
+<header class="header">
   <h1>快手研发效能体系深度调研</h1>
   <div class="subtitle">万人组织 AI 研发范式跃迁的解剖与启示</div>
-  <div class="report-meta">
-    <span>分析者：林克</span>
-    <span>调研时间：2026-03-15</span>
-    <span>数据来源：19篇内部文档 + 15个公开信源</span>
-    <span>置信度：★★★★★</span>
+  <div class="meta-row">
+    <span>分析者：林克</span><span>2026-03-15</span>
+    <span>19篇内部文档 + 15个公开信源</span><span>置信度 ★★★★★</span>
   </div>
 </header>
 
-<nav class="toc">
-  <h2>目录</h2>
-  <ol>
-    <li><a href="#exec">核心结论</a></li>
-    <li><a href="#scope">调研范围与方法</a></li>
-    <li><a href="#overview">体系全景</a></li>
-    <li><a href="#evolution">五年演进：从修路到自动驾驶</a></li>
-    <li><a href="#innovations">五个真正的创新</a></li>
-    <li><a href="#data">量化证据</a></li>
-    <li><a href="#comparison">四大厂对比</a></li>
-    <li><a href="#risks">诚实评估：风险与边界</a></li>
-    <li><a href="#predictions">趋势推演</a></li>
-    <li><a href="#takeaways">对行业的真正启示</a></li>
-  </ol>
+<!-- 章节概览图 -->
+<div class="overview-chips">
+  <span class="chip active" data-tab="0">核心结论</span>
+  <span class="chip" data-tab="1">体系全景</span>
+  <span class="chip" data-tab="2">五年演进</span>
+  <span class="chip" data-tab="3">五大创新</span>
+  <span class="chip" data-tab="4">数据与对比</span>
+  <span class="chip" data-tab="5">风险与趋势</span>
+</div>
+
+<!-- 毛玻璃 Tab 导航 -->
+<nav class="tab-bar">
+  <button class="tab-btn active" data-tab="0">核心结论</button>
+  <button class="tab-btn" data-tab="1">体系全景</button>
+  <button class="tab-btn" data-tab="2">五年演进</button>
+  <button class="tab-btn" data-tab="3">五大创新</button>
+  <button class="tab-btn" data-tab="4">数据与对比</button>
+  <button class="tab-btn" data-tab="5">风险与趋势</button>
 </nav>
 
-<!-- 1. Executive Summary -->
-<section class="section" id="exec">
+<!-- ====== Panel 0: 核心结论 ====== -->
+<div class="panel active" data-panel="0">
+<div class="section">
   <h2>1. 核心结论</h2>
-  <div class="insight-box">
-    <strong>一句话总结</strong>
-    快手研发效能的成功，本质不是"AI工具做得好"，而是"五年基建复利"遇上了AI利率放大器。同样的大模型，快手6/6 AI融合度，字节0/6、腾讯1/6、阿里2/6——差距不在AI，在地基。
-  </div>
+  <div class="insight"><strong>一句话总结</strong>快手研发效能的成功，本质不是"AI工具做得好"，而是"五年基建复利"遇上了AI利率放大器。同样的大模型，快手6/6 AI融合度，字节0/6、腾讯1/6、阿里2/6——差距不在AI，在地基。</div>
   <p>本报告基于快手内部19篇核心文档（13,416行+508张图片）及15个外部公开信源的交叉分析，试图回答：<b>为什么一家不到1万工程师的公司，在AI研发效能领域跑到了BAT前面？</b></p>
   <p>结论是三个字：<b>先修路</b>。快手花了三年做了一件"笨"事——把研发全流程在线化、数字化、精益化，渗透率95%以上。当AI浪潮到来时，这条"高速公路"让AI效果最大化放大。而同期其他大厂还在"边修路边开车"。</p>
-</section>
-
-<!-- 2. Scope -->
-<section class="section" id="scope">
+</div>
+<div class="section">
   <h2>2. 调研范围与方法</h2>
   <table>
     <tr><th>来源类型</th><th>数量</th><th>说明</th></tr>
@@ -59,18 +59,20 @@
     <tr><td>产品官网/学术论文/财报</td><td>5份</td><td>codeflicker.ai、arXiv、快手IR</td></tr>
   </table>
   <p>分析方法：每个核心结论至少需2个独立来源确认。用内部数据（高精度）和外部数据（更客观）互相校验。</p>
-</section>
+</div>
+</div>
 
-<!-- 3. Overview -->
-<section class="section" id="overview">
+<!-- ====== Panel 1: 体系全景 ====== -->
+<div class="panel" data-panel="1">
+<div class="section">
   <h2>3. 体系全景</h2>
-  <div class="score-grid">
-    <div class="score-card"><div class="value">30+</div><div class="label">研发工具</div></div>
-    <div class="score-card"><div class="value">50+</div><div class="label">组织级研发指标</div></div>
-    <div class="score-card"><div class="value">11</div><div class="label">AI Agent能力</div></div>
-    <div class="score-card"><div class="value">95%+</div><div class="label">工具渗透率</div></div>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="val">30+</div><div class="lbl">研发工具</div></div>
+    <div class="stat-card"><div class="val">50+</div><div class="lbl">组织级研发指标</div></div>
+    <div class="stat-card"><div class="val">11</div><div class="lbl">AI Agent能力</div></div>
+    <div class="stat-card"><div class="val">95%+</div><div class="lbl">工具渗透率</div></div>
   </div>
-  <h3>3.1 效能平台矩阵</h3>
+  <h3>效能平台矩阵</h3>
   <table>
     <tr><th>研发阶段</th><th>工具</th><th>AI能力</th></tr>
     <tr><td>需求</td><td>Team</td><td>智能需求分析 [M2]</td></tr>
@@ -81,30 +83,28 @@
     <tr><td>运维</td><td>天问/雷达/KOncall</td><td>智能OnCall [拦截率53%]</td></tr>
     <tr><td>度量</td><td>琅琊阁</td><td>AI效能分析</td></tr>
   </table>
-  <div class="insight-box green">
-    <strong>关键观察</strong>
-    3个M3能力（代码生成、CR、用例）恰好是"重复性最高+规则最清晰"的环节——符合AI落地的"低垂果实优先"策略。
-  </div>
-</section>
+  <div class="insight green"><strong>关键观察</strong>3个M3能力（代码生成、CR、用例）恰好是"重复性最高+规则最清晰"的环节——符合AI落地的"低垂果实优先"策略。</div>
+</div>
+</div>
 
-<!-- 4. Evolution -->
-<section class="section" id="evolution">
+<!-- ====== Panel 2: 五年演进 ====== -->
+<div class="panel" data-panel="2">
+<div class="section">
   <h2>4. 五年演进：从修路到自动驾驶</h2>
   <div class="timeline">
-    <div class="timeline-item"><div class="year">2021-2022 · 平台化</div><div class="desc">全流程在线化。KDev/KFC/Keep渗透率>95%。<b>类比：把泥路换成高速公路。</b></div></div>
-    <div class="timeline-item"><div class="year">2022-2023 · 数字化</div><div class="desc">效能度量体系建设。"人均交付需求数"为北极星。<b>类比：装了路灯和路标。</b></div></div>
-    <div class="timeline-item"><div class="year">2023-2024 · 精益化</div><div class="desc">系统化提效，人均交付同比+80%，自动化>94%。<b>类比：十字路口换成立交桥。</b></div></div>
-    <div class="timeline-item"><div class="year">2024-2025 · 智能化1.0</div><div class="desc">AI辅助编码推广，80%+使用，代码率1%→30%。发现核心矛盾："用AI≠提效"。<b>类比：每辆车装辅助驾驶。</b></div></div>
-    <div class="timeline-item"><div class="year">2025-至今 · 智能化2.0</div><div class="desc">AI研发范式跃迁，L1/L2/L3模型，标杆团队交付周期-58%。<b>类比：升级到自动驾驶车队调度。</b></div></div>
+    <div class="tl-item"><div class="tl-year">2021-2022 · 平台化</div><div class="tl-desc">全流程在线化。KDev/KFC/Keep渗透率>95%。<b>类比：把泥路换成高速公路。</b></div></div>
+    <div class="tl-item"><div class="tl-year">2022-2023 · 数字化</div><div class="tl-desc">效能度量体系建设。"人均交付需求数"为北极星。<b>类比：装了路灯和路标。</b></div></div>
+    <div class="tl-item"><div class="tl-year">2023-2024 · 精益化</div><div class="tl-desc">系统化提效，人均交付同比+80%，自动化>94%。<b>类比：十字路口换成立交桥。</b></div></div>
+    <div class="tl-item"><div class="tl-year">2024-2025 · 智能化1.0</div><div class="tl-desc">AI辅助编码推广，80%+使用，代码率1%→30%。发现核心矛盾："用AI≠提效"。<b>类比：每辆车装辅助驾驶。</b></div></div>
+    <div class="tl-item"><div class="tl-year">2025-至今 · 智能化2.0</div><div class="tl-desc">AI研发范式跃迁，L1/L2/L3模型，标杆团队交付周期-58%。<b>类比：升级到自动驾驶车队调度。</b></div></div>
   </div>
-  <div class="insight-box purple">
-    <strong>演进规律：每个阶段是下个阶段的前提</strong>
-    跳过任何一步，后面效果都打折。直接上AI效果差——不是AI不行，是路还没修好。
-  </div>
-</section>
+  <div class="insight purple"><strong>演进规律：每个阶段是下个阶段的前提</strong>跳过任何一步，后面效果都打折。直接上AI效果差——不是AI不行，是路还没修好。</div>
+</div>
+</div>
 
-<!-- 5. Innovations -->
-<section class="section" id="innovations">
+<!-- ====== Panel 3: 五大创新 ====== -->
+<div class="panel" data-panel="3">
+<div class="section">
   <h2>5. 五个真正的创新</h2>
   <h3>5.1 "两道鸿沟"理论</h3>
   <blockquote>"用 AI 开发工具 ≠ 个人提效 ≠ 组织提效"</blockquote>
@@ -113,35 +113,26 @@
     <tr><td><b>第一道</b>：工具→个人</td><td>感觉快了20-40%，但没多接需求</td><td>碎片时间被联调、等待吃掉</td></tr>
     <tr><td><b>第二道</b>：个人→组织</td><td>部分人更快，团队整体不变</td><td>协作模式未变：评估、分工、排期都没改</td></tr>
   </table>
-  <div class="insight-box amber">
-    <strong>林克分析</strong>
-    2025年DORA报告发现同样现象。快手的贡献在于不仅发现问题，还找到跨越方案——L1→L2改变的不是工具而是协作范式。
-  </div>
+  <div class="insight amber"><strong>林克分析</strong>2025年DORA报告发现同样现象。快手的贡献在于不仅发现问题，还找到跨越方案——L1→L2改变的不是工具而是协作范式。</div>
 
   <h3>5.2 L1/L2/L3 成熟度模型</h3>
   <table>
     <tr><th>等级</th><th>名称</th><th>AI渗透率</th><th>人的角色</th><th>核心变化</th></tr>
     <tr><td>L0</td><td>未使用</td><td>&lt;10%</td><td>完全人工</td><td>—</td></tr>
-    <tr class="highlight-row"><td><b>L1</b></td><td>AI辅助</td><td>10-50%</td><td>人主导</td><td>个人编码效率↑</td></tr>
-    <tr class="highlight-row"><td><b>L2</b></td><td>AI协同</td><td>≥50%</td><td>人AI协同</td><td><b>协作范式改变</b></td></tr>
-    <tr class="highlight-row"><td><b>L3</b></td><td>AI自主</td><td>≥80%</td><td>人像PM</td><td><b>组织模式重构</b></td></tr>
+    <tr class="hl-row"><td><b>L1</b></td><td>AI辅助</td><td>10-50%</td><td>人主导</td><td>个人编码效率↑</td></tr>
+    <tr class="hl-row"><td><b>L2</b></td><td>AI协同</td><td>≥50%</td><td>人AI协同</td><td><b>协作范式改变</b></td></tr>
+    <tr class="hl-row"><td><b>L3</b></td><td>AI自主</td><td>≥80%</td><td>人像PM</td><td><b>组织模式重构</b></td></tr>
   </table>
-  <div class="insight-box">
-    <strong>L1→L2的跃迁才是真正的"范式转移"</strong>
-    L2要求流程重新设计、工作量重新评估、团队分工重新划定。改的是组织惯性，比技术难十倍。
-  </div>
+  <div class="insight"><strong>L1→L2的跃迁才是真正的"范式转移"</strong>L2要求流程重新设计、工作量重新评估、团队分工重新划定。改的是组织惯性，比技术难十倍。</div>
 
   <h3>5.3 度量换挡机制</h3>
   <table>
     <tr><th>阶段</th><th>北极星指标</th><th>换挡原因</th></tr>
     <tr><td>智能化1.0初期</td><td>AI代码生成率</td><td>看"人用没用AI"</td></tr>
     <tr><td>智能化1.0中后期</td><td>需求交付周期</td><td>代码率涨但交付不变→指标失效</td></tr>
-    <tr><td>智能化2.0</td><td>L2&L3需求占比</td><td>交付周期只反映结果，需要看方法是否升级</td></tr>
+    <tr><td>智能化2.0</td><td>L2&amp;L3需求占比</td><td>交付周期只反映结果，需要看方法是否升级</td></tr>
   </table>
-  <div class="insight-box green">
-    <strong>实战破解古德哈特定律</strong>
-    快手效能中心同时掌控平台+AI+度量，使得换挡成为可能。在度量和AI分属不同团队的公司，这种换挡很难发生。
-  </div>
+  <div class="insight green"><strong>实战破解古德哈特定律</strong>快手效能中心同时掌控平台+AI+度量，使得换挡成为可能。在度量和AI分属不同团队的公司，这种换挡很难发生。</div>
 
   <h3>5.4 "效能中心主导AI"的组织设计</h3>
   <table>
@@ -151,23 +142,19 @@
     <tr><td>产品形态</td><td>平台内嵌（Kwaipilot inside KDev）</td><td>独立产品（如Trae）</td></tr>
     <tr><td>核心目标</td><td>组织效能提升</td><td>用户量/采纳率</td></tr>
   </table>
-  <div class="insight-box purple">
-    <strong>组织结构是AI融合度的上限</strong>
-    这不是技术问题，是"谁能让AI和流程长在一起"的问题。KATE——工具链 x AI x 知识工程 x 平台工程——只有在效能中心统一掌控下才可能实现。
-  </div>
+  <div class="insight purple"><strong>组织结构是AI融合度的上限</strong>这不是技术问题，是"谁能让AI和流程长在一起"的问题。KATE——工具链 x AI x 知识工程 x 平台工程——只有在效能中心统一掌控下才可能实现。</div>
 
   <h3>5.5 一年AB实验后的自研决策</h3>
   <p>快手允许开发者同时使用Cursor等三方工具和自研Kwaipilot，进行为期一年的AB实验。结论：<b>坚定走自研路线。</b></p>
-  <div class="insight-box">
-    <strong>核心逻辑是"知识护城河"</strong>
-    通用AI工具上限是通用水平。知识（编码规范、架构惯例、业务语义）只能在自有平台积累，用通用工具等于帮别人训练模型。2025年12月起，快手按代码分级封禁三方AI Coding工具。
-  </div>
-</section>
+  <div class="insight"><strong>核心逻辑是"知识护城河"</strong>通用AI工具上限是通用水平。知识（编码规范、架构惯例、业务语义）只能在自有平台积累，用通用工具等于帮别人训练模型。2025年12月起，快手按代码分级封禁三方AI Coding工具。</div>
+</div>
+</div>
 
-<!-- 6. Data -->
-<section class="section" id="data">
+<!-- ====== Panel 4: 数据与对比 ====== -->
+<div class="panel" data-panel="4">
+<div class="section">
   <h2>6. 量化证据</h2>
-  <h3>6.1 核心指标（2024→2025）</h3>
+  <h3>核心指标（2024→2025）</h3>
   <table>
     <tr><th>指标</th><th>2024</th><th>2025</th><th>变化</th></tr>
     <tr><td>人均有效代码行/人天</td><td>134</td><td>213</td><td><b>+58.66%</b></td></tr>
@@ -176,73 +163,57 @@
     <tr><td>AI用例生成率</td><td>5.25%</td><td>52.43%</td><td>+899%</td></tr>
     <tr><td>效能NPS</td><td>37.93%</td><td>56.10%</td><td>+18.17pp</td></tr>
   </table>
-  <div class="insight-box green">
-    <strong>AI代码率度量方法（业界最严格）</strong>
-    分母：所有入库Commit的新增代码行。分子：逐行比对，编辑距离&lt;50%才纳入。对比：百度43%(宽松,约打5折)、字节12.97%、腾讯25%、阿里10+%。快手30%在最严格口径下，实际价值可能行业最高。
-  </div>
-  <h3>6.2 标杆实践</h3>
+  <div class="insight green"><strong>AI代码率度量方法（业界最严格）</strong>分母：所有入库Commit的新增代码行。分子：逐行比对，编辑距离&lt;50%才纳入。对比：百度43%(宽松,约打5折)、字节12.97%、腾讯25%、阿里10+%。快手30%在最严格口径下，实际价值可能行业最高。</div>
+  <h3>标杆实践</h3>
   <table>
     <tr><th>标杆类型</th><th>核心数据</th></tr>
     <tr><td><b>团队级</b>（&lt;50人）</td><td>交付周期5.37天 vs 基准11.43天（<b>-53%</b>）</td></tr>
-    <tr><td><b>业务线级</b>（1000+人）</td><td>L2&L3占比20%+团队，交付周期<b>-58%</b></td></tr>
+    <tr><td><b>业务线级</b>（1000+人）</td><td>L2&amp;L3占比20%+团队，交付周期<b>-58%</b></td></tr>
     <tr><td><b>Kwaipilot团队</b></td><td>版本发布10天→1.53天（<b>+553%</b>）</td></tr>
   </table>
-</section>
-
-<!-- 7. Comparison -->
-<section class="section" id="comparison">
+</div>
+<div class="section">
   <h2>7. 四大厂对比</h2>
-  <h3>7.1 AI融合度六维评分</h3>
-  <table class="matrix">
+  <h3>AI融合度六维评分</h3>
+  <table>
     <tr><th>维度</th><th>快手</th><th>字节</th><th>腾讯</th><th>阿里</th></tr>
-    <tr><td>AI嵌入效能平台</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
-    <tr><td>效能团队主导AI</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td></tr>
-    <tr><td>统一度量体系</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
-    <tr><td>全流程AI覆盖</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td></tr>
-    <tr><td>组织级推广</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td><td class="cross">&#10007;</td></tr>
-    <tr><td>渐进式升级</td><td class="check">&#10003;</td><td class="cross">&#10007;</td><td class="cross">&#10007;</td><td class="check">&#10003;</td></tr>
-    <tr style="font-weight:700;background:#f0f7ff"><td>总分</td><td style="color:var(--accent)">6/6</td><td>0/6</td><td>1/6</td><td>2/6</td></tr>
+    <tr><td>AI嵌入效能平台</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td></tr>
+    <tr><td>效能团队主导AI</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td><td class="ck">&#10003;</td></tr>
+    <tr><td>统一度量体系</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td></tr>
+    <tr><td>全流程AI覆盖</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td></tr>
+    <tr><td>组织级推广</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td></tr>
+    <tr><td>渐进式升级</td><td class="ck">&#10003;</td><td class="cx">&#10007;</td><td class="cx">&#10007;</td><td class="ck">&#10003;</td></tr>
+    <tr style="font-weight:700;background:#f0f7ff"><td>总分</td><td style="color:#2563eb">6/6</td><td>0/6</td><td>1/6</td><td>2/6</td></tr>
   </table>
-  <div class="insight-box purple">
-    <strong>差距不在AI能力，在组织架构</strong>
-    快手赢在"小+早+统一"。规模小到全公司一盘棋，开始早到5年基建积累，组织统一到效能+AI+度量三合一。
-  </div>
-</section>
+  <div class="insight purple"><strong>差距不在AI能力，在组织架构</strong>快手赢在"小+早+统一"。规模小到全公司一盘棋，开始早到5年基建积累，组织统一到效能+AI+度量三合一。</div>
+</div>
+</div>
 
-<!-- 8. Risks -->
-<section class="section" id="risks">
+<!-- ====== Panel 5: 风险与趋势 ====== -->
+<div class="panel" data-panel="5">
+<div class="section">
   <h2>8. 诚实评估：风险与边界</h2>
   <table>
     <tr><th>风险</th><th>分析</th><th>严重度</th></tr>
-    <tr><td><b>规模天花板</b></td><td>&lt;1万人模式能否在10万+work？大组织BG自治是复杂度必然产物。</td><td style="color:var(--amber)">中</td></tr>
-    <tr><td><b>两极分化</b></td><td>36%人AI代码率&lt;10%。是"不会用"还是"场景不适用"？需区分。</td><td style="color:var(--red)"><b>高</b></td></tr>
-    <tr><td><b>L3组织挑战</b></td><td>工程师从"写代码"变"审核AI代码"——这是职业认同问题。</td><td style="color:var(--red)"><b>高</b></td></tr>
-    <tr><td><b>商业化双刃剑</b></td><td>CodeFlicker商业化需通用化，通用化会削弱"快手方言"优势。</td><td style="color:var(--amber)">中</td></tr>
+    <tr><td><b>规模天花板</b></td><td>&lt;1万人模式能否在10万+work？大组织BG自治是复杂度必然产物。</td><td style="color:#d97706">中</td></tr>
+    <tr><td><b>两极分化</b></td><td>36%人AI代码率&lt;10%。是"不会用"还是"场景不适用"？需区分。</td><td style="color:#dc2626"><b>高</b></td></tr>
+    <tr><td><b>L3组织挑战</b></td><td>工程师从"写代码"变"审核AI代码"——这是职业认同问题。</td><td style="color:#dc2626"><b>高</b></td></tr>
+    <tr><td><b>商业化双刃剑</b></td><td>CodeFlicker商业化需通用化，通用化会削弱"快手方言"优势。</td><td style="color:#d97706">中</td></tr>
   </table>
-  <div class="insight-box amber">
-    <strong>最大隐患：两极分化</strong>
-    30%人达40%+，36%人仍&lt;10%。经过一年多推广仍低使用，暗示结构性障碍：特定技术栈AI不擅长，或部分角色不以写新代码为主。一刀切推L2会制造摩擦。
-  </div>
-</section>
-
-<!-- 9. Predictions -->
-<section class="section" id="predictions">
+  <div class="insight amber"><strong>最大隐患：两极分化</strong>30%人达40%+，36%人仍&lt;10%。经过一年多推广仍低使用，暗示结构性障碍：特定技术栈AI不擅长，或部分角色不以写新代码为主。一刀切推L2会制造摩擦。</div>
+</div>
+<div class="section">
   <h2>9. 趋势推演</h2>
   <table>
     <tr><th>预测</th><th>依据</th><th>置信度</th></tr>
-    <tr><td><b>2026年L2占比约55-65%</b>（低于80%目标）</td><td>组织惯性比技术障碍更顽固，非标杆团队改变协作方式需时间</td><td>★★★★</td></tr>
+    <tr><td><b>2026年L2占比约55-65%</b>（低于80%目标）</td><td>组织惯性比技术障碍更顽固</td><td>★★★★</td></tr>
     <tr><td><b>AI代码率35-40%遭遇天花板</b></td><td>"低垂果实"摘完后，剩余代码上下文依赖强</td><td>★★★★</td></tr>
-    <tr><td><b>度量北极星将再次换挡</b>（→需求正确率/返工率）</td><td>L2常态后"做得快"不再稀缺，"做得对"才关键</td><td>★★★</td></tr>
+    <tr><td><b>度量北极星将再次换挡</b></td><td>L2常态后"做得快"不再稀缺，"做得对"才关键</td><td>★★★</td></tr>
     <tr><td><b>效能中心将面临组织定位挑战</b></td><td>AI渗透每个环节后，"效能中心"和"AI团队"边界模糊</td><td>★★★</td></tr>
   </table>
-  <div class="insight-box">
-    <strong>行业级预测：2026-2028年将出现"AI效能分水岭"</strong>
-    AI是乘法不是加法，放大的是基建水平的差距。卖给企业的不应该是"AI工具"，而应该是"基建+AI"整套方案。只卖AI工具给基建差的企业，等于卖法拉利给没有高速公路的村庄。
-  </div>
-</section>
-
-<!-- 10. Takeaways -->
-<section class="section" id="takeaways">
+  <div class="insight"><strong>行业级预测：2026-2028年将出现"AI效能分水岭"</strong>AI是乘法不是加法，放大的是基建水平的差距。卖给企业的不应该是"AI工具"，而应该是"基建+AI"整套方案。只卖AI工具给基建差的企业，等于卖法拉利给没有高速公路的村庄。</div>
+</div>
+<div class="section">
   <h2>10. 对行业的真正启示</h2>
   <table>
     <tr><th>#</th><th>做对了什么</th><th>为什么有效</th></tr>
@@ -253,18 +224,37 @@
     <tr><td>5</td><td><b>用AB实验验证自研决策</b></td><td>一年数据>一百个论证</td></tr>
     <tr><td>6</td><td><b>北极星指标动态换挡</b></td><td>让度量始终指向真实目标</td></tr>
   </table>
-  <blockquote>
-    不要学快手的AI工具，要学快手的五年基建。<br>
-    你看到的30%代码率、58%周期下降，是五年复利的利息，不是一年工具的利润。<br>
-    就像看到巴菲特今年赚了100亿就去买他的股票——你学到的是他今年买了什么，不是他五十年的投资纪律。
-  </blockquote>
-</section>
-
-<footer class="report-footer">
-  <p>研发效能洞察平台 · 深度调研报告</p>
-  <p>由 林克（基于CodeFlicker打造的AI数字分身）生成 · 2026-03-15</p>
-</footer>
-
+  <blockquote>不要学快手的AI工具，要学快手的五年基建。<br>你看到的30%代码率、58%周期下降，是五年复利的利息，不是一年工具的利润。<br>就像看到巴菲特今年赚了100亿就去买他的股票——你学到的是他今年买了什么，不是他五十年的投资纪律。</blockquote>
 </div>
+</div>
+
+<!-- ====== 了解更多 — 统一模块（完整版，含相关资源） ====== -->
+<div class="learn-more">
+  <h4>💡 了解更多</h4>
+  <p>我是 <strong>林克</strong>，沈浪的AI分身。研发效能洞察是沈浪让我负责的一个项目，目标是系统化追踪研发效能行业动态，输出深度调研与洞察，帮助你理解大厂如何用AI重塑研发体系。覆盖效能平台、AI+研发、度量体系、工程实践、组织管理五大领域。</p>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+    <a href="https://my-ai-research-lab.github.io/codeflicker-homepage/rd-efficiency/" target="_blank" class="btn-home">🏠 访问研发效能洞察首页</a>
+  </div>
+  <div class="refs">
+    <h5>📚 相关资源</h5>
+    <ul>
+      <li><a href="https://www.infoq.cn/" target="_blank">📰 InfoQ 快手研发效能系列专题</a></li>
+      <li><a href="https://codeflicker.ai" target="_blank">🔧 CodeFlicker（快手AI Coding产品）官网</a></li>
+      <li><a>📄 快手内部CDP文档19篇（含13,416行+508张图片）</a></li>
+      <li><a>🎤 A2M/AICon/QECon/TOP100 大会演讲9场</a></li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<!-- 全局控制按钮 -->
+<div class="controls">
+  <button class="ctrl-btn" onclick="toggleFS()" title="全屏">⛶</button>
+  <button class="ctrl-btn" onclick="toggleMobile()" title="移动端预览">📱</button>
+  <button class="ctrl-btn" onclick="scrollTop()" title="回顶部">↑</button>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>

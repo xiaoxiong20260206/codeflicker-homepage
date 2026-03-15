@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-15T09:07:57.280207",
+  "generatedAt": "2026-03-15T09:22:36.898949",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -3510,25 +3510,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "AI生成UI反模式清单（去AI味指南）",
-        "category": "development_practice_specification",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "AI生成UI反模式清单 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
-        "keywords": [
-          "AI反模式",
-          "前端设计",
-          "去AI味",
-          "UI设计",
-          "anti-pattern"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-07",
-        "source": "项目记忆"
-      },
-      {
         "title": "CSS\"不可见\"问题三板斧：样式→遮挡→裁切（elementFromPoint是关键）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -4721,6 +4702,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-11",
+        "source": "项目记忆"
+      },
+      {
+        "title": "AI生成UI反模式清单（去AI味指南）",
+        "category": "development_practice_specification",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "AI生成UI反模式清单 来源 从 Impeccable (pbakaus/impeccable) 提炼，融入 frontend-design...",
+        "keywords": [
+          "AI反模式",
+          "前端设计",
+          "去AI味",
+          "UI设计",
+          "anti-pattern"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-07",
         "source": "项目记忆"
       },
       {
@@ -6204,7 +6204,7 @@
                   "UI设计",
                   "anti-pattern"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-03-07",
                 "source": "项目记忆"
               },

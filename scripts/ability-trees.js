@@ -1,0 +1,982 @@
+/**
+ * 能力树渲染模块 v4.0 — 数据驱动架构（统一三层 + role 匹配）
+ * Build: 20260309-0900
+ * 核心原则：
+ * - 所有分类名、技能名从 JSON 数据读取，不再硬编码中文
+ * - 通过 role/layerTag 稳定标识符匹配分类，改名无需修改 JS
+ * - displayName 从数据中读取，消除 skillNameMap 双重维护
+ */
+
+// ==================== 技能树 - 系统架构图 ====================
+function renderSkillTechTree(container, skills) {
+    if (!container) return;
+    
+    var tree = skills.tree;
+    var categories = skills.categories;
+    var relationships = skills.relationships || {};
+    
+    // 技能名称全部从数据读取（v4.0 — 消除 skillNameMap 硬编码）
+    // displayName: 统一中文名（所有展示场景使用同一名称）, name: 英文标识符
+    function getName(skill) {
+        return skill.displayName || skill.name;
+    }
+    function getLevelColor(level) {
+        var colors = { 1: '#fb923c', 2: '#fbbf24', 3: '#4ade80', 4: '#38bdf8', 5: '#a78bfa' };
+        return colors[level] || '#4ade80';
+    }
+    
+    function getLevelProgress(level, exp) {
+        var progress = (exp || (level * 20)) / 100;
+        return 50 * (1 - progress);
+    }
+    
+    function isRecentlyUsed(lastUpdated) {
+        if (!lastUpdated) return false;
+        return (new Date() - new Date(lastUpdated)) / 86400000 <= 3;
+    }
+    
+    var _idx = 0;
+    function classifySource(src) {
+        if (!src) return { label: '未知', badge: '❓' };
+        if (src === '林克核心能力' || src === 'AI核心能力') return { label: '自定义', badge: '✏️' };
+        if (src === '平台预装技能' || src === '用户自定义') return { label: '平台技能', badge: '📦' };
+        if (src.indexOf('技能库') > -1) return { label: '平台技能', badge: '📦' };
+        return { label: src, badge: '📍' };
+    }
+    function storeSkill(skill) {
+        var id = 'skill-' + (_idx++);
+        var src = classifySource(skill.source);
+        window.AppState.dataMap[id] = {
+            name: getName(skill), icon: '\u26A1', level: skill.level || 1,
+            description: skill.description || '', source: skill.source || '技能库',
+            sourceLabel: src.label, sourceBadge: src.badge,
+            exp: skill.exp || 0, lastUpdated: skill.lastUpdated,
+            callCount: skill.callCount || 0,
+            frequency: skill.frequency || '',
+            successRate: skill.successRate || 0,
+            skillSize: skill.skillSize || 0,
+            skillSizeLabel: skill.skillSizeLabel || '',
+            ksInternal: skill.ksInternal || false,
+            cfProject: skill.cfProject || false
+        };
+        return id;
+    }
+    function storeGeneric(icon, name, desc, level) {
+        var id = 'gen-' + (_idx++);
+        window.AppState.dataMap[id] = {
+            name: name, icon: icon || '\uD83D\uDD18', level: level || '',
+            description: desc || '', source: ''
+        };
+        return id;
+    }
+    
+    // 保留兼容层（app.js 可能引用 window.SKILL_NAME_MAP）
+    if (!window.SKILL_NAME_MAP) {
+        window.SKILL_NAME_MAP = {};
+        // 从数据中动态构建映射
+        function _buildNameMap(cats) {
+            if (!cats) return;
+            Object.values(cats).forEach(function(cat) {
+                (cat.skills || []).forEach(function(s) {
+                    if (s.name) window.SKILL_NAME_MAP[s.name] = s.displayName || s.name;
+                });
+            });
+        }
+        if (tree) {
+            _buildNameMap((tree.meta || {}).children);
+            _buildNameMap((tree.domain_pack || {}).children);
+            _buildNameMap((tree.execution || {}).children);
+        }
+    }
+    
+    function createEngineNode(skill, role, tier) {
+        var id = storeSkill(skill);
+        var name = getName(skill);
+        var level = skill.level || 1;
+        var exp = skill.exp || (level * 20);
+        var color = getLevelColor(level);
+        var dashOffset = getLevelProgress(level, exp);
+        var recent = isRecentlyUsed(skill.lastUpdated);
+        var tierClass = tier === 'guide' ? 'engine-node--guide' : tier === 'core' ? 'engine-node--core' : 'engine-node--tool';
+        
+        return '<div class="engine-node ' + tierClass + '" data-skill="' + skill.name + '" style="--node-color: ' + color + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()">' +
+            (recent ? '<span class="skill-recent-badge"></span>' : '') +
+            '<div class="engine-node-ring"><svg viewBox="0 0 22 22" width="22" height="22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + dashOffset + '" style="stroke:' + color + ';"/></svg><span class="engine-node-level">' + level + '</span></div>' +
+            '<div class="engine-node-info"><span class="engine-node-name">' + name + '</span><span class="engine-node-role">' + role + '</span></div></div>';
+    }
+    
+    function getSourceColor(source) {
+        if (!source) return 'rgba(200, 220, 240, 0.2)';
+        if (source === '林克核心能力' || source === 'AI核心能力') return '#a78bfa';
+        if (source === '用户自定义') return '#38bdf8';
+        return '#64748b'; // 平台技能库
+    }
+    
+    function createSkillChip(skill) {
+        var id = storeSkill(skill);
+        var name = getName(skill);
+        var level = skill.level || 1;
+        var color = getLevelColor(level);
+        var sourceColor = getSourceColor(skill.source);
+        // 添加 CF项目标记、快手内部标记和技能大小标签
+        var cfTag = skill.cfProject ? '<span class="skill-chip-cf">CF</span>' : '';
+        var ksTag = (skill.ksInternal && !skill.cfProject) ? '<span class="skill-chip-ks">KS</span>' : '';
+        var sizeTag = skill.skillSizeLabel ? '<span class="skill-chip-size">' + (skill.skillSize > 10000 ? Math.round(skill.skillSize / 1000) + 'K' : Math.round(skill.skillSize / 1000) + 'K') + '</span>' : '';
+        return '<div class="skill-chip" style="--chip-color:' + color + ';--chip-source-color:' + sourceColor + ';" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()"><span class="skill-chip-level">' + level + '</span><span class="skill-chip-name">' + name + '</span>' + cfTag + ksTag + sizeTag + '</div>';
+    }
+    
+    // ========== 渲染 ==========
+    if (!tree || Object.keys(tree).length === 0) {
+        renderSkillTechTreeFlat(container, categories, skills.total);
+        return;
+    }
+    
+    var metaLayer = tree.meta || {};
+    var domainLayer = tree.domain_pack || {};
+    var execLayer = tree.execution || {};
+    var engineRoles = relationships.engine_roles || {};
+    
+    // 元能力层子分类 — 按 role 稳定标识符匹配（不依赖中文 key）
+    var metaChildren = metaLayer.children || {};
+    var engineCat = null, cognitiveCat = null, systemCat = null;
+    var metaKeys = Object.keys(metaChildren);
+    for (var mk = 0; mk < metaKeys.length; mk++) {
+        var mc = metaChildren[metaKeys[mk]];
+        if (mc.role === 'engine') engineCat = mc;
+        else if (mc.role === 'cognitive') cognitiveCat = mc;
+        else if (mc.role === 'system') systemCat = mc;
+    }
+    
+    // 引擎技能映射
+    var engineSkillMap = {};
+    if (engineCat && engineCat.skills) {
+        for (var i = 0; i < engineCat.skills.length; i++) {
+            engineSkillMap[engineCat.skills[i].name] = engineCat.skills[i];
+        }
+    }
+    // 从全部技能中补充获取可能不在引擎分类中的技能
+    function findSkillByName(skillName) {
+        if (engineSkillMap[skillName]) return engineSkillMap[skillName];
+        // 遍历所有分类查找
+        var allLayers = [metaChildren, (domainLayer.children || {}), (execLayer.children || {})];
+        for (var li = 0; li < allLayers.length; li++) {
+            var layerCats = allLayers[li];
+            var catKeys = Object.keys(layerCats);
+            for (var ci = 0; ci < catKeys.length; ci++) {
+                var cat = layerCats[catKeys[ci]];
+                if (cat.skills) {
+                    for (var si = 0; si < cat.skills.length; si++) {
+                        if (cat.skills[si].name === skillName) {
+                            engineSkillMap[skillName] = cat.skills[si]; // 缓存
+                            return cat.skills[si];
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    
+    var guideSkill = findSkillByName('xiaowuxianggong');
+    var absorbSkill = findSkillByName('xixingdafa');
+    var exportSkill = findSkillByName('beiming-shengong');
+    var coreSkill = findSkillByName('daily-reflection-evolution');
+    var reviewSkill = findSkillByName('learn-from-mistakes');
+    var cultivateSkill = findSkillByName('neigong-cultivation');
+    var toolNames = ['memory-hygiene', 'skill-management', 'knowledge-curator'];
+    var toolSkills = [];
+    for (var t = 0; t < toolNames.length; t++) {
+        var ts = findSkillByName(toolNames[t]);
+        if (ts) toolSkills.push(ts);
+    }
+    var techniqueNames = ['find-skills', 'skill-creator', 'skill-evaluator', 'skill-dojo'];
+    var techniqueSkills = [];
+    for (var tt = 0; tt < techniqueNames.length; tt++) {
+        var tsk = findSkillByName(techniqueNames[tt]);
+        if (tsk) techniqueSkills.push(tsk);
+    }
+    
+    // === 引擎区域（完全遵循Demo页面结构） ===
+    var engineHtml = '';
+    if (guideSkill && coreSkill) {
+        // 获取所有需要的技能
+        var proactiveSkill = findSkillByName('proactive-agent');
+        var homepageSkill = findSkillByName('codeflicker-homepage');
+        
+        // 创建节点（使用与demo完全一致的类名）
+        function createDemoNode(skill, displayName, role, variant, nodeId) {
+            if (!skill) return '';
+            var id = storeSkill(skill);
+            var level = skill.level || 1;
+            var exp = skill.exp || (level * 20);
+            var dash = 50 * (1 - exp / 100);
+            var colorMap = {
+                'absorb': '#38bdf8',
+                'guide': '#a78bfa', 
+                'export': '#4ade80',
+                'core': '#fb923c',
+                'proactive': '#fb923c',
+                'tool': '#4ade80',
+                'lifecycle': 'rgba(200, 220, 240, 0.6)',
+                'homepage': '#38bdf8'
+            };
+            var color = colorMap[variant] || '#a78bfa';
+            var nodeClass = 'engine-node engine-node--' + variant;
+            var idAttr = nodeId ? 'id="' + nodeId + '"' : '';
+            
+            return '<div ' + idAttr + ' class="' + nodeClass + '" onmouseenter="showTreeTooltip(event, \'' + id + '\', \'skill\')" onmouseleave="hideTooltip()">' +
+                '<div class="engine-node-ring">' +
+                    '<svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + dash + '" style="stroke: ' + color + ';"/></svg>' +
+                    '<span class="engine-node-level">' + level + '</span>' +
+                '</div>' +
+                '<div class="engine-node-info">' +
+                    '<span class="engine-node-name">' + displayName + '</span>' +
+                    '<span class="engine-node-role">' + role + '</span>' +
+                '</div>' +
+            '</div>';
+        }
+        
+        // 三大功法节点
+        var absorbNodeHtml = absorbSkill ? createDemoNode(absorbSkill, '吸星大法', '外部吸收', 'absorb') : '';
+        var guideNodeHtml = createDemoNode(guideSkill, '小无相功', '进化导航', 'guide');
+        var exportNodeHtml = exportSkill ? createDemoNode(exportSkill, '北冥神功', '能力导出', 'export') : '';
+        
+        // 核心能力节点
+        var proactiveNodeHtml = proactiveSkill ? createDemoNode(proactiveSkill, '主动自驱', '让引擎自己动', 'proactive') : '';
+        var coreNodeHtml = createDemoNode(coreSkill, '闭关修炼', '每日流水线', 'core');
+        
+        // 双轮驱动节点
+        var reviewNodeHtml = reviewSkill ? createDemoNode(reviewSkill, '经验总结', '复盘并举一反三', 'tool') : '';
+        var cultivateNodeHtml = cultivateSkill ? createDemoNode(cultivateSkill, '内功修炼', '深度修炼', 'tool') : '';
+        
+        // 系统优化工具节点
+        var toolNodesHtml = '';
+        var toolDisplayNames = { 'memory-hygiene': '记忆优化', 'skill-management': '技能优化', 'knowledge-curator': '知识优化' };
+        var toolRoleNames = { 'memory-hygiene': '记忆树', 'skill-management': '技能树', 'knowledge-curator': '知识树' };
+        var toolNodeIds = { 'memory-hygiene': 'node-memory' }; // 记忆优化需要ID以便L形连接器定位
+        for (var ti = 0; ti < toolSkills.length; ti++) {
+            var ts = toolSkills[ti];
+            var tsName = toolDisplayNames[ts.name] || getName(ts);
+            var tsRole = toolRoleNames[ts.name] || '基座工具';
+            var tsId = toolNodeIds[ts.name] || null;
+            if (ti > 0) {
+                toolNodesHtml += '<div class="tools-connector"><div class="connector-h"></div><div class="arrow-right"></div></div>';
+            }
+            toolNodesHtml += createDemoNode(ts, tsName, tsRole, 'tool', tsId);
+        }
+        // 林克首页节点
+        if (homepageSkill) {
+            toolNodesHtml += '<div class="tools-connector"><div class="connector-h"></div><div class="arrow-right"></div></div>';
+            toolNodesHtml += createDemoNode(homepageSkill, '林克首页', '对外门面', 'homepage');
+        }
+        
+        // 技能生命周期节点
+        var lifecycleHtml = '';
+        if (techniqueSkills.length > 0) {
+            lifecycleHtml = '<div class="lifecycle-section"><div class="lifecycle-header"><span class="lifecycle-title">技能生命周期</span></div><div class="lifecycle-flow">';
+            var skillNames = ['技能发现', '技能创建', '技能评估', '技能修炼'];
+            var skillRoles = ['搜索市场技能', '从零编写技能', '评测质量分数', '持续精进优化'];
+            for (var ti2 = 0; ti2 < techniqueSkills.length; ti2++) {
+                var sk = techniqueSkills[ti2];
+                var skid = storeSkill(sk);
+                var sklevel = sk.level || 1;
+                var skexp = sk.exp || (sklevel * 20);
+                var skdash = 50 * (1 - skexp / 100);
+                var nodeId = ti2 === 0 ? 'id="node-skill-find"' : (ti2 === techniqueSkills.length - 1 ? 'id="node-skill-dojo"' : '');
+                lifecycleHtml += '<div ' + nodeId + ' class="engine-node engine-node--lifecycle" onmouseenter="showTreeTooltip(event, \'' + skid + '\', \'skill\')" onmouseleave="hideTooltip()">' +
+                    '<div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + skdash + '" style="stroke: rgba(200, 220, 240, 0.6);"/></svg><span class="engine-node-level">' + sklevel + '</span></div>' +
+                    '<div class="engine-node-info"><span class="engine-node-name">' + skillNames[ti2] + '</span><span class="engine-node-role">' + skillRoles[ti2] + '</span></div></div>';
+                if (ti2 < techniqueSkills.length - 1) {
+                    var particleDelay = ti2 * 0.5;
+                    lifecycleHtml += '<div class="lifecycle-connector"><div class="connector-h" style="--line-from: rgba(167, 139, 250, 0.4); --line-to: rgba(56, 189, 248, 0.4);"></div><div class="arrow-right" style="--arrow-color: rgba(56, 189, 248, 0.5);"></div><div class="energy-particles"><div class="energy-particle" style="--particle-color: #a78bfa; --particle-duration: 2s; animation-delay: ' + particleDelay + 's;"></div></div></div>';
+                }
+            }
+            // 添加U形闭环底部的"社区学习"标签（样式与"触发"标签一致）
+            lifecycleHtml += '<span class="lifecycle-feedback-label connector-label" style="--label-color: rgba(167, 139, 250, 0.85); --label-border: rgba(167, 139, 250, 0.4);">社区学习</span>';
+            // 技能生命周期闭环结束
+                lifecycleHtml += '</div></div>';
+            }
+        
+        // 组装完整的引擎HTML（完全遵循Demo结构）
+        engineHtml = '<div class="engine-section">' +
+            '<div class="engine-header"><span class="engine-icon">\uD83D\uDD04</span><span class="engine-title">自进化引擎</span><span class="engine-desc">驱动持续进化的核心引擎</span></div>' +
+            '<div class="engine-body">' +
+                // 内功运转能量环
+                '<div class="energy-ring energy-ring--1"></div>' +
+                '<div class="energy-ring energy-ring--2"></div>' +
+                '<div class="energy-ring energy-ring--3"></div>' +
+                // 三大功法
+                '<div class="three-techniques">' +
+                    absorbNodeHtml +
+                    '<div class="technique-connector"><div class="connector-h" style="--line-from: #38bdf8; --line-to: #a78bfa;"></div><div class="arrow-right" style="--arrow-color: #a78bfa;"></div><span class="connector-label connector-label--center" style="--label-color: #38bdf8; --label-border: rgba(56, 189, 248, 0.4);">增强</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #38bdf8; animation-delay: 0s;"></div><div class="energy-particle" style="--particle-color: #38bdf8; animation-delay: 0.8s;"></div></div></div>' +
+                    guideNodeHtml +
+                    '<div class="technique-connector"><div class="connector-h" style="--line-from: #a78bfa; --line-to: #4ade80;"></div><div class="arrow-right" style="--arrow-color: #4ade80;"></div><span class="connector-label connector-label--center" style="--label-color: #4ade80; --label-border: rgba(74, 222, 128, 0.4);">导出</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #4ade80; animation-delay: 0.3s;"></div><div class="energy-particle" style="--particle-color: #4ade80; animation-delay: 1.1s;"></div></div></div>' +
+                    exportNodeHtml +
+                '</div>' +
+                // 导航连接
+                '<div class="nav-connector-section"><div class="connector-v connector-v--animated" style="--line-from: #a78bfa; --line-to: #fb923c;"></div><div class="arrow-down" style="--arrow-color: #fb923c;"></div><span class="connector-label connector-label--side" style="--label-color: #a78bfa; --label-border: rgba(167, 139, 250, 0.4);">导航调度</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #a78bfa; --particle-animation: particle-v; animation-delay: 0.5s;"></div></div></div>' +
+                // 核心能力区
+                '<div class="core-section"><div class="core-row">' +
+                    proactiveNodeHtml +
+                    '<div class="core-connector"><div class="connector-h" style="--line-from: #fb923c; --line-to: #fb923c;"></div><div class="arrow-right" style="--arrow-color: #fb923c;"></div><span class="connector-label connector-label--center" style="--label-color: #fb923c; --label-border: rgba(251, 146, 60, 0.4);">触发</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #fb923c; --particle-duration: 1.5s; animation-delay: 0s;"></div><div class="energy-particle" style="--particle-color: #fb923c; --particle-duration: 1.5s; animation-delay: 0.7s;"></div></div></div>' +
+                    '<div id="node-biguan" class="engine-node engine-node--core" onmouseenter="showTreeTooltip(event, \'' + storeSkill(coreSkill) + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + (50 * (1 - (coreSkill.exp || (coreSkill.level || 1) * 20) / 100)) + '" style="stroke: #fb923c;"/></svg><span class="engine-node-level">' + (coreSkill.level || 1) + '</span></div><div class="engine-node-info"><span class="engine-node-name">闭关修炼</span><span class="engine-node-role">每日流水线</span></div></div>' +
+                '</div></div>' +
+                // 双轮驱动区
+                '<div class="dual-drive-section"><div class="dual-drive-row">' +
+                    '<div id="node-jingyan" class="engine-node engine-node--tool" onmouseenter="showTreeTooltip(event, \'' + storeSkill(reviewSkill) + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + (50 * (1 - ((reviewSkill && reviewSkill.exp) || ((reviewSkill && reviewSkill.level) || 1) * 20) / 100)) + '" style="stroke: #4ade80;"/></svg><span class="engine-node-level">' + ((reviewSkill && reviewSkill.level) || 1) + '</span></div><div class="engine-node-info"><span class="engine-node-name">经验总结</span><span class="engine-node-role">复盘并举一反三</span></div></div>' +
+                    '<div class="p2-connector"><div class="connector-h" style="flex: 1; --line-from: #4ade80; --line-to: #4ade80;"></div><div class="arrow-right" style="--arrow-color: #4ade80;"></div><span class="connector-label connector-label--center">输入</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #4ade80; --particle-duration: 1.8s; animation-delay: 0.2s;"></div><div class="energy-particle" style="--particle-color: #4ade80; --particle-duration: 1.8s; animation-delay: 1s;"></div></div></div>' +
+                    '<div id="node-neigong" class="engine-node engine-node--tool" onmouseenter="showTreeTooltip(event, \'' + storeSkill(cultivateSkill) + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + (50 * (1 - ((cultivateSkill && cultivateSkill.exp) || ((cultivateSkill && cultivateSkill.level) || 1) * 20) / 100)) + '" style="stroke: #4ade80;"/></svg><span class="engine-node-level">' + ((cultivateSkill && cultivateSkill.level) || 1) + '</span></div><div class="engine-node-info"><span class="engine-node-name">内功修炼</span><span class="engine-node-role">深度修炼</span></div></div>' +
+                '</div></div>' +
+                // 系统优化工具
+                '<div class="system-tools"><div class="tools-grid">' + toolNodesHtml + '</div></div>' +
+                // 技能生命周期
+                lifecycleHtml +
+            '</div>' +
+        '</div>';
+    }
+    
+    // === 思维方法（完全遵循Demo风格）===
+    var cognitiveHtml = '';
+    if (cognitiveCat && cognitiveCat.skills) {
+        var cogNodes = '';
+        // 跳过已在自进化引擎"主动自驱"位置的技能
+        var skipInCognitive = ['proactive-agent'];
+        // 思维方法技能的显示名称和角色映射
+        var cognitiveNameMap = {
+            'product-thinking': { name: '产品思维', role: '用户视角' },
+            'essence-insight': { name: '本质洞察', role: '透视规律' },
+            'knowledge-acquisition-meta': { name: '知识习得', role: '新领域' },
+            'critical-thinking-logical-reasoning': { name: '批判思维', role: '逻辑推理' }
+        };
+        for (var ci = 0; ci < cognitiveCat.skills.length; ci++) {
+            var s = cognitiveCat.skills[ci];
+            if (skipInCognitive.indexOf(s.name) >= 0) continue;
+            var cid = storeSkill(s);
+            var cmap = cognitiveNameMap[s.name] || { name: getName(s), role: '思维工具' };
+            var clevel = s.level || 1;
+            var cexp = s.exp || (clevel * 20);
+            var cdash = 50 * (1 - cexp / 100);
+            cogNodes += '<div class="engine-node" onmouseenter="showTreeTooltip(event, \'' + cid + '\', \'skill\')" onmouseleave="hideTooltip()">' +
+                '<div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + cdash + '" style="stroke: var(--cognitive-yellow);"/></svg><span class="engine-node-level">' + clevel + '</span></div>' +
+                '<div class="engine-node-info"><span class="engine-node-name">' + cmap.name + '</span><span class="engine-node-role">' + cmap.role + '</span></div></div>';
+        }
+        cognitiveHtml = '<div class="method-section method-section--cognitive">' +
+            '<div class="method-header"><span class="method-icon">\uD83E\uDDE0</span><span class="method-title">思维方法</span><span class="method-desc">认知框架：怎么想，贯穿所有任务</span></div>' +
+            '<div class="method-content"><div class="method-grid">' + cogNodes + '</div></div></div>';
+    }
+    
+    // === 做事方法（完全遵循Demo风格）===
+    var systemHtml = '';
+    if (systemCat && systemCat.skills) {
+        var sysNodes = '';
+        // 做事方法技能的显示名称和角色映射
+        var systemNameMap = {
+            'meta-execution': { name: '元执行', role: '一次做对' },
+            'knowledge-base': { name: '知识库', role: '检索入口' },
+            'night-task-runner': { name: '夜间任务', role: '长任务' },
+            'debug-pro': { name: '调试专家', role: '问题定位' }
+        };
+        for (var si = 0; si < systemCat.skills.length; si++) {
+            var ss = systemCat.skills[si];
+            var ssid = storeSkill(ss);
+            var ssmap = systemNameMap[ss.name] || { name: getName(ss), role: '执行工具' };
+            var sslevel = ss.level || 1;
+            var ssexp = ss.exp || (sslevel * 20);
+            var ssdash = 50 * (1 - ssexp / 100);
+            sysNodes += '<div class="engine-node" onmouseenter="showTreeTooltip(event, \'' + ssid + '\', \'skill\')" onmouseleave="hideTooltip()">' +
+                '<div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + ssdash + '" style="stroke: var(--system-teal);"/></svg><span class="engine-node-level">' + sslevel + '</span></div>' +
+                '<div class="engine-node-info"><span class="engine-node-name">' + ssmap.name + '</span><span class="engine-node-role">' + ssmap.role + '</span></div></div>';
+        }
+        systemHtml = '<div class="method-section method-section--system">' +
+            '<div class="method-header"><span class="method-icon">\u2699\uFE0F</span><span class="method-title">做事方法</span><span class="method-desc">执行框架：怎么做，保障做事质量</span></div>' +
+            '<div class="method-content"><div class="method-grid">' + sysNodes + '</div></div></div>';
+    }
+    
+    function renderLayerTransition(text) {
+        return '<div class="layer-transition"><div class="transition-line"></div><span class="transition-label">' + text + '</span><div class="transition-line"></div><div class="transition-arrow">\u25BC</div></div>';
+    }
+    
+    // === 领域技能包 ===
+    var domainHtml = '';
+    if (domainLayer.children && Object.keys(domainLayer.children).length > 0) {
+        var domainCards = '';
+        var dEntries = Object.entries(domainLayer.children);
+        for (var di = 0; di < dEntries.length; di++) {
+            var dName = dEntries[di][0];
+            var dInfo = dEntries[di][1];
+            var dClean = dName.replace(/^[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE0F}\u{200D}]+\s*/gu, '').trim();
+            var dChips = '';
+            var dSkills = dInfo.skills || [];
+            for (var ds = 0; ds < dSkills.length; ds++) { dChips += createSkillChip(dSkills[ds]); }
+            var domId = storeGeneric(dInfo.icon || '\uD83C\uDFAF', dClean, (dInfo.description || '') + '\n包含 ' + dSkills.length + ' 个技能', '');
+            domainCards += '<div class="domain-card" style="--domain-color:' + (dInfo.color || '#8b5cf6') + ';" onmouseenter="showTreeTooltip(event, \'' + domId + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="domain-card-header"><span class="domain-card-icon">' + (dInfo.icon || '\uD83C\uDFAF') + '</span><span class="domain-card-name">' + dClean + '</span></div><div class="domain-card-desc">' + (dInfo.description || '') + '</div><div class="domain-card-skills">' + dChips + '</div></div>';
+        }
+        domainHtml = '<div class="domain-layer"><div class="domain-layer-header"><span class="domain-layer-icon">\uD83C\uDFAF</span><span class="domain-layer-title">领域能力层</span><span class="domain-layer-desc">特定领域的完整解决方案</span></div><div class="domain-cards-grid">' + domainCards + '</div></div>';
+    }
+    
+    // === 执行技能层 ===
+    var execHtml = '';
+    if (execLayer.children && Object.keys(execLayer.children).length > 0) {
+        var execGroups = '';
+        var eEntries = Object.entries(execLayer.children);
+        for (var ei = 0; ei < eEntries.length; ei++) {
+            var eName = eEntries[ei][0];
+            var eInfo = eEntries[ei][1];
+            var eClean = eName.replace(/^[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE0F}\u{200D}]+\s*/gu, '').trim();
+            var eChips = '';
+            var eSkills = eInfo.skills || [];
+            for (var es = 0; es < eSkills.length; es++) { eChips += createSkillChip(eSkills[es]); }
+            var execId = storeGeneric(eInfo.icon || '\uD83D\uDEE0\uFE0F', eClean, '包含 ' + (eInfo.count || 0) + ' 个技能', '');
+            execGroups += '<div class="exec-group" onmouseenter="showTreeTooltip(event, \'' + execId + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="exec-group-header"><span class="exec-group-icon">' + (eInfo.icon || '\uD83D\uDEE0\uFE0F') + '</span><span class="exec-group-name">' + eClean + '</span><span class="exec-group-count">' + (eInfo.count || 0) + '</span></div><div class="exec-group-chips">' + eChips + '</div></div>';
+        }
+        execHtml = '<div class="exec-layer" id="exec-layer-toggle"><div class="exec-layer-header" onclick="toggleExecLayer()"><span class="exec-layer-icon">\uD83D\uDEE0\uFE0F</span><span class="exec-layer-title">执行技能层</span><span class="exec-layer-desc">做具体事情的工具</span><span class="exec-layer-count">' + (execLayer.count || 0) + '</span><span class="exec-layer-toggle-icon">\u25BC</span></div><div class="exec-layer-content"><div class="exec-groups-grid">' + execGroups + '</div></div></div>';
+    }
+    
+    // ========== 组装 ==========
+    container.innerHTML = '<div class="skill-architecture">' +
+        '<div class="meta-layer"><div class="meta-layer-label"><span class="meta-label-icon">\uD83C\uDFDB\uFE0F</span><span class="meta-label-text">元能力层</span><span class="meta-label-desc">决定"我是谁"</span></div><div class="meta-layer-content">' + engineHtml + '<div class="bottom-row">' + cognitiveHtml + systemHtml + '</div></div></div>' +
+        renderLayerTransition('元能力驱动领域能力') +
+        domainHtml +
+        renderLayerTransition('领域调用执行技能') +
+        execHtml +
+    '</div>';
+    
+    // 渲染完成后绘制所有动态连线
+    setTimeout(function() {
+        if (typeof drawElbowConnectors === 'function') {
+            drawElbowConnectors();
+        }
+        if (typeof drawLifecycleLoop === 'function') {
+            drawLifecycleLoop();
+        }
+    }, 100);
+}
+
+function toggleExecLayer() {
+    var el = document.getElementById('exec-layer-toggle');
+    if (el) el.classList.toggle('collapsed');
+}
+window.toggleExecLayer = toggleExecLayer;
+
+function renderSkillTechTreeFlat(container, categories, total) {
+    container.innerHTML = '<div class="skill-tech-tree"><div class="skill-root-node"><span class="skill-root-icon">\u26A1</span><span class="skill-root-label">技能</span><span class="skill-root-count">' + (total || 0) + '</span></div><div style="text-align:center;padding:20px;color:var(--text-muted);">正在加载技能数据...</div></div>';
+}
+
+function toggleSkillLayerCard(header) {
+    var card = header.closest('.skill-layer-card');
+    if (card) card.classList.toggle('collapsed');
+}
+window.toggleSkillLayerCard = toggleSkillLayerCard;
+
+// ==================== 知识树 - 纵向三层架构图（v3.0） ====================
+function renderKnowledgeArchive(container, knowledge) {
+    if (!container) return;
+    
+    var layerDef = [
+        { tag: 'L1-meta', icon: '\uD83D\uDCD6', label: '\u57fa\u5ea7\u77e5\u8bc6\u5c42', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(18,15,30,0.95)', desc: '\u652f\u6491\u5143\u80fd\u529b\u7684\u601d\u60f3\u548c\u65b9\u6cd5\u8bba', align: '\u2194 \u5143\u80fd\u529b\u5c42 \u00b7 \u5143\u8ba4\u77e5\u5c42' },
+        { tag: 'L2-domain', icon: '\uD83D\uDD0D', label: '\u9886\u57df\u77e5\u8bc6\u5c42', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(16,12,28,0.95)', desc: '\u7279\u5b9a\u9886\u57df\u7684\u6df1\u5ea6\u7814\u7a76\u548c\u77e5\u8bc6\u6c89\u6dc0', align: '\u2194 \u9886\u57df\u80fd\u529b\u5c42 \u00b7 \u9886\u57df\u8bb0\u5fc6\u5c42' },
+        { tag: 'L3-execution', icon: '\uD83D\uDCE6', label: '\u5b9e\u8df5\u77e5\u8bc6\u5c42', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(10,20,15,0.95)', desc: '\u5177\u4f53\u6267\u884c\u4e2d\u4ea7\u51fa\u7684\u65b9\u6848\u548c\u6587\u6863', align: '\u2194 \u6267\u884c\u6280\u80fd\u5c42 \u00b7 \u5b9e\u8df5\u8bb0\u5fc6\u5c42' }
+    ];
+    
+    // Build per-layer category lists from tree or flat categories
+    var layerCats = {};
+    layerDef.forEach(function(l){ layerCats[l.tag] = []; });
+    
+    var src = (knowledge.tree && Object.keys(knowledge.tree).length > 0) ? 'tree' : 'flat';
+    if (src === 'tree') {
+        Object.keys(knowledge.tree).forEach(function(layerName) {
+            var li = knowledge.tree[layerName];
+            var tag = li.layerTag || 'L3-execution';
+            var cats = li.categories || {};
+            Object.keys(cats).forEach(function(k) { var c = cats[k]; c._key = k; if (!layerCats[tag]) layerCats[tag] = []; layerCats[tag].push(c); });
+        });
+    } else if (knowledge.categories) {
+        Object.keys(knowledge.categories).forEach(function(k) { var c = knowledge.categories[k]; c._key = k; var t = c.layerTag || 'L3-execution'; if (!layerCats[t]) layerCats[t] = []; layerCats[t].push(c); });
+    }
+    
+    var totalFiles = knowledge.totalFiles || 0;
+    var totalCats = 0;
+    layerDef.forEach(function(l){ totalCats += layerCats[l.tag].length; });
+    
+    if (totalCats === 0) { container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);">\uD83D\uDCDA \u6682\u65e0\u77e5\u8bc6\u5e93\u6570\u636e</div>'; return; }
+    
+    // Header
+    var html = '<div class="knowledge-arch">';
+    
+    var maxCount = 1;
+    layerDef.forEach(function(l){ layerCats[l.tag].forEach(function(c){ if ((c.fileCount||0) > maxCount) maxCount = c.fileCount||0; }); });
+    
+    // Render each layer
+    for (var li = 0; li < layerDef.length; li++) {
+        var ld = layerDef[li];
+        var cats = layerCats[ld.tag];
+        if (cats.length === 0) continue;
+        
+        var layerFiles = 0;
+        cats.forEach(function(c){ layerFiles += c.fileCount || 0; });
+        
+        html += '<div class="kn-layer" style="border-color:' + ld.border + ';">';
+        html += '<div class="kn-layer-label" style="border-bottom-color:' + ld.border + ';"><span class="kn-label-icon">' + ld.icon + '</span><span class="kn-label-text" style="color:' + ld.color + ';">' + ld.label + '</span><span class="kn-label-desc">' + ld.desc + '</span><span class="kn-label-align">' + ld.align + '</span><span class="kn-label-count" style="color:' + ld.color + ';">' + layerFiles + ' \u6587\u6863</span></div>';
+        html += '<div class="kn-layer-content"><div class="kn-cards-grid">';
+        
+        for (var ci = 0; ci < cats.length; ci++) {
+            var cat = cats[ci];
+            var name = cat.displayName || cat.name || cat._key || '?';
+            var icon = cat.icon || '\uD83D\uDCC1';
+            var count = cat.fileCount || 0;
+            var size = cat.sizeKB || 0;
+            var heat = cat.heatLevel || 1;
+            var skills = cat.relatedSkills || [];
+            var progress = (count / maxCount * 100);
+            var cardId = 'kn-' + ld.tag + '-' + ci;
+            
+            // 指标数据
+            var relatedTotal = skills.length + (cat.relatedMemories || []).length;
+            var heatLabels = ['', '\u4f4e', '\u4f4e', '\u4e2d', '\u9ad8', '\u6781\u9ad8'];
+            
+            window.AppState.dataMap[cardId] = { name: name, icon: icon, level: Math.min(5, Math.ceil(count / 10)), description: (cat.description || name) + '\n\u6587\u6863\u6570: ' + count + (size ? ' | \u5927\u5c0f: ' + size + 'KB' : '') + (skills.length ? '\n\u5173\u8054\u6280\u80fd: ' + skills.join(', ') : '') + ((cat.relatedMemories || []).length ? '\n\u5173\u8054\u8bb0\u5fc6: ' + (cat.relatedMemories || []).join(', ') : ''), source: ld.label, callCount: count, frequency: heatLabels[Math.min(5, heat)] || '\u4f4e', successRate: relatedTotal > 0 ? '\u26A1' + skills.length + ' \uD83E\uDDE0' + (cat.relatedMemories || []).length : '0' };
+            
+            // Heat dots
+            var heatHtml = '';
+            for (var h = 0; h < 5; h++) { heatHtml += '<span class="kn-heat-dot' + (h < heat ? ' active' : '') + '" style="' + (h < heat ? 'background:' + ld.color + ';' : '') + '"></span>'; }
+            
+            // Related skills tags
+            var tagsHtml = '';
+            if (skills.length > 0) {
+                tagsHtml = '<div class="kn-card-tags">';
+                var showSkills = skills.slice(0, 3);
+                for (var si = 0; si < showSkills.length; si++) { tagsHtml += '<span class="kn-skill-tag" style="border-color:' + ld.border + ';color:' + ld.color + ';">\u26A1 ' + showSkills[si] + '</span>'; }
+                if (skills.length > 3) tagsHtml += '<span class="kn-skill-tag-more">+' + (skills.length - 3) + '</span>';
+                tagsHtml += '</div>';
+            }
+            
+            html += '<div class="kn-domain-card" style="--kn-color:' + ld.color + ';border-color:' + ld.border + ';" onmouseenter="showTreeTooltip(event,\'' + cardId + '\',\'knowledge\')" onmouseleave="hideTooltip()">';
+            html += '<div class="kn-card-header"><span class="kn-card-icon">' + icon + '</span><div class="kn-card-info"><div class="kn-card-name">' + name + '</div><div class="kn-card-meta"><span class="kn-card-count" style="color:' + ld.color + ';">' + count + '</span> \u6587\u6863' + (size ? ' \u00b7 ' + size + 'KB' : '') + '</div></div><div class="kn-card-heat">' + heatHtml + '</div></div>';
+            html += '<div class="kn-card-progress"><div class="kn-progress-fill" style="width:' + progress + '%;background:' + ld.color + ';"></div></div>';
+            html += tagsHtml;
+            html += '</div>';
+        }
+        
+        html += '</div></div></div>';
+        
+        // Layer transition
+        if (li < layerDef.length - 1) {
+            var nextCats = layerCats[layerDef[li+1].tag];
+            if (nextCats && nextCats.length > 0) {
+                var transLabels = ['\u601d\u60f3\u6c89\u6dc0 \u2192 \u9886\u57df\u6df1\u5316', '\u9886\u57df\u77e5\u8bc6 \u2192 \u5b9e\u8df5\u6307\u5bfc'];
+                html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabels[li] + '</div><div class="transition-arrow">\u25BC</div></div>';
+            }
+        }
+    }
+    
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+// ==================== 记忆树 - 纵向三层架构图（v3.0） ====================
+function renderMemoryNeuralNetwork(container, memories) {
+    if (!container) return;
+    
+    var tree = memories.tree;
+    var total = memories.total || 0;
+    
+    // 记忆树四层定义 — 按 layerTag 稳定标识符匹配（不依赖中文 key）
+    // v4.0: 增加系统约束层，确保所有记忆都能被正确展示
+    var memLayerDef = [
+        { layerTag: 'L1-meta', icon: '\uD83E\uDDE0', label: '元认知层', color: '#a78bfa', border: 'rgba(167,139,250,0.25)', bg: 'rgba(18,15,30,0.95)', desc: '用户身份、思维方法、做事方法', align: '↔ 元能力层 · 基座知识层' },
+        { layerTag: 'L2-domain', icon: '\uD83C\uDFAF', label: '领域记忆层', color: '#8b5cf6', border: 'rgba(139,92,246,0.25)', bg: 'rgba(16,12,28,0.95)', desc: '特定领域的完整经验沉淀', align: '↔ 领域能力层 · 领域知识层' },
+        { layerTag: 'L3-execution', icon: '\uD83D\uDEE0\uFE0F', label: '实践记忆层', color: '#4ade80', border: 'rgba(74,222,128,0.25)', bg: 'rgba(10,20,15,0.95)', desc: '具体领域的踩坑经验和项目知识', align: '↔ 执行技能层 · 实践知识层' },
+        { layerTag: 'SYSTEM', icon: '\u2699\uFE0F', label: '系统约束层', color: '#64748b', border: 'rgba(100,116,139,0.25)', bg: 'rgba(14,16,20,0.95)', desc: '系统自动提取的背景约束', align: '↔ 自动化学习' }
+    ];
+    
+    // 按 layerTag 匹配树数据
+    var memTreeKeys = Object.keys(tree);
+    function findMemLayerData(layerTag) {
+        for (var i = 0; i < memTreeKeys.length; i++) {
+            if (tree[memTreeKeys[i]].layerTag === layerTag) return tree[memTreeKeys[i]];
+        }
+        return null;
+    }
+    
+    if (!tree || Object.keys(tree).length === 0) {
+        container.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-muted);"><div style="font-size:48px;margin-bottom:10px;">\uD83E\uDDE0</div><div>\u8bb0\u5fc6\u603b\u6570\uff1a' + total + '</div></div>';
+        return;
+    }
+    
+    // 计算实际显示的层数（有数据的层）
+    var visibleLayerCount = 0;
+    for (var lci = 0; lci < memLayerDef.length; lci++) {
+        var layerData = findMemLayerData(memLayerDef[lci].layerTag);
+        if (layerData && layerData.count > 0) visibleLayerCount++;
+    }
+    
+    var html = '<div class="memory-arch">';
+    
+    for (var li = 0; li < memLayerDef.length; li++) {
+        var ld = memLayerDef[li];
+        var layerInfo = findMemLayerData(ld.layerTag);
+        if (!layerInfo || layerInfo.count === 0) continue;
+        
+        html += '<div class="mem-layer" style="border-color:' + ld.border + ';">';
+        html += '<div class="mem-layer-label" style="border-bottom-color:' + ld.border + ';"><span class="mem-label-icon">' + ld.icon + '</span><span class="mem-label-text" style="color:' + ld.color + ';">' + ld.label + '</span><span class="mem-label-desc">' + ld.desc + '</span><span class="mem-label-align">' + ld.align + '</span><span class="mem-label-count" style="color:' + ld.color + ';">' + layerInfo.count + ' \u6761</span></div>';
+        html += '<div class="mem-layer-content">';
+        
+        var children = layerInfo.children || {};
+        var childKeys = Object.keys(children);
+        
+        html += '<div class="mem-cards-grid">';
+        for (var ci = 0; ci < childKeys.length; ci++) {
+            var childName = childKeys[ci];
+            var child = children[childName];
+            if (child.count === 0) continue;
+            
+            var cIcon = child.icon || '\uD83D\uDCC1';
+            var cColor = child.color || ld.color;
+            var cardId = 'mem-' + li + '-' + ci;
+            var nodeId = 'mem-expand-' + li + '-' + ci;
+            
+            window.AppState.dataMap[cardId] = { name: childName, icon: cIcon, level: Math.min(5, Math.ceil(child.count / 5)), description: (child.description || childName) + '\n\u8bb0\u5fc6\u6570: ' + child.count, source: ld.label, callCount: child.count, frequency: child.count >= 10 ? '\u9ad8' : child.count >= 5 ? '\u4e2d' : '\u4f4e', successRate: child.count >= 10 ? '\u2605\u2605\u2605' : child.count >= 5 ? '\u2605\u2605' : '\u2605' };
+            
+            html += '<div class="mem-category-card" style="--mem-cat-color:' + cColor + ';border-color:' + ld.border + ';" onclick="toggleMemCategoryExpand(\'' + nodeId + '\')" onmouseenter="showTreeTooltip(event,\'' + cardId + '\',\'memory\')" onmouseleave="hideTooltip()">';
+            html += '<div class="mem-cat-header"><span class="mem-cat-icon">' + cIcon + '</span><span class="mem-cat-name">' + childName + '</span><span class="mem-cat-count" style="color:' + cColor + ';">' + child.count + '</span><span class="mem-cat-toggle">\u25B6</span></div>';
+            
+            // Inline expandable items
+            var items = child.items || [];
+            if (items.length > 0) {
+                html += '<div class="mem-cat-items" id="' + nodeId + '" style="display:none;">';
+                var showCount = Math.min(8, items.length);
+                for (var ii = 0; ii < showCount; ii++) {
+                    var item = items[ii];
+                    var itemId = 'mem-item-' + li + '-' + ci + '-' + ii;
+                    var title = (item.title || '\u8bb0\u5fc6').substring(0, 18);
+                    if (item.title && item.title.length > 18) title += '...';
+                    window.AppState.dataMap[itemId] = { name: item.title || '\u8bb0\u5fc6', icon: item.icon || '\uD83D\uDCAD', level: item.importance || 3, description: item.description || '\u6682\u65e0\u63cf\u8ff0', source: childName, callCount: 1, frequency: item.importance >= 4 ? '\u9ad8' : item.importance >= 2 ? '\u4e2d' : '\u4f4e', successRate: item.importance >= 4 ? '\u2605\u2605\u2605' : item.importance >= 2 ? '\u2605\u2605' : '\u2605' };
+                    html += '<div class="mem-item-chip" style="border-color:rgba(' + (cColor === '#38bdf8' ? '56,189,248' : cColor === '#a78bfa' ? '167,139,250' : cColor === '#dc2626' ? '220,38,38' : '200,220,240') + ',0.3);" onmouseenter="showTreeTooltip(event,\'' + itemId + '\',\'memory\')" onmouseleave="hideTooltip()"><span class="mem-item-icon">' + (item.icon || '\uD83D\uDCAD') + '</span><span class="mem-item-title">' + title + '</span></div>';
+                }
+                if (items.length > 8) html += '<div class="mem-item-more">+' + (items.length - 8) + ' \u6761</div>';
+                html += '</div>';
+            }
+            
+            html += '</div>';
+        }
+        html += '</div></div></div>';
+        
+        // Layer transition - 动态适应层数
+        if (li < memLayerDef.length - 1) {
+            var nextLayer = findMemLayerData(memLayerDef[li+1].layerTag);
+            if (nextLayer && nextLayer.count > 0) {
+                var transLabels = {
+                    'L1-meta_L2-domain': '\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u9886\u57df\u4e13\u7cbe',
+                    'L2-domain_L3-execution': '\u9886\u57df\u7ecf\u9a8c \u2192 \u5b9e\u8df5\u6307\u5bfc',
+                    'L3-execution_SYSTEM': '\u5b9e\u8df5\u7ecf\u9a8c \u2192 \u7cfb\u7edf\u7ea6\u675f',
+                    'L1-meta_L3-execution': '\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u5b9e\u8df5\u6307\u5bfc',
+                    'L1-meta_SYSTEM': '\u8ba4\u77e5\u6c89\u6dc0 \u2192 \u7cfb\u7edf\u7ea6\u675f'
+                };
+                var transKey = ld.layerTag + '_' + memLayerDef[li+1].layerTag;
+                var transLabel = transLabels[transKey] || '\u2193';
+                html += '<div class="layer-transition"><div class="transition-line"></div><div class="transition-label">' + transLabel + '</div><div class="transition-arrow">\u25BC</div></div>';
+            }
+        }
+    }
+    
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+// Toggle memory category expand
+function toggleMemCategoryExpand(nodeId) {
+    var el = document.getElementById(nodeId);
+    if (!el) return;
+    var card = el.closest('.mem-category-card');
+    var toggle = card ? card.querySelector('.mem-cat-toggle') : null;
+    if (el.style.display === 'none') {
+        el.style.display = 'flex';
+        if (toggle) toggle.textContent = '\u25BC';
+        if (card) card.classList.add('expanded');
+    } else {
+        el.style.display = 'none';
+        if (toggle) toggle.textContent = '\u25B6';
+        if (card) card.classList.remove('expanded');
+    }
+}
+window.toggleMemCategoryExpand = toggleMemCategoryExpand;
+
+// ==================== 导出到全局 ====================
+window.renderSkillTechTree = renderSkillTechTree;
+window.renderKnowledgeArchive = renderKnowledgeArchive;
+window.renderMemoryNeuralNetwork = renderMemoryNeuralNetwork;
+
+// ==================== L形折线连接器（从Demo复制） ====================
+function drawElbowConnectors() {
+    var body = document.querySelector('.engine-body');
+    if (!body) return;
+    
+    // 移除旧的 SVG overlay
+    var old = body.querySelector('.elbow-svg-overlay');
+    if (old) old.remove();
+    
+    var bodyRect = body.getBoundingClientRect();
+    var bw = bodyRect.width;
+    var bh = bodyRect.height;
+    
+    // 获取四个关键节点
+    var biguan  = document.getElementById('node-biguan');
+    var jingyan = document.getElementById('node-jingyan');
+    var neigong = document.getElementById('node-neigong');
+    var memory  = document.getElementById('node-memory');
+    
+    if (!biguan || !jingyan || !neigong || !memory) return;
+    
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('elbow-svg-overlay');
+    svg.setAttribute('viewBox', '0 0 ' + bw + ' ' + bh);
+    svg.setAttribute('width', bw);
+    svg.setAttribute('height', bh);
+    
+    // 坐标转换：相对于 engine-body
+    function rel(el) {
+        var r = el.getBoundingClientRect();
+        return {
+            left:   r.left   - bodyRect.left,
+            right:  r.right  - bodyRect.left,
+            top:    r.top    - bodyRect.top,
+            bottom: r.bottom - bodyRect.top,
+            cx:     (r.left + r.right)  / 2 - bodyRect.left,
+            cy:     (r.top  + r.bottom) / 2 - bodyRect.top
+        };
+    }
+    
+    var b = rel(biguan);
+    var j = rel(jingyan);
+    var n = rel(neigong);
+    var m = rel(memory);
+    
+    // 右侧 gutter 位置
+    var gx1 = Math.min(bw - 16, Math.max(b.right + 20, n.right + 20));
+    var gx2 = Math.min(bw - 6, gx1 + 14);
+    
+    // ---- 连接器1: 闭关修炼 → 经验总结（驱动）----
+    var p1 = { sx: b.right, sy: b.cy, gx: gx1, ex: j.cx, ey: j.top };
+    
+    var path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path1.setAttribute('d', 'M ' + p1.sx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + (p1.ey - 8) + ' L ' + p1.ex + ' ' + (p1.ey - 8));
+    path1.setAttribute('fill', 'none');
+    path1.setAttribute('stroke', '#fb923c');
+    path1.setAttribute('stroke-width', '2.5');
+    path1.setAttribute('stroke-linecap', 'round');
+    path1.setAttribute('stroke-linejoin', 'round');
+    path1.setAttribute('opacity', '0.8');
+    svg.appendChild(path1);
+    
+    // 箭头（指向下方经验总结）
+    var arrow1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    arrow1.setAttribute('points', p1.ex + ',' + p1.ey + ' ' + (p1.ex - 5) + ',' + (p1.ey - 9) + ' ' + (p1.ex + 5) + ',' + (p1.ey - 9));
+    arrow1.setAttribute('fill', '#fb923c');
+    arrow1.setAttribute('opacity', '0.8');
+    svg.appendChild(arrow1);
+    
+    // 标签 "驱动"
+    var label1 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label1.setAttribute('x', p1.gx - 6);
+    label1.setAttribute('y', (p1.sy + p1.ey - 8) / 2);
+    label1.setAttribute('text-anchor', 'end');
+    label1.setAttribute('dominant-baseline', 'middle');
+    label1.setAttribute('fill', '#fb923c');
+    label1.setAttribute('opacity', '0.7');
+    label1.textContent = '驱动';
+    svg.appendChild(label1);
+    
+    // ---- 连接器2: 内功修炼 → 记忆优化（调用）----
+    var p2 = { sx: n.right, sy: n.cy, gx: gx2, ex: m.cx, ey: m.top };
+    
+    var path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path2.setAttribute('d', 'M ' + p2.sx + ' ' + p2.sy + ' L ' + p2.gx + ' ' + p2.sy + ' L ' + p2.gx + ' ' + (p2.ey - 8) + ' L ' + p2.ex + ' ' + (p2.ey - 8));
+    path2.setAttribute('fill', 'none');
+    path2.setAttribute('stroke', '#4ade80');
+    path2.setAttribute('stroke-width', '2.5');
+    path2.setAttribute('stroke-linecap', 'round');
+    path2.setAttribute('stroke-linejoin', 'round');
+    path2.setAttribute('opacity', '0.7');
+    svg.appendChild(path2);
+    
+    // 箭头（指向下方记忆优化）
+    var arrow2 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    arrow2.setAttribute('points', p2.ex + ',' + p2.ey + ' ' + (p2.ex - 5) + ',' + (p2.ey - 9) + ' ' + (p2.ex + 5) + ',' + (p2.ey - 9));
+    arrow2.setAttribute('fill', '#4ade80');
+    arrow2.setAttribute('opacity', '0.7');
+    svg.appendChild(arrow2);
+    
+    // 标签 "调用"
+    var label2 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    label2.setAttribute('x', p2.gx - 6);
+    label2.setAttribute('y', (p2.sy + p2.ey - 8) / 2);
+    label2.setAttribute('text-anchor', 'end');
+    label2.setAttribute('dominant-baseline', 'middle');
+    label2.setAttribute('fill', '#4ade80');
+    label2.setAttribute('opacity', '0.7');
+    label2.textContent = '调用';
+    svg.appendChild(label2);
+    
+    body.appendChild(svg);
+}
+window.drawElbowConnectors = drawElbowConnectors;
+
+// ==================== 技能生命周期 U形闭环绘制 ====================
+function drawLifecycleLoop() {
+    var section = document.querySelector('.lifecycle-section');
+    var flow = document.querySelector('.lifecycle-flow');
+    if (!section || !flow) return;
+    
+    // 移除旧的 SVG
+    var old = section.querySelector('.lifecycle-loop-svg');
+    if (old) old.remove();
+    
+    var sectionRect = section.getBoundingClientRect();
+    
+    // 获取两个关键节点
+    var findNode = document.getElementById('node-skill-find');
+    var dojoNode = document.getElementById('node-skill-dojo');
+    var label = flow.querySelector('.lifecycle-feedback-label');
+    
+    if (!findNode || !dojoNode) return;
+    
+    // 坐标转换：相对于 lifecycle-section
+    function rel(el) {
+        var r = el.getBoundingClientRect();
+        return {
+            left:   r.left   - sectionRect.left,
+            right:  r.right  - sectionRect.left,
+            top:    r.top    - sectionRect.top,
+            bottom: r.bottom - sectionRect.top,
+            cx:     (r.left + r.right)  / 2 - sectionRect.left,
+            cy:     (r.top  + r.bottom) / 2 - sectionRect.top
+        };
+    }
+    
+    var f = rel(findNode);
+    var d = rel(dojoNode);
+    
+    // U形闭环：从技能修炼右侧 → 向右 → 向下 → 向左 → 向上 → 技能发现左侧
+    var loopBottom = Math.max(f.bottom, d.bottom) + 28;
+    var loopRight = d.right + 20;
+    var loopLeft = f.left - 20;
+    var cornerRadius = 12;
+    
+    // SVG覆盖整个section加上延伸区域
+    var svgWidth = sectionRect.width;
+    var svgHeight = loopBottom + 10;
+    
+    var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.classList.add('lifecycle-loop-svg');
+    svg.setAttribute('viewBox', '0 0 ' + svgWidth + ' ' + svgHeight);
+    svg.setAttribute('width', svgWidth);
+    svg.setAttribute('height', svgHeight);
+    svg.style.top = '0';
+    svg.style.left = '0';
+    
+    // 定义渐变
+    var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    var gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'loopGradient');
+    gradient.setAttribute('x1', '100%');
+    gradient.setAttribute('y1', '0%');
+    gradient.setAttribute('x2', '0%');
+    gradient.setAttribute('y2', '0%');
+    
+    var stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop1.setAttribute('offset', '0%');
+    stop1.setAttribute('stop-color', 'rgba(56, 189, 248, 0.5)');
+    gradient.appendChild(stop1);
+    
+    var stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop2.setAttribute('offset', '100%');
+    stop2.setAttribute('stop-color', 'rgba(167, 139, 250, 0.5)');
+    gradient.appendChild(stop2);
+    
+    defs.appendChild(gradient);
+    svg.appendChild(defs);
+    
+    // U形路径
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    var pathD = 'M ' + d.right + ' ' + d.cy +
+        ' L ' + (loopRight - cornerRadius) + ' ' + d.cy +
+        ' Q ' + loopRight + ' ' + d.cy + ' ' + loopRight + ' ' + (d.cy + cornerRadius) +
+        ' L ' + loopRight + ' ' + (loopBottom - cornerRadius) +
+        ' Q ' + loopRight + ' ' + loopBottom + ' ' + (loopRight - cornerRadius) + ' ' + loopBottom +
+        ' L ' + (loopLeft + cornerRadius) + ' ' + loopBottom +
+        ' Q ' + loopLeft + ' ' + loopBottom + ' ' + loopLeft + ' ' + (loopBottom - cornerRadius) +
+        ' L ' + loopLeft + ' ' + (f.cy + cornerRadius) +
+        ' Q ' + loopLeft + ' ' + f.cy + ' ' + (loopLeft + cornerRadius) + ' ' + f.cy +
+        ' L ' + (f.left - 8) + ' ' + f.cy;
+    path.setAttribute('d', pathD);
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke', 'url(#loopGradient)');
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    svg.appendChild(path);
+    
+    // 箭头（指向右侧技能发现节点）
+    var arrow = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    var arrowX = f.left - 8;
+    arrow.setAttribute('points', (arrowX + 8) + ',' + f.cy + ' ' + arrowX + ',' + (f.cy - 5) + ' ' + arrowX + ',' + (f.cy + 5));
+    arrow.setAttribute('fill', 'rgba(167, 139, 250, 0.6)');
+    svg.appendChild(arrow);
+    
+    section.appendChild(svg);
+    
+    // 添加沿路径流动的能量粒子
+    var pathLen = path.getTotalLength();
+    if (pathLen > 0) {
+        // 创建流动粒子1
+        var particle1 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        particle1.setAttribute('r', '4');
+        particle1.setAttribute('fill', '#a78bfa');
+        particle1.style.filter = 'drop-shadow(0 0 6px rgba(167,139,250,0.8))';
+        // 使用 animateMotion 沿路径流动
+        var motion1 = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+        motion1.setAttribute('dur', '4s');
+        motion1.setAttribute('repeatCount', 'indefinite');
+        motion1.setAttribute('path', pathD);
+        particle1.appendChild(motion1);
+        svg.appendChild(particle1);
+        
+        // 创建流动粒子2（延迟2秒）
+        var particle2 = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        particle2.setAttribute('r', '3');
+        particle2.setAttribute('fill', '#38bdf8');
+        particle2.style.filter = 'drop-shadow(0 0 5px rgba(56,189,248,0.7))';
+        var motion2 = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+        motion2.setAttribute('dur', '4s');
+        motion2.setAttribute('repeatCount', 'indefinite');
+        motion2.setAttribute('begin', '2s');
+        motion2.setAttribute('path', pathD);
+        particle2.appendChild(motion2);
+        svg.appendChild(particle2);
+    }
+    
+    // 定位标签到底部中心
+    if (label) {
+        var flowRect = flow.getBoundingClientRect();
+        var labelTop = loopBottom - (flowRect.top - sectionRect.top) - 2;
+        label.style.top = labelTop + 'px';
+        label.style.left = '50%';
+        label.style.transform = 'translate(-50%, -50%)';
+    }
+}
+
+// 首页加载完成后绘制所有动态连线
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        drawElbowConnectors();
+        drawLifecycleLoop();
+    }, 500);
+});
+window.addEventListener('resize', function() {
+    clearTimeout(window.svgResizeTimer);
+    window.svgResizeTimer = setTimeout(function() {
+        drawElbowConnectors();
+        drawLifecycleLoop();
+    }, 150);
+});
+window.drawLifecycleLoop = drawLifecycleLoop;

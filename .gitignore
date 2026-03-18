@@ -1,0 +1,33 @@
+# System files
+.DS_Store
+**/.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+.cache/
+
+# Sensitive info
+*token*
+*secret*
+*credential*
+*password*
+.env
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Source markdown files in knowledge (only HTML is deployed)
+knowledge/*.md

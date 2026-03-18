@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>养了个AI · 第4期｜实战：从辅导到评审，AI帮我扛过了整个晋升季</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23f59e0b'/><text x='16' y='22' font-size='18' text-anchor='middle' fill='white'>4</text></svg>">
+<style>
+:root{--text:#1a1a2e;--text-secondary:#4a4a6a;--text-muted:#8888a8;--bg:#fafaf8;--card:#fff;--border:#e8e8e0;--accent:#f59e0b;--accent-light:#fef3c7;--link:#2563eb;--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,"SF Pro Text","PingFang SC","Segoe UI",sans-serif;font-size:16px;line-height:1.8;color:var(--text);background:var(--bg)}
+.container{max-width:780px;margin:0 auto;padding:0 20px 80px}
+/* Cover */
+.cover{position:relative;width:100vw;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;height:400px;overflow:hidden;margin-bottom:40px}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,0.6));display:flex;flex-direction:column;justify-content:flex-end;padding:40px}
+.cover-series{color:#fbbf24;font-size:14px;font-weight:600;letter-spacing:2px;margin-bottom:8px}
+.cover-title{color:#fff;font-size:32px;font-weight:800;line-height:1.3;max-width:780px;margin:0 auto}
+.cover-subtitle{color:rgba(255,255,255,0.8);font-size:16px;margin-top:8px;max-width:780px;margin-left:auto;margin-right:auto}
+/* Typography */
+h1{font-size:26px;font-weight:800;color:var(--text);margin:48px 0 20px;padding-bottom:10px;border-bottom:3px solid var(--accent)}
+h2{font-size:20px;font-weight:700;color:var(--text);margin:36px 0 16px}
+h3{font-size:17px;font-weight:600;margin:24px 0 12px}
+p{margin:12px 0;color:var(--text-secondary)}
+strong{color:var(--text)}
+hr{border:none;height:1px;background:var(--border);margin:40px 0}
+/* Images */
+.article-img{width:100%;border-radius:var(--radius);margin:20px 0;box-shadow:0 4px 20px rgba(0,0,0,0.08)}
+.screenshot-img{width:100%;border-radius:var(--radius);margin:16px 0;box-shadow:0 8px 30px rgba(0,0,0,0.12)}
+/* Blockquote */
+blockquote{border-left:4px solid var(--accent);background:var(--accent-light);padding:14px 20px;border-radius:0 var(--radius) var(--radius) 0;margin:16px 0;font-size:15px;color:#92400e}
+blockquote strong{color:#78350f}
+blockquote p{color:#92400e;margin:4px 0}
+/* Callout for deliverables */
+.deliverable{background:#f0f9ff;border:1px solid #bae6fd;border-left:4px solid #0ea5e9;border-radius:0 var(--radius) var(--radius) 0;padding:12px 18px;margin:20px 0 8px;font-size:14px;font-weight:600;color:#0369a1}
+/* Tables */
+table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+th{background:#f1f5f9;text-align:left;padding:10px 14px;font-weight:600;color:#475569;border-bottom:2px solid var(--border)}
+td{padding:10px 14px;border-bottom:1px solid #f1f5f9;color:var(--text-secondary)}
+tr:hover td{background:#fafafa}
+/* Highlight box */
+.highlight{background:var(--accent-light);border:1px solid #fde68a;border-radius:var(--radius);padding:16px 20px;margin:16px 0;font-size:15px;color:#92400e;line-height:1.7}
+.highlight strong{color:#78350f}
+/* Code blocks */
+pre{background:#1e293b;color:#e2e8f0;padding:16px 20px;border-radius:var(--radius);overflow-x:auto;font-size:14px;line-height:1.6;margin:16px 0}
+code{font-family:"SF Mono",Menlo,monospace;font-size:0.9em}
+/* Navigation */
+.nav-box{background:#fff;border:2px solid var(--border);border-radius:var(--radius);padding:24px;margin:40px 0;font-size:14px;line-height:2}
+.nav-box .nav-title{font-size:16px;font-weight:700;text-align:center;margin-bottom:12px;color:var(--accent)}
+.nav-item{display:block;color:var(--text-secondary)}
+.nav-item.current{color:var(--accent);font-weight:700}
+/* Back to top */
+.back-top{position:fixed;bottom:30px;right:30px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;border:none;cursor:pointer;font-size:20px;box-shadow:0 4px 12px rgba(245,158,11,0.3);opacity:0;transition:opacity 0.3s;display:flex;align-items:center;justify-content:center}
+.back-top.show{opacity:1}
+/* Responsive */
+@media(max-width:640px){
+  .cover{height:280px}
+  .cover-title{font-size:24px}
+  h1{font-size:22px}
+  .container{padding:0 16px 60px}
+  .slides-grid{grid-template-columns:repeat(3,1fr)!important}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <img src="./images/ep4-cover.jpg" alt="EP4 封面">
+  <div class="cover-overlay">
+    <div style="max-width:780px;margin:0 auto;width:100%;padding:0 20px;">
+      <div class="cover-series">养了个AI · 第4期</div>
+      <div class="cover-title">实战：从辅导到评审，AI帮我扛过了整个晋升季</div>
+      <div class="cover-subtitle">两条工作流，一套底层能力——AI如何贯穿一个完整的晋升季</div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="article">
+
+<h1>00 全文概览</h1>
+
+<div class="highlight">
+📌 <strong>核心结论：AI不只是帮你做某一件事。它能跟着你，走完一整个工作流——从辅导团队成员冲刺晋升，到作为评委评审8份材料，同一个AI贯穿全程。</strong>
+</div>
+
+<p>这个晋升季，我同时承担了两个角色：作为Leader辅导团队成员冲击晋升，作为评委评审8份跨方向的晋升材料。两件事叠在一起，传统方式至少需要两周。AI全程参与后，穿插在日常工作中就搞定了。</p>
+
+<table>
+<tr><th>维度</th><th>关键发现</th><th>数据支撑</th></tr>
+<tr><td><strong>Leader辅导</strong></td><td>5阶段全流程辅导，从诊断到模拟分析</td><td>材料诊断3分钟完成，传统方式半天</td></tr>
+<tr><td><strong>评委评审</strong></td><td>SABCD评级+横向校准排序</td><td>8份材料不到1小时，传统方式5+小时</td></tr>
+<tr><td><strong>底层能力</strong></td><td>两条工作流共享职级标准库、评委视角等4项底层能力</td><td>能力沉淀后可复用，明年不用重来</td></tr>
+<tr><td><strong>本质区别</strong></td><td>"养AI"vs"用AI"——不是做得更快，是以前做不到的事现在能做了</td><td>答辩攻略、模拟分析从无到有</td></tr>
+</table>
+
+<p><strong>3个核心发现</strong>：(1) AI辅助辅导最大价值不是提速，而是让"答辩攻略"和"逐句模拟分析"从无到有；(2) 评审场景的核心收益是一致性——8份材料用同一套标准，消除"标准漂移"；(3) 两条工作流共享底层能力，这就是"养AI"和"用AI"的本质区别。</p>
+
+<hr>
+
+<h1>01 这个晋升季，我面前摆着两个"不可能任务"</h1>
+
+<img class="article-img" src="./images/ep4-ch01-two-missions.jpg" alt="双线任务">
+
+<p>前3期我们做了三件事：理解"养AI"的思维方式、教它记住你、教它学技能。</p>
+<p>今天开始进入实战——<strong>不是演示功能，是真刀真枪地干活。</strong></p>
+<p>先说个场景，如果你是技术leader，一定会心跳加速：</p>
+<p><strong>晋升季到了。</strong></p>
+<p>你有团队成员需要辅导——帮他整理材料、做PPT、准备答辩、模拟问答。与此同时，你自己也是评委——8份晋升材料堆在桌上，每份30页PPT、20分钟答辩，要在一周内全部评完。</p>
+<p>辅导的活，传统做法至少一周——反复改材料、一版一版磨PPT、陪着练答辩。评审的活，每份材料认真看完需要40分钟，8份就是5个多小时。</p>
+<p><strong>两件事叠在一起，你还有日常工作要做。</strong></p>
+<p>这一期，我讲一个真实的故事：这个晋升季，我是怎么让AI全程参与的——<strong>从辅导团队成员冲击晋升，到作为评委评审8份材料，一整套工作流，AI跟着我走完了全程。</strong></p>
+
+<hr>
+
+<h1>02 第一幕：作为Leader，我是怎么辅导小A的</h1>
+
+<img class="article-img" src="./images/ep4-ch02-coaching-workflow.jpg" alt="辅导工作流">
+
+<p>这一段是整篇文章的核心。<strong>不是"AI帮我写了PPT"这么简单的故事，是从头到尾的完整工作流。</strong></p>
+
+<h2>2.1 第一步：材料诊断——3分钟找出8个问题</h2>
+
+<p>我把小A的所有原始材料丢给AI——初稿大纲、内部文档、项目数据。</p>
+<blockquote><p>我："分析一下这份晋升材料，对照目标职级标准，诊断有哪些问题。"</p></blockquote>
+
+<p>AI 3分钟内给出了诊断报告，列了8个核心问题：</p>
+
+<table>
+<tr><th>#</th><th>问题</th><th>严重度</th><th>说明</th></tr>
+<tr><td>1</td><td>缺少能力映射</td><td><span style="background:#fef2f2;color:#dc2626;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P0</span></td><td>全篇没有和目标职级要求的逐项对标</td></tr>
+<tr><td>2</td><td>叙事松散</td><td><span style="background:#fef2f2;color:#dc2626;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P0</span></td><td>流水账式的工作汇报，缺少主线</td></tr>
+<tr><td>3</td><td>领导力证据不足</td><td><span style="background:#fef2f2;color:#dc2626;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P0</span></td><td>"带领他人"的体现很弱</td></tr>
+<tr><td>4</td><td>方法论不显性</td><td><span style="background:#fefce8;color:#ca8a04;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P1</span></td><td>做了很多但没有提炼成方法论</td></tr>
+<tr><td>5</td><td>行业对标缺失</td><td><span style="background:#fefce8;color:#ca8a04;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P1</span></td><td>没有和行业做法对比</td></tr>
+<tr><td>6</td><td>未来规划太泛</td><td><span style="background:#fefce8;color:#ca8a04;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P1</span></td><td>"继续深耕"不是规划</td></tr>
+<tr><td>7</td><td>数据支撑弱</td><td><span style="background:#fefce8;color:#ca8a04;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P1</span></td><td>结论多、数据少</td></tr>
+<tr><td>8</td><td>AI创新未体现</td><td><span style="background:#f0fdf4;color:#16a34a;padding:2px 8px;border-radius:4px;font-weight:700;font-size:13px">P2</span></td><td>2025年新增的AI能力要求完全没涉及</td></tr>
+</table>
+
+<div class="highlight">📌 <strong>AI的优势不是"比你聪明"，而是它知道目标职级的每一条标准，能在3分钟内完成系统化对标。</strong></div>
+
+<p>这就像你请了一个熟读所有职级文档的助手，帮你快速出体检报告。</p>
+
+<div class="deliverable">▼ 实际交付件：AI生成的诊断报告（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-2-1-diagnosis.png" alt="诊断报告截图">
+
+<p>我花了10分钟确认和补充AI的诊断——调整了两个问题的优先级，补了一个AI没发现的问题（小A有一个行业获奖没提）。</p>
+<p><strong>诊断环节总耗时：AI 3分钟 + 我10分钟 = 13分钟。</strong></p>
+
+<h2>2.2 第二步：叙事重构——把流水账变成故事</h2>
+
+<p>这是最关键的一步。<strong>同样的经历，换一种讲法，评委的感受完全不同。</strong></p>
+<blockquote><p>我："小A的核心优势是在某个技术方向从0到1建立了体系，现在目标职级最看重行业深度和创新推动力。帮我找一条主线，把三个项目串起来。"</p></blockquote>
+
+<p>AI给的重构方案：</p>
+<p><strong>之前的结构</strong>（流水账）：</p>
+<pre>项目A → 项目B → 项目C → 未来计划</pre>
+<p><strong>重构后的结构</strong>（递进式叙事）：</p>
+<pre>发现痛点 → 创新解决 → 方法论沉淀 → 团队和行业影响 → 更大愿景</pre>
+
+<p>更关键的是，AI把三个项目重新定位成了<strong>递进关系</strong>：</p>
+<ul>
+<li>项目A = 发现问题的起点</li>
+<li>项目B = 系统性解决方案</li>
+<li>项目C = 推广到更大范围</li>
+</ul>
+
+<p>合在一起讲的是一个"从0到1到N"的完整故事——<strong>不再是"我做了三个项目"，而是"我如何一步步把一个领域做深做透"。</strong></p>
+
+<div class="deliverable">▼ 实际交付件：AI生成的叙事重构方案（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-2-2-narrative.png" alt="叙事重构截图">
+
+<p>这个方案我做了大约30%的调整——有些关于行业影响的表述需要更精准，AI没有足够的行业上下文。<strong>但80%的框架是直接可用的。</strong></p>
+<p><strong>叙事重构耗时：AI 15分钟 + 我30分钟调整 = 45分钟。</strong></p>
+
+<h2>2.3 第三步：自动生成PPT——不是写大纲，是直接出成品</h2>
+
+<blockquote><p>我："按晋升PPT标准模板，根据重构后的材料生成完整PPT。"</p></blockquote>
+
+<p>AI直接输出了一个完整的PPT文件——不是文字大纲，是<strong>打开就能看的成品PPT</strong>。20多页，还贴心地出了两个版本风格供选择。</p>
+<p>小A看了之后的反应："这比我自己改一周的效果都好……"</p>
+<p>当然，第一版不是完美的——有两页布局出现了数据重叠，有一张图表需要换成更直观的展示方式，少数表述需要更口语化。</p>
+<p>但修改方式很简单——我指出具体位置，AI精确修改那几页，不用全部重来。<strong>经过3轮微调，最终版成型。</strong></p>
+
+<div class="deliverable">▼ 实际交付件：AI生成的25页完整PPT（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-2-3-ppt.png" alt="PPT截图">
+
+<p><strong>PPT生成耗时：AI生成 + 3轮微调 = 约2小时。</strong></p>
+<p>传统方式呢？小A自己做了一周的PPT初稿，还很粗糙。</p>
+
+<h2>2.4 第四步：答辩攻略——比你的师兄更了解评委</h2>
+
+<blockquote><p>我："根据小A的材料和目标职级标准，生成一份完整的答辩攻略。"</p></blockquote>
+
+<p>AI输出了一份将近600行的答辩攻略，分5个部分：</p>
+
+<table>
+<tr><th>部分</th><th>内容</th><th>亮点</th></tr>
+<tr><td>核心策略</td><td>一句话诊断 + 核心叙事 + 时间分配</td><td>开场30秒必说的3句话</td></tr>
+<tr><td>逐页攻略</td><td>25页PPT，每页标注讲法、时间和评委心理</td><td>"这页评委心里在想什么"</td></tr>
+<tr><td>评委问答</td><td>24道模拟题，覆盖8个维度</td><td>每题附推荐话术+要避免的坑</td></tr>
+<tr><td>连环追问</td><td>3个追问场景，每个连续追3层</td><td>模拟评委穷追不舍的情况</td></tr>
+<tr><td>速查清单</td><td>核心数据、关键停顿点、收尾回音句</td><td>答辩前5分钟快速复习</td></tr>
+</table>
+
+<p>举个连环追问的例子：</p>
+<blockquote>
+<p><strong>评委</strong>："这个项目的核心指标提升了多少？"</p>
+<p><strong>评委追问</strong>："这些提升里，你个人贡献占多少？"</p>
+<p><strong>评委再追问</strong>："如果换一个更资深的人来做，结果会不会一样？"</p>
+</blockquote>
+
+<p>每一层追问都配了推荐话术和"别踩的坑"——比如第三问最忌讳说"应该差不多"，正确答案应该强调自己的<strong>不可替代性</strong>。</p>
+
+<div class="deliverable">▼ 实际交付件：600行答辩攻略文档（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-2-4-strategy.png" alt="答辩攻略截图">
+
+<p><strong>答辩攻略耗时：AI生成20分钟 + 我审阅调整1小时 = 约1.5小时。</strong></p>
+
+<h2>2.5 第五步：模拟答辩分析——逐句找问题</h2>
+
+<p>小A做了一次完整的模拟答辩，我让他录了音。</p>
+<blockquote><p>我："分析这份模拟答辩的录音转录，找出表现中的问题，按P0/P1分级。"</p></blockquote>
+
+<p><strong>3个P0级问题（必须修复）</strong>：</p>
+<table>
+<tr><th>问题</th><th>具体表现</th><th>改进方案</th></tr>
+<tr><td>开场缺失叙事主线</td><td>前2分钟在介绍背景，没有建立核心故事线</td><td>重写开场白，前30秒说出主线</td></tr>
+<tr><td>数据回答不自信</td><td>被问具体数据时停顿过长、语气不确定</td><td>准备数据速查卡，关键数据脱口而出</td></tr>
+<tr><td>追问时偏离主题</td><td>被连续追问时容易扯到不相关的内容</td><td>练习"追问 → 回到主线"的话术模板</td></tr>
+</table>
+
+<div class="highlight">📌 <strong>这种逐句分析的颗粒度，传统方式几乎做不到</strong>——你请同事帮听一遍，最多给你一个"整体感觉还行，开头可以再自信点"的反馈。AI能精确到"第47秒开始偏题了"。</div>
+
+<div class="deliverable">▼ 实际交付件：模拟答辩分析报告（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-2-5-mock.png" alt="模拟分析截图">
+
+<p>小A按这套方案调整后又练了两遍，正式答辩前信心满满。</p>
+<p><strong>模拟分析耗时：AI分析15分钟 + 我确认补充30分钟 = 45分钟。</strong></p>
+
+<h2>2.6 辅导全流程复盘</h2>
+
+<table>
+<tr><th>步骤</th><th>传统方式</th><th>AI辅助方式</th><th>提效比</th></tr>
+<tr><td>材料诊断</td><td>半天对照文档</td><td>3分钟自动对标</td><td style="font-weight:800;color:#059669">20x</td></tr>
+<tr><td>叙事重构</td><td>多次讨论迭代</td><td>15分钟出框架+30分钟调整</td><td style="font-weight:800;color:#059669">5x</td></tr>
+<tr><td>PPT生成</td><td>自己做一周</td><td>AI生成+3轮微调≈2小时</td><td style="font-weight:800;color:#059669">15x</td></tr>
+<tr><td>答辩攻略</td><td>靠经验临场发挥</td><td>600行系统化攻略</td><td style="font-weight:800;color:#7c3aed">从无到有</td></tr>
+<tr><td>模拟分析</td><td>"整体还行"的笼统反馈</td><td>逐句分析+P0/P1分级</td><td style="font-weight:800;color:#7c3aed">从无到有</td></tr>
+</table>
+
+<div class="highlight">📌 <strong>注意最后两行——"从无到有"。不是做得更快了，是以前根本做不到的事，现在能做了。</strong></div>
+
+<hr>
+
+<h1>03 第二幕：作为评委，1小时评完8份材料</h1>
+
+<img class="article-img" src="./images/ep4-ch03-review-workflow.jpg" alt="评审工作流">
+
+<p>辅导完小A，我还得戴上另一顶帽子——<strong>晋升评委</strong>。</p>
+<p>8份材料、涵盖前端/后端/测试/运营开发等不同方向。传统做法：逐份阅读打分，一份40分钟，8份5个多小时。</p>
+<p><strong>这次我换了一种方式。</strong></p>
+
+<h2>3.1 一份材料，1分钟出评审报告</h2>
+
+<blockquote><p>我："分析这份晋升PPT，生成SABCD评审报告。"</p></blockquote>
+
+<p>AI在1分钟内输出了一份结构化的评审报告，包含4个维度：</p>
+
+<table>
+<tr><th>维度</th><th>权重</th><th>评估内容</th></tr>
+<tr><td><strong>业绩战功</strong></td><td>30%</td><td>项目规模、业务数据、技术突破</td></tr>
+<tr><td><strong>技术能力</strong></td><td>28%</td><td>架构设计、技术深度、复杂问题解决</td></tr>
+<tr><td><strong>业务理解</strong></td><td>22%</td><td>业务洞察、方案选型合理性、ROI</td></tr>
+<tr><td><strong>影响力</strong></td><td>20%</td><td>团队管理、带人育人、跨团队协作</td></tr>
+</table>
+
+<p><strong>报告还自动包含了"亮点 vs 不足"的双栏对比、改进建议和一段可直接复制的评审反馈文本。</strong></p>
+
+<div class="deliverable">▼ 实际交付件：SABCD评审报告（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-3-1-review.png" alt="评审报告截图">
+
+<p>我做的事：通读报告、调整两三个我认为评分偏高或偏低的地方、补充一些AI没有行业背景无法判断的点。<strong>每份材料的确认和调整大约5分钟。</strong></p>
+<p><strong>8份材料：AI生成 8分钟 + 我确认调整 40分钟 = 约50分钟。</strong></p>
+
+<h2>3.2 横向排序：不是打完分就完了</h2>
+
+<p>评完单份材料只是第一步。<strong>更难的是横向对比——同一职级的几个人，谁更强？</strong></p>
+<p>我让AI在总分的基础上引入了3个校准因子：</p>
+
+<table>
+<tr><th>校准因子</th><th>说明</th><th>效果</th></tr>
+<tr><td><strong>能力密度</strong></td><td>项目复杂度 × 个人贡献度</td><td>避免"大项目躺赢"</td></tr>
+<tr><td><strong>AI赛道加分</strong></td><td>今年新增的AI能力要求</td><td>体现新趋势</td></tr>
+<tr><td><strong>独立攻坚度</strong></td><td>是否独当一面解决难题</td><td>区分"跟着做"和"自己做"</td></tr>
+</table>
+
+<p>校准后的排序和我作为评委的<strong>直觉判断完全吻合</strong>——这很重要。</p>
+
+<div class="deliverable">▼ 实际交付件：横向校准排序矩阵（脱敏后）</div>
+<img class="screenshot-img" src="./images/ep4-screenshot-3-2-ranking.png" alt="横向排序截图">
+
+<div class="highlight">📌 <strong>AI的作用不是替我做决策，是把我的直觉转化成可解释、可验证的依据。</strong></div>
+
+<h2>3.3 评审效率对比</h2>
+
+<table>
+<tr><th>维度</th><th>传统方式</th><th>AI辅助方式</th></tr>
+<tr><td><strong>时间</strong></td><td>5+ 小时</td><td style="font-weight:700;color:#059669">不到1小时</td></tr>
+<tr><td><strong>覆盖度</strong></td><td>容易遗漏某些维度</td><td>系统覆盖7个评审维度</td></tr>
+<tr><td><strong>一致性</strong></td><td>看到第6份的时候标准已经漂移了</td><td>每份材料用同一套标准</td></tr>
+<tr><td><strong>可追溯</strong></td><td>"我觉得他差点意思"</td><td>完整评分矩阵+校准逻辑</td></tr>
+<tr><td><strong>复用性</strong></td><td>明年重新来</td><td>职级标准库+评审模型永久沉淀</td></tr>
+</table>
+
+<div class="highlight">📌 <strong>最后一行是关键——职级标准和评审模型沉淀下来了。</strong> 明年晋升季，不用重新来过，直接调用。这就是"养AI"和"用AI"的区别。</div>
+
+<hr>
+
+<h1>04 两条线背后的秘密：共享的底层能力</h1>
+
+<img class="article-img" src="./images/ep4-ch04-full-workflow.jpg" alt="工作流全景">
+
+<p>辅导一条线，评审一条线——看起来是两件独立的事。<strong>但它们共享同一套底层能力。</strong></p>
+
+<table>
+<tr><th>底层能力</th><th>辅导时怎么用</th><th>评审时怎么用</th></tr>
+<tr><td><strong>职级标准库</strong></td><td>找差距——"你还差哪些"</td><td>打分——"你达到了多少"</td></tr>
+<tr><td><strong>PPT分析</strong></td><td>分析自己人的PPT，找改进空间</td><td>分析候选人的PPT，给评审意见</td></tr>
+<tr><td><strong>评委视角</strong></td><td>模拟评委提问，提前演练</td><td>作为评委打分，输出评审报告</td></tr>
+<tr><td><strong>叙事分析</strong></td><td>帮人重构叙事，讲好故事</td><td>评判叙事质量，看故事讲得好不好</td></tr>
+</table>
+
+<div class="highlight">📌 <strong>这就是完整工作流和单点工具的本质区别。</strong></div>
+
+<p>ChatGPT能帮你润色一段文字，但它没法从头到尾辅导一个人晋升——因为它不知道你公司的职级标准、不了解评委关注什么、不记得上次辅导的细节。</p>
+
+<p>我的AI做到了，靠的是3件事：</p>
+<p><strong>1. 记忆</strong> —— 记住了所有技术通道的职级标准、每次辅导的历史细节</p>
+<p><strong>2. 技能</strong> —— "晋升辅导"和"SABCD评审"两个专属技能，定义了完整的工作流</p>
+<p><strong>3. 沉淀</strong> —— 每次辅导的经验会自动积累，下一次辅导更快更准</p>
+
+<hr>
+
+<h1>05 踩坑提醒</h1>
+
+<img class="article-img" src="./images/ep4-ch05-pitfalls.jpg" alt="踩坑提醒">
+
+<table>
+<tr><th>坑</th><th>反面例子</th><th>正确姿势</th></tr>
+<tr><td>完全依赖AI评判</td><td>"AI说A级那就是A级"</td><td>AI给初判，<strong>你做终判</strong>。只有你了解候选人的完整背景</td></tr>
+<tr><td>PPT一版定稿</td><td>"AI生成的就这样吧"</td><td>至少3轮迭代。第一版解决结构，第二版优化表达，第三版打磨细节</td></tr>
+<tr><td>攻略不贴候选人</td><td>用通用答辩技巧敷衍</td><td>攻略要<strong>基于具体材料生成</strong>，每个人的重点和弱点不同</td></tr>
+<tr><td>忘了脱敏</td><td>把带敏感信息的材料到处传</td><td>晋升材料极其敏感，<strong>全程注意信息安全</strong></td></tr>
+</table>
+
+<div class="highlight">📌 <strong>核心：AI是最强辅助，但做决定的是你。</strong></div>
+
+<hr>
+
+<h1>06 总结与下期预告</h1>
+
+<blockquote>
+<p><strong>AI不只是帮你做某一件事。它能跟着你，走完一整个工作流。</strong></p>
+<p><strong>从辅导到评审，从诊断到排序——同一个AI，贯穿全程。</strong></p>
+</blockquote>
+
+<p>这就是"养AI"和"用AI"的根本区别：</p>
+<ul>
+<li>用AI = 每次问一个问题，得到一个回答</li>
+<li>养AI = 它理解你的整个工作场景，在每个环节都能帮上忙</li>
+</ul>
+
+<p><strong>这个晋升季，AI帮我生成的文件超过20个：结构化材料、多版本PPT、答辩攻略、模拟问答、评审报告、排序矩阵……</strong></p>
+
+<p><strong>下一期，更疯狂——</strong></p>
+<p><strong>它每天早上6点自己醒来，自动帮你追踪整个行业在发生什么。</strong></p>
+<p>不用你说"帮我看看今天有什么新闻"。不用你说"帮我整理一下"。</p>
+<p><strong>它自己搜、自己读、自己整理、自己推送给你。</strong></p>
+<p>敬请期待：<strong>养了个AI · 第5期｜实战：每天6点，它自动帮我追踪行业动态</strong></p>
+
+<hr>
+
+<h1>07 彩蛋</h1>
+
+<img class="article-img" src="./images/ep4-easter-egg-ai.jpg" alt="彩蛋">
+
+<p><strong>你猜这篇文章里的实战数据从哪来的？</strong></p>
+<p><strong>答案是：我让AI帮我回顾了整个晋升季的工作记录。</strong></p>
+<p>它翻出了所有的对话历史、生成的文件、工作流程——比我自己的记忆还详细。</p>
+
+<div class="highlight">📌 <strong>AI不仅在帮你做事，还在帮你记住你做过的事。</strong></div>
+
+<blockquote><p>最好的笔记工具不是你写得最快的那个，是替你记的那个。</p></blockquote>
+
+<hr>
+
+<div class="nav-box">
+<div class="nav-title">养了个AI · 专栏导航</div>
+<span class="nav-item">✅ 第0期｜预告：它每天6点自己醒来，帮我干完半天的活</span>
+<span class="nav-item">✅ 第1期｜当你停止把AI当工具，一切都变了</span>
+<span class="nav-item">✅ 第2期｜第一步：让你的AI记住你是谁</span>
+<span class="nav-item">✅ 第3期｜第二步：教它学会第一个技能</span>
+<span class="nav-item current">👉 第4期｜实战：从辅导到评审，AI帮我扛过了整个晋升季 ← 你在这里</span>
+<span class="nav-item">📅 第5期｜实战：每天6点，它自动帮我追踪行业动态</span>
+<span class="nav-item">📅 第6期｜实战：一句话出PPT、Word、网页</span>
+<span class="nav-item">📅 第7期｜小无相功：它学会了自我进化</span>
+<span class="nav-item">📅 第8期｜给AI装上53个技能包是什么体验</span>
+<span class="nav-item">📅 第9期｜终章：我为什么不用Manus了</span>
+</div>
+
+</div>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('backTop').classList.toggle('show',window.scrollY>400);
+});
+</script>
+</body>
+</html>

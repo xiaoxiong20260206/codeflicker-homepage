@@ -1,0 +1,418 @@
+<!-- 第四章：阶段二下钻——工种级AI化 -->
+<div id="tab4" class="tab-panel">
+    <div class="section-overview">
+        <span class="section-overview-label">一张图看清本章</span>
+        <div class="section-overview-content">
+            <svg viewBox="0 0 750 230" style="max-width: 750px;">
+                <!-- 核心理念 -->
+                <rect x="160" y="5" width="430" height="36" rx="8" fill="#FFFBEB" stroke="#FDE68A"/>
+                <text x="375" y="28" text-anchor="middle" font-size="11" font-weight="700" fill="#D97706">核心：不是"AI辅助旧流程"，而是"AI原生新流程" (PwC 2026)</text>
+
+                <!-- 三件事 -->
+                <rect x="10" y="54" width="230" height="60" rx="10" fill="white" stroke="#FDE68A"/>
+                <circle cx="28" cy="76" r="9" fill="#D97706"/>
+                <text x="28" y="80" text-anchor="middle" font-size="8" font-weight="700" fill="white">1</text>
+                <text x="44" y="76" font-size="10" font-weight="600" fill="#D97706">工作流重设计</text>
+                <text x="44" y="92" font-size="9" fill="#78716C">问"从零怎么设计"而非"AI放哪"</text>
+
+                <rect x="260" y="54" width="230" height="60" rx="10" fill="white" stroke="#FDE68A"/>
+                <circle cx="278" cy="76" r="9" fill="#D97706"/>
+                <text x="278" y="80" text-anchor="middle" font-size="8" font-weight="700" fill="white">2</text>
+                <text x="294" y="76" font-size="10" font-weight="600" fill="#D97706">成熟度评估 L1/L2/L3</text>
+                <text x="294" y="92" font-size="9" fill="#78716C">定位每个工种的AI化水平</text>
+
+                <rect x="510" y="54" width="230" height="60" rx="10" fill="white" stroke="#FDE68A"/>
+                <circle cx="528" cy="76" r="9" fill="#D97706"/>
+                <text x="528" y="80" text-anchor="middle" font-size="8" font-weight="700" fill="white">3</text>
+                <text x="544" y="76" font-size="10" font-weight="600" fill="#D97706">Agentic工作流落地</text>
+                <text x="544" y="92" font-size="9" fill="#78716C">Agent接管重复性专业任务</text>
+
+                <!-- 六大工种 -->
+                <text x="375" y="138" text-anchor="middle" font-size="10" font-weight="600" fill="#57534E">六大工种AI化路径</text>
+                <rect x="10" y="148" width="115" height="36" rx="6" fill="#FEF2F2" stroke="#FECACA"/>
+                <text x="67" y="163" text-anchor="middle" font-size="9.5" font-weight="600" fill="#E11D48">产品经理</text>
+                <text x="67" y="178" text-anchor="middle" font-size="8" fill="#78716C">L1→L2 覆盖扩4-6x</text>
+
+                <rect x="135" y="148" width="115" height="36" rx="6" fill="#FEF7ED" stroke="#FED7AA"/>
+                <text x="192" y="163" text-anchor="middle" font-size="9.5" font-weight="600" fill="#D97706">研发工程师</text>
+                <text x="192" y="178" text-anchor="middle" font-size="8" fill="#78716C">L1→L2 AI协同开发</text>
+
+                <rect x="260" y="148" width="115" height="36" rx="6" fill="#ECFDF5" stroke="#6EE7B7"/>
+                <text x="317" y="163" text-anchor="middle" font-size="9.5" font-weight="600" fill="#059669">测试工程师</text>
+                <text x="317" y="178" text-anchor="middle" font-size="8" fill="#78716C">L1→L3 Agent自动化</text>
+
+                <rect x="385" y="148" width="115" height="36" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+                <text x="442" y="163" text-anchor="middle" font-size="9.5" font-weight="600" fill="#2563EB">设计师</text>
+                <text x="442" y="178" text-anchor="middle" font-size="8" fill="#78716C">L1→L2 AI协同设计</text>
+
+                <rect x="510" y="148" width="115" height="36" rx="6" fill="#F5F3FF" stroke="#C4B5FD"/>
+                <text x="567" y="163" text-anchor="middle" font-size="9.5" font-weight="600" fill="#7C3AED">运营/市场</text>
+                <text x="567" y="178" text-anchor="middle" font-size="8" fill="#78716C">L1→L2 个性化运营</text>
+
+                <rect x="635" y="148" width="105" height="36" rx="6" fill="#ECFDF5" stroke="#6EE7B7"/>
+                <text x="687" y="163" text-anchor="middle" font-size="9.5" font-weight="600" fill="#059669">财务/HR</text>
+                <text x="687" y="178" text-anchor="middle" font-size="8" fill="#78716C">L1→L3 Agent执行</text>
+
+                <!-- 底部 -->
+                <text x="375" y="210" text-anchor="middle" font-size="10" fill="#57534E" font-weight="600">变革单元：角色 · 6-12个月 · 关键工种交付效率翻倍</text>
+                <text x="375" y="226" text-anchor="middle" font-size="9" fill="#A8A29E">落地六步法：选工种→工作流审计→AI原生设计→Agent构建→试跑→推广</text>
+            </svg>
+        </div>
+    </div>
+
+    <!-- 应该做什么 -->
+    <div class="section-card">
+        <div class="section-header">
+            <span class="section-number">1</span>
+            <h2 class="section-title">应该做什么：从"人人会用"到"工种重塑"</h2>
+        </div>
+        <div class="section-content">
+            <p>阶段一解决了"能不能用起来"的问题。阶段二要解决的是——<span class="text-bold">每个工种如何与AI深度协同，让工作方式发生质变而非量变</span>。这是最容易被误解的阶段：很多企业以为"大家都在用AI"就算转型了，但PwC 2026报告尖锐指出——</p>
+
+            <div class="quote-box">
+                <p class="quote-text">"Instead of cutting a few steps, rethink the workflow, which an AI-first approach may turn into a single step. That often starts by asking not how AI can fit into a workflow but how it can create a new one."</p>
+                <p class="quote-author">—— PwC, 2026 AI Business Predictions</p>
+            </div>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <div class="insight-title">阶段二的三件事</div>
+                <p><span class="text-bold">1. 工种工作流重设计</span>——不是"AI辅助旧流程"，而是"AI原生新流程"<br/>
+                <span class="text-bold">2. 分工种AI成熟度评估</span>——用L1/L2/L3模型定位每个工种的AI化水平<br/>
+                <span class="text-bold">3. Agentic工作流落地</span>——让Agent接管重复性专业任务</p>
+            </div>
+
+            <h3 style="margin-top: 24px; font-size: 16px; color: var(--color-text-primary);">1.1 工种工作流重设计：问"如何从零设计"，而非"AI放在哪里"</h3>
+            <p>回到智能手机类比：每个人都有了智能手机，摄影师开始用手机拍照、记者用手机写稿——每个工种的工作方式被重新定义，但团队协作模式还没变。同理，如果一个PM还是按“写PRD → 评审 → 排期 → 跟进”的流程工作，只是用AI“加速写PRD”，那效率提升可能只有20-30%。</p>
+            <p style="margin-top: 12px;">但如果从头设计一个<span class="text-bold">AI原生的PM工作流</span>呢？</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>环节</th>
+                        <th>传统流程</th>
+                        <th>AI辅助（阶段一）</th>
+                        <th>AI原生（阶段二）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>需求发现</td>
+                        <td>用户访谈 + 竞品调研</td>
+                        <td>AI辅助写调研问卷</td>
+                        <td>Agent自动抓取用户反馈、竞品动态，生成需求洞察</td>
+                    </tr>
+                    <tr>
+                        <td>需求定义</td>
+                        <td>PM独立撰写PRD</td>
+                        <td>AI帮写PRD初稿</td>
+                        <td>Agent基于需求洞察直接生成PRD + 原型 + 测试用例</td>
+                    </tr>
+                    <tr>
+                        <td>进度管理</td>
+                        <td>每日站会 + 手动更新</td>
+                        <td>AI总结会议纪要</td>
+                        <td>Agent实时同步进度，异常自动预警和干预建议</td>
+                    </tr>
+                    <tr>
+                        <td>效果验证</td>
+                        <td>上线后手动分析</td>
+                        <td>AI辅助数据分析</td>
+                        <td>Agent自动追踪指标，生成归因分析和迭代建议</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 16px;">BCG 2026报告指出：在AI原生模式下，<span class="text-bold">一个PM的覆盖范围可以扩大4-6倍</span>。这不是"PM用AI快了30%"，而是"PM的工作本质变了"——从"执行者"变成"指挥官"。</p>
+
+            <h3 style="margin-top: 24px; font-size: 16px; color: var(--color-text-primary);">1.2 分工种AI成熟度评估：L1/L2/L3模型</h3>
+            <p>不同工种的AI化路径和速度不同。以下三级模型可以帮助定位每个工种当前在什么水平、下一步应该做什么：</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>成熟度</th>
+                        <th>定义</th>
+                        <th>特征</th>
+                        <th>典型场景</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="tag tag-red">L1 AI辅助</span></td>
+                        <td>AI作为效率工具</td>
+                        <td>人主导，AI加速；工作流不变</td>
+                        <td>AI写初稿、AI翻译、AI代码补全</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-orange">L2 AI协同</span></td>
+                        <td>AI参与关键决策</td>
+                        <td>人+AI协作，工作流重设计</td>
+                        <td>AI生成方案 + 人审核决策、Agent自动执行子流程</td>
+                    </tr>
+                    <tr>
+                        <td><span class="tag tag-green">L3 AI自主</span></td>
+                        <td>AI独立完成子任务</td>
+                        <td>Agent端到端执行，人只做监督和异常处理</td>
+                        <td>Agent自动化测试、Agent自动运维、Agent自动客服</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 24px; font-size: 16px; color: var(--color-text-primary);">1.3 Agentic工作流落地：PwC的"Spell It Out"原则</h3>
+            <p>PwC 2026报告给出了一个关键方法论：在设计Agentic工作流时，必须<span class="text-bold">逐步骤写清楚</span>——哪些步骤由Agent主导，哪些由人主导，哪些是人机协作，以及每一步的监督机制。</p>
+
+            <div class="insight-box" style="margin-top: 16px;">
+                <div class="insight-title">PwC "Spell It Out" 工作流设计框架</div>
+                <p>对于每个关键工作流中的每一步，明确回答四个问题：</p>
+                <ul style="margin-top: 8px; padding-left: 20px;">
+                    <li><span class="text-bold">谁主导？</span> Agent独立执行 / 人独立执行 / 人机协作</li>
+                    <li><span class="text-bold">谁监督？</span> 人工Review / 另一个Agent交叉检查 / 自动化测试</li>
+                    <li><span class="text-bold">何时升级？</span> 什么条件下需要人工介入</li>
+                    <li><span class="text-bold">如何回滚？</span> 出错时的恢复机制</li>
+                </ul>
+            </div>
+
+            <div class="quote-box" style="margin-top: 16px;">
+                <p class="quote-text">"Built-in monitoring also includes different agents checking each other's work, and for higher-risk scenarios, these agents come from different model providers."</p>
+                <p class="quote-author">—— PwC, 2026 AI Business Predictions</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 具体怎么做 -->
+    <div class="section-card">
+        <div class="section-header">
+            <span class="section-number">2</span>
+            <h2 class="section-title">具体怎么做：分工种AI化路线图</h2>
+        </div>
+        <div class="section-content">
+            <p>阶段二不是"全员齐步走"，而是<span class="text-bold">按工种分批推进</span>。不同工种的AI化难度和ROI不同，应该优先攻克高ROI、低复杂度的工种。</p>
+
+            <h3 style="margin-top: 20px; font-size: 16px; color: var(--color-text-primary);">2.1 典型工种AI化路径</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>工种</th>
+                        <th>当前普遍水平</th>
+                        <th>阶段二目标</th>
+                        <th>关键变化</th>
+                        <th>参考实践</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="text-bold">研发工程师</span></td>
+                        <td><span class="tag tag-red">L1</span> 代码补全</td>
+                        <td><span class="tag tag-orange">L2</span> AI协同开发</td>
+                        <td>从"AI补全代码"到"AI生成模块 + 人审核 + AI测试"</td>
+                        <td>Cursor + Agentic Coding</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">测试工程师</span></td>
+                        <td><span class="tag tag-red">L1</span> AI辅助写用例</td>
+                        <td><span class="tag tag-green">L3</span> Agent自动化测试</td>
+                        <td>从"AI帮写测试脚本"到"Agent自动生成 + 执行 + 回归 + 报告"</td>
+                        <td>AI Test Agent</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">产品经理</span></td>
+                        <td><span class="tag tag-red">L1</span> AI辅助写文档</td>
+                        <td><span class="tag tag-orange">L2</span> AI协同产品设计</td>
+                        <td>从"AI写PRD"到"AI洞察需求 + 生成方案 + 模拟验证"</td>
+                        <td>覆盖范围扩大4-6倍</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">设计师</span></td>
+                        <td><span class="tag tag-red">L1</span> AI生图</td>
+                        <td><span class="tag tag-orange">L2</span> AI协同设计</td>
+                        <td>从"AI出草图"到"AI生成多方案 + 人选定 + AI出终稿 + 切图"</td>
+                        <td>Figma AI + MidJourney</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">运营/市场</span></td>
+                        <td><span class="tag tag-red">L1</span> AI写文案</td>
+                        <td><span class="tag tag-orange">L2</span> AI个性化运营</td>
+                        <td>从"AI写通稿"到"Agent分人群生成个性化内容 + 自动分发 + 效果追踪"</td>
+                        <td>PwC: hyper-personalization</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">财务/HR</span></td>
+                        <td><span class="tag tag-red">L1</span> AI辅助分析</td>
+                        <td><span class="tag tag-green">L3</span> Agent自动执行</td>
+                        <td>Agent处理发票、匹配订单、对账、异常检测；人聚焦战略决策</td>
+                        <td>PwC: AI agents for finance</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 24px; font-size: 16px; color: var(--color-text-primary);">2.2 落地六步法</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>步骤</th>
+                        <th>动作</th>
+                        <th>交付物</th>
+                        <th>周期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="text-bold">Step 1</span></td>
+                        <td>选择3-5个高ROI工种作为试点</td>
+                        <td>优先级矩阵（ROI × 复杂度）</td>
+                        <td>W1-W2</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">Step 2</span></td>
+                        <td>对每个工种做"一日工作流审计"——记录每个步骤及耗时</td>
+                        <td>当前工作流地图</td>
+                        <td>W2-W3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">Step 3</span></td>
+                        <td>设计AI原生工作流——从零思考"如果AI是默认的，怎么设计"</td>
+                        <td>目标工作流地图 + 人机分工矩阵</td>
+                        <td>W3-W5</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">Step 4</span></td>
+                        <td>构建必要的Agent/自动化流程</td>
+                        <td>可用的Agentic工作流</td>
+                        <td>W5-W10</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">Step 5</span></td>
+                        <td>试点团队试跑2-4周，收集数据</td>
+                        <td>效率对比数据 + 问题清单</td>
+                        <td>W10-W14</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-bold">Step 6</span></td>
+                        <td>迭代优化后推广到全工种</td>
+                        <td>标准化AI工作流手册</td>
+                        <td>W14-W24</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <div class="insight-title">Deloitte的关键提醒：别忘了度量标准的升级</div>
+                <p>Deloitte 2026报告指出，当工种AI化后，传统的度量标准会失效。例如：<span class="text-bold">用"代码行数"衡量AI辅助开发是荒谬的</span>。新的度量标准应该聚焦<span class="text-bold">业务产出</span>而非工作量——比如从"一周写了多少行代码"变成"一周交付了几个可用Feature"。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 能带来哪些变化 -->
+    <div class="section-card">
+        <div class="section-header">
+            <span class="section-number">3</span>
+            <h2 class="section-title">能带来哪些变化</h2>
+        </div>
+        <div class="section-content">
+            <p>阶段二完成后，你应该能观察到这些变化：</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>维度</th>
+                        <th>变化前（阶段一完成）</th>
+                        <th>变化后（阶段二完成）</th>
+                        <th>衡量指标</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>工作模式</td>
+                        <td>AI是"加速器"</td>
+                        <td>AI是"协作者"</td>
+                        <td>关键工种Agent覆盖率 > 60%</td>
+                    </tr>
+                    <tr>
+                        <td>交付效率</td>
+                        <td>个人效率提升20-30%</td>
+                        <td>关键工种交付效率翻倍</td>
+                        <td>交付周期缩短 > 50%</td>
+                    </tr>
+                    <tr>
+                        <td>工作内容</td>
+                        <td>重复性工作占比高</td>
+                        <td>重复性工作大部分由Agent完成</td>
+                        <td>人工重复任务占比 < 30%</td>
+                    </tr>
+                    <tr>
+                        <td>度量体系</td>
+                        <td>基于"工作量"</td>
+                        <td>基于"业务产出"</td>
+                        <td>每个工种有AI时代的新KPI</td>
+                    </tr>
+                    <tr>
+                        <td>能力要求</td>
+                        <td>专业技能 + 基本AI使用</td>
+                        <td>专业技能 + Agent编排能力</td>
+                        <td>核心岗位AI进阶培训通过率 > 80%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="comparison-grid" style="margin-top: 24px;">
+                <div class="correct-path">
+                    <div class="path-title">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" fill="#059669"/>
+                            <path d="M6 10L9 13L14 7" stroke="white" stroke-width="2"/>
+                        </svg>
+                        阶段二做对的信号
+                    </div>
+                    <ul class="path-list">
+                        <li>员工开始说"这件事没有Agent就太低效了"</li>
+                        <li>工种之间出现新的协作模式</li>
+                        <li>新入职员工觉得旧流程"不可思议"</li>
+                        <li>度量标准从输入端转向输出端</li>
+                    </ul>
+                </div>
+                <div class="wrong-path">
+                    <div class="path-title">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <circle cx="10" cy="10" r="9" stroke="#E11D48" stroke-width="2"/>
+                            <path d="M6 6L14 14M14 6L6 14" stroke="#E11D48" stroke-width="2"/>
+                        </svg>
+                        阶段二的典型陷阱
+                    </div>
+                    <ul class="path-list">
+                        <li>"AI使用率很高"但交付效率没变（阶段一假象）</li>
+                        <li>工作流没变，只是每个步骤"AI加速了一点"</li>
+                        <li>Agent建了很多但没有实际业务价值（demo陷阱）</li>
+                        <li>度量标准还在用传统指标衡量新模式</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insight-box" style="margin-top: 20px;">
+                <div class="insight-title">阶段二的限度——诚实面对</div>
+                <p>阶段二完成后，你<span class="text-bold">不应该</span>期望看到：</p>
+                <ul style="margin-top: 8px; padding-left: 20px;">
+                    <li>团队规模显著缩减（那需要阶段三的结构重组）</li>
+                    <li>工种之间的壁垒消除（那需要阶段三的协作模式重塑）</li>
+                    <li>全新的业务模式出现（那需要阶段四的战略跃迁）</li>
+                </ul>
+                <p style="margin-top: 8px;"><span class="text-bold">阶段二的成功标准是"让每个工种找到自己的AI原生工作方式"——这是从局部优化到整体变革的关键跳板。</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 章节衔接导航 -->
+    <div class="chapter-nav">
+        <div class="chapter-nav-item prev" data-tab="tab3" role="button" tabindex="0">
+            <span class="chapter-nav-label">&#8592; 上一章</span>
+            <span class="chapter-nav-name">阶段一：工具级普及</span>
+            <span class="chapter-nav-reason">回顾"让AI可用、敢用、想用"的基础建设</span>
+        </div>
+        <div class="chapter-nav-item next" data-tab="tab5" role="button" tabindex="0">
+            <span class="chapter-nav-label">下一章 &#8594;</span>
+            <span class="chapter-nav-name">阶段三：团队级重组</span>
+            <span class="chapter-nav-reason">工种AI化后，如何重构团队协作模式实现生产率飞跃</span>
+        </div>
+    </div>
+</div>

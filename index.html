@@ -1,0 +1,4952 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解林克</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <!-- 资源提示：预连接外部域名，减少 DNS/TLS 延迟 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <!-- 预加载头像图片 -->
+    <link rel="preload" href="link-avatar-small.webp" as="image" type="image/webp">
+    <!-- Google Fonts 异步加载：避免阻塞首次渲染 -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&family=Cinzel:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Chart.js 延迟加载：首屏不需要图表 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 已改为按需动态加载 -->
+    <link rel="stylesheet" href="styles/zelda-theme.css?v=20">
+    <link rel="stylesheet" href="styles/main.css?v=21">
+    <link rel="stylesheet" href="styles/ability-trees.css?v=22">
+    <style>
+        /* ==================== 页面特定样式 ==================== */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        /* 侧边栏 - 毛玻璃风格 */
+        .sidebar {
+            width: 300px;
+            background: var(--glass-bg, rgba(24, 28, 33, 0.82));
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            border-right: 1px solid rgba(0, 212, 255, 0.18);
+            padding: 24px var(--spacing-md);
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 100;
+            box-shadow: 
+                4px 0 32px rgba(0, 0, 0, 0.3),
+                inset -1px 0 0 rgba(0, 212, 255, 0.06),
+                inset 0 0 60px rgba(0, 212, 255, 0.04);
+        }
+        
+        .sidebar::-webkit-scrollbar { width: 3px; }
+        .sidebar::-webkit-scrollbar-track { background: transparent; }
+        .sidebar::-webkit-scrollbar-thumb { background: rgba(0, 212, 255, 0.3); border-radius: 3px; }
+        
+        /* 头像区 */
+        .avatar-section {
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .avatar-frame {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto var(--spacing-md);
+            position: relative;
+        }
+        
+        .avatar-glow {
+            position: absolute;
+            inset: -15%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.2) 0%, rgba(0, 212, 255, 0.05) 50%, transparent 70%);
+            border-radius: 50%;
+            animation: sheikah-pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes sheikah-pulse {
+            0%, 100% { box-shadow: 0 0 12px rgba(0, 212, 255, 0.3); }
+            50% { box-shadow: 0 0 28px rgba(0, 212, 255, 0.55); }
+        }
+        
+        .avatar-ring {
+            position: absolute;
+            inset: 0;
+            border: none;
+            border-radius: 50%;
+            animation: spiral-rotate 12s linear infinite;
+        }
+        
+        .avatar-ring::before {
+            display: none;
+        }
+        
+        .avatar-inner {
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(150deg, #1a2a3a 0%, #0d1a26 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1.5px solid rgba(0, 212, 255, 0.35);
+        }
+        
+        .avatar-inner img {
+            width: 95%;
+            height: 95%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        
+        .level-badge {
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(145deg, var(--zelda-gold-dark), var(--zelda-gold));
+            color: white;
+            padding: 2px 14px;
+            border-radius: 12px;
+            font-family: var(--font-mono);
+            font-size: 10px;
+            font-weight: 700;
+            box-shadow: 0 2px 12px rgba(212, 168, 42, 0.4);
+            letter-spacing: 0.5px;
+        }
+        
+        .character-name {
+            font-family: var(--font-title);
+            font-size: 26px;
+            color: var(--sheikah-blue-light);
+            letter-spacing: 4px;
+            margin-bottom: 5px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+        }
+        
+        .character-title {
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+        
+        .character-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .tag-gold {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold-light);
+            border: 1px solid var(--zelda-gold);
+        }
+        
+        .tag-green {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--sheikah-blue-light);
+            border: 1px solid var(--sheikah-blue);
+        }
+        
+        /* 内容基地入口按钮 */
+        .content-hub-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 8px;
+            padding: 6px 14px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(201, 162, 39, 0.10));
+            border: 1px solid rgba(0, 212, 255, 0.35);
+            border-radius: 16px;
+            color: var(--sheikah-blue-light, #a8e6ff);
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .content-hub-btn:hover {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.22), rgba(201, 162, 39, 0.18));
+            border-color: rgba(0, 212, 255, 0.6);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        .content-hub-icon { font-size: 12px; }
+        .content-hub-text { white-space: nowrap; }
+        .content-hub-arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
+        }
+        .content-hub-btn:hover .content-hub-arrow {
+            transform: translateX(3px);
+        }
+        
+        /* ==================== 等级进度面板 - 紧凑版 ==================== */
+        .level-progress-panel {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.08);
+        }
+        
+        .level-header {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+        
+        .level-main-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .level-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .level-current {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--zelda-gold-light);
+            text-shadow: 0 0 10px rgba(201, 162, 39, 0.5);
+        }
+        
+        .level-arrow {
+            color: var(--sheikah-blue);
+            font-size: 12px;
+            opacity: 0.6;
+        }
+        
+        .level-next {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        
+        .level-title-badge {
+            font-size: 12px;
+            font-weight: 700;
+            color: #ffd700;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 140, 0, 0.15) 100%);
+            border: 1.5px solid rgba(255, 215, 0, 0.4);
+            padding: 3px 10px;
+            border-radius: 10px;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .level-title-badge:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(255, 140, 0, 0.25) 100%);
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+        }
+        
+        .level-title-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* 段位进阶气泡 */
+        .tier-popup {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: 10px;
+            background: linear-gradient(135deg, rgba(20, 25, 30, 0.98) 0%, rgba(30, 40, 50, 0.96) 100%);
+            border: 1.5px solid rgba(0, 212, 255, 0.4);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.15);
+        }
+        
+        .tier-popup::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid rgba(0, 212, 255, 0.4);
+        }
+        
+        .level-title-wrapper:hover .tier-popup {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .tier-popup-header {
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: var(--zelda-gold-light);
+            text-align: center;
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .tier-popup-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .tier-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            transition: all 0.15s ease;
+        }
+        
+        .tier-item.passed {
+            opacity: 0.6;
+        }
+        
+        .tier-item.passed .tier-name {
+            color: #4ade80;  /* 绿色表示已达成 */
+        }
+        
+        .tier-item.active {
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+        }
+        
+        .tier-item.active .tier-name {
+            color: #ffd700;  /* 金色表示当前 */
+            font-weight: 700;
+        }
+        
+        .tier-item.future {
+            opacity: 0.5;
+        }
+        
+        .tier-item.future .tier-name {
+            color: rgba(200, 220, 240, 0.7);  /* 浅色表示未达成 */
+        }
+        
+        .tier-status {
+            font-size: 10px;
+            width: 14px;
+            text-align: center;
+            color: var(--sheikah-blue);
+        }
+        
+        .tier-item.passed .tier-status {
+            color: #4ade80;
+        }
+        
+        .tier-item.active .tier-status {
+            color: var(--zelda-gold);
+        }
+        
+        .tier-item.future .tier-status {
+            color: rgba(200, 220, 240, 0.4);
+        }
+        
+        .tier-icon {
+            font-size: 14px;
+        }
+        
+        .tier-name {
+            flex: 1;
+            font-weight: 600;
+            color: var(--text-light);  /* 默认白色 */
+        }
+        
+        .tier-range {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        .tier-popup-footer {
+            font-size: 11px;
+            color: var(--sheikah-blue-light);
+            text-align: center;
+            margin-top: var(--spacing-sm);
+            padding-top: var(--spacing-sm);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .level-percent {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+            opacity: 0.8;
+        }
+        
+        .level-title-display {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--zelda-gold);
+            letter-spacing: 2px;
+            margin-top: -4px;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+        
+        .about-level-title {
+            font-size: 10px;
+            color: var(--zelda-gold);
+            text-align: center;
+            margin-top: 2px;
+            letter-spacing: 1px;
+        }
+        
+        .level-percent {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .exp-bar-container {
+            position: relative;
+            height: 10px;
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 6px;
+            border: 1px solid rgba(0, 212, 255, 0.12);
+        }
+        
+        .exp-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, 
+                var(--sheikah-blue-dark) 0%, 
+                var(--sheikah-blue) 50%, 
+                var(--sheikah-blue-light) 100%
+            );
+            border-radius: 5px;
+            transition: width 0.5s ease;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            position: relative;
+        }
+        
+        .exp-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%
+            );
+            animation: exp-shimmer 2s infinite;
+        }
+        
+        @keyframes exp-shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .exp-bar-fill.almost-full {
+            background: linear-gradient(90deg, 
+                var(--zelda-gold-dark) 0%, 
+                var(--zelda-gold) 50%, 
+                var(--zelda-gold-light) 100%
+            );
+            box-shadow: 0 0 15px rgba(201, 162, 39, 0.7);
+            animation: gold-pulse 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes gold-pulse {
+            0%, 100% { box-shadow: 0 0 10px rgba(201, 162, 39, 0.5); }
+            50% { box-shadow: 0 0 20px rgba(201, 162, 39, 0.9); }
+        }
+        
+        .exp-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+        
+        .exp-current {
+            font-family: var(--font-mono);
+        }
+        
+        .exp-needed {
+            font-family: var(--font-mono);
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        /* 升级指南 */
+        .upgrade-guide {
+            margin-top: var(--spacing-sm);
+            border-top: 1px solid var(--sheikah-blue-dark);
+            padding-top: var(--spacing-sm);
+        }
+        
+        .upgrade-guide-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            padding: 6px 0;
+            transition: color var(--transition-fast);
+        }
+        
+        .upgrade-guide-header:hover {
+            color: var(--sheikah-blue-light);
+        }
+        
+        .upgrade-guide-title {
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .upgrade-guide-toggle {
+            font-size: 10px;
+            color: var(--sheikah-blue);
+            transition: transform var(--transition-fast);
+        }
+        
+        .upgrade-guide-toggle.expanded {
+            transform: rotate(180deg);
+        }
+        
+        .upgrade-guide-content {
+            display: none;
+            padding-top: var(--spacing-sm);
+        }
+        
+        .upgrade-guide-content.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .upgrade-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 0;
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.8);
+        }
+        
+        .upgrade-item-icon {
+            font-size: 12px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .upgrade-item-text {
+            flex: 1;
+        }
+        
+        .upgrade-item-exp {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: var(--zelda-gold);
+            font-weight: 600;
+        }
+        
+        /* 统计面板 */
+        .stats-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .stat-item {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .stat-item:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--sheikah-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--sheikah-glow);
+        }
+        
+        .stat-icon { font-size: 20px; }
+        
+        .stat-value {
+            font-family: var(--font-mono);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .stat-label {
+            font-size: 9px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        /* 雷达图面板 */
+        .radar-panel, .trend-mini-panel {
+            background: rgba(18, 22, 28, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .panel-title {
+            font-size: 10px;
+            color: var(--sheikah-blue-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .radar-wrap, .trend-mini-wrap {
+            height: 150px;
+        }
+        
+        /* 成就 */
+        .achievements-mini {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .ach-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        
+        .ach-mini-item {
+            width: 32px;
+            height: 32px;
+            background: rgba(201, 162, 39, 0.1);
+            border: 1px solid var(--zelda-gold-dark);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        
+        /* 更新信息 */
+        .update-info {
+            text-align: center;
+            font-size: 10px;
+            color: rgba(245, 230, 200, 0.35);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(0, 212, 255, 0.06);
+            letter-spacing: 0.5px;
+        }
+        
+        /* 主内容区 */
+        .main-content {
+            flex: 1;
+            margin-left: 300px;
+            padding: var(--spacing-md);
+            min-height: 100vh;
+        }
+        
+        /* 顶部导航 - 毛玻璃 */
+        .top-nav {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            padding: 10px 14px;
+            background: var(--glass-bg, rgba(24, 28, 33, 0.82));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+            border-radius: var(--radius-lg);
+        }
+        
+        .nav-tab {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 16px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-md);
+            color: var(--text-muted);
+            font-family: var(--font-title);
+            font-size: 17px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+        }
+        
+        .nav-tab:hover {
+            background: rgba(0, 212, 255, 0.06);
+            color: var(--sheikah-blue-light);
+        }
+        
+        .nav-tab.active {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.4);
+            color: var(--sheikah-blue-light);
+            box-shadow: 0 0 16px rgba(0, 212, 255, 0.15);
+            text-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+        }
+        
+        .nav-icon { font-size: 22px; }
+        
+        /* Section */
+        .content-section {
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1.5px solid rgba(0, 212, 255, 0.12);
+        }
+        
+        .section-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .section-icon { font-size: 28px; }
+        
+        .section-title {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: var(--zelda-brown);
+            letter-spacing: 2px;
+        }
+        
+        /* ==================== 日报Section样式 ==================== */
+        
+        /* 日期选择器栏 */
+        .daily-date-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .date-selector {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+        
+        .date-btn {
+            padding: 8px 16px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-sm);
+            color: var(--sheikah-blue-light);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .date-btn:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: var(--sheikah-blue);
+        }
+        
+        .date-btn.active {
+            background: var(--sheikah-blue);
+            color: white;
+        }
+        
+        .date-select {
+            padding: 8px 12px;
+            background: rgba(30, 35, 40, 0.9);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-sm);
+            color: var(--sheikah-blue-light);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        /* 今日概览卡片 */
+        .daily-overview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .overview-card {
+            background: linear-gradient(160deg, 
+                rgba(238, 228, 208, 0.97) 0%,
+                rgba(248, 238, 218, 0.94) 100%
+            );
+            border: 1.5px solid rgba(107, 83, 68, 0.18);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: rgba(212, 168, 42, 0.4);
+        }
+        
+        .ov-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto var(--spacing-sm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .ov-icon.green { background: rgba(93, 138, 74, 0.2); }
+        .ov-icon.blue { background: rgba(90, 155, 201, 0.2); }
+        .ov-icon.orange { background: rgba(212, 118, 76, 0.2); }
+        .ov-icon.purple { background: rgba(160, 120, 180, 0.2); }
+        
+        .ov-value {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+        }
+        
+        .ov-label {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        /* 今日亮点 */
+        .highlights-panel {
+            background: var(--glass-bg, rgba(24, 28, 33, 0.82));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: 0 4px 24px rgba(0, 212, 255, 0.1);
+        }
+        
+        .highlights-title {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .highlights-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .highlight-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(0, 212, 255, 0.06);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--sheikah-blue-light);
+            transition: all var(--transition-fast);
+        }
+        
+        .highlight-tag:hover {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.35);
+        }
+        
+        /* 能力变化 - 横向卡片布局，与概览卡片风格统一 */
+        .capability-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .cap-card {
+            background: linear-gradient(160deg, 
+                rgba(238, 228, 208, 0.97) 0%,
+                rgba(248, 238, 218, 0.94) 100%
+            );
+            border: 1.5px solid rgba(107, 83, 68, 0.18);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+        
+        .cap-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border-color: rgba(212, 168, 42, 0.4);
+        }
+        
+        .cap-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto var(--spacing-sm);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: rgba(93, 138, 74, 0.2);
+        }
+        
+        .cap-info { text-align: center; }
+        
+        .cap-name {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            margin-bottom: 4px;
+        }
+        
+        .cap-value {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+        }
+        
+        .cap-change {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: var(--radius-sm);
+            display: inline-block;
+            margin-top: 4px;
+        }
+        
+        .cap-change.positive {
+            background: rgba(93, 138, 74, 0.2);
+            color: #5d8a4a;
+        }
+        
+        .cap-change.neutral {
+            background: rgba(100, 116, 139, 0.2);
+            color: #6b5344;
+        }
+        
+        /* ========== 日报三板块布局 v7.1 ========== */
+        
+        /* 板块通用样式 */
+        .daily-section-block {
+            background: linear-gradient(160deg, 
+                rgba(238, 228, 208, 0.97) 0%,
+                rgba(248, 238, 218, 0.94) 100%
+            );
+            border: 1.5px solid rgba(107, 83, 68, 0.18);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        
+        .block-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1.5px solid rgba(107, 83, 68, 0.15);
+        }
+        
+        .block-icon {
+            font-size: 20px;
+        }
+        
+        .block-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+        }
+        
+        /* 板块一：核心进展 v7.4 - 分类显示 */
+        .core-progress-block {
+            border-color: rgba(0, 212, 255, 0.25);
+            background: var(--glass-bg, rgba(24, 28, 33, 0.82));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius-lg);
+        }
+        
+        .core-progress-block .block-header {
+            border-bottom-color: rgba(0, 212, 255, 0.15);
+        }
+        
+        .core-progress-block .block-title {
+            color: var(--sheikah-blue-light);
+        }
+        
+        .core-progress-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        /* 核心进展分类 */
+        .progress-category {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-md);
+        }
+        
+        .progress-category-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.12);
+        }
+        
+        .progress-category-icon {
+            font-size: 18px;
+        }
+        
+        .progress-category-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+            letter-spacing: 1px;
+        }
+        
+        .progress-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-xs);
+        }
+        
+        .progress-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: rgba(0, 212, 255, 0.03);
+            border-radius: var(--radius-md);
+            border-left: 2px solid rgba(0, 212, 255, 0.15);
+            transition: all var(--transition-fast);
+        }
+        
+        .progress-item:hover {
+            background: rgba(0, 212, 255, 0.08);
+            border-left-color: var(--sheikah-blue);
+        }
+        
+        .progress-number {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--sheikah-blue);
+            min-width: 20px;
+            flex-shrink: 0;
+        }
+        
+        .progress-content {
+            flex: 1;
+        }
+        
+        .progress-main {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.5;
+            margin-bottom: 2px;
+        }
+        
+        .progress-detail {
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.85);
+            line-height: 1.4;
+        }
+        
+        /* 核心进展数据空 */
+        .progress-empty {
+            text-align: center;
+            padding: var(--spacing-lg);
+            color: rgba(200, 220, 240, 0.7);
+        }
+        
+        /* 板块二：交付情况 - 核心统计指标 */
+        .delivery-stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1.5px solid rgba(107, 83, 68, 0.15);
+        }
+        
+        .delivery-stat-item {
+            text-align: center;
+            padding: 10px 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(107, 83, 68, 0.12);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+        
+        .delivery-stat-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-color: rgba(212, 168, 42, 0.3);
+        }
+        
+        .delivery-stat-value {
+            font-family: var(--font-mono);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+            line-height: 1.2;
+        }
+        
+        .delivery-stat-label {
+            font-size: 10px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            margin-top: 2px;
+            letter-spacing: 0.5px;
+        }
+        
+        .delivery-stat-icon {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+        
+        /* 板块二：交付情况 */
+        .deliveries-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .delivery-card {
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(107, 83, 68, 0.15);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            transition: all var(--transition-fast);
+        }
+        
+        .delivery-card:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .delivery-card.conversation {
+            border-left: 4px solid var(--zelda-gold);
+        }
+        
+        .delivery-card.project {
+            border-left: 4px solid var(--sheikah-blue);
+        }
+        
+        .delivery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .delivery-title {
+            font-weight: 600;
+            font-size: 15px;
+            color: var(--zelda-brown);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .delivery-type-badge {
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-weight: 500;
+        }
+        
+        .delivery-type-badge.conversation {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold-dark);
+        }
+        
+        .delivery-type-badge.project {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--sheikah-blue);
+        }
+        
+        .delivery-goal {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .delivery-goal-icon {
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .delivery-goal-text {
+            font-size: 13px;
+            color: var(--zelda-brown);
+            opacity: 0.9;
+        }
+        
+        .delivery-deliverables {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .deliverable-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 10px;
+            background: rgba(93, 138, 74, 0.15);
+            border-radius: var(--radius-sm);
+            margin-right: 6px;
+            margin-bottom: 6px;
+            font-size: 12px;
+            color: #5d8a4a;
+        }
+        
+        .deliverable-item a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .deliverable-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .deliverable-item.has-link {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--sheikah-blue);
+            cursor: pointer;
+        }
+        
+        .delivery-process {
+            padding-left: var(--spacing-md);
+            border-left: 2px solid rgba(107, 83, 68, 0.2);
+        }
+        
+        .process-step {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.8;
+            padding: 2px 0;
+            position: relative;
+        }
+        
+        .process-step::before {
+            content: '→';
+            margin-right: 6px;
+            color: var(--sheikah-blue);
+        }
+        
+        /* 板块三：能力提升 */
+        .capability-overview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .cap-card-v2 {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--zelda-brown);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .cap-icon-v2 {
+            font-size: 28px;
+        }
+        
+        .cap-info-v2 {
+            flex: 1;
+        }
+        
+        .cap-label-v2 {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .cap-value-v2 {
+            font-family: var(--font-mono);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+        }
+        
+        .cap-change-v2 {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+        }
+        
+        .cap-change-v2.positive {
+            background: rgba(93, 138, 74, 0.2);
+            color: #5d8a4a;
+        }
+        
+        .cap-change-v2.neutral {
+            background: rgba(100, 116, 139, 0.1);
+            color: #6b5344;
+        }
+        
+        /* 新增内容标签 */
+        .capability-changes-v2 {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .changes-section {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .changes-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .changes-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .new-item-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 12px;
+            background: rgba(93, 138, 74, 0.15);
+            border: 1px solid rgba(93, 138, 74, 0.3);
+            border-radius: 15px;
+            font-size: 12px;
+            color: #5d8a4a;
+        }
+        
+        .new-item-tag.skill { border-color: var(--sheikah-blue); color: var(--sheikah-blue); background: rgba(0, 212, 255, 0.1); }
+        .new-item-tag.knowledge { border-color: var(--zelda-gold); color: var(--zelda-gold-dark); background: rgba(201, 162, 39, 0.1); }
+        .new-item-tag.memory { border-color: #9b59b6; color: #9b59b6; background: rgba(155, 89, 182, 0.1); }
+        
+        /* 趋势图 */
+        .trend-chart-section {
+            background: rgba(30, 35, 40, 0.95);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-md);
+        }
+        
+        .trend-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .trend-chart-container {
+            height: 200px;
+        }
+        
+        /* ==================== 我的作品Section样式 ==================== */
+        /* 作品介绍 */
+        .works-intro {
+            background: linear-gradient(160deg, 
+                rgba(238, 228, 208, 0.97) 0%,
+                rgba(248, 238, 218, 0.94) 100%
+            );
+            border: 1.5px solid rgba(107, 83, 68, 0.18);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        
+        .works-intro-text {
+            font-size: 14px;
+            color: var(--zelda-brown);
+            line-height: 1.8;
+        }
+        
+        .works-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-md);
+        }
+        
+        .works-stat {
+            text-align: center;
+        }
+        
+        .works-stat.featured .works-stat-value {
+            color: var(--zelda-gold);
+        }
+        
+        .works-stat-value {
+            font-family: var(--font-mono);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--sheikah-blue);
+        }
+        
+        .works-stat-label {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .works-grid {
+            /* 改为flex布局支持树形结构 */
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        /* ==================== P0/P1: 作品树形分类样式 ==================== */
+        .works-tree {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+        
+        .works-tree-section {
+            background: var(--glass-bg, rgba(24, 28, 33, 0.82));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .works-tree-section.featured-section {
+            border-color: var(--zelda-gold);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .tree-branch-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .tree-branch-header.featured {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.2) 0%, rgba(201, 162, 39, 0.1) 100%);
+            border-bottom-color: rgba(201, 162, 39, 0.3);
+        }
+        
+        .branch-icon {
+            font-size: 18px;
+        }
+        
+        .branch-name {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .tree-branch-header.featured .branch-name {
+            color: var(--zelda-gold-light);
+        }
+        
+        .branch-count {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            padding: 2px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .tree-branch-header.featured .branch-count {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold-light);
+        }
+        
+        .branch-desc {
+            margin-left: auto;
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        .tree-branch-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+        }
+        
+        .tree-branch-content.featured-content {
+            background: rgba(201, 162, 39, 0.05);
+        }
+        
+        /* ==================== 作品分类样式 ==================== */
+        .works-category {
+            background: var(--glass-bg, rgba(24, 28, 33, 0.82));
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .works-category-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .category-icon {
+            font-size: 18px;
+        }
+        
+        .category-name {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .category-count {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            padding: 2px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            color: var(--sheikah-blue-light);
+            margin-left: auto;
+        }
+        
+        .works-category-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+        }
+        
+        /* 紧凑型作品卡片 */
+        .work-card-mini {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            position: relative;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            transition: all var(--transition-normal);
+            min-width: 200px;
+            max-width: 320px;
+            flex: 1 1 280px;
+        }
+        
+        .work-card-mini:hover {
+            border-color: var(--sheikah-blue);
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .work-info-mini {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .work-name-mini {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .work-subtitle-mini {
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.6);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .work-status-mini {
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 8px;
+            white-space: nowrap;
+        }
+        
+        .work-status-mini.deployed {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--sheikah-blue-light);
+        }
+        
+        .work-link-mini {
+            font-size: 12px;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: opacity var(--transition-fast);
+        }
+        
+        .work-link-mini:hover {
+            opacity: 1;
+        }
+        
+        .work-card-mini .quality-badge {
+            position: absolute;
+            top: -8px;
+            right: 8px;
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 8px;
+        }
+        
+        .work-card-mini .quality-badge.featured {
+            background: var(--zelda-gold);
+            color: #1e2328;
+        }
+        
+        .work-card-mini .quality-badge.excellent {
+            background: var(--sheikah-blue);
+            color: #1e2328;
+        }
+        
+        .work-card-content {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .work-icon-mini {
+            font-size: 20px;
+        }
+        
+        .work-meta-mini {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2px;
+        }
+        
+        /* P1: 最近更新时间 */
+        .work-update-time {
+            font-size: 9px;
+            color: rgba(200, 220, 240, 0.5);
+        }
+        
+        .work-card-mini .work-link {
+            font-size: 11px;
+            padding: 4px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: var(--radius-sm);
+            color: var(--sheikah-blue-light);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+        
+        .work-card-mini .work-link:hover {
+            background: var(--sheikah-blue);
+            color: #1e2328;
+        }
+        
+        .work-card {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+        }
+        
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(107, 83, 68, 0.2);
+            border-color: var(--zelda-gold);
+        }
+        
+        .work-card.deployed {
+            border-color: var(--sheikah-blue);
+        }
+        
+        /* 作品截图预览 */
+        .work-screenshot {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #1e2328 0%, #2d3748 100%);
+        }
+        
+        .work-screenshot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.3s ease;
+        }
+        
+        .work-card:hover .work-screenshot img {
+            transform: scale(1.05);
+        }
+        
+        .work-screenshot-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #6e7781;
+            font-size: 12px;
+        }
+        
+        .work-screenshot-placeholder .icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+            opacity: 0.5;
+        }
+        
+        .work-body {
+            padding: var(--spacing-lg);
+        }
+        
+        .work-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .work-icon { font-size: 32px; }
+        
+        .work-info { flex: 1; }
+        
+        .work-name {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-brown);
+        }
+        
+        .work-subtitle {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+        }
+        
+        .work-status {
+            font-size: 10px;
+            padding: 3px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+        
+        .work-status.deployed {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--sheikah-blue);
+            border: 1px solid var(--sheikah-blue);
+        }
+        
+        .work-status.development {
+            background: rgba(201, 162, 39, 0.2);
+            color: var(--zelda-gold);
+            border: 1px solid var(--zelda-gold);
+        }
+        
+        .work-status.archived {
+            background: rgba(100, 116, 139, 0.2);
+            color: #64748b;
+            border: 1px solid #64748b;
+        }
+        
+        .work-desc {
+            font-size: 13px;
+            color: var(--zelda-brown);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .work-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .work-tech {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        
+        .tech-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(107, 83, 68, 0.1);
+            border-radius: 8px;
+            color: var(--zelda-brown);
+        }
+        
+        .work-link {
+            font-size: 12px;
+            color: var(--zelda-gold-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .work-link:hover {
+            color: var(--zelda-gold);
+        }
+        
+        /* 作品质量标签 */
+        .quality-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+        
+        .quality-badge.featured {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 193, 7, 0.85));
+            color: #5d4600;
+            border: 1px solid rgba(255, 215, 0, 0.8);
+            box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+        }
+        
+        .quality-badge.excellent {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.9), rgba(139, 92, 246, 0.85));
+            color: #fff;
+            border: 1px solid rgba(139, 92, 246, 0.6);
+        }
+        
+        .work-card {
+            position: relative;
+        }
+        
+        .work-card.featured {
+            border-color: var(--zelda-gold);
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.15);
+        }
+        
+        .work-card.featured:hover {
+            box-shadow: 0 10px 40px rgba(255, 193, 7, 0.25);
+        }
+        
+        .work-features {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(94, 196, 212, 0.15);
+            border: 1px solid rgba(94, 196, 212, 0.3);
+            border-radius: 10px;
+            color: #0891b2;
+        }
+        
+        /* ==================== 我的能力Section样式 ==================== */
+        
+        /* 成长趋势仪表板 v3.0 */
+        .growth-dashboard {
+            background: linear-gradient(160deg, 
+                rgba(238, 228, 208, 0.97) 0%,
+                rgba(248, 238, 218, 0.94) 100%
+            );
+            border: 1.5px solid rgba(107, 83, 68, 0.18);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .growth-dashboard-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: var(--spacing-lg);
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .growth-dashboard-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+        }
+        
+        .period-toggle {
+            display: flex;
+            gap: 3px;
+            background: rgba(107, 83, 68, 0.08);
+            border-radius: 20px;
+            padding: 3px;
+        }
+        
+        .period-btn {
+            padding: 5px 14px;
+            border: none;
+            border-radius: 17px;
+            font-size: 12px;
+            font-family: var(--font-body);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            color: var(--zelda-brown);
+            opacity: 0.55;
+        }
+        
+        .period-btn.active {
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--zelda-brown);
+            opacity: 1;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            font-weight: 600;
+        }
+        
+        .period-btn:hover:not(.active) { opacity: 0.8; }
+        
+        /* Growth Summary Cards */
+        .growth-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .growth-card {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(107, 83, 68, 0.1);
+            border-radius: var(--radius-md);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .growth-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+        }
+        
+        .growth-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .growth-card-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .growth-card-icon { font-size: 20px; }
+        
+        .growth-card-name {
+            font-size: 13px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            font-family: var(--font-body);
+        }
+        
+        .growth-card-badge {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 9px;
+            border-radius: 10px;
+        }
+        
+        .growth-card-badge.positive {
+            background: rgba(93, 138, 74, 0.15);
+            color: #5d8a4a;
+        }
+        
+        .growth-card-badge.neutral {
+            background: rgba(107, 83, 68, 0.08);
+            color: var(--zelda-brown);
+        }
+        
+        .growth-card-body {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 12px;
+        }
+        
+        .growth-card-value {
+            font-family: var(--font-mono);
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--zelda-brown);
+            line-height: 1;
+        }
+        
+        .growth-card-sparkline {
+            width: 80px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+        
+        .growth-card-rate {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.55;
+            margin-top: 4px;
+        }
+        
+        /* Growth Insight */
+        .growth-insight {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 12px 16px;
+            background: rgba(93, 138, 74, 0.07);
+            border: 1px solid rgba(93, 138, 74, 0.18);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            font-size: 13px;
+            color: var(--zelda-brown);
+            line-height: 1.6;
+        }
+        
+        .growth-insight-icon {
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        /* Main Trend Chart */
+        .growth-chart-wrap {
+            height: 300px;
+            background: rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(107, 83, 68, 0.08);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* Growth Comparison Bars */
+        .growth-compare-title {
+            font-size: 14px;
+            font-family: var(--font-body);
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+        
+        .growth-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .growth-bar-label {
+            width: 56px;
+            font-size: 13px;
+            color: var(--zelda-brown);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+        
+        .growth-bar-track {
+            flex: 1;
+            height: 26px;
+            background: rgba(107, 83, 68, 0.05);
+            border-radius: 13px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .growth-bar-fill {
+            height: 100%;
+            border-radius: 13px;
+            transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            min-width: 48px;
+        }
+        
+        .growth-bar-fill.skills {
+            background: linear-gradient(90deg, rgba(8, 145, 178, 0.55), rgba(8, 145, 178, 0.85));
+        }
+        
+        .growth-bar-fill.knowledge {
+            background: linear-gradient(90deg, rgba(184, 134, 11, 0.55), rgba(184, 134, 11, 0.85));
+        }
+        
+        .growth-bar-fill.memory {
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.55), rgba(139, 92, 246, 0.85));
+        }
+        
+        .growth-bar-pct {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .growth-bar-abs {
+            width: 85px;
+            text-align: right;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.6;
+            flex-shrink: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .growth-cards { grid-template-columns: 1fr; }
+            .growth-card-value { font-size: 26px; }
+            .growth-chart-wrap { height: 220px; }
+        }
+        
+        /* 树形面板 */
+        .tree-panel {
+            background: rgba(30, 35, 40, 0.95);
+            border: 2px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .tree-panel .panel-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid var(--sheikah-blue-dark);
+        }
+        
+        .panel-icon { font-size: 20px; }
+        
+        .panel-title-text {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--sheikah-blue-light);
+            letter-spacing: 1px;
+        }
+        
+        .panel-stats {
+            margin-left: auto;
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.8);
+        }
+        
+        .panel-stats span {
+            font-family: var(--font-mono);
+            color: var(--sheikah-blue-light);
+        }
+        
+        /* 成就墙 v2.0 - 稀有度分级和进度条 */
+        .achievements-section {
+            background: linear-gradient(135deg, 
+                rgba(232, 220, 196, 0.95) 0%,
+                rgba(245, 230, 200, 0.9) 100%
+            );
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+        
+        .achievements-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .achievements-stats {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            margin-left: auto;
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: rgba(201, 162, 39, 0.1);
+            border: 2px solid var(--zelda-gold-dark);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .achievement-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(201, 162, 39, 0.3);
+        }
+        
+        .achievement-item.unlocked {
+            background: rgba(201, 162, 39, 0.2);
+            border-color: var(--zelda-gold);
+        }
+        
+        .achievement-item.locked {
+            opacity: 0.6;
+            filter: grayscale(0.3);
+        }
+        
+        /* 稀有度边框颜色 */
+        .achievement-item.rarity-common { border-color: #6e7781; }
+        .achievement-item.rarity-rare { border-color: #00d4ff; }
+        .achievement-item.rarity-epic { border-color: #a78bfa; }
+        .achievement-item.rarity-legendary { 
+            border-color: #ffd700; 
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        
+        .achievement-item.rarity-legendary.unlocked {
+            animation: legendaryGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes legendaryGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 25px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .ach-icon { 
+            font-size: 32px; 
+            flex-shrink: 0;
+        }
+        
+        .ach-info { flex: 1; min-width: 0; }
+        
+        .ach-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .ach-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+        }
+        
+        .ach-rarity-badge {
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .ach-rarity-badge.common { background: #6e7781; color: white; }
+        .ach-rarity-badge.rare { background: #00d4ff; color: #1e2328; }
+        .ach-rarity-badge.epic { background: #a78bfa; color: white; }
+        .ach-rarity-badge.legendary { background: linear-gradient(135deg, #ffd700, #ffaa00); color: #1e2328; }
+        
+        .ach-desc {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        .ach-date {
+            font-size: 10px;
+            color: var(--zelda-brown);
+            opacity: 0.5;
+            margin-top: 4px;
+        }
+        
+        /* 进度条 */
+        .ach-progress {
+            margin-top: 8px;
+        }
+        
+        .ach-progress-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(107, 83, 68, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .ach-progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        
+        .ach-progress-fill.common { background: #6e7781; }
+        .ach-progress-fill.rare { background: linear-gradient(90deg, #00d4ff, #66e5ff); }
+        .ach-progress-fill.epic { background: linear-gradient(90deg, #a78bfa, #c4b5fd); }
+        .ach-progress-fill.legendary { background: linear-gradient(90deg, #ffd700, #ffaa00); }
+        
+        .ach-progress-text {
+            font-size: 10px;
+            color: var(--zelda-brown);
+            opacity: 0.7;
+            text-align: right;
+            margin-top: 2px;
+        }
+        
+        /* 成就详情弹窗 */
+        .achievement-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .achievement-modal-content {
+            background: linear-gradient(135deg, #1e2328 0%, #2d3748 100%);
+            border: 3px solid var(--sheikah-blue);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-modal.active .achievement-modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-icon {
+            font-size: 64px;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .modal-name {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: var(--sheikah-blue);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .modal-desc {
+            font-size: 14px;
+            color: #8cb4c0;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .modal-date {
+            font-size: 12px;
+            color: #6e7781;
+        }
+        
+        .modal-close {
+            margin-top: var(--spacing-lg);
+            padding: 10px 30px;
+            background: var(--sheikah-blue);
+            border: none;
+            border-radius: var(--radius-sm);
+            color: #1e2328;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .modal-close:hover {
+            background: var(--sheikah-blue-light);
+            transform: scale(1.05);
+        }
+        
+        /* ==================== 关于我模块样式 ==================== */
+        .about-me-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .about-hero {
+            display: flex;
+            gap: var(--spacing-lg);
+            align-items: flex-start;
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
+            border: 2px solid var(--sheikah-blue);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .about-avatar {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+        }
+        
+        .about-avatar-glow {
+            position: absolute;
+            inset: -15px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.4) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: sheikah-pulse 2.5s ease-in-out infinite;
+        }
+        
+        .about-avatar-inner {
+            position: absolute;
+            inset: -5px;
+            background: linear-gradient(135deg, #1a2a3a 0%, #0d1a26 100%);
+            border: 2px solid rgba(0, 212, 255, 0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .about-avatar-inner img {
+            width: 95%;
+            height: 95%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        
+        .about-level {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--zelda-gold-dark), var(--zelda-gold));
+            color: white;
+            padding: 3px 16px;
+            border-radius: 12px;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            box-shadow: var(--gold-glow);
+        }
+        
+        .about-intro {
+            flex: 1;
+        }
+        
+        .about-name {
+            font-family: var(--font-title);
+            font-size: 32px;
+            color: var(--sheikah-blue-light);
+            margin-bottom: 5px;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+        
+        .about-name-en {
+            font-size: 18px;
+            color: rgba(200, 220, 240, 0.8);
+            margin-left: 10px;
+        }
+        
+        .about-tagline {
+            font-size: 14px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .about-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+        }
+        
+        .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .about-tag {
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .about-tag.core {
+            background: rgba(0, 212, 255, 0.2);
+            color: var(--sheikah-blue-light);
+            border: 1px solid var(--sheikah-blue);
+        }
+        
+        .about-tag.skill {
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--zelda-gold-light);
+            border: 1px solid var(--zelda-gold-dark);
+        }
+        
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .highlight-card {
+            background: rgba(30, 35, 40, 0.9);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .highlight-card:hover {
+            border-color: var(--sheikah-blue);
+            box-shadow: var(--sheikah-glow);
+            transform: translateY(-3px);
+        }
+        
+        .highlight-icon {
+            font-size: 28px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .highlight-value {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .highlight-label {
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+        
+        .highlight-desc {
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.7);
+            margin-top: 6px;
+        }
+        
+        /* ==================== 核心统计指标面板（了解我） ==================== */
+        .about-core-stats {
+            display: block;
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: var(--radius-lg);
+        }
+        
+        .about-core-stats .stat-card {
+            text-align: center;
+            padding: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+        }
+        
+        .about-core-stats .stat-card:hover {
+            border-color: var(--sheikah-blue);
+            box-shadow: var(--sheikah-glow);
+            transform: translateY(-2px);
+        }
+        
+        .about-core-stats .stat-card-icon {
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+        
+        .about-core-stats .stat-card-value {
+            font-family: var(--font-mono);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--sheikah-blue-light);
+            line-height: 1.2;
+        }
+        
+        .about-core-stats .stat-card-label {
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.7);
+            margin-top: 4px;
+            letter-spacing: 0.5px;
+        }
+        
+        .about-stats-title {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* ==================== 五维能力条形图 v3 ==================== */
+        .dimension-bars-v2 {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-sm);
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+        }
+        
+        .dim-row {
+            display: grid;
+            grid-template-columns: 100px 1fr 45px;
+            align-items: center;
+            gap: 12px;
+            height: 24px;
+        }
+        
+        .dim-row.weakest {
+            background: rgba(251, 191, 36, 0.12);
+            border-radius: var(--radius-sm);
+            padding: 6px 10px;
+            margin: -6px -10px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            height: auto;
+        }
+        
+        .dim-row-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .dim-row-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .dim-row-name {
+            font-size: 13px;
+            color: var(--text-light);
+            white-space: nowrap;
+            font-weight: 500;
+        }
+        
+        .dim-row-bar {
+            height: 14px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 7px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dim-row-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+        
+        .dim-row-score {
+            font-family: var(--font-mono);
+            font-size: 16px;
+            font-weight: 700;
+            text-align: right;
+        }
+        
+        /* ==================== 核心数据统计网格 ==================== */
+        .about-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        @media (max-width: 900px) {
+            .about-stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .stat-mini {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2px;
+            padding: var(--spacing-sm);
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        
+        .stat-mini-icon {
+            font-size: 18px;
+        }
+        
+        .stat-mini-value {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+        
+        .stat-mini-label {
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        /* ==================== EXP总览 v2 ==================== */
+        .exp-summary-v2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+        
+        .exp-total-v2 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .exp-label-v2 {
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        .exp-value-v2 {
+            font-family: var(--font-mono);
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--zelda-gold-light);
+        }
+        
+        .upgrade-hint-v2 {
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.7);
+        }
+        }
+        
+        .hint-text {
+            font-size: 12px;
+            color: #fbbf24;
+        }
+        
+        /* ==================== 核心价值主张样式 ==================== */
+        .value-proposition {
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 50, 60, 0.9) 100%);
+            border: 2px solid var(--zelda-gold-dark);
+            border-radius: var(--radius-lg);
+        }
+        
+        .value-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-icon {
+            font-size: 24px;
+        }
+        
+        .value-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-gold-light);
+        }
+        
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .value-dimension {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .value-dimension:last-child {
+            margin-bottom: 0;
+        }
+        
+        .value-dimension-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: var(--text-light);
+            opacity: 0.7;
+            letter-spacing: 1px;
+        }
+        
+        .dimension-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--zelda-gold);
+            box-shadow: 0 0 6px rgba(201, 162, 39, 0.5);
+        }
+        
+        .dimension-dot.dot-cyan {
+            background: #5ec4d4;
+            box-shadow: 0 0 6px rgba(94, 196, 212, 0.5);
+        }
+        
+        .value-card {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+        
+        .value-card:hover {
+            border-color: var(--zelda-gold);
+            box-shadow: var(--gold-glow);
+            transform: translateY(-3px);
+        }
+        
+        .value-card-icon {
+            font-size: 32px;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-card-title {
+            font-family: var(--font-title);
+            font-size: 16px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .value-card-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        
+        /* P1: 能力活跃徽章 */
+        .ability-active-badge {
+            position: absolute;
+            top: -8px;
+            right: 8px;
+            font-size: 9px;
+            padding: 2px 8px;
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+            border-radius: 10px;
+            color: white;
+            font-weight: 600;
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+            animation: badge-pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes badge-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .value-card {
+            position: relative;
+        }
+        
+        .value-card.card-cyan {
+            border-color: rgba(94, 196, 212, 0.25);
+        }
+        
+        .value-card.card-cyan:hover {
+            border-color: #5ec4d4;
+            box-shadow: 0 0 15px rgba(94, 196, 212, 0.25);
+        }
+        
+        .value-card.card-cyan .value-card-title {
+            color: #8fd8e4;
+        }
+        
+        /* 金色维度卡片 */
+        .dimension-dot.dot-gold {
+            background: #f59e0b;
+            box-shadow: 0 0 6px rgba(245, 158, 11, 0.5);
+        }
+        
+        .value-card.card-gold {
+            border-color: rgba(245, 158, 11, 0.25);
+        }
+        
+        .value-card.card-gold:hover {
+            border-color: #f59e0b;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+        }
+        
+        .value-card.card-gold .value-card-title {
+            color: #fbbf24;
+        }
+        
+        /* 小无相功区块样式 */
+        .xiaowuxiang-intro {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08) 0%, rgba(251, 191, 36, 0.04) 100%);
+            border-radius: var(--radius-md);
+            border-left: 3px solid #f59e0b;
+        }
+        
+        .xiaowuxiang-badge {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fbbf24;
+            padding: 4px 10px;
+            background: rgba(245, 158, 11, 0.2);
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+        }
+        
+        .xiaowuxiang-motto {
+            font-size: 14px;
+            color: var(--text-light);
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        .xiaowuxiang-footer {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light);
+            opacity: 0.85;
+        }
+        
+        .xiaowuxiang-footer strong {
+            color: #fbbf24;
+        }
+        
+        /* 4列卡片布局 */
+        .value-cards-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        .value-cards-row2 {
+            margin-top: var(--spacing-sm);
+        }
+        
+        .value-cards-4 .value-card-desc {
+            font-size: 11px;
+            line-height: 1.5;
+        }
+        
+        .value-cards-4 .value-card-desc small {
+            display: block;
+            margin-top: 4px;
+            color: var(--sheikah-blue-light);
+            font-size: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .value-cards-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* ==================== 进化历程时间线样式 ==================== */
+        .evolution-section {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(15, 20, 25, 0.98) 0%, rgba(25, 35, 45, 0.95) 100%);
+            border: 2px solid var(--sheikah-blue);
+            border-radius: var(--radius-lg);
+        }
+        
+        .evolution-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .evolution-icon {
+            font-size: 24px;
+        }
+        
+        .evolution-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .evolution-subtitle {
+            font-size: 12px;
+            color: rgba(200, 220, 240, 0.75);
+            margin-left: auto;
+            font-style: italic;
+        }
+        
+        .evolution-timeline {
+            position: relative;
+            /* 取消固定左边距，让新的布局生效 */
+        }
+        
+        /* 隐藏原有的左侧时间线 - 现在用新的布局 */
+        .evolution-timeline::before {
+            display: none;
+        }
+        
+        .evolution-item {
+            position: relative;
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+            /* 移除左侧圆点相关的偏移 */
+            margin-left: 0;
+        }
+        
+        .evolution-item:hover {
+            border-color: var(--sheikah-blue);
+            box-shadow: var(--sheikah-glow);
+        }
+        
+        /* 隐藏原有的时间线圆点 */
+        .evolution-item::before {
+            display: none;
+        }
+        
+        /* 当前版本保持特殊样式 */
+        .evolution-item.current::before {
+            display: none;
+        }
+        
+        .evolution-item.current {
+            border-color: var(--zelda-gold);
+            background: rgba(201, 162, 39, 0.1);
+        }
+        
+        .evolution-item.future {
+            border-style: dashed;
+            opacity: 0.7;
+        }
+        
+        .evolution-item.future::before {
+            display: none;
+        }
+        
+        @keyframes pulse-gold {
+            0%, 100% { box-shadow: 0 0 10px var(--zelda-gold); }
+            50% { box-shadow: 0 0 25px var(--zelda-gold); }
+        }
+        
+        .evolution-version {
+            /* 改为内联显示，不再绝对定位 */
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--sheikah-blue-light);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 2px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        
+        .evolution-item.current .evolution-version {
+            color: var(--zelda-gold-light);
+            background: rgba(201, 162, 39, 0.3);
+        }
+        
+        .evolution-date {
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.7);
+            display: inline-block;
+        }
+        
+        /* 版本和日期的内联行 */
+        .evolution-header-inline {
+            margin-bottom: 8px;
+        }
+        
+        .evolution-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--sheikah-blue-light);
+            margin-bottom: 4px;
+        }
+        
+        .evolution-desc {
+            font-size: 12px;
+            color: rgba(230, 235, 245, 0.9);
+            line-height: 1.5;
+        }
+        
+        /* 进化历程 - 副标题标签 */
+        .evolution-subtitle-tag {
+            font-size: 11px;
+            color: var(--zelda-gold-light);
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        
+        /* 进化历程 - 能力标签 */
+        .evolution-capabilities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+        
+        .evo-cap-tag {
+            font-size: 10px;
+            padding: 2px 8px;
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            color: #8cb4c0;
+        }
+        
+        /* ==================== 进化历程 P0优化样式 ==================== */
+        
+        /* 本周进化摘要卡片 */
+        .evolution-summary-card {
+            background: linear-gradient(135deg, rgba(201, 162, 39, 0.15) 0%, rgba(201, 162, 39, 0.05) 100%);
+            border: 2px solid var(--zelda-gold);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--gold-glow);
+        }
+        
+        .summary-title {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .summary-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+        
+        .stat-item {
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .stat-item.skill {
+            background: rgba(0, 212, 255, 0.15);
+            color: var(--sheikah-blue-light);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .stat-item.project {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+        
+        .stat-item.system {
+            background: rgba(167, 139, 250, 0.15);
+            color: #a78bfa;
+            border: 1px solid rgba(167, 139, 250, 0.3);
+        }
+        
+        .stat-item.total {
+            background: rgba(201, 162, 39, 0.15);
+            color: var(--zelda-gold-light);
+            border: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        /* 能力事件区域 */
+        .evolution-events-section {
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        /* 时间分组 */
+        .timeline-group {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .group-title {
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .timeline-group.today .group-title {
+            color: var(--zelda-gold-light);
+            border-bottom-color: rgba(201, 162, 39, 0.3);
+        }
+        
+        .group-events {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        /* 事件项 */
+        .timeline-event {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: var(--radius-sm);
+            border-left: 3px solid var(--sheikah-blue);
+            transition: all var(--transition-fast);
+        }
+        
+        .timeline-event:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+        
+        .timeline-event.skill_unlock,
+        .timeline-event.meta_skill {
+            border-left-color: var(--sheikah-blue);
+        }
+        
+        .timeline-event.project_complete {
+            border-left-color: #4ade80;
+        }
+        
+        .timeline-event.system_unlock,
+        .timeline-event.integration {
+            border-left-color: #a78bfa;
+        }
+        
+        .event-icon {
+            font-size: 14px;
+        }
+        
+        .event-name {
+            flex: 1;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        
+        .event-date {
+            font-family: var(--font-mono);
+            font-size: 10px;
+            color: rgba(200, 220, 240, 0.6);
+        }
+        
+        /* 版本阶段区域 */
+        .evolution-stages-section {
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .stages-header {
+            font-family: var(--font-title);
+            font-size: 13px;
+            color: rgba(200, 220, 240, 0.7);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        /* 进化历程 - 加载中状态 */
+        .evolution-loading {
+            text-align: center;
+            padding: 30px;
+            color: rgba(200, 220, 240, 0.6);
+            font-size: 13px;
+        }
+        
+        /* 进化历程 - 进行中状态 */
+        .evolution-item.in-progress {
+            border-color: rgba(0, 212, 255, 0.5);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .evolution-item.in-progress::before {
+            background: var(--sheikah-blue);
+            animation: pulse-blue 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-blue {
+            0%, 100% { box-shadow: 0 0 10px var(--sheikah-blue); }
+            50% { box-shadow: 0 0 20px var(--sheikah-blue); }
+        }
+        
+        /* ==================== 如何使用我样式 ==================== */
+        .howto-section {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(232, 220, 196, 0.95) 0%, rgba(245, 235, 210, 0.9) 100%);
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-lg);
+        }
+        
+        .howto-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .howto-icon {
+            font-size: 24px;
+        }
+        
+        .howto-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+        }
+        
+        .howto-channels {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .howto-channel {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm);
+            background: rgba(255, 255, 255, 0.6);
+            border: 2px solid var(--zelda-brown-light);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .howto-channel:hover {
+            border-color: var(--zelda-brown);
+            box-shadow: 0 4px 12px rgba(139, 107, 78, 0.2);
+        }
+        
+        .howto-channel.primary {
+            border-color: var(--sheikah-blue);
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(255, 255, 255, 0.7) 100%);
+        }
+        
+        .channel-icon {
+            font-size: 32px;
+        }
+        
+        .channel-info {
+            flex: 1;
+        }
+        
+        .channel-name {
+            font-weight: 600;
+            color: var(--zelda-brown);
+            font-size: 14px;
+        }
+        
+        .channel-desc {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.85;
+            margin-top: 2px;
+        }
+        
+        .channel-badge {
+            padding: 3px 10px;
+            background: var(--sheikah-blue);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: 10px;
+            text-transform: uppercase;
+        }
+        
+        .howto-examples {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+        
+        .examples-title {
+            font-weight: 600;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-sm);
+        }
+        
+        .example-card {
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--zelda-brown-light);
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+        
+        .example-card:hover {
+            border-color: var(--sheikah-blue);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .example-category {
+            font-size: 11px;
+            color: var(--zelda-brown);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        
+        .example-text {
+            font-size: 12px;
+            color: var(--zelda-brown);
+            opacity: 0.85;
+            font-style: italic;
+        }
+        
+        /* ==================== 时间线样式 ==================== */
+        .timeline-section {
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(232, 220, 196, 0.95) 0%, rgba(245, 230, 200, 0.9) 100%);
+            border: 2px solid var(--zelda-brown);
+            border-radius: var(--radius-md);
+        }
+        
+        .timeline-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--zelda-brown);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .timeline-list {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--sheikah-blue), var(--zelda-gold));
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px dashed rgba(107, 83, 68, 0.2);
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 3px;
+            width: 12px;
+            height: 12px;
+            background: var(--sheikah-blue);
+            border: 2px solid var(--zelda-parchment);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+        
+        .timeline-date {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--zelda-brown);
+            opacity: 0.6;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-event {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--zelda-brown);
+            margin-bottom: 4px;
+        }
+        
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--zelda-brown);
+            opacity: 0.8;
+        }
+        
+        /* ==================== 系统配置模块样式 ==================== */
+        .config-section {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background: linear-gradient(135deg, rgba(30, 35, 40, 0.95) 0%, rgba(40, 45, 55, 0.9) 100%);
+            border: 2px solid var(--sheikah-blue);
+            border-radius: var(--radius-lg);
+        }
+        
+        .config-title {
+            font-family: var(--font-title);
+            font-size: 18px;
+            color: var(--sheikah-blue-light);
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+        
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+        }
+        
+        .config-group {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid var(--sheikah-blue-dark);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-sm);
+        }
+        
+        .config-group-title {
+            font-family: var(--font-title);
+            font-size: 14px;
+            color: var(--zelda-gold-light);
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+        }
+        
+        .config-items {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+        
+        .config-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            transition: all var(--transition-normal);
+        }
+        
+        .config-item:not(.static):hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: var(--sheikah-blue);
+            transform: translateX(3px);
+        }
+        
+        .config-item.static {
+            cursor: default;
+        }
+        
+        .config-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .config-info {
+            flex: 1;
+            min-width: 0;
+        }
+        
+        .config-name {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 2px;
+        }
+        
+        .config-desc {
+            display: block;
+            font-size: 11px;
+            color: rgba(200, 220, 240, 0.85);
+            line-height: 1.4;
+        }
+        
+        .config-arrow {
+            color: var(--sheikah-blue);
+            font-size: 14px;
+            opacity: 0.6;
+            transition: all var(--transition-fast);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        
+        .config-item:not(.static):hover .config-arrow {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        
+        /* ==================== 通用二级导航样式 ==================== */
+        .section-sub-nav {
+            display: flex;
+            gap: 6px;
+            margin-bottom: var(--spacing-md);
+            padding: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+        }
+        
+        .sub-nav-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            color: rgba(200, 220, 240, 0.6);
+            font-family: var(--font-title);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .sub-nav-btn:hover {
+            color: rgba(200, 220, 240, 0.9);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .sub-nav-btn.active {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.35);
+            color: var(--sheikah-blue-light);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.1);
+        }
+        
+        .sub-nav-btn .sub-nav-icon {
+            font-size: 18px;
+        }
+        
+        /* 二级Tab内容切换 */
+        .sub-tab-content {
+            display: none;
+        }
+        
+        .sub-tab-content.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .sub-nav-btn {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            .ability-tab-btn {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+        }
+        
+        /* ==================== 能力Tab切换样式 ==================== */
+        .ability-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: var(--spacing-md);
+            padding: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-md);
+        }
+        
+        .ability-tab-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            color: rgba(200, 220, 240, 0.6);
+            font-family: var(--font-title);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all var(--transition-normal);
+        }
+        
+        .ability-tab-btn:hover {
+            color: rgba(200, 220, 240, 0.9);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .ability-tab-btn.active {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.35);
+            color: var(--sheikah-blue-light);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.1);
+        }
+        
+        .ability-tab-btn .tab-icon {
+            font-size: 18px;
+        }
+        
+        .ability-tab-btn .tab-count {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            padding: 1px 6px;
+            background: rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .ability-tab-btn.active .tab-count {
+            background: rgba(0, 212, 255, 0.3);
+        }
+        
+        .ability-tab-content {
+            display: none;
+        }
+        
+        .ability-tab-content.active {
+            display: block;
+        }
+        
+        /* 技能树/记忆库/知识库 Tab 内容区统一底色容器，与二级导航宽度对齐 */
+        #ability-tab-skills,
+        #ability-tab-memory,
+        #ability-tab-knowledge {
+            background: rgba(12, 14, 20, 0.55);
+            border: 1px solid rgba(0, 212, 255, 0.12);
+            border-radius: var(--radius-md);
+            padding: 12px;
+            backdrop-filter: blur(6px);
+        }
+        
+        /* ==================== 作品分类Tab样式 ==================== */
+        .works-stats-inline {
+            display: flex;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+        
+        .works-stat-inline {
+            font-size: 13px;
+            color: rgba(200, 220, 240, 0.8);
+        }
+        
+        .works-stat-inline strong {
+            font-family: var(--font-mono);
+            font-weight: 700;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .works-category-tabs {
+            display: flex;
+            gap: 6px;
+            margin-bottom: var(--spacing-md);
+            padding: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+        }
+        
+        .works-category-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 16px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            color: rgba(200, 220, 240, 0.6);
+            font-family: var(--font-title);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            white-space: nowrap;
+            cursor: pointer;
+            pointer-events: auto;
+            z-index: 10;
+            transition: all var(--transition-normal);
+        }
+        
+        .works-category-btn:hover {
+            color: rgba(200, 220, 240, 0.9);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .works-category-btn.active {
+            background: rgba(0, 212, 255, 0.12);
+            border-color: rgba(0, 212, 255, 0.35);
+            color: var(--sheikah-blue-light);
+            box-shadow: 0 0 12px rgba(0, 212, 255, 0.1);
+        }
+        
+        .works-category-btn .tab-icon {
+            font-size: 18px;
+        }
+        
+        .works-category-btn .tab-count {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            padding: 1px 6px;
+            background: rgba(0, 212, 255, 0.15);
+            border-radius: 10px;
+            color: var(--sheikah-blue-light);
+        }
+        
+        .works-category-btn.active .tab-count {
+            background: rgba(0, 212, 255, 0.3);
+        }
+        
+        /* 作品卡片网格布局 */
+        .works-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 1024px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; }
+            .daily-overview { grid-template-columns: repeat(2, 1fr); }
+            .capability-cards { grid-template-columns: 1fr; }
+            .about-hero { flex-direction: column; align-items: center; text-align: center; }
+            .config-grid { grid-template-columns: 1fr; }
+        }
+        
+        @media (max-width: 600px) {
+            .top-nav { flex-wrap: wrap; }
+            .nav-text { display: none; }
+            .daily-overview { grid-template-columns: 1fr 1fr; }
+            .works-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景效果 - 旷野之息水彩天空 v4.0 -->
+    <div class="bg-effects"></div>
+    <!-- 等高线地形纹理层 -->
+    <svg class="topographic-layer" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <linearGradient id="topo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#6b5344;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#8b7364;stop-opacity:1" />
+            </linearGradient>
+        </defs>
+        <g fill="none" stroke="url(#topo-grad)" stroke-width="1.2">
+            <path d="M0,200 Q150,160 300,190 T600,170 T900,195 T1200,180" />
+            <path d="M0,260 Q200,230 400,255 T800,240 T1200,250" />
+            <path d="M0,330 Q180,300 360,325 T720,310 T1080,330 T1200,320" />
+            <path d="M0,400 Q250,370 500,395 T1000,380 T1200,390" />
+            <path d="M0,470 Q160,440 320,465 T640,450 T960,470 T1200,460" />
+            <path d="M0,540 Q220,510 440,535 T880,520 T1200,530" />
+            <path d="M0,610 Q180,580 360,605 T720,590 T1080,610 T1200,600" />
+            <ellipse cx="300" cy="350" rx="60" ry="40" />
+            <ellipse cx="300" cy="350" rx="40" ry="25" />
+            <ellipse cx="800" cy="500" rx="70" ry="45" />
+            <ellipse cx="800" cy="500" rx="45" ry="28" />
+            <ellipse cx="800" cy="500" rx="20" ry="12" />
+        </g>
+    </svg>
+    <!-- 远山剪影 + 云海 -->
+    <div class="landscape-layer">
+        <svg class="mountain-silhouette" viewBox="0 0 1200 300" preserveAspectRatio="none">
+            <defs>
+                <linearGradient id="mtn-far" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(139,115,100,0.15)" />
+                    <stop offset="100%" stop-color="rgba(139,115,100,0.05)" />
+                </linearGradient>
+                <linearGradient id="mtn-near" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="rgba(107,83,68,0.2)" />
+                    <stop offset="100%" stop-color="rgba(107,83,68,0.08)" />
+                </linearGradient>
+            </defs>
+            <path d="M0,180 Q60,100 150,130 Q250,80 350,120 Q450,70 550,110 Q650,60 750,100 Q850,50 950,90 Q1050,60 1150,80 L1200,100 L1200,300 L0,300 Z" fill="url(#mtn-far)" />
+            <path d="M0,220 Q80,160 180,190 Q280,140 380,175 Q480,130 580,165 Q680,120 780,155 Q880,110 980,145 Q1080,100 1150,130 L1200,150 L1200,300 L0,300 Z" fill="url(#mtn-near)" />
+        </svg>
+        <div class="cloud-layer"></div>
+    </div>
+    <div class="particles" id="particles"></div>
+    <div class="scanlines"></div>
+    
+    <!-- 移动端侧边栏遮罩 -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    
+    <div class="app-container">
+        <!-- ===================== 左侧边栏 ===================== -->
+        <aside class="sidebar">
+            <div class="avatar-section">
+                <div class="avatar-frame">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-inner"><img src="link-avatar-small.webp" alt="林克" loading="eager"></div>
+                    <div class="level-badge" id="hero-level">--</div>
+                </div>
+                <h1 class="character-name">LINK</h1>
+                <!-- 缩小希卡之眼装饰 -->
+                <div style="display:flex;justify-content:center;margin:4px 0">
+                    <svg class="sheikah-eye-svg" width="36" height="36" viewBox="0 0 100 100" fill="none">
+                        <circle cx="50" cy="50" r="12" stroke="#00d4ff" stroke-width="2.5"/>
+                        <circle cx="50" cy="50" r="4" fill="#00d4ff"/>
+                        <path d="M50 38 L50 20" stroke="#00d4ff" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M50 62 L42 78" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 62 L58 78" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <p class="character-title">***的数字分身</p>
+                <div class="character-tags">
+                    <span class="tag tag-gold">小无相功</span>
+                    <span class="tag tag-green">洞察觉醒</span>
+                </div>
+                
+                <!-- 内容基地入口 -->
+                <a href="hub.html" class="content-hub-btn" title="查看林克的文章、日报和深度调研">
+                    <span class="content-hub-icon">📡</span>
+                    <span class="content-hub-text">内容基地</span>
+                    <span class="content-hub-arrow">→</span>
+                </a>
+            </div>
+            
+            <div class="sheikah-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+            
+            <!-- 等级进度面板 -->
+            <div class="level-progress-panel">
+                <div class="level-header">
+                    <div class="level-main-row">
+                        <div class="level-info">
+                            <span class="level-current" id="level-current">--</span>
+                            <div class="level-title-wrapper">
+                                <span class="level-title-badge" id="level-title">--</span>
+                                <!-- 段位进阶气泡 -->
+                                <div class="tier-popup" id="tier-popup">
+                                    <!-- 由JS动态填充 -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="level-main-row">
+                        <div class="level-info">
+                            <span class="level-arrow">→</span>
+                            <span class="level-next" id="level-next">--</span>
+                        </div>
+                        <span class="level-percent" id="level-percent">--%</span>
+                    </div>
+                </div>
+                <div class="exp-bar-container">
+                    <div class="exp-bar-fill" id="exp-bar-fill" style="width: 0%"></div>
+                </div>
+                <div class="exp-text">
+                    <span class="exp-current" id="exp-current">-- EXP</span>
+                    <span class="exp-needed" id="exp-needed">加载中...</span>
+                </div>
+                
+                <div class="upgrade-guide">
+                    <div class="upgrade-guide-header" onclick="toggleUpgradeGuide()">
+                        <span class="upgrade-guide-title">
+                            <span>📈</span>
+                            <span>如何升级</span>
+                        </span>
+                        <span class="upgrade-guide-toggle" id="upgrade-toggle">▼</span>
+                    </div>
+                    <div class="upgrade-guide-content" id="upgrade-guide-content">
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">🤝</span>
+                            <span class="upgrade-item-text">提升懂你程度</span>
+                            <span class="upgrade-item-exp">告诉偏好</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">🎯</span>
+                            <span class="upgrade-item-text">提高执行成功率</span>
+                            <span class="upgrade-item-exp">一次做对</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">⚡</span>
+                            <span class="upgrade-item-text">多用高质量技能</span>
+                            <span class="upgrade-item-exp">深度使用</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">💡</span>
+                            <span class="upgrade-item-text">深度思考与洞察</span>
+                            <span class="upgrade-item-exp">跨域迁移</span>
+                        </div>
+                        <div class="upgrade-item">
+                            <span class="upgrade-item-icon">📚</span>
+                            <span class="upgrade-item-text">积累领域知识</span>
+                            <span class="upgrade-item-exp">持续学习</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sheikah-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+            
+            <div class="stats-panel">
+                <div class="stat-item" onmouseenter="showStatTooltip(event, 'skills')" onmouseleave="hideTooltip()">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-skills">-</div>
+                        <div class="stat-label">技能</div>
+                    </div>
+                </div>
+                <div class="stat-item" onmouseenter="showStatTooltip(event, 'knowledge')" onmouseleave="hideTooltip()">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-knowledge">-</div>
+                        <div class="stat-label">知识</div>
+                    </div>
+                </div>
+                <div class="stat-item" onmouseenter="showStatTooltip(event, 'memory')" onmouseleave="hideTooltip()">
+                    <div class="stat-icon">🧠</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-memory">-</div>
+                        <div class="stat-label">记忆</div>
+                    </div>
+                </div>
+                <div class="stat-item" onmouseenter="showStatTooltip(event, 'projects')" onmouseleave="hideTooltip()">
+                    <div class="stat-icon">🎨</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="stat-projects">-</div>
+                        <div class="stat-label">作品</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sheikah-divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
+            
+            <div class="radar-panel">
+                <div class="panel-title">📊 属性</div>
+                <div class="radar-wrap">
+                    <canvas id="radarChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="trend-mini-panel">
+                <div class="panel-title">📈 成长趋势</div>
+                <div class="trend-mini-wrap">
+                    <canvas id="miniTrendChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="achievements-mini">
+                <div class="panel-title">🏆 成就</div>
+                <div class="ach-list" id="achievements-mini"></div>
+            </div>
+            
+            <div class="update-info">
+                <span>Last Update:</span>
+                <span id="last-update">-</span>
+            </div>
+        </aside>
+        
+        <!-- ===================== 主内容区 ===================== -->
+        <main class="main-content">
+            <!-- 导航栏 - 3个Tab + 移动端菜单 -->
+            <nav class="top-nav">
+                <!-- 移动端汉堡菜单按钮 -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleSidebar()">
+                    ☰
+                </button>
+                
+                <!-- 三角力装饰 -->
+                <div class="triforce-decoration">
+                    <div class="triforce"></div>
+                    <div class="triforce"></div>
+                    <div class="triforce"></div>
+                </div>
+                
+                <button class="nav-tab active" data-section="about">
+                    <span class="nav-icon">👤</span>
+                    <span class="nav-text">了解我</span>
+                </button>
+                <button class="nav-tab" data-section="works">
+                    <span class="nav-icon">🎨</span>
+                    <span class="nav-text">我的作品</span>
+                </button>
+                <button class="nav-tab" data-section="abilities">
+                    <span class="nav-icon">⚡</span>
+                    <span class="nav-text">我的能力</span>
+                </button>
+                <button class="nav-tab" data-section="daily">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">我的日报</span>
+                </button>
+            </nav>
+            
+            <!-- ==================== Section 1: 了解我 ==================== -->
+            <section id="section-about" class="content-section active">
+                <!-- 二级导航 - Tab切换模式 -->
+                <div class="section-sub-nav" id="about-sub-nav">
+                    <button class="sub-nav-btn active" data-tab="intro" onclick="switchSubTab('about', 'intro')">
+                        <span class="sub-nav-icon">👋</span>
+                        <span>关于我</span>
+                    </button>
+                    <button class="sub-nav-btn" data-tab="stats" onclick="switchSubTab('about', 'stats')">
+                        <span class="sub-nav-icon">📊</span>
+                        <span>工作成果</span>
+                    </button>
+                    <button class="sub-nav-btn" data-tab="evolution" onclick="switchSubTab('about', 'evolution')">
+                        <span class="sub-nav-icon">🚀</span>
+                        <span>进化历程</span>
+                    </button>
+                    <button class="sub-nav-btn" data-tab="howto" onclick="switchSubTab('about', 'howto')">
+                        <span class="sub-nav-icon">🎯</span>
+                        <span>使用方式</span>
+                    </button>
+                    <button class="sub-nav-btn" data-tab="achievements" onclick="switchSubTab('about', 'achievements')">
+                        <span class="sub-nav-icon">🏆</span>
+                        <span>成就墙</span>
+                    </button>
+                </div>
+                
+                <!-- Tab内容：关于我（自我介绍+独特之处） -->
+                <div class="sub-tab-content active" data-tab="intro">
+                    <div class="about-me-section">
+                        <div class="about-hero">
+                            <div class="about-avatar">
+                                <div class="about-avatar-glow"></div>
+                                <div class="about-avatar-inner"><img src="link-avatar-small.webp" alt="林克" loading="eager"></div>
+                                <div class="about-level" id="about-level">--</div>
+                                <div class="about-level-title" id="about-level-title"></div>
+                            </div>
+                            <div class="about-intro">
+                                <h3 class="about-name">林克 <span class="about-name-en">LINK</span></h3>
+                                <p class="about-tagline">***的数字分身 · AI 个人助理 · <span id="about-tagline-level">Lv.-- 宗师</span></p>
+                                <p class="about-desc">我是林克，一个基于CodeFlicker培养出来的 AI 个人助理。目前已积累 <strong id="about-skill-count">-</strong>、<strong id="about-memory-count">-</strong>、<strong id="about-knowledge-count">-</strong>，每天通过「小无相功」持续学习成长，具备独立洞察能力。正在向「三千世界」——理解和模拟任何人的思维方式——这一终极目标进发。</p>
+
+                            </div>
+                        </div>
+                        
+                        <!-- 核心价值主张 -->
+                        <div class="value-proposition reveal" id="about-unique">
+                            <div class="value-header">
+                                <span class="value-icon">💡</span>
+                                <span class="value-title">我的独特之处</span>
+                            </div>
+                            
+                            <!-- 维度一：我怎么学习和成长 -->
+                            <div class="value-dimension">
+                                <div class="value-dimension-label">
+                                    <span class="dimension-dot"></span>
+                                    <span>我怎么学习和成长</span>
+                                </div>
+                                <div class="value-cards">
+                                    <div class="value-card" data-ability="daily-reflection">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🥋</div>
+                                        <div class="value-card-title">小无相功</div>
+                                        <div class="value-card-desc">看到好的技能、方法论、思想，主动识别精华并内化——无需用户触发的自动学习能力</div>
+                                    </div>
+                                    <div class="value-card" data-ability="meta-execution">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🎯</div>
+                                        <div class="value-card-title">元执行</div>
+                                        <div class="value-card-desc">一次做对的元能力：执行前自审方案、执行中发现问题立即修正、完成后总结经验</div>
+                                    </div>
+                                    <div class="value-card" data-ability="sanqianshijie">
+                                        <div class="value-card-icon">🌐</div>
+                                        <div class="value-card-title">三千世界</div>
+                                        <div class="value-card-desc">终极目标：能理解和模拟任何人的思维方式，成为真正的「数字分身」</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 维度二：我怎么思考和做事 -->
+                            <div class="value-dimension reveal">
+                                <div class="value-dimension-label">
+                                    <span class="dimension-dot dot-cyan"></span>
+                                    <span>我怎么思考和做事</span>
+                                </div>
+                                <div class="value-cards">
+                                    <div class="value-card card-cyan" data-ability="learn-from-mistakes">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🔄</div>
+                                        <div class="value-card-title">举一反三</div>
+                                        <div class="value-card-desc">遇到错误不只是修复，而是深挖根因、泛化到更大范围——三层递进的错误驱动进化</div>
+                                    </div>
+                                    <div class="value-card card-cyan" data-ability="essence-insight">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🔮</div>
+                                        <div class="value-card-title">本质洞察</div>
+                                        <div class="value-card-desc">透过现象看本质，五层分析框架+类比驱动表达，让复杂问题变得直观</div>
+                                    </div>
+                                    <div class="value-card card-cyan" data-ability="product-thinking">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">📦</div>
+                                        <div class="value-card-title">产品思维</div>
+                                        <div class="value-card-desc">内置产品思维：用户视角审视所有交付物，顺用户的意而非按我的来</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 维度三：我能做什么 - 小无相功精神：快速学习任何技能，越做越好 -->
+                            <div class="value-dimension reveal">
+                                <div class="value-dimension-label">
+                                    <span class="dimension-dot dot-gold"></span>
+                                    <span>我能做什么（这只是开始）</span>
+                                </div>
+                                <div class="xiaowuxiang-intro">
+                                    <div class="xiaowuxiang-badge">🥋 小无相功</div>
+                                    <div class="xiaowuxiang-motto">“只要你需要，我就能学会。学会之后，会越做越好。”</div>
+                                </div>
+                                <div class="value-cards value-cards-4">
+                                    <div class="value-card card-gold" data-ability="research">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🔬</div>
+                                        <div class="value-card-title">调研分析</div>
+                                        <div class="value-card-desc">行业调研、竞品分析、技术趋势<br/><small>📈 已完成 6+ 项深度调研</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="web-dev">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">🌐</div>
+                                        <div class="value-card-title">网页开发</div>
+                                        <div class="value-card-desc">HTML/CSS/JS全栈、多风格设计<br/><small>🎨 已交付 18+ 个项目</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="docs">
+                                        <div class="value-card-icon">📄</div>
+                                        <div class="value-card-title">文档处理</div>
+                                        <div class="value-card-desc">PDF/Word/PPT/Excel/Keynote<br/><small>含多平台同步、双向编辑</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="daily-insight">
+                                        <span class="ability-active-badge">🔥 活跃</span>
+                                        <div class="value-card-icon">📊</div>
+                                        <div class="value-card-title">日报周报</div>
+                                        <div class="value-card-desc">自动化内容生成+推送<br/><small>🚀 已运行 9 期日报</small></div>
+                                    </div>
+                                </div>
+                                <div class="value-cards value-cards-4 value-cards-row2">
+                                    <div class="value-card card-gold" data-ability="ppt">
+                                        <div class="value-card-icon">📊</div>
+                                        <div class="value-card-title">演示文稿</div>
+                                        <div class="value-card-desc">PPT/Keynote 多风格<br/><small>工作汇报、设计系统</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="bot">
+                                        <div class="value-card-icon">🤖</div>
+                                        <div class="value-card-title">IM机器人</div>
+                                        <div class="value-card-desc">飞书/KIM 消息推送<br/><small>卡片设计、群分发</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="image">
+                                        <div class="value-card-icon">🖼️</div>
+                                        <div class="value-card-title">图片生成</div>
+                                        <div class="value-card-desc">AI生图、图生图、信息图<br/><small>多风格支持</small></div>
+                                    </div>
+                                    <div class="value-card card-gold" data-ability="more">
+                                        <div class="value-card-icon">✨</div>
+                                        <div class="value-card-title">更多能力...</div>
+                                        <div class="value-card-desc">告诉我你需要什么<br/><small>🥋 小无相功即刻学习</small></div>
+                                    </div>
+                                </div>
+                                <div class="xiaowuxiang-footer">
+                                    <span>🌱 已掌握 <strong id="xiaowuxiang-skill-count">- 项技能</strong>，每天通过「每日修炼」持续进化中...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab内容：工作成果 -->
+                <div class="sub-tab-content" data-tab="stats">
+                    <div class="about-core-stats" id="about-stats">
+                        <div class="about-stats-title">📊 我的工作成果</div>
+                        <!-- 动态填充 -->
+                    </div>
+                </div>
+                
+                <!-- Tab内容：进化历程 -->
+                <div class="sub-tab-content" data-tab="evolution">
+                    <div class="evolution-section">
+                        <div class="evolution-header">
+                            <span class="evolution-icon">🚀</span>
+                            <span class="evolution-title">进化历程</span>
+                            <span class="evolution-subtitle">从工具到数字生命的蜕变</span>
+                        </div>
+                        <div class="evolution-timeline">
+                            <!-- 数据驱动渲染，由JS动态加载 -->
+                            <div class="evolution-loading">加载中...</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab内容：使用方式 -->
+                <div class="sub-tab-content" data-tab="howto">
+                    <div class="howto-section">
+                        <div class="howto-header">
+                            <span class="howto-icon">🎯</span>
+                            <span class="howto-title">如何与我对话</span>
+                        </div>
+                        <div class="howto-content reveal">
+                            <div class="howto-channels">
+                                <div class="howto-channel primary">
+                                    <div class="channel-icon">💻</div>
+                                    <div class="channel-info">
+                                        <div class="channel-name">CodeFlicker IDE</div>
+                                        <div class="channel-desc">在 CodeFlicker 中打开「个人助理_V1」项目，直接对话</div>
+                                    </div>
+                                    <div class="channel-badge">主要</div>
+                                </div>
+                                <div class="howto-channel">
+                                    <div class="channel-icon">📱</div>
+                                    <div class="channel-info">
+                                        <div class="channel-name">飞书机器人</div>
+                                        <div class="channel-desc">在飞书中搜索「林克」，直接发送消息即可</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="howto-examples reveal">
+                                <div class="examples-title">💬 常用对话示例</div>
+                                <div class="examples-grid">
+                                    <div class="example-card">
+                                        <div class="example-category">📊 调研分析</div>
+                                        <div class="example-text">"帮我调研一下AI Agent市场的竞品情况"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">📝 文档处理</div>
+                                        <div class="example-text">"把这份Word文档转换成PPT演示稿"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">🎨 网页开发</div>
+                                        <div class="example-text">"帮我做一个塞尔达风格的展示页面"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">🔍 深度思考</div>
+                                        <div class="example-text">"分析一下这个方案有什么隐藏前提"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">📈 日报生成</div>
+                                        <div class="example-text">"运行每日任务" 或 "生成今天的日报"</div>
+                                    </div>
+                                    <div class="example-card">
+                                        <div class="example-category">💡 知识检索</div>
+                                        <div class="example-text">"我之前做过什么AI相关的调研？"</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab内容：成就墙 -->
+                <div class="sub-tab-content" data-tab="achievements">
+                    <div class="achievements-section reveal">
+                        <div class="achievements-title">
+                            🏆 成就墙
+                            <span class="achievements-stats" id="achievements-stats-2"></span>
+                        </div>
+                        <div class="achievements-grid" id="achievements-grid-2"></div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ==================== Section 2: 我的作品 ==================== -->
+            <section id="section-works" class="content-section">
+                <!-- 二级导航 - 按作品分类切换 -->
+                <div class="works-category-tabs" id="works-category-tabs">
+                    <button class="works-category-btn active" data-works-tab="all" onclick="switchWorksTab('all')">
+                        <span class="tab-icon">🎯</span>
+                        <span>全部作品</span>
+                    </button>
+                    <button class="works-category-btn" data-works-tab="research" onclick="switchWorksTab('research')">
+                        <span class="tab-icon">🔬</span>
+                        <span>调研类</span>
+                        <span class="tab-count" id="works-count-research">-</span>
+                    </button>
+                    <button class="works-category-btn" data-works-tab="tools" onclick="switchWorksTab('tools')">
+                        <span class="tab-icon">🛠️</span>
+                        <span>工具类</span>
+                        <span class="tab-count" id="works-count-tools">-</span>
+                    </button>
+                </div>
+                
+                <!-- 作品展示区 -->
+                <div class="works-grid reveal" id="works-list"></div>
+            </section>
+            
+            <!-- ==================== Section 3: 我的能力 ==================== -->
+            <section id="section-abilities" class="content-section">
+                <!-- Tab切换栏 -->
+                <div class="ability-tabs" id="ability-tabs">
+                    <button class="ability-tab-btn active" data-ability-tab="skills" onclick="switchAbilityTab('skills')">
+                        <span class="tab-icon">⚡</span>
+                        <span>技能树</span>
+                        <span class="tab-count" id="tab-skill-count">-</span>
+                    </button>
+                    <button class="ability-tab-btn" data-ability-tab="memory" onclick="switchAbilityTab('memory')">
+                        <span class="tab-icon">🧠</span>
+                        <span>记忆库</span>
+                        <span class="tab-count" id="tab-memory-count">-</span>
+                    </button>
+                    <button class="ability-tab-btn" data-ability-tab="knowledge" onclick="switchAbilityTab('knowledge')">
+                        <span class="tab-icon">📚</span>
+                        <span>知识库</span>
+                        <span class="tab-count" id="tab-knowledge-count">-</span>
+                    </button>
+                    <button class="ability-tab-btn" data-ability-tab="growth" onclick="switchAbilityTab('growth')">
+                        <span class="tab-icon">📈</span>
+                        <span>成长趋势</span>
+                    </button>
+                </div>
+                
+                <!-- 技能树 Tab -->
+                <div class="ability-tab-content active" id="ability-tab-skills">
+                    <div class="tree-container skill-tree" id="skill-tree">
+                        <div class="loading">加载中...</div>
+                    </div>
+                </div>
+                
+                <!-- 记忆库 Tab -->
+                <div class="ability-tab-content" id="ability-tab-memory">
+                    <div class="tree-container memory-tree" id="memory-tree">
+                        <div class="loading">加载中...</div>
+                    </div>
+                </div>
+                
+                <!-- 知识库 Tab -->
+                <div class="ability-tab-content" id="ability-tab-knowledge">
+                    <div class="tree-container knowledge-tree" id="knowledge-tree">
+                        <div class="loading">加载中...</div>
+                    </div>
+                </div>
+                
+                <!-- 成长趋势 Tab (v3.1: 作为第4个二级Tab) -->
+                <div class="ability-tab-content" id="ability-tab-growth">
+                <!-- 成长趋势仪表板 v3.0 -->
+                <div class="growth-dashboard reveal">
+                    <div class="growth-dashboard-header">
+                        <div class="growth-dashboard-title">📈 能力成长趋势</div>
+                        <div class="period-toggle" id="period-toggle">
+                            <button class="period-btn" data-period="7" onclick="switchGrowthPeriod(7)">近7天</button>
+                            <button class="period-btn active" data-period="14" onclick="switchGrowthPeriod(14)">近14天</button>
+                            <button class="period-btn" data-period="0" onclick="switchGrowthPeriod(0)">全部</button>
+                        </div>
+                    </div>
+                    
+                    <!-- 增长概览卡片 -->
+                    <div class="growth-cards" id="growth-cards">
+                        <div class="growth-card">
+                            <div class="growth-card-top">
+                                <div class="growth-card-label">
+                                    <span class="growth-card-icon">⚡</span>
+                                    <span class="growth-card-name">技能</span>
+                                </div>
+                                <span class="growth-card-badge" id="growth-badge-skills">-</span>
+                            </div>
+                            <div class="growth-card-body">
+                                <div>
+                                    <div class="growth-card-value" id="growth-value-skills">-</div>
+                                    <div class="growth-card-rate" id="growth-rate-skills"></div>
+                                </div>
+                                <canvas class="growth-card-sparkline" id="sparkline-skills"></canvas>
+                            </div>
+                        </div>
+                        <div class="growth-card">
+                            <div class="growth-card-top">
+                                <div class="growth-card-label">
+                                    <span class="growth-card-icon">📚</span>
+                                    <span class="growth-card-name">知识</span>
+                                </div>
+                                <span class="growth-card-badge" id="growth-badge-knowledge">-</span>
+                            </div>
+                            <div class="growth-card-body">
+                                <div>
+                                    <div class="growth-card-value" id="growth-value-knowledge">-</div>
+                                    <div class="growth-card-rate" id="growth-rate-knowledge"></div>
+                                </div>
+                                <canvas class="growth-card-sparkline" id="sparkline-knowledge"></canvas>
+                            </div>
+                        </div>
+                        <div class="growth-card">
+                            <div class="growth-card-top">
+                                <div class="growth-card-label">
+                                    <span class="growth-card-icon">🧠</span>
+                                    <span class="growth-card-name">记忆</span>
+                                </div>
+                                <span class="growth-card-badge" id="growth-badge-memory">-</span>
+                            </div>
+                            <div class="growth-card-body">
+                                <div>
+                                    <div class="growth-card-value" id="growth-value-memory">-</div>
+                                    <div class="growth-card-rate" id="growth-rate-memory"></div>
+                                </div>
+                                <canvas class="growth-card-sparkline" id="sparkline-memory"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 增长洞察 -->
+                    <div class="growth-insight" id="growth-insight">
+                        <span class="growth-insight-icon">💡</span>
+                        <span id="growth-insight-text">加载中...</span>
+                    </div>
+                    
+                    <!-- 主趋势图 -->
+                    <div class="growth-chart-wrap">
+                        <canvas id="trendChart"></canvas>
+                    </div>
+                    
+                    <!-- 增长对比条 -->
+                    <div class="growth-compare">
+                        <div class="growth-compare-title">📊 维度增长对比</div>
+                        <div id="growth-bars"></div>
+                    </div>
+                </div>
+                </div>
+            </section>
+            
+            <!-- ==================== Section 4: 我的日报 ==================== -->
+            <section id="section-daily" class="content-section">
+                <!-- 日期选择器 -->
+                <div class="daily-date-bar">
+                    <select class="date-select" id="report-date-select">
+                        <!-- 动态填充 -->
+                    </select>
+                </div>
+                
+                <!-- 二级导航 - Tab切换模式 -->
+                <div class="section-sub-nav" id="daily-sub-nav">
+                    <button class="sub-nav-btn active" data-tab="progress" onclick="switchSubTab('daily', 'progress')">
+                        <span class="sub-nav-icon">📋</span>
+                        <span>核心进展</span>
+                    </button>
+                    <button class="sub-nav-btn" data-tab="delivery" onclick="switchSubTab('daily', 'delivery')">
+                        <span class="sub-nav-icon">🚀</span>
+                        <span>交付情况</span>
+                    </button>
+                    <button class="sub-nav-btn" data-tab="capability" onclick="switchSubTab('daily', 'capability')">
+                        <span class="sub-nav-icon">📈</span>
+                        <span>能力提升</span>
+                    </button>
+                </div>
+                
+                <!-- Tab内容：核心进展 -->
+                <div class="sub-tab-content active" data-tab="progress">
+                    <div class="daily-section-block core-progress-block">
+                        <div class="block-header">
+                            <span class="block-icon">📋</span>
+                            <span class="block-title">核心进展</span>
+                        </div>
+                        <div class="core-progress-list" id="core-progress-list">
+                            <!-- 动态填充 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab内容：交付情况 -->
+                <div class="sub-tab-content" data-tab="delivery">
+                    <div class="daily-section-block deliveries-block">
+                        <div class="block-header">
+                            <span class="block-icon">🚀</span>
+                            <span class="block-title">交付情况</span>
+                        </div>
+                        <!-- 核心统计指标 -->
+                        <div class="delivery-stats-bar" id="delivery-stats-bar">
+                            <!-- 动态填充 -->
+                        </div>
+                        <div class="deliveries-list" id="deliveries-list">
+                            <!-- 动态填充 -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tab内容：能力提升 -->
+                <div class="sub-tab-content" data-tab="capability">
+                    <div class="daily-section-block capability-block">
+                        <div class="block-header">
+                            <span class="block-icon">📈</span>
+                            <span class="block-title">能力提升</span>
+                        </div>
+                        
+                        <!-- 能力概览卡片 -->
+                        <div class="capability-overview">
+                            <div class="cap-card-v2">
+                                <div class="cap-icon-v2">⚡</div>
+                                <div class="cap-info-v2">
+                                    <div class="cap-label-v2">技能</div>
+                                    <div class="cap-value-v2" id="cap-skills-v2">-</div>
+                                </div>
+                                <div class="cap-change-v2" id="cap-skills-change-v2">-</div>
+                            </div>
+                            <div class="cap-card-v2">
+                                <div class="cap-icon-v2">📚</div>
+                                <div class="cap-info-v2">
+                                    <div class="cap-label-v2">知识</div>
+                                    <div class="cap-value-v2" id="cap-knowledge-v2">-</div>
+                                </div>
+                                <div class="cap-change-v2" id="cap-knowledge-change-v2">-</div>
+                            </div>
+                            <div class="cap-card-v2">
+                                <div class="cap-icon-v2">🧠</div>
+                                <div class="cap-info-v2">
+                                    <div class="cap-label-v2">记忆</div>
+                                    <div class="cap-value-v2" id="cap-memory-v2">-</div>
+                                </div>
+                                <div class="cap-change-v2" id="cap-memory-change-v2">-</div>
+                            </div>
+                        </div>
+                        
+                        <!-- 新增内容标签 -->
+                        <div class="capability-changes-v2">
+                            <div class="changes-section" id="new-items-section">
+                                <div class="changes-title">🌟 今日新增</div>
+                                <div class="changes-tags" id="new-items-tags"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- 趋势图 -->
+                        <div class="trend-chart-section">
+                            <div class="trend-title">📊 成长趋势</div>
+                            <div class="trend-chart-container">
+                                <canvas id="dailyTrendChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- 成就详情弹窗 -->
+    <div class="achievement-modal" id="achievement-modal" onclick="closeAchievementModal(event)">
+        <div class="achievement-modal-content" onclick="event.stopPropagation()">
+            <div class="modal-icon" id="modal-icon"></div>
+            <div class="modal-name" id="modal-name"></div>
+            <div class="ach-rarity-badge" id="modal-rarity"></div>
+            <div class="modal-desc" id="modal-desc"></div>
+            <div class="modal-date" id="modal-date"></div>
+            <button class="modal-close" onclick="closeAchievementModal()">关闭</button>
+        </div>
+    </div>
+    
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip">
+        <div class="tip-header">
+            <div class="tip-icon"></div>
+            <div class="tip-title">
+                <div class="tip-name"></div>
+                <div class="tip-type-row">
+                    <span class="tip-type"></span>
+                    <span class="tip-source-badge"></span>
+                </div>
+            </div>
+            <div class="tip-level">
+                <div class="tip-lv-num"></div>
+                <div class="tip-lv-max">/5</div>
+            </div>
+        </div>
+        <div class="tip-body">
+            <div class="tip-section tip-metrics-section" style="display:none">
+                <div class="tip-metrics-row">
+                    <div class="tip-metric"><span class="tip-metric-val tip-call-count">0</span><span class="tip-metric-label">调用</span></div>
+                    <div class="tip-metric"><span class="tip-metric-val tip-frequency">-</span><span class="tip-metric-label">频率</span></div>
+                    <div class="tip-metric"><span class="tip-metric-val tip-success-rate">0%</span><span class="tip-metric-label">成功率</span></div>
+                </div>
+            </div>
+            <div class="tip-section">
+                <div class="tip-section-title">📝 描述</div>
+                <div class="tip-desc"></div>
+            </div>
+            <div class="tip-section tip-source-section" style="display:none">
+                <div class="tip-section-title">📍 来源</div>
+                <div class="tip-source"></div>
+            </div>
+            <div class="tip-section tip-upgrade-section" style="display:none">
+                <div class="tip-section-title">🚀 如何升级</div>
+                <div class="tip-upgrade"></div>
+            </div>
+            <div class="tip-section tip-progress-section" style="display:none">
+                <div class="tip-section-title">📊 进度</div>
+                <div class="tip-progress"><div class="tip-progress-fill"></div></div>
+                <div class="tip-progress-text"><span class="prog-cur"></span><span class="prog-next"></span></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // v4.0 SVG叶子粒子系统 + 希卡蓝光点
+        // 使用SVG路径代替emoji，确保跨平台一致渲染
+        const leafSVGs = [
+            `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 4 6 4 12c0 4 3 7 6 9l2 1 2-1c3-2 6-5 6-9 0-6-4-10-8-10z" fill="rgba(93,138,74,0.7)" stroke="rgba(61,90,42,0.5)" stroke-width="0.8"/></svg>`,
+            `<svg viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="7" ry="10" fill="rgba(139,184,122,0.6)" stroke="rgba(93,138,74,0.4)" stroke-width="0.8" transform="rotate(-15 12 12)"/><line x1="12" y1="2" x2="12" y2="22" stroke="rgba(93,138,74,0.5)" stroke-width="0.6"/></svg>`,
+            `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z" fill="rgba(210,140,70,0.6)" stroke="rgba(180,110,50,0.4)" stroke-width="0.7"/></svg>`,
+            `<svg viewBox="0 0 24 24" fill="none"><path d="M12 1 Q16 8 14 16 Q13 20 12 23 Q11 20 10 16 Q8 8 12 1Z" fill="rgba(120,160,90,0.6)" stroke="rgba(80,120,60,0.4)" stroke-width="0.6"/></svg>`
+        ];
+
+        function createParticles() {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            const container = document.getElementById('particles');
+            if (!container) return;
+
+            // 前景叶子：大、清晰、快
+            for (let i = 0; i < 12; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf-particle';
+                leaf.innerHTML = leafSVGs[Math.floor(Math.random() * leafSVGs.length)];
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDuration = (12 + Math.random() * 10) + 's';
+                leaf.style.animationDelay = Math.random() * 15 + 's';
+                const size = (12 + Math.random() * 8) + 'px';
+                leaf.style.width = size;
+                leaf.style.height = size;
+                container.appendChild(leaf);
+            }
+
+            // 背景叶子：小、模糊、慢
+            for (let i = 0; i < 8; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf-particle bg-leaf';
+                leaf.innerHTML = leafSVGs[Math.floor(Math.random() * leafSVGs.length)];
+                leaf.style.left = Math.random() * 100 + '%';
+                leaf.style.animationDuration = (18 + Math.random() * 12) + 's';
+                leaf.style.animationDelay = Math.random() * 20 + 's';
+                container.appendChild(leaf);
+            }
+
+            // 希卡蓝光点粒子 - 优化为底部浮升
+            for (let i = 0; i < 16; i++) {
+                const spark = document.createElement('div');
+                spark.className = 'sheikah-spark';
+                spark.style.left = Math.random() * 100 + '%';
+                spark.style.top = (40 + Math.random() * 55) + '%';
+                spark.style.animationDuration = (5 + Math.random() * 5) + 's';
+                spark.style.animationDelay = Math.random() * 8 + 's';
+                container.appendChild(spark);
+            }
+        }
+
+        // v4.0 Scroll Reveal 动画 - 支持动态DOM
+        function initScrollReveal() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+            
+            // 观察现有 .reveal 元素
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            
+            // 监听动态添加的 .reveal 元素
+            const mutObs = new MutationObserver(mutations => {
+                mutations.forEach(m => {
+                    m.addedNodes.forEach(node => {
+                        if (node.nodeType === 1) {
+                            if (node.classList?.contains('reveal')) observer.observe(node);
+                            node.querySelectorAll?.('.reveal').forEach(el => observer.observe(el));
+                        }
+                    });
+                });
+            });
+            mutObs.observe(document.body, { childList: true, subtree: true });
+        }
+
+        // v4.0 鼠标跟随光效 - 使用事件委托支持动态DOM
+        function initMouseGlow() {
+            const glowSelectors = '.stat-item, .overview-card, .cap-card, .value-card, .highlight-card, .work-card-mini, .project-card, .achievement-item, .growth-card, .about-feature-card, .domain-card, .kn-domain-card, .mem-category-card, .example-card, .howto-channel, .report-highlight-tag, .engine-node';
+            document.addEventListener('mousemove', (e) => {
+                const card = e.target.closest(glowSelectors);
+                if (!card) return;
+                const rect = card.getBoundingClientRect();
+                card.style.setProperty('--glow-x', (e.clientX - rect.left) + 'px');
+                card.style.setProperty('--glow-y', (e.clientY - rect.top) + 'px');
+                card.classList.add('mouse-glow-active');
+            });
+            document.addEventListener('mouseout', (e) => {
+                const card = e.target.closest(glowSelectors);
+                if (card && !card.contains(e.relatedTarget)) {
+                    card.classList.remove('mouse-glow-active');
+                }
+            });
+        }
+        
+        // 移动端侧边栏切换
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+        }
+        
+        // 点击遮罩关闭侧边栏
+        document.getElementById('sidebarOverlay')?.addEventListener('click', toggleSidebar);
+        
+        createParticles();
+        // 延迟初始化非关键交互
+        requestAnimationFrame(() => {
+            initScrollReveal();
+            initMouseGlow();
+        });
+    </script>
+    <script src="scripts/ability-trees.js?v=22"></script>
+    <script src="scripts/app.js?v=21"></script>
+</body>
+</html>

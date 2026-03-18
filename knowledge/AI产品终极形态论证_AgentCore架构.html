@@ -1,0 +1,2131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI产品终极形态论证：AgentCore + Skills 架构</title>
+    <style>
+        :root {
+            --color-success: #1A7F37;
+            --color-success-light: #2DA44E;
+            --color-success-dark: #116329;
+            --color-danger: #CF222E;
+            --color-danger-light: #FF7B72;
+            --color-warning: #BF8700;
+            --color-warning-dark: #9A6700;
+            --color-info: #0969DA;
+            --color-info-light: #54AEFF;
+            --color-purple: #7C3AED;
+            --color-text-primary: #1F2328;
+            --color-text-secondary: #4D5561;
+            --color-text-muted: #656D76;
+            --color-border: #D0D7DE;
+            --color-border-light: #E8ECF0;
+            --color-bg: #F6F8FA;
+            --color-bg-card: #FFFFFF;
+            --color-bg-table-header: #F3F5F7;
+            --gradient-success: linear-gradient(135deg, #1A7F37 0%, #2DA44E 100%);
+            --gradient-badge: linear-gradient(135deg, #E6F7ED 0%, #E1F0F8 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(26, 127, 55, 0.06) 0%, rgba(9, 105, 218, 0.04) 100%);
+            --shadow-xs: 0 1px 2px rgba(31, 35, 40, 0.04);
+            --shadow-sm: 0 1px 3px rgba(31, 35, 40, 0.06), 0 1px 2px rgba(31, 35, 40, 0.04);
+            --shadow-card: 0 2px 8px rgba(31, 35, 40, 0.06), 0 1px 2px rgba(31, 35, 40, 0.04);
+            --shadow-md: 0 4px 12px rgba(31, 35, 40, 0.08), 0 2px 4px rgba(31, 35, 40, 0.04);
+            --shadow-lg: 0 8px 24px rgba(31, 35, 40, 0.12), 0 4px 8px rgba(31, 35, 40, 0.06);
+            --shadow-hover: 0 6px 16px rgba(26, 127, 55, 0.15), 0 2px 6px rgba(26, 127, 55, 0.1);
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 40px;
+            --spacing-3xl: 48px;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 18px;
+            --radius-full: 999px;
+            --font-family: -apple-system, "system-ui", "Segoe UI", "Noto Sans SC", Helvetica, Arial, sans-serif;
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+            --content-max-width: 980px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-family);
+            font-size: 15px;
+            line-height: 1.65;
+            color: var(--color-text-secondary);
+            background: var(--color-bg);
+        }
+
+        .container {
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing-md) var(--spacing-3xl);
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: var(--spacing-2xl) 0;
+            margin-bottom: var(--spacing-xl);
+            background: var(--gradient-hero);
+            border-radius: var(--radius-xl);
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-xs) 14px;
+            background: var(--gradient-badge);
+            color: var(--color-info);
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            margin-bottom: var(--spacing-md);
+            border: 1px solid rgba(9, 105, 218, 0.15);
+            box-shadow: var(--shadow-xs);
+        }
+
+        .header-title {
+            font-size: 30px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, var(--color-text-primary), var(--color-success-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Core Insight */
+        .core-insight {
+            background: var(--color-bg-card);
+            border-left: 4px solid var(--color-danger);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-card);
+        }
+
+        .core-insight-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-danger);
+            margin-bottom: 12px;
+        }
+
+        .core-insight-label::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-danger);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(207, 34, 46, 0.15);
+        }
+
+        .core-insight-title {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            color: var(--color-text-primary);
+        }
+
+        .core-insight-title em {
+            color: var(--color-danger);
+            font-style: normal;
+        }
+
+        .core-insight-text {
+            color: var(--color-text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .stat-card {
+            background: var(--color-bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border-light);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-success);
+            opacity: 0;
+            transition: var(--transition-normal);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--color-success);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-xs);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-value.green { color: var(--color-success); }
+        .stat-value.red { color: var(--color-danger); }
+        .stat-value.blue { color: var(--color-info); }
+        .stat-value.orange { color: var(--color-warning); }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 4px;
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: 6px;
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+            position: sticky;
+            top: 12px;
+            z-index: 100;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 14px;
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            transition: all var(--transition-fast);
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            background: var(--color-bg-table-header);
+            color: var(--color-text-secondary);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-success);
+            color: #fff;
+            box-shadow: 0 2px 8px rgba(26, 127, 55, 0.25);
+        }
+
+        .tab-btn-num {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.06);
+            border-radius: var(--radius-sm);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .tab-btn.active .tab-btn-num {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .tab-panel {
+            display: none;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .tab-panel.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Card */
+        .section {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-card);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .section-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-success);
+            color: #fff;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+            flex-shrink: 0;
+            box-shadow: 0 2px 4px rgba(26, 127, 55, 0.25);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .subsection-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .subsection-title::before {
+            content: '';
+            width: 4px;
+            height: 18px;
+            background: var(--gradient-success);
+            border-radius: 2px;
+        }
+
+        /* Architecture Diagram */
+        .architecture-diagram {
+            background: var(--color-bg-table-header);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+
+        .arch-core {
+            background: var(--gradient-success);
+            color: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--spacing-md);
+            box-shadow: 0 4px 12px rgba(26, 127, 55, 0.3);
+        }
+
+        .arch-core-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .arch-core-subtitle {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        .arch-arrow {
+            font-size: 24px;
+            color: var(--color-success);
+            margin: var(--spacing-sm) 0;
+        }
+
+        .arch-skills {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        @media (max-width: 768px) {
+            .arch-skills { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .arch-skill {
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .arch-skill:hover {
+            border-color: var(--color-success);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .arch-growth {
+            background: linear-gradient(135deg, #0969DA 0%, #7C3AED 100%);
+            color: white;
+            padding: var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-size: 14px;
+        }
+
+        /* Table */
+        .table-wrap {
+            overflow-x: auto;
+            margin: var(--spacing-md) 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--color-border-light);
+            vertical-align: middle;
+        }
+
+        th {
+            background: var(--color-bg-table-header);
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            font-size: 13px;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        tbody tr:hover td {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        td:first-child {
+            font-weight: 500;
+            color: var(--color-text-primary);
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 10px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .tag-green { background: rgba(26, 127, 55, 0.12); color: var(--color-success); }
+        .tag-red { background: rgba(207, 34, 46, 0.12); color: var(--color-danger); }
+        .tag-blue { background: rgba(9, 105, 218, 0.12); color: var(--color-info); }
+        .tag-orange { background: rgba(191, 135, 0, 0.12); color: var(--color-warning-dark); }
+
+        /* Insight Box */
+        .insight-box {
+            border-left: 4px solid var(--color-warning);
+            background: rgba(191, 135, 0, 0.06);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: var(--spacing-md) 20px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .insight-title {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--color-warning-dark);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .insight-title::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--color-warning);
+            border-radius: 50%;
+        }
+
+        .insight-text {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Quote */
+        .quote {
+            background: var(--color-bg-table-header);
+            border-left: 4px solid var(--color-info);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            padding: var(--spacing-md) 20px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .quote-text {
+            font-size: 15px;
+            font-style: italic;
+            color: var(--color-text-primary);
+            line-height: 1.7;
+        }
+
+        .quote-source {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            margin-top: var(--spacing-sm);
+            font-weight: 500;
+        }
+
+        /* Comparison Grid */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid { grid-template-columns: 1fr; }
+        }
+
+        .comparison-card {
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+        }
+
+        .comparison-card.current {
+            background: rgba(207, 34, 46, 0.04);
+            border-left: 4px solid var(--color-danger);
+        }
+
+        .comparison-card.future {
+            background: rgba(26, 127, 55, 0.04);
+            border-left: 4px solid var(--color-success);
+        }
+
+        .comparison-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .comparison-card.current .comparison-title { color: var(--color-danger); }
+        .comparison-card.future .comparison-title { color: var(--color-success); }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: var(--spacing-sm) 0;
+            color: var(--color-text-secondary);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            line-height: 1.6;
+        }
+
+        .comparison-list li::before {
+            content: '→';
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+
+        .comparison-card.current .comparison-list li::before { color: var(--color-danger); }
+        .comparison-card.future .comparison-list li::before { color: var(--color-success); }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid { grid-template-columns: 1fr; }
+        }
+
+        .feature-card {
+            background: var(--color-bg-table-header);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-lg);
+            transition: all var(--transition-normal);
+        }
+
+        .feature-card:hover {
+            border-color: var(--color-success);
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-success);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-desc {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: var(--spacing-lg);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            background: var(--color-success);
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-company {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-success);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .timeline-content {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Conclusion */
+        .conclusion {
+            background: var(--gradient-success);
+            color: white;
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .conclusion-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .conclusion-text {
+            font-size: 16px;
+            line-height: 1.7;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .conclusion-highlight {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            margin-top: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            color: var(--color-text-muted);
+            font-size: 13px;
+        }
+
+        .footer a {
+            color: var(--color-info);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Strong text */
+        strong {
+            color: var(--color-text-primary);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .header-title { font-size: 24px; }
+            .section { padding: var(--spacing-md); }
+            .arch-skills { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <span class="header-badge">战略洞察 · 2026</span>
+            <h1 class="header-title">AI产品终极形态论证</h1>
+            <p class="header-subtitle">AgentCore + Skills 架构：从单点Agent到通用代理的必然演进</p>
+        </header>
+
+        <!-- Core Insight -->
+        <div class="core-insight">
+            <div class="core-insight-label">核心命题</div>
+            <h2 class="core-insight-title">
+                AI产品的终极形态不是一个个孤立的Agent工具，而是一个拥有<em>通用能力内核（AgentCore）</em>的智能代理
+            </h2>
+            <p class="core-insight-text">
+                各种专业能力作为可插拔的Skill存在，代理通过持续学习不断积累技能，实现类人的成长路径。不要做一个个Agent，要做AgentCore。
+            </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value green">78%</div>
+                <div class="stat-label">企业已使用GenAI</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value red">80%+</div>
+                <div class="stat-label">无实质业绩贡献</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value orange">90%</div>
+                <div class="stat-label">垂直Agent停留在试点</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value blue">1%</div>
+                <div class="stat-label">认为AI战略成熟</div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="arch">
+                <span class="tab-btn-num">1</span>
+                架构模型
+            </button>
+            <button class="tab-btn" data-tab="necessity">
+                <span class="tab-btn-num">2</span>
+                必然性论证
+            </button>
+            <button class="tab-btn" data-tab="foresight">
+                <span class="tab-btn-num">3</span>
+                前瞻性验证
+            </button>
+            <button class="tab-btn" data-tab="codeagent">
+                <span class="tab-btn-num">4</span>
+                Code Agent核心
+            </button>
+            <button class="tab-btn" data-tab="growth">
+                <span class="tab-btn-num">5</span>
+                人与AI成长类比
+            </button>
+            <button class="tab-btn" data-tab="design">
+                <span class="tab-btn-num">6</span>
+                设计原则
+            </button>
+            <button class="tab-btn" data-tab="gaming">
+                <span class="tab-btn-num">7</span>
+                养成游戏形态
+            </button>
+            <button class="tab-btn" data-tab="clone">
+                <span class="tab-btn-num">8</span>
+                分身机制
+            </button>
+            <button class="tab-btn" data-tab="barry">
+                <span class="tab-btn-num">9</span>
+                Barry Zhang验证
+            </button>
+            <button class="tab-btn" data-tab="conclusion">
+                <span class="tab-btn-num">10</span>
+                结论
+            </button>
+        </nav>
+
+        <!-- Tab 1: Architecture -->
+        <article id="arch" class="tab-panel active">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">1</span>
+                    <h2 class="section-title">AgentCore + Skills 架构模型</h2>
+                </div>
+
+                <div class="architecture-diagram">
+                    <div class="arch-core">
+                        <div class="arch-core-title">AgentCore 通用能力内核</div>
+                        <div class="arch-core-subtitle">记忆 · 推理 · 规划 · 调度 · 反思 · 集成</div>
+                    </div>
+                    <div class="arch-arrow">↓ 调用 ↓</div>
+                    <div class="arch-skills">
+                        <div class="arch-skill">写代码</div>
+                        <div class="arch-skill">做调研</div>
+                        <div class="arch-skill">写PPT</div>
+                        <div class="arch-skill">数据分析</div>
+                        <div class="arch-skill">日程管理</div>
+                        <div class="arch-skill">股票分析</div>
+                        <div class="arch-skill">知识检索</div>
+                        <div class="arch-skill">...</div>
+                    </div>
+                    <div class="arch-arrow">↑ 学习/成长 ↑</div>
+                    <div class="arch-growth">成长系统：从用户交互中学习偏好 · 从新Skill中扩展能力 · 从反馈中优化策略</div>
+                </div>
+
+                <h3 class="subsection-title">AgentCore 六大核心能力</h3>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <div class="feature-title">Memory 记忆系统</div>
+                        <div class="feature-desc">长期记忆、工作记忆、用户画像，记住偏好和历史</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <div class="feature-title">Reasoning 推理引擎</div>
+                        <div class="feature-desc">意图理解、逻辑推导、决策支持</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <div class="feature-title">Planning 规划引擎</div>
+                        <div class="feature-desc">任务分解、步骤规划、依赖分析</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <div class="feature-title">Orchestration 调度引擎</div>
+                        <div class="feature-desc">Skill选择、执行编排、并行协调</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <div class="feature-title">Reflection 反思引擎</div>
+                        <div class="feature-desc">执行评估、策略优化、经验沉淀</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔌</div>
+                        <div class="feature-title">Integration 集成层</div>
+                        <div class="feature-desc">外部系统、数据源、工具调用</div>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 2: Necessity -->
+        <article id="necessity" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">2</span>
+                    <h2 class="section-title">必然性论证</h2>
+                </div>
+
+                <h3 class="subsection-title">2.1 技术演进：LLM的局限性必然催生AgentCore</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>LLM本质局限</th>
+                                <th>导致的问题</th>
+                                <th>AgentCore解决方案</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>被动响应</td>
+                                <td>必须等待用户输入，无法主动行动</td>
+                                <td><span class="tag tag-green">✓ 主动规划与执行</span></td>
+                            </tr>
+                            <tr>
+                                <td>无持久记忆</td>
+                                <td>每次对话从零开始，无法积累上下文</td>
+                                <td><span class="tag tag-green">✓ Memory系统</span></td>
+                            </tr>
+                            <tr>
+                                <td>单点执行</td>
+                                <td>只能完成单一任务步骤，无法编排复杂流程</td>
+                                <td><span class="tag tag-green">✓ 任务编排层</span></td>
+                            </tr>
+                            <tr>
+                                <td>孤立存在</td>
+                                <td>无法与外部系统深度集成</td>
+                                <td><span class="tag tag-green">✓ Integration层</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">GenAI悖论</div>
+                    <p class="insight-text">
+                        McKinsey 2025报告指出：78%的企业已使用GenAI，但<strong>超过80%报告无实质业绩贡献</strong>。
+                        根本原因是LLM只能做"被动响应的单点任务"，无法驱动复杂业务流程。
+                    </p>
+                </div>
+
+                <h3 class="subsection-title">2.2 产品形态：从"工具"到"伙伴"的必然升级</h3>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card current">
+                        <div class="comparison-title">✕ 当前问题：单点工具</div>
+                        <ul class="comparison-list">
+                            <li>Cursor只能写代码</li>
+                            <li>Gamma只能做PPT</li>
+                            <li>Perplexity只能搜索</li>
+                            <li>用户在工具间不断切换</li>
+                            <li>上下文无法延续</li>
+                            <li>能力无法组合</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card future">
+                        <div class="comparison-title">✓ 终极形态：统一代理</div>
+                        <ul class="comparison-list">
+                            <li>一个入口，统一上下文</li>
+                            <li>能力可组合、可编排</li>
+                            <li>调研Skill + PPT Skill = 完整报告</li>
+                            <li>用户只需描述目标</li>
+                            <li>代理自动规划执行</li>
+                            <li>持续学习，越用越强</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">2.3 用户价值：个人AI应该"成长"</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>成长维度</th>
+                                <th>人类助理</th>
+                                <th>当前AI工具</th>
+                                <th>AgentCore架构</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>记住偏好</td>
+                                <td><span class="tag tag-green">✓ 逐渐了解风格</span></td>
+                                <td><span class="tag tag-red">✕ 每次重来</span></td>
+                                <td><span class="tag tag-green">✓ Memory系统</span></td>
+                            </tr>
+                            <tr>
+                                <td>积累技能</td>
+                                <td><span class="tag tag-green">✓ 从简单到复杂</span></td>
+                                <td><span class="tag tag-red">✕ 能力固定</span></td>
+                                <td><span class="tag tag-green">✓ Skill可扩展</span></td>
+                            </tr>
+                            <tr>
+                                <td>主动思考</td>
+                                <td><span class="tag tag-green">✓ 预判需求</span></td>
+                                <td><span class="tag tag-red">✕ 被动响应</span></td>
+                                <td><span class="tag tag-green">✓ 规划调度能力</span></td>
+                            </tr>
+                            <tr>
+                                <td>跨领域协作</td>
+                                <td><span class="tag tag-green">✓ 灵活应变</span></td>
+                                <td><span class="tag tag-red">✕ 单一领域</span></td>
+                                <td><span class="tag tag-green">✓ 技能可组合</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">2.4 商业模式：平台 vs 工具的护城河差异</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>护城河来源</th>
+                                <th>单点Agent工具</th>
+                                <th>AgentCore平台</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>用户数据积累</td>
+                                <td><span class="tag tag-red">弱 - 单一场景</span></td>
+                                <td><span class="tag tag-green">强 - 全场景Memory</span></td>
+                            </tr>
+                            <tr>
+                                <td>迁移成本</td>
+                                <td><span class="tag tag-red">低 - 容易替换</span></td>
+                                <td><span class="tag tag-green">高 - 个性化不可迁移</span></td>
+                            </tr>
+                            <tr>
+                                <td>网络效应</td>
+                                <td><span class="tag tag-red">无</span></td>
+                                <td><span class="tag tag-green">有 - Skill生态</span></td>
+                            </tr>
+                            <tr>
+                                <td>竞争格局</td>
+                                <td><span class="tag tag-orange">同质化价格战</span></td>
+                                <td><span class="tag tag-green">差异化平台壁垒</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 3: Foresight -->
+        <article id="foresight" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">3</span>
+                    <h2 class="section-title">前瞻性验证</h2>
+                </div>
+
+                <h3 class="subsection-title">3.1 行业头部玩家已在布局此方向</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-company">OpenAI</div>
+                        <div class="timeline-content">
+                            2025年1月发布 Operator（Computer Use Agent）<br>
+                            从ChatGPT（对话）→ GPT Actions（工具调用）→ Operator（自主执行）<br>
+                            明确的"通用代理"路径
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">Anthropic</div>
+                        <div class="timeline-content">
+                            Claude Computer Use 比OpenAI更早发布<br>
+                            Model Context Protocol (MCP) 标准化Agent与工具的连接<br>
+                            推动Agent生态标准化
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">Microsoft</div>
+                        <div class="timeline-content">
+                            70%的Fortune 500公司使用Microsoft 365 Copilot<br>
+                            正在将Agent嵌入Dynamics 365核心<br>
+                            重构BizApp架构为"Agent-native"
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">Google</div>
+                        <div class="timeline-content">
+                            Gemini + Google Workspace 深度集成<br>
+                            Agent2Agent (A2A) 协议<br>
+                            多Agent协作架构
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">3.2 McKinsey 提出 Agentic AI Mesh 架构范式</h3>
+                
+                <div class="quote">
+                    <p class="quote-text">
+                        "AI agents mark a major evolution in enterprise AI—extending gen AI from reactive content generation to autonomous, goal-driven execution. Agents can understand goals, break them into subtasks, interact with both humans and systems, execute actions, and adapt in real time."
+                    </p>
+                    <p class="quote-source">— McKinsey, "Seizing the Agentic AI Advantage" (2025.06)</p>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>McKinsey Agentic AI Mesh</th>
+                                <th>AgentCore + Skills 架构</th>
+                                <th>对应关系</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Composability（可组合）</td>
+                                <td>Skills可插拔</td>
+                                <td><span class="tag tag-green">完全一致</span></td>
+                            </tr>
+                            <tr>
+                                <td>Distributed Intelligence</td>
+                                <td>多Skill协作</td>
+                                <td><span class="tag tag-green">完全一致</span></td>
+                            </tr>
+                            <tr>
+                                <td>Layered Decoupling</td>
+                                <td>AgentCore与Skills分离</td>
+                                <td><span class="tag tag-green">完全一致</span></td>
+                            </tr>
+                            <tr>
+                                <td>Governed Autonomy</td>
+                                <td>调度层统一管理</td>
+                                <td><span class="tag tag-green">完全一致</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">行业验证</div>
+                    <p class="insight-text">
+                        你的思路不是空想，而是<strong>行业共识的方向</strong>。头部玩家都在从"单点Agent"走向"通用代理+可组合能力"。
+                    </p>
+                </div>
+
+                <h3 class="subsection-title">3.3 从 Vertical Agents 到 Universal Agent 的范式迁移</h3>
+                
+                <p style="margin-bottom: var(--spacing-md);">
+                    McKinsey指出当前GenAI应用分为两类：<strong>Horizontal</strong>（通用型）和 <strong>Vertical</strong>（垂直型）。
+                    而<strong>90%的Vertical Use Cases停留在试点阶段</strong>，无法规模化。
+                </p>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card current">
+                        <div class="comparison-title">传统模式</div>
+                        <ul class="comparison-list">
+                            <li>每个Agent独立构建</li>
+                            <li>缺乏统一能力底座</li>
+                            <li>没有可复用的编排层</li>
+                            <li>跨场景上下文割裂</li>
+                            <li>难以规模化</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card future">
+                        <div class="comparison-title">终极形态</div>
+                        <ul class="comparison-list">
+                            <li>统一的AgentCore底座</li>
+                            <li>Skill作为可组合模块</li>
+                            <li>共享编排与调度层</li>
+                            <li>上下文跨Skill连续</li>
+                            <li>天然可规模化</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 4: Code Agent Core -->
+        <article id="codeagent" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">4</span>
+                    <h2 class="section-title">为什么终态产品必须从 Code Agent 演进</h2>
+                </div>
+
+                <div class="core-insight" style="border-left-color: var(--color-info);">
+                    <div class="core-insight-label" style="color: var(--color-info);">核心论断</div>
+                    <h2 class="core-insight-title">
+                        AI产品的终极形态，必然是从 <em style="color: var(--color-info);">Code Agent</em> 扩展出来的"一专多能"产品，而不是从通用Agent出发的"通才"产品。
+                    </h2>
+                    <p class="core-insight-text">
+                        Manus、小龙虾等"通用Agent"试图直接做"横杠"，没有"竖杠"作为根基。而Cursor/Windsurf的路线更接近终态。
+                    </p>
+                </div>
+
+                <h3 class="subsection-title">4.1 T型人才模型的启示</h3>
+                
+                <div class="architecture-diagram">
+                    <div style="font-size: 14px; margin-bottom: var(--spacing-md);">
+                        <strong>T型人才 = 深度专业（竖杠）+ 广度涉猎（横杠）</strong>
+                    </div>
+                    <div style="font-family: monospace; font-size: 13px; background: white; padding: var(--spacing-md); border-radius: var(--radius-md); display: inline-block;">
+                        ━━━━━━━━━━━━━━━━━━━━━━━━━ ← 广度：跨领域涉猎<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│ ← 深度：核心专业<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼
+                    </div>
+                    <div style="margin-top: var(--spacing-md); font-size: 14px; color: var(--color-text-secondary);">
+                        <strong>关键洞察</strong>：T型人才的成长路径是<span style="color: var(--color-success); font-weight: 600;">先建立深度，再扩展广度</span>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">4.2 为什么 Code Agent 是最佳起点</h3>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0969DA, #7C3AED);">💻</div>
+                        <div class="feature-title">代码是"元技能"</div>
+                        <div class="feature-desc">会写代码的AI可以"造"其他能力，不会写代码的AI只能"调用"别人造好的能力</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0969DA, #7C3AED);">🧠</div>
+                        <div class="feature-title">推理优势</div>
+                        <div class="feature-desc">代码训练带来结构化思维、精确性、可验证性，推理能力显著更强</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0969DA, #7C3AED);">🔧</div>
+                        <div class="feature-title">造物能力</div>
+                        <div class="feature-desc">Code Agent可以为自己开发新Skill，实现能力的自我扩展</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">4.3 从 Code Agent 到通用 Agent 的演进路径</h3>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-company">阶段1: 纯代码能力</div>
+                        <div class="timeline-content">写代码、调试、重构、代码审查</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">阶段2: 代码+文档</div>
+                        <div class="timeline-content">写README、技术文档、API文档</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">阶段3: 代码+工具集成</div>
+                        <div class="timeline-content">调用API、集成外部服务、数据分析</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">阶段4: 代码+自动化</div>
+                        <div class="timeline-content">写脚本自动化各种任务、工作流编排</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">阶段5: 代码+技能构建</div>
+                        <div class="timeline-content">为自己开发新Skill，能力自我扩展</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-company">最终: 通用Agent（以代码为核心）</div>
+                        <div class="timeline-content">代码能力为核，Skill无限扩展，一专多能</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">4.4 Manus/小龙虾 vs Cursor/Windsurf</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>对比维度</th>
+                                <th>Manus/小龙虾</th>
+                                <th>Cursor/Windsurf</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>起点</strong></td>
+                                <td><span class="tag tag-orange">通用能力</span></td>
+                                <td><span class="tag tag-green">代码能力</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>问题</strong></td>
+                                <td>什么都能做一点，什么都不精通</td>
+                                <td>代码精通，正在向通用扩展</td>
+                            </tr>
+                            <tr>
+                                <td><strong>护城河</strong></td>
+                                <td><span class="tag tag-red">弱 - 无法建立深度</span></td>
+                                <td><span class="tag tag-green">强 - 有深度根基</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>扩展方式</strong></td>
+                                <td>平摊式通用</td>
+                                <td>有根基的扩展</td>
+                            </tr>
+                            <tr>
+                                <td><strong>预测</strong></td>
+                                <td><span class="tag tag-red">不是终态</span></td>
+                                <td><span class="tag tag-green">更接近终态</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">核心结论</div>
+                    <p class="insight-text">
+                        <strong>终极AI产品 = Code Agent（核心专长）+ 可扩展Skills（广度能力）</strong><br>
+                        这是"一专多能"的T型人才模式，而不是"通才"的平庸模式。
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 5: Human-AI Growth Analogy -->
+        <article id="growth" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">5</span>
+                    <h2 class="section-title">人与AI产品的完备成长类比</h2>
+                </div>
+
+                <p style="margin-bottom: var(--spacing-lg);">
+                    为了让"AgentCore + Skills"的思路更好被理解，把人的成长路径和AI产品的演进做一个完备的对照。
+                </p>
+
+                <h3 class="subsection-title">5.1 成长阶段对照</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>人的成长阶段</th>
+                                <th>对应能力</th>
+                                <th>AI产品演进</th>
+                                <th>产品形态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>婴幼儿期</td>
+                                <td>感知、基本认知</td>
+                                <td>LLM基础</td>
+                                <td>纯Chat对话</td>
+                            </tr>
+                            <tr>
+                                <td>小学</td>
+                                <td>通识学习、基础技能</td>
+                                <td>Agent雏形</td>
+                                <td>单一工具Agent</td>
+                            </tr>
+                            <tr>
+                                <td>中学</td>
+                                <td>学科分化、兴趣发现</td>
+                                <td>能力分化</td>
+                                <td>垂直领域Agent</td>
+                            </tr>
+                            <tr>
+                                <td><strong>大学</strong></td>
+                                <td><strong>专业深造</strong></td>
+                                <td><strong>专业化</strong></td>
+                                <td><strong>Code Agent等专精产品</strong></td>
+                            </tr>
+                            <tr>
+                                <td>职场初期</td>
+                                <td>单一技能精通</td>
+                                <td>核心能力固化</td>
+                                <td>某领域最强Agent</td>
+                            </tr>
+                            <tr>
+                                <td>职场中期</td>
+                                <td>技能扩展、跨领域</td>
+                                <td>Skill扩展</td>
+                                <td>AgentCore + 多Skills</td>
+                            </tr>
+                            <tr>
+                                <td>职场后期</td>
+                                <td>一专多能、带团队</td>
+                                <td>成熟体系</td>
+                                <td>通用Agent平台</td>
+                            </tr>
+                            <tr>
+                                <td>专家/导师</td>
+                                <td>知识传承</td>
+                                <td>生态系统</td>
+                                <td>Agent生态 + Skill市场</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">5.2 能力要素对照</h3>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card future" style="border-left-color: var(--color-info);">
+                        <div class="comparison-title" style="color: var(--color-info);">👤 人的能力</div>
+                        <ul class="comparison-list">
+                            <li style="font-weight: 600;">大脑（认知核心）</li>
+                            <li>记忆力</li>
+                            <li>推理能力</li>
+                            <li>规划能力</li>
+                            <li>执行力</li>
+                            <li>反思能力</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card future">
+                        <div class="comparison-title">🤖 AI的能力</div>
+                        <ul class="comparison-list">
+                            <li style="font-weight: 600;">AgentCore（能力内核）</li>
+                            <li>Memory系统</li>
+                            <li>Reasoning引擎</li>
+                            <li>Planning引擎</li>
+                            <li>Orchestration调度</li>
+                            <li>Reflection反思</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card future" style="border-left-color: var(--color-purple);">
+                        <div class="comparison-title" style="color: var(--color-purple);">👤 人的专业技能</div>
+                        <ul class="comparison-list">
+                            <li>编程能力</li>
+                            <li>写作能力</li>
+                            <li>分析能力</li>
+                            <li>沟通能力</li>
+                            <li>管理能力</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card future" style="border-left-color: var(--color-purple);">
+                        <div class="comparison-title" style="color: var(--color-purple);">🤖 AI的Skills</div>
+                        <ul class="comparison-list">
+                            <li>Code Skill</li>
+                            <li>Writing Skill</li>
+                            <li>Analysis Skill</li>
+                            <li>Communication Skill</li>
+                            <li>Orchestration Skill</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">5.3 成长原则对照</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>人的成长原则</th>
+                                <th>AI产品成长原则</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>先专后广</strong></td>
+                                <td>先把核心能力做到极致，再扩展其他Skill</td>
+                            </tr>
+                            <tr>
+                                <td><strong>刻意练习</strong></td>
+                                <td>从用户反馈中持续优化，而非静态部署</td>
+                            </tr>
+                            <tr>
+                                <td><strong>知识内化</strong></td>
+                                <td>把成功经验沉淀到Memory，形成"直觉"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>渐进式成长</strong></td>
+                                <td>Skill按需获取，能力逐步积累</td>
+                            </tr>
+                            <tr>
+                                <td><strong>个性化发展</strong></td>
+                                <td>基于用户偏好定制，不是千人一面</td>
+                            </tr>
+                            <tr>
+                                <td><strong>反思迭代</strong></td>
+                                <td>执行后反思，持续改进策略</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">5.4 现实案例印证</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>人物</th>
+                                <th>起点专业</th>
+                                <th>扩展路径</th>
+                                <th>结果</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Elon Musk</td>
+                                <td>物理+编程</td>
+                                <td>→ 支付 → 火箭 → 汽车 → AI</td>
+                                <td><span class="tag tag-green">跨领域颠覆者</span></td>
+                            </tr>
+                            <tr>
+                                <td>比尔·盖茨</td>
+                                <td>编程</td>
+                                <td>→ 操作系统 → 办公软件 → 云服务</td>
+                                <td><span class="tag tag-green">软件帝国</span></td>
+                            </tr>
+                            <tr>
+                                <td>任正非</td>
+                                <td>通信技术</td>
+                                <td>→ 设备 → 手机 → 云 → 汽车</td>
+                                <td><span class="tag tag-green">技术集团</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">关键结论</div>
+                    <p class="insight-text">
+                        <strong>没有人是"一开始就什么都做"然后成功的。</strong><br>
+                        成功路径总是：先在一个领域做到极致，然后以此为根基扩展。<br>
+                        AI产品的成长路径，也应该遵循这个规律。
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 6: Design -->
+        <article id="design" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">6</span>
+                    <h2 class="section-title">面向终态的产品设计原则</h2>
+                </div>
+
+                <h3 class="subsection-title">6.1 架构原则</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>原则</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Core + Skill 分离</strong></td>
+                                <td>通用能力和专业技能解耦，各自演进</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory First</strong></td>
+                                <td>记忆是差异化的核心，必须从第一天设计</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Skill as Plugin</strong></td>
+                                <td>技能即插件，支持动态加载、热更新</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Context Continuity</strong></td>
+                                <td>跨Skill的上下文必须连续</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Growth by Design</strong></td>
+                                <td>成长性是产品特性，不是附加功能</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">6.2 Skill 设计规范</h3>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <div class="feature-title">自描述的</div>
+                        <div class="feature-desc">清晰定义能力边界和触发条件</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔗</div>
+                        <div class="feature-title">可组合的</div>
+                        <div class="feature-desc">输入输出标准化，支持链式调用</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔄</div>
+                        <div class="feature-title">可演进的</div>
+                        <div class="feature-desc">支持版本管理和热更新</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <div class="feature-title">可学习的</div>
+                        <div class="feature-desc">从用户反馈中持续优化</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">6.3 成长系统设计</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>成长维度</th>
+                                <th>实现方式</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>偏好学习</strong></td>
+                                <td>从交互中学习用户风格、记录决策模式、自动调整输出格式</td>
+                            </tr>
+                            <tr>
+                                <td><strong>技能获取</strong></td>
+                                <td>主动发现新Skill、根据任务按需加载、从用户教导中学习新能力</td>
+                            </tr>
+                            <tr>
+                                <td><strong>策略优化</strong></td>
+                                <td>从执行结果中学习、优化任务规划策略、改进Skill组合方式</td>
+                            </tr>
+                            <tr>
+                                <td><strong>经验积累</strong></td>
+                                <td>成功案例沉淀为模板、失败教训作为约束、跨场景知识迁移</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 7: Gaming Model -->
+        <article id="gaming" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">7</span>
+                    <h2 class="section-title">产品形态：养成类游戏而非工具</h2>
+                </div>
+
+                <div class="core-insight" style="border-left-color: var(--color-purple);">
+                    <div class="core-insight-label" style="color: var(--color-purple);">核心洞察</div>
+                    <h2 class="core-insight-title">
+                        AI产品的终极形态，本质上是一个<em style="color: var(--color-purple);">"养成类游戏"</em>——用户在其中培养一个（或多个）"AI人"，持续增强其能力，最终为用户工作。
+                    </h2>
+                </div>
+
+                <h3 class="subsection-title">7.1 传统AI vs 养成类AI</h3>
+
+                <div class="comparison-grid">
+                    <div class="comparison-card current">
+                        <div class="comparison-title">传统AI产品</div>
+                        <ul class="comparison-list">
+                            <li>工具 → 用完即走</li>
+                            <li>冷冰冰的效率工具</li>
+                            <li>被动使用</li>
+                            <li>千人一面</li>
+                            <li>靠功能留存</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card future" style="border-left-color: var(--color-purple);">
+                        <div class="comparison-title" style="color: var(--color-purple);">养成类AI产品</div>
+                        <ul class="comparison-list">
+                            <li>伙伴 → 长期陪伴</li>
+                            <li>有成就感的"培养"</li>
+                            <li>主动投入（像养孩子/宠物）</li>
+                            <li>我的AI独一无二</li>
+                            <li>靠情感+沉没成本留存</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">7.2 游戏化要素映射</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>养成游戏要素</th>
+                                <th>AI产品映射</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>角色等级/成长曲线</td>
+                                <td>Agent能力等级（新手→专家→大师）</td>
+                            </tr>
+                            <tr>
+                                <td>技能树</td>
+                                <td>Skill系统（可解锁/学习新技能）</td>
+                            </tr>
+                            <tr>
+                                <td>装备/道具</td>
+                                <td>工具集成（MCP连接、API调用）</td>
+                            </tr>
+                            <tr>
+                                <td>经验值</td>
+                                <td>使用频率+任务完成度</td>
+                            </tr>
+                            <tr>
+                                <td>成就系统</td>
+                                <td>里程碑（第一次写PPT、第一次调研...）</td>
+                            </tr>
+                            <tr>
+                                <td>角色属性</td>
+                                <td>Agent个性（风格、偏好、专长）</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">7.3 心理学基础</h3>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">🛠️</div>
+                        <div class="feature-title">宜家效应</div>
+                        <div class="feature-desc">人们对自己参与创造的东西估值更高</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">💰</div>
+                        <div class="feature-title">沉没成本</div>
+                        <div class="feature-desc">投入越多，越不舍得离开</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">🧠</div>
+                        <div class="feature-title">拟人化倾向</div>
+                        <div class="feature-desc">人类天然会对有"人格"的东西产生情感</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #7C3AED, #EC4899);">🏆</div>
+                        <div class="feature-title">成就动机</div>
+                        <div class="feature-desc">看到自己"养大"的AI变强，有极大满足感</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">7.4 商业模式启发</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>传统SaaS</th>
+                                <th>养成类AI产品</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>按功能付费</td>
+                                <td>按"成长速度"付费</td>
+                            </tr>
+                            <tr>
+                                <td>订阅制</td>
+                                <td>训练包/技能包</td>
+                            </tr>
+                            <tr>
+                                <td>替换成本低</td>
+                                <td>迁移成本极高（情感+数据）</td>
+                            </tr>
+                            <tr>
+                                <td>用户是"使用者"</td>
+                                <td>用户是"培养者/主人"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 8: Clone Mechanism -->
+        <article id="clone" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">8</span>
+                    <h2 class="section-title">架构设计：Agent模板 + 分身机制</h2>
+                </div>
+
+                <div class="core-insight" style="border-left-color: var(--color-warning);">
+                    <div class="core-insight-label" style="color: var(--color-warning);">核心设计</div>
+                    <h2 class="core-insight-title">
+                        应该是一个非常强的<em style="color: var(--color-warning);">Agent模板</em>，然后基于这个Agent可以派生出<em style="color: var(--color-warning);">Agent分身</em>。或者是1个Agent，但它可以并行干活——本质上是一样的。
+                    </h2>
+                </div>
+
+                <h3 class="subsection-title">8.1 两种表达方式本质等价</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>表达方式</th>
+                                <th>用户视角</th>
+                                <th>技术实现</th>
+                                <th>本质</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1个Agent + 分身</strong></td>
+                                <td>我有一个AI，它可以分身干活</td>
+                                <td>主模板 + 多实例</td>
+                                <td><span class="tag tag-green">共享能力，并行执行</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>1个Agent + 并行</strong></td>
+                                <td>我的AI可以同时做多件事</td>
+                                <td>单Agent + 多线程</td>
+                                <td><span class="tag tag-green">共享能力，并行执行</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">8.2 分身机制的关键设计</h3>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #BF8700, #F59E0B);">🧠</div>
+                        <div class="feature-title">共享Memory</div>
+                        <div class="feature-desc">所有分身共享主Agent的记忆，知道用户偏好</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #BF8700, #F59E0B);">📋</div>
+                        <div class="feature-title">独立上下文</div>
+                        <div class="feature-desc">每个分身有独立的任务上下文，互不干扰</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #BF8700, #F59E0B);">⚡</div>
+                        <div class="feature-title">能力继承</div>
+                        <div class="feature-desc">分身继承主Agent的所有Skill</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #BF8700, #F59E0B);">🔄</div>
+                        <div class="feature-title">经验回流</div>
+                        <div class="feature-desc">分身执行的结果和经验沉淀回主Agent</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">8.3 成长阶梯与并行能力</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>成长阶段</th>
+                                <th>并行能力</th>
+                                <th>对应人的状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>新手期</strong></td>
+                                <td>只能串行（1个任务）</td>
+                                <td>新员工，只能专注一件事</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成长期</strong></td>
+                                <td>2-3个并行任务</td>
+                                <td>熟练员工，可以多线程工作</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成熟期</strong></td>
+                                <td>5-10个并行任务</td>
+                                <td>资深专家，可以同时推进多项目</td>
+                            </tr>
+                            <tr>
+                                <td><strong>专家期</strong></td>
+                                <td>无限并行（受算力限制）</td>
+                                <td>团队领导，可以"分身"给多个下属</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="insight-box">
+                    <div class="insight-title">付费阶梯</div>
+                    <p class="insight-text">
+                        <strong>免费版</strong>：1个并行任务<br>
+                        <strong>专业版</strong>：5个并行任务<br>
+                        <strong>团队版</strong>：无限并行
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 9: Barry Zhang -->
+        <article id="barry" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">9</span>
+                    <h2 class="section-title">理论验证：Barry Zhang (Anthropic) 的 Skills 范式</h2>
+                </div>
+
+                <div class="core-insight" style="border-left-color: var(--color-info);">
+                    <div class="core-insight-label" style="color: var(--color-info);">行业验证</div>
+                    <h2 class="core-insight-title">
+                        Anthropic 的 Skills 范式是我们提出的 <em style="color: var(--color-info);">"AgentCore + Skills"</em> 架构的业界实践验证。
+                    </h2>
+                    <p class="core-insight-text">
+                        Barry Zhang (张宇杰) - Anthropic Applied AI 团队负责人，其演讲《Don't Build Agents, Build Skills Instead》获得 742K+ 观看量。
+                    </p>
+                </div>
+
+                <h3 class="subsection-title">9.1 核心思想对照</h3>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>我们的架构设计</th>
+                                <th>Barry Zhang / Anthropic 的实践</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>AgentCore + Skills</strong></td>
+                                <td>Claude Code + Skills</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Code Agent 为核心</strong></td>
+                                <td>"Claude Code is a general-purpose agent"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Skill 可插拔/可组合</strong></td>
+                                <td>Skills 按需加载、Token高效</td>
+                            </tr>
+                            <tr>
+                                <td><strong>成长系统</strong></td>
+                                <td>Agent 为 Agent 写 Skills</td>
+                            </tr>
+                            <tr>
+                                <td><strong>一专多能 vs 通才</strong></td>
+                                <td>"Agent底层比我们想象的更通用"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">9.2 关键引用</h3>
+
+                <div class="insight-box">
+                    <div class="insight-title">Barry Zhang 原话</div>
+                    <p class="insight-text">
+                        <em>"We used to think agents in different domains will look very different. The agent underneath is actually more universal than we thought."</em><br><br>
+                        <em>"Skills actually came out of a prototype I built demonstrating that Claude Code is a general-purpose agent :-)"</em><br><br>
+                        <em>"The industry doesn't need a flurry of agent-building. Instead, 'skills' can equip a general agent with domain expertise."</em>
+                    </p>
+                </div>
+
+                <h3 class="subsection-title">9.3 Skills 的实际采用数据</h3>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value green">数千个</div>
+                        <div class="stat-label">5周内用户创建的Skills</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value blue">742K+</div>
+                        <div class="stat-label">演讲观看量</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value orange">Fortune 100</div>
+                        <div class="stat-label">正在使用Skills的公司</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value purple">非技术领域</div>
+                        <div class="stat-label">会计/法律/招聘都有Skills</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">9.4 Agent 设计三大原则</h3>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0969DA, #54AEFF);">🎯</div>
+                        <div class="feature-title">Don't Build Agents for Everything</div>
+                        <div class="feature-desc">找到最简单的解决方案，只有必要时才增加复杂度</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0969DA, #54AEFF);">✨</div>
+                        <div class="feature-title">Keep It Simple</div>
+                        <div class="feature-desc">Agent = Model + Tools + Loop（环境反馈）</div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: linear-gradient(135deg, #0969DA, #54AEFF);">🤔</div>
+                        <div class="feature-title">Think Like Your Agents</div>
+                        <div class="feature-desc">将自己置于Agent的上下文窗口中思考</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">9.5 未来展望</h3>
+
+                <div class="insight-box">
+                    <div class="insight-title">自我进化的生态系统</div>
+                    <p class="insight-text">
+                        <strong>"Agents writing skills for other agents"</strong><br><br>
+                        1. Agent 使用 skills 完成任务<br>
+                        2. Agent 发现现有 skills 不足<br>
+                        3. Agent 创建新的 skills<br>
+                        4. 新 skills 被其他 Agent 使用<br>
+                        5. 整体能力螺旋上升
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <!-- Tab 10: Conclusion -->
+        <article id="conclusion" class="tab-panel">
+            <section class="section">
+                <div class="section-header">
+                    <span class="section-number">10</span>
+                    <h2 class="section-title">结论</h2>
+                </div>
+
+                <h3 class="subsection-title">必然性总结</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>维度</th>
+                                <th>为什么是必然的</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>技术</strong></td>
+                                <td>LLM的被动性、无记忆、单点局限，必然需要AgentCore层来弥补</td>
+                            </tr>
+                            <tr>
+                                <td><strong>产品</strong></td>
+                                <td>用户需要"伙伴"而非"工具"，工具割裂必然走向统一代理</td>
+                            </tr>
+                            <tr>
+                                <td><strong>价值</strong></td>
+                                <td>个性化、成长性是终极价值，需要Memory + Skills架构支撑</td>
+                            </tr>
+                            <tr>
+                                <td><strong>商业</strong></td>
+                                <td>平台护城河远强于单点工具，生态效应是差异化关键</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subsection-title">核心洞察总结</h3>
+                
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>洞察</th>
+                                <th>说明</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Code Agent为核心</strong></td>
+                                <td>终态产品必须从Code Agent演进，而非从通用Agent出发</td>
+                            </tr>
+                            <tr>
+                                <td><strong>养成类游戏形态</strong></td>
+                                <td>AI产品本质是"培养一个人"，而非"使用一个工具"</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Agent模板+分身</strong></td>
+                                <td>一个强Agent可以派生分身并行干活，经验统一回流</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Skills范式验证</strong></td>
+                                <td>Anthropic的实践证明了我们架构的正确性</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <div class="conclusion">
+                <div class="conclusion-title">行动建议</div>
+                <p class="conclusion-text">
+                    不要做一个个Agent，要做AgentCore。<br>
+                    不要从通用出发，要从Code Agent出发。<br>
+                    把每一个"功能"都设计成可插拔的Skill，<br>
+                    以代码能力为核心根基，向外扩展，<br>
+                    把产品设计成"养成类游戏"，<br>
+                    这才是面向终态的产品设计。
+                </p>
+                <span class="conclusion-highlight">Cursor/Windsurf的路线 > Manus/小龙虾的路线</span>
+            </div>
+        </article>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>参考来源：McKinsey "Seizing the Agentic AI Advantage" (2025.06) | Barry Zhang/Anthropic "Don't Build Agents, Build Skills Instead" (2025.11) | Microsoft Work Trend Index 2025</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById(btn.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

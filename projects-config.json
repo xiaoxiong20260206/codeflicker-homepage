@@ -1,0 +1,206 @@
+{
+  "version": "2.0.0",
+  "generatedAt": "2026-03-12T14:00:00.000Z",
+  "description": "项目配置文件，用于generate_projects_data.py读取。所有展示项目均在此手动配置，确保命名清晰、链接可用。",
+  
+  "projects": [
+    {
+      "id": "ai-insight",
+      "name": "AI持续洞察平台",
+      "subtitle": "日报+周报+调研+追踪+知识沉淀",
+      "category": "tools",
+      "icon": "🔬",
+      "goal": "建立系统化、可持续的AI行业追踪学习平台",
+      "outcome": "整合日报、周报、深度调研、追踪体系、知识沉淀五大模块",
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight",
+      "quality_level": "featured"
+    },
+    {
+      "id": "ai-coding-assistant",
+      "name": "AI编码助手深度对比",
+      "subtitle": "Claude Code/Cursor/Copilot 八维评估",
+      "category": "research",
+      "icon": "💻",
+      "goal": "对比主流AI编码助手的能力差异",
+      "outcome": "八维评估框架下的深度对比报告",
+      "status": "deployed",
+      "completedAt": "2026-03-09",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-coding-assistant-research/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-coding-assistant-research",
+      "quality_level": "excellent"
+    },
+    {
+      "id": "ai-studio",
+      "name": "企业AI工程师产品体系",
+      "subtitle": "AI Studio 企业级数字员工方案",
+      "category": "research",
+      "icon": "🏢",
+      "goal": "设计企业级AI数字员工平台的完整产品体系",
+      "outcome": "用户场景/产品设计/技术架构完整方案",
+      "status": "deployed",
+      "completedAt": "2026-03-07",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-studio/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-studio",
+      "quality_level": "excellent"
+    },
+    {
+      "id": "ai-financial",
+      "name": "AI金融量化场景分析",
+      "subtitle": "私募量化工作场景可视化",
+      "category": "research",
+      "icon": "💰",
+      "goal": "分析私募量化公司的AI应用场景",
+      "outcome": "8大岗位Agent类型与开发路线图",
+      "status": "deployed",
+      "completedAt": "2026-03-07",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-financial/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-financial",
+      "quality_level": "normal"
+    },
+    {
+      "id": "ai-tools-analysis",
+      "name": "企业数字员工场景分析",
+      "subtitle": "10大岗位AI Agent能力评估",
+      "category": "research",
+      "icon": "🤖",
+      "goal": "评估企业各岗位的AI Agent覆盖能力",
+      "outcome": "9种Agent类型/5层架构/技术选型分析",
+      "status": "deployed",
+      "completedAt": "2026-03-07",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-tools-analysis/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-tools-analysis",
+      "quality_level": "normal"
+    },
+    {
+      "id": "ai-essence-insight",
+      "name": "AI生态本质洞察",
+      "subtitle": "13维度五层闭环分析",
+      "category": "research",
+      "icon": "🔮",
+      "goal": "透视AI行业的底层逻辑和发展规律",
+      "outcome": "跨13个维度的四层本质分析报告",
+      "status": "deployed",
+      "completedAt": "2026-03-07",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-essence-insight/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-essence-insight",
+      "quality_level": "excellent"
+    },
+    {
+      "id": "ai-agent-guide",
+      "name": "AI Agent团队落地指南",
+      "subtitle": "从认知到实践4章完整指南",
+      "category": "research",
+      "icon": "📋",
+      "goal": "为团队引入AI Agent提供完整的落地路径",
+      "outcome": "场景/架构/实践/演进四章节指南",
+      "status": "deployed",
+      "completedAt": "2026-03-07",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-agent-guide/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-agent-guide",
+      "quality_level": "normal"
+    },
+    {
+      "id": "naval-ai-2026",
+      "name": "纳瓦尔AI观点深度解读",
+      "subtitle": "Naval Ravikant 7大AI主题拆解",
+      "category": "research",
+      "icon": "🧭",
+      "goal": "深度解读Naval Ravikant对AI未来的核心观点",
+      "outcome": "7个独立专题的深度拆解报告",
+      "status": "deployed",
+      "completedAt": "2026-03-07",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/people/naval-ai-2026/",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/people/naval-ai-2026",
+      "quality_level": "normal"
+    },
+    {
+      "id": "pine-ai-native-team",
+      "name": "Pine AI原生团队调研",
+      "subtitle": "AI原生开发范式实践深度对话",
+      "category": "research",
+      "icon": "🌲",
+      "goal": "调研Pine AI的AI原生团队建设实践",
+      "outcome": "AI编程工具演进/Evaluation体系/组织架构转型",
+      "status": "deployed",
+      "completedAt": "2026-03-10",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/pine-ai-native-team.html",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/pine-ai-native-team.html",
+      "quality_level": "normal"
+    },
+    {
+      "id": "ai-product-transformation",
+      "name": "AI时代产品人进化指南",
+      "subtitle": "PM五大原型+全栈构建者框架",
+      "category": "research",
+      "icon": "🎯",
+      "goal": "探索AI时代产品经理的角色转型路径",
+      "outcome": "Peter Deng + Tomer Cohen框架融合分析",
+      "status": "deployed",
+      "completedAt": "2026-03-08",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-product-transformation-2026.html",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/ai-product-transformation-2026.html",
+      "quality_level": "normal"
+    },
+    {
+      "id": "openclaw-research",
+      "name": "OpenClaw深度调研",
+      "subtitle": "小龙虾开源主权智能体分析",
+      "category": "research",
+      "icon": "🔍",
+      "goal": "深度调研OpenClaw开源Agent平台",
+      "outcome": "与Claude Cowork/Manus AI竞品对比分析",
+      "status": "deployed",
+      "completedAt": "2026-03-10",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/openclaw-deep-research-2026.html",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/topics/openclaw-deep-research-2026.html",
+      "quality_level": "normal"
+    },
+    {
+      "id": "ai-leaders-2026",
+      "name": "AI大神趋势洞察2026",
+      "subtitle": "9位AI领袖6大趋势深度分析",
+      "category": "research",
+      "icon": "🌟",
+      "goal": "从AI领域思想领袖的分享中提炼趋势",
+      "outcome": "6大趋势洞察+4大底层原理",
+      "status": "deployed",
+      "completedAt": "2026-03-04",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/trends/ai-leaders-2026.html",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/trends/ai-leaders-2026.html",
+      "quality_level": "featured"
+    },
+    {
+      "id": "barry-zhang-anthropic",
+      "name": "Anthropic Agent设计原则",
+      "subtitle": "Barry Zhang思想体系总结",
+      "category": "research",
+      "icon": "🏛️",
+      "goal": "系统梳理Anthropic Applied AI负责人的Agent设计哲学",
+      "outcome": "三大核心原则/五大工作流模式/Skills范式",
+      "status": "deployed",
+      "completedAt": "2026-03-05",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/trends/barry-zhang-anthropic.html",
+      "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/trends/barry-zhang-anthropic.html",
+      "quality_level": "normal"
+    }
+  ],
+  
+  "categories": {
+    "research": {"name": "调研类", "icon": "🔬", "color": "#a78bfa"},
+    "tools": {"name": "工具类", "icon": "🛠️", "color": "#4ade80"}
+  },
+  
+  "autoScan": {
+    "aiInsightResearch": false,
+    "knowledgeProjects": false,
+    "scanPaths": []
+  },
+  
+  "meta": {
+    "updateInstructions": "所有展示项目均在projects数组中手动维护，确保命名清晰、链接可用。已关闭自动扫描避免引入模糊命名。",
+    "lastUpdate": "2026-03-12"
+  }
+}

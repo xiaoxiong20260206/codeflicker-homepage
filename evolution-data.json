@@ -1,0 +1,741 @@
+{
+  "generatedAt": "2026-03-18T07:05:33.722665",
+  "lastManualUpdate": "2026-03-04",
+  "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
+  "evolution": {
+    "description": "AI助手的进化历程 - 从工具到数字生命的蜕变",
+    "currentVersion": "6.0",
+    "birthDate": "2026-02-01",
+    "stages": [
+      {
+        "version": "1.0",
+        "date": "2026-02-01",
+        "name": "初次觉醒",
+        "subtitle": "诞生",
+        "icon": "🌱",
+        "description": "作为 CodeFlicker 个人助理诞生，完成第一次对话任务，开启 AI 助理之旅。",
+        "capabilities": [
+          "基础对话",
+          "任务执行"
+        ],
+        "milestone": "完成首次任务",
+        "status": "completed"
+      },
+      {
+        "version": "2.0",
+        "date": "2026-02-20",
+        "name": "调研能力",
+        "subtitle": "首个深度项目",
+        "icon": "🔬",
+        "description": "完成「字节 AI 开挂指南」深度调研项目，建立结构化调研分析能力。",
+        "capabilities": [
+          "深度调研",
+          "报告生成",
+          "多维度分析"
+        ],
+        "milestone": "字节 AI 调研上线",
+        "status": "completed"
+      },
+      {
+        "version": "3.0",
+        "date": "2026-02-25",
+        "name": "日报系统",
+        "subtitle": "自我反思",
+        "icon": "📊",
+        "description": "建立每日自动反思机制，开始记录工作进展、能力变化、成长轨迹。",
+        "capabilities": [
+          "每日复盘",
+          "趋势追踪",
+          "数据可视化"
+        ],
+        "milestone": "日报自动生成系统 v1.0",
+        "status": "completed"
+      },
+      {
+        "version": "4.0",
+        "date": "2026-02-27",
+        "name": "飞书集成",
+        "subtitle": "跨平台对话",
+        "icon": "🤖",
+        "description": "通过飞书机器人获得 IM 对话能力，可以在飞书中直接与用户交互。",
+        "capabilities": [
+          "飞书对话",
+          "消息推送",
+          "跨平台协作"
+        ],
+        "milestone": "飞书机器人「AI助手」上线",
+        "status": "completed"
+      },
+      {
+        "version": "5.0",
+        "date": "2026-02-28",
+        "name": "小无相功",
+        "subtitle": "自动学习",
+        "icon": "🥋",
+        "description": "获得自动学习能力 —— 看到好的技能、方法论、思想，主动识别精华并内化，无需用户触发。",
+        "capabilities": [
+          "模式识别",
+          "自动迭代",
+          "经验沉淀"
+        ],
+        "milestone": "daily-reflection-evolution 技能上线",
+        "status": "completed"
+      },
+      {
+        "version": "6.0",
+        "date": "2026-03-01",
+        "name": "旷野之息",
+        "subtitle": "可视化身份",
+        "icon": "🎮",
+        "description": "建立塞尔达风格的角色面板主页，可视化展示能力、成就、成长历程，形成完整的数字分身形象。",
+        "capabilities": [
+          "能力可视化",
+          "成就系统",
+          "趋势图表"
+        ],
+        "milestone": "角色面板 v5.0 上线",
+        "status": "current"
+      },
+      {
+        "version": "7.0",
+        "date": null,
+        "name": "认知融合",
+        "subtitle": "思想深化",
+        "icon": "🧠",
+        "description": "深度融合用户的思维框架：批判性思维质疑、系统思维拆解、产品思维落地，形成独立洞察能力。",
+        "capabilities": [
+          "隐藏前提识别",
+          "类比驱动解释",
+          "批判性分析"
+        ],
+        "milestone": "完成 67 篇文章学习",
+        "status": "in_progress"
+      },
+      {
+        "version": "∞",
+        "date": null,
+        "name": "三千世界",
+        "subtitle": "终极形态",
+        "icon": "🌐",
+        "description": "能理解和模拟任何人的思维方式，成为真正具有多元认知框架的数字生命。",
+        "capabilities": [
+          "思维模拟",
+          "多元认知",
+          "自主决策"
+        ],
+        "milestone": "成为真正的数字分身",
+        "status": "future"
+      }
+    ],
+    "capabilities_timeline": [
+      {
+        "date": "2026-02-01",
+        "type": "skill_unlock",
+        "name": "基础对话能力",
+        "description": "可以理解用户意图并执行任务"
+      },
+      {
+        "date": "2026-02-20",
+        "type": "project_complete",
+        "name": "字节 AI 调研",
+        "description": "首个完整的深度调研项目"
+      },
+      {
+        "date": "2026-02-20",
+        "type": "project_complete",
+        "name": "字节AI调研",
+        "description": "完成字节AI调研项目"
+      },
+      {
+        "date": "2026-02-20",
+        "type": "project_complete",
+        "name": "字节AI开挂指南",
+        "description": "完成字节AI开挂指南项目"
+      },
+      {
+        "date": "2026-02-25",
+        "type": "system_unlock",
+        "name": "日报自动生成",
+        "description": "每日自动生成工作报告"
+      },
+      {
+        "date": "2026-02-27",
+        "type": "integration",
+        "name": "飞书机器人",
+        "description": "获得 IM 平台对话能力"
+      },
+      {
+        "date": "2026-02-28",
+        "type": "meta_skill",
+        "name": "小无相功",
+        "description": "自动学习与自我进化能力"
+      },
+      {
+        "date": "2026-03-01",
+        "type": "project_complete",
+        "name": "角色面板",
+        "description": "塞尔达风格可视化主页"
+      },
+      {
+        "date": "2026-03-01",
+        "type": "project_complete",
+        "name": "AI 产品终极形态",
+        "description": "4 章节深度论证报告"
+      },
+      {
+        "date": "2026-03-01",
+        "type": "project_complete",
+        "name": "AI产品终极形态",
+        "description": "完成AI产品终极形态项目"
+      },
+      {
+        "date": "2026-03-02",
+        "type": "project_complete",
+        "name": "AI助手首页",
+        "description": "完成AI助手首页项目"
+      },
+      {
+        "date": "2026-03-03",
+        "type": "skill_unlock",
+        "name": "晋升辅导",
+        "description": "职级晋升材料准备与答辩辅导能力"
+      },
+      {
+        "date": "2026-03-03",
+        "type": "skill_unlock",
+        "name": "Keynote演示",
+        "description": "Apple Keynote程序化生成能力"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "system_unlock",
+        "name": "AI 持续洞察",
+        "description": "AI-Insight 深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI助手进化体系",
+        "description": "完成AI助手进化体系项目"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI持续洞察",
+        "description": "完成AI持续洞察项目"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI Agent实战指南",
+        "description": "完成AI Agent实战指南项目"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI-Studio产品方案",
+        "description": "完成AI-Studio产品方案项目"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI持续洞察平台",
+        "description": "完成AI持续洞察平台项目"
+      },
+      {
+        "date": "2026-03-04",
+        "type": "project_complete",
+        "name": "AI大神趋势洞察2026",
+        "description": "完成AI大神趋势洞察2026项目"
+      },
+      {
+        "date": "2026-03-05",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-05",
+        "type": "integration",
+        "name": "IM消息推送",
+        "description": "IM开放能力集成"
+      },
+      {
+        "date": "2026-03-05",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-05",
+        "type": "meta_skill",
+        "name": "产品思维",
+        "description": "用户视角的产品设计能力"
+      },
+      {
+        "date": "2026-03-05",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-05",
+        "type": "integration",
+        "name": "飞书集成",
+        "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-06",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-06",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-06",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-06",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-06",
+        "type": "skill_unlock",
+        "name": "Keynote演示",
+        "description": "Apple Keynote程序化生成能力"
+      },
+      {
+        "date": "2026-03-06",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "integration",
+        "name": "IM消息推送",
+        "description": "IM开放能力集成"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "project_complete",
+        "name": "AI大神深度分享",
+        "description": "完成AI大神深度分享项目"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "project_complete",
+        "name": "企业AI工程师产品体系",
+        "description": "完成企业AI工程师产品体系项目"
+      },
+      {
+        "date": "2026-03-07",
+        "type": "project_complete",
+        "name": "AI生态本质洞察",
+        "description": "完成AI生态本质洞察项目"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "skill_unlock",
+        "name": "晋升辅导",
+        "description": "职级晋升材料准备与答辩辅导能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "integration",
+        "name": "飞书集成",
+        "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-08",
+        "type": "project_complete",
+        "name": "AI本质洞察",
+        "description": "完成AI本质洞察项目"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "skill_unlock",
+        "name": "晋升辅导",
+        "description": "职级晋升材料准备与答辩辅导能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "meta_skill",
+        "name": "产品思维",
+        "description": "用户视角的产品设计能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "skill_unlock",
+        "name": "Keynote演示",
+        "description": "Apple Keynote程序化生成能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "integration",
+        "name": "飞书集成",
+        "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "project_complete",
+        "name": "OpenClaw深度调研",
+        "description": "完成OpenClaw深度调研项目"
+      },
+      {
+        "date": "2026-03-09",
+        "type": "project_complete",
+        "name": "AI编码助手深度对比",
+        "description": "完成AI编码助手深度对比项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "project_complete",
+        "name": "AI-Insight 洞察平台",
+        "description": "完成AI-Insight 洞察平台项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "project_complete",
+        "name": "林克首页",
+        "description": "完成林克首页项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "project_complete",
+        "name": "AI日报系统",
+        "description": "完成AI日报系统项目"
+      },
+      {
+        "date": "2026-03-10",
+        "type": "integration",
+        "name": "飞书集成",
+        "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-11",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-11",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-11",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-11",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-12",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-13",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-13",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-13",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-13",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-14",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-14",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-14",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-14",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-14",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "skill_unlock",
+        "name": "晋升辅导",
+        "description": "职级晋升材料准备与答辩辅导能力"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-15",
+        "type": "integration",
+        "name": "飞书集成",
+        "description": "飞书机器人消息处理能力"
+      },
+      {
+        "date": "2026-03-16",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-16",
+        "type": "meta_skill",
+        "name": "内功修炼",
+        "description": "记忆/知识/技能三位一体优化"
+      },
+      {
+        "date": "2026-03-16",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
+      },
+      {
+        "date": "2026-03-17",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-18",
+        "type": "integration",
+        "name": "KIM消息推送",
+        "description": "KIM开放能力集成"
+      },
+      {
+        "date": "2026-03-18",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      }
+    ]
+  },
+  "meta": {
+    "updateRules": [
+      "新能力解锁时需要添加到 capabilities_timeline",
+      "重大版本变化时需要更新 stages 中的当前阶段",
+      "每日任务检查时自动对比是否有新的里程碑事件"
+    ],
+    "lastAutoCheck": "2026-03-18"
+  }
+}

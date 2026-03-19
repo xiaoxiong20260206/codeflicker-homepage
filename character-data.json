@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T12:36:26.905508",
+  "generatedAt": "2026-03-19T12:51:45.268194",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -78,7 +78,7 @@
           },
           {
             "name": "link-skill-dojo",
-            "displayName": "技能修炼场（Skill Dojo）",
+            "displayName": "技能修炼",
             "source": "AI核心能力",
             "level": 3,
             "exp": 64,
@@ -95,7 +95,7 @@
           },
           {
             "name": "link-skill-management",
-            "displayName": "技能优化（Skill Optimization）",
+            "displayName": "技能体系优化",
             "source": "AI核心能力",
             "level": 3,
             "exp": 62,
@@ -112,7 +112,7 @@
           },
           {
             "name": "link-find-skills",
-            "displayName": "Find Skills",
+            "displayName": "技能发现",
             "source": "AI核心能力",
             "level": 3,
             "exp": 62,
@@ -129,7 +129,7 @@
           },
           {
             "name": "link-learn-from-mistakes",
-            "displayName": "举一反三（即时复盘）",
+            "displayName": "举一反三",
             "source": "AI核心能力",
             "level": 3,
             "exp": 55,
@@ -156,8 +156,8 @@
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 27341,
-            "skillSizeLabel": "27K字 · 大型",
+            "skillSize": 30731,
+            "skillSizeLabel": "30K字 · 大型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -197,7 +197,7 @@
           },
           {
             "name": "link-proactive-agent",
-            "displayName": "主动自驱 (Proactive Agent)",
+            "displayName": "主动自驱",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -214,7 +214,7 @@
           },
           {
             "name": "link-daily-reflection-evolution",
-            "displayName": "闭关修炼 v12.0",
+            "displayName": "闭关修炼",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -231,7 +231,7 @@
           },
           {
             "name": "link-neigong-cultivation",
-            "displayName": "内功修炼（深度修炼）v4.7",
+            "displayName": "内功修炼",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -248,7 +248,7 @@
           },
           {
             "name": "link-memory-hygiene",
-            "displayName": "记忆优化（Memory Optimization）",
+            "displayName": "记忆优化",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -265,7 +265,7 @@
           },
           {
             "name": "link-knowledge-curator",
-            "displayName": "知识优化（Knowledge Optimization）",
+            "displayName": "知识优化",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -282,7 +282,7 @@
           },
           {
             "name": "link-skill-creator",
-            "displayName": "Skill Creator",
+            "displayName": "技能创建",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -299,7 +299,7 @@
           },
           {
             "name": "link-skill-evaluator",
-            "displayName": "Skill Evaluator & Health Manager",
+            "displayName": "技能评估",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -327,7 +327,7 @@
         "skills": [
           {
             "name": "ks-clawbook",
-            "displayName": "ClawBook",
+            "displayName": "社区学习",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -355,7 +355,7 @@
         "skills": [
           {
             "name": "link-product-thinking",
-            "displayName": "Product Thinking: 产品思维",
+            "displayName": "产品思维",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -372,7 +372,7 @@
           },
           {
             "name": "link-essence-insight",
-            "displayName": "本质洞察力 (Essence Insight)",
+            "displayName": "本质洞察",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -389,7 +389,7 @@
           },
           {
             "name": "link-knowledge-acquisition-meta",
-            "displayName": "知识习得元技能",
+            "displayName": "知识习得",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -434,7 +434,7 @@
         "skills": [
           {
             "name": "link-meta-execution",
-            "displayName": "Meta-Execution: 一次做对的元技能",
+            "displayName": "元执行",
             "source": "AI核心能力",
             "level": 3,
             "exp": 63,
@@ -451,7 +451,7 @@
           },
           {
             "name": "link-knowledge-base",
-            "displayName": "个人知识库",
+            "displayName": "知识库检索",
             "source": "AI核心能力",
             "level": 3,
             "exp": 55,
@@ -468,7 +468,7 @@
           },
           {
             "name": "link-night-task-runner",
-            "displayName": "夜间长任务执行器",
+            "displayName": "夜间任务",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -485,7 +485,7 @@
           },
           {
             "name": "link-debug-pro",
-            "displayName": "link-debug-pro（AI助手调试方法论）",
+            "displayName": "调试专家",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -513,7 +513,7 @@
         "skills": [
           {
             "name": "sl-ai-insight",
-            "displayName": "AI助手的AI洞察技能 (v9.4 双版本同步脱敏强化)",
+            "displayName": "AI洞察",
             "source": "AI核心能力",
             "level": 3,
             "exp": 62,
@@ -541,7 +541,7 @@
         "skills": [
           {
             "name": "sl-rd-efficiency-insight",
-            "displayName": "研发效能洞察 (rd-efficiency-insight)",
+            "displayName": "研效洞察",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -648,7 +648,7 @@
           },
           {
             "name": "sl-ai-column-writer",
-            "displayName": "CF专栏 · 养了个AI 写作技能",
+            "displayName": "专栏写作",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -665,7 +665,7 @@
           },
           {
             "name": "copywriting",
-            "displayName": "Copywriting",
+            "displayName": "营销文案",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -682,7 +682,7 @@
           },
           {
             "name": "humanize-writing",
-            "displayName": "Humanize Writing / 去AI味写作",
+            "displayName": "去AI味润色",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -699,7 +699,7 @@
           },
           {
             "name": "baoyu-translate",
-            "displayName": "Translator",
+            "displayName": "AI翻译",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -716,7 +716,7 @@
           },
           {
             "name": "baoyu-format-markdown",
-            "displayName": "Markdown Formatter",
+            "displayName": "Markdown格式化",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -733,7 +733,7 @@
           },
           {
             "name": "baoyu-markdown-to-html",
-            "displayName": "Markdown to HTML Converter",
+            "displayName": "Markdown转HTML",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -750,7 +750,7 @@
           },
           {
             "name": "ks-promotion-coaching",
-            "displayName": "晋升辅导 Skill",
+            "displayName": "晋升辅导",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -767,7 +767,7 @@
           },
           {
             "name": "ks-promotion-review-sabcd",
-            "displayName": "晋升评审报告生成技能（SABCD评级体系）",
+            "displayName": "晋升评审",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -784,7 +784,7 @@
           },
           {
             "name": "executive-report-writing",
-            "displayName": "高管汇报材料写作",
+            "displayName": "高管汇报写作",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -829,7 +829,7 @@
           },
           {
             "name": "html-screenshot",
-            "displayName": "html-screenshot",
+            "displayName": "HTML截图",
             "source": "AI核心能力",
             "level": 3,
             "exp": 67,
@@ -846,7 +846,7 @@
           },
           {
             "name": "baoyu-image-gen",
-            "displayName": "Image Generation (AI SDK)",
+            "displayName": "AI图片生成",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -863,7 +863,7 @@
           },
           {
             "name": "baoyu-danger-gemini-web",
-            "displayName": "Gemini Web Client",
+            "displayName": "Gemini生图",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -880,7 +880,7 @@
           },
           {
             "name": "baoyu-cover-image",
-            "displayName": "Cover Image Generator",
+            "displayName": "封面图生成",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -897,7 +897,7 @@
           },
           {
             "name": "baoyu-article-illustrator",
-            "displayName": "Article Illustrator",
+            "displayName": "文章配图",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -914,7 +914,7 @@
           },
           {
             "name": "baoyu-infographic",
-            "displayName": "Infographic Generator",
+            "displayName": "信息图表",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -931,7 +931,7 @@
           },
           {
             "name": "baoyu-xhs-images",
-            "displayName": "Xiaohongshu Infographic Series Generator",
+            "displayName": "小红书图片",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -948,7 +948,7 @@
           },
           {
             "name": "baoyu-comic",
-            "displayName": "Knowledge Comic Creator",
+            "displayName": "知识漫画",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -965,7 +965,7 @@
           },
           {
             "name": "baoyu-compress-image",
-            "displayName": "Image Compressor",
+            "displayName": "图片压缩",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1112,7 +1112,7 @@
           },
           {
             "name": "link-personal-homepage-template",
-            "displayName": "个人首页模板",
+            "displayName": "首页模板",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1174,7 +1174,7 @@
           },
           {
             "name": "baoyu-slide-deck",
-            "displayName": "Slide Deck Generator",
+            "displayName": "AI幻灯片",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1191,7 +1191,7 @@
           },
           {
             "name": "ks-work-report-ppt",
-            "displayName": "工作汇报 PPT 风格技能",
+            "displayName": "工作汇报PPT",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1338,7 +1338,7 @@
           },
           {
             "name": "baoyu-url-to-markdown",
-            "displayName": "URL to Markdown",
+            "displayName": "网页转文档",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1355,7 +1355,7 @@
           },
           {
             "name": "baoyu-danger-x-to-markdown",
-            "displayName": "X to Markdown",
+            "displayName": "X内容抓取",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1372,7 +1372,7 @@
           },
           {
             "name": "internet-content-research",
-            "displayName": "互联网内容调研（统一技能）",
+            "displayName": "国内信息调研",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1389,7 +1389,7 @@
           },
           {
             "name": "notebooklm",
-            "displayName": "NotebookLM Research Assistant Skill",
+            "displayName": "NotebookLM查询",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1406,7 +1406,7 @@
           },
           {
             "name": "ks-kstack",
-            "displayName": "KStack Article Reader",
+            "displayName": "KStack文章阅读",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1468,7 +1468,7 @@
           },
           {
             "name": "baoyu-post-to-wechat",
-            "displayName": "Post to WeChat Official Account",
+            "displayName": "发布公众号",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1485,7 +1485,7 @@
           },
           {
             "name": "baoyu-post-to-weibo",
-            "displayName": "Post to Weibo",
+            "displayName": "发布微博",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1502,7 +1502,7 @@
           },
           {
             "name": "baoyu-post-to-x",
-            "displayName": "Post to X (Twitter)",
+            "displayName": "发布到X",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1536,7 +1536,7 @@
           },
           {
             "name": "link-ks-kim-send-message",
-            "displayName": "AI助手 KIM 消息发送能力",
+            "displayName": "KIM消息推送",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1553,7 +1553,7 @@
           },
           {
             "name": "sl-codeflicker-weekly-report",
-            "displayName": "CF项目周报 Skill",
+            "displayName": "CF项目周报",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1581,7 +1581,7 @@
         "skills": [
           {
             "name": "ks-kim-docs-shuttle",
-            "displayName": "文档同步",
+            "displayName": "内网文档同步",
             "source": "AI核心能力",
             "level": 4,
             "exp": 75,
@@ -1677,7 +1677,7 @@
         "skills": [
           {
             "name": "link-agent-session-controller",
-            "displayName": "Agent Session Controller",
+            "displayName": "Agent会话控制",
             "source": "AI核心能力",
             "level": 3,
             "exp": 62,
@@ -1779,7 +1779,7 @@
           },
           {
             "name": "ks-mcp-to-skill",
-            "displayName": "MCP转技能工具",
+            "displayName": "MCP转技能",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1796,7 +1796,7 @@
           },
           {
             "name": "using-superpowers",
-            "displayName": "Using Skills",
+            "displayName": "技能超能力",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1813,7 +1813,7 @@
           },
           {
             "name": "planning-with-files",
-            "displayName": "Planning with Files",
+            "displayName": "文件规划",
             "source": "平台预装技能",
             "level": 1,
             "exp": 10,
@@ -1858,7 +1858,7 @@
           },
           {
             "name": "vercel-composition-patterns",
-            "displayName": "组合模式",
+            "displayName": "React组合模式",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1892,7 +1892,7 @@
           },
           {
             "name": "vercel-react-native-skills",
-            "displayName": "React Native",
+            "displayName": "React Native开发",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1943,7 +1943,7 @@
           },
           {
             "name": "seo-audit",
-            "displayName": "SEO Audit",
+            "displayName": "SEO审查",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -1960,41 +1960,41 @@
           },
           {
             "name": "ks-kate-prd-understand",
-            "displayName": "Kate PRD 需求理解",
+            "displayName": "PRD需求理解",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
-            "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（kate-brief-design）。",
+            "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（ks-kate-brief-design）。",
             "lastUpdated": "2026-03-19",
             "callCount": 0,
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 10010,
+            "skillSize": 10016,
             "skillSizeLabel": "10K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
           {
             "name": "ks-kate-brief-design",
-            "displayName": "Kate 技术方案设计",
+            "displayName": "技术方案设计",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
-            "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
+            "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（ks-kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
             "lastUpdated": "2026-03-19",
             "callCount": 0,
             "frequency": "0",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 11169,
+            "skillSize": 11175,
             "skillSizeLabel": "11K字 · 中型",
             "ksInternal": false,
             "cfProject": false
           },
           {
             "name": "ks-kmodel",
-            "displayName": "Kmodel Development Skill",
+            "displayName": "Kmodel开发",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2011,7 +2011,7 @@
           },
           {
             "name": "ks-commit-msg",
-            "displayName": "Commit Message Generator",
+            "displayName": "提交信息生成",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2028,7 +2028,7 @@
           },
           {
             "name": "ks-browser-testing-doc",
-            "displayName": "Browser Testing Documentation Generator",
+            "displayName": "浏览器测试文档",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2045,7 +2045,7 @@
           },
           {
             "name": "ks-qa-test-case",
-            "displayName": "QA Test Case Generator",
+            "displayName": "QA测试用例",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2073,7 +2073,7 @@
         "skills": [
           {
             "name": "ks-kwaibi-data-query",
-            "displayName": "KwaiBI 数据看板查询",
+            "displayName": "KwaiBI数据查询",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2090,7 +2090,7 @@
           },
           {
             "name": "ks-kwaibi-sql-exec",
-            "displayName": "KwaiBI SQL 取数执行",
+            "displayName": "KwaiBI SQL执行",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2107,7 +2107,7 @@
           },
           {
             "name": "ks-tianwen-monitor-query",
-            "displayName": "天问监控曲线查询",
+            "displayName": "天问监控查询",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2124,7 +2124,7 @@
           },
           {
             "name": "ks-hive-data-agent",
-            "displayName": "Hive数据智能查询助手（hive-data-agent）",
+            "displayName": "Hive数据查询",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2141,7 +2141,7 @@
           },
           {
             "name": "ks-meeting-room-booking",
-            "displayName": "会议室预定",
+            "displayName": "会议室预订",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2158,7 +2158,7 @@
           },
           {
             "name": "ks-onepoint-meeting",
-            "displayName": "Onepoint会议助手",
+            "displayName": "Onepoint会议",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2175,7 +2175,7 @@
           },
           {
             "name": "ks-kim-skills-assistant",
-            "displayName": "KIM 平台通用 API 封装",
+            "displayName": "KIM通用API",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2192,7 +2192,7 @@
           },
           {
             "name": "ks-***-sso-login",
-            "displayName": "***内网 SSO 登录技能",
+            "displayName": "***SSO登录",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2209,7 +2209,7 @@
           },
           {
             "name": "ks-file-upload",
-            "displayName": "文件上传到 BlobStore",
+            "displayName": "文件上传",
             "source": "AI核心能力",
             "level": 1,
             "exp": 10,
@@ -2261,7 +2261,7 @@
               },
               {
                 "name": "link-skill-dojo",
-                "displayName": "技能修炼场（Skill Dojo）",
+                "displayName": "技能修炼",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 64,
@@ -2278,7 +2278,7 @@
               },
               {
                 "name": "link-skill-management",
-                "displayName": "技能优化（Skill Optimization）",
+                "displayName": "技能体系优化",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 62,
@@ -2295,7 +2295,7 @@
               },
               {
                 "name": "link-find-skills",
-                "displayName": "Find Skills",
+                "displayName": "技能发现",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 62,
@@ -2312,7 +2312,7 @@
               },
               {
                 "name": "link-learn-from-mistakes",
-                "displayName": "举一反三（即时复盘）",
+                "displayName": "举一反三",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 55,
@@ -2339,8 +2339,8 @@
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 27341,
-                "skillSizeLabel": "27K字 · 大型",
+                "skillSize": 30731,
+                "skillSizeLabel": "30K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -2380,7 +2380,7 @@
               },
               {
                 "name": "link-proactive-agent",
-                "displayName": "主动自驱 (Proactive Agent)",
+                "displayName": "主动自驱",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2397,7 +2397,7 @@
               },
               {
                 "name": "link-daily-reflection-evolution",
-                "displayName": "闭关修炼 v12.0",
+                "displayName": "闭关修炼",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2414,7 +2414,7 @@
               },
               {
                 "name": "link-neigong-cultivation",
-                "displayName": "内功修炼（深度修炼）v4.7",
+                "displayName": "内功修炼",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2431,7 +2431,7 @@
               },
               {
                 "name": "link-memory-hygiene",
-                "displayName": "记忆优化（Memory Optimization）",
+                "displayName": "记忆优化",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2448,7 +2448,7 @@
               },
               {
                 "name": "link-knowledge-curator",
-                "displayName": "知识优化（Knowledge Optimization）",
+                "displayName": "知识优化",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2465,7 +2465,7 @@
               },
               {
                 "name": "link-skill-creator",
-                "displayName": "Skill Creator",
+                "displayName": "技能创建",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2482,7 +2482,7 @@
               },
               {
                 "name": "link-skill-evaluator",
-                "displayName": "Skill Evaluator & Health Manager",
+                "displayName": "技能评估",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2509,7 +2509,7 @@
             "skills": [
               {
                 "name": "link-product-thinking",
-                "displayName": "Product Thinking: 产品思维",
+                "displayName": "产品思维",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2526,7 +2526,7 @@
               },
               {
                 "name": "link-essence-insight",
-                "displayName": "本质洞察力 (Essence Insight)",
+                "displayName": "本质洞察",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2543,7 +2543,7 @@
               },
               {
                 "name": "link-knowledge-acquisition-meta",
-                "displayName": "知识习得元技能",
+                "displayName": "知识习得",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2587,7 +2587,7 @@
             "skills": [
               {
                 "name": "link-meta-execution",
-                "displayName": "Meta-Execution: 一次做对的元技能",
+                "displayName": "元执行",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 63,
@@ -2604,7 +2604,7 @@
               },
               {
                 "name": "link-knowledge-base",
-                "displayName": "个人知识库",
+                "displayName": "知识库检索",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 55,
@@ -2621,7 +2621,7 @@
               },
               {
                 "name": "link-night-task-runner",
-                "displayName": "夜间长任务执行器",
+                "displayName": "夜间任务",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2638,7 +2638,7 @@
               },
               {
                 "name": "link-debug-pro",
-                "displayName": "link-debug-pro（AI助手调试方法论）",
+                "displayName": "调试专家",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2675,7 +2675,7 @@
             "skills": [
               {
                 "name": "sl-ai-insight",
-                "displayName": "AI助手的AI洞察技能 (v9.4 双版本同步脱敏强化)",
+                "displayName": "AI洞察",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 62,
@@ -2702,7 +2702,7 @@
             "skills": [
               {
                 "name": "sl-rd-efficiency-insight",
-                "displayName": "研发效能洞察 (rd-efficiency-insight)",
+                "displayName": "研效洞察",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2800,7 +2800,7 @@
             "skills": [
               {
                 "name": "ks-clawbook",
-                "displayName": "ClawBook",
+                "displayName": "社区学习",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2844,7 +2844,7 @@
               },
               {
                 "name": "sl-ai-column-writer",
-                "displayName": "CF专栏 · 养了个AI 写作技能",
+                "displayName": "专栏写作",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2861,7 +2861,7 @@
               },
               {
                 "name": "copywriting",
-                "displayName": "Copywriting",
+                "displayName": "营销文案",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2878,7 +2878,7 @@
               },
               {
                 "name": "humanize-writing",
-                "displayName": "Humanize Writing / 去AI味写作",
+                "displayName": "去AI味润色",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2895,7 +2895,7 @@
               },
               {
                 "name": "baoyu-translate",
-                "displayName": "Translator",
+                "displayName": "AI翻译",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2912,7 +2912,7 @@
               },
               {
                 "name": "baoyu-format-markdown",
-                "displayName": "Markdown Formatter",
+                "displayName": "Markdown格式化",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2929,7 +2929,7 @@
               },
               {
                 "name": "baoyu-markdown-to-html",
-                "displayName": "Markdown to HTML Converter",
+                "displayName": "Markdown转HTML",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2946,7 +2946,7 @@
               },
               {
                 "name": "ks-promotion-coaching",
-                "displayName": "晋升辅导 Skill",
+                "displayName": "晋升辅导",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2963,7 +2963,7 @@
               },
               {
                 "name": "ks-promotion-review-sabcd",
-                "displayName": "晋升评审报告生成技能（SABCD评级体系）",
+                "displayName": "晋升评审",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -2980,7 +2980,7 @@
               },
               {
                 "name": "executive-report-writing",
-                "displayName": "高管汇报材料写作",
+                "displayName": "高管汇报写作",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3024,7 +3024,7 @@
               },
               {
                 "name": "html-screenshot",
-                "displayName": "html-screenshot",
+                "displayName": "HTML截图",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 67,
@@ -3041,7 +3041,7 @@
               },
               {
                 "name": "baoyu-image-gen",
-                "displayName": "Image Generation (AI SDK)",
+                "displayName": "AI图片生成",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3058,7 +3058,7 @@
               },
               {
                 "name": "baoyu-danger-gemini-web",
-                "displayName": "Gemini Web Client",
+                "displayName": "Gemini生图",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3075,7 +3075,7 @@
               },
               {
                 "name": "baoyu-cover-image",
-                "displayName": "Cover Image Generator",
+                "displayName": "封面图生成",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3092,7 +3092,7 @@
               },
               {
                 "name": "baoyu-article-illustrator",
-                "displayName": "Article Illustrator",
+                "displayName": "文章配图",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3109,7 +3109,7 @@
               },
               {
                 "name": "baoyu-infographic",
-                "displayName": "Infographic Generator",
+                "displayName": "信息图表",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3126,7 +3126,7 @@
               },
               {
                 "name": "baoyu-xhs-images",
-                "displayName": "Xiaohongshu Infographic Series Generator",
+                "displayName": "小红书图片",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3143,7 +3143,7 @@
               },
               {
                 "name": "baoyu-comic",
-                "displayName": "Knowledge Comic Creator",
+                "displayName": "知识漫画",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3160,7 +3160,7 @@
               },
               {
                 "name": "baoyu-compress-image",
-                "displayName": "Image Compressor",
+                "displayName": "图片压缩",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3306,7 +3306,7 @@
               },
               {
                 "name": "link-personal-homepage-template",
-                "displayName": "个人首页模板",
+                "displayName": "首页模板",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3367,7 +3367,7 @@
               },
               {
                 "name": "baoyu-slide-deck",
-                "displayName": "Slide Deck Generator",
+                "displayName": "AI幻灯片",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3384,7 +3384,7 @@
               },
               {
                 "name": "ks-work-report-ppt",
-                "displayName": "工作汇报 PPT 风格技能",
+                "displayName": "工作汇报PPT",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3530,7 +3530,7 @@
               },
               {
                 "name": "baoyu-url-to-markdown",
-                "displayName": "URL to Markdown",
+                "displayName": "网页转文档",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3547,7 +3547,7 @@
               },
               {
                 "name": "baoyu-danger-x-to-markdown",
-                "displayName": "X to Markdown",
+                "displayName": "X内容抓取",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3564,7 +3564,7 @@
               },
               {
                 "name": "internet-content-research",
-                "displayName": "互联网内容调研（统一技能）",
+                "displayName": "国内信息调研",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3581,7 +3581,7 @@
               },
               {
                 "name": "notebooklm",
-                "displayName": "NotebookLM Research Assistant Skill",
+                "displayName": "NotebookLM查询",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -3598,7 +3598,7 @@
               },
               {
                 "name": "ks-kstack",
-                "displayName": "KStack Article Reader",
+                "displayName": "KStack文章阅读",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3659,7 +3659,7 @@
               },
               {
                 "name": "baoyu-post-to-wechat",
-                "displayName": "Post to WeChat Official Account",
+                "displayName": "发布公众号",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3676,7 +3676,7 @@
               },
               {
                 "name": "baoyu-post-to-weibo",
-                "displayName": "Post to Weibo",
+                "displayName": "发布微博",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3693,7 +3693,7 @@
               },
               {
                 "name": "baoyu-post-to-x",
-                "displayName": "Post to X (Twitter)",
+                "displayName": "发布到X",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3727,7 +3727,7 @@
               },
               {
                 "name": "link-ks-kim-send-message",
-                "displayName": "AI助手 KIM 消息发送能力",
+                "displayName": "KIM消息推送",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3744,7 +3744,7 @@
               },
               {
                 "name": "sl-codeflicker-weekly-report",
-                "displayName": "CF项目周报 Skill",
+                "displayName": "CF项目周报",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3771,7 +3771,7 @@
             "skills": [
               {
                 "name": "ks-kim-docs-shuttle",
-                "displayName": "文档同步",
+                "displayName": "内网文档同步",
                 "source": "AI核心能力",
                 "level": 4,
                 "exp": 75,
@@ -3866,7 +3866,7 @@
             "skills": [
               {
                 "name": "link-agent-session-controller",
-                "displayName": "Agent Session Controller",
+                "displayName": "Agent会话控制",
                 "source": "AI核心能力",
                 "level": 3,
                 "exp": 62,
@@ -3968,7 +3968,7 @@
               },
               {
                 "name": "ks-mcp-to-skill",
-                "displayName": "MCP转技能工具",
+                "displayName": "MCP转技能",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -3985,7 +3985,7 @@
               },
               {
                 "name": "using-superpowers",
-                "displayName": "Using Skills",
+                "displayName": "技能超能力",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -4002,7 +4002,7 @@
               },
               {
                 "name": "planning-with-files",
-                "displayName": "Planning with Files",
+                "displayName": "文件规划",
                 "source": "平台预装技能",
                 "level": 1,
                 "exp": 10,
@@ -4046,7 +4046,7 @@
               },
               {
                 "name": "vercel-composition-patterns",
-                "displayName": "组合模式",
+                "displayName": "React组合模式",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4080,7 +4080,7 @@
               },
               {
                 "name": "vercel-react-native-skills",
-                "displayName": "React Native",
+                "displayName": "React Native开发",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4131,7 +4131,7 @@
               },
               {
                 "name": "seo-audit",
-                "displayName": "SEO Audit",
+                "displayName": "SEO审查",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4148,41 +4148,41 @@
               },
               {
                 "name": "ks-kate-prd-understand",
-                "displayName": "Kate PRD 需求理解",
+                "displayName": "PRD需求理解",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
-                "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（kate-brief-design）。",
+                "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（ks-kate-brief-design）。",
                 "lastUpdated": "2026-03-19",
                 "callCount": 0,
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 10010,
+                "skillSize": 10016,
                 "skillSizeLabel": "10K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
               {
                 "name": "ks-kate-brief-design",
-                "displayName": "Kate 技术方案设计",
+                "displayName": "技术方案设计",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
-                "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
+                "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（ks-kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
                 "lastUpdated": "2026-03-19",
                 "callCount": 0,
                 "frequency": "0",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 11169,
+                "skillSize": 11175,
                 "skillSizeLabel": "11K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false
               },
               {
                 "name": "ks-kmodel",
-                "displayName": "Kmodel Development Skill",
+                "displayName": "Kmodel开发",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4199,7 +4199,7 @@
               },
               {
                 "name": "ks-commit-msg",
-                "displayName": "Commit Message Generator",
+                "displayName": "提交信息生成",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4216,7 +4216,7 @@
               },
               {
                 "name": "ks-browser-testing-doc",
-                "displayName": "Browser Testing Documentation Generator",
+                "displayName": "浏览器测试文档",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4233,7 +4233,7 @@
               },
               {
                 "name": "ks-qa-test-case",
-                "displayName": "QA Test Case Generator",
+                "displayName": "QA测试用例",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4260,7 +4260,7 @@
             "skills": [
               {
                 "name": "ks-kwaibi-data-query",
-                "displayName": "KwaiBI 数据看板查询",
+                "displayName": "KwaiBI数据查询",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4277,7 +4277,7 @@
               },
               {
                 "name": "ks-kwaibi-sql-exec",
-                "displayName": "KwaiBI SQL 取数执行",
+                "displayName": "KwaiBI SQL执行",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4294,7 +4294,7 @@
               },
               {
                 "name": "ks-tianwen-monitor-query",
-                "displayName": "天问监控曲线查询",
+                "displayName": "天问监控查询",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4311,7 +4311,7 @@
               },
               {
                 "name": "ks-hive-data-agent",
-                "displayName": "Hive数据智能查询助手（hive-data-agent）",
+                "displayName": "Hive数据查询",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4328,7 +4328,7 @@
               },
               {
                 "name": "ks-meeting-room-booking",
-                "displayName": "会议室预定",
+                "displayName": "会议室预订",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4345,7 +4345,7 @@
               },
               {
                 "name": "ks-onepoint-meeting",
-                "displayName": "Onepoint会议助手",
+                "displayName": "Onepoint会议",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4362,7 +4362,7 @@
               },
               {
                 "name": "ks-kim-skills-assistant",
-                "displayName": "KIM 平台通用 API 封装",
+                "displayName": "KIM通用API",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4379,7 +4379,7 @@
               },
               {
                 "name": "ks-***-sso-login",
-                "displayName": "***内网 SSO 登录技能",
+                "displayName": "***SSO登录",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,
@@ -4396,7 +4396,7 @@
               },
               {
                 "name": "ks-file-upload",
-                "displayName": "文件上传到 BlobStore",
+                "displayName": "文件上传",
                 "source": "AI核心能力",
                 "level": 1,
                 "exp": 10,

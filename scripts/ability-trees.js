@@ -178,19 +178,19 @@ function renderSkillTechTree(container, skills) {
         return null;
     }
     
-    var guideSkill = findSkillByName('xiaowuxianggong');
-    var absorbSkill = findSkillByName('xixingdafa');
-    var exportSkill = findSkillByName('beiming-shengong');
-    var coreSkill = findSkillByName('daily-reflection-evolution');
-    var reviewSkill = findSkillByName('learn-from-mistakes');
-    var cultivateSkill = findSkillByName('neigong-cultivation');
-    var toolNames = ['memory-hygiene', 'skill-management', 'knowledge-curator'];
+    var guideSkill = findSkillByName('link-xiaowuxianggong');
+    var absorbSkill = findSkillByName('link-xixingdafa');
+    var exportSkill = findSkillByName('link-beiming-shengong');
+    var coreSkill = findSkillByName('link-daily-reflection-evolution');
+    var reviewSkill = findSkillByName('link-learn-from-mistakes');
+    var cultivateSkill = findSkillByName('link-neigong-cultivation');
+    var toolNames = ['link-memory-hygiene', 'link-skill-management', 'link-knowledge-curator'];
     var toolSkills = [];
     for (var t = 0; t < toolNames.length; t++) {
         var ts = findSkillByName(toolNames[t]);
         if (ts) toolSkills.push(ts);
     }
-    var techniqueNames = ['find-skills', 'skill-creator', 'skill-evaluator', 'skill-dojo'];
+    var techniqueNames = ['link-find-skills', 'link-skill-creator', 'link-skill-evaluator', 'link-skill-dojo'];
     var techniqueSkills = [];
     for (var tt = 0; tt < techniqueNames.length; tt++) {
         var tsk = findSkillByName(techniqueNames[tt]);
@@ -201,7 +201,7 @@ function renderSkillTechTree(container, skills) {
     var engineHtml = '';
     if (guideSkill && coreSkill) {
         // 获取所有需要的技能
-        var proactiveSkill = findSkillByName('proactive-agent');
+        var proactiveSkill = findSkillByName('link-proactive-agent');
         var homepageSkill = findSkillByName('link-homepage');
         
         // 创建节点（使用与demo完全一致的类名）
@@ -341,7 +341,7 @@ function renderSkillTechTree(container, skills) {
     if (cognitiveCat && cognitiveCat.skills) {
         var cogNodes = '';
         // 跳过已在自进化引擎"主动自驱"位置的技能
-        var skipInCognitive = ['proactive-agent'];
+        var skipInCognitive = ['link-proactive-agent'];
         // 思维方法技能的显示名称和角色映射
         var cognitiveNameMap = {
             'product-thinking': { name: '产品思维', role: '用户视角' },

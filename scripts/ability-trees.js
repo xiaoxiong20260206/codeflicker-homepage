@@ -202,7 +202,7 @@ function renderSkillTechTree(container, skills) {
     var exportSkill = findSkillByName('link-beiming-shengong');
     var coreSkill = findSkillByName('link-daily-reflection-evolution');
     var reviewSkill = findSkillByName('link-learn-from-mistakes');
-    var cultivateSkill = findSkillByName('link-neigong-cultivation');
+    // v13.0: 内功修炼已废弃，不再查找
     var toolNames = ['link-memory-hygiene', 'link-skill-management', 'link-knowledge-curator'];
     var toolSkills = [];
     for (var t = 0; t < toolNames.length; t++) {
@@ -266,8 +266,8 @@ function renderSkillTechTree(container, skills) {
         var coreNodeHtml = createDemoNode(coreSkill, '闭关修炼', '每日流水线', 'core');
         
         // 双轮驱动节点（直接读 displayName/displayRole，无硬编码映射）
+        // v13.0: 内功修炼已废弃，只保留经验总结
         var reviewNodeHtml = reviewSkill ? createDemoNode(reviewSkill, reviewSkill.displayName || getName(reviewSkill), reviewSkill.displayRole || '复盘', 'tool') : '';
-        var cultivateNodeHtml = cultivateSkill ? createDemoNode(cultivateSkill, cultivateSkill.displayName || getName(cultivateSkill), cultivateSkill.displayRole || '深度修炼', 'tool') : '';
         
         // 系统优化工具节点（直接读 displayRole，无硬编码 toolDisplayNames/toolRoleNames）
         var toolNodesHtml = '';
@@ -339,14 +339,16 @@ function renderSkillTechTree(container, skills) {
                     '<div class="core-connector"><div class="connector-h" style="--line-from: #fb923c; --line-to: #fb923c;"></div><div class="arrow-right" style="--arrow-color: #fb923c;"></div><span class="connector-label connector-label--center" style="--label-color: #fb923c; --label-border: rgba(251, 146, 60, 0.4);">触发</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #fb923c; --particle-duration: 1.5s; animation-delay: 0s;"></div><div class="energy-particle" style="--particle-color: #fb923c; --particle-duration: 1.5s; animation-delay: 0.7s;"></div></div></div>' +
                     '<div id="node-biguan" class="engine-node engine-node--core" onmouseenter="showTreeTooltip(event, \'' + storeSkill(coreSkill) + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + (50 * (1 - (coreSkill.exp || (coreSkill.level || 1) * 20) / 100)) + '" style="stroke: #fb923c;"/></svg><span class="engine-node-level">' + (coreSkill.level || 1) + '</span></div><div class="engine-node-info"><span class="engine-node-name">闭关修炼</span><span class="engine-node-role">每日流水线</span></div></div>' +
                 '</div></div>' +
-                // 双轮驱动区
-                '<div class="dual-drive-section"><div class="dual-drive-row">' +
+                // v13.0: 经验总结移到系统优化工具左边，直接连接到记忆体系优化
+                // 系统优化工具（前置经验总结）
+                '<div class="system-tools"><div class="tools-grid">' +
+                    // 经验总结节点
                     '<div id="node-jingyan" class="engine-node engine-node--tool" onmouseenter="showTreeTooltip(event, \'' + storeSkill(reviewSkill) + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + (50 * (1 - ((reviewSkill && reviewSkill.exp) || ((reviewSkill && reviewSkill.level) || 1) * 20) / 100)) + '" style="stroke: #4ade80;"/></svg><span class="engine-node-level">' + ((reviewSkill && reviewSkill.level) || 1) + '</span></div><div class="engine-node-info"><span class="engine-node-name">经验总结</span><span class="engine-node-role">复盘并举一反三</span></div></div>' +
-                    '<div class="p2-connector"><div class="connector-h" style="flex: 1; --line-from: #4ade80; --line-to: #4ade80;"></div><div class="arrow-right" style="--arrow-color: #4ade80;"></div><span class="connector-label connector-label--center">输入</span><div class="energy-particles"><div class="energy-particle" style="--particle-color: #4ade80; --particle-duration: 1.8s; animation-delay: 0.2s;"></div><div class="energy-particle" style="--particle-color: #4ade80; --particle-duration: 1.8s; animation-delay: 1s;"></div></div></div>' +
-                    '<div id="node-neigong" class="engine-node engine-node--tool" onmouseenter="showTreeTooltip(event, \'' + storeSkill(cultivateSkill) + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + (50 * (1 - ((cultivateSkill && cultivateSkill.exp) || ((cultivateSkill && cultivateSkill.level) || 1) * 20) / 100)) + '" style="stroke: #4ade80;"/></svg><span class="engine-node-level">' + ((cultivateSkill && cultivateSkill.level) || 1) + '</span></div><div class="engine-node-info"><span class="engine-node-name">内功修炼</span><span class="engine-node-role">深度修炼</span></div></div>' +
+                    // 经验总结 → 记忆体系优化 连接器
+                    '<div class="tools-connector"><div class="connector-h" style="--line-from: #4ade80; --line-to: #4ade80;"></div><div class="arrow-right" style="--arrow-color: #4ade80;"></div></div>' +
+                    // 系统优化工具节点
+                    toolNodesHtml +
                 '</div></div>' +
-                // 系统优化工具
-                '<div class="system-tools"><div class="tools-grid">' + toolNodesHtml + '</div></div>' +
                 // 技能生命周期
                 lifecycleHtml +
             '</div>' +
@@ -760,13 +762,11 @@ function drawElbowConnectors() {
     var bw = bodyRect.width;
     var bh = bodyRect.height;
     
-    // 获取四个关键节点
+    // v13.0: 内功修炼已废弃，只需要绘制 闭关修炼 → 经验总结 的 L 形连接
     var biguan  = document.getElementById('node-biguan');
     var jingyan = document.getElementById('node-jingyan');
-    var neigong = document.getElementById('node-neigong');
-    var memory  = document.getElementById('node-memory');
     
-    if (!biguan || !jingyan || !neigong || !memory) return;
+    if (!biguan || !jingyan) return;
     
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.classList.add('elbow-svg-overlay');
@@ -789,14 +789,11 @@ function drawElbowConnectors() {
     
     var b = rel(biguan);
     var j = rel(jingyan);
-    var n = rel(neigong);
-    var m = rel(memory);
     
     // 右侧 gutter 位置
-    var gx1 = Math.min(bw - 16, Math.max(b.right + 20, n.right + 20));
-    var gx2 = Math.min(bw - 6, gx1 + 14);
+    var gx1 = Math.min(bw - 16, b.right + 20);
     
-    // ---- 连接器1: 闭关修炼 → 经验总结（驱动）----
+    // ---- 连接器: 闭关修炼 → 经验总结（驱动）----
     var p1 = { sx: b.right, sy: b.cy, gx: gx1, ex: j.cx, ey: j.top };
     
     var path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -827,36 +824,7 @@ function drawElbowConnectors() {
     label1.textContent = '驱动';
     svg.appendChild(label1);
     
-    // ---- 连接器2: 内功修炼 → 记忆优化（调用）----
-    var p2 = { sx: n.right, sy: n.cy, gx: gx2, ex: m.cx, ey: m.top };
-    
-    var path2 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path2.setAttribute('d', 'M ' + p2.sx + ' ' + p2.sy + ' L ' + p2.gx + ' ' + p2.sy + ' L ' + p2.gx + ' ' + (p2.ey - 8) + ' L ' + p2.ex + ' ' + (p2.ey - 8));
-    path2.setAttribute('fill', 'none');
-    path2.setAttribute('stroke', '#4ade80');
-    path2.setAttribute('stroke-width', '2.5');
-    path2.setAttribute('stroke-linecap', 'round');
-    path2.setAttribute('stroke-linejoin', 'round');
-    path2.setAttribute('opacity', '0.7');
-    svg.appendChild(path2);
-    
-    // 箭头（指向下方记忆优化）
-    var arrow2 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    arrow2.setAttribute('points', p2.ex + ',' + p2.ey + ' ' + (p2.ex - 5) + ',' + (p2.ey - 9) + ' ' + (p2.ex + 5) + ',' + (p2.ey - 9));
-    arrow2.setAttribute('fill', '#4ade80');
-    arrow2.setAttribute('opacity', '0.7');
-    svg.appendChild(arrow2);
-    
-    // 标签 "调用"
-    var label2 = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-    label2.setAttribute('x', p2.gx - 6);
-    label2.setAttribute('y', (p2.sy + p2.ey - 8) / 2);
-    label2.setAttribute('text-anchor', 'end');
-    label2.setAttribute('dominant-baseline', 'middle');
-    label2.setAttribute('fill', '#4ade80');
-    label2.setAttribute('opacity', '0.7');
-    label2.textContent = '调用';
-    svg.appendChild(label2);
+    // v13.0: 内功修炼已废弃，移除 内功修炼→记忆优化 的连接器
     
     body.appendChild(svg);
 }

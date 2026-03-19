@@ -422,9 +422,33 @@ function renderSkillTechTree(container, skills) {
             var eName = eEntries[ei][0];
             var eInfo = eEntries[ei][1];
             var eClean = eName.replace(/^[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{FE0F}\u{200D}]+\s*/gu, '').trim();
-            var eChips = '';
+            // 按 tag 分三层：SL（个人定制）→ KS（快手定制）→ 通用（无标记）
             var eSkills = eInfo.skills || [];
-            for (var es = 0; es < eSkills.length; es++) { eChips += createSkillChip(eSkills[es]); }
+            var slSkills = [], ksSkills = [], genericSkills = [];
+            for (var es = 0; es < eSkills.length; es++) {
+                var sk = eSkills[es];
+                var skTag = sk.tag || (sk.ksInternal ? 'KS' : (sk.cfProject ? 'Link' : ''));
+                if (skTag === 'SL') slSkills.push(sk);
+                else if (skTag === 'KS') ksSkills.push(sk);
+                else genericSkills.push(sk);
+            }
+            // 构建分层 chips
+            var eChips = '';
+            if (slSkills.length > 0) {
+                var slChips = '';
+                for (var si = 0; si < slSkills.length; si++) slChips += createSkillChip(slSkills[si]);
+                eChips += '<div class="exec-sublayer exec-sublayer-sl"><span class="exec-sublayer-label">个人定制</span><div class="exec-sublayer-chips">' + slChips + '</div></div>';
+            }
+            if (ksSkills.length > 0) {
+                var ksChips = '';
+                for (var ki = 0; ki < ksSkills.length; ki++) ksChips += createSkillChip(ksSkills[ki]);
+                eChips += '<div class="exec-sublayer exec-sublayer-ks"><span class="exec-sublayer-label">快手定制</span><div class="exec-sublayer-chips">' + ksChips + '</div></div>';
+            }
+            if (genericSkills.length > 0) {
+                var gChips = '';
+                for (var gi = 0; gi < genericSkills.length; gi++) gChips += createSkillChip(genericSkills[gi]);
+                eChips += '<div class="exec-sublayer exec-sublayer-generic"><span class="exec-sublayer-label">通用</span><div class="exec-sublayer-chips">' + gChips + '</div></div>';
+            }
             var execId = storeGeneric(eInfo.icon || '\uD83D\uDEE0\uFE0F', eClean, '包含 ' + (eInfo.count || 0) + ' 个技能', '');
             execGroups += '<div class="exec-group" onmouseenter="showTreeTooltip(event, \'' + execId + '\', \'skill\')" onmouseleave="hideTooltip()"><div class="exec-group-header"><span class="exec-group-icon">' + (eInfo.icon || '\uD83D\uDEE0\uFE0F') + '</span><span class="exec-group-name">' + eClean + '</span><span class="exec-group-count">' + (eInfo.count || 0) + '</span></div><div class="exec-group-chips">' + eChips + '</div></div>';
         }

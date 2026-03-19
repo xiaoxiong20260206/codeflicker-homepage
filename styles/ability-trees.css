@@ -1060,8 +1060,49 @@
 }
 .exec-group-chips {
     display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* 执行层三段分层 */
+.exec-sublayer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.exec-sublayer-chips {
+    display: flex;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 5px;
+}
+.exec-sublayer-label {
+    font-family: var(--font-mono);
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 1px 0 2px 1px;
+}
+.exec-sublayer-sl .exec-sublayer-label {
+    color: rgba(74, 222, 128, 0.55);
+    border-left: 1px solid rgba(74, 222, 128, 0.3);
+    padding-left: 4px;
+}
+.exec-sublayer-ks .exec-sublayer-label {
+    color: rgba(251, 146, 60, 0.55);
+    border-left: 1px solid rgba(251, 146, 60, 0.3);
+    padding-left: 4px;
+}
+.exec-sublayer-generic .exec-sublayer-label {
+    color: rgba(200, 220, 240, 0.3);
+    border-left: 1px solid rgba(200, 220, 240, 0.12);
+    padding-left: 4px;
+}
+/* 分层之间加分隔线（非首个） */
+.exec-sublayer + .exec-sublayer {
+    border-top: 1px solid rgba(200, 220, 240, 0.06);
+    padding-top: 4px;
+    margin-top: 2px;
 }
 
 /* 旧版兼容 */

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T12:51:45.268194",
+  "generatedAt": "2026-03-19T12:56:51.667651",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -88,8 +88,8 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 154401,
-            "skillSizeLabel": "154K字 · 巨型",
+            "skillSize": 163623,
+            "skillSizeLabel": "163K字 · 巨型",
             "ksInternal": false,
             "cfProject": false
           },
@@ -2271,8 +2271,8 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 154401,
-                "skillSizeLabel": "154K字 · 巨型",
+                "skillSize": 163623,
+                "skillSizeLabel": "163K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false
               },
@@ -6289,6 +6289,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "输出链接格式规范（代码规范）",
+        "category": "development_code_specification",
+        "categoryLabel": "代码规范",
+        "layer": null,
+        "icon": "📝",
+        "color": "#4ade80",
+        "description": "输出链接格式规范（踩坑经验） 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
+        "keywords": [
+          "链接格式",
+          "URL输出",
+          "文本分隔",
+          "输出规范",
+          "括号"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-19",
+        "source": "用户显式记录"
+      },
+      {
         "title": "长工作流多会话拆分架构（每日修炼 v12.0 实践）",
         "category": "task_flow_experience",
         "categoryLabel": "做事方法",
@@ -7253,25 +7272,6 @@
         "importance": 4,
         "updatedAt": "2026-03-07",
         "source": "项目记忆"
-      },
-      {
-        "title": "输出链接格式规范（代码规范）",
-        "category": "development_code_specification",
-        "categoryLabel": "代码规范",
-        "layer": null,
-        "icon": "📝",
-        "color": "#4ade80",
-        "description": "输出链接格式规范（踩坑经验） 规则 1. 输出URL链接时，不要把汉字描述直接附在链接后面，避免在某些环境下汉字被错误地包含进链接URL中。...",
-        "keywords": [
-          "链接格式",
-          "URL输出",
-          "文本分隔",
-          "输出规范",
-          "括号"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-11",
-        "source": "用户显式记录"
       },
       {
         "title": "部署验证完整经验（合并版v4.0）",

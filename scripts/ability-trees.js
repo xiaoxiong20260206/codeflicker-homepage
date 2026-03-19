@@ -988,20 +988,14 @@ function drawLifecycleLoop() {
     }
 }
 
-// ==================== 领域/执行层技能调用关系连线 ====================
-// 非元技能层的调用关系（从之前的分析得出）
-var DOMAIN_SKILL_CALLS = [
-    // 调研技能调用链
-    { from: 'ai-insight', to: 'CF-internet-content-research', label: '调用', color: '#8b5cf6' },
-    { from: 'rd-efficiency-insight', to: 'CF-internet-content-research', label: '调用', color: '#8b5cf6' },
-    { from: 'industry-research', to: 'CF-internet-content-research', label: '调用', color: '#8b5cf6' },
-    { from: 'industry-research', to: 'qingshuang-research-style', label: '样式', color: '#38bdf8' },
-    // 原子技能调用
-    { from: 'ks-kim-docs-shuttle', to: 'html-screenshot', label: '截图', color: '#4ade80' },
-    { from: 'ai-column-writer', to: 'html-screenshot', label: '截图', color: '#4ade80' },
-    { from: 'web-dev-workflow', to: 'html-screenshot', label: '截图', color: '#4ade80' },
-    { from: 'ks-kim-docs-shuttle', to: 'ai-image-generator', label: 'AI生图', color: '#fb923c' }
-];
+// ==================== 技能调用关系连线（数据驱动，v2.0）====================
+// 数据来源：character-data.json → skills.relationships.skill_calls
+// 单一数据源在 scripts/constants.py 的 SKILL_CALL_RELATIONSHIPS
+// 旧的硬编码 DOMAIN_SKILL_CALLS 已废弃，保留空数组做兼容兜底
+var DOMAIN_SKILL_CALLS = [];
+
+// 从已加载的全局数据中读取 skill_calls（在 initCharacterData() 中填充）
+var SKILL_CALL_DATA = [];
 
 function drawSkillCallConnectors() {
     // 获取领域层和执行层容器

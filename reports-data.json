@@ -105,7 +105,7 @@
           "goal": "验证OpenClaw架构图文件在本地和线上环境的一致性部署",
           "deliverables": [],
           "process": [
-            "通过MD5校验确认了projects/claw-strategy/architecture.html、codeflicker-homepage/architecture.html和线上版本的文件一致性..."
+            "通过MD5校验确认了projects/claw-strategy/architecture.html、link-homepage/architecture.html和线上版本的文件一致性..."
           ],
           "tags": [
             "architecture",
@@ -384,7 +384,7 @@
         "newSkills": [],
         "updatedSkills": [
           {
-            "name": "codeflicker-homepage",
+            "name": "link-homepage",
             "description": "|"
           },
           {
@@ -817,7 +817,7 @@
             "description": "This skill should be used automatically when receiving any t"
           },
           {
-            "name": "codeflicker-homepage",
+            "name": "link-homepage",
             "description": "|"
           },
           {
@@ -1583,7 +1583,7 @@
             "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
           },
           {
-            "name": "codeflicker-homepage",
+            "name": "link-homepage",
             "description": "|"
           },
           {
@@ -2297,7 +2297,7 @@
             "description": "This skill should be used ONLY when the user explicitly asks"
           },
           {
-            "name": "codeflicker-homepage",
+            "name": "link-homepage",
             "description": "|"
           },
           {
@@ -2906,7 +2906,7 @@
             {
               "name": "index.html",
               "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+              "url": "https://my-ai-research-lab.github.io/link-homepage"
             },
             {
               "name": "2026-03-03.md",
@@ -2916,7 +2916,7 @@
             {
               "name": "2026-03-03.html",
               "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+              "url": "https://my-ai-research-lab.github.io/link-homepage"
             }
           ],
           "process": [
@@ -2925,7 +2925,7 @@
           ],
           "commitCount": 0,
           "fileChangeCount": 3,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+          "deployUrl": "https://my-ai-research-lab.github.io/link-homepage"
         },
         {
           "title": "Knowledge",
@@ -3461,7 +3461,7 @@
             "description": "This skill should be used automatically when receiving any t"
           },
           {
-            "name": "codeflicker-homepage",
+            "name": "link-homepage",
             "description": "|"
           },
           {
@@ -4624,7 +4624,7 @@
             {
               "name": "在线页面",
               "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+              "url": "https://my-ai-research-lab.github.io/link-homepage"
             }
           ],
           "process": [
@@ -4632,7 +4632,7 @@
           ],
           "commitCount": 1,
           "fileChangeCount": 0,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+          "deployUrl": "https://my-ai-research-lab.github.io/link-homepage"
         },
         {
           "title": "Knowledge",
@@ -4867,7 +4867,7 @@
             {
               "name": "在线页面",
               "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+              "url": "https://my-ai-research-lab.github.io/link-homepage"
             }
           ],
           "process": [
@@ -4875,7 +4875,7 @@
           ],
           "commitCount": 2,
           "fileChangeCount": 4,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+          "deployUrl": "https://my-ai-research-lab.github.io/link-homepage"
         },
         {
           "title": "养了个AI专栏",
@@ -5154,7 +5154,7 @@
           ],
           "commitCount": 0,
           "fileChangeCount": 1,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+          "deployUrl": "https://my-ai-research-lab.github.io/link-homepage"
         },
         {
           "title": "养了个AI专栏",
@@ -5368,7 +5368,7 @@
             {
               "name": "在线页面",
               "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+              "url": "https://my-ai-research-lab.github.io/link-homepage"
             }
           ],
           "process": [
@@ -5376,7 +5376,7 @@
           ],
           "commitCount": 1,
           "fileChangeCount": 0,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+          "deployUrl": "https://my-ai-research-lab.github.io/link-homepage"
         },
         {
           "title": "Knowledge",
@@ -5593,7 +5593,7 @@
             {
               "name": "在线页面",
               "type": "page",
-              "url": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+              "url": "https://my-ai-research-lab.github.io/link-homepage"
             }
           ],
           "process": [
@@ -5603,7 +5603,7 @@
           ],
           "commitCount": 6,
           "fileChangeCount": 0,
-          "deployUrl": "https://my-ai-research-lab.github.io/codeflicker-homepage"
+          "deployUrl": "https://my-ai-research-lab.github.io/link-homepage"
         },
         {
           "title": "养了个AI专栏",

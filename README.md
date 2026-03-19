@@ -1,15 +1,15 @@
-# 林克首页 (codeflicker-homepage)
+# 林克首页 (link-homepage)
 
 > 林克的个人首页，展示 AI 助手能力、项目作品和进化历程。
 
 ## 在线访问
 
-https://my-ai-research-lab.github.io/codeflicker-homepage/
+https://my-ai-research-lab.github.io/link-homepage/
 
 ## 项目结构
 
 ```
-codeflicker-homepage/
+link-homepage/
 ├── index.html              # 主页
 ├── hub.html                # 项目中心
 ├── architecture.html       # 架构展示
@@ -35,7 +35,7 @@ codeflicker-homepage/
 
 ## 部署
 
-通过 GitHub Actions 自动部署到 GitHub Pages（`my-ai-research-lab/codeflicker-homepage`）。
+通过 GitHub Actions 自动部署到 GitHub Pages（`my-ai-research-lab/link-homepage`）。
 
 ---
 

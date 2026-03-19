@@ -15,7 +15,7 @@
       "description": "feat: 重新设计升级系统 v2.0",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -27,7 +27,7 @@
       "description": "fix: 添加缓存破坏机制，确保加载最新数据",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -39,7 +39,7 @@
       "description": "feat: 添加等级进度面板与升级指南",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -51,7 +51,7 @@
       "description": "feat: 添加未分类技能检测和部署验证机制",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -63,7 +63,7 @@
       "description": "fix: 过滤信息不完整的作品，优化展示质量",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -75,7 +75,7 @@
       "description": "feat: 技能分类体系升级v3.0 - 核心能力拆分为学习成长+思考做事",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -87,7 +87,7 @@
       "description": "feat: 添加 2026-03-02 日报数据",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -99,7 +99,7 @@
       "description": "fix: 修复侧边栏雷达图和趋势图不显示的问题",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -111,7 +111,7 @@
       "description": "fix: 修复成就墙和成长趋势图表不显示的问题",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -123,7 +123,7 @@
       "description": "perf: 全面性能优化",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -135,7 +135,7 @@
       "description": "fix: 修复日报数据 - 补全3月2日对话任务和子项目扫描",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -147,7 +147,7 @@
       "description": "🎨 全面修复旷野之息风格 v3.0",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -159,7 +159,7 @@
       "description": "refactor: 优化技能和记忆分类体系 v2.0",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -171,7 +171,7 @@
       "description": "feat: 重构Tab结构 - 新增'了解我'Tab，调整内容布局",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -183,7 +183,7 @@
       "description": "feat: 新增【关于我】核心价值主张、进化历程时间线、如何使用我三大板块",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -195,7 +195,7 @@
       "description": "更新透明背景头像，添加旷野之息蓝色背景",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -207,7 +207,7 @@
       "description": "优化头像加载：压缩图片至80KB、添加preload预加载、使用loading=eager",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -219,7 +219,7 @@
       "description": "为成长趋势图表添加tooltip气泡展示数据",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -231,7 +231,7 @@
       "description": "优化林克头像：添加渐变、动画效果，调整样式使头像填满圆框",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -243,7 +243,7 @@
       "description": "添加林克风格favicon，修改标题为了解添棋",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -255,7 +255,7 @@
       "description": "feat: 添加自进化技能的中文名称映射",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -267,7 +267,7 @@
       "description": "feat: 更新角色数据 - 添加每日反思与进化核心技能",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -275,8 +275,8 @@
     {
       "id": "delivery-2026-03-02-codeflicke",
       "date": "2026-03-02",
-      "title": "📁 codeflicker-homepage: 45次提交",
-      "description": "codeflicker-homepage 项目开发，45次提交，14个文件变更",
+      "title": "📁 link-homepage: 45次提交",
+      "description": "link-homepage 项目开发，45次提交，14个文件变更",
       "type": "feature",
       "source": "report",
       "icon": "📁",
@@ -301,7 +301,7 @@
       "description": "fix: 修复进化历程和多处深色背景区域文字对比度问题",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -313,7 +313,7 @@
       "description": "优化头像：去掉内圈蓝线，放大头像，优化林克形象",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -325,7 +325,7 @@
       "description": "fix: 修复角色能力面板链接指向index.html",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -337,7 +337,7 @@
       "description": "优化系统配置与资源板块分类",
       "type": "fix",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🔧",
       "color": "#4ade80",
       "priority": 3
@@ -349,7 +349,7 @@
       "description": "Add Tears of the Kingdom style demo v2.0",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -361,7 +361,7 @@
       "description": "Upgrade character panel v3.0: game-style skill tree with levels",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -373,7 +373,7 @@
       "description": "Upgrade character panel v2.0: add level system, dynamic data",
       "type": "epic",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "🏆",
       "color": "#ffd700",
       "priority": 1
@@ -400,13 +400,13 @@
       "icon": "🚀",
       "color": "#ffd700",
       "priority": 1,
-      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/"
+      "url": "https://my-ai-research-lab.github.io/link-homepage/"
     },
     {
       "id": "delivery-2026-03-01-codeflicke",
       "date": "2026-03-01",
-      "title": "📁 codeflicker-homepage: 32次提交",
-      "description": "codeflicker-homepage 项目开发，32次提交，3个文件变更",
+      "title": "📁 link-homepage: 32次提交",
+      "description": "link-homepage 项目开发，32次提交，3个文件变更",
       "type": "feature",
       "source": "report",
       "icon": "📁",
@@ -423,7 +423,7 @@
       "icon": "🚀",
       "color": "#ffd700",
       "priority": 1,
-      "url": "https://my-ai-research-lab.github.io/codeflicker-homepage/"
+      "url": "https://my-ai-research-lab.github.io/link-homepage/"
     },
     {
       "id": "commit-d4431b7",
@@ -432,7 +432,7 @@
       "description": "Fix: 更新日报列表添加 2026-02-27 和 2026-02-28",
       "type": "feature",
       "source": "git",
-      "repo": "codeflicker-homepage",
+      "repo": "link-homepage",
       "icon": "✨",
       "color": "#00d4ff",
       "priority": 2
@@ -440,8 +440,8 @@
     {
       "id": "delivery-2026-02-28-codeflicke",
       "date": "2026-02-28",
-      "title": "📁 codeflicker-homepage: 5次提交",
-      "description": "codeflicker-homepage 项目开发，5次提交，0个文件变更",
+      "title": "📁 link-homepage: 5次提交",
+      "description": "link-homepage 项目开发，5次提交，0个文件变更",
       "type": "feature",
       "source": "report",
       "icon": "📁",
@@ -463,8 +463,8 @@
     {
       "id": "delivery-2026-02-27-codeflicke",
       "date": "2026-02-27",
-      "title": "📁 codeflicker-homepage: 9次提交",
-      "description": "codeflicker-homepage 项目开发，9次提交，0个文件变更",
+      "title": "📁 link-homepage: 9次提交",
+      "description": "link-homepage 项目开发，9次提交，0个文件变更",
       "type": "feature",
       "source": "report",
       "icon": "📁",

@@ -202,7 +202,7 @@ function renderSkillTechTree(container, skills) {
     if (guideSkill && coreSkill) {
         // 获取所有需要的技能
         var proactiveSkill = findSkillByName('proactive-agent');
-        var homepageSkill = findSkillByName('codeflicker-homepage');
+        var homepageSkill = findSkillByName('link-homepage');
         
         // 创建节点（使用与demo完全一致的类名）
         function createDemoNode(skill, displayName, role, variant, nodeId) {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-19T16:04:41.626358",
+  "generatedAt": "2026-03-19T16:31:22.371991",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -307,6 +307,25 @@
             "tag": "Link"
           },
           {
+            "name": "link-personal-homepage-template",
+            "displayName": "首页模板",
+            "displayRole": "角色面板",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "个人首页模板技能（为他人生成）。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'generate my homepage'、'create character panel'、'帮我做个首页'时使用此技能。提供塞尔达旷野之息风格的个人AI助手首页模板，自动扫描用户的技能/记忆/知识生成数据。注意：如果是管理林克/CF自己的首页，请使用 link-homepage 技能",
+            "lastUpdated": "2026-03-10",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 182907,
+            "skillSizeLabel": "182K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": "Link"
+          },
+          {
             "name": "link-skill-creator",
             "displayName": "技能创建",
             "displayRole": "创建",
@@ -345,8 +364,8 @@
             "tag": "Link"
           }
         ],
-        "count": 15,
-        "avgLevel": 1.7
+        "count": 16,
+        "avgLevel": 1.6
       },
       "🌐 社交学习": {
         "role": "social",
@@ -1185,25 +1204,6 @@
             "tag": ""
           },
           {
-            "name": "link-personal-homepage-template",
-            "displayName": "首页模板",
-            "displayRole": "角色面板",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "个人首页模板技能（为他人生成）。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'generate my homepage'、'create character panel'、'帮我做个首页'时使用此技能。提供塞尔达旷野之息风格的个人AI助手首页模板，自动扫描用户的技能/记忆/知识生成数据。注意：如果是管理林克/CF自己的首页，请使用 link-homepage 技能",
-            "lastUpdated": "2026-03-10",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 182907,
-            "skillSizeLabel": "182K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": "Link"
-          },
-          {
             "name": "theme-factory",
             "displayName": "主题工厂",
             "displayRole": "样式风格",
@@ -1223,8 +1223,8 @@
             "tag": ""
           }
         ],
-        "count": 9,
-        "avgLevel": 2.9
+        "count": 8,
+        "avgLevel": 3.1
       },
       "🎬 演示制作": {
         "role": "presentation",
@@ -2648,6 +2648,25 @@
                 "tag": "Link"
               },
               {
+                "name": "link-personal-homepage-template",
+                "displayName": "首页模板",
+                "displayRole": "角色面板",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "个人首页模板技能（为他人生成）。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'generate my homepage'、'create character panel'、'帮我做个首页'时使用此技能。提供塞尔达旷野之息风格的个人AI助手首页模板，自动扫描用户的技能/记忆/知识生成数据。注意：如果是管理林克/CF自己的首页，请使用 link-homepage 技能",
+                "lastUpdated": "2026-03-10",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 182907,
+                "skillSizeLabel": "182K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": "Link"
+              },
+              {
                 "name": "link-skill-creator",
                 "displayName": "技能创建",
                 "displayRole": "创建",
@@ -2686,8 +2705,8 @@
                 "tag": "Link"
               }
             ],
-            "count": 15,
-            "avgLevel": 1.7
+            "count": 16,
+            "avgLevel": 1.6
           },
           "🧠 思维方法": {
             "role": "cognitive",
@@ -2862,7 +2881,7 @@
             "avgLevel": 2.0
           }
         },
-        "count": 23,
+        "count": 24,
         "avgLevel": 1.6
       },
       "domain_pack": {
@@ -3537,25 +3556,6 @@
                 "tag": ""
               },
               {
-                "name": "link-personal-homepage-template",
-                "displayName": "首页模板",
-                "displayRole": "角色面板",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "个人首页模板技能（为他人生成）。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'generate my homepage'、'create character panel'、'帮我做个首页'时使用此技能。提供塞尔达旷野之息风格的个人AI助手首页模板，自动扫描用户的技能/记忆/知识生成数据。注意：如果是管理林克/CF自己的首页，请使用 link-homepage 技能",
-                "lastUpdated": "2026-03-10",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 182907,
-                "skillSizeLabel": "182K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": "Link"
-              },
-              {
                 "name": "theme-factory",
                 "displayName": "主题工厂",
                 "displayRole": "样式风格",
@@ -3575,8 +3575,8 @@
                 "tag": ""
               }
             ],
-            "count": 9,
-            "avgLevel": 2.9
+            "count": 8,
+            "avgLevel": 3.1
           },
           "🎬 演示制作": {
             "role": "presentation",
@@ -4732,7 +4732,7 @@
             "avgLevel": 1.0
           }
         },
-        "count": 85,
+        "count": 84,
         "avgLevel": 1.6
       }
     },

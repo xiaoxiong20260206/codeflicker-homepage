@@ -288,11 +288,13 @@ function renderSkillTechTree(container, skills) {
             toolNodesHtml += createDemoNode(homepageSkill, homepageSkill.displayName || '林克首页', homepageSkill.displayRole || '对外门面', 'homepage');
         }
         
-        // 技能生命周期节点（v13.1: 标题移到左边，布局更紧凑）
+        // 技能生命周期节点（v13.5: 标题放在U形闭环内左侧，与技能发现同行）
         var lifecycleHtml = '';
         if (techniqueSkills.length > 0) {
-            // 新布局：标题在左侧，循环圈在右侧
-            lifecycleHtml = '<div class="lifecycle-section lifecycle-section--compact"><div class="lifecycle-left"><span class="lifecycle-title-vertical">技能生命周期</span></div><div class="lifecycle-right"><div class="lifecycle-flow">';
+            // 新布局：标题在技能发现节点左边，同行显示
+            lifecycleHtml = '<div class="lifecycle-section lifecycle-section--compact"><div class="lifecycle-flow">';
+            // 左侧标题
+            lifecycleHtml += '<span class="lifecycle-title-inline">技能<br>生命<br>周期</span>';
             var skillNames = ['技能发现', '技能创建', '技能评估', '技能修炼'];
             var skillRoles = ['搜索市场技能', '从零编写技能', '评测质量分数', '持续精进优化'];
             for (var ti2 = 0; ti2 < techniqueSkills.length; ti2++) {
@@ -302,6 +304,10 @@ function renderSkillTechTree(container, skills) {
                 var skexp = sk.exp || (sklevel * 20);
                 var skdash = 50 * (1 - skexp / 100);
                 var nodeId = ti2 === 0 ? 'id="node-skill-find"' : (ti2 === techniqueSkills.length - 1 ? 'id="node-skill-dojo"' : '');
+                // 第一个节点前加连接器（从标题到节点）
+                if (ti2 === 0) {
+                    lifecycleHtml += '<div class="lifecycle-connector lifecycle-connector--first"><div class="connector-h" style="--line-from: rgba(167, 139, 250, 0.3); --line-to: rgba(167, 139, 250, 0.4);"></div><div class="arrow-right" style="--arrow-color: rgba(167, 139, 250, 0.5);"></div></div>';
+                }
                 lifecycleHtml += '<div ' + nodeId + ' class="engine-node engine-node--lifecycle" onmouseenter="showTreeTooltip(event, \'' + skid + '\', \'skill\')" onmouseleave="hideTooltip()">' +
                     '<div class="engine-node-ring"><svg viewBox="0 0 22 22"><circle class="ring-bg" cx="11" cy="11" r="8"/><circle class="ring-progress" cx="11" cy="11" r="8" stroke-dasharray="50" stroke-dashoffset="' + skdash + '" style="stroke: rgba(200, 220, 240, 0.6);"/></svg><span class="engine-node-level">' + sklevel + '</span></div>' +
                     '<div class="engine-node-info"><span class="engine-node-name">' + skillNames[ti2] + '</span><span class="engine-node-role">' + skillRoles[ti2] + '</span></div></div>';
@@ -310,10 +316,9 @@ function renderSkillTechTree(container, skills) {
                     lifecycleHtml += '<div class="lifecycle-connector"><div class="connector-h" style="--line-from: rgba(167, 139, 250, 0.4); --line-to: rgba(56, 189, 248, 0.4);"></div><div class="arrow-right" style="--arrow-color: rgba(56, 189, 248, 0.5);"></div><div class="energy-particles"><div class="energy-particle" style="--particle-color: #a78bfa; --particle-duration: 2s; animation-delay: ' + particleDelay + 's;"></div></div></div>';
                 }
             }
-            // 添加U形闭环底部的"社区学习"标签（样式与"触发"标签一致）
+            // U形闭环底部的"社区学习"标签
             lifecycleHtml += '<span class="lifecycle-feedback-label connector-label" style="--label-color: rgba(167, 139, 250, 0.85); --label-border: rgba(167, 139, 250, 0.4);">社区学习</span>';
-            // 技能生命周期闭环结束
-            lifecycleHtml += '</div></div></div>';
+            lifecycleHtml += '</div></div>';
         }
         
         // 组装完整的引擎HTML（完全遵循Demo结构）

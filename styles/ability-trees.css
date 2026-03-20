@@ -2017,35 +2017,27 @@
     position: relative;
     overflow: visible !important;
 }
-/* v13.1: 紧凑布局 - 标题在左，循环圈在右 */
+/* v13.5: 紧凑布局 - 标题在流程内左侧，与节点同行 */
 .lifecycle-section--compact {
-    display: flex;
-    align-items: flex-start;
-    margin-top: 8px;
-    padding-top: 8px;
-    padding-bottom: 32px;
-    gap: 12px;
+    margin-top: -20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: none;
 }
-.lifecycle-left {
-    display: flex;
-    align-items: center;
-    padding-top: 20px;
-}
-.lifecycle-title-vertical {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
+.lifecycle-title-inline {
     font-size: 11px;
+    line-height: 1.4;
     color: rgba(200, 220, 240, 0.5);
     font-family: var(--font-mono);
-    letter-spacing: 2px;
-    padding: 8px 4px;
+    padding: 6px 10px;
     border: 1px solid rgba(200, 220, 240, 0.15);
     border-radius: 4px;
     background: rgba(200, 220, 240, 0.03);
+    text-align: center;
+    white-space: nowrap;
 }
-.lifecycle-right {
-    flex: 1;
-    position: relative;
+.lifecycle-connector--first {
+    width: 30px;
 }
 .lifecycle-header {
     display: flex;

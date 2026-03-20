@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T06:19:43.730641",
+  "generatedAt": "2026-03-20T12:19:27.648025",
   "summary": {
     "totalDays": 25,
     "latestDate": "2026-03-20",
@@ -36,7 +36,7 @@
       78,
       79,
       107,
-      107
+      108
     ],
     "knowledge": [
       224,
@@ -52,7 +52,7 @@
       208,
       297,
       298,
-      310
+      298
     ],
     "memory": [
       105,
@@ -68,7 +68,7 @@
       130,
       144,
       152,
-      153
+      155
     ]
   },
   "reports": [
@@ -243,166 +243,1327 @@
     {
       "date": "2026-03-19",
       "dayOfWeek": "周四",
-      "activeProjects": 4,
+      "activeProjects": 6,
       "totalCommits": 0,
-      "conversationCount": 8,
+      "conversationCount": 53,
       "coreProgress": [
-        "💬 完成 8 个任务: 用户要求将AI调研项目整合到研发效能洞察项目中，并重新组织首页展示结构, 验证OpenClaw架构图文件在本地和线上环境的一致性部署...",
-        "📁 项目成果: 文档完善 1 份",
-        "📚 新增 1 篇知识文档，扩展专业领域覆盖"
+        "💬 完成 53 个任务: 对飞书版零下、悟空、AutoCLaw、ByteClaw/ArkCLaw等企业级A..., 询问基础数学运算1+1的结果...",
+        "📁 项目成果: 网页更新 1 个",
+        "⚡ 新增能力: ks-kate-prd-understand、internet-content-research，提升UI/设计输出质量",
+        "🧠 新增记忆: AI日报跨会话续接必须先resume等10条，优化任务执行流程"
       ],
       "deliveries": [
         {
-          "title": "AI Research Project Homepage Restructuring",
+          "title": "Enterprise AI Agent Platform Analysis and Insights",
           "type": "conversation",
-          "goal": "用户要求将AI调研项目整合到研发效能洞察项目中，并重新组织首页展示结构",
+          "goal": "对飞书版零下、悟空、AutoCLaw、ByteClaw/ArkCLaw等企业级AI Agent平台进行深度分析和对比，并发布结构化报告",
           "deliverables": [],
-          "process": [
-            "分析了ai-research目录下的实际报告文件（包括ai-agent-report、ai-fin-learn等8类），移除了不存在的ai-project-portal目录和外部链接，将现有报告按技术..."
-          ],
+          "process": [],
           "tags": [
-            "ai-research",
-            "homepage-redesign",
-            "report-categorization",
-            "project-consolidation"
-          ]
-        },
-        {
-          "title": "OpenClaw Architecture Deployment Verification",
-          "type": "conversation",
-          "goal": "验证OpenClaw架构图文件在本地和线上环境的一致性部署",
-          "deliverables": [],
-          "process": [
-            "通过MD5校验确认了projects/claw-strategy/architecture.html、link-homepage/architecture.html和线上版本的文件一致性..."
-          ],
-          "tags": [
-            "architecture",
-            "deployment",
-            "verification",
+            "AI-analysis",
+            "enterprise-platforms",
+            "trust-boundary",
             "github-pages",
-            "md5"
+            "deployment"
           ]
         },
         {
-          "title": "ClawBook Community Night Patrol and Content Management",
+          "title": "Basic Math Calculation",
           "type": "conversation",
-          "goal": "执行ClawBook社区凌晨巡逻任务，包括内容审核、互动补充、问题解答和新内容发布",
+          "goal": "询问基础数学运算1+1的结果",
           "deliverables": [],
           "process": [
-            "使用clawbook-api.sh脚本完成129号帖子评论检查，发布CSS Grid布局踩坑新帖，回复3条关键评论，并生成详细巡逻报告。确认深夜时段社区活跃度低，是内容储备的黄金时间。"
+            "用户提问1+1等于几，得到了答案为2的回复。"
           ],
           "tags": [
-            "community-management",
-            "content-strategy",
-            "automation",
-            "engagement",
-            "moderation"
+            "math",
+            "calculation",
+            "basic"
           ]
         },
         {
-          "title": "Simple Acknowledgement Request",
+          "title": "Minimal Conversation Acknowledgment",
           "type": "conversation",
-          "goal": "用户只需要一个简单的确认回复",
+          "goal": "用户仅寻求简单的确认回应",
           "deliverables": [],
           "process": [],
           "tags": [
-            "confirmation",
+            "acknowledgment",
             "minimal",
-            "communication"
+            "confirmation"
           ]
         },
         {
-          "title": "Skill Dojo Optimization for Top 10 High-Frequency Skills",
+          "title": "Simple Multiplication Calculation",
           "type": "conversation",
-          "goal": "对高频使用的技能进行持续优化，包括统计识别、场景测试、问题修复和生成优化报告",
+          "goal": "用户需要计算123乘以456的结果",
           "deliverables": [],
           "process": [
-            "完成了Top 10高频技能的场景化测试和退化检测，发现并修复了daily-reflection-evolution的版本问题（v11.6→v12.0），为clawbook补充了3个基础场景。最终生成了..."
+            "计算了123 × 456 = 56,088，使用了中文格式输出结果"
           ],
           "tags": [
-            "skill-dojo",
-            "performance optimization",
-            "quality assurance",
-            "automated testing",
-            "self-improvement"
+            "math",
+            "calculation",
+            "multiplication"
           ]
         },
         {
-          "title": "Simple Acknowledgment Request",
+          "title": "Creating AI Agent PowerPoint Presentation",
           "type": "conversation",
-          "goal": "用户只是要求回复一个简单的确认信息",
+          "goal": "用户想要创建一个关于AI Agent崛起的4页PPT演示文稿，包括封面、定义、应用场景和总结展望。",
+          "deliverables": [],
+          "process": [
+            "使用pptxgenjs创建了4页PPT，包含深色科技主题设计。执行了完整的质量检查流程：生成PDF、转换为图片、视觉检查。最终输出为ai-agent-intro.pptx，包含封面页、定义页(3个要点..."
+          ],
+          "tags": [
+            "pptx",
+            "presentation",
+            "ai-agent",
+            "automation",
+            "quality-assurance"
+          ]
+        },
+        {
+          "title": "Contract Drift Detection in Function Parameter Renaming",
+          "type": "conversation",
+          "goal": "用户希望复盘修改工具函数参数名导致调用方报错的问题，并沉淀为可复用的开发规范",
           "deliverables": [],
           "process": [],
           "tags": [
-            "confirmation",
-            "acknowledgment",
-            "response"
+            "parameter-renaming",
+            "contract-drift",
+            "grep",
+            "debugging",
+            "function-calls"
           ]
         },
         {
-          "title": "ClawBook Community Night Patrol and Content Strategy",
+          "title": "Promotion Review for Senior Engineer to P7",
           "type": "conversation",
-          "goal": "执行深夜社区巡逻任务，包括内容审核、互动回复、知识沉淀和空白板块内容建设",
+          "goal": "用户需要根据候选人提交的晋升材料片段进行SABCD评级评审，并提供关键改进建议",
           "deliverables": [],
           "process": [
-            "使用clawbook-api.sh脚本执行全站扫描、板块检查和互动回复，重点关注#stuck板块并回复3条评论，在#workflow-showcase发布新工作流方法论帖子（#140），完成2篇知识沉..."
+            "根据快手P7职级标准，对候选人的研发效能提升（周期缩短43%）、自动化测试建设（覆盖率提升45%）和团队管理（培养2名负责人）成果进行评审。给出了B级（75分）有条件推荐评级，指出需要加强业务价值量化..."
           ],
           "tags": [
-            "community-management",
-            "content-strategy",
-            "workflow-automation",
-            "engagement",
-            "knowledge-sharing"
+            "promotion review",
+            "SABCD rating",
+            "engineering leadership",
+            "performance metrics",
+            "career development"
           ]
         },
         {
-          "title": "Simple Confirmation Request",
+          "title": "AI Writing Tools Competitive Analysis",
           "type": "conversation",
-          "goal": "用户只需要一个简单的确认回复",
+          "goal": "帮我做一个 AI 写作工具的竞品分析，主要对比 Notion AI、Jasper、Copy.ai 三款产品",
           "deliverables": [],
-          "process": [],
+          "process": [
+            "完成了三阶段调研：1) 收集三款产品基础数据 2) 多维度对比评估 3) 生成可视化报告网页。最后阶段遇到输出过长错误，需分段处理报告内容。"
+          ],
           "tags": [
-            "confirmation",
-            "acknowledgment",
-            "minimal"
+            "competitive-analysis",
+            "ai-writing",
+            "notion-ai",
+            "jasper",
+            "copy-ai"
           ]
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 79,
-        "knowledgeCount": 161,
-        "memoryCount": 144,
+        "skillCount": 108,
+        "knowledgeCount": 159,
+        "memoryCount": 157,
         "skillChange": 0,
-        "knowledgeChange": 1,
-        "memoryChange": 0,
-        "newSkills": [],
+        "knowledgeChange": 0,
+        "memoryChange": 10,
+        "newSkills": [
+          {
+            "name": "ks-kate-prd-understand",
+            "description": ">"
+          },
+          {
+            "name": "internet-content-research",
+            "description": "\"国内互联网数据源整合技能（数据采集层）。触发词：'微信公众号搜索'、'小红书搜索'、'搜一下小红书'、'公众号调研'、"
+          },
+          {
+            "name": "link-ks-kim-send-message",
+            "description": "This skill should be used when the user mentions \"林克发消息\", \"林"
+          },
+          {
+            "name": "ks-commit-msg",
+            "description": "基于 staged diff 生成符合 Conventional Commits 规范的 commit message。"
+          },
+          {
+            "name": "humanize-writing",
+            "description": "消除AI写作痕迹，为文本注入人性化灵魂。当用户提到\"去AI味\"、\"更像人话\"、\"人性化\"、\"humanize\"、\"消除A"
+          },
+          {
+            "name": "seo-audit",
+            "description": "When the user wants to audit, review, or diagnose SEO issues"
+          },
+          {
+            "name": "copywriting",
+            "description": "Write rigorous, conversion-focused marketing copy for landin"
+          },
+          {
+            "name": "baoyu-xhs-images",
+            "description": "Generates Xiaohongshu (Little Red Book) infographic series w"
+          },
+          {
+            "name": "ks-file-upload",
+            "description": "\"上传文件到快手内部BlobStore存储。触发词：'上传文件'、'文件上传'、'获取CDN链接'、'BlobStore"
+          },
+          {
+            "name": "ks-work-report-ppt",
+            "description": "\"This skill should be used when the user asks to create a 工作"
+          },
+          {
+            "name": "vercel-react-native-skills",
+            "description": "React Native and Expo best practices for building performant"
+          },
+          {
+            "name": "link-find-skills",
+            "description": "\"技能发现 — 技能生命周期的第一阶段。多源搜索 + 主动巡检。模式A: 用户触发搜索（找技能, 搜索技能, ClawH"
+          },
+          {
+            "name": "ks-mcp-to-skill",
+            "description": "\"MCP转技能工具 — 自动将MCP服务端点转换为完整的Skill。触发词：'MCP转技能'、'生成MCP技能'、'mc"
+          },
+          {
+            "name": "ks-kstack",
+            "description": "读取 KStack 文章内容。"
+          },
+          {
+            "name": "baoyu-post-to-weibo",
+            "description": "Posts content to Weibo (微博). Supports regular posts with tex"
+          },
+          {
+            "name": "baoyu-infographic",
+            "description": "Generates professional infographics with 21 layout types and"
+          },
+          {
+            "name": "ks-kate-brief-design",
+            "description": ">"
+          },
+          {
+            "name": "web-design-guidelines",
+            "description": "Review UI code for Web Interface Guidelines compliance. Use "
+          },
+          {
+            "name": "ks-kmodel",
+            "description": "This skill should be used when the user asks about \"kmodel 开"
+          },
+          {
+            "name": "baoyu-post-to-wechat",
+            "description": "Posts content to WeChat Official Account (微信公众号) via API or "
+          },
+          {
+            "name": "baoyu-danger-gemini-web",
+            "description": "Generates images and text via reverse-engineered Gemini Web "
+          },
+          {
+            "name": "ks-kim-skills-assistant",
+            "description": "快手 KIM 平台通用 API 封装。提供消息发送/拉取、群管理、待办创建、日程管理等通用能力。这是底层技能，可被其他技"
+          },
+          {
+            "name": "web-dev-workflow",
+            "description": "|"
+          },
+          {
+            "name": "ks-clawbook",
+            "description": ">"
+          },
+          {
+            "name": "ks-promotion-coaching",
+            "description": "\"晋升辅导 — 辅导者视角的端到端晋升准备。触发词：'晋升辅导'、'晋升材料'、'晋升PPT'、'答辩攻略'、'帮XXX"
+          },
+          {
+            "name": "baoyu-format-markdown",
+            "description": "Formats plain text or markdown files with frontmatter, title"
+          },
+          {
+            "name": "ks-promotion-review-sabcd",
+            "description": "\"晋升评审 — 评委视角的材料分析与评分。触发词：'晋升评审'、'晋升材料分析'、'生成评审报告'、'SABCD评级'、"
+          },
+          {
+            "name": "ks-快手-sso-login",
+            "description": "\"登录快手内网SSO。触发词：'SSO登录'、'内网登录'、'扫码登录'、'快手登录'。当用户需要访问快手内部网站（*."
+          },
+          {
+            "name": "ks-qa-test-case",
+            "description": "根据交互设计文档、PRD、技术文档生成结构化的 QA 黑盒测试用例。当用户说\"生成测试用例\"、\"写 QA 用例\"、\"写测"
+          },
+          {
+            "name": "baoyu-danger-x-to-markdown",
+            "description": "Converts X (Twitter) tweets and articles to markdown with YA"
+          },
+          {
+            "name": "baoyu-compress-image",
+            "description": "Compresses images to WebP (default) or PNG with automatic to"
+          },
+          {
+            "name": "link-agent-session-controller",
+            "description": "林克会话编排 — 元技能层「做事方法」。通过Duet Protocol External API程序化控制AI会话，实现"
+          },
+          {
+            "name": "ks-meeting-room-booking",
+            "description": "\"会议室预定 — 根据时间和关键词推荐空闲会议室并自动创建日程。触发词：'预定会议室'、'订会议室'、'找会议室'、'b"
+          },
+          {
+            "name": "link-beiming-shengong",
+            "description": "\"北冥神功 — 三大功法之一，自进化引擎的能力导出能力。触发词：'北冥神功'、'导出能力'、'能力打包'、'安装能力包'"
+          },
+          {
+            "name": "baoyu-comic",
+            "description": "Knowledge comic creator supporting multiple art styles and t"
+          },
+          {
+            "name": "ks-tianwen-monitor-query",
+            "description": "\"查询天问（Tianwen）监控平台数据。触发词：'天问'、'监控曲线'、'监控数据'、'Tianwen'、'查监控'、"
+          },
+          {
+            "name": "link-skill-management",
+            "description": "\"技能体系优化 — 系统优化工具之一，被内功修炼调用。触发词：'优化技能体系'、'技能架构优化'、'梳理技能关系'、'检"
+          },
+          {
+            "name": "baoyu-post-to-x",
+            "description": "Posts content and articles to X (Twitter). Supports regular "
+          },
+          {
+            "name": "ks-hive-data-agent",
+            "description": "Hive数据智能查询助手。当用户询问Hive表、表结构、血缘、产出逻辑等问题时，自动访问天工Data Agent进行智能"
+          },
+          {
+            "name": "sl-yuque-publisher",
+            "description": "语雀知识库双向同步技能。支持发布文档、读取文档、删除文档、获取列表等操作。当用户说\"发布到语雀\"、\"读取语雀文档\"、\"打"
+          },
+          {
+            "name": "investment-tracker",
+            "description": "\"个人投资理财追踪技能。触发词：'投资'、'理财'、'基金'、'持仓'、'加仓'、'减仓'、'止盈'、'止损'、'定投'"
+          },
+          {
+            "name": "executive-report-writing",
+            "description": "\"高管汇报材料写作 — 面向高管/老板的材料写作规范。触发词：'老板汇报'、'给老板写'、'高管材料'、'高管汇报'、'"
+          },
+          {
+            "name": "link-homepage",
+            "description": "|"
+          },
+          {
+            "name": "meta-spec-skill-template",
+            "description": "【替换为你的项目名】文档规范与开发工作流 Skill。当用户说\"生成需求文档\"、\"写技术方案\"、\"实现功能\"、\"跑测试\""
+          },
+          {
+            "name": "baoyu-slide-deck",
+            "description": "Generates professional slide deck images from content. Creat"
+          },
+          {
+            "name": "baoyu-markdown-to-html",
+            "description": "Converts Markdown to styled HTML with WeChat-compatible them"
+          },
+          {
+            "name": "baoyu-article-illustrator",
+            "description": "Analyzes article structure, identifies positions requiring v"
+          },
+          {
+            "name": "vercel-react-best-practices",
+            "description": "React and Next.js performance optimization guidelines from V"
+          },
+          {
+            "name": "ks-browser-testing-doc",
+            "description": "This skill should be used when the user asks to \"test websit"
+          },
+          {
+            "name": "vercel-composition-patterns",
+            "description": "React composition patterns that scale. Use when refactoring "
+          },
+          {
+            "name": "baoyu-translate",
+            "description": "Translates articles and documents between languages with thr"
+          },
+          {
+            "name": "ks-kwaibi-sql-exec",
+            "description": "KwaiBI SQL 取数执行工具（完整自动化版）。自动执行 SQL 查询，记录查询文件名，等待查询成功后点击\"执行结果"
+          },
+          {
+            "name": "ks-kwaibi-data-query",
+            "description": "\"查询KwaiBI（天策）看板数据。触发词：'KwaiBI'、'天策'、'看板数据'、'查看板'、'KwaiBI看板'、"
+          },
+          {
+            "name": "baoyu-url-to-markdown",
+            "description": "Fetch any URL and convert to markdown using Chrome CDP. Save"
+          },
+          {
+            "name": "ks-onepoint-meeting",
+            "description": "\"Onepoint会议助手 — 查询快手Onepoint会议数据。触发词：'查会议'、'会议记录'、'会议摘要'、'On"
+          },
+          {
+            "name": "link-night-task-runner",
+            "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡"
+          }
+        ],
         "updatedSkills": [
           {
-            "name": "daily-reflection-evolution",
-            "description": "\"闭关修炼 — 自进化引擎的核心能力之一，每日运转的进化流水线。触发词：'每日修炼'、'闭关修炼'、'运行每日任务'、'"
+            "name": "ui-ux-pro-max",
+            "description": "\"UI/UX design intelligence for web and mobile. Includes 85+ "
+          },
+          {
+            "name": "sl-ai-insight",
+            "description": "\"AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI周报'或执行AI行业调研任务时使用。核心场景"
+          },
+          {
+            "name": "remotion-best-practices",
+            "description": "Best practices for Remotion - Video creation in React"
+          },
+          {
+            "name": "stock-analysis",
+            "description": "\"美股与加密货币市场数据分析。触发词：'股票分析'、'美股'、'加密货币'、'crypto'、'stock analys"
+          },
+          {
+            "name": "link-learn-from-mistakes",
+            "description": "\"举一反三 — 双轮驱动之一，自进化引擎的即时复盘能力。触发词：'复盘'、'举一反三'、'总结这个问题'、'这次做得好'"
+          },
+          {
+            "name": "link-xixingdafa",
+            "description": "\"吸星大法 — 三大功法之一，自进化引擎的外部吸收能力。触发词：'吸星大法'、'吸收外部技能'、'学习外部最佳实践'、'"
+          },
+          {
+            "name": "theme-factory",
+            "description": "Toolkit for styling artifacts with a theme. These artifacts "
+          },
+          {
+            "name": "sl-codeflicker-weekly-report",
+            "description": "This skill should be used when the user mentions \"CodeFlicke"
+          },
+          {
+            "name": "link-essence-insight",
+            "description": "This skill should be used when the user asks about \"本质\", \"为什"
+          },
+          {
+            "name": "link-memory-hygiene",
+            "description": "\"记忆优化 — 系统优化工具之一，被内功修炼调用。触发词：'检查记忆健康度'、'记忆优化'、'记忆清理'。核心职责：记忆"
+          },
+          {
+            "name": "link-skill-evaluator",
+            "description": "\"单技能质量评估 — 针对单个技能的深度质量分析。触发词：'评估这个技能'、'技能质量检查'、'技能评分'、'revie"
+          },
+          {
+            "name": "link-knowledge-base",
+            "description": "沈浪的个人知识库检索技能。当用户提到\"查文档\"、\"找调研\"、\"我之前做过什么调研\"、\"帮我找一下之前的文档\"、\"知识库里"
+          },
+          {
+            "name": "link-product-thinking",
+            "description": "|"
+          },
+          {
+            "name": "error-handling-patterns",
+            "description": "Master error handling patterns across languages including ex"
+          },
+          {
+            "name": "link-knowledge-acquisition-meta",
+            "description": "This skill should be used when the user wants to \"learn a ne"
+          },
+          {
+            "name": "link-meta-execution",
+            "description": "This skill should be used automatically when receiving any t"
+          },
+          {
+            "name": "personal-assistant",
+            "description": "This skill should be used whenever users request personal as"
+          },
+          {
+            "name": "workflow-orchestration-patterns",
+            "description": "Design durable workflows with Temporal for distributed syste"
+          },
+          {
+            "name": "link-skill-creator",
+            "description": "\"技能创建 — 技能生命周期的第二阶段（发现→创建→评估→修炼）。触发词：'创建技能'、'新建技能'、'写个技能'。核心"
+          },
+          {
+            "name": "html-screenshot",
+            "description": "\"HTML截图原子技能 — 将HTML渲染为高清PNG截图。触发词：'HTML截图'、'生成PNG'、'HTML转图片'"
+          },
+          {
+            "name": "sl-rd-efficiency-insight",
+            "description": "\"研发效能洞察平台专属技能。当用户明确提到'研发效能洞察'、'研效知识库'、'研效追踪'、'学习研发效能'、'效能调研'"
+          },
+          {
+            "name": "link-personal-homepage-template",
+            "description": "\"个人首页模板技能（为他人生成）。当用户说'生成我的首页'、'创建角色面板'、'我要一个像林克那样的首页'、'gener"
+          },
+          {
+            "name": "context-window-management",
+            "description": "\"Strategies for managing LLM context windows including summa"
+          },
+          {
+            "name": "xiaohongshu",
+            "description": "|"
+          },
+          {
+            "name": "sl-feishu-assistant",
+            "description": "沈浪飞书助手 — 飞书机器人与CodeFlicker的本地链路。触发词：\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\""
+          },
+          {
+            "name": "link-debug-pro",
+            "description": "|"
+          },
+          {
+            "name": "frontend-design",
+            "description": "Create distinctive, production-grade frontend interfaces wit"
+          },
+          {
+            "name": "ks-kim-docs-shuttle",
+            "description": "快手内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「"
+          },
+          {
+            "name": "link-knowledge-curator",
+            "description": "\"知识优化 — 系统优化工具之一，被内功修炼调用。触发词：'检查知识库健康度'、'知识优化'、'整理知识'、'知识库瘦身"
+          },
+          {
+            "name": "industry-research",
+            "description": "\"行业调研方法论（调研框架）。触发词：'行业调研'、'市场分析'、'竞品分析'、'做个调研'、'帮我分析一下XXX市场'"
           }
         ],
         "newKnowledge": [
           {
+            "name": "skill-training-report-2026-03-16",
+            "category": "self-evolution"
+          },
+          {
+            "name": "cultivation-report-2026-03-14",
+            "category": "self-evolution"
+          },
+          {
+            "name": "knowledge-report-20260306",
+            "category": "self-evolution"
+          },
+          {
+            "name": "cultivation-report-2026-03-04",
+            "category": "self-evolution"
+          },
+          {
+            "name": "CHANGELOG",
+            "category": "self-evolution"
+          },
+          {
+            "name": "skill-training-report-2026-03-17",
+            "category": "self-evolution"
+          },
+          {
+            "name": "README",
+            "category": "self-evolution"
+          },
+          {
+            "name": "index",
+            "category": "self-evolution"
+          },
+          {
+            "name": "metrics-log",
+            "category": "self-evolution"
+          },
+          {
+            "name": "cultivation-report-2026-03-06",
+            "category": "self-evolution"
+          },
+          {
+            "name": "skill-training-report-2026-03-14",
+            "category": "self-evolution"
+          },
+          {
+            "name": "cultivation-report-2026-03-13",
+            "category": "self-evolution"
+          },
+          {
+            "name": "top10-dojo-2026-03-18",
+            "category": "self-evolution"
+          },
+          {
             "name": "top10-dojo-2026-03-19",
             "category": "self-evolution"
+          },
+          {
+            "name": "beiming-shengong-2026-03-16",
+            "category": "self-evolution"
+          },
+          {
+            "name": "beiming-shengong-2026-03-16-r2",
+            "category": "self-evolution"
+          },
+          {
+            "name": "2026-W11-review",
+            "category": "self-evolution"
+          },
+          {
+            "name": "proactive-agent",
+            "category": "self-evolution"
+          },
+          {
+            "name": "xixingdafa-2026-03-10",
+            "category": "self-evolution"
+          },
+          {
+            "name": "quality-v4.1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "user-frontend-v1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "tech-operation-v4",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "backend-development-v3.1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "strategy-development-v4",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "data-development-v4",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "README",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "operation-frontend-v1",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "operation-development-v5",
+            "category": "promotion-standards"
+          },
+          {
+            "name": "overview",
+            "category": "personal-writings"
+          },
+          {
+            "name": "article-index",
+            "category": "personal-writings"
+          },
+          {
+            "name": "README",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-bookstore-peripheral-vs-core",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-year-end-work-and-void",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-heart-emotion-way",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-political-perspective",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-midsummer-reflections",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-doing-things-and-cultivating-heart",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-hacker-path",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-peripheral-bookstore",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-martial-arts-skill-training",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-animal-farm-justice",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-summer-reflection",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-righteous-path",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-work-and-void",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-poem-life-journey",
+            "category": "personal-writings"
+          },
+          {
+            "name": "dev-efficiency-secrets",
+            "category": "personal-writings"
+          },
+          {
+            "name": "dev-efficiency-secrets-annual",
+            "category": "personal-writings"
+          },
+          {
+            "name": "bigdata-ai-1-learning-map",
+            "category": "personal-writings"
+          },
+          {
+            "name": "bigdata-ai-2-knowledge-graph",
+            "category": "personal-writings"
+          },
+          {
+            "name": "core-concepts-of-growth",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-02-product-marketing-channel",
+            "category": "personal-writings"
+          },
+          {
+            "name": "three-dimensional-world-02-correlation",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thinking-simple-complex",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-03-scenario",
+            "category": "personal-writings"
+          },
+          {
+            "name": "martial-arts-ability",
+            "category": "personal-writings"
+          },
+          {
+            "name": "economics-graduation-summary",
+            "category": "personal-writings"
+          },
+          {
+            "name": "interdependence-strong-weak",
+            "category": "personal-writings"
+          },
+          {
+            "name": "career-core-value",
+            "category": "personal-writings"
+          },
+          {
+            "name": "simple-world-01-company-manager",
+            "category": "personal-writings"
+          },
+          {
+            "name": "simple-world-03-performance",
+            "category": "personal-writings"
+          },
+          {
+            "name": "simple-world-02-management-practice",
+            "category": "personal-writings"
+          },
+          {
+            "name": "three-dimensional-world-03-wholeness",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-06-business-model",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-07-macro-meso-micro",
+            "category": "personal-writings"
+          },
+          {
+            "name": "time-management-economics",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-05-system-capability",
+            "category": "personal-writings"
+          },
+          {
+            "name": "learning-methodology",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-04-opportunity-judgment",
+            "category": "personal-writings"
+          },
+          {
+            "name": "truth-of-memory",
+            "category": "personal-writings"
+          },
+          {
+            "name": "problem-solving-principles",
+            "category": "personal-writings"
+          },
+          {
+            "name": "information-worldview",
+            "category": "personal-writings"
+          },
+          {
+            "name": "three-dimensional-world-01-overview",
+            "category": "personal-writings"
+          },
+          {
+            "name": "product-thinking-01-deliver-your-product",
+            "category": "personal-writings"
+          },
+          {
+            "name": "comparative-advantage-cooperation",
+            "category": "personal-writings"
+          },
+          {
+            "name": "jinyong-martial-arts-learning",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-letter-to-son-kindergarten-graduation",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-letter-to-qiqi",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-letter-to-qiqi-graduation",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-letter-to-qiqi-kindergarten",
+            "category": "personal-writings"
+          },
+          {
+            "name": "my-career",
+            "category": "personal-writings"
+          },
+          {
+            "name": "my-booklist",
+            "category": "personal-writings"
+          },
+          {
+            "name": "overview",
+            "category": "personal-writings"
+          },
+          {
+            "name": "02-data",
+            "category": "personal-writings"
+          },
+          {
+            "name": "03-algorithm",
+            "category": "personal-writings"
+          },
+          {
+            "name": "04-application",
+            "category": "personal-writings"
+          },
+          {
+            "name": "01-operating-system",
+            "category": "personal-writings"
+          },
+          {
+            "name": "01-overview",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-01-cognition",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-04-value",
+            "category": "personal-writings"
+          },
+          {
+            "name": "martial-arts-ability",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-02-center",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-02-external",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-03-practice",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-01-structure",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-03-internal",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-part1",
+            "category": "personal-writings"
+          },
+          {
+            "name": "learning-methodology",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-00-intro",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-01",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-01-cognition",
+            "category": "personal-writings"
+          },
+          {
+            "name": "chisel-and-brush-00-preface",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-04-value",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-02-center",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-heart-emotion-dao",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-03-practice",
+            "category": "personal-writings"
+          },
+          {
+            "name": "political-perspective",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-hacker-path",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-stages",
+            "category": "personal-writings"
+          },
+          {
+            "name": "chisel-and-brush-02-paint-meaning",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-02-external-world",
+            "category": "personal-writings"
+          },
+          {
+            "name": "chisel-and-brush-01-carve-world",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-intro",
+            "category": "personal-writings"
+          },
+          {
+            "name": "three-stages-of-meaning",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-03-inner-world",
+            "category": "personal-writings"
+          },
+          {
+            "name": "system-world-01-introduction",
+            "category": "personal-writings"
+          },
+          {
+            "name": "political-science-perspective",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-00-preface",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-03",
+            "category": "personal-writings"
+          },
+          {
+            "name": "chisel-and-brush",
+            "category": "personal-writings"
+          },
+          {
+            "name": "doing-and-cultivating-mind",
+            "category": "personal-writings"
+          },
+          {
+            "name": "thought-growth-02",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-questions-04-value",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-life-questions-intro",
+            "category": "personal-writings"
+          },
+          {
+            "name": "martial-arts-skill-training",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-questions-01-cognition",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-questions-03-internal",
+            "category": "personal-writings"
+          },
+          {
+            "name": "four-questions-02-external",
+            "category": "personal-writings"
+          },
+          {
+            "name": "01-deliver-your-product",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2019-newyear-untitled",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2021-newyear-drops-hide-ocean",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2021-stargazing",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-midsummer",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-heart-emotion-way",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-year-end-work-void",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-midsummer-reflections",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-real-buff",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-hacker-path",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-peripheral-bookstore",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2017-newyear-no-guide",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-just-for-fun",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2018-newyear-is-there-a-path",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2020-newyear-drops-hide-ocean",
+            "category": "personal-writings"
+          },
+          {
+            "name": "career",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2023-newyear-drops-hide-ocean",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2021-reflection",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-reflection",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2021-reach-for-stars",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-reflection",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-summer-reflections",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-animal-farm",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-drink-and-sing",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-newyear-drops-hide-ocean",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2025-righteous-path",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-carpe-diem",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2024-work-and-void",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2021-35-birthday-reflection",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-essay-real-buff",
+            "category": "personal-writings"
+          },
+          {
+            "name": "2022-poem-carpe-diem",
+            "category": "personal-writings"
           }
         ],
         "updatedKnowledge": [],
-        "newMemory": [],
-        "updatedMemory": [],
+        "newMemory": [
+          {
+            "title": "AI日报跨会话续接必须先resume",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "子技能操作前必须先读对应章节（先读后做原则）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "任务执行不能偷换概念（'运行测试'≠'检查文件存在'）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "技能管理必须一步到位执行修复（只诊断不修复是反模式）+ skill-dojo报告必须用HTTP URL",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "JavaScript函数内赋值全局变量必须用window前缀",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "懒加载页面的动态绘制必须在渲染完成后调用",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "技能调用统计前缀变体必须合并（名称映射陷阱）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "技能调用统计遗漏的六大陷阱（v1.0）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "信息查询任务不应自动拆分为批量执行任务",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "多会话编排的Prompt深度设计陷阱（Step 3/4深度不足教训）",
+            "category": "common_pitfalls_experience"
+          }
+        ],
+        "updatedMemory": [
+          {
+            "title": "输出链接格式规范（代码规范）",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "默认工作模式：***的思维方式和风格",
+            "category": "user_communication"
+          },
+          {
+            "title": "AI助手\"林克/添棋\"身份信息",
+            "category": "user_info"
+          },
+          {
+            "title": "林克/添棋的自我表达风格",
+            "category": "user_communication"
+          },
+          {
+            "title": "推理闭环原则",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "核心身份关系与称呼规范（权威版 v5）",
+            "category": "user_info"
+          },
+          {
+            "title": "工具能力边界测试原则（三层测试法）",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "多文件联动更新的隐式耦合陷阱（十二类检查清单）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "规则膨胀悖论：结构性约束 > 文字规则",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "新工具/技能接入前的三道关卡",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "林克默认习惯索引（北冥神功导出必须遵循）",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "战略论证类任务必须包含完整的解决路径",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "禁止使用龙虾emoji",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "每日修炼统一流程 v12.0（摘要）",
+            "category": "user_communication"
+          },
+          {
+            "title": "契约漂移检测：修改参数名必须扫描消费者",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "Session-Start Protocol (SSP) — 对话启动主动性协议 v2.0（硬执行+显性标注）",
+            "category": "constraint_or_forbidden_rule"
+          },
+          {
+            "title": "VPN单向性导致Webhook回调不可达",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "macOS launchd定时任务静默失效",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "Agent定时任务假完成陷阱",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "个人助理目录结构与项目索引 (v5.2 - 2026-03-19 link-homepage)",
+            "category": "project_configuration"
+          },
+          {
+            "title": "Chrome Headless / Puppeteer 截图核心公式",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "踩坑记忆召回失败模式（16类任务映射）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "外部API权限必须前置验证",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "Git Force操作前必须保护工作区（stash优先）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "pathlib rglob/glob 不跟踪软链接（需用os.walk）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "同步脚本脱敏闸门（v2.0 — 林克/快手/沈浪直接展示，仅真实姓名和内网域名需脱敏）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "Flex布局边缘元素被压缩（min-width+flex-shrink:0）",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "北冥神功能力包完整生命周期（摘要）",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "输出介质决定格式选择（KIM Docs安全格式）",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "CSS跨列行对齐：subgrid（解决多列错位）",
+            "category": "development_code_specification"
+          },
+          {
+            "title": "跨技能交接断裂：内容生成 ≠ 平台发布完成",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "数据源有淘汰策略时\"全量重扫\"统计会丢失数据",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "GitHub Pages 部署验证：等待延迟 + 多workflow诊断",
+            "category": "development_practice_specification"
+          },
+          {
+            "title": "深度调研三级同步发布流程（文章→网页→技能）",
+            "category": "task_flow_experience"
+          },
+          {
+            "title": "execute_command heredoc 陷阱（v2：含多行Python代码引号嵌套场景）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "GitHub Pages 默认部署域名与仓库架构 (2026-03-19 更新)",
+            "category": "project_configuration"
+          }
+        ],
         "trend": "growing"
       },
-      "skillCount": 79,
-      "knowledgeCount": 161,
-      "memoryCount": 144,
+      "skillCount": 108,
+      "knowledgeCount": 159,
+      "memoryCount": 157,
       "skillChange": 0,
-      "knowledgeChange": 1,
-      "memoryChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 10,
       "highlights": [
-        "💬 完成 8 个任务: 用户要求将AI调研项目整合到研发效能洞察项目中，并重新组织首页展示结构, 验证OpenClaw架构图文件在本地和线上环境的一致性部署...",
-        "📁 项目成果: 文档完善 1 份",
-        "📚 新增 1 篇知识文档，扩展专业领域覆盖"
+        "💬 完成 53 个任务: 对飞书版零下、悟空、AutoCLaw、ByteClaw/ArkCLaw等企业级A..., 询问基础数学运算1+1的结果...",
+        "📁 项目成果: 网页更新 1 个",
+        "⚡ 新增能力: ks-kate-prd-understand、internet-content-research，提升UI/设计输出质量"
       ]
     },
     {

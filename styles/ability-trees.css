@@ -2018,9 +2018,9 @@
 }
 /* v13.2: 紧凑布局 - 标题在左下角 */
 .lifecycle-section--compact {
-    margin-top: 4px;
-    padding-top: 4px;
-    padding-bottom: 8px;
+    margin-top: -8px;
+    padding-top: 0;
+    padding-bottom: 4px;
     border-top: 1px dashed rgba(200, 220, 240, 0.1);
 }
 .lifecycle-bottom {

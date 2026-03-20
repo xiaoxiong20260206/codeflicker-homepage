@@ -117,7 +117,7 @@
     overflow: visible;
     position: relative;
     z-index: 101;
-    min-height: 420px;  /* v13.4: 确保容器高度足够显示所有内容 */
+    min-height: 510px;  /* v13.5: 增加底色高度，使布局更美观 */
 }
 /* Demo风格头部 */
 .engine-header {

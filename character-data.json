@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T14:11:01.430170",
+  "generatedAt": "2026-03-20T14:21:54.990130",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -4883,18 +4883,21 @@
           "thinking_pattern"
         ],
         "fileCount": 21,
-        "sizeKB": 176.3,
+        "sizeKB": 176.2,
         "heatLevel": 5,
         "recentCount": 21
       },
       "promotion-standards": {
         "name": "promotion-standards",
-        "displayName": "promotion-standards",
-        "icon": "📁",
-        "color": "#64748b",
-        "description": "promotion-standards相关文档",
+        "displayName": "晋升标准库",
+        "icon": "🏅",
+        "color": "#f59e0b",
+        "description": "快手各通道技术晋升职级标准，供晋升评审技能引用",
         "layerTag": "L3-execution",
-        "relatedSkills": [],
+        "relatedSkills": [
+          "ks-promotion-review-sabcd",
+          "ks-promotion-coaching"
+        ],
         "relatedMemories": [],
         "fileCount": 9,
         "sizeKB": 53.9,
@@ -4958,13 +4961,13 @@
               "thinking_pattern"
             ],
             "fileCount": 21,
-            "sizeKB": 176.3,
+            "sizeKB": 176.2,
             "heatLevel": 5,
             "recentCount": 21
           }
         },
         "totalFiles": 152,
-        "totalSizeKB": 1039.1
+        "totalSizeKB": 1039.0
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -5023,12 +5026,15 @@
         "categories": {
           "promotion-standards": {
             "name": "promotion-standards",
-            "displayName": "promotion-standards",
-            "icon": "📁",
-            "color": "#64748b",
-            "description": "promotion-standards相关文档",
+            "displayName": "晋升标准库",
+            "icon": "🏅",
+            "color": "#f59e0b",
+            "description": "快手各通道技术晋升职级标准，供晋升评审技能引用",
             "layerTag": "L3-execution",
-            "relatedSkills": [],
+            "relatedSkills": [
+              "ks-promotion-review-sabcd",
+              "ks-promotion-coaching"
+            ],
             "relatedMemories": [],
             "fileCount": 9,
             "sizeKB": 53.9,
@@ -5055,7 +5061,7 @@
       }
     },
     "totalFiles": 299,
-    "totalSizeKB": 2755.4
+    "totalSizeKB": 2755.3
   },
   "memories": {
     "items": [
@@ -6238,25 +6244,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "网页开发完成后必须提供在线访问链接",
-        "category": "development_practice_specification",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "网页开发完成后必须提供在线访问链接 强制规则 当完成任何网页开发任务时，交付物必须包含可直接访问的在线链接，而不仅仅是： - ❌ 本地文件路...",
-        "keywords": [
-          "网页开发",
-          "部署",
-          "在线链接",
-          "URL",
-          "GitHub Pages"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-03-12",
-        "source": "项目记忆"
-      },
-      {
         "title": "脚本诊断 vs Agent修复的分工边界（auto_fixable → agent_fixable 模式）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -6387,6 +6374,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-03-18",
+        "source": "项目记忆"
+      },
+      {
+        "title": "页面交付必须提供可点击链接（本地 file:// + 在线 URL 双模式）",
+        "category": "development_practice_specification",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "页面交付必须提供可点击链接 强制规则（最高优先级） 无论页面是本地 HTML 文件还是在线部署页面，做完后必须默认给出可直接点击的链接*...",
+        "keywords": [
+          "页面",
+          "链接",
+          "可点击",
+          "file协议",
+          "网页"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-03-20",
         "source": "项目记忆"
       },
       {
@@ -8988,22 +8994,22 @@
                 "source": "项目记忆"
               },
               {
-                "title": "网页开发完成后必须提供在线访问链接",
+                "title": "页面交付必须提供可点击链接（本地 file:// + 在线 URL 双模式）",
                 "category": "development_practice_specification",
                 "categoryLabel": "前端开发",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🎨",
                 "color": "#f472b6",
-                "description": "网页开发完成后必须提供在线访问链接 强制规则 当完成任何网页开发任务时，交付物必须包含可直接访问的在线链接，而不仅仅是： - ❌ 本地文件路...",
+                "description": "页面交付必须提供可点击链接 强制规则（最高优先级） 无论页面是本地 HTML 文件还是在线部署页面，做完后必须默认给出可直接点击的链接*...",
                 "keywords": [
-                  "网页开发",
-                  "部署",
-                  "在线链接",
-                  "URL",
-                  "GitHub Pages"
+                  "页面",
+                  "链接",
+                  "可点击",
+                  "file协议",
+                  "网页"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-03-12",
+                "updatedAt": "2026-03-20",
                 "source": "项目记忆"
               },
               {

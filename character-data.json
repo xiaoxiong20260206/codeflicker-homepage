@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-20T13:58:49.592383",
+  "generatedAt": "2026-03-20T14:11:01.430170",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -4882,10 +4882,10 @@
         "relatedMemories": [
           "thinking_pattern"
         ],
-        "fileCount": 20,
-        "sizeKB": 172.3,
+        "fileCount": 21,
+        "sizeKB": 176.3,
         "heatLevel": 5,
-        "recentCount": 20
+        "recentCount": 21
       },
       "promotion-standards": {
         "name": "promotion-standards",
@@ -4957,14 +4957,14 @@
             "relatedMemories": [
               "thinking_pattern"
             ],
-            "fileCount": 20,
-            "sizeKB": 172.3,
+            "fileCount": 21,
+            "sizeKB": 176.3,
             "heatLevel": 5,
-            "recentCount": 20
+            "recentCount": 21
           }
         },
-        "totalFiles": 151,
-        "totalSizeKB": 1035.1
+        "totalFiles": 152,
+        "totalSizeKB": 1039.1
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -5054,8 +5054,8 @@
         "totalSizeKB": 53.9
       }
     },
-    "totalFiles": 298,
-    "totalSizeKB": 2751.4
+    "totalFiles": 299,
+    "totalSizeKB": 2755.4
   },
   "memories": {
     "items": [
@@ -10935,7 +10935,7 @@
     "knowledge": [
       297,
       298,
-      298
+      299
     ],
     "memories": [
       144,

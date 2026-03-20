@@ -1682,6 +1682,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
+    margin-top: -8px;  /* v13.8: 核心能力区上移 */
 }
 .core-row {
     display: flex;
@@ -1740,7 +1741,7 @@
     flex-direction: column;
     align-items: center;
     gap: 6px;
-    margin-top: 16px;
+    margin-top: 8px;  /* v13.8: 减少与核心能力区间距 */
 }
 .tools-grid {
     display: flex;

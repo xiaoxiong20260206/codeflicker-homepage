@@ -819,7 +819,7 @@ function drawElbowConnectors() {
     
     // 标签 "驱动"（使用 foreignObject 包裹 HTML 标签，与"触发"样式一致）
     var foreignObj = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
-    foreignObj.setAttribute('x', p1.gx - 40);
+    foreignObj.setAttribute('x', p1.gx - 18);
     foreignObj.setAttribute('y', (p1.sy + p1.ey - 8) / 2 - 12);
     foreignObj.setAttribute('width', '36');
     foreignObj.setAttribute('height', '24');

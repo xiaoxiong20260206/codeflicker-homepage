@@ -278,7 +278,8 @@ function renderSkillTechTree(container, skills) {
             var tsRole = ts.displayRole || '基座工具';
             var tsId = toolNodeIds[ts.name] || null;
             if (ti > 0) {
-                toolNodesHtml += '<div class="tools-connector"><div class="connector-h"></div><div class="arrow-right"></div></div>';
+                var pDelay = (ti - 1) * 0.9;
+                toolNodesHtml += '<div class="tools-connector"><div class="connector-h"></div><div class="arrow-right"></div><div class="energy-particles"><div class="energy-particle" style="--particle-color: #4ade80; --particle-duration: 2.2s; animation-delay: ' + pDelay + 's;"></div><div class="energy-particle" style="--particle-color: #4ade80; --particle-duration: 2.2s; animation-delay: ' + (pDelay + 1.1) + 's;"></div></div></div>';
             }
             toolNodesHtml += createDemoNode(ts, tsName, tsRole, 'tool', tsId);
         }
@@ -802,17 +803,18 @@ function drawElbowConnectors() {
     path1.setAttribute('d', 'M ' + p1.sx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + (p1.ey - 8) + ' L ' + p1.ex + ' ' + (p1.ey - 8));
     path1.setAttribute('fill', 'none');
     path1.setAttribute('stroke', '#fb923c');
-    path1.setAttribute('stroke-width', '2.5');
+    path1.setAttribute('stroke-width', '1.5');
+    path1.setAttribute('stroke-dasharray', '5, 4');
     path1.setAttribute('stroke-linecap', 'round');
     path1.setAttribute('stroke-linejoin', 'round');
-    path1.setAttribute('opacity', '0.8');
+    path1.setAttribute('opacity', '0.35');
     svg.appendChild(path1);
     
     // 箭头（指向下方经验总结）
     var arrow1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
     arrow1.setAttribute('points', p1.ex + ',' + p1.ey + ' ' + (p1.ex - 5) + ',' + (p1.ey - 9) + ' ' + (p1.ex + 5) + ',' + (p1.ey - 9));
     arrow1.setAttribute('fill', '#fb923c');
-    arrow1.setAttribute('opacity', '0.8');
+    arrow1.setAttribute('opacity', '0.35');
     svg.appendChild(arrow1);
     
     // 标签 "驱动"（使用 foreignObject 包裹 HTML 标签，与"触发"样式一致）
@@ -823,7 +825,7 @@ function drawElbowConnectors() {
     foreignObj.setAttribute('height', '24');
     var labelDiv = document.createElement('span');
     labelDiv.className = 'connector-label connector-label--center';
-    labelDiv.style.cssText = '--label-color: #fb923c; --label-border: rgba(251, 146, 60, 0.4); font-size: 9px; padding: 3px 6px;';
+    labelDiv.style.cssText = '--label-color: rgba(251, 146, 60, 0.5); --label-border: rgba(251, 146, 60, 0.2); font-size: 9px; padding: 3px 6px; opacity: 0.6;';
     labelDiv.textContent = '驱动';
     foreignObj.appendChild(labelDiv);
     svg.appendChild(foreignObj);

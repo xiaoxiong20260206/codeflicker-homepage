@@ -803,7 +803,8 @@ function drawElbowConnectors() {
     var p1 = { sx: b.left, sy: b.cy, gx: gxLeft, ex: j.left, ey: j.cy };
     
     var path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    // 左出(闭关修炼左侧) → 向左到gutter → 向下到经验总结中心高度 → 向右到经验总结左侧
+    // 左出(闭关修炼左侧) → 向左到gutter → 向下到经验总结中心高度 → 向右延伸到箭头起点
+    // 路径到 (ex - 10) 停止，再由箭头接力到 ex
     path1.setAttribute('d', 'M ' + p1.sx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.ey + ' L ' + (p1.ex - 10) + ' ' + p1.ey);
     path1.setAttribute('fill', 'none');
     path1.setAttribute('stroke', '#fb923c');
@@ -814,9 +815,9 @@ function drawElbowConnectors() {
     path1.setAttribute('opacity', '0.55');
     svg.appendChild(path1);
     
-    // 箭头（从左侧水平射入经验总结，朝右 ►，顶点在右侧）
+    // 箭头朝右 ► 射入经验总结：顶点在右侧(ex, ey)，展开在左侧(ex-10, ey±5)
     var arrow1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    // 顶点(ex, ey)，展开在左：(ex-10, ey-5) 和 (ex-10, ey+5)
+    // 正确的朝右箭头：右顶点, 左上, 左下
     arrow1.setAttribute('points', p1.ex + ',' + p1.ey + ' ' + (p1.ex - 10) + ',' + (p1.ey - 5) + ' ' + (p1.ex - 10) + ',' + (p1.ey + 5));
     arrow1.setAttribute('fill', '#fb923c');
     arrow1.setAttribute('opacity', '0.55');

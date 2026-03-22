@@ -797,10 +797,14 @@ function drawElbowConnectors() {
     var gx1 = Math.min(bw - 16, b.right + 20);
     
     // ---- 连接器: 闭关修炼 → 经验总结（驱动）----
-    var p1 = { sx: b.right, sy: b.cy, gx: gx1, ex: j.cx, ey: j.top };
+    // sy: 闭关修炼底部 到 经验总结顶部 的中间位置（让线在两者正中间水平段）
+    var sy1 = b.bottom + (j.top - b.bottom) / 2;
+    // 箭头从经验总结左侧进入（水平箭头）
+    var p1 = { sx: b.right, sy: sy1, gx: gx1, ex: j.left, ey: j.cy };
     
     var path1 = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path1.setAttribute('d', 'M ' + p1.sx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + (p1.ey - 8) + ' L ' + p1.ex + ' ' + (p1.ey - 8));
+    // 路径：右出 → 右侧gutter → 向下到经验总结中心高度 → 水平到经验总结左侧
+    path1.setAttribute('d', 'M ' + p1.sx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.sy + ' L ' + p1.gx + ' ' + p1.ey + ' L ' + (p1.ex + 8) + ' ' + p1.ey);
     path1.setAttribute('fill', 'none');
     path1.setAttribute('stroke', '#fb923c');
     path1.setAttribute('stroke-width', '1.5');
@@ -810,9 +814,9 @@ function drawElbowConnectors() {
     path1.setAttribute('opacity', '0.35');
     svg.appendChild(path1);
     
-    // 箭头（指向下方经验总结）
+    // 箭头（从左侧水平进入经验总结，朝右 ►）
     var arrow1 = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
-    arrow1.setAttribute('points', p1.ex + ',' + p1.ey + ' ' + (p1.ex - 5) + ',' + (p1.ey - 9) + ' ' + (p1.ex + 5) + ',' + (p1.ey - 9));
+    arrow1.setAttribute('points', p1.ex + ',' + p1.ey + ' ' + (p1.ex + 9) + ',' + (p1.ey - 5) + ' ' + (p1.ex + 9) + ',' + (p1.ey + 5));
     arrow1.setAttribute('fill', '#fb923c');
     arrow1.setAttribute('opacity', '0.35');
     svg.appendChild(arrow1);
@@ -820,7 +824,8 @@ function drawElbowConnectors() {
     // 标签 "驱动"（使用 foreignObject 包裹 HTML 标签，与"触发"样式一致）
     var foreignObj = document.createElementNS('http://www.w3.org/2000/svg', 'foreignObject');
     foreignObj.setAttribute('x', p1.gx - 18);
-    foreignObj.setAttribute('y', (p1.sy + p1.ey - 8) / 2 - 12);
+    // 标签在竖线段中间
+    foreignObj.setAttribute('y', (p1.sy + p1.ey) / 2 - 12);
     foreignObj.setAttribute('width', '36');
     foreignObj.setAttribute('height', '24');
     var labelDiv = document.createElement('span');

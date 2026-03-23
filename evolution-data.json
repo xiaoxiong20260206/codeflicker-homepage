@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-21T13:51:41.080746",
+  "generatedAt": "2026-03-23T11:21:33.095758",
   "lastManualUpdate": "2026-03-04",
   "updateTrigger": "每日任务自动检查 / 能力解锁时手动更新",
   "evolution": {
@@ -823,6 +823,36 @@
         "type": "meta_skill",
         "name": "每日修炼",
         "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-21",
+        "type": "meta_skill",
+        "name": "产品思维",
+        "description": "用户视角的产品设计能力"
+      },
+      {
+        "date": "2026-03-21",
+        "type": "skill_unlock",
+        "name": "网页开发工作流",
+        "description": "标准化网页开发部署流程"
+      },
+      {
+        "date": "2026-03-22",
+        "type": "system_unlock",
+        "name": "AI持续洞察",
+        "description": "AI-Insight深度调研与追踪体系"
+      },
+      {
+        "date": "2026-03-22",
+        "type": "meta_skill",
+        "name": "每日修炼",
+        "description": "每日自我反思与进化能力"
+      },
+      {
+        "date": "2026-03-23",
+        "type": "meta_skill",
+        "name": "一次做对",
+        "description": "高质量交付元能力"
       }
     ]
   },
@@ -832,6 +862,6 @@
       "重大版本变化时需要更新 stages 中的当前阶段",
       "每日任务检查时自动对比是否有新的里程碑事件"
     ],
-    "lastAutoCheck": "2026-03-21"
+    "lastAutoCheck": "2026-03-23"
   }
 }

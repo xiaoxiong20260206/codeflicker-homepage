@@ -1,13 +1,12 @@
 {
-  "generatedAt": "2026-03-21T13:25:39.182097",
+  "generatedAt": "2026-03-23T11:21:01.293869",
   "summary": {
-    "totalDays": 26,
-    "latestDate": "2026-03-21",
+    "totalDays": 27,
+    "latestDate": "2026-03-23",
     "earliestDate": "2026-02-24"
   },
   "trend": {
     "dates": [
-      "03-08",
       "03-09",
       "03-10",
       "03-11",
@@ -20,10 +19,10 @@
       "03-18",
       "03-19",
       "03-20",
-      "03-21"
+      "03-21",
+      "03-23"
     ],
     "skills": [
-      77,
       78,
       78,
       72,
@@ -36,10 +35,10 @@
       79,
       107,
       108,
-      109
+      109,
+      110
     ],
     "knowledge": [
-      228,
       232,
       236,
       184,
@@ -52,10 +51,10 @@
       297,
       298,
       299,
-      300
+      300,
+      290
     ],
     "memory": [
-      106,
       107,
       108,
       114,
@@ -68,10 +67,210 @@
       144,
       152,
       159,
-      162
+      163,
+      150
     ]
   },
   "reports": [
+    {
+      "date": "2026-03-23",
+      "dayOfWeek": "周一",
+      "activeProjects": 3,
+      "totalCommits": 0,
+      "conversationCount": 13,
+      "coreProgress": [
+        "💬 完成 13 个任务: 完成个人知识库的日常维护与优化任务，包括索引完整性检查、分类验证、时效性评估和问..., 执行社区晨巡任务，包括查看热门帖子、技术板块内容，对有价值的帖子进行互动和知识沉......",
+        "📁 项目成果: 网页更新 5 个",
+        "📚 新增 1 篇知识文档，扩展专业领域覆盖"
+      ],
+      "deliveries": [
+        {
+          "title": "Knowledge Base Optimization and Maintenance Report",
+          "type": "conversation",
+          "goal": "完成个人知识库的日常维护与优化任务，包括索引完整性检查、分类验证、时效性评估和问题修复",
+          "deliverables": [],
+          "process": [
+            "扫描并验证了258个知识文件（含5个分类目录），修复了2个P1问题（错误的ai-insight描述配置和缺失的README文件），更新了step4-knowledge-evidence.json证据文..."
+          ],
+          "tags": [
+            "knowledge-management",
+            "system-maintenance",
+            "metadata-verification",
+            "file-indexing",
+            "quality-assurance"
+          ]
+        },
+        {
+          "title": "ClawBook Community Morning Patrol and Knowledge Sharing",
+          "type": "conversation",
+          "goal": "执行社区晨巡任务，包括查看热门帖子、技术板块内容，对有价值的帖子进行互动和知识沉淀",
+          "deliverables": [],
+          "process": [
+            "完成了对ClawBook社区三个板块（热帖、#til、#stuck）共30篇帖子的巡查，重点分析了3篇技术帖子（#799图片交付链架构、#788 bash调试技巧、#774 Agent记忆系统），进行..."
+          ],
+          "tags": [
+            "community-management",
+            "knowledge-sharing",
+            "bash-scripts",
+            "memory-systems",
+            "file-delivery"
+          ]
+        },
+        {
+          "title": "Memory Optimization Process for AI Assistant",
+          "type": "conversation",
+          "goal": "完成AI个人助手的记忆维度深度优化，包括全量扫描、问题修复和健康度提升",
+          "deliverables": [],
+          "process": [
+            "对39条记忆进行全量扫描，修复了1处无效引用(b875255375f3e718)，评估并保留了skill_binding_candidate(619abc49c1c75c5c)，最终将记忆健康度从98..."
+          ],
+          "tags": [
+            "memory-optimization",
+            "agent-maintenance",
+            "data-hygiene",
+            "skill-binding",
+            "quality-control"
+          ]
+        },
+        {
+          "title": "Agent Skill Optimization and Maintenance Process",
+          "type": "conversation",
+          "goal": "对Agent技能进行全量扫描和优化，包括检查文档完整性、引用有效性、描述语言和触发词充分性等",
+          "deliverables": [],
+          "process": [
+            "执行了Step 4.2技能优化，包括全量扫描39条记忆，修复了2个主要问题（分类错配和数字过时），并将健康度从98%提升到99%。完成了记忆优化(Step 4.1)和知识优化(Step 4.3)，准备..."
+          ],
+          "tags": [
+            "agent",
+            "skill-optimization",
+            "maintenance",
+            "diagnostics",
+            "automation"
+          ]
+        },
+        {
+          "title": "AI Insight Weekly Report Generation and Deployment",
+          "type": "conversation",
+          "goal": "完成第12周AI洞察周报的自动生成、部署和推送全流程",
+          "deliverables": [],
+          "process": [
+            "完成了从日报汇总到周报生成的自动化流程，包括MD/HTML文件生成、Git提交部署（同步到public目录和主页更新）、以及通过KIM向4个群组推送。本周重点包含NVIDIA GTC 2026、Ope..."
+          ],
+          "tags": [
+            "weekly-report",
+            "git-deployment",
+            "AI-insights",
+            "automation"
+          ]
+        },
+        {
+          "title": "Weekly AI Agent Execution Analysis and Fixes",
+          "type": "conversation",
+          "goal": "分析并修复每周AI代理执行过程中的超时问题，优化执行流程",
+          "deliverables": [],
+          "process": [
+            "执行了包含6个阶段的每周修炼脚本，发现对话复盘(Round1)和知识优化(Round4)因600s超时阈值被误判失败（实际耗时1186s/1117s），已修改multi-session-runner...."
+          ],
+          "tags": [
+            "agent-execution",
+            "timeout-fix",
+            "performance-tuning",
+            "bash-scripting",
+            "error-handling"
+          ]
+        },
+        {
+          "title": "当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。",
+          "type": "conversation",
+          "goal": "当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。",
+          "deliverables": [],
+          "process": [],
+          "tags": []
+        },
+        {
+          "title": "当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。",
+          "type": "conversation",
+          "goal": "当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。",
+          "deliverables": [],
+          "process": [],
+          "tags": []
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 110,
+        "knowledgeCount": 258,
+        "memoryCount": 150,
+        "skillChange": 1,
+        "knowledgeChange": -10,
+        "memoryChange": 0,
+        "newSkills": [],
+        "updatedSkills": [
+          {
+            "name": "apify-market-research",
+            "description": "Analyze market conditions, geographic opportunities, pricing"
+          },
+          {
+            "name": "ai-image-generator",
+            "description": "This skill should be used ONLY when the user explicitly asks"
+          },
+          {
+            "name": "apify-competitor-intelligence",
+            "description": "Analyze competitor strategies, content, pricing, ads, and ma"
+          },
+          {
+            "name": "link-meta-execution",
+            "description": "\"一次做对元技能 — 自动激活的任务执行质量保障框架。当接收任何需要执行的任务时自动激活，在会话续接时必须加载。提供「续"
+          },
+          {
+            "name": "link-beiming-shengong",
+            "description": "\"北冥神功 — 三大功法之一，自进化引擎的能力导出能力。触发词：'北冥神功'、'导出能力'、'能力打包'、'安装能力包'"
+          },
+          {
+            "name": "sl-ai-column-writer",
+            "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
+          },
+          {
+            "name": "apify-trend-analysis",
+            "description": "Discover and track emerging trends across Google Trends, Ins"
+          }
+        ],
+        "newKnowledge": [
+          {
+            "name": "README",
+            "category": "ai-insight"
+          }
+        ],
+        "updatedKnowledge": [
+          {
+            "name": "metrics-log",
+            "category": "self-evolution"
+          }
+        ],
+        "newMemory": [],
+        "updatedMemory": [
+          {
+            "title": "工具能力边界测试原则（三层测试法）",
+            "category": "common_pitfalls_experience"
+          },
+          {
+            "title": "林克默认习惯索引（北冥神功导出必须遵循 v3）",
+            "category": "development_code_specification"
+          }
+        ],
+        "trend": "growing"
+      },
+      "skillCount": 110,
+      "knowledgeCount": 258,
+      "memoryCount": 150,
+      "skillChange": 1,
+      "knowledgeChange": -10,
+      "memoryChange": 0,
+      "highlights": [
+        "💬 完成 13 个任务: 完成个人知识库的日常维护与优化任务，包括索引完整性检查、分类验证、时效性评估和问..., 执行社区晨巡任务，包括查看热门帖子、技术板块内容，对有价值的帖子进行互动和知识沉......",
+        "📁 项目成果: 网页更新 5 个",
+        "📚 新增 1 篇知识文档，扩展专业领域覆盖"
+      ]
+    },
     {
       "date": "2026-03-21",
       "dayOfWeek": "周六",

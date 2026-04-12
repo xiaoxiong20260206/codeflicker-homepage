@@ -1,8 +1,7 @@
 {
   "version": "2.0.0",
-  "generatedAt": "2026-03-12T14:00:00.000Z",
+  "generatedAt": "2026-04-12T12:37:35Z",
   "description": "项目配置文件，用于generate_projects_data.py读取。所有展示项目均在此手动配置，确保命名清晰、链接可用。",
-  
   "projects": [
     {
       "id": "ai-insight",
@@ -185,22 +184,195 @@
       "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/trends/barry-zhang-anthropic.html",
       "path": "/Users/shenlang/Documents/Codeflicker/AI-Insight/02-deep-research/trends/barry-zhang-anthropic.html",
       "quality_level": "normal"
+    },
+    {
+      "id": "agent-skill-design-patterns",
+      "name": "Agent Skill设计模式",
+      "subtitle": "让AI稳定输出的5种内容架构",
+      "category": "research",
+      "icon": "🧩",
+      "goal": "沉淀可复用的 Agent Skill 内容组织范式",
+      "outcome": "总结稳定输出高质量内容的5种内容架构模式",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/agent-skill-design-patterns.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/agent-skill-design-patterns.html",
+      "completedAt": "2026-03-24",
+      "status": "deployed"
+    },
+    {
+      "id": "ai-native-org-transform",
+      "name": "AI-Native组织转型深度调研",
+      "subtitle": "组织如何从辅助AI走向AI原生执行",
+      "category": "research",
+      "icon": "🏗️",
+      "goal": "分析组织从传统协作模式向 AI-Native 模式迁移的关键路径",
+      "outcome": "形成组织转型阶段、阻力来源与演进策略的系统分析",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/ai-native-org-transform.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-native-org-transform.html",
+      "completedAt": "2026-04-11",
+      "status": "deployed"
+    },
+    {
+      "id": "ai-product-essence-2026",
+      "name": "AI产品本质深度研究",
+      "subtitle": "99%的AI产品都做错了",
+      "category": "research",
+      "icon": "🧠",
+      "goal": "解释 AI 产品与传统 SaaS 的根本差异与成败分水岭",
+      "outcome": "提出质量阈值、场景深度、信任积累与成本约束的判断框架",
+      "quality_level": "excellent",
+      "path": "AI-Insight/02-deep-research/topics/ai-product-essence-2026.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/ai-product-essence-2026.html",
+      "completedAt": "2026-03-22",
+      "status": "deployed"
+    },
+    {
+      "id": "claude-code-source-analysis",
+      "name": "Claude Code源码核心思想",
+      "subtitle": "从源码看 Agentic Coding 的底层设计",
+      "category": "research",
+      "icon": "🧬",
+      "goal": "从源码层理解 Claude Code 的能力边界与设计哲学",
+      "outcome": "拆解其核心模块、执行流转与关键设计取舍",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/claude-code-source-analysis.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/claude-code-source-analysis.html",
+      "completedAt": "2026-04-05",
+      "status": "deployed"
+    },
+    {
+      "id": "colleague-skill-anti-distill-2026",
+      "name": "同事被蒸馏成AI？",
+      "subtitle": "技能蒸馏与反蒸馏的现实博弈",
+      "category": "research",
+      "icon": "🪞",
+      "goal": "分析职场能力被抽象为 AI Skill 后的风险、机会与应对方式",
+      "outcome": "形成蒸馏、反蒸馏与组织策略的系统判断",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/colleague-skill-anti-distill-2026.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/colleague-skill-anti-distill-2026.html",
+      "completedAt": "2026-04-06",
+      "status": "deployed"
+    },
+    {
+      "id": "dingtalk-wukong",
+      "name": "钉钉悟空深度调研",
+      "subtitle": "企业级AI Agent的正确打开方式",
+      "category": "research",
+      "icon": "🐵",
+      "goal": "研究钉钉悟空如何切入企业级 AI Agent 场景",
+      "outcome": "形成产品定位、能力结构与竞争格局分析",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/dingtalk-wukong-deep-research-2026.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/dingtalk-wukong-deep-research-2026.html",
+      "completedAt": "2026-03-20",
+      "status": "deployed"
+    },
+    {
+      "id": "enterprise-agent-platforms",
+      "name": "企业级AI Agent平台横评",
+      "subtitle": "2026平台格局与产品判断",
+      "category": "research",
+      "icon": "🏢",
+      "goal": "比较不同企业级 AI Agent 平台的产品路线与竞争格局",
+      "outcome": "形成平台能力、场景适配与未来趋势的横向评估",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/enterprise-agent-platforms-2026.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/enterprise-agent-platforms-2026.html",
+      "completedAt": "2026-03-24",
+      "status": "deployed"
+    },
+    {
+      "id": "feishu-aily",
+      "name": "飞书Aily深度调研",
+      "subtitle": "企业级AI Agent平台的崛起",
+      "category": "research",
+      "icon": "🪽",
+      "goal": "分析飞书 Aily 在企业协同场景中的 AI 产品布局",
+      "outcome": "形成产品能力、平台价值与生态位置的系统认知",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/feishu-aily-deep-research.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/feishu-aily-deep-research.html",
+      "completedAt": "2026-03-20",
+      "status": "deployed"
+    },
+    {
+      "id": "kimi-attention-residuals",
+      "name": "Kimi Attention Residuals深度调研",
+      "subtitle": "长上下文注意力机制的底层突破",
+      "category": "research",
+      "icon": "🧮",
+      "goal": "理解 Kimi 在长上下文建模上的关键技术创新",
+      "outcome": "拆解 Attention Residuals 的原理、价值与行业影响",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/kimi-attention-residuals-2026.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/kimi-attention-residuals-2026.html",
+      "completedAt": "2026-03-24",
+      "status": "deployed"
+    },
+    {
+      "id": "meta-skill-system",
+      "name": "元技能体系",
+      "subtitle": "让你越练越强的系统如何运作",
+      "category": "research",
+      "icon": "🌀",
+      "goal": "解释元技能体系如何支撑 AI 助手持续进化",
+      "outcome": "形成感知、推理、执行、自进化四层体系的结构化说明",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/meta-skill-system-2026.html",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/meta-skill-system-2026.html",
+      "completedAt": "2026-04-08",
+      "status": "deployed"
+    },
+    {
+      "id": "feishu-vs-dingtalk-ai",
+      "name": "飞书 vs 钉钉 AI能力对比",
+      "subtitle": "协同办公AI双雄深度横评",
+      "category": "research",
+      "icon": "⚔️",
+      "goal": "对比飞书与钉钉在 AI 协同办公方向的产品路线差异",
+      "outcome": "形成产品能力矩阵、战略差异与竞争判断",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/feishu-vs-dingtalk-ai",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/feishu-vs-dingtalk-ai/",
+      "completedAt": "2026-04-07",
+      "status": "deployed"
+    },
+    {
+      "id": "llm-benchmark-2026",
+      "name": "2026大模型能力全景报告",
+      "subtitle": "主流模型综合能力 Benchmark",
+      "category": "research",
+      "icon": "📏",
+      "goal": "建立主流大模型能力评测的全景视角",
+      "outcome": "形成模型能力、适用场景与演进趋势的综合比较",
+      "quality_level": "normal",
+      "path": "AI-Insight/02-deep-research/topics/llm-benchmark-2026",
+      "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/llm-benchmark-2026/",
+      "completedAt": "2026-04-08",
+      "status": "deployed"
     }
   ],
-  
   "categories": {
-    "research": {"name": "调研类", "icon": "🔬", "color": "#a78bfa"},
-    "tools": {"name": "工具类", "icon": "🛠️", "color": "#4ade80"}
+    "research": {
+      "name": "调研类",
+      "icon": "🔬",
+      "color": "#a78bfa"
+    },
+    "tools": {
+      "name": "工具类",
+      "icon": "🛠️",
+      "color": "#4ade80"
+    }
   },
-  
   "autoScan": {
     "aiInsightResearch": false,
     "knowledgeProjects": false,
     "scanPaths": []
   },
-  
   "meta": {
     "updateInstructions": "所有展示项目均在projects数组中手动维护，确保命名清晰、链接可用。已关闭自动扫描避免引入模糊命名。",
-    "lastUpdate": "2026-03-12"
+    "lastUpdate": "2026-04-12"
   }
 }

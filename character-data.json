@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T23:26:53.793136",
+  "generatedAt": "2026-04-13T00:43:51.278419",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -227,7 +227,7 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 514150,
+            "skillSize": 514147,
             "skillSizeLabel": "514K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -1083,7 +1083,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 15819,
+            "skillSize": 15839,
             "skillSizeLabel": "15K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
@@ -1102,7 +1102,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 17056,
+            "skillSize": 17015,
             "skillSizeLabel": "17K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
@@ -1121,7 +1121,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 16007,
+            "skillSize": 16013,
             "skillSizeLabel": "16K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
@@ -1170,7 +1170,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 5137,
+            "skillSize": 5096,
             "skillSizeLabel": "5K字 · 中型",
             "ksInternal": false,
             "cfProject": false,
@@ -1322,8 +1322,8 @@
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 47277,
-            "skillSizeLabel": "47K字 · 大型",
+            "skillSize": 46872,
+            "skillSizeLabel": "46K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -1428,7 +1428,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 141923,
+            "skillSize": 141745,
             "skillSizeLabel": "141K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -1447,7 +1447,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 19811,
+            "skillSize": 19688,
             "skillSizeLabel": "19K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
@@ -1504,7 +1504,7 @@
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 105797,
+            "skillSize": 105567,
             "skillSizeLabel": "105K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -1534,8 +1534,8 @@
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 116226,
-            "skillSizeLabel": "116K字 · 巨型",
+            "skillSize": 115427,
+            "skillSizeLabel": "115K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -1553,7 +1553,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 58773,
+            "skillSize": 58433,
             "skillSizeLabel": "58K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -1572,7 +1572,7 @@
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 130864,
+            "skillSize": 130207,
             "skillSizeLabel": "130K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -1591,7 +1591,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 1017,
+            "skillSize": 1048,
             "skillSizeLabel": "1K字 · 小型",
             "ksInternal": false,
             "cfProject": false,
@@ -1841,7 +1841,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 1423,
+            "skillSize": 1458,
             "skillSizeLabel": "1K字 · 小型",
             "ksInternal": false,
             "cfProject": false,
@@ -2194,7 +2194,7 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 12015,
+            "skillSize": 12017,
             "skillSizeLabel": "12K字 · 中型",
             "ksInternal": true,
             "cfProject": false,
@@ -2232,7 +2232,7 @@
             "frequency": "<0.1/天",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 11347,
+            "skillSize": 11201,
             "skillSizeLabel": "11K字 · 中型",
             "ksInternal": true,
             "cfProject": false,
@@ -2406,7 +2406,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 120454,
+            "skillSize": 120304,
             "skillSizeLabel": "120K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -2425,7 +2425,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 1584,
+            "skillSize": 1526,
             "skillSizeLabel": "1K字 · 小型",
             "ksInternal": false,
             "cfProject": false,
@@ -2444,8 +2444,8 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 9150,
-            "skillSizeLabel": "9K字 · 中型",
+            "skillSize": 8991,
+            "skillSizeLabel": "8K字 · 中型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -2531,7 +2531,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 46474,
+            "skillSize": 46294,
             "skillSizeLabel": "46K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
@@ -2550,7 +2550,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 168733,
+            "skillSize": 168515,
             "skillSizeLabel": "168K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -2569,8 +2569,8 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 150030,
-            "skillSizeLabel": "150K字 · 巨型",
+            "skillSize": 149835,
+            "skillSizeLabel": "149K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -2588,7 +2588,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 95584,
+            "skillSize": 95611,
             "skillSizeLabel": "95K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
@@ -2607,7 +2607,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 1246,
+            "skillSize": 1176,
             "skillSizeLabel": "1K字 · 小型",
             "ksInternal": false,
             "cfProject": false,
@@ -2626,7 +2626,7 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 16447,
+            "skillSize": 16355,
             "skillSizeLabel": "16K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
@@ -2645,8 +2645,8 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 27020,
-            "skillSizeLabel": "27K字 · 大型",
+            "skillSize": 26464,
+            "skillSizeLabel": "26K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -3122,7 +3122,7 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 514150,
+                "skillSize": 514147,
                 "skillSizeLabel": "514K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -3991,7 +3991,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 15819,
+                "skillSize": 15839,
                 "skillSizeLabel": "15K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4010,7 +4010,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 17056,
+                "skillSize": 17015,
                 "skillSizeLabel": "17K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4029,7 +4029,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 16007,
+                "skillSize": 16013,
                 "skillSizeLabel": "16K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4077,7 +4077,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 5137,
+                "skillSize": 5096,
                 "skillSizeLabel": "5K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4229,8 +4229,8 @@
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 47277,
-                "skillSizeLabel": "47K字 · 大型",
+                "skillSize": 46872,
+                "skillSizeLabel": "46K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -4334,7 +4334,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 141923,
+                "skillSize": 141745,
                 "skillSizeLabel": "141K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4353,7 +4353,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 19811,
+                "skillSize": 19688,
                 "skillSizeLabel": "19K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4410,7 +4410,7 @@
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 105797,
+                "skillSize": 105567,
                 "skillSizeLabel": "105K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4439,8 +4439,8 @@
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 116226,
-                "skillSizeLabel": "116K字 · 巨型",
+                "skillSize": 115427,
+                "skillSizeLabel": "115K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -4458,7 +4458,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 58773,
+                "skillSize": 58433,
                 "skillSizeLabel": "58K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4477,7 +4477,7 @@
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 130864,
+                "skillSize": 130207,
                 "skillSizeLabel": "130K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4496,7 +4496,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 1017,
+                "skillSize": 1048,
                 "skillSizeLabel": "1K字 · 小型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -4744,7 +4744,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 1423,
+                "skillSize": 1458,
                 "skillSizeLabel": "1K字 · 小型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5096,7 +5096,7 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 12015,
+                "skillSize": 12017,
                 "skillSizeLabel": "12K字 · 中型",
                 "ksInternal": true,
                 "cfProject": false,
@@ -5134,7 +5134,7 @@
                 "frequency": "<0.1/天",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 11347,
+                "skillSize": 11201,
                 "skillSizeLabel": "11K字 · 中型",
                 "ksInternal": true,
                 "cfProject": false,
@@ -5306,7 +5306,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 120454,
+                "skillSize": 120304,
                 "skillSizeLabel": "120K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5325,7 +5325,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 1584,
+                "skillSize": 1526,
                 "skillSizeLabel": "1K字 · 小型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5344,8 +5344,8 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 9150,
-                "skillSizeLabel": "9K字 · 中型",
+                "skillSize": 8991,
+                "skillSizeLabel": "8K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -5430,7 +5430,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 46474,
+                "skillSize": 46294,
                 "skillSizeLabel": "46K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5449,7 +5449,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 168733,
+                "skillSize": 168515,
                 "skillSizeLabel": "168K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5468,8 +5468,8 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 150030,
-                "skillSizeLabel": "150K字 · 巨型",
+                "skillSize": 149835,
+                "skillSizeLabel": "149K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -5487,7 +5487,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 95584,
+                "skillSize": 95611,
                 "skillSizeLabel": "95K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5506,7 +5506,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 1246,
+                "skillSize": 1176,
                 "skillSizeLabel": "1K字 · 小型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5525,7 +5525,7 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 16447,
+                "skillSize": 16355,
                 "skillSizeLabel": "16K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
@@ -5544,8 +5544,8 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 27020,
-                "skillSizeLabel": "27K字 · 大型",
+                "skillSize": 26464,
+                "skillSizeLabel": "26K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -6201,10 +6201,10 @@
         "relatedMemories": [
           "ai_insight"
         ],
-        "fileCount": 107,
-        "sizeKB": 724.7,
+        "fileCount": 108,
+        "sizeKB": 725.4,
         "heatLevel": 5,
-        "recentCount": 12
+        "recentCount": 14
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -6237,9 +6237,9 @@
           "thinking_pattern"
         ],
         "fileCount": 26,
-        "sizeKB": 196.2,
+        "sizeKB": 196.3,
         "heatLevel": 5,
-        "recentCount": 6
+        "recentCount": 7
       },
       "promotion-standards": {
         "name": "promotion-standards",
@@ -6317,9 +6317,9 @@
               "thinking_pattern"
             ],
             "fileCount": 26,
-            "sizeKB": 196.2,
+            "sizeKB": 196.3,
             "heatLevel": 5,
-            "recentCount": 6
+            "recentCount": 7
           },
           "promotion-standards": {
             "name": "promotion-standards",
@@ -6340,7 +6340,7 @@
           }
         },
         "totalFiles": 167,
-        "totalSizeKB": 1123.8
+        "totalSizeKB": 1123.9
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -6363,10 +6363,10 @@
             "relatedMemories": [
               "ai_insight"
             ],
-            "fileCount": 107,
-            "sizeKB": 724.7,
+            "fileCount": 108,
+            "sizeKB": 725.4,
             "heatLevel": 5,
-            "recentCount": 12
+            "recentCount": 14
           },
           "rd-efficiency": {
             "name": "rd-efficiency",
@@ -6403,8 +6403,8 @@
             "recentCount": 0
           }
         },
-        "totalFiles": 147,
-        "totalSizeKB": 1246.2
+        "totalFiles": 148,
+        "totalSizeKB": 1246.9
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -6436,8 +6436,8 @@
         "totalSizeKB": 1.1
       }
     },
-    "totalFiles": 306,
-    "totalSizeKB": 2317.1
+    "totalFiles": 307,
+    "totalSizeKB": 2318.0
   },
   "memories": {
     "items": [
@@ -11983,7 +11983,8 @@
       "04-09",
       "04-10",
       "04-11",
-      "04-12"
+      "04-12",
+      "04-13"
     ],
     "skills": [
       79,
@@ -12010,6 +12011,7 @@
       156,
       156,
       156,
+      155,
       155
     ],
     "knowledge": [
@@ -12037,7 +12039,8 @@
       305,
       305,
       305,
-      306
+      306,
+      307
     ],
     "memories": [
       144,
@@ -12064,6 +12067,7 @@
       141,
       141,
       141,
+      146,
       146
     ]
   },
@@ -12100,7 +12104,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "懂你程度 83/80",
-      "date": "2026-04-12"
+      "date": "2026-04-13"
     },
     {
       "id": "skill_master_v2",
@@ -12112,7 +12116,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "4星+技能 133/10",
-      "date": "2026-04-12"
+      "date": "2026-04-13"
     },
     {
       "id": "daily_report",
@@ -12168,7 +12172,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "达成",
-      "date": "2026-04-12"
+      "date": "2026-04-13"
     },
     {
       "id": "first_awakening",

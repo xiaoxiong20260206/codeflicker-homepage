@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T05:05:38.237957",
+  "generatedAt": "2026-04-12T09:32:15.739473",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -151,9 +151,9 @@
         "mdv": 0.5,
         "ctr": 0
       },
-      "activeSkills": 134,
-      "highLevelSkills": 134,
-      "skillTotalValue": 2537.4,
+      "activeSkills": 133,
+      "highLevelSkills": 133,
+      "skillTotalValue": 2532.0,
       "cultivationExp": 0,
       "baseExp": 337140,
       "expBreakdown": {
@@ -167,7 +167,7 @@
     }
   },
   "skills": {
-    "total": 156,
+    "total": 155,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -920,8 +920,8 @@
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 76703,
-            "skillSizeLabel": "76K字 · 巨型",
+            "skillSize": 82922,
+            "skillSizeLabel": "82K字 · 巨型",
             "ksInternal": false,
             "cfProject": false,
             "tag": "SL"
@@ -1648,8 +1648,8 @@
             "frequency": "1.8次/天",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 211213,
-            "skillSizeLabel": "211K字 · 巨型",
+            "skillSize": 216138,
+            "skillSizeLabel": "216K字 · 巨型",
             "ksInternal": true,
             "cfProject": false,
             "tag": "KS"
@@ -2125,25 +2125,6 @@
             "tag": "KS"
           },
           {
-            "name": "ks-kwai-docs",
-            "displayName": "快手文档",
-            "displayRole": "企业文档",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 68,
-            "description": "读取、搜索快手企业文档（Docs），支持权限申请和评论。 使用浏览器自动化访问 docs.corp.快手.com。 当用户提到\"快手文档\"、\"docs.corp.快手.com\"或要求读取内部文档时使用。 核心独有能力：文档权限申请、评论/留言、文档搜索（浏览器交互操作）。 注意：如果是批量上传/下载/同步文档（需要 API 双向传输），请使用 `ks-kim-docs-sh",
-            "lastUpdated": "2026-04-09",
-            "callCount": 6,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 12035,
-            "skillSizeLabel": "12K字 · 中型",
-            "ksInternal": true,
-            "cfProject": false,
-            "tag": "KS"
-          },
-          {
             "name": "ks-enterprise-metasheet-read",
             "displayName": "万维表格读取",
             "displayRole": "多维表格",
@@ -2258,7 +2239,7 @@
             "tag": ""
           }
         ],
-        "count": 16,
+        "count": 15,
         "avgLevel": 3.0
       },
       "🖼️ 图像生成": {
@@ -3838,8 +3819,8 @@
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 76703,
-                "skillSizeLabel": "76K字 · 巨型",
+                "skillSize": 82922,
+                "skillSizeLabel": "82K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": "SL"
@@ -4572,8 +4553,8 @@
                 "frequency": "1.8次/天",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 211213,
-                "skillSizeLabel": "211K字 · 巨型",
+                "skillSize": 216138,
+                "skillSizeLabel": "216K字 · 巨型",
                 "ksInternal": true,
                 "cfProject": false,
                 "tag": "KS"
@@ -5046,25 +5027,6 @@
                 "tag": "KS"
               },
               {
-                "name": "ks-kwai-docs",
-                "displayName": "快手文档",
-                "displayRole": "企业文档",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 68,
-                "description": "读取、搜索快手企业文档（Docs），支持权限申请和评论。 使用浏览器自动化访问 docs.corp.快手.com。 当用户提到\"快手文档\"、\"docs.corp.快手.com\"或要求读取内部文档时使用。 核心独有能力：文档权限申请、评论/留言、文档搜索（浏览器交互操作）。 注意：如果是批量上传/下载/同步文档（需要 API 双向传输），请使用 `ks-kim-docs-sh",
-                "lastUpdated": "2026-04-09",
-                "callCount": 6,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 12035,
-                "skillSizeLabel": "12K字 · 中型",
-                "ksInternal": true,
-                "cfProject": false,
-                "tag": "KS"
-              },
-              {
                 "name": "ks-enterprise-metasheet-read",
                 "displayName": "万维表格读取",
                 "displayRole": "多维表格",
@@ -5179,7 +5141,7 @@
                 "tag": ""
               }
             ],
-            "count": 16,
+            "count": 15,
             "avgLevel": 3.0
           },
           "🖼️ 图像生成": {
@@ -5993,7 +5955,7 @@
             "avgLevel": 2.0
           }
         },
-        "count": 106,
+        "count": 105,
         "avgLevel": 3.0
       }
     },
@@ -6724,6 +6686,25 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-07",
+        "source": "项目记忆"
+      },
+      {
+        "title": "link-homepage git仓库损坏导致静默推送失败（一周日报数据不更新）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题描述 林克首页「我的日报」Tab 日期选择器一周未更新（停在2026-04-08），本地数据每日正常生成，但 GitHub Pages 从未获取...",
+        "keywords": [
+          "link-homepage",
+          "git损坏",
+          "git仓库损坏",
+          "静默失败",
+          "日报不更新"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-04-11",
         "source": "项目记忆"
       },
       {
@@ -9192,7 +9173,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 132,
+    "total": 133,
     "byCategory": {
       "development_code_specification": {
         "count": 10,
@@ -9237,7 +9218,7 @@
         "description": "执行框架：怎么做，保障做事质量"
       },
       "common_pitfalls_experience": {
-        "count": 74,
+        "count": 75,
         "label": "脚本自动化",
         "icon": "⚡",
         "color": "#64748b",
@@ -10175,6 +10156,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "link-homepage git仓库损坏导致静默推送失败（一周日报数据不更新）",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "问题描述 林克首页「我的日报」Tab 日期选择器一周未更新（停在2026-04-08），本地数据每日正常生成，但 GitHub Pages 从未获取...",
+                "keywords": [
+                  "link-homepage",
+                  "git损坏",
+                  "git仓库损坏",
+                  "静默失败",
+                  "日报不更新"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-04-11",
+                "source": "项目记忆"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -10726,7 +10726,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 44
+            "count": 45
           },
           "发布部署": {
             "icon": "🚀",
@@ -11877,7 +11877,7 @@
             "count": 4
           }
         },
-        "count": 102
+        "count": 103
       }
     }
   },
@@ -11934,7 +11934,7 @@
       156,
       156,
       156,
-      156
+      155
     ],
     "knowledge": [
       297,
@@ -11988,7 +11988,7 @@
       141,
       141,
       141,
-      143
+      144
     ]
   },
   "achievements": [
@@ -12035,7 +12035,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 134/10",
+      "progressText": "4星+技能 133/10",
       "date": "2026-04-12"
     },
     {

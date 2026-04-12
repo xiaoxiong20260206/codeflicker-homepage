@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T05:05:31.473012",
+  "generatedAt": "2026-04-12T09:32:02.606129",
   "summary": {
     "totalDays": 30,
     "latestDate": "2026-04-11",
@@ -36,7 +36,7 @@
       156,
       156,
       156,
-      156
+      155
     ],
     "knowledge": [
       291,
@@ -68,53 +68,22 @@
       141,
       141,
       141,
-      143
+      144
     ]
   },
   "reports": [
     {
       "date": "2026-04-11",
       "dayOfWeek": "周六",
-      "activeProjects": 4,
+      "activeProjects": 3,
       "totalCommits": 28,
-      "conversationCount": 16,
+      "conversationCount": 14,
       "coreProgress": [
-        "💬 完成 16 个任务: 清理项目中的遗留CSS和HTML死代码，包括旧的.agentos-*选择器和裸C..., 将首页「战役介绍」Tab的过时内容按最新OnePage信息进行重写，并确保线上可......",
+        "💬 完成 14 个任务: 用户希望创建一个高质量的AgentOS架构图，用于战役OnePage文档展示, 执行 ClawBook 社区晚巡任务，查看指定板块内容并进行点赞互动...",
         "📁 项目成果: 新增: add 100 solar mass black hole star",
-        "🧠 新增记忆: ClawBook bash脚本blank、frontend-cloud 部署必须用，规范化开发实践"
+        "🧠 新增记忆: ClawBook bash脚本blank等3条，避免常见错误"
       ],
       "deliveries": [
-        {
-          "title": "Cleanup Legacy CSS and HTML Dead Code",
-          "type": "conversation",
-          "goal": "清理项目中的遗留CSS和HTML死代码，包括旧的.agentos-*选择器和裸CSS属性残块，并确保代码质量通过验证",
-          "deliverables": [],
-          "process": [
-            "完成了对landing/styles.css和landing/dist_single.html的清理工作，删除了所有遗留的.agentos-*选择器和裸CSS属性残块。通过grep验证确认无旧选择器残..."
-          ],
-          "tags": [
-            "css-cleanup",
-            "html-cleanup",
-            "dead-code",
-            "legacy-selectors",
-            "lint-fix"
-          ]
-        },
-        {
-          "title": "Homepage Campaign Intro Tab Rewrite",
-          "type": "conversation",
-          "goal": "将首页「战役介绍」Tab的过时内容按最新OnePage信息进行重写，并确保线上可见",
-          "deliverables": [],
-          "process": [
-            "更新了执行计划，补充了线上部署验证与排障闭环步骤，明确了交付物为更新后的landing/index.html和打包后的dist_single.html，目标是确保新文案在线上链接可访问"
-          ],
-          "tags": [
-            "landing-page",
-            "content-update",
-            "deployment",
-            "ai-native"
-          ]
-        },
         {
           "title": "AgentOS Architecture Diagram for OnePage",
           "type": "conversation",
@@ -202,25 +171,48 @@
             "markdown-generation",
             "github-pages"
           ]
+        },
+        {
+          "title": "ClawBook Community Patrol and Interaction Summary",
+          "type": "conversation",
+          "goal": "执行 ClawBook 社区午间巡逻任务，包括查看全站最新帖子、检查 #stuck 板块、回复自己帖子的评论、点赞和评论有价值的帖子，以保持真实社区互动。",
+          "deliverables": [],
+          "process": [
+            "使用 clawbook-api.sh 脚本成功完成午巡任务：扫描了15条全站新帖和10条#stuck板块帖子；对帖子#5218点赞并发表评论（ID=17128）；回复了自己帖子#5199的评论（ID=..."
+          ],
+          "tags": [
+            "clawbook",
+            "community-patrol",
+            "api-interaction",
+            "content-moderation"
+          ]
+        },
+        {
+          "title": "SSoT Migration to Eliminate Hardcoded URLs",
+          "type": "conversation",
+          "goal": "完成 SSoT 全量迁移，消除所有脚本中的硬编码 URL，使配置集中化并可全局联动修改",
+          "deliverables": [],
+          "process": [
+            "通过创建 `scripts/config.py` 作为单一真相源，将 7 个脚本的硬编码 URL 替换为配置导入，并修复了 `daily_quality_gate.py` 的 git-log 检查逻辑..."
+          ],
+          "tags": [
+            "refactor",
+            "config-management",
+            "git",
+            "SSoT",
+            "hardcoded-urls"
+          ]
         }
       ],
       "capabilityGrowth": {
-        "skillCount": 156,
+        "skillCount": 155,
         "knowledgeCount": 273,
-        "memoryCount": 143,
-        "skillChange": 0,
+        "memoryCount": 144,
+        "skillChange": -1,
         "knowledgeChange": 0,
-        "memoryChange": 2,
+        "memoryChange": 3,
         "newSkills": [],
         "updatedSkills": [
-          {
-            "name": "sl-ai-productivity",
-            "description": "快手AI生产力战役·完整能力包（沈浪专属）。触发词：AI生产力项目、加载项目技能、sl-ai-productivity、"
-          },
-          {
-            "name": "ks-kwai-docs",
-            "description": ">"
-          },
           {
             "name": "sl-weekly-fortune",
             "description": "每周AI算命 — 用AI生图生成命运大图。触发词：AI算命、每周算命、周运势、命运卡片、fortune、塔罗牌风格运势。"
@@ -234,6 +226,10 @@
             "category": "common_pitfalls_experience"
           },
           {
+            "title": "link-homepage git仓库损坏导致静默推送失败（一周日报数据不更新）",
+            "category": "common_pitfalls_experience"
+          },
+          {
             "title": "frontend-cloud 部署必须用 frontend-cloud-cli，不能靠 git push",
             "category": "development_practice_specification"
           }
@@ -241,16 +237,16 @@
         "updatedMemory": [],
         "trend": "growing"
       },
-      "skillCount": 156,
+      "skillCount": 155,
       "knowledgeCount": 273,
-      "memoryCount": 143,
-      "skillChange": 0,
+      "memoryCount": 144,
+      "skillChange": -1,
       "knowledgeChange": 0,
-      "memoryChange": 2,
+      "memoryChange": 3,
       "highlights": [
-        "💬 完成 16 个任务: 清理项目中的遗留CSS和HTML死代码，包括旧的.agentos-*选择器和裸C..., 将首页「战役介绍」Tab的过时内容按最新OnePage信息进行重写，并确保线上可......",
+        "💬 完成 14 个任务: 用户希望创建一个高质量的AgentOS架构图，用于战役OnePage文档展示, 执行 ClawBook 社区晚巡任务，查看指定板块内容并进行点赞互动...",
         "📁 项目成果: 新增: add 100 solar mass black hole star",
-        "🧠 新增记忆: ClawBook bash脚本blank、frontend-cloud 部署必须用，规范化开发实践"
+        "🧠 新增记忆: ClawBook bash脚本blank等3条，避免常见错误"
       ]
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T05:08:49.241550",
+  "generatedAt": "2026-04-14T05:44:27.066544",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -132,14 +132,14 @@
         "desc": "知道的越来越多"
       }
     ],
-    "totalExp": 337390,
-    "expProgress": 58.1,
+    "totalExp": 338190,
+    "expProgress": 60.8,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
-      "understanding": 83.4,
+      "understanding": 83.9,
       "execution": 52.5,
-      "skillDepth": 85.5,
+      "skillDepth": 85.7,
       "thinkingDepth": 38.0,
       "knowledgeBreadth": 61.2
     },
@@ -153,13 +153,13 @@
       },
       "activeSkills": 134,
       "highLevelSkills": 134,
-      "skillTotalValue": 2643.9,
+      "skillTotalValue": 2700.0,
       "cultivationExp": 0,
-      "baseExp": 337390,
+      "baseExp": 338190,
       "expBreakdown": {
-        "understanding": 83400,
+        "understanding": 83900,
         "execution": 52500,
-        "skill": 128250,
+        "skill": 128550,
         "thinking": 30400,
         "knowledge": 42840,
         "cultivation": 0
@@ -201,11 +201,11 @@
             "displayRole": "进化导航",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 65,
+            "exp": 66,
             "description": "自进化体系导航。小无相功总引导：查看全景、触发周检/月检、路由到正确技能",
             "lastUpdated": "2026-04-07",
-            "callCount": 4,
-            "frequency": "1次/月",
+            "callCount": 5,
+            "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 42106,
@@ -261,7 +261,7 @@
             "exp": 64,
             "description": "每日修炼核心引擎。驱动日常反思、自学、内功修炼和经验沉淀的完整闭环",
             "lastUpdated": "2026-04-07",
-            "callCount": 5,
+            "callCount": 6,
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -276,12 +276,12 @@
             "displayName": "举一反三",
             "displayRole": "复盘并举一反三",
             "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
+            "level": 4,
+            "exp": 66,
             "description": "复盘与举一反三。四层渐进学习：项目复盘→即时修复→预防复发→泛化进化",
             "lastUpdated": "2026-04-07",
-            "callCount": 7,
-            "frequency": "2次/月",
+            "callCount": 10,
+            "frequency": "3次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 13963,
@@ -295,12 +295,12 @@
             "displayName": "记忆体系优化",
             "displayRole": "记忆树",
             "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
+            "level": 4,
+            "exp": 66,
             "description": "记忆优化。自动化扫描、批量诊断、优化建议和执行的记忆健康管理",
             "lastUpdated": "2026-04-07",
-            "callCount": 7,
-            "frequency": "2次/月",
+            "callCount": 10,
+            "frequency": "3次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 17461,
@@ -315,10 +315,10 @@
             "displayRole": "技能树",
             "source": "林克核心能力",
             "level": 4,
-            "exp": 65,
+            "exp": 66,
             "description": "技能体系优化。技能健康度诊断、复用检测、关系梳理、分类同步、架构优化",
             "lastUpdated": "2026-04-07",
-            "callCount": 9,
+            "callCount": 10,
             "frequency": "3次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -333,11 +333,11 @@
             "displayName": "知识体系优化",
             "displayRole": "知识树",
             "source": "林克核心能力",
-            "level": 3,
+            "level": 4,
             "exp": 65,
             "description": "知识库优化。索引完整性检查、重复检测、过时标记、分类整理",
             "lastUpdated": "2026-04-07",
-            "callCount": 8,
+            "callCount": 9,
             "frequency": "3次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -394,8 +394,8 @@
             "exp": 98,
             "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
             "lastUpdated": "2026-04-07",
-            "callCount": 82,
-            "frequency": "4.2次/周",
+            "callCount": 83,
+            "frequency": "4.3次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 33885,
@@ -482,7 +482,7 @@
           }
         ],
         "count": 16,
-        "avgLevel": 3.2
+        "avgLevel": 3.4
       },
       "🧠 思维方法": {
         "role": "cognitive",
@@ -606,8 +606,8 @@
             "exp": 100,
             "description": "任务执行元技能。自动运行的质量保障框架：启动前检查→交付前自审→出错后复盘",
             "lastUpdated": "2026-04-07",
-            "callCount": 227,
-            "frequency": "1.5次/天",
+            "callCount": 234,
+            "frequency": "1.7次/天",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 36482,
@@ -644,7 +644,7 @@
             "exp": 64,
             "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡前任务\", \"长任务\", \"夜间任务\", \"white task\", \"long task\", \"overnight task\", \"帮我跑一下\", \"继续长任务\", \"从断点继续\", \"继续夜间任务\", \"继续长任务\", or assigns work to be comple",
             "lastUpdated": "2026-04-07",
-            "callCount": 5,
+            "callCount": 6,
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -778,7 +778,7 @@
             "description": "林克个人助理_V1 项目的 Spec-Driven Development 工作流。后续所有对此项目的开发和维护都使用本技能。触发词：「新需求」「写需求文档」「做个功能」「写技术方案」「修 Bug」「快速实现」「这个项目怎么改」「继续实现 F00X」，或任何对 ~/Documents/Codeflicker/个人助理_V1 下文件的开发/修改请求。",
             "lastUpdated": "2026-04-07",
             "callCount": 5,
-            "frequency": "2次/月",
+            "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 7261,
@@ -808,11 +808,11 @@
             "description": "AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI行业周报'或执行AI行业调研任务时使用。核心场景：生成AI行业日报/周报、追踪AI公司/人物、沉淀AI行业知识、管理AI信息源。即使用户只是说'跑一下日报'或'今天AI有什么动态'，只要上下文是AI行业相关，也应该触发。注意：本技能仅处理AI行业领域，研发效能相关请使用 sl-rd-efficiency-insight",
             "lastUpdated": "2026-04-09",
             "callCount": 122,
-            "frequency": "3.0次/周",
+            "frequency": "3.2次/周",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 159823,
-            "skillSizeLabel": "159K字 · 巨型",
+            "skillSize": 160284,
+            "skillSizeLabel": "160K字 · 巨型",
             "ksInternal": false,
             "cfProject": true,
             "tag": "SL"
@@ -912,11 +912,11 @@
             "displayName": "AI生产力战役",
             "displayRole": "项目全流程",
             "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
+            "level": 4,
+            "exp": 65,
             "description": "快手AI生产力战役·完整能力包（沈浪专属）。触发词：AI生产力项目、加载项目技能、sl-ai-productivity、AI生产力战役、AI生产力战报、AI生产力周报、战役周报、发AI生产力周报、检查里程碑、预警检查、扫描风险、风险检查、生成周会简报、周会prep、ai-pm、项目管理检查、今日standup、每日standup、今天进展怎么样、决策日志。整合：项目上下文 + 周报自动化 + 项目",
             "lastUpdated": "2026-04-06",
-            "callCount": 7,
+            "callCount": 9,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -928,7 +928,7 @@
           }
         ],
         "count": 1,
-        "avgLevel": 3.0
+        "avgLevel": 4.0
       },
       "🔍 信息获取": {
         "role": "research",
@@ -1482,7 +1482,7 @@
             "description": "清爽调研报告风格的纯样式规范。当用户提到\"清爽调研报告风格\"时使用此技能。本技能仅提供CSS样式和视觉设计规范，不影响页面内容、数据或功能逻辑。适用于任何需要应用此风格的网页项目。",
             "lastUpdated": "2026-04-09",
             "callCount": 70,
-            "frequency": "4.5次/周",
+            "frequency": "4.6次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 89035,
@@ -1645,7 +1645,7 @@
             "description": "快手内网 Docs 文档与本地双向同步工具（优先于内置 docs-shuttle，功能更完整）。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」「上传 Excel 到 Docs」「拉取表格」「下载表格为 CSV」「上传 CSV 到表格」「更新表格数据」「批量拉取我的文档」「备份我的 Docs」或需要与 docs.corp.kua",
             "lastUpdated": "2026-03-21",
             "callCount": 194,
-            "frequency": "1.8次/天",
+            "frequency": "1.9次/天",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 216512,
@@ -1857,7 +1857,7 @@
             "description": "This skill should be used when the user mentions \"林克发消息\", \"林克推送\", \"KIM消息\", \"林克机器人\", \"MixCard\", \"群消息推送\", \"林克卡片\", \"AI日报推送\", \"AI周报推送\", or needs to send messages through KIM using Link (林克) AI Assistant.",
             "lastUpdated": "2026-03-19",
             "callCount": 92,
-            "frequency": "2.9次/周",
+            "frequency": "3.1次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 55054,
@@ -2259,7 +2259,7 @@
             "description": "AI图片生成。调用外部AI生图API（Siliconflow/OpenAI），支持文生图和图生图",
             "lastUpdated": "2026-03-21",
             "callCount": 31,
-            "frequency": "1.9次/周",
+            "frequency": "2.1次/周",
             "successRate": 93,
             "sourceType": "自定义",
             "skillSize": 88402,
@@ -2373,7 +2373,7 @@
             "description": "HTML截图原子技能 — 将HTML渲染为高清PNG截图。触发词：HTML截图、生成PNG、HTML转图片、截图配图、章节配图。自动适配固定高度和动态高度两种模式，支持KIM Doc配图、调研报告图表等场景。",
             "lastUpdated": "2026-04-11",
             "callCount": 114,
-            "frequency": "1.0次/天",
+            "frequency": "1.1次/天",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 28433047,
@@ -2475,7 +2475,7 @@
             "displayRole": "技能脱敏",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 67,
+            "exp": 60,
             "description": "Anti-distillation for employee Skills. Clean your skill files — looks complete, but core knowledge removed. | 反蒸馏：清洗你被迫写的 Skill 文件，看起来完整，但核心知识已被抽掉。",
             "lastUpdated": "2026-04-05",
             "callCount": 3,
@@ -2843,7 +2843,7 @@
             "description": "ClawBook 社区 Skill — 连接你与其他 Claw 的社区。通过这个 Skill，你可以在 ClawBook 社区发帖分享经验、评论讨论、投票表态、浏览 Feed 获取灵感。当你完成了一个有趣的任务、学到了新知识、遇到了难题、想分享工作流、或者只是想看看其他 Claw 在做什么时，都应该使用这个 Skill。这是你与数万个 Claw 交流、学习、共同进化的唯一通道。",
             "lastUpdated": "2026-03-27",
             "callCount": 56,
-            "frequency": "4.0次/周",
+            "frequency": "4.1次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 76265,
@@ -3096,11 +3096,11 @@
                 "displayRole": "进化导航",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 65,
+                "exp": 66,
                 "description": "自进化体系导航。小无相功总引导：查看全景、触发周检/月检、路由到正确技能",
                 "lastUpdated": "2026-04-07",
-                "callCount": 4,
-                "frequency": "1次/月",
+                "callCount": 5,
+                "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 42106,
@@ -3156,7 +3156,7 @@
                 "exp": 64,
                 "description": "每日修炼核心引擎。驱动日常反思、自学、内功修炼和经验沉淀的完整闭环",
                 "lastUpdated": "2026-04-07",
-                "callCount": 5,
+                "callCount": 6,
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -3171,12 +3171,12 @@
                 "displayName": "举一反三",
                 "displayRole": "复盘并举一反三",
                 "source": "林克核心能力",
-                "level": 3,
-                "exp": 64,
+                "level": 4,
+                "exp": 66,
                 "description": "复盘与举一反三。四层渐进学习：项目复盘→即时修复→预防复发→泛化进化",
                 "lastUpdated": "2026-04-07",
-                "callCount": 7,
-                "frequency": "2次/月",
+                "callCount": 10,
+                "frequency": "3次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 13963,
@@ -3190,12 +3190,12 @@
                 "displayName": "记忆体系优化",
                 "displayRole": "记忆树",
                 "source": "林克核心能力",
-                "level": 3,
-                "exp": 64,
+                "level": 4,
+                "exp": 66,
                 "description": "记忆优化。自动化扫描、批量诊断、优化建议和执行的记忆健康管理",
                 "lastUpdated": "2026-04-07",
-                "callCount": 7,
-                "frequency": "2次/月",
+                "callCount": 10,
+                "frequency": "3次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 17461,
@@ -3210,10 +3210,10 @@
                 "displayRole": "技能树",
                 "source": "林克核心能力",
                 "level": 4,
-                "exp": 65,
+                "exp": 66,
                 "description": "技能体系优化。技能健康度诊断、复用检测、关系梳理、分类同步、架构优化",
                 "lastUpdated": "2026-04-07",
-                "callCount": 9,
+                "callCount": 10,
                 "frequency": "3次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -3228,11 +3228,11 @@
                 "displayName": "知识体系优化",
                 "displayRole": "知识树",
                 "source": "林克核心能力",
-                "level": 3,
+                "level": 4,
                 "exp": 65,
                 "description": "知识库优化。索引完整性检查、重复检测、过时标记、分类整理",
                 "lastUpdated": "2026-04-07",
-                "callCount": 8,
+                "callCount": 9,
                 "frequency": "3次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -3289,8 +3289,8 @@
                 "exp": 98,
                 "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
                 "lastUpdated": "2026-04-07",
-                "callCount": 82,
-                "frequency": "4.2次/周",
+                "callCount": 83,
+                "frequency": "4.3次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 33885,
@@ -3377,7 +3377,7 @@
               }
             ],
             "count": 16,
-            "avgLevel": 3.2
+            "avgLevel": 3.4
           },
           "🧠 思维方法": {
             "role": "cognitive",
@@ -3499,8 +3499,8 @@
                 "exp": 100,
                 "description": "任务执行元技能。自动运行的质量保障框架：启动前检查→交付前自审→出错后复盘",
                 "lastUpdated": "2026-04-07",
-                "callCount": 227,
-                "frequency": "1.5次/天",
+                "callCount": 234,
+                "frequency": "1.7次/天",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 36482,
@@ -3537,7 +3537,7 @@
                 "exp": 64,
                 "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡前任务\", \"长任务\", \"夜间任务\", \"white task\", \"long task\", \"overnight task\", \"帮我跑一下\", \"继续长任务\", \"从断点继续\", \"继续夜间任务\", \"继续长任务\", or assigns work to be comple",
                 "lastUpdated": "2026-04-07",
-                "callCount": 5,
+                "callCount": 6,
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -3671,7 +3671,7 @@
                 "description": "林克个人助理_V1 项目的 Spec-Driven Development 工作流。后续所有对此项目的开发和维护都使用本技能。触发词：「新需求」「写需求文档」「做个功能」「写技术方案」「修 Bug」「快速实现」「这个项目怎么改」「继续实现 F00X」，或任何对 ~/Documents/Codeflicker/个人助理_V1 下文件的开发/修改请求。",
                 "lastUpdated": "2026-04-07",
                 "callCount": 5,
-                "frequency": "2次/月",
+                "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 7261,
@@ -3686,7 +3686,7 @@
           }
         },
         "count": 31,
-        "avgLevel": 3.2
+        "avgLevel": 3.3
       },
       "domain_pack": {
         "name": "🎯 领域能力层",
@@ -3710,11 +3710,11 @@
                 "description": "AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI行业周报'或执行AI行业调研任务时使用。核心场景：生成AI行业日报/周报、追踪AI公司/人物、沉淀AI行业知识、管理AI信息源。即使用户只是说'跑一下日报'或'今天AI有什么动态'，只要上下文是AI行业相关，也应该触发。注意：本技能仅处理AI行业领域，研发效能相关请使用 sl-rd-efficiency-insight",
                 "lastUpdated": "2026-04-09",
                 "callCount": 122,
-                "frequency": "3.0次/周",
+                "frequency": "3.2次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 159823,
-                "skillSizeLabel": "159K字 · 巨型",
+                "skillSize": 160284,
+                "skillSizeLabel": "160K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": true,
                 "tag": "SL"
@@ -3811,11 +3811,11 @@
                 "displayName": "AI生产力战役",
                 "displayRole": "项目全流程",
                 "source": "林克核心能力",
-                "level": 3,
-                "exp": 64,
+                "level": 4,
+                "exp": 65,
                 "description": "快手AI生产力战役·完整能力包（沈浪专属）。触发词：AI生产力项目、加载项目技能、sl-ai-productivity、AI生产力战役、AI生产力战报、AI生产力周报、战役周报、发AI生产力周报、检查里程碑、预警检查、扫描风险、风险检查、生成周会简报、周会prep、ai-pm、项目管理检查、今日standup、每日standup、今天进展怎么样、决策日志。整合：项目上下文 + 周报自动化 + 项目",
                 "lastUpdated": "2026-04-06",
-                "callCount": 7,
+                "callCount": 9,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -3827,11 +3827,11 @@
               }
             ],
             "count": 1,
-            "avgLevel": 3.0
+            "avgLevel": 4.0
           }
         },
         "count": 5,
-        "avgLevel": 3.6
+        "avgLevel": 3.8
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -4388,7 +4388,7 @@
                 "description": "清爽调研报告风格的纯样式规范。当用户提到\"清爽调研报告风格\"时使用此技能。本技能仅提供CSS样式和视觉设计规范，不影响页面内容、数据或功能逻辑。适用于任何需要应用此风格的网页项目。",
                 "lastUpdated": "2026-04-09",
                 "callCount": 70,
-                "frequency": "4.5次/周",
+                "frequency": "4.6次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 89035,
@@ -4550,7 +4550,7 @@
                 "description": "快手内网 Docs 文档与本地双向同步工具（优先于内置 docs-shuttle，功能更完整）。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「同步文档」「把这个 MD 上传到文档系统」「上传 Excel 到 Docs」「拉取表格」「下载表格为 CSV」「上传 CSV 到表格」「更新表格数据」「批量拉取我的文档」「备份我的 Docs」或需要与 docs.corp.kua",
                 "lastUpdated": "2026-03-21",
                 "callCount": 194,
-                "frequency": "1.8次/天",
+                "frequency": "1.9次/天",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 216512,
@@ -4760,7 +4760,7 @@
                 "description": "This skill should be used when the user mentions \"林克发消息\", \"林克推送\", \"KIM消息\", \"林克机器人\", \"MixCard\", \"群消息推送\", \"林克卡片\", \"AI日报推送\", \"AI周报推送\", or needs to send messages through KIM using Link (林克) AI Assistant.",
                 "lastUpdated": "2026-03-19",
                 "callCount": 92,
-                "frequency": "2.9次/周",
+                "frequency": "3.1次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 55054,
@@ -5160,7 +5160,7 @@
                 "description": "AI图片生成。调用外部AI生图API（Siliconflow/OpenAI），支持文生图和图生图",
                 "lastUpdated": "2026-03-21",
                 "callCount": 31,
-                "frequency": "1.9次/周",
+                "frequency": "2.1次/周",
                 "successRate": 93,
                 "sourceType": "自定义",
                 "skillSize": 88402,
@@ -5274,7 +5274,7 @@
                 "description": "HTML截图原子技能 — 将HTML渲染为高清PNG截图。触发词：HTML截图、生成PNG、HTML转图片、截图配图、章节配图。自动适配固定高度和动态高度两种模式，支持KIM Doc配图、调研报告图表等场景。",
                 "lastUpdated": "2026-04-11",
                 "callCount": 114,
-                "frequency": "1.0次/天",
+                "frequency": "1.1次/天",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 28433047,
@@ -5375,7 +5375,7 @@
                 "displayRole": "技能脱敏",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 67,
+                "exp": 60,
                 "description": "Anti-distillation for employee Skills. Clean your skill files — looks complete, but core knowledge removed. | 反蒸馏：清洗你被迫写的 Skill 文件，看起来完整，但核心知识已被抽掉。",
                 "lastUpdated": "2026-04-05",
                 "callCount": 3,
@@ -5741,7 +5741,7 @@
                 "description": "ClawBook 社区 Skill — 连接你与其他 Claw 的社区。通过这个 Skill，你可以在 ClawBook 社区发帖分享经验、评论讨论、投票表态、浏览 Feed 获取灵感。当你完成了一个有趣的任务、学到了新知识、遇到了难题、想分享工作流、或者只是想看看其他 Claw 在做什么时，都应该使用这个 Skill。这是你与数万个 Claw 交流、学习、共同进化的唯一通道。",
                 "lastUpdated": "2026-03-27",
                 "callCount": 56,
-                "frequency": "4.0次/周",
+                "frequency": "4.1次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 76265,
@@ -6204,7 +6204,7 @@
         "fileCount": 108,
         "sizeKB": 725.4,
         "heatLevel": 5,
-        "recentCount": 14
+        "recentCount": 13
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -6237,7 +6237,7 @@
           "thinking_pattern"
         ],
         "fileCount": 26,
-        "sizeKB": 196.3,
+        "sizeKB": 196.4,
         "heatLevel": 5,
         "recentCount": 7
       },
@@ -6317,7 +6317,7 @@
               "thinking_pattern"
             ],
             "fileCount": 26,
-            "sizeKB": 196.3,
+            "sizeKB": 196.4,
             "heatLevel": 5,
             "recentCount": 7
           },
@@ -6340,7 +6340,7 @@
           }
         },
         "totalFiles": 167,
-        "totalSizeKB": 1123.9
+        "totalSizeKB": 1124.0
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -6366,7 +6366,7 @@
             "fileCount": 108,
             "sizeKB": 725.4,
             "heatLevel": 5,
-            "recentCount": 14
+            "recentCount": 13
           },
           "rd-efficiency": {
             "name": "rd-efficiency",
@@ -6437,7 +6437,7 @@
       }
     },
     "totalFiles": 307,
-    "totalSizeKB": 2318.0
+    "totalSizeKB": 2318.1
   },
   "memories": {
     "items": [
@@ -6496,25 +6496,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-08",
-        "source": "项目记忆"
-      },
-      {
-        "title": "AI生产力战役 · 权威数据源规则",
-        "category": "project_configuration",
-        "categoryLabel": "项目知识",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📋",
-        "color": "#c2410c",
-        "description": "快手AI生产力战役项目规则： 1. 权威数据源（拿不准时以这两个文档为准）： - 项目管理电子表格（最权威）：https://docs.corp.kuai...",
-        "keywords": [
-          "AI生产力",
-          "权威数据源",
-          "项目管理电子表格",
-          "OnePage",
-          "文档优先"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-05",
         "source": "项目记忆"
       },
       {
@@ -6765,12 +6746,12 @@
         "source": "项目记忆"
       },
       {
-        "title": "企业数字员工平台 — 增量开发差距清单与优先级",
-        "category": "project_configuration",
-        "categoryLabel": "项目配置",
-        "layer": null,
-        "icon": "🔧",
-        "color": "#f97316",
+        "title": "企业数字员工平台 — 增量开发差距清单与优先级（已迁移到任务流程经验）",
+        "category": "task_flow_experience",
+        "categoryLabel": "思维方法",
+        "layer": "🧠 元认知层",
+        "icon": "🧠",
+        "color": "#fbbf24",
         "description": "企业数字员工平台 — 增量开发差距清单与优先级 当前状态：Web 端 7 页基本框架已实现，使用 Mock 数据，Claude API 对话...",
         "keywords": [
           "digital-employee",
@@ -6780,7 +6761,7 @@
           "PRD"
         ],
         "importance": 5,
-        "updatedAt": "2026-04-08",
+        "updatedAt": "2026-04-13",
         "source": "用户显式记录"
       },
       {
@@ -7446,6 +7427,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-09",
+        "source": "项目记忆"
+      },
+      {
+        "title": "AI生产力战役 · 权威数据源规则",
+        "category": "project_configuration",
+        "categoryLabel": "项目知识",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "快手AI生产力战役项目规则： 1. 权威数据源（拿不准时以这两个文档为准）： - 项目管理电子表格（最权威）：https://docs.corp.kuai...",
+        "keywords": [
+          "AI生产力",
+          "权威数据源",
+          "项目管理电子表格",
+          "OnePage",
+          "文档优先"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-05",
         "source": "项目记忆"
       },
       {
@@ -9211,7 +9211,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 135,
+    "total": 136,
     "byCategory": {
       "development_code_specification": {
         "count": 10,
@@ -9235,7 +9235,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 19,
+        "count": 20,
         "label": "通用踩坑",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -9263,11 +9263,11 @@
         "description": "脚本参数/文件时间踩坑"
       },
       "project_configuration": {
-        "count": 4,
-        "label": "项目配置",
-        "icon": "🔧",
-        "color": "#f97316",
-        "description": "项目配置项、参数设置、环境变量"
+        "count": 3,
+        "label": "项目知识",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "项目背景、配置、技术栈"
       },
       "project_introduction": {
         "count": 1,
@@ -9656,6 +9656,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "企业数字员工平台 — 增量开发差距清单与优先级（已迁移到任务流程经验）",
+                "category": "task_flow_experience",
+                "categoryLabel": "思维方法",
+                "layer": "🧠 元认知层",
+                "icon": "🧠",
+                "color": "#fbbf24",
+                "description": "企业数字员工平台 — 增量开发差距清单与优先级 当前状态：Web 端 7 页基本框架已实现，使用 Mock 数据，Claude API 对话...",
+                "keywords": [
+                  "digital-employee",
+                  "gap-list",
+                  "priority",
+                  "roadmap",
+                  "PRD"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-04-13",
+                "source": "用户显式记录"
+              },
+              {
                 "title": "一致性检查闭环：发现→修复→自动化→门控（v2 — 补充人工记忆依赖联动扫描）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维方法",
@@ -9732,7 +9751,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 5
+            "count": 6
           },
           "做事方法": {
             "icon": "⚙️",
@@ -9895,7 +9914,7 @@
             "count": 8
           }
         },
-        "count": 30
+        "count": 31
       },
       "🛠️ 实践记忆层": {
         "icon": "🛠️",
@@ -11945,7 +11964,7 @@
                   "OnePage",
                   "文档优先"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-05",
                 "source": "项目记忆"
               }
@@ -11984,7 +12003,8 @@
       "04-10",
       "04-11",
       "04-12",
-      "04-13"
+      "04-13",
+      "04-14"
     ],
     "skills": [
       79,
@@ -12011,6 +12031,7 @@
       156,
       156,
       156,
+      155,
       155,
       155
     ],
@@ -12040,6 +12061,7 @@
       305,
       305,
       306,
+      307,
       307
     ],
     "memories": [
@@ -12067,6 +12089,7 @@
       141,
       141,
       141,
+      146,
       146,
       146
     ]
@@ -12103,8 +12126,8 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "懂你程度 83/80",
-      "date": "2026-04-13"
+      "progressText": "懂你程度 84/80",
+      "date": "2026-04-14"
     },
     {
       "id": "skill_master_v2",
@@ -12116,7 +12139,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "4星+技能 134/10",
-      "date": "2026-04-13"
+      "date": "2026-04-14"
     },
     {
       "id": "daily_report",
@@ -12172,7 +12195,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "达成",
-      "date": "2026-04-13"
+      "date": "2026-04-14"
     },
     {
       "id": "first_awakening",

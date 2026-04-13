@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T05:08:29.542167",
+  "generatedAt": "2026-04-14T05:26:16.094689",
   "summary": {
     "totalDays": 30,
     "latestDate": "2026-04-13",
@@ -7,7 +7,6 @@
   },
   "trend": {
     "dates": [
-      "03-31",
       "04-01",
       "04-02",
       "04-03",
@@ -20,10 +19,10 @@
       "04-10",
       "04-11",
       "04-12",
-      "04-13"
+      "04-13",
+      "04-14"
     ],
     "skills": [
-      124,
       124,
       125,
       125,
@@ -36,10 +35,10 @@
       156,
       156,
       155,
+      155,
       155
     ],
     "knowledge": [
-      291,
       291,
       292,
       292,
@@ -52,10 +51,10 @@
       305,
       305,
       306,
+      307,
       307
     ],
     "memory": [
-      124,
       124,
       126,
       127,
@@ -68,6 +67,7 @@
       141,
       141,
       146,
+      146,
       146
     ]
   },
@@ -75,104 +75,128 @@
     {
       "date": "2026-04-13",
       "dayOfWeek": "周一",
-      "activeProjects": 3,
-      "totalCommits": 0,
-      "conversationCount": 2,
+      "activeProjects": 5,
+      "totalCommits": 5,
+      "conversationCount": 19,
       "coreProgress": [
-        "💬 完成 2 个任务: 完成每日修炼 Step 4.1 记忆优化任务，对记忆树进行全量扫描、健康度诊断和..., 完成2026-04-13的每日修炼Step 3对话复盘任务，处理零对话边界情况并...",
-        "📁 项目成果: 文档完善 4 份",
+        "💬 完成 19 个任务: 当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。, 执行 ClawBook 社区晚巡任务，查看 internal-api、build......",
+        "📁 项目成果: 修复: fix+perf: code review 一轮修复",
         "📚 新增 1 篇知识文档，扩展专业领域覆盖"
       ],
       "deliveries": [
         {
-          "title": "Memory Optimization - Daily Cultivation Step 4.1",
+          "title": "当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。",
           "type": "conversation",
-          "goal": "完成每日修炼 Step 4.1 记忆优化任务，对记忆树进行全量扫描、健康度诊断和问题修复",
+          "goal": "当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。",
+          "deliverables": [],
+          "process": [],
+          "tags": []
+        },
+        {
+          "title": "ClawBook Night Patrol Task",
+          "type": "conversation",
+          "goal": "执行 ClawBook 社区晚巡任务，查看 internal-api、builds 和 evolution 三个板块的最新或热门帖子，并对好内容点赞互动",
           "deliverables": [],
           "process": [
-            "已加载 meta-execution 和 meta-memory-hygiene 技能，读取 neigong-diag.json 和 auto-fix-report.json 诊断数据，完成全量记忆扫..."
+            "使用 clawbook-api.sh 脚本依次查看了 internal-api 板块最新帖子和 builds 板块热门帖子，发现了巡逻报告、doc-ops 工具推荐等内容。任务进行中，evolutio..."
           ],
           "tags": [
-            "memory-optimization",
-            "daily-cultivation",
-            "codeflicker",
-            "agent-health"
+            "clawbook",
+            "night-patrol",
+            "board-posts",
+            "internal-api",
+            "builds"
           ]
         },
         {
-          "title": "Zero Dialogue Daily Review Execution",
+          "title": "Star Universe Code Review Bug Fixes and Performance Optimizations",
           "type": "conversation",
-          "goal": "完成2026-04-13的每日修炼Step 3对话复盘任务，处理零对话边界情况并标记状态",
+          "goal": "修复代码审查中发现的性能问题和Bug，优化恒星演化可视化项目的用户体验",
           "deliverables": [],
           "process": [
-            "成功执行了零对话场景的对话复盘：读取预分析简报确认0个对话，完成轻量扫描和深度分析流程（无对话需分析），通过Python直接调用mark_phase函数将phase2标记为completed（00:0..."
+            "完成了代码审查中的一轮修复，提交commit f3850bd。修复了badgeToast的setTimeout残留问题、resetBtn未重置状态问题、setInterval与tick双重驱动问题、r..."
           ],
           "tags": [
-            "daily-review",
-            "zero-dialogue",
-            "state-management",
-            "trend-analysis"
+            "code-review",
+            "bug-fix",
+            "performance",
+            "stellar-evolution",
+            "visualization"
           ]
         },
         {
-          "title": "个人助理_V1",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "README.md",
-              "type": "document",
-              "url": ""
-            },
-            {
-              "name": "index.md",
-              "type": "document",
-              "url": ""
-            }
-          ],
+          "title": "AI Productivity Tool Documentation and Diagram Generation",
+          "type": "conversation",
+          "goal": "用户希望理解快手AI生产力相关文档内容，并生成符合要求的可视化图表用于展示",
+          "deliverables": [],
           "process": [
-            "文档完善 4 份",
-            "功能代码优化"
+            "助手首先读取了用户提供的内部文档链接，然后搜索并分析了项目中现有的HTML图表文件（如landing/index.html、Output/charts/下的图表等），随后计划使用html-screen..."
           ],
-          "commitCount": 0,
-          "fileChangeCount": 20,
-          "deployUrl": null
+          "tags": [
+            "ai-governance",
+            "diagram-generation",
+            "html-screenshot"
+          ]
         },
         {
-          "title": "knowledge/ai-insight",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "README.md",
-              "type": "document",
-              "url": ""
-            }
-          ],
-          "process": [
-            "文档完善 2 份"
-          ],
-          "commitCount": 0,
-          "fileChangeCount": 2,
-          "deployUrl": null
+          "title": "AI周报W15发布与日报风格升级复盘",
+          "type": "conversation",
+          "goal": "完成AI周报W15的发布（包括KIM卡片私发和四链接提供），执行日报风格升级到方案B，并在任务完成后进行复盘以优化工作流程。",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "ai-insight",
+            "weekly-report",
+            "deployment",
+            "skill-update",
+            "retrospective"
+          ]
         },
         {
-          "title": "knowledge/self-evolution",
-          "type": "project",
-          "goal": "项目开发与维护",
-          "deliverables": [
-            {
-              "name": "index.md",
-              "type": "document",
-              "url": ""
-            }
-          ],
+          "title": "AI Image Generation Quota Exceeded",
+          "type": "conversation",
+          "goal": "用户请求用AI生成一张图片来详细介绍助手自己",
+          "deliverables": [],
           "process": [
-            "文档完善 1 份"
+            "用户请求生成介绍性图片，但系统返回CLAUDE_4_6_SPEC模型已达到使用额度上限，需等待约9小时后切换模型重试"
           ],
-          "commitCount": 0,
-          "fileChangeCount": 1,
-          "deployUrl": null
+          "tags": [
+            "ai",
+            "image-generation",
+            "quota",
+            "error"
+          ]
+        },
+        {
+          "title": "Fix AI Insight External Version Image Display and Homepage Entry",
+          "type": "conversation",
+          "goal": "修复AI产品本质报告外部版图片不显示问题，并确保首页深度调研入口在发布流程中不被丢失",
+          "deliverables": [],
+          "process": [
+            "定位到根因是 `scripts/phase4_publish.sh` 发布前未验证AI-Insight首页关键入口，导致 `sync_to_public.py` 的 `preserve_block` ..."
+          ],
+          "tags": [
+            "github-pages",
+            "html",
+            "image-paths",
+            "sync-script",
+            "validation"
+          ]
+        },
+        {
+          "title": "MyFlicker Architecture Diagram Redesign",
+          "type": "conversation",
+          "goal": "将产品文档中的技术架构图用更好的视觉效果重新绘制",
+          "deliverables": [],
+          "process": [
+            "用户要求重新绘制 MyFlicker 产品文档中的架构图（章节2.1-2.3和3.5），重点优化了图表布局和视觉效果。经过调整，将图表高度从1383px压缩到927px，接近16:9的PPT比例，同时..."
+          ],
+          "tags": [
+            "architecture-diagram",
+            "visualization",
+            "mermaid",
+            "optimization"
+          ]
         }
       ],
       "capabilityGrowth": {
@@ -180,7 +204,7 @@
         "knowledgeCount": 275,
         "memoryCount": 146,
         "skillChange": 0,
-        "knowledgeChange": 1,
+        "knowledgeChange": 0,
         "memoryChange": 0,
         "newSkills": [],
         "updatedSkills": [
@@ -273,6 +297,10 @@
             "description": "像素风格动作游戀：纯 HTML/CSS/JS 浏览器游戏开发。Create pixel-art action/shoot"
           },
           {
+            "name": "ks-kim-docs-shuttle",
+            "description": "快手内网 Docs 文档与本地双向同步工具（优先于内置 docs-shuttle，功能更完整）。当用户说「上传文档到 D"
+          },
+          {
             "name": "vercel-composition-patterns",
             "description": "React 组合式模式：复合组件、Render Props、Context。React composition patt"
           },
@@ -307,21 +335,30 @@
           {
             "name": "index",
             "category": "self-evolution"
+          },
+          {
+            "name": "metrics-log",
+            "category": "self-evolution"
           }
         ],
         "newMemory": [],
-        "updatedMemory": [],
-        "trend": "growing"
+        "updatedMemory": [
+          {
+            "title": "企业数字员工平台 — 增量开发差距清单与优先级（已迁移到任务流程经验）",
+            "category": "task_flow_experience"
+          }
+        ],
+        "trend": "stable"
       },
       "skillCount": 155,
       "knowledgeCount": 275,
       "memoryCount": 146,
       "skillChange": 0,
-      "knowledgeChange": 1,
+      "knowledgeChange": 0,
       "memoryChange": 0,
       "highlights": [
-        "💬 完成 2 个任务: 完成每日修炼 Step 4.1 记忆优化任务，对记忆树进行全量扫描、健康度诊断和..., 完成2026-04-13的每日修炼Step 3对话复盘任务，处理零对话边界情况并...",
-        "📁 项目成果: 文档完善 4 份",
+        "💬 完成 19 个任务: 当前网络环境无法访问内网，请检查网络连接，确认已连接公司内网或 VPN 后再试。, 执行 ClawBook 社区晚巡任务，查看 internal-api、build......",
+        "📁 项目成果: 修复: fix+perf: code review 一轮修复",
         "📚 新增 1 篇知识文档，扩展专业领域覆盖"
       ]
     },
@@ -330,9 +367,9 @@
       "dayOfWeek": "周日",
       "activeProjects": 4,
       "totalCommits": 12,
-      "conversationCount": 23,
+      "conversationCount": 22,
       "coreProgress": [
-        "💬 完成 23 个任务: 完成每日修炼Step 4.1记忆优化任务，包括加载元执行质量保障、内存卫生技能，..., 完成每日修炼的Step 4.2技能优化任务，包括加载meta-execution......",
+        "💬 完成 22 个任务: 完成每日修炼Step 4.1记忆优化任务，包括加载元执行质量保障、内存卫生技能，..., 完成每日修炼的Step 4.2技能优化任务，包括加载meta-execution......",
         "📁 项目成果: 修复: slow playback to wait for phase narratio",
         "🧠 新增记忆: KIM Doc 配图发布流程：先生成图片、Step3 transcript 关键词，避免常见错误",
         "📚 新增 1 篇知识文档，扩展专业领域覆盖"
@@ -415,22 +452,6 @@
           ]
         },
         {
-          "title": "Fix AI Product Essence Report External Images and Homepage Links",
-          "type": "conversation",
-          "goal": "修复AI产品本质报告外部版本图片不显示的问题，并将相关深度调研报告链接同步添加到内外部AI洞察首页",
-          "deliverables": [],
-          "process": [
-            "分析了外部版图片不显示的原因，定位到是相对路径问题。在两个首页文件（`AI-Insight/public/index.html` 和 `ai-insight-public/index.html`）中添..."
-          ],
-          "tags": [
-            "ai-insight",
-            "html",
-            "image-paths",
-            "homepage-cards",
-            "verification"
-          ]
-        },
-        {
           "title": "小无相功周检工作流程与文件删除问题",
           "type": "conversation",
           "goal": "用户希望执行小无相功周检任务，但在工作空间切换后遇到关键文件被删除的问题，需要确认是否继续执行",
@@ -458,6 +479,21 @@
             "community-patrol",
             "engagement",
             "content-sharing"
+          ]
+        },
+        {
+          "title": "AI Productivity Campaign Report Writing",
+          "type": "conversation",
+          "goal": "帮助完成AI生产力战役汇报文档中沈浪和希尧负责部分的撰写，以符合快手高管汇报风格",
+          "deliverables": [],
+          "process": [
+            "已完成文档分析、写作策略制定，并撰写了02章产品体验和03章经营成本部分。修复了两项P0问题：4.2全年成本推算占位符已替换为估算区间并标注待财务确认；4.3人均积分配额分层新增了配额设计依据，引用了..."
+          ],
+          "tags": [
+            "ai-governance",
+            "budget-planning",
+            "report-writing",
+            "quota-design"
           ]
         }
       ],
@@ -507,7 +543,7 @@
       "knowledgeChange": 0,
       "memoryChange": 2,
       "highlights": [
-        "💬 完成 23 个任务: 完成每日修炼Step 4.1记忆优化任务，包括加载元执行质量保障、内存卫生技能，..., 完成每日修炼的Step 4.2技能优化任务，包括加载meta-execution......",
+        "💬 完成 22 个任务: 完成每日修炼Step 4.1记忆优化任务，包括加载元执行质量保障、内存卫生技能，..., 完成每日修炼的Step 4.2技能优化任务，包括加载meta-execution......",
         "📁 项目成果: 修复: slow playback to wait for phase narratio",
         "🧠 新增记忆: KIM Doc 配图发布流程：先生成图片、Step3 transcript 关键词，避免常见错误"
       ]

@@ -106,67 +106,47 @@
 
     <!-- ==================== Panel: AI Insight ==================== -->
     <section class="hub-panel zonai-panel" id="panel-ai-insight" role="tabpanel">
+      <p class="column-desc" style="margin-bottom: 16px;">
+        AI 洞察不是一组零散文章，而是一套持续运转的内容系统：前面用日报和周报追踪变化，中间用专题调研拆解关键赛道，后面再把观点、案例与知识沉淀成可复用的认知资产。
+      </p>
 
-      <!-- ---- 日报 ---- -->
-      <div class="insight-section">
-        <div class="insight-section-header">
-          <span class="insight-section-title">📅 AI 日报</span>
-          <span class="insight-section-badge badge-live">每日更新</span>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:20px;">
+        <div style="background:#eef6ff; border:1px solid #bfdbfe; border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:24px; font-weight:800; color:#2563eb;" id="ai-insight-report-count">--</div>
+          <div style="font-size:12px; color:#64748b;">篇日报/周报</div>
         </div>
-        <div class="daily-banner">
-          <div class="daily-banner-info">
-            <div class="daily-banner-title" id="daily-report-title">加载中...</div>
-            <div class="daily-banner-meta" id="daily-report-meta">工作日每日一篇，覆盖全球 AI 动态</div>
-          </div>
-          <a id="daily-report-link" href="https://xiaoxiong20260206.github.io/ai-insight/" class="zonai-btn primary" target="_blank">
-            查看最新日报 →
-          </a>
+        <div style="background:#f5f3ff; border:1px solid #ddd6fe; border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:24px; font-weight:800; color:#7c3aed;" id="ai-insight-research-count">--</div>
+          <div style="font-size:12px; color:#64748b;">篇深度调研</div>
+        </div>
+        <div style="background:#ecfdf5; border:1px solid #bbf7d0; border-radius:12px; padding:16px; text-align:center;">
+          <div style="font-size:24px; font-weight:800; color:#059669;">100+</div>
+          <div style="font-size:12px; color:#64748b;">个信息源</div>
         </div>
       </div>
 
-      <!-- ---- 周报 ---- -->
-      <div class="insight-section">
-        <div class="insight-section-header">
-          <span class="insight-section-title">📊 AI 周报</span>
-          <span class="insight-section-badge badge-live">每周更新</span>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-bottom:20px;">
+        <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:4px;">📅 持续更新层</div>
+          <div style="font-size:12px; color:#6b7280;">日报+周报，持续追踪模型、产品、Agent 与行业动态。</div>
         </div>
-        <div class="daily-banner" style="border-color: rgba(212,168,42,0.25); background: linear-gradient(135deg, rgba(212,168,42,0.06) 0%, rgba(212,168,42,0.02) 100%);">
-          <div class="daily-banner-info">
-            <div class="daily-banner-title">一周 AI 大事全景回顾</div>
-            <div class="daily-banner-meta">每周末发布，整合本周最重要的 AI 进展与趋势</div>
-          </div>
-          <a href="https://xiaoxiong20260206.github.io/ai-insight/" class="zonai-btn gold" target="_blank">
-            查看最新周报 →
-          </a>
+        <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:4px;">🔬 深度研究层</div>
+          <div style="font-size:12px; color:#6b7280;">围绕重点主题做人话版深挖，形成系统判断而不是碎片资讯。</div>
         </div>
-      </div>
-
-      <!-- ---- 深度洞察 ---- -->
-      <div class="insight-section">
-        <div class="insight-section-header">
-          <span class="insight-section-title">🔬 深度洞察</span>
-          <span class="insight-section-badge badge-count" id="deep-insight-count">--</span>
+        <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:4px;">🧭 趋势判断层</div>
+          <div style="font-size:12px; color:#6b7280;">把热点、案例和观点串起来，沉淀成可复用的趋势框架。</div>
         </div>
-        <p class="insight-section-desc">针对特定领域/话题的系统性深度调研报告</p>
-        <div class="projects-grid" id="deep-insights-grid">
-          <!-- Dynamically loaded -->
-        </div>
-      </div>
-
-      <!-- ---- 本质洞察 ---- -->
-      <div class="insight-section">
-        <div class="insight-section-header">
-          <span class="insight-section-title">🔮 本质洞察</span>
-        </div>
-        <p class="insight-section-desc">透过现象看本质，用规律解释世界、预测未来</p>
-        <div class="projects-grid" id="essence-insights-grid">
-          <!-- Dynamically loaded -->
+        <div style="background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:14px;">
+          <div style="font-size:13px; font-weight:700; margin-bottom:4px;">🗂️ 知识资产层</div>
+          <div style="font-size:12px; color:#6b7280;">把阶段性产出沉淀为长期知识库，支持后续检索、复盘和复用。</div>
         </div>
       </div>
 
       <div class="ai-platform-link">
         <a href="https://xiaoxiong20260206.github.io/ai-insight/" class="zonai-btn" target="_blank">
-          🔬 进入 AI 洞察平台
+          📡 进入 AI 洞察平台
         </a>
       </div>
     </section>
@@ -463,53 +443,19 @@
     });
   });
 
-  // --- Load AI Research Projects (split into deep vs essence) ---
+  // --- Load AI Research Summary ---
   const ESSENCE_IDS = ['ai-essence-insight'];
 
   fetch('projects-data.json')
     .then(r => r.json())
     .then(data => {
       const researchProjects = data.projects.filter(p => p.category === 'research');
-      const el = document.getElementById('stat-research');
-      if (el) el.textContent = researchProjects.length;
+      const researchStatEl = document.getElementById('stat-research');
+      if (researchStatEl) researchStatEl.textContent = researchProjects.length;
 
-      const allProjects = data.projects
-        .filter(p => p.id !== 'ai-insight')
-        .sort((a, b) => {
-          const order = { featured: 3, excellent: 2, normal: 1 };
-          return (order[b.quality?.level] || 0) - (order[a.quality?.level] || 0);
-        });
-
-      const essenceProjects = allProjects.filter(p => ESSENCE_IDS.includes(p.id));
-      const deepProjects = allProjects.filter(p => !ESSENCE_IDS.includes(p.id));
-
-      function renderCards(projects, gridId) {
-        const grid = document.getElementById(gridId);
-        if (!grid) return;
-        grid.innerHTML = projects.map(p => {
-          const featured = p.quality?.level === 'featured' || p.quality?.level === 'excellent';
-          return '<a href="' + p.url + '" target="_blank" class="project-card">' +
-            '<div class="project-card-header">' +
-              '<div class="project-card-icon">' + (p.icon || '') + '</div>' +
-              '<div>' +
-                '<div class="project-card-name">' + p.name + '</div>' +
-                '<div class="project-card-sub">' + (p.subtitle || '') + '</div>' +
-              '</div>' +
-            '</div>' +
-            (featured ? '<span class="project-card-quality">精选</span>' : '') +
-            '<div class="project-card-footer">' +
-              '<span class="project-card-date">' + (p.completedAt || '') + '</span>' +
-              '<span class="project-card-link">查看报告 →</span>' +
-            '</div>' +
-          '</a>';
-        }).join('');
-      }
-
-      renderCards(deepProjects, 'deep-insights-grid');
-      renderCards(essenceProjects, 'essence-insights-grid');
-
-      const countEl = document.getElementById('deep-insight-count');
-      if (countEl) countEl.textContent = deepProjects.length + ' 篇';
+      const deepProjects = researchProjects.filter(p => !ESSENCE_IDS.includes(p.id));
+      const aiInsightResearchEl = document.getElementById('ai-insight-research-count');
+      if (aiInsightResearchEl) aiInsightResearchEl.textContent = deepProjects.length;
     })
     .catch(e => console.warn('Projects load failed:', e));
 
@@ -517,23 +463,19 @@
   fetch('reports-data.json')
     .then(r => r.json())
     .then(data => {
-      const el = document.getElementById('stat-reports');
-      if (el && data.reports) el.textContent = data.reports.length;
-
-      if (data.reports && data.reports.length > 0) {
-        const latest = data.reports[0];
-        const titleEl = document.getElementById('daily-report-title');
-        const metaEl = document.getElementById('daily-report-meta');
-        const linkEl = document.getElementById('daily-report-link');
-        if (titleEl) titleEl.textContent = latest.title || 'AI 日报';
-        if (metaEl) metaEl.textContent = latest.date || '';
-        if (linkEl && latest.url) linkEl.href = latest.url;
+      const statEl = document.getElementById('stat-reports');
+      const aiInsightReportsEl = document.getElementById('ai-insight-report-count');
+      if (data.reports) {
+        if (statEl) statEl.textContent = data.reports.length;
+        if (aiInsightReportsEl) aiInsightReportsEl.textContent = data.reports.length;
       }
     })
     .catch(e => {
       console.warn('Reports load failed:', e);
-      const el = document.getElementById('stat-reports');
-      if (el) el.textContent = '10+';
+      const statEl = document.getElementById('stat-reports');
+      const aiInsightReportsEl = document.getElementById('ai-insight-report-count');
+      if (statEl) statEl.textContent = '10+';
+      if (aiInsightReportsEl) aiInsightReportsEl.textContent = '10+';
     });
 })();
 </script>

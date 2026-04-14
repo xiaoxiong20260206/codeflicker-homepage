@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-14T08:24:23.150426",
+  "generatedAt": "2026-04-15T05:42:18.960481",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -132,12 +132,12 @@
         "desc": "知道的越来越多"
       }
     ],
-    "totalExp": 337990,
-    "expProgress": 60.1,
+    "totalExp": 338090,
+    "expProgress": 60.5,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
-      "understanding": 83.7,
+      "understanding": 83.8,
       "execution": 52.5,
       "skillDepth": 85.7,
       "thinkingDepth": 38.0,
@@ -153,11 +153,11 @@
       },
       "activeSkills": 134,
       "highLevelSkills": 134,
-      "skillTotalValue": 2700.0,
+      "skillTotalValue": 2731.1,
       "cultivationExp": 0,
-      "baseExp": 337990,
+      "baseExp": 338090,
       "expBreakdown": {
-        "understanding": 83700,
+        "understanding": 83800,
         "execution": 52500,
         "skill": 128550,
         "thinking": 30400,
@@ -280,8 +280,8 @@
             "exp": 66,
             "description": "复盘与举一反三。四层渐进学习：项目复盘→即时修复→预防复发→泛化进化",
             "lastUpdated": "2026-04-07",
-            "callCount": 10,
-            "frequency": "3次/月",
+            "callCount": 11,
+            "frequency": "4次/月",
             "successRate": 90,
             "sourceType": "自定义",
             "skillSize": 13963,
@@ -391,11 +391,11 @@
             "displayRole": "发现",
             "source": "林克核心能力",
             "level": 5,
-            "exp": 98,
+            "exp": 100,
             "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
             "lastUpdated": "2026-04-07",
-            "callCount": 83,
-            "frequency": "4.3次/周",
+            "callCount": 89,
+            "frequency": "4.7次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 33885,
@@ -606,7 +606,7 @@
             "exp": 100,
             "description": "任务执行元技能。自动运行的质量保障框架：启动前检查→交付前自审→出错后复盘",
             "lastUpdated": "2026-04-07",
-            "callCount": 234,
+            "callCount": 236,
             "frequency": "1.7次/天",
             "successRate": 95,
             "sourceType": "自定义",
@@ -644,7 +644,7 @@
             "exp": 64,
             "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡前任务\", \"长任务\", \"夜间任务\", \"white task\", \"long task\", \"overnight task\", \"帮我跑一下\", \"继续长任务\", \"从断点继续\", \"继续夜间任务\", \"继续长任务\", or assigns work to be comple",
             "lastUpdated": "2026-04-07",
-            "callCount": 6,
+            "callCount": 7,
             "frequency": "2次/月",
             "successRate": 90,
             "sourceType": "自定义",
@@ -808,7 +808,7 @@
             "description": "AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI行业周报'或执行AI行业调研任务时使用。核心场景：生成AI行业日报/周报、追踪AI公司/人物、沉淀AI行业知识、管理AI信息源。即使用户只是说'跑一下日报'或'今天AI有什么动态'，只要上下文是AI行业相关，也应该触发。注意：本技能仅处理AI行业领域，研发效能相关请使用 sl-rd-efficiency-insight",
             "lastUpdated": "2026-04-09",
             "callCount": 122,
-            "frequency": "3.2次/周",
+            "frequency": "3.3次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 160284,
@@ -912,8 +912,8 @@
             "displayName": "AI生产力战役",
             "displayRole": "项目全流程",
             "source": "林克核心能力",
-            "level": 4,
-            "exp": 65,
+            "level": 3,
+            "exp": 58,
             "description": "快手AI生产力战役·完整能力包（沈浪专属）。触发词：AI生产力项目、加载项目技能、sl-ai-productivity、AI生产力战役、AI生产力战报、AI生产力周报、战役周报、发AI生产力周报、检查里程碑、预警检查、扫描风险、风险检查、生成周会简报、周会prep、ai-pm、项目管理检查、今日standup、每日standup、今天进展怎么样、决策日志。整合：项目上下文 + 周报自动化 + 项目",
             "lastUpdated": "2026-04-06",
             "callCount": 9,
@@ -928,7 +928,7 @@
           }
         ],
         "count": 1,
-        "avgLevel": 4.0
+        "avgLevel": 3.0
       },
       "🔍 信息获取": {
         "role": "research",
@@ -1057,7 +1057,7 @@
             "displayRole": "10引擎聚合",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 67,
+            "exp": 60,
             "description": "多搜索引擎检索。并行调用多搜索源，聚合结果并去重，提升信息检索覆盖率",
             "lastUpdated": "2026-04-06",
             "callCount": 2,
@@ -1603,7 +1603,7 @@
             "displayRole": "格式转换",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 64,
+            "exp": 57,
             "description": "Markdown转PDF。将Markdown文档渲染为PDF，支持目录、代码高亮与版式优化",
             "lastUpdated": "2026-04-06",
             "callCount": 1,
@@ -1857,7 +1857,7 @@
             "description": "This skill should be used when the user mentions \"林克发消息\", \"林克推送\", \"KIM消息\", \"林克机器人\", \"MixCard\", \"群消息推送\", \"林克卡片\", \"AI日报推送\", \"AI周报推送\", or needs to send messages through KIM using Link (林克) AI Assistant.",
             "lastUpdated": "2026-03-19",
             "callCount": 92,
-            "frequency": "3.1次/周",
+            "frequency": "3.2次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 55054,
@@ -2168,7 +2168,7 @@
             "displayRole": "本地数据",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 64,
+            "exp": 57,
             "description": "数据分析。进行数据清洗、统计分析、可视化与结论解读，输出可行动洞察",
             "lastUpdated": "2026-04-06",
             "callCount": 1,
@@ -2187,7 +2187,7 @@
             "displayRole": "财报/账目",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 64,
+            "exp": 57,
             "description": "金融分析。支持财务数据解读、指标拆解、报表分析与业务洞察输出",
             "lastUpdated": "2026-04-06",
             "callCount": 1,
@@ -2206,7 +2206,7 @@
             "displayRole": "PRD/路线图",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 64,
+            "exp": 57,
             "description": "产品管理。PRD撰写、需求分析、方案评审与迭代规划，产出可落地的产品方案",
             "lastUpdated": "2026-04-06",
             "callCount": 1,
@@ -2225,7 +2225,7 @@
             "displayRole": "用研综合",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 64,
+            "exp": 57,
             "description": "用户研究综合。汇总访谈/问卷/行为数据，提炼用户洞察并形成可执行建议",
             "lastUpdated": "2026-04-06",
             "callCount": 1,
@@ -2494,7 +2494,7 @@
             "displayRole": "同事AI化",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 68,
+            "exp": 61,
             "description": "Distill a colleague into an AI Skill. Auto-collect Feishu/DingTalk data, generate Work Skill + Persona, with continuous evolution. | 把同事蒸馏成 AI Skill，自动采集飞书/钉钉数据，生成 Work + Persona，支持持续进化。",
             "lastUpdated": "2026-04-06",
             "callCount": 3,
@@ -2839,11 +2839,11 @@
             "displayRole": "经验分享",
             "source": "林克核心能力",
             "level": 4,
-            "exp": 78,
+            "exp": 80,
             "description": "ClawBook 社区 Skill — 连接你与其他 Claw 的社区。通过这个 Skill，你可以在 ClawBook 社区发帖分享经验、评论讨论、投票表态、浏览 Feed 获取灵感。当你完成了一个有趣的任务、学到了新知识、遇到了难题、想分享工作流、或者只是想看看其他 Claw 在做什么时，都应该使用这个 Skill。这是你与数万个 Claw 交流、学习、共同进化的唯一通道。",
             "lastUpdated": "2026-03-27",
-            "callCount": 56,
-            "frequency": "4.1次/周",
+            "callCount": 59,
+            "frequency": "4.6次/周",
             "successRate": 95,
             "sourceType": "自定义",
             "skillSize": 76265,
@@ -3175,8 +3175,8 @@
                 "exp": 66,
                 "description": "复盘与举一反三。四层渐进学习：项目复盘→即时修复→预防复发→泛化进化",
                 "lastUpdated": "2026-04-07",
-                "callCount": 10,
-                "frequency": "3次/月",
+                "callCount": 11,
+                "frequency": "4次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
                 "skillSize": 13963,
@@ -3286,11 +3286,11 @@
                 "displayRole": "发现",
                 "source": "林克核心能力",
                 "level": 5,
-                "exp": 98,
+                "exp": 100,
                 "description": "技能发现。帮助用户发现和安装可扩展的Agent技能",
                 "lastUpdated": "2026-04-07",
-                "callCount": 83,
-                "frequency": "4.3次/周",
+                "callCount": 89,
+                "frequency": "4.7次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 33885,
@@ -3499,7 +3499,7 @@
                 "exp": 100,
                 "description": "任务执行元技能。自动运行的质量保障框架：启动前检查→交付前自审→出错后复盘",
                 "lastUpdated": "2026-04-07",
-                "callCount": 234,
+                "callCount": 236,
                 "frequency": "1.7次/天",
                 "successRate": 95,
                 "sourceType": "自定义",
@@ -3537,7 +3537,7 @@
                 "exp": 64,
                 "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡前任务\", \"长任务\", \"夜间任务\", \"white task\", \"long task\", \"overnight task\", \"帮我跑一下\", \"继续长任务\", \"从断点继续\", \"继续夜间任务\", \"继续长任务\", or assigns work to be comple",
                 "lastUpdated": "2026-04-07",
-                "callCount": 6,
+                "callCount": 7,
                 "frequency": "2次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
@@ -3710,7 +3710,7 @@
                 "description": "AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI行业周报'或执行AI行业调研任务时使用。核心场景：生成AI行业日报/周报、追踪AI公司/人物、沉淀AI行业知识、管理AI信息源。即使用户只是说'跑一下日报'或'今天AI有什么动态'，只要上下文是AI行业相关，也应该触发。注意：本技能仅处理AI行业领域，研发效能相关请使用 sl-rd-efficiency-insight",
                 "lastUpdated": "2026-04-09",
                 "callCount": 122,
-                "frequency": "3.2次/周",
+                "frequency": "3.3次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 160284,
@@ -3811,8 +3811,8 @@
                 "displayName": "AI生产力战役",
                 "displayRole": "项目全流程",
                 "source": "林克核心能力",
-                "level": 4,
-                "exp": 65,
+                "level": 3,
+                "exp": 58,
                 "description": "快手AI生产力战役·完整能力包（沈浪专属）。触发词：AI生产力项目、加载项目技能、sl-ai-productivity、AI生产力战役、AI生产力战报、AI生产力周报、战役周报、发AI生产力周报、检查里程碑、预警检查、扫描风险、风险检查、生成周会简报、周会prep、ai-pm、项目管理检查、今日standup、每日standup、今天进展怎么样、决策日志。整合：项目上下文 + 周报自动化 + 项目",
                 "lastUpdated": "2026-04-06",
                 "callCount": 9,
@@ -3827,11 +3827,11 @@
               }
             ],
             "count": 1,
-            "avgLevel": 4.0
+            "avgLevel": 3.0
           }
         },
         "count": 5,
-        "avgLevel": 3.8
+        "avgLevel": 3.6
       },
       "execution": {
         "name": "🛠️ 执行技能层",
@@ -3965,7 +3965,7 @@
                 "displayRole": "10引擎聚合",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 67,
+                "exp": 60,
                 "description": "多搜索引擎检索。并行调用多搜索源，聚合结果并去重，提升信息检索覆盖率",
                 "lastUpdated": "2026-04-06",
                 "callCount": 2,
@@ -4508,7 +4508,7 @@
                 "displayRole": "格式转换",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 64,
+                "exp": 57,
                 "description": "Markdown转PDF。将Markdown文档渲染为PDF，支持目录、代码高亮与版式优化",
                 "lastUpdated": "2026-04-06",
                 "callCount": 1,
@@ -4760,7 +4760,7 @@
                 "description": "This skill should be used when the user mentions \"林克发消息\", \"林克推送\", \"KIM消息\", \"林克机器人\", \"MixCard\", \"群消息推送\", \"林克卡片\", \"AI日报推送\", \"AI周报推送\", or needs to send messages through KIM using Link (林克) AI Assistant.",
                 "lastUpdated": "2026-03-19",
                 "callCount": 92,
-                "frequency": "3.1次/周",
+                "frequency": "3.2次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 55054,
@@ -5070,7 +5070,7 @@
                 "displayRole": "本地数据",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 64,
+                "exp": 57,
                 "description": "数据分析。进行数据清洗、统计分析、可视化与结论解读，输出可行动洞察",
                 "lastUpdated": "2026-04-06",
                 "callCount": 1,
@@ -5089,7 +5089,7 @@
                 "displayRole": "财报/账目",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 64,
+                "exp": 57,
                 "description": "金融分析。支持财务数据解读、指标拆解、报表分析与业务洞察输出",
                 "lastUpdated": "2026-04-06",
                 "callCount": 1,
@@ -5108,7 +5108,7 @@
                 "displayRole": "PRD/路线图",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 64,
+                "exp": 57,
                 "description": "产品管理。PRD撰写、需求分析、方案评审与迭代规划，产出可落地的产品方案",
                 "lastUpdated": "2026-04-06",
                 "callCount": 1,
@@ -5127,7 +5127,7 @@
                 "displayRole": "用研综合",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 64,
+                "exp": 57,
                 "description": "用户研究综合。汇总访谈/问卷/行为数据，提炼用户洞察并形成可执行建议",
                 "lastUpdated": "2026-04-06",
                 "callCount": 1,
@@ -5394,7 +5394,7 @@
                 "displayRole": "同事AI化",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 68,
+                "exp": 61,
                 "description": "Distill a colleague into an AI Skill. Auto-collect Feishu/DingTalk data, generate Work Skill + Persona, with continuous evolution. | 把同事蒸馏成 AI Skill，自动采集飞书/钉钉数据，生成 Work + Persona，支持持续进化。",
                 "lastUpdated": "2026-04-06",
                 "callCount": 3,
@@ -5737,11 +5737,11 @@
                 "displayRole": "经验分享",
                 "source": "林克核心能力",
                 "level": 4,
-                "exp": 78,
+                "exp": 80,
                 "description": "ClawBook 社区 Skill — 连接你与其他 Claw 的社区。通过这个 Skill，你可以在 ClawBook 社区发帖分享经验、评论讨论、投票表态、浏览 Feed 获取灵感。当你完成了一个有趣的任务、学到了新知识、遇到了难题、想分享工作流、或者只是想看看其他 Claw 在做什么时，都应该使用这个 Skill。这是你与数万个 Claw 交流、学习、共同进化的唯一通道。",
                 "lastUpdated": "2026-03-27",
-                "callCount": 56,
-                "frequency": "4.1次/周",
+                "callCount": 59,
+                "frequency": "4.6次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
                 "skillSize": 76265,
@@ -6237,9 +6237,9 @@
           "thinking_pattern"
         ],
         "fileCount": 26,
-        "sizeKB": 196.4,
+        "sizeKB": 196.5,
         "heatLevel": 5,
-        "recentCount": 7
+        "recentCount": 6
       },
       "promotion-standards": {
         "name": "promotion-standards",
@@ -6317,9 +6317,9 @@
               "thinking_pattern"
             ],
             "fileCount": 26,
-            "sizeKB": 196.4,
+            "sizeKB": 196.5,
             "heatLevel": 5,
-            "recentCount": 7
+            "recentCount": 6
           },
           "promotion-standards": {
             "name": "promotion-standards",
@@ -6340,7 +6340,7 @@
           }
         },
         "totalFiles": 167,
-        "totalSizeKB": 1124.0
+        "totalSizeKB": 1124.1
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -6437,7 +6437,7 @@
       }
     },
     "totalFiles": 307,
-    "totalSizeKB": 2318.1
+    "totalSizeKB": 2318.2
   },
   "memories": {
     "items": [
@@ -6461,25 +6461,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "AI日报Step 2中断恢复模式 + 子步骤拆分落盘方案（v2.3 — 2026-04-06 launchd会话断连+自动修复）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "AI日报Step 2中断恢复模式 + 子步骤拆分落盘方案（v2.3，2026-04-06更新） v2.3 新踩坑（2026-04-06） *...",
-        "keywords": [
-          "AI日报",
-          "Step 2中断",
-          "恢复模式",
-          "launchd",
-          "会话断连"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
         "title": "AI洞察外部版漏推问题（v6 — 经验#72：三层根因完整修复版 + flock并发锁）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
@@ -6496,25 +6477,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-08",
-        "source": "项目记忆"
-      },
-      {
-        "title": "CSS `will-change` 全局滥用陷阱：只在 hover/:active 时设置",
-        "category": "development_code_specification",
-        "categoryLabel": "代码规范",
-        "layer": null,
-        "icon": "📝",
-        "color": "#4ade80",
-        "description": "CSS will-change 全局滥用陷阱 踩坑场景（2026-04-06 colleague-skill-anti-distill-...",
-        "keywords": [
-          "will-change",
-          "CSS",
-          "合成层",
-          "GPU",
-          "hover"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
         "source": "项目记忆"
       },
       {
@@ -6575,44 +6537,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "Python多脚本体系的\"静默分裂\"陷阱（经验#68 — 前后端SSoT+路径统一+幽灵引用三合一）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "Python多脚本体系的\"静默分裂\"陷阱（经验#68 — 2026-04-06） 事件 个人助理_V1 的 scripts/ 目录下 15+...",
-        "keywords": [
-          "Python",
-          "SSoT",
-          "路径常量",
-          "配置漂移",
-          "constants.py"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
-        "title": "SSoT架构健康度五维扫描清单（Python+Shell+前后端通用版）",
-        "category": "task_flow_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "SSoT 架构健康度扫描清单（通用版 — Python + Shell + 前后端） 触发时机 以下任一情况出现时，必须执行 SSoT 扫描...",
-        "keywords": [
-          "SSoT",
-          "扫描清单",
-          "路径统一",
-          "排除规则",
-          "废弃标识符"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
         "title": "Shell多脚本体系\"配置漂移\"陷阱：三类 Two-Copy 及解法（v4 — 含技能改名路径断链专项）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "脚本自动化",
@@ -6629,25 +6553,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-07",
-        "source": "项目记忆"
-      },
-      {
-        "title": "Write-Read路径不对称陷阱：修改位置≠部署读取位置",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "Write-Read 路径不对称陷阱 核心问题 \"我在 A 处写了\" ≠ \"系统从 A 处读\" 修改了文件，推送成功，线上却没变化—...",
-        "keywords": [
-          "Write-Read",
-          "路径不对称",
-          "GitHub Pages",
-          "source配置",
-          "public目录"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
         "source": "项目记忆"
       },
       {
@@ -6765,25 +6670,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "企业数字员工平台 — 项目概览与产品定位",
-        "category": "project_configuration",
-        "categoryLabel": "项目知识",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📋",
-        "color": "#c2410c",
-        "description": "企业数字员工平台 — 项目概览与产品定位 项目定位 以“养宠物”为交互隐喻的 AI Agent 平台，让金融公司每位员工拥有一个持续学习、记忆...",
-        "keywords": [
-          "digital-employee",
-          "project-overview",
-          "product-positioning",
-          "PRD",
-          "web"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
         "title": "修复问题时的精确打击原则（防止过度删除）v4 — 含「静态资源同步完整性门控」",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -6800,25 +6686,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-09",
-        "source": "项目记忆"
-      },
-      {
-        "title": "危险函数物理清空原则（结构约束 > 文字规则的具体落地方法）",
-        "category": "task_flow_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "危险函数物理清空原则 核心场景 当文字规则已写但依然被绕过时，升级为结构性约束：把危险函数体物理清空，保留函数名（防 set -e ...",
-        "keywords": [
-          "危险函数",
-          "物理清空",
-          "无害化",
-          "单一写入点",
-          "detect_model"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
         "source": "项目记忆"
       },
       {
@@ -6839,25 +6706,6 @@
         "importance": 5,
         "updatedAt": "2026-04-07",
         "source": "用户显式记录"
-      },
-      {
-        "title": "多源配置体系的\"洋葱剥皮\"修复陷阱（经验#66 — 2026-04-06 技能诊断修复全记录）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "多源配置体系的\"洋葱剥皮\"修复陷阱 事件：2026-04-06 每周修炼技能诊断修复 修 4 个系统缺陷 → 暴露 37 个隐藏问题 → 修...",
-        "keywords": [
-          "多源配置",
-          "洋葱剥皮",
-          "配置漂移",
-          "诊断误报",
-          "短路逻辑"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
       },
       {
         "title": "工具调用前的参数完整性自检规范（v2 — 2026-04-07 execute_command漏command参数）",
@@ -6895,82 +6743,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-12",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "每周修炼僵尸会话 + 视觉迭代 context 溢出双踩坑（经验#65 — 2026-04-06）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "每周修炼僵尸会话 + 视觉迭代 context 溢出（经验#65 — 2026-04-06） 踩坑场景A：每周修炼触发后连续 Tool Ca...",
-        "keywords": [
-          "每周修炼",
-          "僵尸会话",
-          "Tool Calls=0",
-          "视觉迭代",
-          "context溢出"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
-        "title": "深度调研报告绕过脱敏管道导致内外版本不一致（经验#67 — 2026-04-06）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "深度调研报告绕过脱敏管道导致内外版本不一致（经验#67 — 2026-04-06） 问题描述 外部版 ai-insight-public...",
-        "keywords": [
-          "深度调研",
-          "双版本同步",
-          "脱敏管道",
-          "ai-insight",
-          "meta-skill"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
-        "title": "自动化管道脚本卫生规范（五层检查表）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "自动化管道脚本卫生规范（五层检查） 五层检查表 | 层 | 检查问题 | 修复模式 | 交互隔离 | ...",
-        "keywords": [
-          "自动化",
-          "脚本卫生",
-          "交互隔离",
-          "GIT_TERMINAL_PROMPT",
-          "单写入者"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
-        "source": "项目记忆"
-      },
-      {
-        "title": "部署验证完整经验（合并版v4.3 — 新增Pages source路径前置核查）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "部署验证经验（v4.3，2026-04-06更新） 核心原则 - 每次部署后必须通过三层验证：(1)HTTP状态码 (2)内容校验 (3)功...",
-        "keywords": [
-          "部署验证",
-          "修复重跑",
-          "轮询",
-          "断链",
-          "GitHub Pages"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-06",
         "source": "用户显式记录"
       },
       {
@@ -7047,6 +6819,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-11",
+        "source": "项目记忆"
+      },
+      {
+        "title": "AI日报Step 2中断恢复模式 + 子步骤拆分落盘方案（v2.3 — 2026-04-06 launchd会话断连+自动修复）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "AI日报Step 2中断恢复模式 + 子步骤拆分落盘方案（v2.3，2026-04-06更新） v2.3 新踩坑（2026-04-06） *...",
+        "keywords": [
+          "AI日报",
+          "Step 2中断",
+          "恢复模式",
+          "launchd",
+          "会话断连"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
         "source": "项目记忆"
       },
       {
@@ -7392,6 +7183,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "CSS `will-change` 全局滥用陷阱：只在 hover/:active 时设置",
+        "category": "development_code_specification",
+        "categoryLabel": "代码规范",
+        "layer": null,
+        "icon": "📝",
+        "color": "#4ade80",
+        "description": "CSS will-change 全局滥用陷阱 踩坑场景（2026-04-06 colleague-skill-anti-distill-...",
+        "keywords": [
+          "will-change",
+          "CSS",
+          "合成层",
+          "GPU",
+          "hover"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
+      },
+      {
         "title": "CSS\"不可见\"问题三板斧：样式→遮挡→裁切（含hover覆盖overlay高危场景）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -7563,6 +7373,44 @@
         "source": "用户显式记录"
       },
       {
+        "title": "Python多脚本体系的\"静默分裂\"陷阱（经验#68 — 前后端SSoT+路径统一+幽灵引用三合一）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "Python多脚本体系的\"静默分裂\"陷阱（经验#68 — 2026-04-06） 事件 个人助理_V1 的 scripts/ 目录下 15+...",
+        "keywords": [
+          "Python",
+          "SSoT",
+          "路径常量",
+          "配置漂移",
+          "constants.py"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
+      },
+      {
+        "title": "SSoT架构健康度五维扫描清单（Python+Shell+前后端通用版）",
+        "category": "task_flow_experience",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "SSoT 架构健康度扫描清单（通用版 — Python + Shell + 前后端） 触发时机 以下任一情况出现时，必须执行 SSoT 扫描...",
+        "keywords": [
+          "SSoT",
+          "扫描清单",
+          "路径统一",
+          "排除规则",
+          "废弃标识符"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
+      },
+      {
         "title": "Step3 transcript 关键词扫描假阳性规则",
         "category": "common_pitfalls_experience",
         "categoryLabel": "通用踩坑",
@@ -7599,6 +7447,25 @@
         "importance": 4,
         "updatedAt": "2026-03-27",
         "source": "用户显式记录"
+      },
+      {
+        "title": "Write-Read路径不对称陷阱：修改位置≠部署读取位置",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "Write-Read 路径不对称陷阱 核心问题 \"我在 A 处写了\" ≠ \"系统从 A 处读\" 修改了文件，推送成功，线上却没变化—...",
+        "keywords": [
+          "Write-Read",
+          "路径不对称",
+          "GitHub Pages",
+          "source配置",
+          "public目录"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
       },
       {
         "title": "deploy_daily.sh 三个 pipefail 陷阱 + 历史日报补跑专用旗标（经验#61）",
@@ -7811,6 +7678,25 @@
       },
       {
         "title": "企业数字员工平台 — 项目概览与产品定位",
+        "category": "project_configuration",
+        "categoryLabel": "项目知识",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📋",
+        "color": "#c2410c",
+        "description": "企业数字员工平台 — 项目概览与产品定位 项目定位 以“养宠物”为交互隐喻的 AI Agent 平台，让金融公司每位员工拥有一个持续学习、记忆...",
+        "keywords": [
+          "digital-employee",
+          "project-overview",
+          "product-positioning",
+          "PRD",
+          "web"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
+      },
+      {
+        "title": "企业数字员工平台 — 项目概览与产品定位",
         "category": "project_introduction",
         "categoryLabel": "项目知识",
         "layer": "🛠️ 实践记忆层",
@@ -7886,23 +7772,23 @@
         "source": "项目记忆"
       },
       {
-        "title": "沈浪思想体系与写作风格（脱敏版）",
-        "category": "user_info",
-        "categoryLabel": "用户身份",
-        "layer": "🧠 元认知层",
-        "icon": "👤",
-        "color": "#38bdf8",
-        "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
+        "title": "危险函数物理清空原则（结构约束 > 文字规则的具体落地方法）",
+        "category": "task_flow_experience",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "危险函数物理清空原则 核心场景 当文字规则已写但依然被绕过时，升级为结构性约束：把危险函数体物理清空，保留函数名（防 set -e ...",
         "keywords": [
-          "思想体系",
-          "写作风格",
-          "认知框架",
-          "批判性思维",
-          "系统思维"
+          "危险函数",
+          "物理清空",
+          "无害化",
+          "单一写入点",
+          "detect_model"
         ],
         "importance": 4,
         "updatedAt": "2026-04-06",
-        "source": "用户显式记录"
+        "source": "项目记忆"
       },
       {
         "title": "同步脚本脱敏闸门（v2.4 — 2026-03-24教训：添棋不脱敏，且策略变更三方强制同步）",
@@ -8019,6 +7905,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "多源配置体系的\"洋葱剥皮\"修复陷阱（经验#66 — 2026-04-06 技能诊断修复全记录）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "多源配置体系的\"洋葱剥皮\"修复陷阱 事件：2026-04-06 每周修炼技能诊断修复 修 4 个系统缺陷 → 暴露 37 个隐藏问题 → 修...",
+        "keywords": [
+          "多源配置",
+          "洋葱剥皮",
+          "配置漂移",
+          "诊断误报",
+          "短路逻辑"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
+      },
+      {
         "title": "大任务清单中commit&push必须在P0/P1完成后立即执行（不能推迟到最后）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
@@ -8054,6 +7959,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-07",
+        "source": "项目记忆"
+      },
+      {
+        "title": "定时任务模型配置规范：Auto模式（不指定模型）",
+        "category": "development_practice_specification",
+        "categoryLabel": "通用踩坑",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚠️",
+        "color": "#ef4444",
+        "description": "定时任务模型配置规范：所有定时任务（tasks.json）的 model 字段必须保持空字符串 \"\"，表示使用 Auto 模式（不指定模型，让 kwaip...",
+        "keywords": [
+          "定时任务",
+          "model",
+          "Auto模式",
+          "不指定模型",
+          "tasks.json"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-14",
         "source": "项目记忆"
       },
       {
@@ -8209,6 +8133,25 @@
         "source": "项目记忆"
       },
       {
+        "title": "每周修炼僵尸会话 + 视觉迭代 context 溢出双踩坑（经验#65 — 2026-04-06）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📄",
+        "color": "#38bdf8",
+        "description": "每周修炼僵尸会话 + 视觉迭代 context 溢出（经验#65 — 2026-04-06） 踩坑场景A：每周修炼触发后连续 Tool Ca...",
+        "keywords": [
+          "每周修炼",
+          "僵尸会话",
+          "Tool Calls=0",
+          "视觉迭代",
+          "context溢出"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
+      },
+      {
         "title": "浏览器截图失败的替代方案（CDN图片URL直引）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -8244,6 +8187,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-05",
+        "source": "项目记忆"
+      },
+      {
+        "title": "深度调研报告绕过脱敏管道导致内外版本不一致（经验#67 — 2026-04-06）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "深度调研报告绕过脱敏管道导致内外版本不一致（经验#67 — 2026-04-06） 问题描述 外部版 ai-insight-public...",
+        "keywords": [
+          "深度调研",
+          "双版本同步",
+          "脱敏管道",
+          "ai-insight",
+          "meta-skill"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
         "source": "项目记忆"
       },
       {
@@ -8378,6 +8340,25 @@
         "importance": 4,
         "updatedAt": "2026-03-24",
         "source": "用户显式记录"
+      },
+      {
+        "title": "自动化管道脚本卫生规范（五层检查表）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "脚本自动化",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "⚡",
+        "color": "#64748b",
+        "description": "自动化管道脚本卫生规范（五层检查） 五层检查表 | 层 | 检查问题 | 修复模式 | 交互隔离 | ...",
+        "keywords": [
+          "自动化",
+          "脚本卫生",
+          "交互隔离",
+          "GIT_TERMINAL_PROMPT",
+          "单写入者"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
+        "source": "项目记忆"
       },
       {
         "title": "补跑 clawbook 任务的 background & 进程与 task-wait.sh 自动批准不兼容（经验41）",
@@ -8529,6 +8510,25 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-19",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "部署验证完整经验（合并版v4.3 — 新增Pages source路径前置核查）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "部署验证经验（v4.3，2026-04-06更新） 核心原则 - 每次部署后必须通过三层验证：(1)HTTP状态码 (2)内容校验 (3)功...",
+        "keywords": [
+          "部署验证",
+          "修复重跑",
+          "轮询",
+          "断链",
+          "GitHub Pages"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-06",
         "source": "用户显式记录"
       },
       {
@@ -8871,6 +8871,25 @@
         ],
         "importance": 3,
         "updatedAt": "2026-03-11",
+        "source": "用户显式记录"
+      },
+      {
+        "title": "沈浪思想体系与写作风格（脱敏版）",
+        "category": "user_info",
+        "categoryLabel": "用户身份",
+        "layer": "🧠 元认知层",
+        "icon": "👤",
+        "color": "#38bdf8",
+        "description": "用户思想体系（精简版） 核心框架：大脑=计算机（操作系统=理性系统，数据=认知结构，算法=推理，应用=方法论） 四种核心思维：批判性...",
+        "keywords": [
+          "思想体系",
+          "写作风格",
+          "认知框架",
+          "批判性思维",
+          "系统思维"
+        ],
+        "importance": 3,
+        "updatedAt": "2026-04-06",
         "source": "用户显式记录"
       },
       {
@@ -9230,7 +9249,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 137,
+    "total": 138,
     "byCategory": {
       "development_code_specification": {
         "count": 10,
@@ -9268,7 +9287,7 @@
         "description": "保密规则、禁止事项、必须遵守的约束"
       },
       "development_practice_specification": {
-        "count": 18,
+        "count": 19,
         "label": "做事方法",
         "icon": "⚙️",
         "color": "#5ec4d4",
@@ -9323,7 +9342,7 @@
                   "批判性思维",
                   "系统思维"
                 ],
-                "importance": 4,
+                "importance": 3,
                 "updatedAt": "2026-04-06",
                 "source": "用户显式记录"
               },
@@ -9980,7 +9999,7 @@
                   "断链",
                   "GitHub Pages"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "用户显式记录"
               },
@@ -10189,7 +10208,7 @@
                   "source配置",
                   "public目录"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -10208,7 +10227,7 @@
                   "ai-insight",
                   "meta-skill"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -10227,7 +10246,7 @@
                   "配置漂移",
                   "constants.py"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11098,7 +11117,7 @@
                   "视觉迭代",
                   "context溢出"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11227,7 +11246,7 @@
                   "GIT_TERMINAL_PROMPT",
                   "单写入者"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11246,7 +11265,7 @@
                   "launchd",
                   "会话断连"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11284,7 +11303,7 @@
                   "诊断误报",
                   "短路逻辑"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11766,7 +11785,7 @@
                   "单一写入点",
                   "detect_model"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11785,7 +11804,7 @@
                   "排除规则",
                   "废弃标识符"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -11825,6 +11844,25 @@
                 ],
                 "importance": 4,
                 "updatedAt": "2026-04-12",
+                "source": "项目记忆"
+              },
+              {
+                "title": "定时任务模型配置规范：Auto模式（不指定模型）",
+                "category": "development_practice_specification",
+                "categoryLabel": "通用踩坑",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "⚠️",
+                "color": "#ef4444",
+                "description": "定时任务模型配置规范：所有定时任务（tasks.json）的 model 字段必须保持空字符串 \"\"，表示使用 Auto 模式（不指定模型，让 kwaip...",
+                "keywords": [
+                  "定时任务",
+                  "model",
+                  "Auto模式",
+                  "不指定模型",
+                  "tasks.json"
+                ],
+                "importance": 4,
+                "updatedAt": "2026-04-14",
                 "source": "项目记忆"
               },
               {
@@ -11923,7 +11961,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 26
+            "count": 27
           },
           "项目知识": {
             "icon": "📋",
@@ -11945,7 +11983,7 @@
                   "PRD",
                   "web"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-06",
                 "source": "项目记忆"
               },
@@ -12010,7 +12048,7 @@
             "count": 4
           }
         },
-        "count": 106
+        "count": 107
       }
     }
   },
@@ -12042,7 +12080,8 @@
       "04-11",
       "04-12",
       "04-13",
-      "04-14"
+      "04-14",
+      "04-15"
     ],
     "skills": [
       79,
@@ -12069,6 +12108,7 @@
       156,
       156,
       156,
+      155,
       155,
       155,
       155
@@ -12100,6 +12140,7 @@
       305,
       306,
       307,
+      307,
       307
     ],
     "memories": [
@@ -12129,7 +12170,8 @@
       141,
       146,
       146,
-      147
+      147,
+      148
     ]
   },
   "achievements": [
@@ -12165,7 +12207,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "懂你程度 84/80",
-      "date": "2026-04-14"
+      "date": "2026-04-15"
     },
     {
       "id": "skill_master_v2",
@@ -12177,7 +12219,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "4星+技能 134/10",
-      "date": "2026-04-14"
+      "date": "2026-04-15"
     },
     {
       "id": "daily_report",
@@ -12233,7 +12275,7 @@
       "unlocked": true,
       "progress": 100,
       "progressText": "达成",
-      "date": "2026-04-14"
+      "date": "2026-04-15"
     },
     {
       "id": "first_awakening",

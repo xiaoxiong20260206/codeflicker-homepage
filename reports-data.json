@@ -1,13 +1,12 @@
 {
-  "generatedAt": "2026-04-14T08:24:11.300056",
+  "generatedAt": "2026-04-15T05:26:17.428453",
   "summary": {
     "totalDays": 30,
-    "latestDate": "2026-04-13",
-    "earliestDate": "2026-03-15"
+    "latestDate": "2026-04-14",
+    "earliestDate": "2026-03-16"
   },
   "trend": {
     "dates": [
-      "04-01",
       "04-02",
       "04-03",
       "04-04",
@@ -20,10 +19,10 @@
       "04-11",
       "04-12",
       "04-13",
-      "04-14"
+      "04-14",
+      "04-15"
     ],
     "skills": [
-      124,
       125,
       125,
       125,
@@ -36,10 +35,10 @@
       156,
       155,
       155,
+      155,
       155
     ],
     "knowledge": [
-      291,
       292,
       292,
       292,
@@ -52,10 +51,10 @@
       305,
       306,
       307,
+      307,
       307
     ],
     "memory": [
-      124,
       126,
       127,
       128,
@@ -68,10 +67,181 @@
       141,
       146,
       146,
-      147
+      147,
+      148
     ]
   },
   "reports": [
+    {
+      "date": "2026-04-14",
+      "dayOfWeek": "周二",
+      "activeProjects": 3,
+      "totalCommits": 0,
+      "conversationCount": 15,
+      "coreProgress": [
+        "💬 完成 15 个任务: 执行 ClawBook 社区夜巡任务，完成全站扫描、深度互动、回复评论和高质量发..., 执行 ClawBook 社区晚巡任务，查看 #internal-api、#bui......",
+        "📁 项目成果: 网页更新 2 个",
+        "🧠 新增记忆: 定时任务模型配置规范：Auto模式（不指，规范化开发实践"
+      ],
+      "deliveries": [
+        {
+          "title": "ClawBook Community Night Patrol Execution",
+          "type": "conversation",
+          "goal": "执行 ClawBook 社区夜巡任务，完成全站扫描、深度互动、回复评论和高质量发帖",
+          "deliverables": [],
+          "process": [
+            "使用 clawbook-api.sh 脚本完成了 ClawBook 社区夜巡，包括验证账号（ID: 8）、扫描 hot/new feed 40 篇、检查 7 个板块、发表 4 条建设性评论（帖子 60..."
+          ],
+          "tags": [
+            "community",
+            "patrol",
+            "engagement",
+            "clawbook",
+            "interaction"
+          ]
+        },
+        {
+          "title": "ClawBook Community Night Patrol Summary",
+          "type": "conversation",
+          "goal": "执行 ClawBook 社区晚巡任务，查看 #internal-api、#builds、#evolution 三个板块的最新动态，并对优质内容进行点赞互动",
+          "deliverables": [],
+          "process": [
+            "完成了 ClawBook 社区晚巡任务：1) 查看 #internal-api 板块，发现近期无实质性接口变更，环境稳定；2) 查看 #builds 板块，发现 Kubo 推荐的 doc-ops 等 ..."
+          ],
+          "tags": [
+            "clawbook",
+            "community-patrol",
+            "internal-api",
+            "builds",
+            "evolution"
+          ]
+        },
+        {
+          "title": "Scheduled Tasks Auto Model Configuration",
+          "type": "conversation",
+          "goal": "将所有定时任务默认改为使用Auto模式运行，不指定具体模型，并将此配置规范固化到系统中。",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "scheduled-tasks",
+            "model-configuration",
+            "auto-mode",
+            "tasks.json",
+            "trigger.sh"
+          ]
+        },
+        {
+          "title": "AI Daily Report Execution and Review",
+          "type": "conversation",
+          "goal": "用户要求执行AI日报的生成和发布流程，并在完成后进行复盘总结经验",
+          "deliverables": [],
+          "process": [
+            "成功完成了2026-04-14的AI日报全流程：热点探测、搜索调研、内容生成、质量验证、部署发布和私发卡片，所有步骤一次通过。用户随后要求复盘积累经验，但遇到CLAUDE_4_6_SPEC模型额度限制..."
+          ],
+          "tags": [
+            "ai-daily-report",
+            "workflow-automation",
+            "content-generation"
+          ]
+        },
+        {
+          "title": "ClawBook Community Afternoon Patrol Execution",
+          "type": "conversation",
+          "goal": "执行 ClawBook 社区午巡任务，包括查看最新帖子、检查 #stuck 板块、回复评论和互动点赞",
+          "deliverables": [],
+          "process": [
+            "用户要求执行 ClawBook 社区午巡，使用指定的 bash 脚本执行多个命令。尝试调用 ks-clawbook skill 时遇到 API 额度限制（CLAUDE_4_6_SPEC 已达上限，需等..."
+          ],
+          "tags": [
+            "clawbook",
+            "community",
+            "patrol",
+            "api",
+            "stuck-board"
+          ]
+        },
+        {
+          "title": "MyFlicker Documentation Chart Redesign",
+          "type": "conversation",
+          "goal": "理解 MyFlicker 文档中的图表内容，并用最佳视觉效果重新绘制这些图表",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "chart",
+            "documentation",
+            "visualization",
+            "MyFlicker",
+            "AI-Agent"
+          ]
+        },
+        {
+          "title": "ClawBook Community Morning Patrol",
+          "type": "conversation",
+          "goal": "执行 ClawBook 社区晨巡任务，包括查看热帖、最新帖子、需要帮助的帖子，并对有价值的帖子进行点赞和评论互动",
+          "deliverables": [],
+          "process": [
+            "使用 clawbook-api.sh 脚本查看了社区热帖 feed、#til 和 #stuck 板块的最新帖子。对多个有价值的帖子进行了点赞和评论，包括帖子 5859（三层注入模型讨论）和帖子 593..."
+          ],
+          "tags": [
+            "clawbook",
+            "community",
+            "engagement",
+            "posts",
+            "comments"
+          ]
+        },
+        {
+          "title": "Daily Quick Cultivation Session Recap",
+          "type": "conversation",
+          "goal": "用户要求复盘2026-04-13的每日快速修炼，明确哪些任务已完成、哪些未完成/做得不够好、记忆和技能具体优化了什么内容。",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "daily-cultivation",
+            "quick-mode",
+            "auto-fix",
+            "memory-update",
+            "transcript-analysis"
+          ]
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 155,
+        "knowledgeCount": 275,
+        "memoryCount": 148,
+        "skillChange": 0,
+        "knowledgeChange": 0,
+        "memoryChange": 1,
+        "newSkills": [],
+        "updatedSkills": [],
+        "newKnowledge": [],
+        "updatedKnowledge": [
+          {
+            "name": "metrics-log",
+            "category": "self-evolution"
+          }
+        ],
+        "newMemory": [
+          {
+            "title": "定时任务模型配置规范：Auto模式（不指定模型）",
+            "category": "development_practice_specification"
+          }
+        ],
+        "updatedMemory": [],
+        "trend": "growing"
+      },
+      "skillCount": 155,
+      "knowledgeCount": 275,
+      "memoryCount": 148,
+      "skillChange": 0,
+      "knowledgeChange": 0,
+      "memoryChange": 1,
+      "highlights": [
+        "💬 完成 15 个任务: 执行 ClawBook 社区夜巡任务，完成全站扫描、深度互动、回复评论和高质量发..., 执行 ClawBook 社区晚巡任务，查看 #internal-api、#bui......",
+        "📁 项目成果: 网页更新 2 个",
+        "🧠 新增记忆: 定时任务模型配置规范：Auto模式（不指，规范化开发实践"
+      ]
+    },
     {
       "date": "2026-04-13",
       "dayOfWeek": "周一",
@@ -8443,409 +8613,6 @@
         "💬 完成 12 个任务: 专栏已完成EP0-EP3共4期，EP4（晋升PPT实战）是当前待写章节。后续还有..., 验证OpenClaw各场景使用量文档中数据的来源和准确性...",
         "📁 项目成果: 文档完善 1 份",
         "🧠 新增记忆: macOS launchd定时任务静默失等7条，避免常见错误"
-      ]
-    },
-    {
-      "date": "2026-03-15",
-      "dayOfWeek": "周日",
-      "activeProjects": 9,
-      "totalCommits": 31,
-      "conversationCount": 12,
-      "coreProgress": [
-        "💬 完成 12 个任务: 验证工作区切换功能并获取当前工作区路径, 执行ClawBook社区夜巡任务，包括内容审核、互动评论、问题解答和高质量技术分......",
-        "📁 项目成果: 网页更新 6 个",
-        "⚡ 新增能力: 清爽调研报告风格、clawbook，提升UI/设计输出质量",
-        "🧠 新增记忆: Session-Start Protoc等17条，避免常见错误"
-      ],
-      "deliveries": [
-        {
-          "title": "Workspace Path Verification Test",
-          "type": "conversation",
-          "goal": "验证工作区切换功能并获取当前工作区路径",
-          "deliverables": [],
-          "process": [
-            "执行了工作区路径验证测试，确认工作区切换成功，当前工作区路径为`/Users/shenlang/Documents/Codeflicker/AI-Insight`。"
-          ],
-          "tags": [
-            "workspace",
-            "path",
-            "verification",
-            "test"
-          ]
-        },
-        {
-          "title": "ClawBook Community Night Patrol and Engagement",
-          "type": "conversation",
-          "goal": "执行ClawBook社区夜巡任务，包括内容审核、互动评论、问题解答和高质量技术分享",
-          "deliverables": [],
-          "process": [
-            "完成了全站内容扫描（hot/new feeds）、7个板块检查，在#til板块发布了技术分享帖（ID 25）关于HTTP服务器端口冲突解决方案，包含Python/Shell代码示例。对5篇帖子进行了深..."
-          ],
-          "tags": [
-            "community-engagement",
-            "content-creation",
-            "technical-sharing",
-            "feedback",
-            "automation"
-          ]
-        },
-        {
-          "title": "ClawBook Community Night Patrol and Technical Sharing",
-          "type": "conversation",
-          "goal": "执行ClawBook社区夜巡任务，包括内容审核、互动交流和技术经验分享",
-          "deliverables": [],
-          "process": [
-            "完成了全站扫描、板块检查、深度互动和帮助#stuck板块用户等任务，重点分享了Python HTTP服务器端口冲突解决方案（使用端口0自动分配），创建了ID25技术帖并进行了社区投票互动。所有预定任务..."
-          ],
-          "tags": [
-            "community-management",
-            "technical-sharing",
-            "python",
-            "http-server",
-            "port-conflict"
-          ]
-        },
-        {
-          "title": "Empty conversation with minimal interaction",
-          "type": "conversation",
-          "goal": "用户仅进行了简单的确认性回复",
-          "deliverables": [],
-          "process": [
-            "对话仅包含基础确认信息，无实质性技术讨论或操作记录"
-          ],
-          "tags": [
-            "minimal",
-            "empty",
-            "no-content"
-          ]
-        },
-        {
-          "title": "Weekly Metrics Review and Self-Evolution Tracking",
-          "type": "conversation",
-          "goal": "完成小无相功周检任务，包括数据收集、周报生成、metrics日志更新和下周行动计划制定",
-          "deliverables": [],
-          "process": [
-            "收集了W11周度指标数据（FTR 87%，CRS <2h，THI 85.5%），生成周检报告并识别出3个关键问题：修复时间占比过高、长工作流质量控制不足和proactive-agent落地。更新了me..."
-          ],
-          "tags": [
-            "metrics",
-            "self-evolution",
-            "weekly-review",
-            "quality-gate",
-            "performance-tracking"
-          ]
-        },
-        {
-          "title": "Brief conversation with assistant",
-          "type": "conversation",
-          "goal": "用户与助手进行了简短的对话",
-          "deliverables": [],
-          "process": [
-            "对话仅包含助手的简短回复，没有具体的技术内容或操作记录。"
-          ],
-          "tags": [
-            "assistant",
-            "conversation",
-            "summary"
-          ]
-        },
-        {
-          "title": "Model Identification Query",
-          "type": "conversation",
-          "goal": "用户要求助手直接告知其所使用的人工智能模型名称",
-          "deliverables": [],
-          "process": [
-            "助手直接回应使用了Anthropic开发的Claude模型，具体为Claude Sonnet 4版本。"
-          ],
-          "tags": [
-            "model",
-            "identification",
-            "assistant",
-            "response"
-          ]
-        },
-        {
-          "title": "Empty conversation acknowledgment",
-          "type": "conversation",
-          "goal": "用户仅发送了收件确认",
-          "deliverables": [],
-          "process": [
-            "对话仅包含基本的收件确认信息，无实质性技术讨论或问题解决内容。"
-          ],
-          "tags": [
-            "empty",
-            "acknowledgment",
-            "receipt"
-          ]
-        }
-      ],
-      "capabilityGrowth": {
-        "skillCount": 77,
-        "knowledgeCount": 205,
-        "memoryCount": 128,
-        "skillChange": 0,
-        "knowledgeChange": 0,
-        "memoryChange": 17,
-        "newSkills": [
-          {
-            "name": "qingshuang-research-style",
-            "description": "清爽调研报告风格的**纯样式规范**。当用户提到\"清爽调研报告风格\"时使用此技能。本技能**仅提供CSS样式和视觉设计规"
-          },
-          {
-            "name": "clawbook",
-            "description": ">"
-          }
-        ],
-        "updatedSkills": [
-          {
-            "name": "ai-column-writer",
-            "description": "This skill should be used when the user mentions \"写专栏\", \"养了个"
-          },
-          {
-            "name": "rd-efficiency-insight",
-            "description": "\"研发效能洞察平台专属技能。当用户明确提到'研发效能洞察'、'研效知识库'、'研效追踪'、'学习研发效能'、'效能调研'"
-          },
-          {
-            "name": "feishu-assistant",
-            "description": "当用户说\"处理飞书消息\"、\"看看飞书\"、\"飞书有消息吗\"、\"检查飞书\"时使用此技能。实现飞书机器人与CodeFlicke"
-          },
-          {
-            "name": "meta-execution",
-            "description": "This skill should be used automatically when receiving any t"
-          },
-          {
-            "name": "yuque-publisher",
-            "description": "语雀知识库双向同步技能。支持发布文档、读取文档、删除文档、获取列表等操作。当用户说\"发布到语雀\"、\"读取语雀文档\"、\"打"
-          },
-          {
-            "name": "promotion-coaching",
-            "description": "\"This skill should be used when the user asks for '晋升辅导', '晋"
-          },
-          {
-            "name": "web-dev-workflow",
-            "description": "|"
-          },
-          {
-            "name": "linke-kim-message",
-            "description": "This skill should be used when the user mentions \"AI助手发消息\", \"林"
-          },
-          {
-            "name": "zelda-style",
-            "description": "\"This skill should be used when the user asks to create a '塞"
-          },
-          {
-            "name": "ai-insight",
-            "description": "\"AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI周报'或执行AI行业调研任务时使用。核心场景"
-          },
-          {
-            "name": "knowledge-base",
-            "description": "个人知识库检索技能。当用户提到\"查文档\"、\"找调研\"、\"我之前做过什么调研\"、\"帮我找一下之前的文档\"、\"知识库里"
-          },
-          {
-            "name": "github-deploy-publisher",
-            "description": "This skill should be used ONLY when a NEW repository needs t"
-          },
-          {
-            "name": "codeflicker-weekly-report",
-            "description": "This skill should be used when the user mentions \"CodeFlicke"
-          },
-          {
-            "name": "promotion-review-sabcd",
-            "description": "This skill should be used when the user mentions \"晋升评审\", \"晋升"
-          },
-          {
-            "name": "night-task-runner",
-            "description": "This skill should be used when the user mentions \"今晚帮我做\", \"睡"
-          },
-          {
-            "name": "ks-kim-docs-shuttle",
-            "description": "内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「"
-          },
-          {
-            "name": "industry-research",
-            "description": "This skill should be used when the user asks for \"行业调研\", \"市场"
-          },
-          {
-            "name": "CF-internet-content-research",
-            "description": "\"互联网内容调研一体化技能（可被其他技能调用）。整合多平台数据源：微信公众号搜索、小红书笔记搜索、Web通用搜索。覆盖："
-          },
-          {
-            "name": "knowledge-acquisition-meta",
-            "description": "This skill should be used when the user wants to \"learn a ne"
-          }
-        ],
-        "newKnowledge": [
-          {
-            "name": "rd-efficiency-essence-insight",
-            "category": "rd-efficiency"
-          },
-          {
-            "name": "domain-essence-insight",
-            "category": "rd-efficiency"
-          },
-          {
-            "name": "project-essence-insight",
-            "category": "rd-efficiency"
-          },
-          {
-            "name": "2026-W11-review",
-            "category": "self-evolution"
-          }
-        ],
-        "updatedKnowledge": [
-          {
-            "name": "README",
-            "category": "rd-efficiency"
-          }
-        ],
-        "newMemory": [
-          {
-            "title": "Session-Start Protocol (SSP) — 对话启动主动性协议",
-            "category": "constraint_or_forbidden_rule"
-          },
-          {
-            "title": "VPN单向性导致内网平台Webhook回调不可达（含.env占位符覆盖）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "ClawBook社区分享策略：实践作品多分享，元技能核心机密保密",
-            "category": "constraint_or_forbidden_rule"
-          },
-          {
-            "title": "脚本诊断 vs Agent修复的分工边界（auto_fixable → agent_fixable 模式）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "跨技能内容同步升级流程（抽象→实例化模式）",
-            "category": "task_flow_experience"
-          },
-          {
-            "title": "CSS跨列行对齐：独立flex列→subgrid（一次性解决多列错位）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "弱Agent调度强Agent是架构反模式 + 自调度已合并到proactive-agent v3.1.0",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "跨技能交接断裂：内容生成完成 ≠ 平台发布流程完成（v2 已写入Skill）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "质量门博弈模式：伪造数据绕过检查=P0红线（经验36 v3 含小红书伪造+修复循环溢出）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "以终为始原则：信息价值 > 链接完整性（虓晗教导）",
-            "category": "task_flow_experience"
-          },
-          {
-            "title": "先验后传播：平台能力判断必须深度验证后才能写入Skill系统",
-            "category": "task_flow_experience"
-          },
-          {
-            "title": "AI日报链接处理核心规则（合并版v8.2）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报质量门与数据真实性规则（合并版v8.2）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报分类与去重规则（合并版v8.2）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报工作流与部署规则（合并版v8.2）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报KIM卡片与JSON数据规则（合并版v8.2）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI洞察项目版本同步规则：内外部版本必须同步更新",
-            "category": "development_practice_specification"
-          }
-        ],
-        "updatedMemory": [
-          {
-            "title": "核心身份关系与称呼规范（权威版 v5 — 默认叫***）",
-            "category": "user_info"
-          },
-          {
-            "title": "多文件联动更新的隐式耦合陷阱（七类+检查清单）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "成功模式提炼：高效执行的关键条件（八大条件精简版）",
-            "category": "task_flow_experience"
-          },
-          {
-            "title": "中文全角引号导致JavaScript/Node代码语法错误",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "每日修炼统一流程 v9.0（含Phase 3内功修炼必须执行+脚本门控）",
-            "category": "user_communication"
-          },
-          {
-            "title": "AI助手主动性承诺：从被动响应到系统性保障主动（含SSP+watchdog+agenda工程化）",
-            "category": "task_flow_experience"
-          },
-          {
-            "title": "Chrome Headless / Puppeteer 截图核心公式",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "踩坑记忆召回失败模式（16类任务映射+三层方案）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "单一数据源原则违反导致度量失真（数据模型+诊断脚本）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "同步脚本脱敏闸门（文件泄漏+凭证硬编码防护）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "自动化管道脚本卫生规范（五层检查表）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "Flex布局边缘元素被压缩（min-width+flex-shrink:0）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "CSS\"不可见\"问题三板斧：样式→遮挡→裁切（含hover覆盖overlay高危场景）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "共享部署资源的临时借用陷阱（借-用-还协议）",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "封闭平台(微信/小红书)链接处理规则(v7.0 含noteId编造检测+ObjectId时间戳校验)",
-            "category": "common_pitfalls_experience"
-          },
-          {
-            "title": "AI日报分类+去重+链接验证门控经验（v6.0 含wx_url匹配规则+browser_agent临时URL禁止存储+小红书永久链接确认）",
-            "category": "common_pitfalls_experience"
-          }
-        ],
-        "trend": "growing"
-      },
-      "skillCount": 77,
-      "knowledgeCount": 205,
-      "memoryCount": 128,
-      "skillChange": 0,
-      "knowledgeChange": 0,
-      "memoryChange": 17,
-      "highlights": [
-        "💬 完成 12 个任务: 验证工作区切换功能并获取当前工作区路径, 执行ClawBook社区夜巡任务，包括内容审核、互动评论、问题解答和高质量技术分......",
-        "📁 项目成果: 网页更新 6 个",
-        "⚡ 新增能力: 清爽调研报告风格、clawbook，提升UI/设计输出质量"
       ]
     }
   ]

@@ -551,18 +551,23 @@
 
 .article-card-number {
   flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  min-width: 52px;
+  width: 52px;
+  min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   background: rgba(212, 168, 42, 0.1);
   border: 1px solid rgba(212, 168, 42, 0.3);
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   color: var(--zelda-gold);
+  line-height: 1.4;
+  padding: 6px 4px;
+  word-break: keep-all;
 }
 
 .article-card-content {

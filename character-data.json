@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-20T06:46:09.736871",
+  "generatedAt": "2026-04-20T07:50:13.140641",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -132,33 +132,33 @@
         "desc": "知道的越来越多"
       }
     ],
-    "totalExp": 337490,
-    "expProgress": 58.4,
+    "totalExp": 347690,
+    "expProgress": 93.3,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
-      "understanding": 83.8,
-      "execution": 52.5,
+      "understanding": 83.7,
+      "execution": 62.8,
       "skillDepth": 85.3,
       "thinkingDepth": 38.0,
       "knowledgeBreadth": 61.2
     },
     "debug": {
       "metrics": {
-        "ftr": 70,
+        "ftr": 87.0,
         "sdr": 0,
-        "thi": 70,
+        "thi": 77.2,
         "mdv": 0.5,
         "ctr": 0
       },
       "activeSkills": 145,
       "highLevelSkills": 144,
-      "skillTotalValue": 2880.8,
+      "skillTotalValue": 3048.0,
       "cultivationExp": 0,
-      "baseExp": 337490,
+      "baseExp": 347690,
       "expBreakdown": {
-        "understanding": 83800,
-        "execution": 52500,
+        "understanding": 83700,
+        "execution": 62800,
         "skill": 127950,
         "thinking": 30400,
         "knowledge": 42840,
@@ -405,6 +405,44 @@
             "tag": "Link"
           },
           {
+            "name": "codeflicker-skill-install",
+            "displayName": "技能安装",
+            "displayRole": "内网市场",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "当用户说 \"安装skill\"，\"帮我找一个skill\"，\"帮我安装一个xx的skill\"，\"从内网安装skill\"，\"从MyFlicker安装skill\"，\"安装快手的skill\"，\"在内网市场搜索skill\"，\"帮我从CodeFlicker安装一个skill时\"，触发此skill。支持两种安装方式：1.直接粘贴skill详情链接（https://myflicker.corp.快手.c",
+            "lastUpdated": "2026-04-17",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 15383,
+            "skillSizeLabel": "15K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": "Link"
+          },
+          {
+            "name": "find-skills",
+            "displayName": "CF技能发现",
+            "displayRole": "内置发现",
+            "source": "林克核心能力",
+            "level": 5,
+            "exp": 100,
+            "description": "帮助用户找到合适的技能来完成他们的任务。当用户要求找技能时，比如 1.我需要一个技能来帮我写单元测试；2.有没有技能可以帮我分析这个代码库的安全漏洞；3.我该怎么生成一张图片。或者用户的诉求没有已安装的技能可以满足，这时候就主动询问用户是否使用 find-skills 来找技能。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 88,
+            "frequency": "1次/月",
+            "successRate": 95,
+            "sourceType": "自定义",
+            "skillSize": 1273,
+            "skillSizeLabel": "1K字 · 小型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": "Link"
+          },
+          {
             "name": "meta-skill-creator",
             "displayName": "技能创建",
             "displayRole": "创建",
@@ -481,7 +519,7 @@
             "tag": "KS"
           }
         ],
-        "count": 16,
+        "count": 18,
         "avgLevel": 3.2
       },
       "🧠 思维方法": {
@@ -811,8 +849,8 @@
             "frequency": "2.9次/周",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 156453,
-            "skillSizeLabel": "156K字 · 巨型",
+            "skillSize": 159558,
+            "skillSizeLabel": "159K字 · 巨型",
             "ksInternal": false,
             "cfProject": true,
             "tag": "SL"
@@ -1126,10 +1164,105 @@
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
+          },
+          {
+            "name": "content-research-writer",
+            "displayName": "内容调研写作",
+            "displayRole": "调研+写作",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 14283,
+            "skillSizeLabel": "14K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "tavily-search",
+            "displayName": "Tavily搜索",
+            "displayRole": "网页搜索",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "使用 Tavily API 搜索网页。当用户要求搜索网页、查找资料来源或查找链接时使用。返回包含标题、URL 和摘要的相关搜索结果。不适用于本地文件搜索、代码/仓库搜索或离线内容检索。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 4934,
+            "skillSizeLabel": "4K字 · 小型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "ai-news-monitor",
+            "displayName": "AI动态监控",
+            "displayRole": "新闻追踪",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "Monitor AI/tech news from customizable sources and deliver periodic digests via message/email. Supports RSS, websites, Twitter/X, and custom feeds.",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 26403,
+            "skillSizeLabel": "26K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "cf-internet-content-research",
+            "displayName": "互联网内容调研",
+            "displayRole": "多平台",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 67,
+            "description": "互联网内容调研一体化技能（可被其他技能调用）。整合多平台数据源：微信公众号搜索、小红书笔记搜索、Web通用搜索。覆盖：关键词搜索、正文抓取、批量拉取、内容分析/结构化整理/可视化输出。触发词包括：互联网调研, 内容调研, 微信公众号, 公众号搜索, weixin_search, 小红书搜索, 搜一下小红书, 小红书调研, xiaohongshu, 公众号调研, 整理公众号, 多平台搜索, 国内信源",
+            "lastUpdated": "2026-04-15",
+            "callCount": 4,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 15462,
+            "skillSizeLabel": "15K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "kstack-reader",
+            "displayName": "KStack阅读",
+            "displayRole": "内部文章",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "读取或搜索快手内网 KStack 技术文章。当用户说「帮我看 KStack 上的某篇文章」「搜索内网技术文档」「查KStack」或提供 KStack 文章链接时触发。不负责非 KStack 内容的部分。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 9866,
+            "skillSizeLabel": "9K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": "KS"
           }
         ],
-        "count": 10,
-        "avgLevel": 3.1
+        "count": 15,
+        "avgLevel": 2.5
       },
       "📝 内容写作": {
         "role": "writing",
@@ -1509,9 +1642,28 @@
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
+          },
+          {
+            "name": "cf-web-artifacts",
+            "displayName": "CF全栈工具链",
+            "displayRole": "内部工具",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 63,
+            "description": "快手内部全栈开发工具链指南（@codeflicker/cf-create-web + appwrite-cf + frontend-cloud）。仅在以下两种情况触发：1) 用户明确提到快手内部工具（cf-web-artifacts、appwrite-cf、frontend-cloud、@codeflicker/appwrite 等关键词）；2) 检测到项目已使用快手工具创建（package.",
+            "lastUpdated": "2026-04-15",
+            "callCount": 4,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 35347,
+            "skillSizeLabel": "35K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
           }
         ],
-        "count": 9,
+        "count": 10,
         "avgLevel": 3.3
       },
       "📁 文件处理": {
@@ -1656,8 +1808,8 @@
           },
           {
             "name": "upload-cdn",
-            "displayName": "Upload-cdn",
-            "displayRole": "",
+            "displayName": "CDN上传",
+            "displayRole": "文件外链",
             "source": "林克核心能力",
             "level": 3,
             "exp": 66,
@@ -1674,27 +1826,27 @@
             "tag": ""
           },
           {
-            "name": "upload-cdn",
-            "displayName": "Upload-cdn",
-            "displayRole": "",
+            "name": "docs-shuttle",
+            "displayName": "Docs文档同步",
+            "displayRole": "双向同步",
             "source": "林克核心能力",
             "level": 3,
-            "exp": 66,
-            "description": "This skill should be used when the user asks to \"upload a file\", \"upload image to CDN\", \"share a file via link\", \"get a CDN link for a file\", \"上传文件\", \"上传图片\", \"上传到 CDN\", \"获取文件链接\", \"分享文件链接\", \"把文件传到服务器\",",
+            "exp": 68,
+            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「编辑文档」「更新文档」「申请文档权限」「从 Docs 拉取」「同步文档」「搜索文档」时使用此技能。支持文档搜索、上传、编辑、拉取、权限申请。",
             "lastUpdated": "2026-04-15",
-            "callCount": 2,
+            "callCount": 6,
             "frequency": "1次/月",
             "successRate": 90,
             "sourceType": "自定义",
-            "skillSize": 11770,
-            "skillSizeLabel": "11K字 · 中型",
+            "skillSize": 43448,
+            "skillSizeLabel": "43K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
           }
         ],
-        "count": 8,
-        "avgLevel": 3.3
+        "count": 9,
+        "avgLevel": 3.2
       },
       "🎬 演示制作": {
         "role": "presentation",
@@ -1778,10 +1930,29 @@
             "ksInternal": true,
             "cfProject": false,
             "tag": "KS"
+          },
+          {
+            "name": "cf-ppt-gen",
+            "displayName": "CF-PPT生成",
+            "displayRole": "PPT生成",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "This skill should be used when the user asks to \"generate PPT\", \"create slides\", \"make presentation\", \"生成PPT\", \"制作幻灯片\", \"做PPT\", \"创建演示文稿\", or discusses creating multi-page presentations with consistent",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 17792,
+            "skillSizeLabel": "17K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
           }
         ],
-        "count": 4,
-        "avgLevel": 3.0
+        "count": 5,
+        "avgLevel": 2.6
       },
       "📤 发布推送": {
         "role": "publish",
@@ -1979,10 +2150,29 @@
             "ksInternal": false,
             "cfProject": false,
             "tag": "SL"
+          },
+          {
+            "name": "scheduled-kim-message",
+            "displayName": "定时KIM消息",
+            "displayRole": "定时推送",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "当用户需要定时提醒、定时播报、或定时执行任务并推送结果时使用此 skill。包含一次性提醒和循环任务的完整参数结构。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 3118,
+            "skillSizeLabel": "3K字 · 小型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": "KS"
           }
         ],
-        "count": 10,
-        "avgLevel": 3.2
+        "count": 11,
+        "avgLevel": 3.0
       },
       "🏢 办公协作": {
         "role": "workplace",
@@ -2275,10 +2465,67 @@
             "ksInternal": true,
             "cfProject": false,
             "tag": ""
+          },
+          {
+            "name": "快手-sso-login-client",
+            "displayName": "SSO登录",
+            "displayRole": "内网鉴权",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "当使用 agent-browser 访问任何 xx.corp.快手.com 发现没有权限时，都需要调用此 skill 完成登录",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 30022,
+            "skillSizeLabel": "30K字 · 大型",
+            "ksInternal": true,
+            "cfProject": false,
+            "tag": "KS"
+          },
+          {
+            "name": "enterprise-sheet",
+            "displayName": "企业表格",
+            "displayRole": "在线表格",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 66,
+            "description": "快手企业表格读取：根据 Docs 在线表格链接，获取表格元数据和单元格内容，支持多页签、范围查询。当用户提供 Docs 在线表格链接并要求读取表格内容时触发。不处理普通文本文档、本地 Excel 文件。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 1,
+            "frequency": "<0.1/天",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 7852,
+            "skillSizeLabel": "7K字 · 中型",
+            "ksInternal": true,
+            "cfProject": false,
+            "tag": "KS"
+          },
+          {
+            "name": "meeting-room-booking",
+            "displayName": "会议室预订",
+            "displayRole": "日程预订",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 68,
+            "description": "根据时间段和关键词推荐空闲会议室，并自动创建会议日程。当用户说「帮我订个会议室」「找个空会议室」「约个10人会议室」「预订会议室」「明天下午3点订个会议室」时触发。支持按职场/楼层筛选、自动推荐空闲会议室并创建日程。不负责会议室取消、不处理非快手内部会议室预订。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 5,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 10218,
+            "skillSizeLabel": "10K字 · 中型",
+            "ksInternal": true,
+            "cfProject": false,
+            "tag": "KS"
           }
         ],
-        "count": 15,
-        "avgLevel": 3.0
+        "count": 18,
+        "avgLevel": 2.9
       },
       "🖼️ 图像生成": {
         "role": "image-gen",
@@ -2419,10 +2666,48 @@
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
+          },
+          {
+            "name": "image-to-image",
+            "displayName": "图生图",
+            "displayRole": "参考图生成",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "本技能用于调用万擎内部API进行图生图操作，基于1~14张参考图片生成新图片。以下场景唤醒：图生图、图片编辑（修改图片内容/颜色/风格/背景）、多图参考合成（把多张图合成一张）、基于参考图生成新图。不唤醒场景：纯文字生图（无参考图）、图片下载、图片查看。",
+            "lastUpdated": "2026-04-17",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 11286,
+            "skillSizeLabel": "11K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "text-to-image",
+            "displayName": "文生图",
+            "displayRole": "文字转图片",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 66,
+            "description": "本技能用于调用万擎内部API进行文生图。以下场景唤醒：用户说\"生成图片\"、\"文生图\"、\"画图\"、\"AI绘图\"、\"generate image\"、\"image generation\"、\"做一张图\"、\"生成架构图\"、\"生成流程图\"、\"生成信息图\"。以下场景不唤醒：用户讨论图片编辑、图生图、上传图片等非文生图场景。",
+            "lastUpdated": "2026-04-17",
+            "callCount": 6,
+            "frequency": "2次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 52455,
+            "skillSizeLabel": "52K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
           }
         ],
-        "count": 7,
-        "avgLevel": 3.4
+        "count": 9,
+        "avgLevel": 3.1
       },
       "🤖 AI工程": {
         "role": "ai-engineering",
@@ -2544,10 +2829,48 @@
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
+          },
+          {
+            "name": "agent-browser",
+            "displayName": "浏览器自动化",
+            "displayRole": "网页交互",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 66,
+            "description": "浏览器自动化 CLI 工具。当用户需要与网站交互时使用，包括打开网页、填写表单、点击按钮、截图、数据抓取、Web 应用测试或任何浏览器自动化任务。不支持非浏览器场景，如纯后端请求、本地文件操作、桌面原生应用自动化。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 2,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 73941,
+            "skillSizeLabel": "73K字 · 巨型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "codeflicker-controller",
+            "displayName": "CF控制器",
+            "displayRole": "CF API",
+            "source": "林克核心能力",
+            "level": 1,
+            "exp": 10,
+            "description": "This skill should be used when the user asks to \"control CodeFlicker\", \"operate CodeFlicker IDE\", \"automate CodeFlicker\", \"send task to CodeFlicker\", \"open CodeFlicker workspace\", \"close CodeFlicker w",
+            "lastUpdated": "2026-04-15",
+            "callCount": 0,
+            "frequency": "0",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 43936,
+            "skillSizeLabel": "43K字 · 大型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
           }
         ],
-        "count": 6,
-        "avgLevel": 3.0
+        "count": 8,
+        "avgLevel": 2.8
       },
       "🔧 软件工程": {
         "role": "software-engineering",
@@ -2859,9 +3182,47 @@
             "ksInternal": true,
             "cfProject": false,
             "tag": "KS"
+          },
+          {
+            "name": "kate-prd-understand",
+            "displayName": "PRD需求理解",
+            "displayRole": "需求分析",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 67,
+            "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（kate-brief-design）。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 4,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 10392,
+            "skillSizeLabel": "10K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
+          },
+          {
+            "name": "kate-brief-design",
+            "displayName": "技术方案设计",
+            "displayRole": "方案设计",
+            "source": "林克核心能力",
+            "level": 3,
+            "exp": 65,
+            "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
+            "lastUpdated": "2026-04-15",
+            "callCount": 4,
+            "frequency": "1次/月",
+            "successRate": 90,
+            "sourceType": "自定义",
+            "skillSize": 11337,
+            "skillSizeLabel": "11K字 · 中型",
+            "ksInternal": false,
+            "cfProject": false,
+            "tag": ""
           }
         ],
-        "count": 16,
+        "count": 18,
         "avgLevel": 2.8
       },
       "🌐 社区学习": {
@@ -3090,229 +3451,11 @@
             "ksInternal": false,
             "cfProject": false,
             "tag": "SL"
-          }
-        ],
-        "count": 10,
-        "avgLevel": 2.0
-      },
-      "其他技能": {
-        "icon": "📦",
-        "color": "#64748b",
-        "layer": "execution",
-        "skills": [
-          {
-            "name": "find-skills",
-            "displayName": "ClawHub CLI 搜索指南 🚀",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 5,
-            "exp": 100,
-            "description": "帮助用户找到合适的技能来完成他们的任务。当用户要求找技能时，比如 1.我需要一个技能来帮我写单元测试；2.有没有技能可以帮我分析这个代码库的安全漏洞；3.我该怎么生成一张图片。或者用户的诉求没有已安装的技能可以满足，这时候就主动询问用户是否使用 find-skills 来找技能。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 88,
-            "frequency": "1次/月",
-            "successRate": 95,
-            "sourceType": "自定义",
-            "skillSize": 1273,
-            "skillSizeLabel": "1K字 · 小型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "docs-shuttle",
-            "displayName": "docs-shuttle: Docs 文档同步工具",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 68,
-            "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「编辑文档」「更新文档」「申请文档权限」「从 Docs 拉取」「同步文档」「搜索文档」时使用此技能。支持文档搜索、上传、编辑、拉取、权限申请。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 6,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 43448,
-            "skillSizeLabel": "43K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "meeting-room-booking",
-            "displayName": "meeting-room-booking",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 68,
-            "description": "根据时间段和关键词推荐空闲会议室，并自动创建会议日程。当用户说「帮我订个会议室」「找个空会议室」「约个10人会议室」「预订会议室」「明天下午3点订个会议室」时触发。支持按职场/楼层筛选、自动推荐空闲会议室并创建日程。不负责会议室取消、不处理非快手内部会议室预订。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 5,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 10218,
-            "skillSizeLabel": "10K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "kate-prd-understand",
-            "displayName": "Kate PRD 需求理解",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 67,
-            "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（kate-brief-design）。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 4,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 10392,
-            "skillSizeLabel": "10K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "cf-internet-content-research",
-            "displayName": "互联网内容调研（统一技能）",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 67,
-            "description": "互联网内容调研一体化技能（可被其他技能调用）。整合多平台数据源：微信公众号搜索、小红书笔记搜索、Web通用搜索。覆盖：关键词搜索、正文抓取、批量拉取、内容分析/结构化整理/可视化输出。触发词包括：互联网调研, 内容调研, 微信公众号, 公众号搜索, weixin_search, 小红书搜索, 搜一下小红书, 小红书调研, xiaohongshu, 公众号调研, 整理公众号, 多平台搜索, 国内信源",
-            "lastUpdated": "2026-04-15",
-            "callCount": 4,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 15462,
-            "skillSizeLabel": "15K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "agent-browser",
-            "displayName": "Browser Automation with agent-browser",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 66,
-            "description": "浏览器自动化 CLI 工具。当用户需要与网站交互时使用，包括打开网页、填写表单、点击按钮、截图、数据抓取、Web 应用测试或任何浏览器自动化任务。不支持非浏览器场景，如纯后端请求、本地文件操作、桌面原生应用自动化。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 2,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 73941,
-            "skillSizeLabel": "73K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "enterprise-sheet",
-            "displayName": "📊 Enterprise Sheet Reader",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 66,
-            "description": "快手企业表格读取：根据 Docs 在线表格链接，获取表格元数据和单元格内容，支持多页签、范围查询。当用户提供 Docs 在线表格链接并要求读取表格内容时触发。不处理普通文本文档、本地 Excel 文件。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 7852,
-            "skillSizeLabel": "7K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "text-to-image",
-            "displayName": "万擎文生图 Skill",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 66,
-            "description": "本技能用于调用万擎内部API进行文生图。以下场景唤醒：用户说\"生成图片\"、\"文生图\"、\"画图\"、\"AI绘图\"、\"generate image\"、\"image generation\"、\"做一张图\"、\"生成架构图\"、\"生成流程图\"、\"生成信息图\"。以下场景不唤醒：用户讨论图片编辑、图生图、上传图片等非文生图场景。",
-            "lastUpdated": "2026-04-17",
-            "callCount": 6,
-            "frequency": "2次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 52455,
-            "skillSizeLabel": "52K字 · 巨型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "kate-brief-design",
-            "displayName": "Kate 技术方案设计",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 65,
-            "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 4,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 11337,
-            "skillSizeLabel": "11K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "cf-web-artifacts",
-            "displayName": "快手内部全栈项目开发指南",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 63,
-            "description": "快手内部全栈开发工具链指南（@codeflicker/cf-create-web + appwrite-cf + frontend-cloud）。仅在以下两种情况触发：1) 用户明确提到快手内部工具（cf-web-artifacts、appwrite-cf、frontend-cloud、@codeflicker/appwrite 等关键词）；2) 检测到项目已使用快手工具创建（package.",
-            "lastUpdated": "2026-04-15",
-            "callCount": 4,
-            "frequency": "1次/月",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 35347,
-            "skillSizeLabel": "35K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "content-research-writer",
-            "displayName": "Content Research Writer",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 14283,
-            "skillSizeLabel": "14K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
           },
           {
             "name": "快手-intelligent-device-xz",
-            "displayName": "查询指定园区和楼层",
-            "displayRole": "",
+            "displayName": "智能设备查询",
+            "displayRole": "卫生间等",
             "source": "林克核心能力",
             "level": 1,
             "exp": 10,
@@ -3326,145 +3469,12 @@
             "skillSizeLabel": "11K字 · 中型",
             "ksInternal": false,
             "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "快手-sso-login-client",
-            "displayName": "快手内网 SSO 登录客户端",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "当使用 agent-browser 访问任何 xx.corp.快手.com 发现没有权限时，都需要调用此 skill 完成登录",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 30022,
-            "skillSizeLabel": "30K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "tavily-search",
-            "displayName": "Tavily 网页搜索",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "使用 Tavily API 搜索网页。当用户要求搜索网页、查找资料来源或查找链接时使用。返回包含标题、URL 和摘要的相关搜索结果。不适用于本地文件搜索、代码/仓库搜索或离线内容检索。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 4934,
-            "skillSizeLabel": "4K字 · 小型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "codeflicker-controller",
-            "displayName": "CodeFlicker Controller",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "This skill should be used when the user asks to \"control CodeFlicker\", \"operate CodeFlicker IDE\", \"automate CodeFlicker\", \"send task to CodeFlicker\", \"open CodeFlicker workspace\", \"close CodeFlicker w",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 43936,
-            "skillSizeLabel": "43K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "ai-news-monitor",
-            "displayName": "AI News Monitor Skill",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "Monitor AI/tech news from customizable sources and deliver periodic digests via message/email. Supports RSS, websites, Twitter/X, and custom feeds.",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 26403,
-            "skillSizeLabel": "26K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "codeflicker-skill-install",
-            "displayName": "CodeFlicker Skill 安装工具",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "当用户说 \"安装skill\"，\"帮我找一个skill\"，\"帮我安装一个xx的skill\"，\"从内网安装skill\"，\"从MyFlicker安装skill\"，\"安装快手的skill\"，\"在内网市场搜索skill\"，\"帮我从CodeFlicker安装一个skill时\"，触发此skill。支持两种安装方式：1.直接粘贴skill详情链接（https://myflicker.corp.快手.c",
-            "lastUpdated": "2026-04-17",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 15383,
-            "skillSizeLabel": "15K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "scheduled-kim-message",
-            "displayName": "Scheduled Kim Message",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "当用户需要定时提醒、定时播报、或定时执行任务并推送结果时使用此 skill。包含一次性提醒和循环任务的完整参数结构。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 3118,
-            "skillSizeLabel": "3K字 · 小型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "image-to-image",
-            "displayName": "万擎图生图 Skill",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "本技能用于调用万擎内部API进行图生图操作，基于1~14张参考图片生成新图片。以下场景唤醒：图生图、图片编辑（修改图片内容/颜色/风格/背景）、多图参考合成（把多张图合成一张）、基于参考图生成新图。不唤醒场景：纯文字生图（无参考图）、图片下载、图片查看。",
-            "lastUpdated": "2026-04-17",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 11286,
-            "skillSizeLabel": "11K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
+            "tag": "KS"
           },
           {
             "name": "cafeteria-takeout",
-            "displayName": "外卖订餐 Skill",
-            "displayRole": "",
+            "displayName": "食堂外卖",
+            "displayRole": "外卖订餐",
             "source": "林克核心能力",
             "level": 1,
             "exp": 10,
@@ -3478,12 +3488,12 @@
             "skillSizeLabel": "45K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
-            "tag": ""
+            "tag": "KS"
           },
           {
             "name": "wanjia-charging",
-            "displayName": "wanjia-charging",
-            "displayRole": "",
+            "displayName": "万家充电桩",
+            "displayRole": "充电桩查询",
             "source": "林克核心能力",
             "level": 1,
             "exp": 10,
@@ -3497,49 +3507,11 @@
             "skillSizeLabel": "4K字 · 小型",
             "ksInternal": false,
             "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "kstack-reader",
-            "displayName": "KStack Article Reader",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "读取或搜索快手内网 KStack 技术文章。当用户说「帮我看 KStack 上的某篇文章」「搜索内网技术文档」「查KStack」或提供 KStack 文章链接时触发。不负责非 KStack 内容的部分。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 9866,
-            "skillSizeLabel": "9K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "cf-ppt-gen",
-            "displayName": "PPT 图片生成器 (PPT Image Generator)",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "This skill should be used when the user asks to \"generate PPT\", \"create slides\", \"make presentation\", \"生成PPT\", \"制作幻灯片\", \"做PPT\", \"创建演示文稿\", or discusses creating multi-page presentations with consistent",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 17792,
-            "skillSizeLabel": "17K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
+            "tag": "KS"
           }
         ],
-        "count": 23,
-        "avgLevel": 2.0
+        "count": 13,
+        "avgLevel": 1.8
       }
     },
     "tree": {
@@ -3784,6 +3756,44 @@
                 "tag": "Link"
               },
               {
+                "name": "codeflicker-skill-install",
+                "displayName": "技能安装",
+                "displayRole": "内网市场",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "当用户说 \"安装skill\"，\"帮我找一个skill\"，\"帮我安装一个xx的skill\"，\"从内网安装skill\"，\"从MyFlicker安装skill\"，\"安装快手的skill\"，\"在内网市场搜索skill\"，\"帮我从CodeFlicker安装一个skill时\"，触发此skill。支持两种安装方式：1.直接粘贴skill详情链接（https://myflicker.corp.快手.c",
+                "lastUpdated": "2026-04-17",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 15383,
+                "skillSizeLabel": "15K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": "Link"
+              },
+              {
+                "name": "find-skills",
+                "displayName": "CF技能发现",
+                "displayRole": "内置发现",
+                "source": "林克核心能力",
+                "level": 5,
+                "exp": 100,
+                "description": "帮助用户找到合适的技能来完成他们的任务。当用户要求找技能时，比如 1.我需要一个技能来帮我写单元测试；2.有没有技能可以帮我分析这个代码库的安全漏洞；3.我该怎么生成一张图片。或者用户的诉求没有已安装的技能可以满足，这时候就主动询问用户是否使用 find-skills 来找技能。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 88,
+                "frequency": "1次/月",
+                "successRate": 95,
+                "sourceType": "自定义",
+                "skillSize": 1273,
+                "skillSizeLabel": "1K字 · 小型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": "Link"
+              },
+              {
                 "name": "meta-skill-creator",
                 "displayName": "技能创建",
                 "displayRole": "创建",
@@ -3860,7 +3870,7 @@
                 "tag": "KS"
               }
             ],
-            "count": 16,
+            "count": 18,
             "avgLevel": 3.2
           },
           "🧠 思维方法": {
@@ -4169,7 +4179,7 @@
             "avgLevel": 3.2
           }
         },
-        "count": 31,
+        "count": 33,
         "avgLevel": 3.2
       },
       "domain_pack": {
@@ -4197,8 +4207,8 @@
                 "frequency": "2.9次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 156453,
-                "skillSizeLabel": "156K字 · 巨型",
+                "skillSize": 159558,
+                "skillSizeLabel": "159K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": true,
                 "tag": "SL"
@@ -4518,10 +4528,105 @@
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
+              },
+              {
+                "name": "content-research-writer",
+                "displayName": "内容调研写作",
+                "displayRole": "调研+写作",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 14283,
+                "skillSizeLabel": "14K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "tavily-search",
+                "displayName": "Tavily搜索",
+                "displayRole": "网页搜索",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "使用 Tavily API 搜索网页。当用户要求搜索网页、查找资料来源或查找链接时使用。返回包含标题、URL 和摘要的相关搜索结果。不适用于本地文件搜索、代码/仓库搜索或离线内容检索。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 4934,
+                "skillSizeLabel": "4K字 · 小型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "ai-news-monitor",
+                "displayName": "AI动态监控",
+                "displayRole": "新闻追踪",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "Monitor AI/tech news from customizable sources and deliver periodic digests via message/email. Supports RSS, websites, Twitter/X, and custom feeds.",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 26403,
+                "skillSizeLabel": "26K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "cf-internet-content-research",
+                "displayName": "互联网内容调研",
+                "displayRole": "多平台",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 67,
+                "description": "互联网内容调研一体化技能（可被其他技能调用）。整合多平台数据源：微信公众号搜索、小红书笔记搜索、Web通用搜索。覆盖：关键词搜索、正文抓取、批量拉取、内容分析/结构化整理/可视化输出。触发词包括：互联网调研, 内容调研, 微信公众号, 公众号搜索, weixin_search, 小红书搜索, 搜一下小红书, 小红书调研, xiaohongshu, 公众号调研, 整理公众号, 多平台搜索, 国内信源",
+                "lastUpdated": "2026-04-15",
+                "callCount": 4,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 15462,
+                "skillSizeLabel": "15K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "kstack-reader",
+                "displayName": "KStack阅读",
+                "displayRole": "内部文章",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "读取或搜索快手内网 KStack 技术文章。当用户说「帮我看 KStack 上的某篇文章」「搜索内网技术文档」「查KStack」或提供 KStack 文章链接时触发。不负责非 KStack 内容的部分。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 9866,
+                "skillSizeLabel": "9K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": "KS"
               }
             ],
-            "count": 10,
-            "avgLevel": 3.1
+            "count": 15,
+            "avgLevel": 2.5
           },
           "📝 内容写作": {
             "role": "writing",
@@ -4899,9 +5004,28 @@
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
+              },
+              {
+                "name": "cf-web-artifacts",
+                "displayName": "CF全栈工具链",
+                "displayRole": "内部工具",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 63,
+                "description": "快手内部全栈开发工具链指南（@codeflicker/cf-create-web + appwrite-cf + frontend-cloud）。仅在以下两种情况触发：1) 用户明确提到快手内部工具（cf-web-artifacts、appwrite-cf、frontend-cloud、@codeflicker/appwrite 等关键词）；2) 检测到项目已使用快手工具创建（package.",
+                "lastUpdated": "2026-04-15",
+                "callCount": 4,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 35347,
+                "skillSizeLabel": "35K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
               }
             ],
-            "count": 9,
+            "count": 10,
             "avgLevel": 3.3
           },
           "📁 文件处理": {
@@ -5045,8 +5169,8 @@
               },
               {
                 "name": "upload-cdn",
-                "displayName": "Upload-cdn",
-                "displayRole": "",
+                "displayName": "CDN上传",
+                "displayRole": "文件外链",
                 "source": "林克核心能力",
                 "level": 3,
                 "exp": 66,
@@ -5063,27 +5187,27 @@
                 "tag": ""
               },
               {
-                "name": "upload-cdn",
-                "displayName": "Upload-cdn",
-                "displayRole": "",
+                "name": "docs-shuttle",
+                "displayName": "Docs文档同步",
+                "displayRole": "双向同步",
                 "source": "林克核心能力",
                 "level": 3,
-                "exp": 66,
-                "description": "This skill should be used when the user asks to \"upload a file\", \"upload image to CDN\", \"share a file via link\", \"get a CDN link for a file\", \"上传文件\", \"上传图片\", \"上传到 CDN\", \"获取文件链接\", \"分享文件链接\", \"把文件传到服务器\",",
+                "exp": 68,
+                "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「编辑文档」「更新文档」「申请文档权限」「从 Docs 拉取」「同步文档」「搜索文档」时使用此技能。支持文档搜索、上传、编辑、拉取、权限申请。",
                 "lastUpdated": "2026-04-15",
-                "callCount": 2,
+                "callCount": 6,
                 "frequency": "1次/月",
                 "successRate": 90,
                 "sourceType": "自定义",
-                "skillSize": 11770,
-                "skillSizeLabel": "11K字 · 中型",
+                "skillSize": 43448,
+                "skillSizeLabel": "43K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
               }
             ],
-            "count": 8,
-            "avgLevel": 3.3
+            "count": 9,
+            "avgLevel": 3.2
           },
           "🎬 演示制作": {
             "role": "presentation",
@@ -5166,10 +5290,29 @@
                 "ksInternal": true,
                 "cfProject": false,
                 "tag": "KS"
+              },
+              {
+                "name": "cf-ppt-gen",
+                "displayName": "CF-PPT生成",
+                "displayRole": "PPT生成",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "This skill should be used when the user asks to \"generate PPT\", \"create slides\", \"make presentation\", \"生成PPT\", \"制作幻灯片\", \"做PPT\", \"创建演示文稿\", or discusses creating multi-page presentations with consistent",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 17792,
+                "skillSizeLabel": "17K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
               }
             ],
-            "count": 4,
-            "avgLevel": 3.0
+            "count": 5,
+            "avgLevel": 2.6
           },
           "📤 发布推送": {
             "role": "publish",
@@ -5366,10 +5509,29 @@
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": "SL"
+              },
+              {
+                "name": "scheduled-kim-message",
+                "displayName": "定时KIM消息",
+                "displayRole": "定时推送",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "当用户需要定时提醒、定时播报、或定时执行任务并推送结果时使用此 skill。包含一次性提醒和循环任务的完整参数结构。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 3118,
+                "skillSizeLabel": "3K字 · 小型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": "KS"
               }
             ],
-            "count": 10,
-            "avgLevel": 3.2
+            "count": 11,
+            "avgLevel": 3.0
           },
           "🏢 办公协作": {
             "role": "workplace",
@@ -5661,10 +5823,67 @@
                 "ksInternal": true,
                 "cfProject": false,
                 "tag": ""
+              },
+              {
+                "name": "快手-sso-login-client",
+                "displayName": "SSO登录",
+                "displayRole": "内网鉴权",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "当使用 agent-browser 访问任何 xx.corp.快手.com 发现没有权限时，都需要调用此 skill 完成登录",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 30022,
+                "skillSizeLabel": "30K字 · 大型",
+                "ksInternal": true,
+                "cfProject": false,
+                "tag": "KS"
+              },
+              {
+                "name": "enterprise-sheet",
+                "displayName": "企业表格",
+                "displayRole": "在线表格",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 66,
+                "description": "快手企业表格读取：根据 Docs 在线表格链接，获取表格元数据和单元格内容，支持多页签、范围查询。当用户提供 Docs 在线表格链接并要求读取表格内容时触发。不处理普通文本文档、本地 Excel 文件。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 1,
+                "frequency": "<0.1/天",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 7852,
+                "skillSizeLabel": "7K字 · 中型",
+                "ksInternal": true,
+                "cfProject": false,
+                "tag": "KS"
+              },
+              {
+                "name": "meeting-room-booking",
+                "displayName": "会议室预订",
+                "displayRole": "日程预订",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 68,
+                "description": "根据时间段和关键词推荐空闲会议室，并自动创建会议日程。当用户说「帮我订个会议室」「找个空会议室」「约个10人会议室」「预订会议室」「明天下午3点订个会议室」时触发。支持按职场/楼层筛选、自动推荐空闲会议室并创建日程。不负责会议室取消、不处理非快手内部会议室预订。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 5,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 10218,
+                "skillSizeLabel": "10K字 · 中型",
+                "ksInternal": true,
+                "cfProject": false,
+                "tag": "KS"
               }
             ],
-            "count": 15,
-            "avgLevel": 3.0
+            "count": 18,
+            "avgLevel": 2.9
           },
           "🖼️ 图像生成": {
             "role": "image-gen",
@@ -5804,10 +6023,48 @@
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
+              },
+              {
+                "name": "image-to-image",
+                "displayName": "图生图",
+                "displayRole": "参考图生成",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "本技能用于调用万擎内部API进行图生图操作，基于1~14张参考图片生成新图片。以下场景唤醒：图生图、图片编辑（修改图片内容/颜色/风格/背景）、多图参考合成（把多张图合成一张）、基于参考图生成新图。不唤醒场景：纯文字生图（无参考图）、图片下载、图片查看。",
+                "lastUpdated": "2026-04-17",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 11286,
+                "skillSizeLabel": "11K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "text-to-image",
+                "displayName": "文生图",
+                "displayRole": "文字转图片",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 66,
+                "description": "本技能用于调用万擎内部API进行文生图。以下场景唤醒：用户说\"生成图片\"、\"文生图\"、\"画图\"、\"AI绘图\"、\"generate image\"、\"image generation\"、\"做一张图\"、\"生成架构图\"、\"生成流程图\"、\"生成信息图\"。以下场景不唤醒：用户讨论图片编辑、图生图、上传图片等非文生图场景。",
+                "lastUpdated": "2026-04-17",
+                "callCount": 6,
+                "frequency": "2次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 52455,
+                "skillSizeLabel": "52K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
               }
             ],
-            "count": 7,
-            "avgLevel": 3.4
+            "count": 9,
+            "avgLevel": 3.1
           },
           "🤖 AI工程": {
             "role": "ai-engineering",
@@ -5928,10 +6185,48 @@
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
+              },
+              {
+                "name": "agent-browser",
+                "displayName": "浏览器自动化",
+                "displayRole": "网页交互",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 66,
+                "description": "浏览器自动化 CLI 工具。当用户需要与网站交互时使用，包括打开网页、填写表单、点击按钮、截图、数据抓取、Web 应用测试或任何浏览器自动化任务。不支持非浏览器场景，如纯后端请求、本地文件操作、桌面原生应用自动化。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 2,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 73941,
+                "skillSizeLabel": "73K字 · 巨型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "codeflicker-controller",
+                "displayName": "CF控制器",
+                "displayRole": "CF API",
+                "source": "林克核心能力",
+                "level": 1,
+                "exp": 10,
+                "description": "This skill should be used when the user asks to \"control CodeFlicker\", \"operate CodeFlicker IDE\", \"automate CodeFlicker\", \"send task to CodeFlicker\", \"open CodeFlicker workspace\", \"close CodeFlicker w",
+                "lastUpdated": "2026-04-15",
+                "callCount": 0,
+                "frequency": "0",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 43936,
+                "skillSizeLabel": "43K字 · 大型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
               }
             ],
-            "count": 6,
-            "avgLevel": 3.0
+            "count": 8,
+            "avgLevel": 2.8
           },
           "🔧 软件工程": {
             "role": "software-engineering",
@@ -6242,9 +6537,47 @@
                 "ksInternal": true,
                 "cfProject": false,
                 "tag": "KS"
+              },
+              {
+                "name": "kate-prd-understand",
+                "displayName": "PRD需求理解",
+                "displayRole": "需求分析",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 67,
+                "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（kate-brief-design）。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 4,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 10392,
+                "skillSizeLabel": "10K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
+              },
+              {
+                "name": "kate-brief-design",
+                "displayName": "技术方案设计",
+                "displayRole": "方案设计",
+                "source": "林克核心能力",
+                "level": 3,
+                "exp": 65,
+                "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
+                "lastUpdated": "2026-04-15",
+                "callCount": 4,
+                "frequency": "1次/月",
+                "successRate": 90,
+                "sourceType": "自定义",
+                "skillSize": 11337,
+                "skillSizeLabel": "11K字 · 中型",
+                "ksInternal": false,
+                "cfProject": false,
+                "tag": ""
               }
             ],
-            "count": 16,
+            "count": 18,
             "avgLevel": 2.8
           },
           "🌐 社区学习": {
@@ -6471,229 +6804,11 @@
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": "SL"
-              }
-            ],
-            "count": 10,
-            "avgLevel": 2.0
-          },
-          "其他技能": {
-            "icon": "📦",
-            "color": "#64748b",
-            "layer": "execution",
-            "skills": [
-              {
-                "name": "find-skills",
-                "displayName": "ClawHub CLI 搜索指南 🚀",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 5,
-                "exp": 100,
-                "description": "帮助用户找到合适的技能来完成他们的任务。当用户要求找技能时，比如 1.我需要一个技能来帮我写单元测试；2.有没有技能可以帮我分析这个代码库的安全漏洞；3.我该怎么生成一张图片。或者用户的诉求没有已安装的技能可以满足，这时候就主动询问用户是否使用 find-skills 来找技能。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 88,
-                "frequency": "1次/月",
-                "successRate": 95,
-                "sourceType": "自定义",
-                "skillSize": 1273,
-                "skillSizeLabel": "1K字 · 小型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "docs-shuttle",
-                "displayName": "docs-shuttle: Docs 文档同步工具",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 68,
-                "description": "快手内网 Docs 文档与本地 Markdown 双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「编辑文档」「更新文档」「申请文档权限」「从 Docs 拉取」「同步文档」「搜索文档」时使用此技能。支持文档搜索、上传、编辑、拉取、权限申请。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 6,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 43448,
-                "skillSizeLabel": "43K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "meeting-room-booking",
-                "displayName": "meeting-room-booking",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 68,
-                "description": "根据时间段和关键词推荐空闲会议室，并自动创建会议日程。当用户说「帮我订个会议室」「找个空会议室」「约个10人会议室」「预订会议室」「明天下午3点订个会议室」时触发。支持按职场/楼层筛选、自动推荐空闲会议室并创建日程。不负责会议室取消、不处理非快手内部会议室预订。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 5,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 10218,
-                "skillSizeLabel": "10K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "kate-prd-understand",
-                "displayName": "Kate PRD 需求理解",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 67,
-                "description": "基于 PRD/需求文档与代码仓库进行技术导向的需求理解。用户提供仓库和需求内容（文本或文档链接），输出结构化需求分析，可直接衔接技术方案设计（kate-brief-design）。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 4,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 10392,
-                "skillSizeLabel": "10K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "cf-internet-content-research",
-                "displayName": "互联网内容调研（统一技能）",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 67,
-                "description": "互联网内容调研一体化技能（可被其他技能调用）。整合多平台数据源：微信公众号搜索、小红书笔记搜索、Web通用搜索。覆盖：关键词搜索、正文抓取、批量拉取、内容分析/结构化整理/可视化输出。触发词包括：互联网调研, 内容调研, 微信公众号, 公众号搜索, weixin_search, 小红书搜索, 搜一下小红书, 小红书调研, xiaohongshu, 公众号调研, 整理公众号, 多平台搜索, 国内信源",
-                "lastUpdated": "2026-04-15",
-                "callCount": 4,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 15462,
-                "skillSizeLabel": "15K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "agent-browser",
-                "displayName": "Browser Automation with agent-browser",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 66,
-                "description": "浏览器自动化 CLI 工具。当用户需要与网站交互时使用，包括打开网页、填写表单、点击按钮、截图、数据抓取、Web 应用测试或任何浏览器自动化任务。不支持非浏览器场景，如纯后端请求、本地文件操作、桌面原生应用自动化。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 2,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 73941,
-                "skillSizeLabel": "73K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "enterprise-sheet",
-                "displayName": "📊 Enterprise Sheet Reader",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 66,
-                "description": "快手企业表格读取：根据 Docs 在线表格链接，获取表格元数据和单元格内容，支持多页签、范围查询。当用户提供 Docs 在线表格链接并要求读取表格内容时触发。不处理普通文本文档、本地 Excel 文件。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 7852,
-                "skillSizeLabel": "7K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "text-to-image",
-                "displayName": "万擎文生图 Skill",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 66,
-                "description": "本技能用于调用万擎内部API进行文生图。以下场景唤醒：用户说\"生成图片\"、\"文生图\"、\"画图\"、\"AI绘图\"、\"generate image\"、\"image generation\"、\"做一张图\"、\"生成架构图\"、\"生成流程图\"、\"生成信息图\"。以下场景不唤醒：用户讨论图片编辑、图生图、上传图片等非文生图场景。",
-                "lastUpdated": "2026-04-17",
-                "callCount": 6,
-                "frequency": "2次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 52455,
-                "skillSizeLabel": "52K字 · 巨型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "kate-brief-design",
-                "displayName": "Kate 技术方案设计",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 65,
-                "description": "基于 PRD/需求文档与代码仓库生成可落地的技术方案设计（模块划分、数据流转、接口设计等），产出上传到 docs 并返回链接。可与需求理解（kate-prd-understand）共用 session，实现「先需求理解、再技术方案设计」的连贯流程。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 4,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 11337,
-                "skillSizeLabel": "11K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "cf-web-artifacts",
-                "displayName": "快手内部全栈项目开发指南",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 63,
-                "description": "快手内部全栈开发工具链指南（@codeflicker/cf-create-web + appwrite-cf + frontend-cloud）。仅在以下两种情况触发：1) 用户明确提到快手内部工具（cf-web-artifacts、appwrite-cf、frontend-cloud、@codeflicker/appwrite 等关键词）；2) 检测到项目已使用快手工具创建（package.",
-                "lastUpdated": "2026-04-15",
-                "callCount": 4,
-                "frequency": "1次/月",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 35347,
-                "skillSizeLabel": "35K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "content-research-writer",
-                "displayName": "Content Research Writer",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing proc",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 14283,
-                "skillSizeLabel": "14K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
               },
               {
                 "name": "快手-intelligent-device-xz",
-                "displayName": "查询指定园区和楼层",
-                "displayRole": "",
+                "displayName": "智能设备查询",
+                "displayRole": "卫生间等",
                 "source": "林克核心能力",
                 "level": 1,
                 "exp": 10,
@@ -6707,145 +6822,12 @@
                 "skillSizeLabel": "11K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "快手-sso-login-client",
-                "displayName": "快手内网 SSO 登录客户端",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "当使用 agent-browser 访问任何 xx.corp.快手.com 发现没有权限时，都需要调用此 skill 完成登录",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 30022,
-                "skillSizeLabel": "30K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "tavily-search",
-                "displayName": "Tavily 网页搜索",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "使用 Tavily API 搜索网页。当用户要求搜索网页、查找资料来源或查找链接时使用。返回包含标题、URL 和摘要的相关搜索结果。不适用于本地文件搜索、代码/仓库搜索或离线内容检索。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 4934,
-                "skillSizeLabel": "4K字 · 小型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "codeflicker-controller",
-                "displayName": "CodeFlicker Controller",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "This skill should be used when the user asks to \"control CodeFlicker\", \"operate CodeFlicker IDE\", \"automate CodeFlicker\", \"send task to CodeFlicker\", \"open CodeFlicker workspace\", \"close CodeFlicker w",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 43936,
-                "skillSizeLabel": "43K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "ai-news-monitor",
-                "displayName": "AI News Monitor Skill",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "Monitor AI/tech news from customizable sources and deliver periodic digests via message/email. Supports RSS, websites, Twitter/X, and custom feeds.",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 26403,
-                "skillSizeLabel": "26K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "codeflicker-skill-install",
-                "displayName": "CodeFlicker Skill 安装工具",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "当用户说 \"安装skill\"，\"帮我找一个skill\"，\"帮我安装一个xx的skill\"，\"从内网安装skill\"，\"从MyFlicker安装skill\"，\"安装快手的skill\"，\"在内网市场搜索skill\"，\"帮我从CodeFlicker安装一个skill时\"，触发此skill。支持两种安装方式：1.直接粘贴skill详情链接（https://myflicker.corp.快手.c",
-                "lastUpdated": "2026-04-17",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 15383,
-                "skillSizeLabel": "15K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "scheduled-kim-message",
-                "displayName": "Scheduled Kim Message",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "当用户需要定时提醒、定时播报、或定时执行任务并推送结果时使用此 skill。包含一次性提醒和循环任务的完整参数结构。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 3118,
-                "skillSizeLabel": "3K字 · 小型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "image-to-image",
-                "displayName": "万擎图生图 Skill",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "本技能用于调用万擎内部API进行图生图操作，基于1~14张参考图片生成新图片。以下场景唤醒：图生图、图片编辑（修改图片内容/颜色/风格/背景）、多图参考合成（把多张图合成一张）、基于参考图生成新图。不唤醒场景：纯文字生图（无参考图）、图片下载、图片查看。",
-                "lastUpdated": "2026-04-17",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 11286,
-                "skillSizeLabel": "11K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
+                "tag": "KS"
               },
               {
                 "name": "cafeteria-takeout",
-                "displayName": "外卖订餐 Skill",
-                "displayRole": "",
+                "displayName": "食堂外卖",
+                "displayRole": "外卖订餐",
                 "source": "林克核心能力",
                 "level": 1,
                 "exp": 10,
@@ -6859,12 +6841,12 @@
                 "skillSizeLabel": "45K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
-                "tag": ""
+                "tag": "KS"
               },
               {
                 "name": "wanjia-charging",
-                "displayName": "wanjia-charging",
-                "displayRole": "",
+                "displayName": "万家充电桩",
+                "displayRole": "充电桩查询",
                 "source": "林克核心能力",
                 "level": 1,
                 "exp": 10,
@@ -6878,52 +6860,14 @@
                 "skillSizeLabel": "4K字 · 小型",
                 "ksInternal": false,
                 "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "kstack-reader",
-                "displayName": "KStack Article Reader",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "读取或搜索快手内网 KStack 技术文章。当用户说「帮我看 KStack 上的某篇文章」「搜索内网技术文档」「查KStack」或提供 KStack 文章链接时触发。不负责非 KStack 内容的部分。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 9866,
-                "skillSizeLabel": "9K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "cf-ppt-gen",
-                "displayName": "PPT 图片生成器 (PPT Image Generator)",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "This skill should be used when the user asks to \"generate PPT\", \"create slides\", \"make presentation\", \"生成PPT\", \"制作幻灯片\", \"做PPT\", \"创建演示文稿\", or discusses creating multi-page presentations with consistent",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 17792,
-                "skillSizeLabel": "17K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
+                "tag": "KS"
               }
             ],
-            "count": 23,
-            "avgLevel": 2.0
+            "count": 13,
+            "avgLevel": 1.8
           }
         },
-        "count": 129,
+        "count": 127,
         "avgLevel": 2.8
       }
     },
@@ -7205,7 +7149,7 @@
           "thinking_pattern"
         ],
         "fileCount": 26,
-        "sizeKB": 197.1,
+        "sizeKB": 197.3,
         "heatLevel": 5,
         "recentCount": 3
       },
@@ -7285,7 +7229,7 @@
               "thinking_pattern"
             ],
             "fileCount": 26,
-            "sizeKB": 197.1,
+            "sizeKB": 197.3,
             "heatLevel": 5,
             "recentCount": 3
           },
@@ -7308,7 +7252,7 @@
           }
         },
         "totalFiles": 167,
-        "totalSizeKB": 1124.7
+        "totalSizeKB": 1124.9
       },
       "🔍 领域知识层": {
         "icon": "🔍",
@@ -7405,7 +7349,7 @@
       }
     },
     "totalFiles": 309,
-    "totalSizeKB": 2327.4
+    "totalSizeKB": 2327.6
   },
   "memories": {
     "items": [
@@ -7543,25 +7487,6 @@
         "source": "项目记忆"
       },
       {
-        "title": "link-homepage git仓库损坏导致静默推送失败（一周日报数据不更新）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "前端开发",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🎨",
-        "color": "#f472b6",
-        "description": "问题描述 林克首页「我的日报」Tab 日期选择器一周未更新（停在2026-04-08），本地数据每日正常生成，但 GitHub Pages 从未获取...",
-        "keywords": [
-          "link-homepage",
-          "git损坏",
-          "git仓库损坏",
-          "静默失败",
-          "日报不更新"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-11",
-        "source": "项目记忆"
-      },
-      {
         "title": "任务完成判断必须证据门控（防口头声称完成）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -7578,25 +7503,6 @@
         ],
         "importance": 5,
         "updatedAt": "2026-04-14",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "企业数字员工平台 — 增量开发差距清单与优先级（已迁移到任务流程经验）",
-        "category": "task_flow_experience",
-        "categoryLabel": "思维方法",
-        "layer": "🧠 元认知层",
-        "icon": "🧠",
-        "color": "#fbbf24",
-        "description": "企业数字员工平台 — 增量开发差距清单与优先级 当前状态：Web 端 7 页基本框架已实现，使用 Mock 数据，Claude API 对话...",
-        "keywords": [
-          "digital-employee",
-          "gap-list",
-          "priority",
-          "roadmap",
-          "PRD"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-13",
         "source": "用户显式记录"
       },
       {
@@ -7693,6 +7599,25 @@
         "importance": 5,
         "updatedAt": "2026-04-19",
         "source": "项目记忆"
+      },
+      {
+        "title": "规则膨胀悖论：结构性约束 > 文字规则（含双轨落地规范 v2）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "发布部署",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "规则膨胀悖论：结构性约束 > 文字规则 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LLM的注意力是有限资源。...",
+        "keywords": [
+          "规则膨胀",
+          "结构约束",
+          "注意力衰减",
+          "脚本门控",
+          "文字规范"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-04-19",
+        "source": "用户显式记录"
       },
       {
         "title": "部门介绍类文档的黄金公式（合并版）",
@@ -8569,6 +8494,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "link-homepage git仓库损坏导致静默推送失败（一周日报数据不更新）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "问题描述 林克首页「我的日报」Tab 日期选择器一周未更新（停在2026-04-08），本地数据每日正常生成，但 GitHub Pages 从未获取...",
+        "keywords": [
+          "link-homepage",
+          "git损坏",
+          "git仓库损坏",
+          "静默失败",
+          "日报不更新"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-04-11",
+        "source": "项目记忆"
+      },
+      {
         "title": "replace_in_file 连续失败后的精确匹配三步排障协议（3-Strike规则）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "通用踩坑",
@@ -8719,6 +8663,25 @@
         "importance": 4,
         "updatedAt": "2026-04-01",
         "source": "用户显式记录"
+      },
+      {
+        "title": "企业数字员工平台 — 增量开发差距清单与优先级",
+        "category": "project_configuration",
+        "categoryLabel": "项目配置",
+        "layer": null,
+        "icon": "🔧",
+        "color": "#f97316",
+        "description": "企业数字员工平台 — 增量开发差距清单与优先级 当前状态：Web 端 7 页全部实现基本框架，使用 Mock 数据，Claude API 对...",
+        "keywords": [
+          "增量开发",
+          "差距分析",
+          "优先级",
+          "P0",
+          "P1"
+        ],
+        "importance": 4,
+        "updatedAt": "2026-03-08",
+        "source": "项目记忆"
       },
       {
         "title": "企业数字员工平台 — 项目概览与产品定位",
@@ -9136,25 +9099,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-27",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "文字规范≠执行保障：规范落地必须双轨（文档+代码门控）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "发布部署",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "🚀",
-        "color": "#4ade80",
-        "description": "根因 文字规范（workflow/SKILL.md）只能告诉你\"应该做什么\"，但无法阻止你\"忘做\"。 只有代码门控才能在关键节点硬性拦截缺失...",
-        "keywords": [
-          "文字规范",
-          "代码门控",
-          "双轨",
-          "质量门",
-          "字段缺失"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-03-24",
         "source": "用户显式记录"
       },
       {
@@ -10367,27 +10311,9 @@
         "importance": 2,
         "updatedAt": "2026-03-19",
         "source": "项目记忆"
-      },
-      {
-        "title": "规则膨胀悖论：结构性约束 > 文字规则",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "规则膨胀悖论：结构性约束 > 文字规则 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LLM的注意力是有限资源。...",
-        "keywords": [
-          "规则膨胀",
-          "结构约束",
-          "注意力衰减",
-          "脚本门控"
-        ],
-        "importance": 2,
-        "updatedAt": "2026-03-19",
-        "source": "用户显式记录"
       }
     ],
-    "total": 147,
+    "total": 145,
     "byCategory": {
       "development_code_specification": {
         "count": 10,
@@ -10411,7 +10337,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 21,
+        "count": 20,
         "label": "通用踩坑",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -10432,14 +10358,14 @@
         "description": "执行框架：怎么做，保障做事质量"
       },
       "common_pitfalls_experience": {
-        "count": 84,
-        "label": "脚本自动化",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "脚本参数/文件时间踩坑"
+        "count": 83,
+        "label": "发布部署",
+        "icon": "🚀",
+        "color": "#4ade80",
+        "description": "GitHub Pages/部署踩坑"
       },
       "project_configuration": {
-        "count": 3,
+        "count": 4,
         "label": "项目知识",
         "icon": "📋",
         "color": "#c2410c",
@@ -10832,25 +10758,6 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "企业数字员工平台 — 增量开发差距清单与优先级（已迁移到任务流程经验）",
-                "category": "task_flow_experience",
-                "categoryLabel": "思维方法",
-                "layer": "🧠 元认知层",
-                "icon": "🧠",
-                "color": "#fbbf24",
-                "description": "企业数字员工平台 — 增量开发差距清单与优先级 当前状态：Web 端 7 页基本框架已实现，使用 Mock 数据，Claude API 对话...",
-                "keywords": [
-                  "digital-employee",
-                  "gap-list",
-                  "priority",
-                  "roadmap",
-                  "PRD"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-04-13",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "一致性检查闭环：发现→修复→自动化→门控（v2 — 补充人工记忆依赖联动扫描）",
                 "category": "task_flow_experience",
                 "categoryLabel": "思维方法",
@@ -10927,7 +10834,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 6
+            "count": 5
           },
           "做事方法": {
             "icon": "⚙️",
@@ -11090,7 +10997,7 @@
             "count": 8
           }
         },
-        "count": 31
+        "count": 30
       },
       "🛠️ 实践记忆层": {
         "icon": "🛠️",
@@ -11441,7 +11348,7 @@
                   "静默失败",
                   "日报不更新"
                 ],
-                "importance": 5,
+                "importance": 4,
                 "updatedAt": "2026-04-11",
                 "source": "项目记忆"
               },
@@ -12100,22 +12007,22 @@
             "description": "GitHub Pages/部署踩坑",
             "items": [
               {
-                "title": "文字规范≠执行保障：规范落地必须双轨（文档+代码门控）",
+                "title": "规则膨胀悖论：结构性约束 > 文字规则（含双轨落地规范 v2）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "发布部署",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "🚀",
                 "color": "#4ade80",
-                "description": "根因 文字规范（workflow/SKILL.md）只能告诉你\"应该做什么\"，但无法阻止你\"忘做\"。 只有代码门控才能在关键节点硬性拦截缺失...",
+                "description": "规则膨胀悖论：结构性约束 > 文字规则 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LLM的注意力是有限资源。...",
                 "keywords": [
-                  "文字规范",
-                  "代码门控",
-                  "双轨",
-                  "质量门",
-                  "字段缺失"
+                  "规则膨胀",
+                  "结构约束",
+                  "注意力衰减",
+                  "脚本门控",
+                  "文字规范"
                 ],
-                "importance": 4,
-                "updatedAt": "2026-03-24",
+                "importance": 5,
+                "updatedAt": "2026-04-19",
                 "source": "用户显式记录"
               },
               {
@@ -12485,24 +12392,6 @@
             "description": "脚本参数/文件时间踩坑",
             "items": [
               {
-                "title": "规则膨胀悖论：结构性约束 > 文字规则",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "规则膨胀悖论：结构性约束 > 文字规则 核心洞察 > 交通法规写得再详细，不如一个实体护栏管用。 > LLM的注意力是有限资源。...",
-                "keywords": [
-                  "规则膨胀",
-                  "结构约束",
-                  "注意力衰减",
-                  "脚本门控"
-                ],
-                "importance": 2,
-                "updatedAt": "2026-03-19",
-                "source": "用户显式记录"
-              },
-              {
                 "title": "自动化管道脚本卫生规范（五层检查表）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "脚本自动化",
@@ -12712,7 +12601,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 12
+            "count": 11
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -13356,7 +13245,7 @@
             "count": 4
           }
         },
-        "count": 116
+        "count": 115
       }
     }
   },
@@ -13487,7 +13376,7 @@
       154,
       154,
       154,
-      157
+      156
     ]
   },
   "achievements": [
@@ -13645,8 +13534,8 @@
       "rarity": "rare",
       "category": "growth",
       "unlocked": false,
-      "progress": 66,
-      "progressText": "执行效率 52/80",
+      "progress": 78,
+      "progressText": "执行效率 63/80",
       "date": "???"
     },
     {

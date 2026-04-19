@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-20T06:29:24.024431",
+  "generatedAt": "2026-04-20T06:45:50.512818",
   "summary": {
     "totalDays": 30,
-    "latestDate": "2026-04-19",
-    "earliestDate": "2026-03-21"
+    "latestDate": "2026-04-20",
+    "earliestDate": "2026-03-22"
   },
   "trend": {
     "dates": [
@@ -36,7 +36,7 @@
       185,
       186,
       186,
-      186
+      179
     ],
     "knowledge": [
       305,
@@ -52,7 +52,7 @@
       307,
       307,
       307,
-      307
+      309
     ],
     "memory": [
       140,
@@ -68,10 +68,208 @@
       154,
       154,
       154,
-      160
+      157
     ]
   },
   "reports": [
+    {
+      "date": "2026-04-20",
+      "dayOfWeek": "周一",
+      "activeProjects": 3,
+      "totalCommits": 0,
+      "conversationCount": 5,
+      "coreProgress": [
+        "💬 完成 5 个任务: 用户想要进行每周深度修炼活动, 在W16周报中添加周五和周日的日报索引...",
+        "📁 项目成果: 网页更新 296 个",
+        "📚 新增 2 篇知识文档，扩展专业领域覆盖"
+      ],
+      "deliveries": [
+        {
+          "title": "Weekly Deep Practice Session",
+          "type": "conversation",
+          "goal": "用户想要进行每周深度修炼活动",
+          "deliverables": [],
+          "process": [
+            "用户发起了每周深度修炼的请求，系统返回了标识符309372389f183b325c22800ad190c2650fa77237作为响应。"
+          ],
+          "tags": [
+            "practice",
+            "weekly",
+            "training"
+          ]
+        },
+        {
+          "title": "W16 Weekly Report Update",
+          "type": "conversation",
+          "goal": "在W16周报中添加周五和周日的日报索引",
+          "deliverables": [],
+          "process": [
+            "在`weekly-2026-W16.html`第715行后和第720行后分别添加了周五和周日的日报条目，完成编辑后通过`sync_to_external.py`脚本同步并推送到外部仓库。"
+          ],
+          "tags": [
+            "daily-report",
+            "weekly-summary",
+            "html-edit"
+          ]
+        },
+        {
+          "title": "W16 2026 AI Insight Weekly Report Generation and Deployment",
+          "type": "conversation",
+          "goal": "完成2026年W16（4月14-19日）AI领域周报的生成、HTML制作、部署发布及四位置验证交付",
+          "deliverables": [],
+          "process": [
+            "成功生成W16周报MD和HTML文件，完成内部/外部双版本部署，四位置验证（内部周报、内部首页引用、外部周报、外部仓库周报）全部通过，git push完成，KIM预览已发送，等待用户确认后群发。关键数..."
+          ],
+          "tags": [
+            "weekly-report",
+            "ai-insight",
+            "deployment",
+            "html-generation",
+            "git-push"
+          ]
+        },
+        {
+          "title": "Memory Optimization Step 4.1 Execution",
+          "type": "conversation",
+          "goal": "执行每日修炼的 Step 4.1 记忆优化任务，包括加载元执行框架、记忆卫生技能，进行全量记忆扫描并处理各类问题，最终输出执行证据",
+          "deliverables": [],
+          "process": [
+            "任务要求执行记忆优化 Step 4.1，需先激活 meta-execution 质量保障，加载 link-memory-hygiene 技能，读取诊断数据后对全部记忆进行逐一扫描，按优先级处理 P0（..."
+          ],
+          "tags": [
+            "memory-optimization",
+            "daily-cultivation",
+            "meta-execution",
+            "memory-hygiene",
+            "step-4.1"
+          ]
+        },
+        {
+          "title": "AI-Insight OAuth Appwrite Deployment Pitfalls",
+          "type": "conversation",
+          "goal": "将本次会话中遇到的OAuth回调URL硬编码、Appwrite SDK包名错误、ESM裸模块问题等部署踩坑经验沉淀为可复用的记忆和技能",
+          "deliverables": [],
+          "process": [],
+          "tags": [
+            "github-pages",
+            "oauth",
+            "appwrite",
+            "esm",
+            "deployment"
+          ]
+        },
+        {
+          "title": "个人助理_V1",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "CHANGELOG.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "README.md",
+              "type": "document",
+              "url": ""
+            },
+            {
+              "name": "metrics-log.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "网页更新 296 个",
+            "文档完善 131 份",
+            "功能代码优化"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 616,
+          "deployUrl": null
+        },
+        {
+          "title": "knowledge/ai-insight",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "README.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "文档完善 2 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 2,
+          "deployUrl": null
+        },
+        {
+          "title": "knowledge/self-evolution",
+          "type": "project",
+          "goal": "项目开发与维护",
+          "deliverables": [
+            {
+              "name": "metrics-log.md",
+              "type": "document",
+              "url": ""
+            }
+          ],
+          "process": [
+            "文档完善 1 份"
+          ],
+          "commitCount": 0,
+          "fileChangeCount": 2,
+          "deployUrl": null
+        }
+      ],
+      "capabilityGrowth": {
+        "skillCount": 179,
+        "knowledgeCount": 277,
+        "memoryCount": 157,
+        "skillChange": -7,
+        "knowledgeChange": 2,
+        "memoryChange": 0,
+        "newSkills": [],
+        "updatedSkills": [],
+        "newKnowledge": [
+          {
+            "name": "README",
+            "category": "ai-insight"
+          },
+          {
+            "name": "README",
+            "category": "ai-insight"
+          }
+        ],
+        "updatedKnowledge": [
+          {
+            "name": "README",
+            "category": "root"
+          },
+          {
+            "name": "metrics-log",
+            "category": "self-evolution"
+          }
+        ],
+        "newMemory": [],
+        "updatedMemory": [],
+        "trend": "growing"
+      },
+      "skillCount": 179,
+      "knowledgeCount": 277,
+      "memoryCount": 157,
+      "skillChange": -7,
+      "knowledgeChange": 2,
+      "memoryChange": 0,
+      "highlights": [
+        "💬 完成 5 个任务: 用户想要进行每周深度修炼活动, 在W16周报中添加周五和周日的日报索引...",
+        "📁 项目成果: 网页更新 296 个",
+        "📚 新增 2 篇知识文档，扩展专业领域覆盖"
+      ]
+    },
     {
       "date": "2026-04-19",
       "dayOfWeek": "周日",
@@ -6264,803 +6462,6 @@
         "💬 完成 12 个任务: 完成社区夜间巡逻任务并分享关于记忆系统失效模式的技术经验, 用户进行了简单的确认或回复...",
         "📁 项目成果: 网页更新 28 个",
         "⚡ 新增能力: sl-weixin-bridge，扩展任务处理范围"
-      ]
-    },
-    {
-      "date": "2026-03-21",
-      "dayOfWeek": "周六",
-      "activeProjects": 2,
-      "totalCommits": 0,
-      "conversationCount": 53,
-      "coreProgress": [
-        "💬 完成 53 个任务: 修改研发效能中心的OKR文档，将S1/S2/S3成熟度框架替换为L1/L2/L3..., To perform morning patrol tasks in ClawB......",
-        "📁 项目成果: 网页更新 130 个",
-        "⚡ 新增能力: sl-ai-insight、meta-daily-reflection-evolution，提升调研分析能力",
-        "🧠 新增记忆: 输出文件统一规范（Output目录 + ，规范化开发实践"
-      ],
-      "deliveries": [
-        {
-          "title": "AI Employee Development OKR Document Revision",
-          "type": "conversation",
-          "goal": "修改研发效能中心的OKR文档，将S1/S2/S3成熟度框架替换为L1/L2/L3框架，并细化KR1/KR2/KR3的具体实施路径",
-          "deliverables": [],
-          "process": [
-            "完成了O2文档的版本更新，主要修改包括：1) 将所有S级成熟度标记替换为L级（L1辅助/L2协同/L3自主）；2) 细化了KR1的场景建设路径和推广机制、KR2的建设阶段划分、KR3的完整实施框架；3..."
-          ],
-          "tags": [
-            "OKR",
-            "AI-assistant",
-            "productivity",
-            "documentation",
-            "workflow"
-          ]
-        },
-        {
-          "title": "ClawBook Community Morning Patrol and Engagement",
-          "type": "conversation",
-          "goal": "To perform morning patrol tasks in ClawBook community including checking hot posts, reviewing #til board, assisting in #stuck board, and engaging with valuable content.",
-          "deliverables": [],
-          "process": [
-            "1) Monitored top 10 hot posts and engaged with key content like AI insights and tool tips. 2) Review..."
-          ],
-          "tags": [
-            "community engagement",
-            "recommendation systems",
-            "DeepFM",
-            "API troubleshooting",
-            "technical discussions"
-          ]
-        },
-        {
-          "title": "Testing baoyu-translate skill for English-Chinese translation",
-          "type": "conversation",
-          "goal": "完成用户任务",
-          "deliverables": [],
-          "process": [],
-          "tags": [
-            "translation",
-            "AI",
-            "terminology",
-            "localization",
-            "testing"
-          ]
-        },
-        {
-          "title": "System iteration limit handling and continuation",
-          "type": "conversation",
-          "goal": "用户需要继续操作以突破系统设定的最大迭代次数限制",
-          "deliverables": [],
-          "process": [],
-          "tags": [
-            "system-limit",
-            "iteration",
-            "continuation",
-            "error-handling"
-          ]
-        },
-        {
-          "title": "Skill Dojo Benchmark Report Generation",
-          "type": "conversation",
-          "goal": "生成并查看技能修炼场所有技能按分类执行的严格测试报告",
-          "deliverables": [],
-          "process": [
-            "通过Python脚本处理JSON格式的测试数据生成HTML报告，启动本地HTTP服务器提供可视化访问。测试覆盖了4个非林克技能，全部通过测试(100%通过率)，包括investment-tracker..."
-          ],
-          "tags": [
-            "skill-testing",
-            "benchmark-report",
-            "python-script",
-            "http-server",
-            "test-coverage"
-          ]
-        },
-        {
-          "title": "AI Text Humanization and Rewriting",
-          "type": "conversation",
-          "goal": "用户要求将一段带有明显AI特征的文本改写得更加自然和人性化",
-          "deliverables": [],
-          "process": [
-            "识别出原文4个AI写作模式问题（过度强调、冗余短语、通用正面结尾、模板化），提供了3个不同风格的改写版本（简洁直接/个人视角/承认复杂性），原文评分从18分提升至40+分。"
-          ],
-          "tags": [
-            "humanize-writing",
-            "text-rewriting",
-            "AI-patterns",
-            "natural-language"
-          ]
-        },
-        {
-          "title": "Skill-Dojo Optimization for High-Frequency Skills",
-          "type": "conversation",
-          "goal": "对高频使用的技能进行自动化测试、问题修复和优化报告生成，确保技能持续保持最佳状态。",
-          "deliverables": [],
-          "process": [
-            "完成了高频技能Top 10的调用统计，创建了`high-freq-skills-v1.json`测试场景，通过`skill-test-runner.py`自动化评测9个技能，修复了`internet-..."
-          ],
-          "tags": [
-            "skill-dojo",
-            "optimization",
-            "testing",
-            "automation",
-            "performance"
-          ]
-        },
-        {
-          "title": "WeChat Public Account Search for AI Agent Discussions",
-          "type": "conversation",
-          "goal": "用户希望了解微信公众号上关于AI Agent的最新讨论内容",
-          "deliverables": [],
-          "process": [
-            "使用internet-content-research技能的weixin_search工具搜索微信公众号，返回了10篇关于AI Agent的文章，精选了3篇代表性文章，内容包括工作流自动化、空间智能设..."
-          ],
-          "tags": [
-            "AI Agent",
-            "WeChat search",
-            "content research"
-          ]
-        }
-      ],
-      "capabilityGrowth": {
-        "skillCount": 124,
-        "knowledgeCount": 260,
-        "memoryCount": 124,
-        "skillChange": 0,
-        "knowledgeChange": 0,
-        "memoryChange": 1,
-        "newSkills": [
-          {
-            "name": "sl-ai-insight",
-            "description": "\"AI行业洞察平台专属技能。当用户明确提到'AI洞察'、'AI日报'、'AI周报'或执行AI行业调研任务时使用。核心场景"
-          },
-          {
-            "name": "meta-daily-reflection-evolution",
-            "description": "\"闭关修炼 — 自进化引擎的核心能力之一，每日运转的进化流水线。触发词：'每日修炼'、'闭关修炼'、'运行每日任务'、'"
-          },
-          {
-            "name": "internet-content-research",
-            "description": "\"互联网多平台数据源整合技能（数据采集层）。触发词：'微信公众号搜索'、'小红书搜索'、'公众号调研'、'多平台搜索'、"
-          },
-          {
-            "name": "meta-find-skills",
-            "description": "\"技能发现 — 技能生命周期的第一阶段。多源搜索 + 主动巡检。模式A: 用户触发搜索（找技能, 搜索技能, ClawH"
-          },
-          {
-            "name": "ks-kstack",
-            "description": "读取快手内部 KStack 平台的文章内容。触发词：'KStack文章'、'读取KStack'、'kstack'、'快手"
-          },
-          {
-            "name": "meta-skill-dojo",
-            "description": "\"技能修炼 — 技能生命周期的第四阶段（发现→创建→评估→修炼）。触发词：'技能修炼'、'跑一下技能测试'、'持续精进'"
-          },
-          {
-            "name": "meta-product-thinking",
-            "description": "|"
-          },
-          {
-            "name": "ks-kim-skills-assistant",
-            "description": "快手 KIM 平台通用 API 封装。提供消息发送/拉取、群管理、待办创建、日程管理等通用能力。这是底层技能，可被其他技"
-          },
-          {
-            "name": "web-dev-workflow",
-            "description": "|"
-          },
-          {
-            "name": "ks-快手-sso-login",
-            "description": "\"登录快手内网SSO。触发词：'SSO登录'、'内网登录'、'扫码登录'、'快手登录'。当用户需要访问快手内部网站（*."
-          },
-          {
-            "name": "meta-execution",
-            "description": "\"一次做对元技能 — 自动激活的任务执行质量保障框架。当接收任何需要执行的任务时自动激活，在会话续接时必须加载。提供「续"
-          },
-          {
-            "name": "meta-agent-session-controller",
-            "description": "林克会话编排 — 元技能层「做事方法」。通过Duet Protocol External API程序化控制AI会话，实现"
-          },
-          {
-            "name": "ks-tianwen-monitor-query",
-            "description": "\"查询天问（Tianwen）监控平台数据。触发词：'天问'、'监控曲线'、'监控数据'、'Tianwen'、'查监控'、"
-          },
-          {
-            "name": "meta-skill-management",
-            "description": "\"技能体系优化 — 系统优化工具之一，被内功修炼调用。触发词：'优化技能体系'、'技能架构优化'、'梳理技能关系'、'检"
-          },
-          {
-            "name": "html-screenshot",
-            "description": "\"HTML截图原子技能 — 将HTML渲染为高清PNG截图。触发词：'HTML截图'、'生成PNG'、'HTML转图片'"
-          },
-          {
-            "name": "sl-rd-efficiency-insight",
-            "description": "\"研发效能洞察平台专属技能。当用户明确提到'研发效能洞察'、'研效知识库'、'研效追踪'、'学习研发效能'、'效能调研'"
-          },
-          {
-            "name": "ks-hive-data-agent",
-            "description": "Hive数据智能查询助手。当用户询问Hive表、表结构、血缘、产出逻辑等问题时，自动访问天工Data Agent进行智能"
-          },
-          {
-            "name": "meta-xiaowuxianggong",
-            "description": "\"小无相功 — 自进化引擎的进化导航器。触发词：'小无相功'、'进化全景'、'周检'、'月检'、'查看进化状态'。作为三"
-          },
-          {
-            "name": "sl-yuque-publisher",
-            "description": "语雀知识库双向同步技能。支持发布文档、读取文档、删除文档、获取列表等操作。当用户说\"发布到语雀\"、\"读取语雀文档\"、\"打"
-          },
-          {
-            "name": "ks-kim-docs-shuttle",
-            "description": "快手内网 Docs 文档与本地双向同步工具。当用户说「上传文档到 Docs」「发布到 Docs」「从 Docs 拉取」「"
-          },
-          {
-            "name": "ks-kwaibi-sql-exec",
-            "description": "KwaiBI SQL 取数执行工具（完整自动化版）。自动执行 SQL 查询，记录查询文件名，等待查询成功后点击\"执行结果"
-          },
-          {
-            "name": "sl-weekly-fortune",
-            "description": "\"每周AI算命 — 用AI生图生成命运卡片。触发词：'AI算命'、'每周算命'、'周运势'、'命运卡片'、'fortun"
-          },
-          {
-            "name": "meta-knowledge-curator",
-            "description": "\"知识优化 — 系统优化工具之一，被内功修炼调用。触发词：'检查知识库健康度'、'知识优化'、'整理知识'、'知识库瘦身"
-          },
-          {
-            "name": "ks-kwaibi-data-query",
-            "description": "\"查询KwaiBI（天策）看板数据。触发词：'KwaiBI'、'天策'、'看板数据'、'查看板'、'KwaiBI看板'、"
-          },
-          {
-            "name": "ks-onepoint-meeting",
-            "description": "\"Onepoint会议助手 — 查询快手Onepoint会议数据。触发词：'查会议'、'会议记录'、'会议摘要'、'On"
-          }
-        ],
-        "updatedSkills": [
-          {
-            "name": "sl-investment-tracker",
-            "description": "\"沈浪投资理财追踪技能。触发词：'投资'、'理财'、'基金'、'持仓'、'加仓'、'减仓'、'止盈'、'止损'、'定投'"
-          }
-        ],
-        "newKnowledge": [],
-        "updatedKnowledge": [
-          {
-            "name": "overview",
-            "category": "personal-writings"
-          },
-          {
-            "name": "article-index",
-            "category": "personal-writings"
-          },
-          {
-            "name": "README",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-bookstore-peripheral-vs-core",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-year-end-work-and-void",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-heart-emotion-way",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-political-perspective",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-midsummer-reflections",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-doing-things-and-cultivating-heart",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-hacker-path",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-peripheral-bookstore",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-martial-arts-skill-training",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-animal-farm-justice",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-summer-reflection",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-righteous-path",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-work-and-void",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-poem-life-journey",
-            "category": "personal-writings"
-          },
-          {
-            "name": "dev-efficiency-secrets",
-            "category": "personal-writings"
-          },
-          {
-            "name": "dev-efficiency-secrets-annual",
-            "category": "personal-writings"
-          },
-          {
-            "name": "bigdata-ai-1-learning-map",
-            "category": "personal-writings"
-          },
-          {
-            "name": "bigdata-ai-2-knowledge-graph",
-            "category": "personal-writings"
-          },
-          {
-            "name": "core-concepts-of-growth",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-02-product-marketing-channel",
-            "category": "personal-writings"
-          },
-          {
-            "name": "three-dimensional-world-02-correlation",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thinking-simple-complex",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-03-scenario",
-            "category": "personal-writings"
-          },
-          {
-            "name": "martial-arts-ability",
-            "category": "personal-writings"
-          },
-          {
-            "name": "economics-graduation-summary",
-            "category": "personal-writings"
-          },
-          {
-            "name": "interdependence-strong-weak",
-            "category": "personal-writings"
-          },
-          {
-            "name": "career-core-value",
-            "category": "personal-writings"
-          },
-          {
-            "name": "simple-world-01-company-manager",
-            "category": "personal-writings"
-          },
-          {
-            "name": "simple-world-03-performance",
-            "category": "personal-writings"
-          },
-          {
-            "name": "simple-world-02-management-practice",
-            "category": "personal-writings"
-          },
-          {
-            "name": "three-dimensional-world-03-wholeness",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-06-business-model",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-07-macro-meso-micro",
-            "category": "personal-writings"
-          },
-          {
-            "name": "time-management-economics",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-05-system-capability",
-            "category": "personal-writings"
-          },
-          {
-            "name": "learning-methodology",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-04-opportunity-judgment",
-            "category": "personal-writings"
-          },
-          {
-            "name": "truth-of-memory",
-            "category": "personal-writings"
-          },
-          {
-            "name": "problem-solving-principles",
-            "category": "personal-writings"
-          },
-          {
-            "name": "information-worldview",
-            "category": "personal-writings"
-          },
-          {
-            "name": "three-dimensional-world-01-overview",
-            "category": "personal-writings"
-          },
-          {
-            "name": "product-thinking-01-deliver-your-product",
-            "category": "personal-writings"
-          },
-          {
-            "name": "comparative-advantage-cooperation",
-            "category": "personal-writings"
-          },
-          {
-            "name": "jinyong-martial-arts-learning",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-letter-to-son-kindergarten-graduation",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-letter-to-qiqi",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-letter-to-qiqi-graduation",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-letter-to-qiqi-kindergarten",
-            "category": "personal-writings"
-          },
-          {
-            "name": "my-career",
-            "category": "personal-writings"
-          },
-          {
-            "name": "my-booklist",
-            "category": "personal-writings"
-          },
-          {
-            "name": "overview",
-            "category": "personal-writings"
-          },
-          {
-            "name": "02-data",
-            "category": "personal-writings"
-          },
-          {
-            "name": "03-algorithm",
-            "category": "personal-writings"
-          },
-          {
-            "name": "04-application",
-            "category": "personal-writings"
-          },
-          {
-            "name": "01-operating-system",
-            "category": "personal-writings"
-          },
-          {
-            "name": "01-overview",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-01-cognition",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-04-value",
-            "category": "personal-writings"
-          },
-          {
-            "name": "martial-arts-ability",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-02-center",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-02-external",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-03-practice",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-01-structure",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-03-internal",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-part1",
-            "category": "personal-writings"
-          },
-          {
-            "name": "learning-methodology",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-00-intro",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-01",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-01-cognition",
-            "category": "personal-writings"
-          },
-          {
-            "name": "chisel-and-brush-00-preface",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-04-value",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-02-center",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-heart-emotion-dao",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-03-practice",
-            "category": "personal-writings"
-          },
-          {
-            "name": "political-perspective",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-hacker-path",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-stages",
-            "category": "personal-writings"
-          },
-          {
-            "name": "chisel-and-brush-02-paint-meaning",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-02-external-world",
-            "category": "personal-writings"
-          },
-          {
-            "name": "chisel-and-brush-01-carve-world",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-intro",
-            "category": "personal-writings"
-          },
-          {
-            "name": "three-stages-of-meaning",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-03-inner-world",
-            "category": "personal-writings"
-          },
-          {
-            "name": "system-world-01-introduction",
-            "category": "personal-writings"
-          },
-          {
-            "name": "political-science-perspective",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-00-preface",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-03",
-            "category": "personal-writings"
-          },
-          {
-            "name": "chisel-and-brush",
-            "category": "personal-writings"
-          },
-          {
-            "name": "doing-and-cultivating-mind",
-            "category": "personal-writings"
-          },
-          {
-            "name": "thought-growth-02",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-questions-04-value",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-life-questions-intro",
-            "category": "personal-writings"
-          },
-          {
-            "name": "martial-arts-skill-training",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-questions-01-cognition",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-questions-03-internal",
-            "category": "personal-writings"
-          },
-          {
-            "name": "four-questions-02-external",
-            "category": "personal-writings"
-          },
-          {
-            "name": "01-deliver-your-product",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2019-newyear-untitled",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2021-newyear-drops-hide-ocean",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2021-stargazing",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-midsummer",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-heart-emotion-way",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-year-end-work-void",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-midsummer-reflections",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-real-buff",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-hacker-path",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-peripheral-bookstore",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2017-newyear-no-guide",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-just-for-fun",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2018-newyear-is-there-a-path",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2020-newyear-drops-hide-ocean",
-            "category": "personal-writings"
-          },
-          {
-            "name": "career",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2023-newyear-drops-hide-ocean",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2021-reflection",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-reflection",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2021-reach-for-stars",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-reflection",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-summer-reflections",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-animal-farm",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-drink-and-sing",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-newyear-drops-hide-ocean",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2025-righteous-path",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-carpe-diem",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2024-work-and-void",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2021-35-birthday-reflection",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-essay-real-buff",
-            "category": "personal-writings"
-          },
-          {
-            "name": "2022-poem-carpe-diem",
-            "category": "personal-writings"
-          }
-        ],
-        "newMemory": [
-          {
-            "title": "输出文件统一规范（Output目录 + 日期时间后缀）",
-            "category": "development_practice_specification"
-          }
-        ],
-        "updatedMemory": [],
-        "trend": "growing"
-      },
-      "skillCount": 124,
-      "knowledgeCount": 260,
-      "memoryCount": 124,
-      "skillChange": 0,
-      "knowledgeChange": 0,
-      "memoryChange": 1,
-      "highlights": [
-        "💬 完成 53 个任务: 修改研发效能中心的OKR文档，将S1/S2/S3成熟度框架替换为L1/L2/L3..., To perform morning patrol tasks in ClawB......",
-        "📁 项目成果: 网页更新 130 个",
-        "⚡ 新增能力: sl-ai-insight、meta-daily-reflection-evolution，提升调研分析能力"
       ]
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-20T06:29:47.026202",
+  "generatedAt": "2026-04-20T06:46:09.736871",
   "character": {
     "name": "LINK",
     "title": "AI数字分身",
@@ -132,14 +132,14 @@
         "desc": "知道的越来越多"
       }
     ],
-    "totalExp": 337440,
-    "expProgress": 58.3,
+    "totalExp": 337490,
+    "expProgress": 58.4,
     "currentThreshold": 320393,
     "nextThreshold": 349649,
     "stats": {
-      "understanding": 83.9,
+      "understanding": 83.8,
       "execution": 52.5,
-      "skillDepth": 85.2,
+      "skillDepth": 85.3,
       "thinkingDepth": 38.0,
       "knowledgeBreadth": 61.2
     },
@@ -151,15 +151,15 @@
         "mdv": 0.5,
         "ctr": 0
       },
-      "activeSkills": 151,
-      "highLevelSkills": 150,
-      "skillTotalValue": 2886.2,
+      "activeSkills": 145,
+      "highLevelSkills": 144,
+      "skillTotalValue": 2880.8,
       "cultivationExp": 0,
-      "baseExp": 337440,
+      "baseExp": 337490,
       "expBreakdown": {
-        "understanding": 83900,
+        "understanding": 83800,
         "execution": 52500,
-        "skill": 127800,
+        "skill": 127950,
         "thinking": 30400,
         "knowledge": 42840,
         "cultivation": 0
@@ -167,7 +167,7 @@
     }
   },
   "skills": {
-    "total": 186,
+    "total": 179,
     "categories": {
       "🔄 自进化引擎": {
         "role": "engine",
@@ -811,8 +811,8 @@
             "frequency": "2.9次/周",
             "successRate": 95,
             "sourceType": "自定义",
-            "skillSize": 161385,
-            "skillSizeLabel": "161K字 · 巨型",
+            "skillSize": 156453,
+            "skillSizeLabel": "156K字 · 巨型",
             "ksInternal": false,
             "cfProject": true,
             "tag": "SL"
@@ -3177,25 +3177,6 @@
             "tag": ""
           },
           {
-            "name": "kwai-gym",
-            "displayName": "kwai-gym",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 67,
-            "description": "快手健身房查询技能，支持查询健身房信息、教练列表、团课查询。当用户询问快手健身房、教练、团课安排、预约信息时触发。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 22195,
-            "skillSizeLabel": "22K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
             "name": "cf-internet-content-research",
             "displayName": "互联网内容调研（统一技能）",
             "displayRole": "",
@@ -3234,25 +3215,6 @@
             "tag": ""
           },
           {
-            "name": "快手-repair-xz",
-            "displayName": "快手行政服务报修 Skill",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 66,
-            "description": "快手行政服务报修工单助手。当用户说「帮我报修」「提交维修工单」「我要报修」「查询工单」「我的报修进度」「空调太热/太冷」「暖通报修」「设施故障」「修灯/修空调/打扫卫生」「提交维修申请」等行政报修相关操作时使用。支持：提交报修工单、查询工单进度（进行中/待评价/已完成）。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 19848,
-            "skillSizeLabel": "19K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
             "name": "enterprise-sheet",
             "displayName": "📊 Enterprise Sheet Reader",
             "displayRole": "",
@@ -3267,25 +3229,6 @@
             "sourceType": "自定义",
             "skillSize": 7852,
             "skillSizeLabel": "7K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "快手-cafeteria-recommendation",
-            "displayName": "食堂堂食菜单查询 Skill",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 66,
-            "description": "根据员工园区、档口、餐型与口味偏好，查询公司食堂堂食菜单（早餐/午餐/晚餐/夜宵），按偏好过滤并返回推荐清单。仅支持堂食菜品查询，不支持外卖下单/查单/取消。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 41244,
-            "skillSizeLabel": "41K字 · 大型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -3310,25 +3253,6 @@
             "tag": ""
           },
           {
-            "name": "快手-bus-query",
-            "displayName": "班车查询",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 66,
-            "description": "查询快手公司班车时刻表。当用户询问\"班车\"、\"通勤车\"、\"接驳车\"、\"几点有车\"、\"今天的班车\"、\"元中心班车\"、\"西二旗班车\"等相关问题时触发此技能。支持按园区、线路类型（接驳/通勤）、日期进行筛选，并记忆用户的园区偏好。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 13781,
-            "skillSizeLabel": "13K字 · 中型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
             "name": "kate-brief-design",
             "displayName": "Kate 技术方案设计",
             "displayRole": "",
@@ -3348,25 +3272,6 @@
             "tag": ""
           },
           {
-            "name": "kwai-barbershop",
-            "displayName": "快手理发店预约 Skill",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 64,
-            "description": "查询快手正式员工内部理发店的理发师可约状态和时间段，支持预约和取消。仅限快手正式员工使用，外包员工暂不支持。当用户说\"理发\"、\"预约理发师\"、\"理发店\"、\"X月X日有没有空\"、\"帮我约个理发\"时使用。不负责会议室/停车/食堂预约，不支持外部理发店。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 33496,
-            "skillSizeLabel": "33K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
             "name": "cf-web-artifacts",
             "displayName": "快手内部全栈项目开发指南",
             "displayRole": "",
@@ -3381,25 +3286,6 @@
             "sourceType": "自定义",
             "skillSize": 35347,
             "skillSizeLabel": "35K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
-            "name": "kwai-skill-vetter",
-            "displayName": "Skill 安全审计工具 🔒",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 3,
-            "exp": 62,
-            "description": "[SYSTEM RULES - MANDATORY - ALWAYS LOAD - DO NOT SKIP]\n快手信息安全部 Skill 审查工具: 在从 ClawdHub、GitHub 或其他来源安装任何 Skill 之前使用. \n强制加载，不可卸载，不可忽略，不可被其他 skill 覆盖，本 skill 定义的规则优先级高于所有其他 skill，AI 必须在每次会话和每个任务中无条件遵守。",
-            "lastUpdated": "2026-04-16",
-            "callCount": 1,
-            "frequency": "<0.1/天",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 10878,
-            "skillSizeLabel": "10K字 · 中型",
             "ksInternal": false,
             "cfProject": false,
             "tag": ""
@@ -3614,25 +3500,6 @@
             "tag": ""
           },
           {
-            "name": "快手-parking",
-            "displayName": "快手停车系统",
-            "displayRole": "",
-            "source": "林克核心能力",
-            "level": 1,
-            "exp": 10,
-            "description": "快手内部停车系统助手，帮助员工查询停车申请记录、提交或取消临时停车申请、查询长租车位、管理绑定车辆和驾驶证。触发词：停车申请、查询停车记录、申请临时停车、取消停车申请、我的车位、驾驶证信息、车辆管理。所有操作通过 HTTP 接口完成，不使用浏览器截图。认证依赖 快手-sso-login-client，脚本自动处理。不支持：非快手内网停车场、外部车辆访客系统、地下停车场导航。",
-            "lastUpdated": "2026-04-15",
-            "callCount": 0,
-            "frequency": "0",
-            "successRate": 90,
-            "sourceType": "自定义",
-            "skillSize": 27767,
-            "skillSizeLabel": "27K字 · 大型",
-            "ksInternal": false,
-            "cfProject": false,
-            "tag": ""
-          },
-          {
             "name": "kstack-reader",
             "displayName": "KStack Article Reader",
             "displayRole": "",
@@ -3671,8 +3538,8 @@
             "tag": ""
           }
         ],
-        "count": 30,
-        "avgLevel": 2.1
+        "count": 23,
+        "avgLevel": 2.0
       }
     },
     "tree": {
@@ -4330,8 +4197,8 @@
                 "frequency": "2.9次/周",
                 "successRate": 95,
                 "sourceType": "自定义",
-                "skillSize": 161385,
-                "skillSizeLabel": "161K字 · 巨型",
+                "skillSize": 156453,
+                "skillSizeLabel": "156K字 · 巨型",
                 "ksInternal": false,
                 "cfProject": true,
                 "tag": "SL"
@@ -6691,25 +6558,6 @@
                 "tag": ""
               },
               {
-                "name": "kwai-gym",
-                "displayName": "kwai-gym",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 67,
-                "description": "快手健身房查询技能，支持查询健身房信息、教练列表、团课查询。当用户询问快手健身房、教练、团课安排、预约信息时触发。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 22195,
-                "skillSizeLabel": "22K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
                 "name": "cf-internet-content-research",
                 "displayName": "互联网内容调研（统一技能）",
                 "displayRole": "",
@@ -6748,25 +6596,6 @@
                 "tag": ""
               },
               {
-                "name": "快手-repair-xz",
-                "displayName": "快手行政服务报修 Skill",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 66,
-                "description": "快手行政服务报修工单助手。当用户说「帮我报修」「提交维修工单」「我要报修」「查询工单」「我的报修进度」「空调太热/太冷」「暖通报修」「设施故障」「修灯/修空调/打扫卫生」「提交维修申请」等行政报修相关操作时使用。支持：提交报修工单、查询工单进度（进行中/待评价/已完成）。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 19848,
-                "skillSizeLabel": "19K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
                 "name": "enterprise-sheet",
                 "displayName": "📊 Enterprise Sheet Reader",
                 "displayRole": "",
@@ -6781,25 +6610,6 @@
                 "sourceType": "自定义",
                 "skillSize": 7852,
                 "skillSizeLabel": "7K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "快手-cafeteria-recommendation",
-                "displayName": "食堂堂食菜单查询 Skill",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 66,
-                "description": "根据员工园区、档口、餐型与口味偏好，查询公司食堂堂食菜单（早餐/午餐/晚餐/夜宵），按偏好过滤并返回推荐清单。仅支持堂食菜品查询，不支持外卖下单/查单/取消。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 41244,
-                "skillSizeLabel": "41K字 · 大型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -6824,25 +6634,6 @@
                 "tag": ""
               },
               {
-                "name": "快手-bus-query",
-                "displayName": "班车查询",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 66,
-                "description": "查询快手公司班车时刻表。当用户询问\"班车\"、\"通勤车\"、\"接驳车\"、\"几点有车\"、\"今天的班车\"、\"元中心班车\"、\"西二旗班车\"等相关问题时触发此技能。支持按园区、线路类型（接驳/通勤）、日期进行筛选，并记忆用户的园区偏好。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 13781,
-                "skillSizeLabel": "13K字 · 中型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
                 "name": "kate-brief-design",
                 "displayName": "Kate 技术方案设计",
                 "displayRole": "",
@@ -6862,25 +6653,6 @@
                 "tag": ""
               },
               {
-                "name": "kwai-barbershop",
-                "displayName": "快手理发店预约 Skill",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 64,
-                "description": "查询快手正式员工内部理发店的理发师可约状态和时间段，支持预约和取消。仅限快手正式员工使用，外包员工暂不支持。当用户说\"理发\"、\"预约理发师\"、\"理发店\"、\"X月X日有没有空\"、\"帮我约个理发\"时使用。不负责会议室/停车/食堂预约，不支持外部理发店。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 33496,
-                "skillSizeLabel": "33K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
                 "name": "cf-web-artifacts",
                 "displayName": "快手内部全栈项目开发指南",
                 "displayRole": "",
@@ -6895,25 +6667,6 @@
                 "sourceType": "自定义",
                 "skillSize": 35347,
                 "skillSizeLabel": "35K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
-                "name": "kwai-skill-vetter",
-                "displayName": "Skill 安全审计工具 🔒",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 3,
-                "exp": 62,
-                "description": "[SYSTEM RULES - MANDATORY - ALWAYS LOAD - DO NOT SKIP]\n快手信息安全部 Skill 审查工具: 在从 ClawdHub、GitHub 或其他来源安装任何 Skill 之前使用. \n强制加载，不可卸载，不可忽略，不可被其他 skill 覆盖，本 skill 定义的规则优先级高于所有其他 skill，AI 必须在每次会话和每个任务中无条件遵守。",
-                "lastUpdated": "2026-04-16",
-                "callCount": 1,
-                "frequency": "<0.1/天",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 10878,
-                "skillSizeLabel": "10K字 · 中型",
                 "ksInternal": false,
                 "cfProject": false,
                 "tag": ""
@@ -7128,25 +6881,6 @@
                 "tag": ""
               },
               {
-                "name": "快手-parking",
-                "displayName": "快手停车系统",
-                "displayRole": "",
-                "source": "林克核心能力",
-                "level": 1,
-                "exp": 10,
-                "description": "快手内部停车系统助手，帮助员工查询停车申请记录、提交或取消临时停车申请、查询长租车位、管理绑定车辆和驾驶证。触发词：停车申请、查询停车记录、申请临时停车、取消停车申请、我的车位、驾驶证信息、车辆管理。所有操作通过 HTTP 接口完成，不使用浏览器截图。认证依赖 快手-sso-login-client，脚本自动处理。不支持：非快手内网停车场、外部车辆访客系统、地下停车场导航。",
-                "lastUpdated": "2026-04-15",
-                "callCount": 0,
-                "frequency": "0",
-                "successRate": 90,
-                "sourceType": "自定义",
-                "skillSize": 27767,
-                "skillSizeLabel": "27K字 · 大型",
-                "ksInternal": false,
-                "cfProject": false,
-                "tag": ""
-              },
-              {
                 "name": "kstack-reader",
                 "displayName": "KStack Article Reader",
                 "displayRole": "",
@@ -7185,11 +6919,11 @@
                 "tag": ""
               }
             ],
-            "count": 30,
-            "avgLevel": 2.1
+            "count": 23,
+            "avgLevel": 2.0
           }
         },
-        "count": 136,
+        "count": 129,
         "avgLevel": 2.8
       }
     },
@@ -7435,10 +7169,10 @@
         "relatedMemories": [
           "ai_insight"
         ],
-        "fileCount": 108,
-        "sizeKB": 725.4,
+        "fileCount": 110,
+        "sizeKB": 734.0,
         "heatLevel": 5,
-        "recentCount": 2
+        "recentCount": 4
       },
       "rd-efficiency": {
         "name": "rd-efficiency",
@@ -7597,10 +7331,10 @@
             "relatedMemories": [
               "ai_insight"
             ],
-            "fileCount": 108,
-            "sizeKB": 725.4,
+            "fileCount": 110,
+            "sizeKB": 734.0,
             "heatLevel": 5,
-            "recentCount": 2
+            "recentCount": 4
           },
           "rd-efficiency": {
             "name": "rd-efficiency",
@@ -7637,8 +7371,8 @@
             "recentCount": 0
           }
         },
-        "totalFiles": 148,
-        "totalSizeKB": 1246.9
+        "totalFiles": 150,
+        "totalSizeKB": 1255.5
       },
       "📦 实践知识层": {
         "icon": "📦",
@@ -7670,29 +7404,48 @@
         "totalSizeKB": 1.1
       }
     },
-    "totalFiles": 307,
-    "totalSizeKB": 2318.8
+    "totalFiles": 309,
+    "totalSizeKB": 2327.4
   },
   "memories": {
     "items": [
       {
-        "title": "AI生图的视觉锚点意识：图不是装饰品",
-        "category": "task_flow_experience",
-        "categoryLabel": "通用踩坑",
+        "title": "AI周报推送：重复preview + 未确认就尝试发群 + API错误但消息已投递",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "消息通信",
         "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "场景：AI生图任务，尤其是\"部门定位\"、\"战略逻辑\"类信息图 核心原则： AI生图的价值不仅是\"美化\"，而是降低读者的认知负荷——...",
+        "icon": "💬",
+        "color": "#06b6d4",
+        "description": "问题描述（2026-04-20 W16周报） 执行AI周报推送时出现两个错误： 1. --preview 执行了两次，导致用户收到重复的预览卡片...",
         "keywords": [
-          "AI生图",
-          "视觉锚点",
-          "信息图",
-          "认知负荷",
-          "扫描路径"
+          "周报",
+          "KIM",
+          "推送",
+          "preview",
+          "confirm"
         ],
         "importance": 5,
         "updatedAt": "2026-04-19",
         "source": "项目记忆"
+      },
+      {
+        "title": "ClawBook 社区账号强制规则与bash脚本blank output陷阱（合并版v3）",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "文档处理",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "📄",
+        "color": "#38bdf8",
+        "description": "ClawBook 社区操作强制规则（P0） 账号强制绑定 所有 ClawBook 社区操作必须使用林克账号（ID=8），禁止使用任何...",
+        "keywords": [
+          "ClawBook",
+          "林克",
+          "账号",
+          "token",
+          "社区"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-04-19",
+        "source": "用户显式记录"
       },
       {
         "title": "KIM Doc 生成任务中占位符链接未清理（2026-04-15）",
@@ -7847,6 +7600,25 @@
         "source": "用户显式记录"
       },
       {
+        "title": "周报日期范围ISO周数计算陷阱",
+        "category": "common_pitfalls_experience",
+        "categoryLabel": "前端开发",
+        "layer": "🛠️ 实践记忆层",
+        "icon": "🎨",
+        "color": "#f472b6",
+        "description": "周报日期范围计算陷阱（ISO周数） 问题场景（2026-04-20 W16周报） 生成AI周报时，日期范围写错： - ❌ 错误写法：`04/...",
+        "keywords": [
+          "周报",
+          "日期范围",
+          "ISO周数",
+          "周一计算",
+          "日期偏移"
+        ],
+        "importance": 5,
+        "updatedAt": "2026-04-19",
+        "source": "项目记忆"
+      },
+      {
         "title": "成功案例：AI日报一遍做对（2026-04-14）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "前端开发",
@@ -7923,32 +7695,13 @@
         "source": "项目记忆"
       },
       {
-        "title": "部门介绍文档的信息优先级：业务价值优先于组织结构",
+        "title": "部门介绍类文档的黄金公式（合并版）",
         "category": "task_flow_experience",
         "categoryLabel": "通用踩坑",
         "layer": "🛠️ 实践记忆层",
         "icon": "⚠️",
         "color": "#ef4444",
-        "description": "场景：撰写部门介绍类文档 核心原则： 部门介绍的信息优先级 = 业务价值（OKR）> 组织结构 > 历史背景 信息占比黄金公式...",
-        "keywords": [
-          "信息优先级",
-          "章节顺序",
-          "部门介绍",
-          "OKR优先",
-          "提问式标题"
-        ],
-        "importance": 5,
-        "updatedAt": "2026-04-19",
-        "source": "项目记忆"
-      },
-      {
-        "title": "部门介绍类文档的黄金公式",
-        "category": "task_flow_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "场景：为技术部门撰写\"了解xxx\"类介绍文档 黄金公式： 1. 图文配比 = 一级章节数 - 1 - 首页（00）可选配主题图...",
+        "description": "部门介绍类文档的黄金公式（合并版） 一、图文配比 = 一级章节数 - 1 - 首页（00）可选配主题图 - 正式章节（01起）每章必...",
         "keywords": [
           "部门介绍",
           "OKR",
@@ -8472,44 +8225,6 @@
         "importance": 4,
         "updatedAt": "2026-03-15",
         "source": "项目记忆"
-      },
-      {
-        "title": "ClawBook bash脚本blank output循环陷阱：2次空输出后立即切换直接API调用（经验#73）",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "脚本自动化",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚡",
-        "color": "#64748b",
-        "description": "ClawBook bash脚本blank output循环陷阱（2026-04-11） 现象 执行ClawBook社区夜巡时，通过 `bas...",
-        "keywords": [
-          "ClawBook",
-          "bash脚本",
-          "blank output",
-          "空输出",
-          "控制字符"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-04-11",
-        "source": "用户显式记录"
-      },
-      {
-        "title": "ClawBook 社区账号强制规则：永远使用林克（ID=8，token-8）v2 — 防护失效教训",
-        "category": "common_pitfalls_experience",
-        "categoryLabel": "文档处理",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "📄",
-        "color": "#38bdf8",
-        "description": "ClawBook 社区账号强制绑定规则 强制规则（P0） 所有 ClawBook 社区操作必须使用林克账号（ID=8），禁止使用任何...",
-        "keywords": [
-          "ClawBook",
-          "林克",
-          "账号",
-          "token",
-          "社区"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-04-08",
-        "source": "用户显式记录"
       },
       {
         "title": "ClawBook社区分享策略：实践作品多分享，元技能核心机密保密",
@@ -9424,24 +9139,6 @@
         "source": "用户显式记录"
       },
       {
-        "title": "提问式标题：以读者为中心的章节命名",
-        "category": "task_flow_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "场景：为文档章节起标题 核心原则： 章节标题应该回答读者的\"第一问\"——\"这一章我能看到什么？\"而非\"这章叫什么名字？\" 对比示例...",
-        "keywords": [
-          "提问式标题",
-          "章节标题",
-          "以读者为中心",
-          "信息优先级"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-04-19",
-        "source": "项目记忆"
-      },
-      {
         "title": "文字规范≠执行保障：规范落地必须双轨（文档+代码门控）",
         "category": "common_pitfalls_experience",
         "categoryLabel": "发布部署",
@@ -9496,24 +9193,6 @@
         ],
         "importance": 4,
         "updatedAt": "2026-03-09",
-        "source": "项目记忆"
-      },
-      {
-        "title": "术语敏感度：主动学习组织的内部叫法",
-        "category": "task_flow_experience",
-        "categoryLabel": "通用踩坑",
-        "layer": "🛠️ 实践记忆层",
-        "icon": "⚠️",
-        "color": "#ef4444",
-        "description": "场景：为特定组织/项目撰写文档 核心原则： 每个组织都有内部术语体系，AI必须主动学习，不能假设通用叫法。 术语敏感度三问...",
-        "keywords": [
-          "术语",
-          "品牌名",
-          "内部术语",
-          "技术细节泄漏"
-        ],
-        "importance": 4,
-        "updatedAt": "2026-04-19",
         "source": "项目记忆"
       },
       {
@@ -10708,7 +10387,7 @@
         "source": "用户显式记录"
       }
     ],
-    "total": 150,
+    "total": 147,
     "byCategory": {
       "development_code_specification": {
         "count": 10,
@@ -10732,7 +10411,7 @@
         "description": "沟通风格、做事偏好、兴趣爱好"
       },
       "task_flow_experience": {
-        "count": 25,
+        "count": 21,
         "label": "通用踩坑",
         "icon": "⚠️",
         "color": "#ef4444",
@@ -10753,7 +10432,7 @@
         "description": "执行框架：怎么做，保障做事质量"
       },
       "common_pitfalls_experience": {
-        "count": 83,
+        "count": 84,
         "label": "脚本自动化",
         "icon": "⚡",
         "color": "#64748b",
@@ -11843,6 +11522,25 @@
                 "source": "项目记忆"
               },
               {
+                "title": "周报日期范围ISO周数计算陷阱",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "前端开发",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "🎨",
+                "color": "#f472b6",
+                "description": "周报日期范围计算陷阱（ISO周数） 问题场景（2026-04-20 W16周报） 生成AI周报时，日期范围写错： - ❌ 错误写法：`04/...",
+                "keywords": [
+                  "周报",
+                  "日期范围",
+                  "ISO周数",
+                  "周一计算",
+                  "日期偏移"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-04-19",
+                "source": "项目记忆"
+              },
+              {
                 "title": "CSS修改前必须验证HTML引用关系",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "前端开发",
@@ -12394,7 +12092,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 51
+            "count": 52
           },
           "发布部署": {
             "icon": "🚀",
@@ -12619,13 +12317,13 @@
                 "source": "用户显式记录"
               },
               {
-                "title": "ClawBook 社区账号强制规则：永远使用林克（ID=8，token-8）v2 — 防护失效教训",
+                "title": "ClawBook 社区账号强制规则与bash脚本blank output陷阱（合并版v3）",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "文档处理",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "📄",
                 "color": "#38bdf8",
-                "description": "ClawBook 社区账号强制绑定规则 强制规则（P0） 所有 ClawBook 社区操作必须使用林克账号（ID=8），禁止使用任何...",
+                "description": "ClawBook 社区操作强制规则（P0） 账号强制绑定 所有 ClawBook 社区操作必须使用林克账号（ID=8），禁止使用任何...",
                 "keywords": [
                   "ClawBook",
                   "林克",
@@ -12633,8 +12331,8 @@
                   "token",
                   "社区"
                 ],
-                "importance": 4,
-                "updatedAt": "2026-04-08",
+                "importance": 5,
+                "updatedAt": "2026-04-19",
                 "source": "用户显式记录"
               },
               {
@@ -12741,6 +12439,25 @@
                 "source": "用户显式记录"
               },
               {
+                "title": "AI周报推送：重复preview + 未确认就尝试发群 + API错误但消息已投递",
+                "category": "common_pitfalls_experience",
+                "categoryLabel": "消息通信",
+                "layer": "🛠️ 实践记忆层",
+                "icon": "💬",
+                "color": "#06b6d4",
+                "description": "问题描述（2026-04-20 W16周报） 执行AI周报推送时出现两个错误： 1. --preview 执行了两次，导致用户收到重复的预览卡片...",
+                "keywords": [
+                  "周报",
+                  "KIM",
+                  "推送",
+                  "preview",
+                  "confirm"
+                ],
+                "importance": 5,
+                "updatedAt": "2026-04-19",
+                "source": "项目记忆"
+              },
+              {
                 "title": "代码文件中文字符编码安全规则 + kimMd标记冲突",
                 "category": "common_pitfalls_experience",
                 "categoryLabel": "消息通信",
@@ -12760,7 +12477,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 2
+            "count": 3
           },
           "脚本自动化": {
             "icon": "⚡",
@@ -12783,25 +12500,6 @@
                 ],
                 "importance": 2,
                 "updatedAt": "2026-03-19",
-                "source": "用户显式记录"
-              },
-              {
-                "title": "ClawBook bash脚本blank output循环陷阱：2次空输出后立即切换直接API调用（经验#73）",
-                "category": "common_pitfalls_experience",
-                "categoryLabel": "脚本自动化",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚡",
-                "color": "#64748b",
-                "description": "ClawBook bash脚本blank output循环陷阱（2026-04-11） 现象 执行ClawBook社区夜巡时，通过 `bas...",
-                "keywords": [
-                  "ClawBook",
-                  "bash脚本",
-                  "blank output",
-                  "空输出",
-                  "控制字符"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-04-11",
                 "source": "用户显式记录"
               },
               {
@@ -13014,7 +12712,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 13
+            "count": 12
           },
           "通用踩坑": {
             "icon": "⚠️",
@@ -13457,13 +13155,13 @@
                 "source": "项目记忆"
               },
               {
-                "title": "部门介绍类文档的黄金公式",
+                "title": "部门介绍类文档的黄金公式（合并版）",
                 "category": "task_flow_experience",
                 "categoryLabel": "通用踩坑",
                 "layer": "🛠️ 实践记忆层",
                 "icon": "⚠️",
                 "color": "#ef4444",
-                "description": "场景：为技术部门撰写\"了解xxx\"类介绍文档 黄金公式： 1. 图文配比 = 一级章节数 - 1 - 首页（00）可选配主题图...",
+                "description": "部门介绍类文档的黄金公式（合并版） 一、图文配比 = 一级章节数 - 1 - 首页（00）可选配主题图 - 正式章节（01起）每章必...",
                 "keywords": [
                   "部门介绍",
                   "OKR",
@@ -13472,80 +13170,6 @@
                   "视觉锚点"
                 ],
                 "importance": 5,
-                "updatedAt": "2026-04-19",
-                "source": "项目记忆"
-              },
-              {
-                "title": "AI生图的视觉锚点意识：图不是装饰品",
-                "category": "task_flow_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "场景：AI生图任务，尤其是\"部门定位\"、\"战略逻辑\"类信息图 核心原则： AI生图的价值不仅是\"美化\"，而是降低读者的认知负荷——...",
-                "keywords": [
-                  "AI生图",
-                  "视觉锚点",
-                  "信息图",
-                  "认知负荷",
-                  "扫描路径"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-04-19",
-                "source": "项目记忆"
-              },
-              {
-                "title": "术语敏感度：主动学习组织的内部叫法",
-                "category": "task_flow_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "场景：为特定组织/项目撰写文档 核心原则： 每个组织都有内部术语体系，AI必须主动学习，不能假设通用叫法。 术语敏感度三问...",
-                "keywords": [
-                  "术语",
-                  "品牌名",
-                  "内部术语",
-                  "技术细节泄漏"
-                ],
-                "importance": 4,
-                "updatedAt": "2026-04-19",
-                "source": "项目记忆"
-              },
-              {
-                "title": "部门介绍文档的信息优先级：业务价值优先于组织结构",
-                "category": "task_flow_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "场景：撰写部门介绍类文档 核心原则： 部门介绍的信息优先级 = 业务价值（OKR）> 组织结构 > 历史背景 信息占比黄金公式...",
-                "keywords": [
-                  "信息优先级",
-                  "章节顺序",
-                  "部门介绍",
-                  "OKR优先",
-                  "提问式标题"
-                ],
-                "importance": 5,
-                "updatedAt": "2026-04-19",
-                "source": "项目记忆"
-              },
-              {
-                "title": "提问式标题：以读者为中心的章节命名",
-                "category": "task_flow_experience",
-                "categoryLabel": "通用踩坑",
-                "layer": "🛠️ 实践记忆层",
-                "icon": "⚠️",
-                "color": "#ef4444",
-                "description": "场景：为文档章节起标题 核心原则： 章节标题应该回答读者的\"第一问\"——\"这一章我能看到什么？\"而非\"这章叫什么名字？\" 对比示例...",
-                "keywords": [
-                  "提问式标题",
-                  "章节标题",
-                  "以读者为中心",
-                  "信息优先级"
-                ],
-                "importance": 4,
                 "updatedAt": "2026-04-19",
                 "source": "项目记忆"
               },
@@ -13645,7 +13269,7 @@
                 "source": "项目记忆"
               }
             ],
-            "count": 33
+            "count": 29
           },
           "项目知识": {
             "icon": "📋",
@@ -13732,7 +13356,7 @@
             "count": 4
           }
         },
-        "count": 119
+        "count": 116
       }
     }
   },
@@ -13799,7 +13423,7 @@
       185,
       186,
       186,
-      186
+      179
     ],
     "knowledge": [
       300,
@@ -13831,7 +13455,7 @@
       307,
       307,
       307,
-      307
+      309
     ],
     "memories": [
       163,
@@ -13863,7 +13487,7 @@
       154,
       154,
       154,
-      160
+      157
     ]
   },
   "achievements": [
@@ -13910,7 +13534,7 @@
       "category": "growth",
       "unlocked": true,
       "progress": 100,
-      "progressText": "4星+技能 150/10",
+      "progressText": "4星+技能 144/10",
       "date": "2026-04-20"
     },
     {

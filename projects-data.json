@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-20T08:18:33.562955",
+  "generatedAt": "2026-04-21T08:15:19.753788",
   "summary": {
     "total": 25,
     "deployed": 25,
@@ -733,20 +733,17 @@
       "icon": "📏",
       "goal": "建立主流大模型能力评测的全景视角",
       "outcome": "形成模型能力、适用场景与演进趋势的综合比较",
-      "deliverables": [
-        "在线页面"
-      ],
+      "deliverables": [],
       "status": "deployed",
       "completedAt": "2026-04-08",
       "techStack": [
-        "HTML",
-        "GitHub Pages"
+        "Unknown"
       ],
       "url": "https://xiaoxiong20260206.github.io/ai-insight/02-deep-research/topics/llm-benchmark-2026/",
       "path": "/Users/shenlang/Documents/Codeflicker/个人助理_V1/AI-Insight/02-deep-research/topics/llm-benchmark-2026",
       "highlights": [],
       "metrics": {
-        "fileCount": 1
+        "fileCount": 0
       },
       "quality": {
         "score": 60,
